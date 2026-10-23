@@ -502,7 +502,7 @@ export const passTime = (perf, k, q) => {
  * Returns { events: [{t, dur, p, ch, v, pass, q, silent?, stem?}],
  *           passes: [{kind: "intro"|"verse"|"interlude", verse, t0, qFrom, qTo}], total, tm, lead }
  */
-export function performance(h, { tempo, verses, accomp, countIn, stems = new Map(), intro = "none", interlude = "none", shiftAt = () => 0 }) {
+export function performance(h, { tempo, verses, accomp, countIn, stems = new Map(), intro = "none", interlude = "none", shiftAt = () => 0, metronome = false }) {
   const tm = timeMap(h, tempo);
   const gap = tm.spq; // one beat of breath between sections
   const lead = countIn ? h.measureQ * tm.spq : 0;
@@ -548,7 +548,7 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
       if (stem) events.push({ t: t0 + stem.offsetSec, dur: stem.duration, ch: key, stem: `${key}:${verse}:${verseShift}`, v: 1, pass: k, q: 0, p: 0 });
       h.voices[key].forEach((n, i) => {
         const tn = t0 + tm.qToT(n.q);
-        events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: levels[key][i], pass: k, q: n.q, silent: !!stem });
+        events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: levels[key][i], pass: k, q: n.q, i, silent: !!stem });
       });
     }
     for (const n of acc) {
@@ -558,8 +558,33 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
     t = t0 + tm.passT + gap;
     if (interR && vi < verses.length - 1) instrumental("interlude", interR, verse);
   });
+  // the beats of every section, for the metronome and for "tap along"
+  const beat = beatOf(h);
+  const beatsInBar = (m) => Math.max(1, Math.round((barEnd(h, m) - barStart(h, m)) / beat));
+  const fullBeats = Math.round(h.measureQ / beat);
+  const beats = [];
+  // the count-in bar counts too: 1, 2, 3 before the music starts
+  if (countIn) for (let b = 0; b < fullBeats; b++) beats.push({ t: b * beat * tm.spq, bar: 0, beat: b, pass: -1 });
+  passes.forEach((p, k) => {
+    for (let m = 1; m <= h.measures; m++) {
+      const nb = beatsInBar(m);
+      for (let b = 0; b < nb; b++) {
+        const q = barStart(h, m) + b * beat;
+        if (q < p.qFrom - 1e-6 || q >= p.qTo - 1e-6) continue;
+        // a short pickup bar holds the last beats of a full bar
+        const inBar = nb < fullBeats ? fullBeats - nb + b : b;
+        const tq = passTime({ passes, tm }, k, q);
+        beats.push({ t: tq, bar: m, beat: inBar, pass: k });
+        if (metronome) {
+          const strong = inBar === 0;
+          const half = fullBeats === 4 && inBar === 2;
+          events.push({ t: tq, dur: 0.05, p: strong ? 96 : half ? 92 : 89, ch: "click", v: strong ? 0.75 : half ? 0.55 : 0.42, pass: k, q });
+        }
+      }
+    }
+  });
   events.sort((a, b) => a.t - b.t);
-  return { events, passes, total: t, tm, lead };
+  return { events, passes, total: t, tm, lead, beats };
 }
 
 /** Where are we at time t? -> { pass, kind, verse, t0, q } or null before the first section. */

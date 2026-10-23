@@ -415,3 +415,44 @@ body.full-page .stage-wrap:hover .stage-exit, body.full-page .stage-exit:focus-v
 ::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted); background-clip: padding-box; border: 2px solid transparent; }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+/* practice panel: feel the meter, sing in tune */
+.practice-panel { border-top: 1px solid var(--rule); background: var(--paper); }
+.pr-tabs { display: flex; gap: 0; padding: 8px clamp(12px, 3vw, 32px) 0; border-bottom: 1px solid var(--rule); }
+.pr-tabs button { border: 0; background: none; padding: 8px 14px; font: 600 15px var(--sans); color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.pr-tabs button[aria-selected="true"] { color: var(--cloth); border-bottom-color: var(--gilt); }
+.pr-body { display: grid; grid-template-columns: auto 1fr 1fr; gap: 18px 32px; align-items: start; padding: 14px clamp(12px, 3vw, 32px) 18px; }
+#prSing { grid-template-columns: 1fr; }
+.pr-conduct { display: flex; align-items: center; gap: 12px; }
+.pr-conduct svg { width: 200px; height: 164px; }
+.cd-path { fill: none; stroke: var(--rule); stroke-width: 2; stroke-dasharray: 4 5; }
+.cd-num { font: 700 16px var(--serif); fill: var(--muted); }
+.cd-num.one { fill: var(--cloth); }
+.cd-num.on { fill: var(--gilt); font-size: 20px; }
+.cd-dot { fill: var(--gilt); }
+.pr-beat { display: flex; flex-direction: column; align-items: center; min-width: 70px; }
+.pr-beat span { font: 800 64px/1 var(--serif); color: var(--cloth); }
+.pr-beat span.one { color: var(--gilt); }
+.pr-beat small { color: var(--muted); font-size: 13px; }
+.pr-col { display: flex; flex-direction: column; gap: 8px; max-width: 360px; }
+.pr-h { font: 700 17px var(--serif); color: var(--cloth); }
+.tap-pad {
+  border: 2px dashed var(--rule); border-radius: 12px; background: var(--paper-2); padding: 18px; cursor: pointer;
+  font: 700 18px var(--serif); color: var(--cloth); display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.tap-pad small { font: 400 13px var(--sans); color: var(--muted); }
+.tap-pad.hit { border-color: var(--gilt); background: rgba(168, 130, 46, 0.12); }
+.pr-choices { display: flex; gap: 6px; flex-wrap: wrap; }
+.pr-choices .ghost { min-width: 56px; font: 700 16px var(--serif); }
+.pr-choices .ghost.right { background: var(--T); border-color: var(--T); color: var(--paper); }
+.pr-choices .ghost.wrong { background: var(--S); border-color: var(--S); color: var(--paper); }
+.pr-sing-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; }
+.pr-sing-bar .row { margin: 0; gap: 8px; }
+.pr-readout { display: flex; flex-direction: column; margin-left: auto; text-align: right; }
+.pr-readout strong { font: 700 20px var(--serif); color: var(--cloth); }
+.pr-readout small { color: var(--muted); }
+#pitchLane { width: 100%; height: 190px; display: block; border: 1px solid var(--rule); border-radius: 8px; margin-top: 10px; }
+@media (max-width: 900px) { .pr-body { grid-template-columns: 1fr; } }
+
+/* guessing the meter: hide the score so it does not give the answer away */
+.workspace.quiz-hidden .viewport, .workspace.quiz-hidden .stage-wrap { filter: blur(9px); pointer-events: none; }

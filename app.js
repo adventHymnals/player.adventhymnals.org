@@ -9,6 +9,7 @@ import { Waterfall } from "./waterfall.js";
 import { Presenter } from "./presenter.js";
 import { Studio } from "./studio.js";
 import { exportPdf } from "./pdfexport.js";
+import { Conductor, feel, mysteryTune, meterHint, PitchListener, centsOff, drawLane } from "./practice.js";
 
 const $ = (id) => document.getElementById(id);
 const workspace = $("workspace");
@@ -58,6 +59,12 @@ const state = {
   presenterShows: store.get("presenterShows", "score"), // or "words" for projection
   showSync: store.get("showSync", false),
   headsCollapsed: store.get("headsCollapsed", false),
+  practice: store.get("practice", false),
+  practiceTab: store.get("practiceTab", "meter"),
+  metronome: store.get("metronome", false),
+  singVoice: store.get("singVoice", "S"),
+  muteMine: store.get("muteMine", true),
+  anyOctave: store.get("anyOctave", true),
 };
 let hymnWritten = null; // the hymn as transcribed; `hymn` may be a rhythm variant of it
 // key changes made while playing: from section k at score position q, move by delta semitones
@@ -87,7 +94,9 @@ let stemInfo = new Map(); // "S:1:0" (voice:verse:transpose) -> { offsetSec, dur
 const tracksOfHymn = () => state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
 const visibleTracks = () => tracksOfHymn().filter((t) => !state.hidden.includes(trackKey(t)));
 const visibleVoices = () => visibleTracks().flat();
-const heard = (ch) => !(state.mute[ch] || (CH.some((c) => state.solo[c]) && !state.solo[ch]));
+const singing = () => state.practice && state.practiceTab === "sing" && listener?.on;
+const heard = (ch) => !(state.mute[ch] || (CH.some((c) => state.solo[c]) && !state.solo[ch])
+  || (singing() && state.muteMine && ch === state.singVoice)); // you sing your own part
 const soundOf = (k) => state.voiceSounds[k] || (manifest ? "sung" : "choir");
 const hymnVoices = () => "SATB".split("").filter((k) => hymn?.voices[k]);
 const anySung = () => hymnVoices().some((k) => soundOf(k) === "sung");
@@ -320,6 +329,7 @@ async function boot() {
     return;
   }
   view = new ScoreView(tk, $("score"));
+  setupPractice();
   solfa = new SolfaView($("altView"));
   words = new WordsView($("altView"));
   presenter = new Presenter($("stage"), $("measureHost"));
@@ -355,6 +365,7 @@ async function loadHymn(entry) {
   $("loopFrom").max = $("loopTo").max = hymn.measures;
   syncLoopInputs();
   buildVerseChips();
+  syncPracticeForHymn();
   await loadManifest();
   rebuild(false);
   await renderAll();
@@ -772,7 +783,7 @@ function rebuild(keep = true) {
   const wasPlaying = engine.playing;
   const loc = keep && perf ? locate(perf, engine.now()) : null;
   const stems = anySung() ? stemInfo : new Map();
-  perf = performance(hymn, { tempo: state.tempo, verses: state.verses, accomp: state.accomp, countIn: state.countIn, stems, intro: state.intro, interlude: state.interlude, shiftAt });
+  perf = performance(hymn, { tempo: state.tempo, verses: state.verses, accomp: state.accomp, countIn: state.countIn, stems, intro: state.intro, interlude: state.interlude, shiftAt, metronome: state.metronome });
   engine.load(perf.events);
   waterfall.setPerformance(perf);
   applyLoop();
@@ -1020,6 +1031,196 @@ let lastT = -1;
 function frame() {
   requestAnimationFrame(frame);
   paint(false);
+  if (state.practice) drawPractice();
+}
+
+// ---- practice: feel the meter, sing in tune -----------------------------------
+
+let conductor = null;
+let listener = null;
+let quiz = null;          // { tune, engine, answered, t0 }
+let quizScore = { right: 0, asked: 0 };
+let trace = [];           // your recent pitch: [{t, p, target, off}]
+let tuneTally = { inTune: 0, sung: 0, pass: -1 };
+let taps = [];
+
+function setupPractice() {
+  conductor = new Conductor($("conductor"));
+  const panel = $("practicePanel");
+  const showTab = (tab) => {
+    state.practiceTab = tab;
+    save("practiceTab");
+    $("tabMeter").setAttribute("aria-selected", String(tab === "meter"));
+    $("tabSing").setAttribute("aria-selected", String(tab === "sing"));
+    $("prMeter").hidden = tab !== "meter";
+    $("prSing").hidden = tab !== "sing";
+    applyMix();
+  };
+  $("tabMeter").onclick = () => showTab("meter");
+  $("tabSing").onclick = () => showTab("sing");
+  const b = $("practiceBtn");
+  const sync = () => { panel.hidden = !state.practice; b.setAttribute("aria-pressed", String(state.practice)); };
+  b.onclick = () => { state.practice = !state.practice; save("practice"); sync(); if (!state.practice) stopListening(); applyMix(); };
+  sync();
+  showTab(state.practiceTab);
+  $("metronome").checked = state.metronome;
+  $("metronome").onchange = (e) => { state.metronome = e.target.checked; save("metronome"); rebuild(); };
+  $("tapPad").onclick = () => tap();
+  document.addEventListener("keydown", (e) => {
+    if ((e.key === "t" || e.key === "T") && state.practice && state.practiceTab === "meter" && !e.target.closest("input, select, textarea")) { e.preventDefault(); tap(); }
+  });
+  $("quizPlay").onclick = playQuiz;
+  $("quizChoices").querySelectorAll("button").forEach((btn) => { btn.onclick = () => answerQuiz(btn); });
+  $("micBtn").onclick = () => (listener?.on ? stopListening() : startListening());
+  for (const id of ["muteMine", "anyOctave"]) {
+    $(id).checked = state[id];
+    $(id).onchange = (e) => { state[id] = e.target.checked; save(id); applyMix(); };
+  }
+  $("singVoice").onchange = (e) => { state.singVoice = e.target.value; save("singVoice"); trace = []; applyMix(); };
+}
+
+function syncPracticeForHymn() {
+  const f = feel(hymn.time);
+  conductor.setBeats(f.beats);
+  $("meterLabel").textContent = f.label;
+  const voices = hymnVoices();
+  if (!voices.includes(state.singVoice)) state.singVoice = voices[0];
+  $("singVoice").innerHTML = voices.map((k) => `<option value="${k}" ${k === state.singVoice ? "selected" : ""}>${VOICES[k].name}</option>`).join("");
+}
+
+/** The beat being played now, from the performance's beat grid. */
+function beatNow(t) {
+  if (!perf?.beats?.length) return null;
+  let i = -1;
+  for (let k = 0; k < perf.beats.length; k++) { if (perf.beats[k].t <= t + 1e-6) i = k; else break; }
+  if (i < 0) return null;
+  const b = perf.beats[i];
+  const next = perf.beats[i + 1];
+  const len = next ? next.t - b.t : 60 / state.tempo;
+  return { ...b, f: Math.min(0.999, (t - b.t) / len) };
+}
+
+function drawPractice() {
+  if (state.practiceTab === "meter") {
+    if (quiz && !quiz.answered) { $("beatNum").textContent = "?"; return; } // no clues while guessing
+    const b = engine.playing || engine.pausedAt ? beatNow(engine.now()) : null;
+    const beat = b ? b.beat : 0;
+    conductor.show(beat, b ? b.f : 0);
+    $("beatNum").textContent = beat + 1;
+    $("beatNum").classList.toggle("one", beat === 0);
+    return;
+  }
+  // sing in tune: your pitch against the note your part has now
+  const c = $("pitchLane");
+  const w = c.clientWidth;
+  const h = c.clientHeight;
+  const dpr = window.devicePixelRatio || 1;
+  if (c.width !== Math.round(w * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
+  const g = c.getContext("2d");
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const voice = state.singVoice;
+  const notes = (perf?.events || []).filter((e) => e.ch === voice && !e.stem && e.p > 0)
+    .map((e) => ({ t: e.t, dur: e.dur, p: e.p, label: hymn.solfa?.[voice]?.[e.i] || "" }));
+  // what you sing reaches the microphone a little after the sound left the speakers
+  const lag = engine.ctx ? (engine.ctx.outputLatency || 0) + (engine.ctx.baseLatency || 0) + 0.03 : 0;
+  const now = engine.now();
+  if (listener?.on && (frame.tick = (frame.tick || 0) + 1) % 2 === 0) {
+    const sung = listener.read();
+    const t = now - lag;
+    const target = notes.find((n) => n.t <= t && t < n.t + n.dur) || null;
+    const off = sung !== null && target ? centsOff(sung, target.p, state.anyOctave) : null;
+    trace.push({ t, p: sung, target: target ? target.p : null, off });
+    while (trace.length && trace[0].t < now - 8) trace.shift();
+    const loc = engine.playing ? locate(perf, t) : null;
+    if (loc && loc.pass !== tuneTally.pass) tuneTally = { inTune: 0, sung: 0, pass: loc.pass };
+    if (engine.playing && target && sung !== null) { tuneTally.sung++; if (Math.abs(off) <= 50) tuneTally.inTune++; }
+    $("pitchReadout").textContent = sung === null ? "Listening…" : !target ? "Rest" : describeCents(off);
+    $("tuneScore").textContent = tuneTally.sung > 20 ? `In tune ${Math.round((100 * tuneTally.inTune) / tuneTally.sung)}% of this verse` : "";
+  }
+  drawLane(g, w, h, now, notes, trace, colors, colors[voice], state.anyOctave);
+}
+
+function describeCents(off) {
+  const a = Math.abs(off);
+  if (a <= 25) return "In tune";
+  if (a <= 50) return `${off > 0 ? "A little sharp" : "A little flat"} (${off > 0 ? "+" : "−"}${Math.round(a)} cents)`;
+  const semis = Math.round(a / 100);
+  return `${off > 0 ? "Too high" : "Too low"} by ${semis === 1 ? "a semitone" : `${semis} semitones`}`;
+}
+
+async function startListening() {
+  engine.ensure();
+  listener = listener || new PitchListener();
+  try {
+    await listener.start(engine.ctx);
+  } catch {
+    toast("The microphone is not available. Allow it for this page and try again.", 6000);
+    return;
+  }
+  $("micBtn").textContent = "Stop listening";
+  trace = [];
+  applyMix();
+  toast(state.muteMine ? `Listening. Your part (${VOICES[state.singVoice].name}) is muted so you can sing it.` : "Listening.", 4000);
+}
+
+function stopListening() {
+  if (!listener?.on) return;
+  listener.stop();
+  $("micBtn").textContent = "Start listening";
+  $("pitchReadout").textContent = "Not listening";
+  applyMix();
+}
+
+function tap() {
+  const pad = $("tapPad");
+  pad.classList.add("hit");
+  setTimeout(() => pad.classList.remove("hit"), 120);
+  let grid = null;
+  let t = null;
+  if (quiz && quiz.engine.playing) {
+    t = quiz.engine.now();
+    grid = quiz.beats;
+  } else if (engine.playing) {
+    t = engine.now();
+    grid = perf.beats;
+  }
+  if (!grid) { $("tapFeedback").textContent = "Press play first, then tap on every beat."; return; }
+  const near = grid.reduce((a, b) => (Math.abs(b.t - t) < Math.abs(a.t - t) ? b : a));
+  const ms = Math.round((t - near.t) * 1000);
+  taps = [...taps.slice(-7), Math.abs(ms)];
+  const avg = Math.round(taps.reduce((a, b) => a + b, 0) / taps.length);
+  const when = Math.abs(ms) <= 40 ? "Right on the beat" : ms > 0 ? `${ms} ms late` : `${-ms} ms early`;
+  const which = quiz && quiz.engine.playing && !quiz.answered ? "" : near.beat === 0 ? " That was beat 1, the strong beat." : ` That was beat ${near.beat + 1}.`;
+  $("tapFeedback").textContent = `${when}.${which} Average over your last ${taps.length}: ${avg} ms.`;
+}
+
+async function playQuiz() {
+  if (engine.playing) { engine.pause(); setPlaying(false); }
+  quiz?.engine.stop();
+  const tune = mysteryTune();
+  const qe = new Engine();
+  qe.ensure();
+  await qe.loadPiano();
+  qe.load(tune.events);
+  quiz = { tune, engine: qe, answered: false, beats: Array.from({ length: Math.round(tune.length / tune.beatSec) }, (_, i) => ({ t: i * tune.beatSec, beat: i % tune.beats })) };
+  $("quizChoices").querySelectorAll("button").forEach((b) => b.classList.remove("right", "wrong"));
+  $("quizFeedback").textContent = "Listen for the strong beat, then choose. You can tap along to help.";
+  workspace.classList.add("quiz-hidden"); // no peeking at the score
+  qe.play(0);
+}
+
+function answerQuiz(btn) {
+  if (!quiz || quiz.answered) return;
+  quiz.answered = true;
+  workspace.classList.remove("quiz-hidden");
+  const right = `${quiz.tune.time[0]}/${quiz.tune.time[1]}`;
+  quizScore.asked++;
+  if (btn.dataset.time === right) quizScore.right++;
+  $("quizChoices").querySelectorAll("button").forEach((b) => {
+    if (b.dataset.time === right) b.classList.add("right");
+    else if (b === btn) b.classList.add("wrong");
+  });
+  $("quizFeedback").textContent = `${btn.dataset.time === right ? "Yes!" : `It was ${right}.`} ${meterHint(quiz.tune.time)} Score: ${quizScore.right} of ${quizScore.asked}.`;
 }
 
 function paint(force) {

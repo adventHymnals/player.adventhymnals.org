@@ -63,6 +63,7 @@
   <div class="tool">
     <button class="toggle" id="chordsBtn" aria-pressed="false">Chords</button>
     <button class="toggle" id="pianoBtn" aria-pressed="false">Piano</button>
+    <button class="toggle" id="practiceBtn" aria-pressed="false" title="Feel the meter, and sing in tune with your part">Practice</button>
     <button class="ghost studio-btn" id="studioBtn" title="Place the singers on a stage: further back is softer">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2.6"/><path d="M3 20c0-6 1.8-9 4-9s4 3 4 9z"/><circle cx="17" cy="6" r="2.6"/><path d="M13 20c0-6 1.8-9 4-9s4 3 4 9z"/></svg>
       Studio
@@ -150,6 +151,46 @@
     <button class="stage-exit" id="pageExit" aria-label="Leave full page">Leave full page (Esc)</button>
   </div>
 </main>
+
+<section class="practice-panel" id="practicePanel" hidden aria-label="Practice">
+  <div class="pr-tabs" role="tablist" aria-label="Practice">
+    <button role="tab" id="tabMeter" aria-selected="true" aria-controls="prMeter">Feel the meter</button>
+    <button role="tab" id="tabSing" aria-selected="false" aria-controls="prSing">Sing in tune</button>
+  </div>
+
+  <div class="pr-body" id="prMeter" role="tabpanel" aria-labelledby="tabMeter">
+    <div class="pr-conduct">
+      <svg id="conductor" aria-label="Conducting pattern"></svg>
+      <div class="pr-beat"><span id="beatNum">1</span><small id="meterLabel"></small></div>
+    </div>
+    <div class="pr-col">
+      <label class="switch-row"><span><strong>Metronome</strong><small>A click on every beat, louder on beat 1.</small></span><input type="checkbox" class="switch" id="metronome"></label>
+      <button class="tap-pad" id="tapPad">Tap the beat<small>or press T while it plays</small></button>
+      <p class="hint" id="tapFeedback">Tap on every beat. Beat 1 of each bar is the strong one.</p>
+    </div>
+    <div class="pr-col">
+      <strong class="pr-h">Guess the meter</strong>
+      <p class="hint">A short tune plays without its score. Which meter is it in?</p>
+      <button class="ghost" id="quizPlay">Play a mystery tune</button>
+      <div class="pr-choices" id="quizChoices">
+        <button class="ghost" data-time="2/4">2/4</button><button class="ghost" data-time="3/4">3/4</button><button class="ghost" data-time="4/4">4/4</button><button class="ghost" data-time="6/8">6/8</button>
+      </div>
+      <p class="hint" id="quizFeedback"></p>
+    </div>
+  </div>
+
+  <div class="pr-body" id="prSing" role="tabpanel" aria-labelledby="tabSing" hidden>
+    <div class="pr-sing-bar">
+      <label class="row"><span>I am singing</span><select id="singVoice"></select></label>
+      <button class="play-text" id="micBtn">Start listening</button>
+      <label class="check"><input type="checkbox" id="muteMine" checked> Mute my part</label>
+      <label class="check"><input type="checkbox" id="anyOctave" checked> Any octave counts</label>
+      <div class="pr-readout"><strong id="pitchReadout">Not listening</strong><small id="tuneScore"></small></div>
+    </div>
+    <canvas id="pitchLane" aria-label="Your pitch against the notes of your part"></canvas>
+    <p class="hint">Use headphones, so the microphone hears only you. Gilt means in tune; red means off.</p>
+  </div>
+</section>
 
 <section class="piano-panel" id="pianoPanel" hidden aria-label="Piano">
   <canvas id="pianoCanvas"></canvas>
