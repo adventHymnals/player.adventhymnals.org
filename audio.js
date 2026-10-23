@@ -181,16 +181,37 @@ export class Engine {
     this.stemEvents = events.filter((e) => e.stem);
   }
 
-  /** Decode sung stems: list of { key: "S:1", url }. Resolves to Map key -> AudioBuffer. */
-  async loadStems(list) {
+  /**
+   * Decode sung stems: list of { key: "S:1", url }. Resolves to Map key -> AudioBuffer for the
+   * stems that arrived; a stem that fails or takes longer than `timeout` ms is left out (its
+   * voice falls back to the synth). onProgress(done, total) reports each one.
+   */
+  async loadStems(list, onProgress = () => {}, timeout = 25000) {
     this.ensure();
     this.stems = this.stems || new Map();
-    await Promise.all(list.filter((s) => !this.stems.has(s.url)).map(async (s) => {
-      const r = await fetch(s.url);
-      if (!r.ok) throw new Error(`${s.url}: ${r.status}`);
-      this.stems.set(s.url, await this.ctx.decodeAudioData(await r.arrayBuffer()));
+    const todo = [...new Set(list.map((s) => s.url))].filter((u) => !this.stems.has(u));
+    let done = 0;
+    const total = todo.length;
+    const failed = [];
+    onProgress(0, total);
+    await Promise.all(todo.map(async (url) => {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), timeout);
+      try {
+        const r = await fetch(url, { signal: ctl.signal });
+        if (!r.ok) throw new Error(String(r.status));
+        this.stems.set(url, await this.ctx.decodeAudioData(await r.arrayBuffer()));
+      } catch {
+        failed.push(url);
+      } finally {
+        clearTimeout(timer);
+        onProgress(++done, total);
+      }
     }));
-    return new Map(list.map((s) => [s.key, this.stems.get(s.url)]));
+    const map = new Map();
+    for (const s of list) if (this.stems.has(s.url)) map.set(s.key, this.stems.get(s.url));
+    map.failed = failed;
+    return map;
   }
 
   setStemBuffers(map) { this.stemBuffers = map; }

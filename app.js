@@ -427,9 +427,12 @@ async function prepareStems() {
   }
   toast("Loading the singers…", 0);
   try {
-    const bufs = await engine.loadStems(wanted);
+    const bufs = await engine.loadStems(wanted, (done, total) => {
+      if (total) toast(`Loading the singers… ${done} of ${total}. You can press play now; the synth sings until they arrive.`, 0);
+    });
     engine.setStemBuffers(bufs);
-    for (const w of wanted) stemInfo.set(w.key, { offsetSec: w.offsetSec, duration: bufs.get(w.key).duration });
+    for (const w of wanted) if (bufs.has(w.key)) stemInfo.set(w.key, { offsetSec: w.offsetSec, duration: bufs.get(w.key).duration });
+    if (bufs.failed.length) toast(`${bufs.failed.length} recording${bufs.failed.length === 1 ? "" : "s"} did not arrive (slow connection?), so the synth sings ${bufs.failed.length === 1 ? "that part" : "those parts"}. Reload to try again.`, 8000);
     const what = solfaWords ? "singing sol-fa" : "in this key and tempo";
     toast(missing.length ? `Singers ready. Synth until recorded ${what}: ${missing.join(", ")}.` : "Singers ready.", 7000, missing.length ? { label: "Record them", fn: renderSingers } : null);
     $("credit").textContent = manifest.credit || "";
@@ -507,6 +510,8 @@ async function renderAll() {
   $("stageWrap").hidden = state.view !== "presenter";
   $("pianoPanel").hidden = !state.piano || state.view === "presenter";
   $("nowbar").hidden = !state.nowbar || state.view === "presenter";
+  // the docked practice panel sits just above the words bar (or at the bottom when it is hidden)
+  document.documentElement.style.setProperty("--nowbar-h", `${$("nowbar").hidden ? 0 : $("nowbar").offsetHeight}px`);
   sheet.hidden = !isScoreView();
   $("altView").hidden = isScoreView() || state.view === "presenter";
   buildHeaders();
@@ -1061,6 +1066,7 @@ function setupPractice() {
   const b = $("practiceBtn");
   const sync = () => { panel.hidden = !state.practice; b.setAttribute("aria-pressed", String(state.practice)); };
   b.onclick = () => { state.practice = !state.practice; save("practice"); sync(); if (!state.practice) stopListening(); applyMix(); };
+  $("practiceClose").onclick = () => { state.practice = false; save("practice"); sync(); stopListening(); applyMix(); };
   sync();
   showTab(state.practiceTab);
   $("metronome").checked = state.metronome;
@@ -1196,6 +1202,8 @@ function tap() {
 
 async function playQuiz() {
   if (engine.playing) { engine.pause(); setPlaying(false); }
+  // until it is answered, the button plays the same tune again
+  if (quiz && !quiz.answered) { quiz.engine.stop(); quiz.engine.play(0); return; }
   quiz?.engine.stop();
   const tune = mysteryTune();
   const qe = new Engine();
@@ -1206,6 +1214,7 @@ async function playQuiz() {
   $("quizChoices").querySelectorAll("button").forEach((b) => b.classList.remove("right", "wrong"));
   $("quizFeedback").textContent = "Listen for the strong beat, then choose. You can tap along to help.";
   workspace.classList.add("quiz-hidden"); // no peeking at the score
+  $("quizPlay").textContent = "Play it again";
   qe.play(0);
 }
 
@@ -1221,6 +1230,7 @@ function answerQuiz(btn) {
     else if (b === btn) b.classList.add("wrong");
   });
   $("quizFeedback").textContent = `${btn.dataset.time === right ? "Yes!" : `It was ${right}.`} ${meterHint(quiz.tune.time)} Score: ${quizScore.right} of ${quizScore.asked}.`;
+  $("quizPlay").textContent = "New tune";
 }
 
 function paint(force) {
