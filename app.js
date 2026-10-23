@@ -83,12 +83,14 @@ let colors = null;
 let manifest = null; // sung stems for this hymn, if rendered
 let stemInfo = new Map(); // "S:1:0" (voice:verse:transpose) -> { offsetSec, duration } usable at the current tempo
 
-const visibleTracks = () => state.tracks.filter((t) => !state.hidden.includes(trackKey(t)));
+const tracksOfHymn = () => state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
+const visibleTracks = () => tracksOfHymn().filter((t) => !state.hidden.includes(trackKey(t)));
 const visibleVoices = () => visibleTracks().flat();
 const heard = (ch) => !(state.mute[ch] || (CH.some((c) => state.solo[c]) && !state.solo[ch]));
 const soundOf = (k) => state.voiceSounds[k] || (manifest ? "sung" : "choir");
-const anySung = () => "SATB".split("").some((k) => soundOf(k) === "sung");
-const anyPiano = () => "SATB".split("").some((k) => soundOf(k) === "piano");
+const hymnVoices = () => "SATB".split("").filter((k) => hymn?.voices[k]);
+const anySung = () => hymnVoices().some((k) => soundOf(k) === "sung");
+const anyPiano = () => hymnVoices().some((k) => soundOf(k) === "piano");
 const isScoreView = () => state.view === "tracks" || state.view === "page";
 const unfolded = () => state.verseLayout === "unfold";
 
@@ -396,7 +398,7 @@ async function prepareStems() {
   const wanted = [];
   const missing = [];
   for (const v of state.verses) {
-    for (const k of "SATB") {
+    for (const k of hymnVoices()) {
       if (soundOf(k) !== "sung") continue; // this voice is set to the choir synth or piano
       const shift = verseShift(v);
       const st = manifest.stems.find((x) => x.voice === k && x.tempo === state.tempo && (x.transpose ?? 0) === shift && x.verse === (solfaWords ? "solfa" : v));
@@ -584,7 +586,7 @@ function buildHeaders() {
     }
   });
   // hidden staves stay in the list, so they can be brought back
-  for (const t of state.tracks.filter((x) => state.hidden.includes(trackKey(x)))) {
+  for (const t of tracksOfHymn().filter((x) => state.hidden.includes(trackKey(x)))) {
     const el = document.createElement("div");
     el.className = "track is-hidden";
     el.dataset.key = trackKey(t);

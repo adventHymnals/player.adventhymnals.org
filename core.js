@@ -423,7 +423,7 @@ function rhVoicing(c, prev) {
 export function accompaniment(h, style) {
   if (style === "off") return [];
   if (style === "hymn") {
-    return "SATB".split("").flatMap((k) => h.voices[k].map((n) => ({ q: n.q, d: n.d, p: n.p, v: 0.55 })));
+    return Object.values(h.voices).flat().map((n) => ({ q: n.q, d: n.d, p: n.p, v: 0.55 }));
   }
   const out = [];
   const [num, den] = h.time;
@@ -513,7 +513,7 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
   const instAcc = accomp === "off" ? accompaniment(h, "hymn") : acc;
   const introR = instrumentalRange(h, intro);
   const interR = instrumentalRange(h, interlude);
-  const levels = Object.fromEntries("SATB".split("").map((k) => [k, dynamicLevels(h.voices[k])]));
+  const levels = Object.fromEntries(Object.keys(h.voices).map((k) => [k, dynamicLevels(h.voices[k])]));
   const accLevel = dynamicLevels(h.voices[h.lyricVoice]);
   const lv = h.voices[h.lyricVoice];
   const levelAt = (q) => { let v = accLevel[0] ?? 0.8; lv.forEach((n, i) => { if (n.q <= q + 1e-6) v = accLevel[i]; }); return v / DYNAMIC_LEVEL.mf; };
@@ -543,7 +543,7 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
     // a recording fits a verse sung wholly in one key; a key change inside the verse uses the synth
     const shifts = new Set(lv.map((n) => shiftAt(k, pass, n.q)));
     const verseShift = shifts.size === 1 ? [...shifts][0] : null;
-    for (const key of "SATB") {
+    for (const key of Object.keys(h.voices)) { // a melody-only song has just the soprano
       const stem = verseShift === null ? null : stems.get(`${key}:${verse}:${verseShift}`);
       if (stem) events.push({ t: t0 + stem.offsetSec, dur: stem.duration, ch: key, stem: `${key}:${verse}:${verseShift}`, v: 1, pass: k, q: 0, p: 0 });
       h.voices[key].forEach((n, i) => {
