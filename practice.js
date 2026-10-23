@@ -138,11 +138,16 @@ export class PitchListener {
     this.an.fftSize = 2048;
     this.buf = new Float32Array(this.an.fftSize);
     this.src.connect(this.an);
+    // some browsers only run nodes that lead to the speakers: connect through a silent gain
+    this.mute = ctx.createGain();
+    this.mute.gain.value = 0;
+    this.an.connect(this.mute).connect(ctx.destination);
   }
 
   stop() {
     this.stream?.getTracks().forEach((t) => t.stop());
     this.src?.disconnect();
+    this.mute?.disconnect();
     this.stream = null;
   }
 
@@ -156,7 +161,7 @@ export class PitchListener {
     let rms = 0;
     for (let i = 0; i < x.length; i++) rms += x[i] * x[i];
     rms = Math.sqrt(rms / x.length);
-    if (rms < 0.012) return null;
+    if (rms < 0.004) return null; // quiet: nobody is singing
     const sr = this.ctx.sampleRate;
     const minLag = Math.floor(sr / 1100); // about C6
     const maxLag = Math.floor(sr / 70);   // about C#2
@@ -176,7 +181,7 @@ export class PitchListener {
     for (let lag = minLag + 1; lag <= maxLag; lag++) {
       if (nsdf[lag] > nsdf[lag - 1] && nsdf[lag] >= nsdf[lag + 1] && nsdf[lag] > 0.88 * peakMax) { best = nsdf[lag]; bestLag = lag; break; }
     }
-    if (best < 0.6 || !bestLag) return null;
+    if (best < 0.5 || !bestLag) return null; // not clearly pitched (breath, consonants, noise)
     // parabolic refinement between neighbouring lags
     const a = nsdf[bestLag - 1];
     const b = nsdf[bestLag];
@@ -184,6 +189,14 @@ export class PitchListener {
     const shift = (a - c) / (2 * (a - 2 * b + c) || 1);
     return midiOf(sr / (bestLag + shift));
   }
+}
+
+const NAMES = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
+/** "A4, 12 cents sharp" style name of a sung pitch. */
+export function noteName(m) {
+  const n = Math.round(m);
+  const cents = Math.round((m - n) * 100);
+  return `${NAMES[((n % 12) + 12) % 12]}${Math.floor(n / 12) - 1}${Math.abs(cents) > 5 ? `, ${Math.abs(cents)} cents ${cents > 0 ? "sharp" : "flat"}` : ""}`;
 }
 
 /** Cents from target, folding octaves away when anyOctave is set. */
@@ -199,7 +212,9 @@ export function drawLane(g, w, h, now, notes, trace, colors, voiceColor, anyOcta
   const ahead = 4;
   const xOf = (t) => ((t - (now - past)) / (past + ahead)) * w;
   const near = notes.filter((n) => n.t + n.dur > now - past && n.t < now + ahead);
-  const ps = near.map((n) => n.p);
+  // the range covers your part's notes and what you have just sung (folded to the part when any octave counts)
+  const recent = trace.filter((x) => x.p !== null && x.t > now - past).map((x) => (anyOctave && x.target !== null ? x.p + 12 * Math.round((x.target - x.p) / 12) : x.p));
+  const ps = [...near.map((n) => n.p), ...recent];
   const lo = (ps.length ? Math.min(...ps) : 60) - 4;
   const hi = (ps.length ? Math.max(...ps) : 72) + 4;
   const yOf = (p) => h - 14 - ((p - lo) / Math.max(1, hi - lo)) * (h - 28);
@@ -225,7 +240,16 @@ export function drawLane(g, w, h, now, notes, trace, colors, voiceColor, anyOcta
     }
   }
   g.globalAlpha = 1;
-  // your voice: gilt when within a quarter-tone of the note, red when off
+  // your voice: gilt when within a quarter-tone of the note, red when off, blue-grey with no note to match
+  const colourOf = (x) => (x.target === null ? colors.B : Math.abs(x.off) <= 50 ? colors.gilt : colors.S);
+  const fold = (x) => (anyOctave && x.target !== null ? x.p + 12 * Math.round((x.target - x.p) / 12) : x.p);
+  for (const x of trace) {
+    if (x.p === null || x.t < now - past) continue;
+    g.fillStyle = colourOf(x);
+    g.beginPath();
+    g.arc(xOf(x.t), yOf(fold(x)), 2.6, 0, Math.PI * 2);
+    g.fill();
+  }
   for (let i = 1; i < trace.length; i++) {
     const a = trace[i - 1];
     const b = trace[i];
@@ -237,7 +261,7 @@ export function drawLane(g, w, h, now, notes, trace, colors, voiceColor, anyOcta
       pa = fold(pa);
       pb = fold(pb);
     }
-    g.strokeStyle = b.target === null ? colors.muted : Math.abs(b.off) <= 50 ? colors.gilt : colors.S;
+    g.strokeStyle = colourOf(b);
     g.lineWidth = 3;
     g.beginPath();
     g.moveTo(xOf(a.t), yOf(pa));

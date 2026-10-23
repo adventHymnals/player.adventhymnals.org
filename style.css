@@ -466,3 +466,4 @@ body:has(#practicePanel:not([hidden])) .workspace { padding-bottom: 46vh; }
 
 /* messages stay clear of the docked practice panel */
 body:has(#practicePanel:not([hidden])) .toast { bottom: calc(var(--nowbar-h, 74px) + 54vh); }
+.pr-conduct-hint { grid-column: 1; max-width: 300px; margin-top: -6px; }

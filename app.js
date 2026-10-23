@@ -9,7 +9,7 @@ import { Waterfall } from "./waterfall.js";
 import { Presenter } from "./presenter.js";
 import { Studio } from "./studio.js";
 import { exportPdf } from "./pdfexport.js";
-import { Conductor, feel, mysteryTune, meterHint, PitchListener, centsOff, drawLane } from "./practice.js";
+import { Conductor, feel, mysteryTune, meterHint, PitchListener, centsOff, drawLane, noteName } from "./practice.js";
 
 const $ = (id) => document.getElementById(id);
 const workspace = $("workspace");
@@ -1129,21 +1129,25 @@ function drawPractice() {
     .map((e) => ({ t: e.t, dur: e.dur, p: e.p, label: hymn.solfa?.[voice]?.[e.i] || "" }));
   // what you sing reaches the microphone a little after the sound left the speakers
   const lag = engine.ctx ? (engine.ctx.outputLatency || 0) + (engine.ctx.baseLatency || 0) + 0.03 : 0;
-  const now = engine.now();
+  // while the music plays, your voice is drawn against its clock; stopped, the lane is a tuner
+  const tuner = !engine.playing;
+  if (tuner !== drawPractice.tuner) { trace = []; drawPractice.tuner = tuner; }
+  const now = tuner ? window.performance.now() / 1000 : engine.now(); // window.: core.js exports its own performance()
   if (listener?.on && (frame.tick = (frame.tick || 0) + 1) % 2 === 0) {
     const sung = listener.read();
-    const t = now - lag;
-    const target = notes.find((n) => n.t <= t && t < n.t + n.dur) || null;
+    const t = tuner ? now : now - lag;
+    const target = tuner ? null : notes.find((n) => n.t <= t && t < n.t + n.dur) || null;
     const off = sung !== null && target ? centsOff(sung, target.p, state.anyOctave) : null;
     trace.push({ t, p: sung, target: target ? target.p : null, off });
     while (trace.length && trace[0].t < now - 8) trace.shift();
     const loc = engine.playing ? locate(perf, t) : null;
     if (loc && loc.pass !== tuneTally.pass) tuneTally = { inTune: 0, sung: 0, pass: loc.pass };
     if (engine.playing && target && sung !== null) { tuneTally.sung++; if (Math.abs(off) <= 50) tuneTally.inTune++; }
-    $("pitchReadout").textContent = sung === null ? "Listening…" : !target ? "Rest" : describeCents(off);
+    $("pitchReadout").textContent = sung === null ? (tuner ? "Sing a note, or press play and sing your part" : "Listening…")
+      : tuner ? `You're singing ${noteName(sung)}` : !target ? `Rest (you're singing ${noteName(sung)})` : describeCents(off);
     $("tuneScore").textContent = tuneTally.sung > 20 ? `In tune ${Math.round((100 * tuneTally.inTune) / tuneTally.sung)}% of this verse` : "";
   }
-  drawLane(g, w, h, now, notes, trace, colors, colors[voice], state.anyOctave);
+  drawLane(g, w, h, now, tuner ? [] : notes, trace, colors, colors[voice], state.anyOctave);
 }
 
 function describeCents(off) {
@@ -1158,6 +1162,7 @@ async function startListening() {
   engine.ensure();
   listener = listener || new PitchListener();
   try {
+    await engine.ctx.resume(); // the audio engine sleeps until something wakes it
     await listener.start(engine.ctx);
   } catch {
     toast("The microphone is not available. Allow it for this page and try again.", 6000);
