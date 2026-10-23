@@ -93,6 +93,7 @@ button, select, input { font: inherit; color: inherit; }
 
 /* ---- workspace: track headers beside the staves ---- */
 .workspace { display: grid; grid-template-columns: var(--head-w) minmax(0, 1fr); align-items: start; min-height: 300px; }
+.workspace.heads-collapsed { grid-template-columns: 34px minmax(0, 1fr); }
 .headers { position: relative; border-right: 1px solid var(--rule); background: var(--paper-2); align-self: stretch; }
 .viewport { position: relative; min-width: 0; }
 .workspace[data-view="tracks"] .viewport { overflow-x: auto; overflow-y: hidden; scrollbar-color: var(--rule) transparent; }
@@ -123,7 +124,10 @@ button, select, input { font: inherit; color: inherit; }
 .loopbox.pending { border-style: dashed; }
 
 /* the playhead: a gilt ribbon bookmark */
-.ribbon { position: absolute; width: 4px; margin-left: -2px; background: var(--gilt); border-radius: 0 0 2px 2px; pointer-events: none; opacity: 0.9; }
+.ribbon { position: absolute; width: 4px; margin-left: -2px; background: var(--gilt); border-radius: 0 0 2px 2px; opacity: 0.9; cursor: ew-resize; touch-action: none; z-index: 5; }
+/* a wider invisible grip, so the thin line is easy to catch */
+.ribbon::before { content: ""; position: absolute; top: 0; bottom: 0; left: -9px; width: 22px; }
+.ribbon:hover, .ribbon.dragging { opacity: 1; width: 6px; margin-left: -3px; }
 .ribbon::after {
   content: ""; position: absolute; bottom: -9px; left: 0;
   border: solid var(--gilt); border-width: 0 2px 9px 2px; border-bottom-color: transparent;
@@ -186,7 +190,7 @@ button, select, input { font: inherit; color: inherit; }
 
 /* now: chord and the line being sung */
 .nowbar {
-  position: sticky; bottom: 0; z-index: 15; display: grid; grid-template-columns: var(--head-w) 1fr; align-items: center;
+  position: sticky; bottom: 0; z-index: 15; display: grid; grid-template-columns: 236px 1fr; align-items: center;
   background: var(--paper); border-top: 1px solid var(--rule); min-height: 74px;
 }
 .chord-box { padding: 6px 14px; border-right: 1px solid var(--rule); align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
@@ -380,3 +384,34 @@ body.full-page .stage-wrap:hover .stage-exit, body.full-page .stage-exit:focus-v
 .sync-mark::after { content: "syn."; position: absolute; left: 50%; bottom: 9px; transform: translateX(-50%); font: italic 600 11px var(--serif); color: var(--gilt); }
 .sf-n.sync { text-decoration: underline wavy var(--gilt); text-underline-offset: 4px; }
 .btn-row { flex-wrap: wrap; justify-content: flex-start; }
+
+/* clear the selection */
+.loop-clear {
+  position: absolute; width: 22px; height: 22px; border-radius: 50%; padding: 0; z-index: 6; pointer-events: auto; cursor: pointer;
+  border: 1px solid var(--gilt); background: var(--paper); color: var(--gilt); font: 700 15px/1 var(--sans);
+}
+.loop-clear:hover { background: var(--gilt); color: var(--paper); }
+
+/* fold the sidebar: a small round tab hanging on the sidebar's right edge */
+.headers { overflow: visible; }
+.heads-toggle {
+  position: absolute; top: 10px; right: -13px; z-index: 9; display: grid; place-items: center; width: 26px; height: 26px;
+  margin: 0; padding: 0; border: 1px solid var(--rule); border-radius: 50%; background: var(--paper); color: var(--cloth); cursor: pointer;
+  box-shadow: 0 1px 4px rgba(30, 42, 71, 0.12);
+}
+.heads-toggle svg { width: 15px; height: 15px; }
+.heads-toggle:hover { border-color: var(--cloth); }
+.heads-collapsed .heads-rail { padding-top: 46px; }
+.heads-rail { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.heads-rail span {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--c); color: var(--paper);
+  display: grid; place-items: center; font: 700 12px var(--serif);
+}
+
+/* small tidy scrollbars everywhere */
+* { scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); background-clip: padding-box; border: 2px solid transparent; }
+::-webkit-scrollbar-corner { background: transparent; }

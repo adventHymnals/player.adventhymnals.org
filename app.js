@@ -57,6 +57,7 @@ const state = {
   verseLayout: store.get("verseLayout", "stack"), // "stack": verses under one another; "unfold": written out
   presenterShows: store.get("presenterShows", "score"), // or "words" for projection
   showSync: store.get("showSync", false),
+  headsCollapsed: store.get("headsCollapsed", false),
 };
 let hymnWritten = null; // the hymn as transcribed; `hymn` may be a rhythm variant of it
 // key changes made while playing: from section k at score position q, move by delta semitones
@@ -555,6 +556,22 @@ function voiceRow(k, single) {
 
 function buildHeaders() {
   headersEl.innerHTML = "";
+  // fold the sidebar into a slim rail of voice colours, or open it again
+  workspace.classList.toggle("heads-collapsed", state.headsCollapsed);
+  const fold = document.createElement("button");
+  fold.className = "heads-toggle";
+  fold.setAttribute("aria-label", state.headsCollapsed ? "Show the track controls" : "Hide the track controls");
+  fold.title = fold.getAttribute("aria-label");
+  fold.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${state.headsCollapsed ? "M9 6l6 6-6 6" : "M15 6l-6 6 6 6"}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  fold.onclick = () => { state.headsCollapsed = !state.headsCollapsed; save("headsCollapsed"); renderAll(); };
+  headersEl.append(fold);
+  if (state.headsCollapsed) {
+    const rail = document.createElement("div");
+    rail.className = "heads-rail";
+    rail.innerHTML = visibleTracks().flat().map((k) => `<span style="--c: var(--${k})" title="${VOICES[k].name}">${k}</span>`).join("");
+    headersEl.append(rail);
+    return;
+  }
   const tracks = visibleTracks();
   tracks.forEach((t, i) => {
     const key = trackKey(t);
@@ -681,7 +698,8 @@ function splitTrack(key) {
 
 /** Line the headers up with the staves of a system (tracks: the only one; page: the one playing). */
 function positionHeaders(system) {
-  const items = [...headersEl.children];
+  const items = [...headersEl.children].filter((el) => !el.classList.contains("heads-toggle"));
+  if (state.headsCollapsed) return;
   const aligned = isScoreView() && system;
   headersEl.classList.toggle("stacked", !aligned);
   if (!aligned) {
@@ -885,6 +903,11 @@ function applyLoop() {
   drawLoopBoxes();
 }
 
+function clearLoop() {
+  setLoop(state.loop.from, state.loop.to, false);
+  toast("Selection cleared.", 2000);
+}
+
 function setLoop(from, to, on = true) {
   const lo = Math.max(1, Math.min(from, to));
   const hi = Math.min(hymn.measures, Math.max(from, to));
@@ -907,6 +930,18 @@ function drawLoopBoxes(pending) {
     Object.assign(d.style, { left: `${b.x}px`, top: `${b.y - 10}px`, width: `${b.w}px`, height: `${b.h + 20}px` });
     layer.append(d);
     if (pending) return;
+    if (i === boxes.length - 1) {
+      const x = document.createElement("button");
+      x.className = "loop-clear";
+      x.textContent = "×";
+      x.title = "Clear the selection (Esc)";
+      x.setAttribute("aria-label", "Clear the selection");
+      x.style.left = `${b.x + b.w - 11}px`;
+      x.style.top = `${b.y - 22}px`;
+      x.addEventListener("pointerdown", (e) => e.stopPropagation());
+      x.onclick = clearLoop;
+      layer.append(x);
+    }
     // grab either edge to widen or narrow the loop
     for (const edge of [i === 0 ? "from" : null, i === boxes.length - 1 ? "to" : null].filter(Boolean)) {
       const hnd = document.createElement("div");
@@ -1047,7 +1082,10 @@ function paint(force) {
 
   if (!loc || sq === null) {
     view.clear();
-    ribbon.hidden = true;
+    // stopped (or counting in): keep the playhead at the start, so it can be dragged
+    const start = !engine.playing && !loc ? view.playhead(0) : null;
+    if (start) placeRibbon(start);
+    else ribbon.hidden = true;
   } else {
     view.highlight(sq, verseN);
     const cj = ci + copy * hymn.chords.length;
@@ -1055,15 +1093,46 @@ function paint(force) {
     $("lane").querySelectorAll(".blk").forEach((b, i) => b.classList.toggle("sounding", i === cj));
     const ph = view.playhead(sq);
     if (ph) {
-      ribbon.hidden = false;
-      ribbon.style.left = `${ph.x}px`;
-      ribbon.style.top = `${ph.top - 8}px`;
-      ribbon.style.height = `${ph.height + 16}px`;
+      placeRibbon(ph);
       follow(ph);
     }
   }
   if (state.piano) drawPianoPanel(t);
 }
+
+function placeRibbon(ph) {
+  ribbon.hidden = false;
+  ribbon.style.left = `${ph.x}px`;
+  ribbon.style.top = `${ph.top - 8}px`;
+  ribbon.style.height = `${ph.height + 16}px`;
+}
+
+// Drag the playhead to where playing should continue. While playing, it pauses during the
+// drag and carries on from the new place when released.
+let ribbonDrag = null;
+ribbon.addEventListener("pointerdown", (e) => {
+  if (e.button !== 0) return;
+  e.preventDefault();
+  e.stopPropagation(); // not a loop selection
+  ribbon.setPointerCapture(e.pointerId);
+  ribbonDrag = { wasPlaying: engine.playing };
+  if (engine.playing) { engine.pause(); setPlaying(false); }
+  ribbon.classList.add("dragging");
+});
+ribbon.addEventListener("pointermove", (e) => {
+  if (!ribbonDrag) return;
+  const r = $("score").getBoundingClientRect();
+  engine.pausedAt = timeOfScoreQ(view.qAt(e.clientX - r.left, e.clientY - r.top));
+  paint(true);
+});
+ribbon.addEventListener("pointerup", () => {
+  if (!ribbonDrag) return;
+  const resume = ribbonDrag.wasPlaying;
+  ribbonDrag = null;
+  ribbon.classList.remove("dragging");
+  if (resume) togglePlay();
+  else toast(`Playing will start from ${$("where").textContent.toLowerCase()}.`, 2500);
+});
 
 function follow(ph) {
   if (state.view === "tracks") {
@@ -1307,7 +1376,11 @@ function bindControls() {
   $("pageBtn").onclick = enterFullPage;
   $("pageExit").onclick = leaveFullPage;
   $("windowBtn").onclick = openProjector;
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") leaveFullPage(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (document.body.classList.contains("full-page")) leaveFullPage();
+    else if (state.loop.on && !$("optionsMenu").open && !$("studio").open) clearLoop();
+  });
   $("nowbarToggle").checked = state.nowbar;
   $("nowbarToggle").onchange = (e) => { state.nowbar = e.target.checked; save("nowbar"); $("nowbar").hidden = !state.nowbar || state.view === "presenter"; };
   for (const id of ["intro", "interlude"]) {

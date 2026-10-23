@@ -165,6 +165,23 @@ export class ScoreView {
     return [...out.values()];
   }
 
+  /** The score position under a point (content coords): the reverse of playhead(). */
+  qAt(x, y) {
+    if (!this.systems.length) return 0;
+    // the system under the point, or the nearest one above or below it
+    const s = this.systems.reduce((best, sys) => {
+      const d = y < sys.box.y ? sys.box.y - y : y > sys.box.y + sys.box.h ? y - sys.box.y - sys.box.h : 0;
+      return !best || d < best.d ? { sys, d } : best;
+    }, null).sys;
+    const a = s.anchors;
+    if (!a.length) return s.qStart;
+    if (x <= a[0].x) return a[0].q;
+    for (let i = 0; i < a.length - 1; i++) {
+      if (x < a[i + 1].x) return a[i].q + ((a[i + 1].q - a[i].q) * (x - a[i].x)) / Math.max(1e-6, a[i + 1].x - a[i].x);
+    }
+    return a[a.length - 1].q - 1e-3;
+  }
+
   /** x position (content coords) of score time q inside the single tracks-mode system. */
   xAt(q) { return this.playhead(q)?.x ?? 0; }
 }
