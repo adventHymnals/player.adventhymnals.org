@@ -1,0 +1,132 @@
+{
+ "hymn": "SDAH-100",
+ "tempo": 96.0,
+ "sampleRate": 44100,
+ "credit": "Singing: Katyusha, Keiro Revenant and Liam Thorne from LUNAI Project (DiffSinger, CC BY-NC-SA 4.0); synthesis code after sjespersen/singer",
+ "stems": [
+  {
+   "voice": "S",
+   "verse": 1,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/S-v1-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "A",
+   "verse": 1,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/A-v1-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "T",
+   "verse": 1,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/T-v1-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "B",
+   "verse": 1,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/B-v1-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "S",
+   "verse": 2,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/S-v2-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "A",
+   "verse": 2,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/A-v2-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "T",
+   "verse": 2,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/T-v2-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "B",
+   "verse": 2,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/B-v2-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "S",
+   "verse": 3,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/S-v3-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "A",
+   "verse": 3,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/A-v3-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "T",
+   "verse": 3,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/T-v3-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "B",
+   "verse": 3,
+   "tempo": 96.0,
+   "url": "audio/SDAH-100/B-v3-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "S",
+   "verse": "solfa",
+   "tempo": 96.0,
+   "transpose": 0,
+   "url": "audio/SDAH-100/S-solfa-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "A",
+   "verse": "solfa",
+   "tempo": 96.0,
+   "transpose": 0,
+   "url": "audio/SDAH-100/A-solfa-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "T",
+   "verse": "solfa",
+   "tempo": 96.0,
+   "transpose": 0,
+   "url": "audio/SDAH-100/T-solfa-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "B",
+   "verse": "solfa",
+   "tempo": 96.0,
+   "transpose": 0,
+   "url": "audio/SDAH-100/B-solfa-t96.mp3",
+   "offsetSec": -0.3
+  },
+  {
+   "voice": "B",
+   "verse": 1,
+   "tempo": 96.0,
+   "transpose": 2,
+   "url": "audio/SDAH-100/B-v1-t96-k+2.mp3",
+   "offsetSec": -0.3
+  }
+ ]
+}

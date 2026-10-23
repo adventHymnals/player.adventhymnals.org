@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hymn Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="number" id="hymnNumber">&nbsp;</div>
+  <div class="titles">
+    <h1 id="hymnTitle">Loading hymn</h1>
+    <p class="credits" id="hymnCredits"></p>
+  </div>
+  <label class="picker">
+    <span class="visually-hidden">Choose a hymn</span>
+    <select id="hymnPicker"></select>
+  </label>
+</header>
+
+<div class="toolbar" role="toolbar" aria-label="Playback and view">
+  <div class="transport">
+    <button class="play" id="playBtn" aria-label="Play" title="Play or pause (space)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M7 4.5v15l13-7.5z"/></svg>
+    </button>
+    <button class="stop" id="stopBtn" aria-label="Stop and go to the beginning" title="Stop and go to the beginning">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5"/></svg>
+    </button>
+    <div class="where" id="where">Ready</div>
+  </div>
+
+  <label class="tool tempo" title="Tempo in beats a minute">
+    <span id="tempoLabel">96 a minute</span>
+    <input type="range" id="tempo" min="40" max="160" step="1" value="96" aria-label="Tempo">
+  </label>
+
+  <div class="tool key" role="group" aria-label="Key">
+    <button class="ghost kb" id="keyDown" aria-label="Down a semitone" title="Down a semitone. While playing, the key changes at the next bar.">−</button>
+    <button class="key-label" id="keyLabel" title="The written key">D♭</button>
+    <button class="ghost kb" id="keyUp" aria-label="Up a semitone" title="Up a semitone. While playing, the key changes at the next bar.">+</button>
+  </div>
+
+  <div class="tool loop">
+    <button class="toggle" id="loopBtn" aria-pressed="false" title="Repeat a range of bars. Drag across bars in the score to choose them.">Loop</button>
+    <label><span class="visually-hidden">Loop from bar</span><input type="number" id="loopFrom" min="1" value="1"></label>
+    <span class="dash">to</span>
+    <label><span class="visually-hidden">Loop to bar</span><input type="number" id="loopTo" min="1" value="4"></label>
+  </div>
+
+  <div class="tool views" role="group" aria-label="View">
+    <button class="seg" data-view="tracks" aria-pressed="true">Tracks</button>
+    <button class="seg" data-view="page" aria-pressed="false">Page</button>
+    <button class="seg" data-view="solfa" aria-pressed="false" title="Tonic sol-fa notation">Sol-fa</button>
+    <button class="seg" data-view="words" aria-pressed="false" title="Words only, with chords when Chords is on">Words</button>
+    <button class="seg" data-view="presenter" aria-pressed="false">Presenter</button>
+  </div>
+
+  <div class="tool">
+    <button class="toggle" id="chordsBtn" aria-pressed="false">Chords</button>
+    <button class="toggle" id="pianoBtn" aria-pressed="false">Piano</button>
+    <button class="ghost studio-btn" id="studioBtn" title="Place the singers on a stage: further back is softer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2.6"/><path d="M3 20c0-6 1.8-9 4-9s4 3 4 9z"/><circle cx="17" cy="6" r="2.6"/><path d="M13 20c0-6 1.8-9 4-9s4 3 4 9z"/></svg>
+      Studio
+    </button>
+  </div>
+
+  <details class="menu" id="optionsMenu">
+    <summary>Options</summary>
+    <div class="menu-panel">
+      <section class="opt">
+        <h4>Words under the notes</h4>
+        <div class="segmented" role="radiogroup" aria-label="Words under the notes">
+          <label><input type="radio" name="wordsMode" value="all"><span>All verses</span></label>
+          <label><input type="radio" name="wordsMode" value="current"><span>Sung verse</span></label>
+          <label><input type="radio" name="wordsMode" value="solfa"><span>Sol-fa</span></label>
+          <label><input type="radio" name="wordsMode" value="none"><span>None</span></label>
+        </div>
+        <p class="hint" id="wordsHint"></p>
+        <label class="switch-row"><span><strong>Write the verses out</strong><small>One long piece, verse after verse, instead of verses stacked under one staff.</small></span><input type="checkbox" class="switch" id="verseUnfold"></label>
+        <label class="switch-row"><span><strong>Line being sung</strong><small>Show it large in a bar below the score.</small></span><input type="checkbox" class="switch" id="nowbarToggle" checked></label>
+        <label class="row"><span>The presenter shows</span>
+          <select id="presenterShows"><option value="score">The score</option><option value="words">Words only, for projecting</option></select>
+        </label>
+      </section>
+      <section class="opt">
+        <h4>Singing</h4>
+        <div class="row"><span>Verses to sing</span><div class="chips" id="verses"></div></div>
+        <p class="hint">Choose how each voice sounds in its row on the left: a singer, a choir aah, or piano.</p>
+        <div class="row sung-row" id="sungRow"><span id="sungStatus"></span><button class="ghost" id="renderSingers" title="Record the singers at the current tempo, key and verses (about 1½ minutes per voice and verse)">Record at this tempo</button></div>
+        <label class="switch-row"><span><strong>Count in</strong><small>One bar of clicks before the music starts.</small></span><input type="checkbox" class="switch" id="countIn" checked></label>
+      </section>
+      <section class="opt">
+        <h4>Piano before and between verses</h4>
+        <p class="hint">Music played on the accompaniment while the singers rest.</p>
+        <label class="row"><span>Introduction, before verse 1</span><select id="intro"></select></label>
+        <label class="row"><span>Interlude, between verses</span><select id="interlude"></select></label>
+      </section>
+      <section class="opt">
+        <h4>Rhythm</h4>
+        <label class="switch-row"><span><strong>Show syncopation</strong><small>Marks notes that start off the beat and are held through a stronger beat.</small></span><input type="checkbox" class="switch" id="showSync"></label>
+        <div class="row btn-row"><button class="ghost" id="addSync">Add syncopation to bars 1 to 4</button><button class="ghost" id="restoreRhythm" hidden>Back to the written rhythm</button></div>
+        <p class="hint">Uses the bars chosen for the loop. The note on beat 2 comes half a beat early and is held across the beat, in all four voices.</p>
+      </section>
+      <section class="opt">
+        <h4>Key</h4>
+        <label class="row"><span>Last verse</span>
+          <select id="lastVerseUp"><option value="0">Same key as the others</option><option value="1">Raised a half step</option><option value="2">Raised a whole step</option></select>
+        </label>
+        <p class="hint">A lift for the final verse. To move the whole hymn, use − and + in the toolbar; while playing they change key at the next bar.</p>
+      </section>
+      <section class="opt">
+        <h4>Score size</h4>
+        <div class="zoom"><button class="ghost" id="zoomOut" aria-label="Smaller score">−</button><button class="ghost" id="zoomIn" aria-label="Larger score">+</button></div>
+      </section>
+    </div>
+  </details>
+
+  <div class="tool files">
+    <button class="icon-btn" id="importBtn" aria-label="Import a hymn from a PDF" data-tip="Import a hymn from a PDF or image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v7m-3-3l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <input type="file" id="importFile" accept="application/pdf,image/png,image/jpeg" hidden>
+    <button class="icon-btn" id="exportBtn" aria-label="Export the score as a PDF" data-tip="Save the score, as shown, to a PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 17v-7m-3 3l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <span class="tool-sep" aria-hidden="true"></span>
+    <button class="icon-btn" id="fullBtn" aria-label="Presenter full screen" data-tip="Presenter full screen, for a projector"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <button class="icon-btn" id="pageBtn" aria-label="Presenter filling this window" data-tip="Presenter filling this window (Esc to leave)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="6" y="8" width="12" height="8" fill="currentColor" opacity="0.35"/></svg></button>
+    <button class="icon-btn" id="windowBtn" aria-label="Presenter in its own window" data-tip="Presenter in its own window, to drag onto the projector"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 4h9v9M20 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <span class="tool-sep" aria-hidden="true"></span>
+    <button class="icon-btn rec" id="recordBtn" aria-label="Record a video" data-tip="Record the presenter to a video"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.6" fill="currentColor"/></svg></button>
+  </div>
+</div>
+
+<main class="workspace" id="workspace" data-view="tracks">
+  <aside class="headers" id="headers" aria-label="Tracks"></aside>
+  <div class="viewport" id="viewport">
+    <div class="sheet" id="sheet">
+      <div class="score" id="score"><p class="status">Preparing the score…</p></div>
+      <div class="loopbox-layer" id="loopLayer"></div>
+      <div class="sync-layer" id="syncLayer"></div>
+      <div class="ribbon" id="ribbon" hidden></div>
+    </div>
+    <div class="lane" id="lane" aria-label="Chords"></div>
+    <div class="alt-view" id="altView" hidden></div>
+  </div>
+  <div class="stage-wrap" id="stageWrap" hidden>
+    <canvas id="stage" aria-label="Presenter view"></canvas>
+    <button class="stage-exit" id="pageExit" aria-label="Leave full page">Leave full page (Esc)</button>
+  </div>
+</main>
+
+<section class="piano-panel" id="pianoPanel" hidden aria-label="Piano">
+  <canvas id="pianoCanvas"></canvas>
+</section>
+
+<footer class="nowbar" id="nowbar">
+  <div class="chord-box"><div class="chord-now" id="chordNow"></div><div class="chord-next" id="chordNext"></div></div>
+  <div class="lines"><p class="line-now" id="lineNow"></p><p class="line-next" id="lineNext"></p></div>
+</footer>
+<p class="copyright"><span id="copyright"></span> <span id="credit"></span></p>
+
+<dialog class="studio" id="studio" aria-labelledby="studioTitle">
+  <div class="studio-head">
+    <h2 id="studioTitle">Studio</h2>
+    <p>Drag a singer back to make them softer, forward to make them louder, and sideways to move them left or right.</p>
+  </div>
+  <svg class="stage" role="group" aria-label="Stage"></svg>
+  <div class="studio-actions">
+    <button class="ghost" id="studioReset">Put everyone back</button>
+    <button class="play-text" id="studioClose">Done</button>
+  </div>
+</dialog>
+
+<div class="measure-host" id="measureHost" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/verovio@6.2.0/dist/verovio-toolkit-wasm.js" defer></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
