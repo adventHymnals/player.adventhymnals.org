@@ -1527,6 +1527,36 @@ async function doImport(file) {
   }
 }
 
+/** Turn a recording (audio or video) into a hymn, on the local server. */
+async function doImportAudio(file) {
+  toast(`Sending ${file.name}…`, 0);
+  let res;
+  try {
+    res = await fetch(`api/import-audio?name=${encodeURIComponent(file.name)}`, { method: "POST", body: file });
+  } catch {
+    toast("Importing a recording needs the hymn server on this computer (python3 server.py).", 7000);
+    return;
+  }
+  if (res.status === 404 || res.status === 405 || res.status === 501) { toast("Importing a recording needs the hymn server on this computer (python3 server.py).", 7000); return; }
+  const job = await res.json().catch(() => ({}));
+  if (!res.ok) { toast(job.error || "The recording could not be sent.", 8000); return; }
+  for (;;) {
+    await new Promise((r) => setTimeout(r, 4000));
+    let s;
+    try { s = await (await fetch(`api/import-audio/${job.id}`)).json(); } catch { continue; }
+    if (s.status === "done") {
+      await loadList();
+      $("hymnPicker").value = s.hymn;
+      location.hash = s.hymn;
+      await loadHymn(hymnList.find((x) => x.id === s.hymn));
+      toast("Transcribed. Listen and compare with the recording; expect to correct some notes and words.", 9000);
+      return;
+    }
+    if (s.status === "error") { toast(`The recording could not be transcribed: ${s.error}`, 10000); return; }
+    toast(s.message || "Transcribing the recording…", 0);
+  }
+}
+
 // ---- controls ------------------------------------------------------------
 
 function bindControls() {
@@ -1617,6 +1647,8 @@ function bindControls() {
   document.addEventListener("click", (e) => { const m = $("optionsMenu"); if (m.open && !m.contains(e.target)) m.open = false; });
 
   $("importBtn").onclick = () => $("importFile").click();
+  $("importAudioBtn").onclick = () => $("importAudioFile").click();
+  $("importAudioFile").onchange = (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) doImportAudio(f); };
   $("importFile").onchange = (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) doImport(f); };
   $("exportBtn").onclick = doExport;
   $("recordBtn").onclick = startRecording;
