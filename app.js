@@ -1761,6 +1761,21 @@ window.AHStudio = {
     const b = document.querySelector(`.views .seg[data-view="${v}"]`);
     if (b) b.click(); else { state.view = v; save("view"); renderAll(); }
   },
+  /** Switch to another hymn without reloading the page. False when the Studio doesn't have it. */
+  async open(id, v) {
+    const entry = hymnList.find((x) => x.id === id);
+    if (!entry) return false;
+    if (hymn?.id !== id) {
+      stopPlayback();
+      $("hymnPicker").value = id;
+      history.replaceState(null, "", `${location.pathname}${location.search}#${id}`);
+      await loadHymn(entry);
+    }
+    if (v) this.view(v);
+    return true;
+  },
+  /** The hymns the Studio can play. */
+  hymns() { return JSON.stringify(hymnList.map((x) => x.id)); },
   toggle() { return togglePlay(); },
   stop() { stopPlayback(); },
   setMute(ch, on) { state.mute[ch] = !!on; save("mute"); applyMix(); buildHeaders(); },
