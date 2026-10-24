@@ -307,7 +307,9 @@ function verovioReady() {
 
 let hymnList = [];
 async function loadList() {
-  hymnList = await (await fetch(`data/index.json?${Date.now()}`)).json();
+  // fresh when online; the cached copy when not (the Android app plays offline what it played before)
+  const res = await fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
+  hymnList = await res.json();
   $("hymnPicker").innerHTML = hymnList.map((x) => `<option value="${x.id}">${x.book} ${x.number}, ${x.title}</option>`).join("");
 }
 
