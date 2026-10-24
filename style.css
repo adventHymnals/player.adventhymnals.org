@@ -467,3 +467,21 @@ body:has(#practicePanel:not([hidden])) .workspace { padding-bottom: 46vh; }
 /* messages stay clear of the docked practice panel */
 body:has(#practicePanel:not([hidden])) .toast { bottom: calc(var(--nowbar-h, 74px) + 54vh); }
 .pr-conduct-hint { grid-column: 1; max-width: 300px; margin-top: -6px; }
+
+/* A hymn the site asked for that has no score yet */
+.missing-note { max-width: 60ch; margin: 40px auto; padding: 0 20px; font: 17px/1.55 var(--serif, Georgia, serif); }
+.missing-note h2 { font-size: 24px; margin: 0 0 10px; }
+.missing-note ul { padding-left: 20px; }
+body.missing > :not(.masthead, .missing-note, script) { display: none !important; }
+
+/* ?embed: the compact player inside a hymn page */
+body.embed .masthead .picker,
+body.embed .toolbar .loop, body.embed .toolbar .views, body.embed .toolbar .tool:has(#chordsBtn),
+body.embed #optionsMenu, body.embed .toolbar .files { display: none !important; }
+body.embed .masthead { padding-top: 8px; padding-bottom: 6px; }
+body.embed .masthead h1 { font-size: 20px; }
+body.embed .masthead .credits { display: none; }
+body.embed .toolbar { flex-wrap: wrap; gap: 8px; }
+.embed-out { margin-left: auto; align-self: center; font: 600 14px var(--sans); color: inherit; text-decoration: none; padding: 7px 12px; border: 1px solid currentColor; border-radius: 999px; opacity: .85; }
+.embed-out:hover { opacity: 1; }
+body.embed.framed .masthead { display: none; }

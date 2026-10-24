@@ -21,7 +21,10 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Per-viewer conveniences only; the page works the same without storage.
 // ?test keeps a page's settings to itself (automated runs must not touch a person's tabs).
-const NO_STORE = new URLSearchParams(location.search).has("test");
+// ?embed is the compact player a hymn page on adventhymnals.org shows inline; it
+// leaves the visitor's full-Studio settings alone.
+const EMBED = new URLSearchParams(location.search).has("embed");
+const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED;
 const store = {
   get(k, d) { if (NO_STORE) return d; try { const v = localStorage.getItem(`hymn2:${k}`); return v === null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { if (NO_STORE) return; try { localStorage.setItem(`hymn2:${k}`, JSON.stringify(v)); } catch { /* private mode */ } },
@@ -317,8 +320,11 @@ async function boot() {
     return;
   }
   const picker = $("hymnPicker");
-  const wanted = decodeURIComponent(location.hash.slice(1)) || store.get("hymn", hymnList[0].id);
+  const asked = decodeURIComponent(location.hash.slice(1));
+  const wanted = asked || store.get("hymn", hymnList[0].id);
   picker.value = hymnList.some((x) => x.id === wanted) ? wanted : hymnList[0].id;
+  if (EMBED) setupEmbed();
+  if (asked && !hymnList.some((x) => x.id === asked)) { notInStudio(asked); return; }
   picker.onchange = () => { location.hash = picker.value; loadHymn(hymnList.find((x) => x.id === picker.value)); };
   bindControls();
   try {
@@ -337,6 +343,43 @@ async function boot() {
   await document.fonts.ready;
   await loadHymn(hymnList.find((x) => x.id === picker.value));
   requestAnimationFrame(frame);
+}
+
+/** A hymn the site linked to that the Studio has no score for yet. */
+function notInStudio(id) {
+  const [book, num] = id.split("-");
+  document.title = `${book} ${num || ""} · not in the Studio yet`;
+  $("hymnNumber").textContent = num || "";
+  $("hymnTitle").textContent = "Not in the Studio yet";
+  $("hymnCredits").textContent = `${book} ${num || ""}`;
+  document.body.classList.add("missing");
+  const ready = hymnList.filter((x) => x.book !== "RECORDED");
+  $("workspace").insertAdjacentHTML("beforebegin", `<div class="missing-note">
+    <h2>This hymn's music is still being prepared</h2>
+    <p>Each hymn is checked note by note before it goes in the Studio, so they are being added one at a time.
+    ${EMBED ? "" : "You can still read all the words on the hymn's page."}</p>
+    ${ready.length ? `<p>Ready to play now:</p><ul>${ready.map((x) => `<li><a href="${EMBED ? "?embed=1" : "./"}#${x.id}">${x.book} ${x.number}, ${x.title}</a></li>`).join("")}</ul>` : ""}
+  </div>`);
+  const picker = $("hymnPicker");
+  picker.value = "";
+  picker.onchange = () => { location.hash = picker.value; };
+  window.addEventListener("hashchange", () => location.reload(), { once: true });
+}
+
+/** The compact player: the score, play, tempo, key and the voices, plus the way out to the full Studio. */
+function setupEmbed() {
+  document.body.classList.add("embed");
+  // inside a hymn page, whose own bar already names the hymn and links out
+  if (window.self !== window.top) { document.body.classList.add("framed"); return; }
+  const out = document.createElement("a");
+  out.className = "embed-out";
+  out.target = "_blank";
+  out.rel = "noopener";
+  out.textContent = "Full Studio ↗";
+  const sync = () => { out.href = `./${location.hash}`; };
+  sync();
+  window.addEventListener("hashchange", sync);
+  document.querySelector(".toolbar").append(out);
 }
 
 async function loadHymn(entry) {
