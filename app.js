@@ -370,7 +370,8 @@ function notInStudio(id) {
 function setupEmbed() {
   document.body.classList.add("embed");
   // inside a hymn page, whose own bar already names the hymn and links out
-  if (window.self !== window.top) { document.body.classList.add("framed"); return; }
+  // or inside the Android app (?app), which has its own Words / Play / Studio switch
+  if (window.self !== window.top || new URLSearchParams(location.search).has("app")) { document.body.classList.add("framed"); return; }
   const out = document.createElement("a");
   out.className = "embed-out";
   out.target = "_blank";
