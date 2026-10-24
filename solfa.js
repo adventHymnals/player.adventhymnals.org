@@ -203,6 +203,8 @@ export class WordsView {
     const block = (syl, offset, label, verseN) => {
       let html = "";
       let line = "";
+      let word = "";
+      let chars = 0; // letters on the line so far, to decide whether a comma ends it
       syl.forEach((s, j) => {
         const i = j + offset;
         const n = lv[i];
@@ -211,9 +213,16 @@ export class WordsView {
         const joinNext = s.s === "begin" || s.s === "middle";
         // chord-over-lyrics: each syllable is a small column, its chord(s) on top
         const chord = cs.map((c) => `<span class="w-chord" data-q="${c.q}">${esc((opts.chordName || prettyChord)(c.name))}</span>`).join("");
-        line += `<span class="w-syl${joinNext ? "" : " w-end"}" data-q="${n.q}" data-v="${verseN}"><span class="w-c">${chord}</span><span class="w-t">${esc(s.t)}${joinNext ? "" : "&nbsp;"}</span></span>`;
-        if ((s.s === "single" || s.s === "end") && /[,;:.!?]$/.test(s.t)) { html += `<p class="w-line">${line}</p>`; line = ""; }
+        word += `<span class="w-syl${joinNext ? "" : " w-end"}" data-q="${n.q}" data-v="${verseN}"><span class="w-c">${chord}</span><span class="w-t">${esc(s.t)}${joinNext ? "" : "&nbsp;"}</span></span>`;
+        chars += s.t.length;
+        if (joinNext) return;
+        // a word's syllables stay together when the line wraps
+        line += `<span class="w-word">${word}</span>`;
+        word = "";
+        // a line ends where the sense does: a full stop or semicolon, or a comma once the line is long enough
+        if (/[;:.!?]$/.test(s.t) || (/,$/.test(s.t) && chars >= 24)) { html += `<p class="w-line">${line}</p>`; line = ""; chars = 0; }
       });
+      if (word) line += `<span class="w-word">${word}</span>`;
       if (line) html += `<p class="w-line">${line}</p>`;
       return `<section class="w-block" data-v="${verseN}"><h3>${esc(label)}</h3>${html}</section>`;
     };

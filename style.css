@@ -485,3 +485,10 @@ body.embed .toolbar { flex-wrap: wrap; gap: 8px; }
 .embed-out { margin-left: auto; align-self: center; font: 600 14px var(--sans); color: inherit; text-decoration: none; padding: 7px 12px; border: 1px solid currentColor; border-radius: 999px; opacity: .85; }
 .embed-out:hover { opacity: 1; }
 body.embed.framed .masthead { display: none; }
+
+/* ?app: inside the Android app, which draws its own controls (sheet, views, voices) */
+body.app > .masthead, body.app > .toolbar, body.app .headers, body.app #nowbar,
+body.app #practicePanel, body.app #pianoPanel { display: none !important; }
+body.app .workspace { grid-template-columns: 1fr !important; }
+body.app { background: var(--paper, #fbf8f2); }
+.w-word { display: inline-flex; white-space: nowrap; }

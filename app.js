@@ -24,6 +24,11 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 // ?embed is the compact player a hymn page on adventhymnals.org shows inline; it
 // leaves the visitor's full-Studio settings alone.
 const EMBED = new URLSearchParams(location.search).has("embed");
+// ?app: inside the Android app, which draws its own controls and drives this page through window.AHStudio
+const APP = new URLSearchParams(location.search).has("app");
+// ?remote=<url>: this copy is bundled in the app; hymn data and recordings come from that site
+// (the live list and new hymns when online, the bundled copy when not)
+const REMOTE = new URLSearchParams(location.search).get("remote") || "";
 const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED;
 const store = {
   get(k, d) { if (NO_STORE) return d; try { const v = localStorage.getItem(`hymn2:${k}`); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -308,8 +313,20 @@ function verovioReady() {
 let hymnList = [];
 async function loadList() {
   // fresh when online; the cached copy when not (the Android app plays offline what it played before)
-  const res = await fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
-  hymnList = await res.json();
+  const local = () => fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
+  if (REMOTE) {
+    try {
+      const r = await fetch(`${REMOTE}data/index.json`, { cache: "no-cache" });
+      if (!r.ok) throw new Error(String(r.status));
+      hymnList = (await r.json()).map((x) => ({ ...x, path: new URL(x.path, REMOTE).href, fallback: x.path }));
+      return fillPicker();
+    } catch { /* offline: the bundled list */ }
+  }
+  hymnList = await (await local()).json();
+  fillPicker();
+}
+
+function fillPicker() {
   $("hymnPicker").innerHTML = hymnList.map((x) => `<option value="${x.id}">${x.book} ${x.number}, ${x.title}</option>`).join("");
 }
 
@@ -326,6 +343,11 @@ async function boot() {
   const wanted = asked || store.get("hymn", hymnList[0].id);
   picker.value = hymnList.some((x) => x.id === wanted) ? wanted : hymnList[0].id;
   if (EMBED) setupEmbed();
+  if (APP) {
+    document.body.classList.add("app");
+    const v = new URLSearchParams(location.search).get("view");
+    if (v && ["tracks", "page", "solfa", "words", "presenter"].includes(v)) state.view = v;
+  }
   if (asked && !hymnList.some((x) => x.id === asked)) { notInStudio(asked); return; }
   picker.onchange = () => { location.hash = picker.value; loadHymn(hymnList.find((x) => x.id === picker.value)); };
   bindControls();
@@ -388,7 +410,7 @@ function setupEmbed() {
 async function loadHymn(entry) {
   stopPlayback();
   try {
-    hymn = await (await fetch(entry.path)).json();
+    hymn = await (await fetch(entry.path).then((r) => (r.ok ? r : Promise.reject(r))).catch(() => fetch(entry.fallback || entry.path))).json();
     hymnWritten = hymn;
   } catch {
     $("score").innerHTML = `<p class="status">This hymn's file is missing: ${entry.path}. Run <code>python3 build_web.py</code>, then reload.</p>`;
@@ -422,8 +444,11 @@ async function loadManifest() {
   manifest = null;
   stemInfo = new Map();
   try {
-    const r = await fetch(`audio/${hymn.id}/manifest.json?${Date.now()}`);
+    const r = await fetch(`${REMOTE}audio/${hymn.id}/manifest.json`, { cache: "no-cache" })
+      .catch(() => fetch(`${REMOTE}audio/${hymn.id}/manifest.json`, { cache: "force-cache" }));
     if (r.ok) manifest = await r.json();
+    // recordings live on the site, whichever copy of the player this is
+    if (manifest && REMOTE) manifest.stems.forEach((st) => { st.url = new URL(st.url, REMOTE).href; });
   } catch { /* no sung stems for this hymn */ }
   syncSungControls();
 }
@@ -1722,3 +1747,49 @@ function buildVerseChips() {
 }
 
 boot();
+
+
+// ─────────────────────────────────────────────── the Android app's handle
+// The app draws its own controls (the player sheet, the views, the voices
+// panel) and drives this page through these few calls; it reads state() to
+// redraw them. Everything goes through the page's own handlers, so the app
+// and the page can never disagree about what is playing or muted.
+window.AHStudio = {
+  /** "words" | "solfa" | "page" | "tracks" | "presenter" */
+  view(v) {
+    if (v === state.view) return;
+    const b = document.querySelector(`.views .seg[data-view="${v}"]`);
+    if (b) b.click(); else { state.view = v; save("view"); renderAll(); }
+  },
+  toggle() { return togglePlay(); },
+  stop() { stopPlayback(); },
+  setMute(ch, on) { state.mute[ch] = !!on; save("mute"); applyMix(); buildHeaders(); },
+  setSolo(ch, on) { state.solo[ch] = !!on; save("solo"); applyMix(); buildHeaders(); },
+  setLevel(ch, x) { state.levels[ch] = Math.max(0, Math.min(1, Number(x))); save("levels"); applyMix(); },
+  setSound(ch, value) {
+    const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
+    if (!sel) return;
+    sel.value = value;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+  },
+  setTempo(bpm) {
+    const t = $("tempo");
+    t.value = String(Math.round(bpm));
+    t.dispatchEvent(new Event("input", { bubbles: true }));
+    t.dispatchEvent(new Event("change", { bubbles: true }));
+  },
+  key(step) { $(step > 0 ? "keyUp" : "keyDown").click(); },
+  state() {
+    const voices = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length).map((ch) => {
+      const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
+      return {
+        ch, name: VOICES[ch]?.name ?? ch, mute: !!state.mute[ch], solo: !!state.solo[ch], level: state.levels[ch] ?? 0.8,
+        sound: sel?.value ?? "", sounds: sel ? [...sel.options].map((o) => ({ value: o.value, label: o.textContent })) : [],
+      };
+    });
+    return JSON.stringify({
+      ready: !!perf, hymn: hymn?.id ?? null, title: hymn?.title ?? "", view: state.view,
+      playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
+    });
+  },
+};
