@@ -350,6 +350,20 @@
   "path": "data/SDAH/624.json"
  },
  {
+  "id": "SDAH-625",
+  "book": "SDAH",
+  "number": "625",
+  "title": "Higher Ground",
+  "path": "data/SDAH/625.json"
+ },
+ {
+  "id": "SDAH-626",
+  "book": "SDAH",
+  "number": "626",
+  "title": "In a Little While We're Going Home",
+  "path": "data/SDAH/626.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",

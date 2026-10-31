@@ -33,6 +33,9 @@ const REMOTE = new URLSearchParams(location.search).get("remote") || "";
 // where the recordings are: the published site sets <meta name="ah-audio"> to the audio store (Cloudflare R2);
 // otherwise they come from the site itself (or the local copy)
 const AUDIO = document.querySelector('meta[name="ah-audio"]')?.content || REMOTE;
+// and the hymns themselves (the list and each hymn's file): the published site reads them from the same store,
+// so a new hymn goes live by upload, with no rebuild of the site
+const DATA = document.querySelector('meta[name="ah-data"]')?.content || REMOTE;
 const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED;
 const store = {
   get(k, d) { if (NO_STORE) return d; try { const v = localStorage.getItem(`hymn2:${k}`); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -324,11 +327,11 @@ let hymnList = [];
 async function loadList() {
   // fresh when online; the cached copy when not (the Android app plays offline what it played before)
   const local = () => fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
-  if (REMOTE) {
+  if (DATA) {
     try {
-      const r = await fetch(`${REMOTE}data/index.json`, { cache: "no-cache" });
+      const r = await fetch(`${DATA}data/index.json`, { cache: "no-cache" });
       if (!r.ok) throw new Error(String(r.status));
-      hymnList = (await r.json()).map((x) => ({ ...x, path: new URL(x.path, REMOTE).href, fallback: x.path }));
+      hymnList = (await r.json()).map((x) => ({ ...x, path: new URL(x.path, DATA).href, fallback: x.path }));
       return fillPicker();
     } catch { /* offline: the bundled list */ }
   }
