@@ -72,17 +72,62 @@ export function barAt(h, q) {
   return m;
 }
 export const trackKey = (voices) => voices.join("");
-export const trackName = (voices) => voices.map((k) => VOICES[k].name).join(" and ");
+// the piano accompaniment's two hands, shown as a grand staff under the voices
+export const PIANO_HANDS = { R: { name: "Piano, right hand" }, L: { name: "Piano, left hand" } };
+export const trackName = (voices) => voices.map((k) => (VOICES[k] || PIANO_HANDS[k]).name).join(" and ");
 
-const DIV = 8; // divisions per quarter note
+const DIV = 24; // divisions per quarter note (divisible by 3 for triplets)
 const FLAT_ORDER = "BEADGCF";
 const SHARP_ORDER = "FCGDAEB";
 const ACC_NAME = { "-2": "flat-flat", "-1": "flat", 0: "natural", 1: "sharp", 2: "double-sharp" };
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function noteType(d, dots) {
-  const base = d / (dots === 2 ? 1.75 : dots === 1 ? 1.5 : 1);
+  const base = Math.round((d / (dots === 2 ? 1.75 : dots === 1 ? 1.5 : 1)) * 1000) / 1000;
   return { 4: "whole", 2: "half", 1: "quarter", 0.5: "eighth", 0.25: "16th", 0.125: "32nd" }[base] || "quarter";
+}
+
+// A silence of d quarter notes as rests that can be written (whole, half, ..., dotted), longest first;
+// a part that only fits in triplets (thirds of a beat, beside triplet notes) becomes triplet rests.
+const REST_KINDS = [[6, 0, 4], [4, 0, 4], [3, 1, 2], [2, 0, 2], [1.5, 1, 1], [1, 0, 1], [0.75, 1, 0.5], [0.5, 0, 0.5], [0.375, 1, 0.25], [0.25, 0, 0.25], [0.125, 0, 0.125]];
+function greedyRests(d) {
+  const out = [];
+  let left = d;
+  while (left > 1e-6) {
+    const k = REST_KINDS.find(([len]) => len <= left + 1e-6);
+    if (!k) break;
+    out.push({ d: k[0], dots: k[1] });
+    left -= k[0];
+  }
+  return { out, left };
+}
+function restChunks(d) {
+  const plain = greedyRests(d);
+  if (plain.left < 1e-4) return plain.out;
+  // the plain part and the triplet part with the fewest rests (then the most plain)
+  let best = null;
+  for (let std = 0; std <= d + 1e-9; std += 0.125) {
+    const a = greedyRests(std);
+    const trip = greedyRests((d - std) * 1.5);
+    if (a.left > 1e-4 || trip.left > 1e-4) continue;
+    const n = a.out.length + trip.out.length;
+    if (!best || n < best.n || (n === best.n && std > best.std)) {
+      best = { n, std, out: [...a.out, ...trip.out.map((r) => ({ d: r.d / 1.5, dots: r.dots, written: r.d, trip: true }))] };
+    }
+  }
+  return best ? best.out : plain.out;
+}
+
+function restXml(d, voice, wholeBar) {
+  if (wholeBar) return `<note><rest measure="yes"/><duration>${Math.round(d * DIV)}</duration><voice>${voice}</voice></note>`;
+  const rs = restChunks(d);
+  const first = rs.findIndex((r) => r.trip);
+  const last = rs.map((r) => !!r.trip).lastIndexOf(true);
+  // triplet rests sit in a (hidden) tuplet of their own, or the renderer would count them at full length
+  return rs.map((r, i) => `<note><rest/><duration>${Math.round(r.d * DIV)}</duration><voice>${voice}</voice>`
+    + `<type>${noteType(r.written ?? r.d, r.dots)}</type>${"<dot/>".repeat(r.dots)}`
+    + `${r.trip ? "<time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes></time-modification>" : ""}`
+    + `${i === first || i === last ? `<notations>${i === first ? '<tuplet type="start" bracket="no" show-number="none"/>' : ""}${i === last ? '<tuplet type="stop"/>' : ""}</notations>` : ""}</note>`).join("");
 }
 
 function keyState(fifths) {
@@ -98,10 +143,9 @@ function rootXml(tag, spelled) {
   return `<${tag}><${tag}-step>${step}</${tag}-step>${alter ? `<${tag}-alter>${alter}</${tag}-alter>` : ""}</${tag}>`;
 }
 
-// Soprano/alto read treble, tenor alone reads octave treble, anything with bass reads bass.
+// Soprano/alto read treble; tenor and bass read bass, as in the hymnal (also the tenor on its own staff).
 export function clefFor(voices) {
-  if (voices.some((k) => k === "S" || k === "A")) return ["G", 2, 0];
-  if (voices.every((k) => k === "T")) return ["G", 2, -1];
+  if (voices.some((k) => k === "S" || k === "A" || k === "R")) return ["G", 2, 0];
   return ["F", 4, 0];
 }
 
@@ -124,24 +168,54 @@ export function buildMusicXML(h, opts) {
   const lyricIndex = new Map(); // onset -> index of the note in the lyric voice
   h.voices[h.lyricVoice].forEach((n, i) => lyricIndex.set(n.q, i));
 
-  // passVerse: when the verses are written out, each pass carries only its own verse
-  const lyricsFor = (q, passVerse) => {
-    if (opts.words === "none" || opts.words === "solfa" || !lyricIndex.has(q)) return "";
+  // passVerse: when the verses are written out, each pass carries only its own verse.
+  // k, idx: the voice and its note; a voice with words of its own (h.voiceWords) shows them,
+  // and the lyric voice's words where its list says "*".
+  const refrainQ = h.voices[h.lyricVoice][refrainAt]?.q ?? Infinity;
+  const lyricsFor = (q, passVerse, k, idx) => {
+    if (opts.words === "none" || opts.words === "solfa") return "";
+    const own = h.voiceWords?.[k];
+    const ownAt = (v) => { const e = own?.[v]?.[idx]; return e === undefined || e === "*" ? undefined : e; };
     const i = lyricIndex.get(q);
+    if (i === undefined && !own) return "";
     const items = [];
     const one = passVerse ?? (opts.words === "current" ? opts.verse : null);
-    if (i >= refrainAt) {
-      const s = h.refrain[i - refrainAt];
-      if (s) items.push([1, s]);
+    if (q >= refrainQ - 1e-9) {
+      // a verse with refrain words of its own (h.refrains) gets them; stacked, they follow as extra lines
+      const alt = (v) => h.refrains?.[v - 1];
+      const mine = ownAt(0);
+      if (one !== null && alt(one)) {
+        const s = i !== undefined ? alt(one)[i - refrainAt] : null;
+        if (s) items.push([1, s]);
+      } else {
+        const s = mine !== undefined ? mine : i !== undefined ? h.refrain[i - refrainAt] : null;
+        if (s) items.push([1, s]);
+        if (one === null && i !== undefined) {
+          let n = 1;
+          // only from where its words part from verse 1's, labelled there
+          h.refrains?.forEach((r, v) => {
+            if (!r) return;
+            const from = r.findIndex((x, j) => x?.t !== h.refrain[j]?.t);
+            n++;
+            if (from >= 0 && i - refrainAt >= from && r[i - refrainAt]) items.push([n, r[i - refrainAt], i - refrainAt === from ? v + 1 : null, true]);
+          });
+        }
+      }
     } else if (one !== null) {
-      const s = h.verses[one - 1]?.[i];
+      const mine = ownAt(one - 1);
+      const s = mine !== undefined ? mine : i !== undefined ? h.verses[one - 1]?.[i] : null;
       if (s) items.push([1, s, one]);
     } else {
-      h.verses.forEach((v, k) => v[i] && items.push([k + 1, v[i], k + 1]));
+      h.verses.forEach((v, n) => {
+        const mine = ownAt(n);
+        const s = mine !== undefined ? mine : i !== undefined ? v[i] : null;
+        if (s) items.push([n + 1, s, n + 1]);
+      });
     }
     return items
-      .map(([n, s, label]) => {
-        const text = i === 0 && label ? `${label}. ${s.t}` : s.t;
+      .map(([n, s, label, alt]) => {
+        // the verse number goes on a verse's first syllable, and where a verse's own refrain words begin
+        const text = label && (i === 0 || alt) ? `${label}. ${s.t}` : s.t;
         return `<lyric number="${n}"><syllabic>${s.s}</syllabic><text>${esc(text)}</text></lyric>`;
       })
       .join("");
@@ -182,9 +256,17 @@ export function buildMusicXML(h, opts) {
           }
         }
         const printedDyn = new Set(); // one dynamic per onset per staff
+        // a syllable where the staff's upper voice has no note goes on the lower voice's note instead
+        const upperOnsets = new Set(h.voices[voices[0]].filter((x) => x.m === m).map((x) => x.q));
         voices.forEach((k, vi) => {
           if (vi > 0) mx += `<backup><duration>${Math.round((barEnd(h, m) - barStart(h, m)) * DIV)}</duration></backup>`;
-          for (const n of h.voices[k].filter((x) => x.m === m)) {
+          // rests fill every silence, so each note sits at its own time (Verovio places notes one after another)
+          const inBar = h.voices[k].filter((x) => x.m === m);
+          let at = barStart(h, m);
+          if (!inBar.length) mx += restXml(barEnd(h, m) - at, vi + 1, true);
+          for (const n of inBar) {
+            if (n.q > at + 1e-6) mx += restXml(n.q - at, vi + 1);
+            at = n.q + n.d;
             if (opts.chords && si === 0 && vi === 0) {
               for (const c of h.chords) {
                 if (c.q >= n.q && c.q < n.q + n.d) {
@@ -208,15 +290,66 @@ export function buildMusicXML(h, opts) {
               acc = `<accidental>${ACC_NAME[n.alter]}</accidental>`;
               measureState[k2] = n.alter;
             }
-            const fermata = n.f ? `<notations><fermata type="${twoVoices && vi === 1 ? "inverted" : "upright"}"/></notations>` : "";
+            const vn = h.voices[k];
+            const prev = vn[vn.indexOf(n) - 1];
+            const tieStop = !!prev?.tie && prev.p === n.p;
+            const tieStart = !!n.tie && vn[vn.indexOf(n) + 1]?.p === n.p;
+            const ties = (tieStop ? '<tie type="stop"/>' : "") + (tieStart ? '<tie type="start"/>' : "");
+            const tied = (tieStop ? '<tied type="stop"/>' : "") + (tieStart ? '<tied type="start"/>' : "");
+            // a triplet note: written value is d * actual/normal, with a bracket over its group
+            const tm = n.tup ? `<time-modification><actual-notes>${n.tup[0]}</actual-notes><normal-notes>${n.tup[1]}</normal-notes></time-modification>` : "";
+            const tPrev = vn[vn.indexOf(n) - 1], tNext = vn[vn.indexOf(n) + 1];
+            const tupStart = n.tup && tPrev?.tup?.[2] !== n.tup[2], tupStop = n.tup && tNext?.tup?.[2] !== n.tup[2];
+            const tupMark = (tupStart ? '<tuplet type="start" bracket="yes"/>' : "") + (tupStop ? '<tuplet type="stop"/>' : "");
+            const written = n.tup ? (n.d * n.tup[0]) / n.tup[1] : n.d;
+            // a syllable held over several notes of a voice (a melisma) is slurred, as printed: a note is held
+            // when no syllable of the verses on show starts on it (its own words, or the lyric voice's at its onset)
+            const slurMark = (() => {
+              if (PIANO_HANDS[k]) return "";
+              const one = passVerse ?? (opts.words === "current" ? opts.verse : null);
+              const shown = one ? [one] : h.verses.map((_, v) => v + 1);
+              const sylOf = (v) => [...(h.verses[v - 1] || []), ...(h.refrains?.[v - 1] || h.refrain || [])];
+              const sets = shown.map(sylOf);
+              const own = h.voiceWords?.[k];
+              const startsIn = (j, v, si) => {
+                const e = own?.[v - 1]?.[j] ?? own?.[0]?.[j];
+                if (e !== undefined && e !== "*") return e !== null;
+                const i = lyricIndex.get(vn[j].q);
+                return i !== undefined && sets[si][i] != null;
+              };
+              const joined = (j) => j > 0 && j < vn.length && !vn[j - 1].tie && Math.abs(vn[j - 1].q + vn[j - 1].d - vn[j].q) < 1e-6;
+              const held = (j) => joined(j) && shown.some((v, si) => !startsIn(j, v, si));
+              const heldAll = (j) => joined(j) && shown.every((v, si) => !startsIn(j, v, si));
+              const j = vn.indexOf(n);
+              if (held(j + 1) && !held(j)) {
+                // dashed where only some of the verses on show hold the syllable here
+                let e = j + 1, all = true;
+                while (held(e)) { all = all && heldAll(e); e++; }
+                return `<slur type="start" placement="${twoVoices && vi === 1 ? "below" : "above"}"${all ? "" : ' line-type="dashed"'}/>`;
+              }
+              return held(j) && !held(j + 1) ? '<slur type="stop"/>' : "";
+            })();
+            const fermataMark = n.f ? `<fermata type="${twoVoices && vi === 1 ? "inverted" : "upright"}"/>` : "";
+            const fermata = fermataMark || tied || tupMark || slurMark ? `<notations>${tied}${slurMark}${tupMark}${fermataMark}</notations>` : "";
             const stem = twoVoices ? `<stem>${vi === 0 ? "up" : "down"}</stem>` : "";
             const words = !opts.trackWords?.[si] ? ""
               : opts.words === "solfa" ? solfaFor(k, n, vi + 1)
-              : vi === 0 ? lyricsFor(n.q, passVerse) : "";
+              : vi === 0 || !upperOnsets.has(n.q) ? lyricsFor(n.q, passVerse, k, h.voices[k].indexOf(n)) : "";
             mx += `<note><pitch><step>${n.step}</step>${n.alter ? `<alter>${n.alter}</alter>` : ""}<octave>${n.oct}</octave></pitch>`
-              + `<duration>${Math.round(n.d * DIV)}</duration><voice>${vi + 1}</voice><type>${noteType(n.d, n.dots)}</type>`
-              + `${"<dot/>".repeat(n.dots)}${acc}${stem}${fermata}${words}</note>`;
+              + `<duration>${Math.round(n.d * DIV)}</duration>${ties}<voice>${vi + 1}</voice><type>${noteType(written, n.dots)}</type>`
+              + `${"<dot/>".repeat(n.dots)}${acc}${tm}${stem}${fermata}${words}</note>`;
+            // a chord (the piano hands): the other notes struck with this one
+            for (const x of n.chord || []) {
+              const kx = x.step + x.oct;
+              const curx = kx in measureState ? measureState[kx] : accState[x.step] ?? 0;
+              let accx = "";
+              if (x.alter !== curx) { accx = `<accidental>${ACC_NAME[x.alter]}</accidental>`; measureState[kx] = x.alter; }
+              mx += `<note><chord/><pitch><step>${x.step}</step>${x.alter ? `<alter>${x.alter}</alter>` : ""}<octave>${x.oct}</octave></pitch>`
+                + `<duration>${Math.round(n.d * DIV)}</duration><voice>${vi + 1}</voice><type>${noteType(written, n.dots)}</type>`
+                + `${"<dot/>".repeat(n.dots)}${accx}${tm}${stem}</note>`;
+            }
           }
+          if (inBar.length && at < barEnd(h, m) - 1e-6) mx += restXml(barEnd(h, m) - at, vi + 1);
         });
         const lastPass = j === passes.length - 1;
         if (m === h.measures) mx += `<barline location="right"><bar-style>${lastPass ? "light-heavy" : "light-light"}</bar-style></barline>`;
@@ -234,7 +367,13 @@ export function buildMusicXML(h, opts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="4.0">${head}<part-list>${parts
-    .map((p) => `<score-part id="${p.id}"><part-name>${esc(p.name)}</part-name></score-part>`)
+    .map((p) => {
+      // the piano's two staves are one instrument: braced together
+      const sp = `<score-part id="${p.id}"><part-name>${esc(p.name)}</part-name></score-part>`;
+      if (p.name === PIANO_HANDS.R.name) return `<part-group type="start" number="9"><group-symbol>brace</group-symbol><group-barline>yes</group-barline></part-group>${sp}`;
+      if (p.name === PIANO_HANDS.L.name) return `${sp}<part-group type="stop" number="9"/>`;
+      return sp;
+    })
     .join("")}</part-list>${parts.map((p) => `<part id="${p.id}">${p.xml}</part>`).join("")}</score-partwise>`;
 }
 
@@ -377,6 +516,8 @@ export function timeMap(h, tempo) {
 
 export const ACCOMP_STYLES = {
   off: "Off",
+  church: "Church piano",
+  gospel: "Gospel piano",
   hymn: "Hymn on piano",
   block: "Block chords",
   pulse: "Bass and chords",
@@ -419,11 +560,124 @@ function rhVoicing(c, prev) {
   return candidates.reduce((a, b) => (cost(a) <= cost(b) ? a : b));
 }
 
-/** Accompaniment notes for one pass, in score quarters: [{q, d, p, v}] (v = velocity 0..1). */
+// The beat a hymn is felt in (a dotted quarter in 6/8, 9/8, 12/8) and how many fit in a bar.
+const beatInfo = (h) => {
+  const [num, den] = h.time;
+  const beat = den === 8 && num % 3 === 0 ? 1.5 : 4 / den;
+  return { beat, beats: Math.round(h.measureQ / beat) };
+};
+
+/** The notes of voice k sounding at q (or null). */
+const soundingAt = (h, k, q) => (h.voices[k] || []).find((n) => n.q <= q + 1e-6 && q < n.q + n.d - 1e-6) || null;
+
+/** Church piano, as church pianists play a hymn: soprano and alto in the right hand (the tune on top), tenor and
+ *  bass in the left with the bass doubled an octave lower; on a long note the chord is struck again on the beat. */
+function churchPiano(h) {
+  const out = [];
+  const { beat } = beatInfo(h);
+  const add = (n, hand, v, q = n.q, d = n.d) => out.push({ q, d, p: n.p, v, hand });
+  for (const k of ["S", "A"]) for (const n of h.voices[k] || []) add(n, "R", k === "S" ? 0.62 : 0.45);
+  for (const k of ["T", "B"]) for (const n of h.voices[k] || []) add(n, "L", 0.45);
+  for (const n of h.voices.B || []) if (n.p - 12 >= 28) add({ ...n, p: n.p - 12 }, "L", 0.5);
+  // fills: on each beat inside a note held two beats or more, strike the chord again, softer
+  const onsets = new Set(Object.values(h.voices).flat().map((n) => Math.round(n.q * 1000)));
+  for (let q = 0; q < h.totalQ - 1e-6; q += beat) {
+    if (onsets.has(Math.round(q * 1000))) continue;
+    const s = soundingAt(h, "S", q);
+    if (!s || s.d < 2 * beat - 1e-6) continue;
+    const next = Math.min(q + beat, s.q + s.d);
+    for (const k of ["A", "T"]) { const n = soundingAt(h, k, q); if (n) out.push({ q, d: next - q, p: n.p, v: 0.3, hand: k === "A" ? "R" : "L" }); }
+  }
+  return out;
+}
+
+/** Gospel piano: the tune in octaves with the alto between in the right hand; the left hand plays the bass in
+ *  octaves on the strong beats (root, then the fifth) and the chord on the off-beats. */
+function gospelPiano(h) {
+  const out = [];
+  const { beat, beats } = beatInfo(h);
+  for (const n of h.voices.S || []) {
+    out.push({ q: n.q, d: n.d, p: n.p, v: 0.62, hand: "R" });
+    const a = soundingAt(h, "A", n.q);
+    if (a && a.p < n.p) out.push({ q: n.q, d: n.d, p: a.p, v: 0.42, hand: "R" });
+    if (n.p - 12 > (a ? a.p : 0) && n.p - 12 >= 55) out.push({ q: n.q, d: n.d, p: n.p - 12, v: 0.42, hand: "R" });
+  }
+  let prevBass = 43;
+  for (let q = 0; q < h.totalQ - 1e-6; q += beat) {
+    const c = chordAt(h, q);
+    if (!c) continue;
+    const inBar = Math.round((q - barStart(h, barAt(h, q))) / beat);
+    const strong = inBar === 0 || (beats === 4 && inBar === 2);
+    if (strong) {
+      const root = nearest(c.bassPc ?? c.rootPc, prevBass);
+      const p = beats === 4 && inBar === 2 ? nearest((c.rootPc + 7) % 12, root) : root;
+      prevBass = Math.max(36, Math.min(50, p));
+      out.push({ q, d: beat, p, v: 0.6, hand: "L" });
+      if (p - 12 >= 28) out.push({ q, d: beat, p: p - 12, v: 0.5, hand: "L" });
+    } else {
+      // the off-beat chord, low in the left hand (between C3 and C4)
+      const ints = KIND_INTERVALS[c.kind] || [0, 4, 7];
+      const pcs = ints.map((i) => (c.rootPc + i) % 12);
+      const notes = [];
+      for (let p = 48; p <= 60 && notes.length < 3; p++) if (pcs.includes(p % 12)) notes.push(p);
+      notes.forEach((p) => out.push({ q, d: beat * 0.6, p, v: 0.36, hand: "L" }));
+    }
+  }
+  return out;
+}
+
+// spelling a MIDI pitch in the hymn's key: sharps in sharp keys, flats in flat keys
+const SHARP_NAMES = [["C", 0], ["C", 1], ["D", 0], ["D", 1], ["E", 0], ["F", 0], ["F", 1], ["G", 0], ["G", 1], ["A", 0], ["A", 1], ["B", 0]];
+const FLAT_NAMES = [["C", 0], ["D", -1], ["D", 0], ["E", -1], ["E", 0], ["F", 0], ["G", -1], ["G", 0], ["A", -1], ["A", 0], ["B", -1], ["B", 0]];
+function spell(p, fifths) {
+  const [step, alter] = (fifths < 0 ? FLAT_NAMES : SHARP_NAMES)[((p % 12) + 12) % 12];
+  return { step, alter, oct: Math.floor(p / 12) - 1, p };
+}
+const WRITABLE = [[4, 0], [3, 1], [2, 0], [1.5, 1], [1, 0], [0.75, 1], [0.5, 0], [0.375, 1], [0.25, 0]];
+
+/** The accompaniment as two "voices" for the score: R (right hand, treble) and L (left hand, bass). Each note is a
+ *  chord of everything that hand strikes at that moment, held until its next chord (or its own end, or the bar line),
+ *  rounded to a length that can be written. */
+export function pianoVoices(h, style) {
+  const notes = accompaniment(h, style);
+  const out = { R: [], L: [] };
+  for (const hand of ["R", "L"]) {
+    const mine = notes.filter((n) => n.hand === hand).sort((a, b) => a.q - b.q);
+    const onsets = [...new Set(mine.map((n) => Math.round(n.q * 1e4) / 1e4))].sort((a, b) => a - b);
+    let group = 0;
+    let prevTripletEnd = -1;
+    onsets.forEach((q, i) => {
+      const at = mine.filter((n) => Math.abs(n.q - q) < 1e-3);
+      const ps = [...new Set(at.map((n) => n.p))].sort((a, b) => b - a);
+      const m = barAt(h, q);
+      const room = Math.min(onsets[i + 1] ?? h.totalQ, barEnd(h, m)) - q;
+      if (room < 0.16) return;
+      const want = Math.min(room, Math.max(...at.map((n) => n.d)));
+      const [top, ...rest] = ps.map((p) => spell(p, h.key.fifths));
+      const exact = WRITABLE.find(([len]) => Math.abs(len - want) < 1e-3);
+      const trip = !exact && WRITABLE.find(([len, dt]) => !dt && Math.abs(len - want * 1.5) < 1e-3);
+      if (trip) {
+        // a triplet note (three in the time of two), as in the voices it follows
+        if (Math.abs(prevTripletEnd - q) > 1e-3) group++;
+        prevTripletEnd = q + want;
+        out[hand].push({ ...top, q, d: want, dots: 0, m, f: false, chord: rest, tup: [3, 2, `${hand}${group}`] });
+        return;
+      }
+      const [d, dots] = exact || WRITABLE.find(([len]) => len <= want + 1e-6) || [0.25, 0];
+      out[hand].push({ ...top, q, d, dots, m, f: false, chord: rest });
+    });
+  }
+  return out;
+}
+
+/** Accompaniment notes for one pass, in score quarters: [{q, d, p, v, hand}] (v = velocity 0..1; hand "R" or "L",
+ *  for showing it on a grand staff). */
 export function accompaniment(h, style) {
   if (style === "off") return [];
+  if (style === "church") return churchPiano(h);
+  if (style === "gospel") return gospelPiano(h);
   if (style === "hymn") {
-    return Object.values(h.voices).flat().map((n) => ({ q: n.q, d: n.d, p: n.p, v: 0.55 }));
+    return Object.entries(h.voices).flatMap(([k, notes]) => notes.map((n) => ({ q: n.q, d: n.d, p: n.p, v: 0.55, hand: k === "S" || k === "A" ? "R" : "L" })));
   }
   const out = [];
   const [num, den] = h.time;
@@ -444,24 +698,24 @@ export function accompaniment(h, style) {
     lastChord = c;
     const fifth = nearest((c.rootPc + 7) % 12, bass + 4);
     if (style === "block") {
-      if (inBar === 0 || changed) out.push({ q, d: beat, p: bass, v: 0.6 }, { q, d: beat, p: bass - 12 >= 28 ? bass - 12 : bass, v: 0.35 });
-      rh.forEach((p) => out.push({ q, d: beat * 0.95, p, v: 0.42 }));
+      if (inBar === 0 || changed) out.push({ q, d: beat, p: bass, v: 0.6, hand: "L" }, { q, d: beat, p: bass - 12 >= 28 ? bass - 12 : bass, v: 0.35, hand: "L" });
+      rh.forEach((p) => out.push({ q, d: beat * 0.95, p, v: 0.42, hand: "R" }));
     } else if (style === "pulse") {
       const strong = inBar === 0 || (beats === 4 && inBar === 2);
-      if (strong) out.push({ q, d: beat, p: beats === 4 && inBar === 2 ? fifth - 12 : bass, v: 0.62 });
-      else rh.forEach((p) => out.push({ q, d: beat * 0.55, p, v: 0.4 }));
+      if (strong) out.push({ q, d: beat, p: beats === 4 && inBar === 2 ? fifth - 12 : bass, v: 0.62, hand: "L" });
+      else rh.forEach((p) => out.push({ q, d: beat * 0.55, p, v: 0.4, hand: "R" }));
     } else if (style === "broken") {
       const pattern = [bass, rh[0], rh[1], rh[2] ?? rh[0] + 12, rh[1], rh[0]];
       for (let s = 0; s < 2; s++) {
         const idx = (inBar * 2 + s) % pattern.length;
-        out.push({ q: q + (s * beat) / 2, d: beat / 2 + 0.4, p: pattern[idx], v: idx === 0 ? 0.6 : 0.4 });
+        out.push({ q: q + (s * beat) / 2, d: beat / 2 + 0.4, p: pattern[idx], v: idx === 0 ? 0.6 : 0.4, hand: idx === 0 ? "L" : "R" });
       }
     } else if (style === "sustain") {
       if (changed || inBar === 0) {
         const end = Math.min(h.totalQ, h.chords.find((x) => x.q > q + 1e-6)?.q ?? h.totalQ);
         const len = Math.min(end - q, barEnd(h, barAt(h, q)) - q);
-        out.push({ q, d: len, p: bass, v: 0.5 });
-        rh.forEach((p) => out.push({ q, d: len, p, v: 0.33 }));
+        out.push({ q, d: len, p: bass, v: 0.5, hand: "L" });
+        rh.forEach((p) => out.push({ q, d: len, p, v: 0.33, hand: "R" }));
       }
     }
   }
@@ -470,6 +724,8 @@ export function accompaniment(h, style) {
 
 export const INSTRUMENTAL = {
   none: "None",
+  first4: "First four bars",
+  first8: "First eight bars",
   last4: "Last four bars",
   last8: "Last eight bars",
   refrain: "The refrain",
@@ -484,8 +740,41 @@ export function instrumentalRange(h, kind) {
     const r = h.marks.find((m) => /refrain|chorus/i.test(m.text));
     return r ? [r.q, h.totalQ] : [barStart(h, Math.max(1, h.measures - 3)), h.totalQ];
   }
-  const n = kind === "last8" ? 8 : 4;
-  return [barStart(h, Math.max(1, h.measures - n + 1)), h.totalQ];
+  const n = /8$/.test(kind) ? 8 : 4;
+  // The bars are only a guide: an introduction ends (or an ending begins) where a phrase of the words does,
+  // the phrase boundary nearest to that many bars ("Awake, my soul! stretch every nerve," and not on into "And").
+  const bounds = phraseBounds(h);
+  // (a long phrase with no stop near there keeps the bar count, less the next phrase's pickup)
+  const up = h.pickup > 0 && h.pickup < h.measureQ ? h.pickup : 0;
+  const nearest = (q) => {
+    const b = bounds.reduce((x, y) => (Math.abs(y - q) < Math.abs(x - q) ? y : x), bounds[0]);
+    return Math.abs(b - q) <= h.measureQ * 1.5 ? b : null;
+  };
+  if (kind.startsWith("first")) {
+    const bars = barEnd(h, Math.min(h.measures, n + (up ? 1 : 0)));
+    const end = nearest(bars) ?? (bars < h.totalQ ? bars - up : bars);
+    return [0, end > 0 ? end : h.totalQ];
+  }
+  const bars = barStart(h, Math.max(1, h.measures - n + 1));
+  const start = nearest(bars) ?? Math.max(0, bars - up);
+  return [start < h.totalQ ? start : 0, h.totalQ];
+}
+
+/** Where the phrases of the first verse (and refrain) begin: 0, every syllable after one that ends with
+ *  punctuation, and the end. Falls back to the bar lines when the hymn has no words. */
+function phraseBounds(h) {
+  const lv = h.voices[h.lyricVoice] || [];
+  const syl = [...(h.verses[0] || []), ...(h.refrains?.[0] || h.refrain || [])];
+  const out = new Set([0, h.totalQ]);
+  let after = false;
+  lv.forEach((n, i) => {
+    const x = syl[i];
+    if (!x) return;
+    if (after) out.add(n.q);
+    after = /[,;:.!?]["'’”)]*$/.test(x.t);
+  });
+  if (out.size === 2) for (let m = 1; m <= h.measures; m++) out.add(barStart(h, m));
+  return [...out].sort((a, b) => a - b);
 }
 
 /** Performance time of score position q inside segment k. */
@@ -502,25 +791,33 @@ export const passTime = (perf, k, q) => {
  * Returns { events: [{t, dur, p, ch, v, pass, q, silent?, stem?}],
  *           passes: [{kind: "intro"|"verse"|"interlude", verse, t0, qFrom, qTo}], total, tm, lead }
  */
-export function performance(h, { tempo, verses, accomp, countIn, stems = new Map(), intro = "none", interlude = "none", shiftAt = () => 0, metronome = false }) {
+// countAt: the count-in bar comes at the very start ("start") or after the introduction, just before the singing ("verse").
+// introVoice: a voice whose own line the introduction plays (over a soft accompaniment), for a one-voice practice video.
+export function performance(h, { tempo, verses, accomp, countIn, countAt = "start", introVoice = null, stems = new Map(), intro = "none", interlude = "none", shiftAt = () => 0, metronome = false }) {
   const tm = timeMap(h, tempo);
-  const gap = tm.spq; // one beat of breath between sections
-  const lead = countIn ? h.measureQ * tm.spq : 0;
+  // sections follow straight on, in time: the last bar is already full (or short by the pickup that starts the next)
+  const gap = 0;
+  const countBar = countIn ? h.measureQ * tm.spq : 0;
   const events = [];
   const passes = [];
   const acc = accompaniment(h, accomp);
   // instrumental sections use the chosen accompaniment, or the hymn's own parts on piano
-  const instAcc = accomp === "off" ? accompaniment(h, "hymn") : acc;
-  const introR = instrumentalRange(h, intro);
   const interR = instrumentalRange(h, interlude);
   const levels = Object.fromEntries(Object.keys(h.voices).map((k) => [k, dynamicLevels(h.voices[k])]));
   const accLevel = dynamicLevels(h.voices[h.lyricVoice]);
   const lv = h.voices[h.lyricVoice];
   const levelAt = (q) => { let v = accLevel[0] ?? 0.8; lv.forEach((n, i) => { if (n.q <= q + 1e-6) v = accLevel[i]; }); return v / DYNAMIC_LEVEL.mf; };
-  if (countIn) {
-    const beat = h.time[1] === 8 && h.time[0] % 3 === 0 ? 1.5 : 4 / h.time[1];
-    for (let q = 0; q < h.measureQ - 1e-6; q += beat) events.push({ t: q * tm.spq, dur: 0.05, p: q === 0 ? 96 : 89, ch: "click", v: 0.6, pass: -1, q });
-  }
+  const introR = instrumentalRange(h, intro);
+  // with no introduction the count-in is at the start either way
+  const countFirst = countIn && (countAt !== "verse" || !introR);
+  const clickBeat = h.time[1] === 8 && h.time[0] % 3 === 0 ? 1.5 : 4 / h.time[1];
+  let countT = -1; // when the count-in bar starts
+  const countBarAt = (t0) => {
+    countT = t0;
+    for (let q = 0; q < h.measureQ - 1e-6; q += clickBeat) events.push({ t: t0 + q * tm.spq, dur: 0.05, p: q === 0 ? 96 : 89, ch: "click", v: 0.6, pass: -1, q });
+  };
+  if (countFirst) countBarAt(0);
+  const lead = countFirst ? countBar : 0;
   let t = lead;
   const instrumental = (kind, [qFrom, qTo], verse) => {
     const k = passes.length;
@@ -528,13 +825,27 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
     passes.push({ kind, verse, t0, qFrom, qTo });
     const at = (q) => t0 + tm.qToT(q) - tm.qToT(qFrom);
     const pass = passes[k];
-    for (const n of instAcc) {
-      if (n.q < qFrom - 1e-6 || n.q >= qTo - 1e-6) continue;
-      events.push({ t: at(n.q), dur: at(Math.min(qTo, n.q + n.d)) - at(n.q), p: n.p + shiftAt(k, pass, n.q), ch: "acc", v: n.v * levelAt(n.q), pass: k, q: n.q });
+    // Each voice's line is played on the piano in its OWN channel, so mute and solo act on an introduction or
+    // interlude just as on a verse (solo the tenor: the introduction plays the tenor line). A chosen accompaniment
+    // style plays under them on its own channel. In a one-voice video, that voice's line is on top.
+    for (const key of Object.keys(h.voices)) {
+      const lead = introVoice && kind === "intro" ? (key === introVoice ? 0.95 : 0.3) : null;
+      h.voices[key].forEach((n, i) => {
+        if (n.q < qFrom - 1e-6 || n.q >= qTo - 1e-6) return;
+        events.push({ t: at(n.q), dur: at(Math.min(qTo, n.q + n.d)) - at(n.q), p: n.p + shiftAt(k, pass, n.q), ch: key, inst: true,
+          v: lead ?? levels[key][i] * 0.85, pass: k, q: n.q, i });
+      });
+    }
+    if (accomp !== "off") {
+      for (const n of acc) {
+        if (n.q < qFrom - 1e-6 || n.q >= qTo - 1e-6) continue;
+        events.push({ t: at(n.q), dur: at(Math.min(qTo, n.q + n.d)) - at(n.q), p: n.p + shiftAt(k, pass, n.q), ch: "acc", v: n.v * levelAt(n.q) * (introVoice && kind === "intro" ? 0.35 : 1), pass: k, q: n.q });
+      }
     }
     t = at(qTo) + gap;
   };
   if (introR) instrumental("intro", introR, verses[0]);
+  if (countIn && !countFirst) { countBarAt(t); t += countBar; }
   verses.forEach((verse, vi) => {
     const k = passes.length;
     const t0 = t;
@@ -564,7 +875,7 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
   const fullBeats = Math.round(h.measureQ / beat);
   const beats = [];
   // the count-in bar counts too: 1, 2, 3 before the music starts
-  if (countIn) for (let b = 0; b < fullBeats; b++) beats.push({ t: b * beat * tm.spq, bar: 0, beat: b, pass: -1 });
+  if (countT >= 0) for (let b = 0; b < fullBeats; b++) beats.push({ t: countT + b * beat * tm.spq, bar: 0, beat: b, pass: -1 });
   passes.forEach((p, k) => {
     for (let m = 1; m <= h.measures; m++) {
       const nb = beatsInBar(m);
@@ -584,6 +895,7 @@ export function performance(h, { tempo, verses, accomp, countIn, stems = new Map
     }
   });
   events.sort((a, b) => a.t - b.t);
+  beats.sort((a, b) => a.t - b.t);
   return { events, passes, total: t, tm, lead, beats };
 }
 
@@ -593,7 +905,8 @@ export function locate(perf, t) {
   perf.passes.forEach((p, k) => { if (t >= p.t0 - 1e-6) cur = { pass: k, kind: p.kind, verse: p.verse, t0: p.t0, qFrom: p.qFrom, qTo: p.qTo }; });
   if (!cur) return null;
   const q = perf.tm.tToQ(t - cur.t0 + perf.tm.qToT(cur.qFrom));
-  return { ...cur, q: Math.min(q, cur.qTo) };
+  // done: an introduction or interlude has finished playing (a count-in may follow before the singing)
+  return { ...cur, q: Math.min(q, cur.qTo), done: cur.kind !== "verse" && q >= cur.qTo - 1e-6 };
 }
 
 /** Seconds of a bar range [from, to] (1-based, inclusive) inside a given section. */

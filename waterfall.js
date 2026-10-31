@@ -15,9 +15,11 @@ export class Waterfall {
     let lo = 127;
     let hi = 0;
     for (const e of this.events) { lo = Math.min(lo, e.p); hi = Math.max(hi, e.p); }
-    // widen to whole octaves (C to B) so the keyboard looks like a keyboard
-    this.lo = Math.max(21, Math.floor((lo - 2) / 12) * 12);
-    this.hi = Math.min(108, Math.ceil((hi + 3) / 12) * 12 - 1);
+    // whole octaves on each side of middle C, as many below as above, so middle C (60) is always
+    // the key in the very middle of the screen (C to C, which also looks like a keyboard)
+    const n = Math.max(2, Math.ceil(Math.max(60 - lo + 1, hi - 60 + 1) / 12));
+    this.lo = Math.max(24, 60 - 12 * n);
+    this.hi = Math.min(96, 60 + 12 * n);
   }
 
   layout(x, w) {

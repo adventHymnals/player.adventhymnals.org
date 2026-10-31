@@ -1,3 +1,4 @@
+import { stretchBuffer } from "./stretch.js";
 // Audio engine: synthesized choir "aah" per voice, sampled piano, count-in click.
 // A look-ahead scheduler plays performance events (see core.performance).
 
@@ -31,10 +32,25 @@ export class Engine {
   ensure() {
     if (this.ctx) return;
     this.ctx = new AudioContext();
+    this.buildGraph();
+  }
+
+  buildGraph(instant = false) {
+    // four sung stems plus the piano can sum past full scale (crackle), so the output is limited:
+    // a gentle compressor, then a hard limiter just under 0 dB
     this.master = this.ctx.createDynamicsCompressor();
     this.master.threshold.value = -14;
     this.master.ratio.value = 3;
-    this.master.connect(this.ctx.destination);
+    const limiter = this.ctx.createDynamicsCompressor();
+    limiter.threshold.value = -3;
+    limiter.knee.value = 0;
+    limiter.ratio.value = 20;
+    limiter.attack.value = 0.002;
+    limiter.release.value = 0.15;
+    const trim = this.ctx.createGain();
+    trim.gain.value = 0.85;
+    this.master.connect(trim).connect(limiter).connect(this.ctx.destination);
+    this.out = limiter;
     this.panners = {};
     for (const ch of Object.keys(PAN)) {
       const g = this.ctx.createGain();
@@ -44,7 +60,8 @@ export class Engine {
       this.channels[ch] = g;
       this.panners[ch] = pan;
     }
-    this.applyLevels();
+    if (instant) for (const [ch, g] of Object.entries(this.channels)) g.gain.value = this.muted[ch] ? 0 : this.levels[ch] ?? 0.8;
+    else this.applyLevels();
   }
 
   /** Stereo position of a channel, -1 (left) to 1 (right). Remembered until the context exists. */
@@ -216,6 +233,14 @@ export class Engine {
 
   setStemBuffers(map) { this.stemBuffers = map; }
 
+  // a recording stretched to another tempo; only the current tempo's copies are kept
+  stretched(buf, ratio) {
+    const k = ratio.toFixed(4);
+    if (this.stretchKey !== k) { this.stretchKey = k; this.stretchCache = new WeakMap(); }
+    if (!this.stretchCache.has(buf)) this.stretchCache.set(buf, stretchBuffer(this.ctx, buf, ratio));
+    return this.stretchCache.get(buf);
+  }
+
   startStem(e, at, offset = 0) {
     const buf = this.stemBuffers?.get(e.stem);
     if (!buf) return;
@@ -260,12 +285,18 @@ export class Engine {
 
   // Scheduling runs ahead of the sound, so the reported position follows its own clock:
   // each entry says "from this context time on, performance t = ctxTime - startAt".
+  // The position is what is heard now: sound reaches the speakers outputLatency (+ baseLatency)
+  // after currentTime (0.1-0.3 s on Bluetooth and phones), so without this the score runs ahead.
   now() {
     if (!this.playing) return this.pausedAt ?? 0;
-    const ct = this.ctx.currentTime;
+    const ct = this.ctx.currentTime - this.latency();
     let s = this.clock[0].startAt;
     for (const c of this.clock) if (c.from <= ct) s = c.startAt;
-    return ct - s;
+    return Math.max(0, ct - s);
+  }
+
+  latency() {
+    return this.ctx ? (this.ctx.outputLatency || 0) + (this.ctx.baseLatency || 0) : 0;
   }
 
   indexAt(t) {
@@ -310,9 +341,38 @@ export class Engine {
       this.next++;
       if (e.stem) { this.startStem(e, at); continue; }
       if (e.silent || at < this.ctx.currentTime - 0.05) continue;
-      if (e.ch === "click") this.click(e.p, at, e.v);
-      else if (e.ch === "acc" || this.voiceSounds[e.ch] === "piano") this.pianoNote(e.ch, e.p, at, e.dur, e.v * (e.ch === "acc" ? 1 : 0.7));
-      else this.choirNote(e.ch, e.p, at, e.dur, e.v);
+      this.sound(e, at);
+    }
+  }
+
+  sound(e, at) {
+    if (e.ch === "click") this.click(e.p, at, e.v);
+    // an introduction's voice lines (inst) are piano, whatever the voice sounds like in the verses
+    else if (e.ch === "acc" || e.inst || this.voiceSounds[e.ch] === "piano") this.pianoNote(e.ch, e.p, at, e.dur, e.v * (e.ch === "acc" ? 1 : 0.7));
+    else this.choirNote(e.ch, e.p, at, e.dur, e.v);
+  }
+
+  /**
+   * The whole performance rendered ahead of time (no live clock, so nothing can stutter), with the current
+   * levels, mutes and sounds. Returns an AudioBuffer of `seconds` length.
+   */
+  async renderOffline(events, seconds, sampleRate = 48000) {
+    this.ensure();
+    const keep = ["ctx", "channels", "panners", "master", "out", "live", "liveStems"].map((k) => [k, this[k]]);
+    const ctx = new OfflineAudioContext(2, Math.ceil(seconds * sampleRate), sampleRate);
+    this.ctx = ctx;
+    this.channels = {};
+    this.live = new Set();
+    this.liveStems = new Set();
+    try {
+      this.buildGraph(true);
+      for (const e of events) {
+        if (e.stem) { if (!this.muted[e.ch]) this.startStem(e, e.t); }
+        else if (!e.silent && !this.muted[e.ch]) this.sound(e, Math.max(0, e.t));
+      }
+      return await ctx.startRendering();
+    } finally {
+      for (const [k, v] of keep) this[k] = v;
     }
   }
 
@@ -321,7 +381,7 @@ export class Engine {
     this.ensure();
     if (!this.tap) {
       this.tap = this.ctx.createMediaStreamDestination();
-      this.master.connect(this.tap);
+      this.out.connect(this.tap);
     }
     return this.tap.stream;
   }

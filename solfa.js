@@ -128,7 +128,11 @@ export class SolfaView {
     const lv = h.voices[h.lyricVoice];
     const inBar = lv.filter((n) => n.q >= a - 1e-6 && n.q < b - 1e-6);
     const isRefrain = inBar.length && sylAt.get(inBar[0].q) >= refrainAt;
-    const verses = isRefrain ? [0] : opts.words === "current" ? [opts.verse] : h.verses.map((_, i) => i + 1);
+    // refrain rows: verse 1's (0), then each verse's own refrain words (1000 + verse)
+    const alts = (h.refrains || []).map((r, i) => (r ? 1000 + i + 1 : 0)).filter(Boolean);
+    const verses = isRefrain
+      ? (opts.words === "current" ? [h.refrains?.[opts.verse - 1] ? 1000 + opts.verse : 0] : [0, ...alts])
+      : opts.words === "current" ? [opts.verse] : h.verses.map((_, i) => i + 1);
     let out = "";
     for (const v of verses) {
       out += `<div class="sf-row sf-words"><span class="sf-bl"></span>`;
@@ -137,11 +141,11 @@ export class SolfaView {
         const ns = inBar.filter((n) => n.q >= ba - 1e-6 && n.q < ba + beat - 1e-6);
         const parts = ns.map((n) => {
           const idx = sylAt.get(n.q);
-          const s = isRefrain ? h.refrain[idx - refrainAt] : h.verses[v - 1]?.[idx];
+          const s = !isRefrain ? h.verses[v - 1]?.[idx] : v > 1000 ? h.refrains[v - 1001]?.[idx - refrainAt] : h.refrain[idx - refrainAt];
           if (!s) return "";
-          const label = idx === 0 && !isRefrain ? `${v}. ` : "";
+          const label = idx === 0 && !isRefrain ? `${v}. ` : idx === refrainAt && v > 1000 ? `${v - 1000}. ` : "";
           const dash = s.s === "begin" || s.s === "middle" ? "-" : "";
-          return `<span class="sf-syl" data-q="${n.q}" data-v="${isRefrain ? 0 : v}">${esc(label + s.t + dash)}</span>`;
+          return `<span class="sf-syl" data-q="${n.q}" data-v="${v}">${esc(label + s.t + dash)}</span>`;
         });
         out += `<span class="sf-beat">${parts.join(" ")}</span>`;
       }
@@ -155,7 +159,7 @@ export class SolfaView {
     for (const c of this.active) if (!now.has(c)) c.el?.classList.remove("on");
     for (const c of now) c.el?.classList.add("on");
     this.active = now;
-    for (const s of this.syls) s.el.classList.toggle("sung", (s.verse === 0 || s.verse === verseN) && s.on <= q + 1e-6 && q < s.end - 1e-6);
+    for (const s of this.syls) s.el.classList.toggle("sung", (s.verse === verseN || (s.verse === 0 && verseN < 1000)) && s.on <= q + 1e-6 && q < s.end - 1e-6);
     const cur = [...now][0]?.el?.closest(".sf-bar");
     if (cur && cur !== this.curBar) { this.curBar?.classList.remove("cur"); cur.classList.add("cur"); this.curBar = cur; }
     return cur;
@@ -208,7 +212,7 @@ export class WordsView {
       syl.forEach((s, j) => {
         const i = j + offset;
         const n = lv[i];
-        if (!n) return;
+        if (!n || !s) return; // no note, or a melisma note
         const cs = opts.chords ? chordAt(n.q, lv[i + 1]?.q ?? h.totalQ) : [];
         const joinNext = s.s === "begin" || s.s === "middle";
         // chord-over-lyrics: each syllable is a small column, its chord(s) on top
@@ -230,9 +234,12 @@ export class WordsView {
     const verses = opts.words === "current" ? [opts.verse] : h.verses.map((_, i) => i + 1);
     for (const v of verses) {
       html += block(h.verses[v - 1] || [], 0, `Verse ${v}`, v);
-      if (h.refrain?.length && (v === verses[0] || opts.refrainEach)) html += block(h.refrain, refrainAt, h.marks.find((m) => m.text)?.text || "Refrain", 0);
+      const label = h.marks.find((m) => m.text)?.text || "Refrain";
+      if (h.refrains?.[v - 1]) html += block(h.refrains[v - 1], refrainAt, `${label} (verse ${v})`, 1000 + v);
+      else if (h.refrain?.length && (v === verses[0] || opts.refrainEach)) html += block(h.refrain, refrainAt, label, 0);
     }
     this.content.innerHTML = `<div class="w-sheet${opts.chords ? " with-chords" : ""}">${html}</div>`;
+    this.alt = new Set((h.refrains || []).map((r, i) => (r ? i + 1 : 0)).filter(Boolean));
     this.syls = withEnds([...this.content.querySelectorAll(".w-syl")].map((el) => ({ el, on: Number(el.dataset.q), verse: Number(el.dataset.v) })));
     this.chordEls = [...this.content.querySelectorAll(".w-chord")];
   }
@@ -241,7 +248,7 @@ export class WordsView {
   highlight(q, verseN, inRefrain) {
     let cur = null;
     for (const s of this.syls) {
-      const mine = inRefrain ? s.verse === 0 : s.verse === verseN;
+      const mine = inRefrain ? s.verse === (this.alt?.has(verseN) ? 1000 + verseN : 0) : s.verse === verseN;
       const on = mine && s.on <= q + 1e-6 && q < s.end - 1e-6;
       s.el.classList.toggle("sung", on);
       if (on) cur = s.el;

@@ -1,6 +1,6 @@
 import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
-  trackKey, trackName, canJoin, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate,
+  trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate,
 } from "./core.js";
 import { Engine } from "./audio.js";
 import { ScoreView } from "./scoreview.js";
@@ -9,6 +9,7 @@ import { Waterfall } from "./waterfall.js";
 import { Presenter } from "./presenter.js";
 import { Studio } from "./studio.js";
 import { exportPdf } from "./pdfexport.js";
+import { canMakeVideo, makeVideos } from "./videomaker.js";
 import { Conductor, feel, mysteryTune, meterHint, PitchListener, centsOff, drawLane, noteName } from "./practice.js";
 
 const $ = (id) => document.getElementById(id);
@@ -29,6 +30,9 @@ const APP = new URLSearchParams(location.search).has("app");
 // ?remote=<url>: this copy is bundled in the app; hymn data and recordings come from that site
 // (the live list and new hymns when online, the bundled copy when not)
 const REMOTE = new URLSearchParams(location.search).get("remote") || "";
+// where the recordings are: the published site sets <meta name="ah-audio"> to the audio store (Cloudflare R2);
+// otherwise they come from the site itself (or the local copy)
+const AUDIO = document.querySelector('meta[name="ah-audio"]')?.content || REMOTE;
 const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED;
 const store = {
   get(k, d) { if (NO_STORE) return d; try { const v = localStorage.getItem(`hymn2:${k}`); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -51,9 +55,13 @@ const state = {
   chords: store.get("chords", false),
   piano: store.get("piano", false),
   accomp: store.get("accomp", "off"),
+  accStaff: store.get("accStaff", false),
   intro: store.get("intro", "none"),
   interlude: store.get("interlude", "none"),
   countIn: store.get("countIn", true),
+  countAt: store.get("countAt", "start"), // the count-in bar: at the very start, or after the introduction
+  introVoice: null, // while making a one-voice video: the voice its introduction plays
+  watermark: false, // while making a video: its watermark is drawn (always, on every video)
   // each voice's sound: "sung" (recorded singers), "choir" (synthesised aah) or "piano";
   // unset means singers when a recording exists, else the choir synth
   voiceSounds: store.get("voiceSounds", {}),
@@ -184,8 +192,9 @@ function verseOrdinal(loc) {
 function scoreQ(loc) {
   if (!loc) return null;
   if (!unfolded()) return loc.q;
-  const j = verseOrdinal(loc);
-  return j === null ? null : j * hymn.totalQ + loc.q;
+  // an introduction or interlude lights up in the copy of the verse that comes next
+  const j = verseOrdinal(loc) ?? Math.min(state.verses.length - 1, perf.passes.slice(0, loc.pass).filter((x) => x.kind === "verse").length);
+  return j * hymn.totalQ + loc.q;
 }
 /** From a position in the score back to a performance time. */
 function timeOfScoreQ(sq) {
@@ -251,7 +260,7 @@ function resetKey() {
 }
 
 function noteStemsTransposed() {
-  if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && "SATB".includes(e.ch) && e.pass >= 0)) {
+  if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && !e.inst && "SATB".includes(e.ch) && e.pass >= 0)) {
     if (!noteStemsTransposed.shown) toast("A key change inside a verse is sung by the synth until the next verse; recordings cover whole verses in one key.", 6000);
     noteStemsTransposed.shown = true;
   }
@@ -292,6 +301,7 @@ function readColors() {
     rule: v("rule"), gilt: v("gilt"), loop: v("loop"), S: v("S"), A: v("A"), T: v("T"), B: v("B"), acc: v("acc"),
   };
   colors.lyric = colors.S;
+  colors.stage = "#f4ecd9"; // the presenter and its videos: cream, softer than white
 }
 
 // ---- boot -----------------------------------------------------------------
@@ -444,11 +454,11 @@ async function loadManifest() {
   manifest = null;
   stemInfo = new Map();
   try {
-    const r = await fetch(`${REMOTE}audio/${hymn.id}/manifest.json`, { cache: "no-cache" })
-      .catch(() => fetch(`${REMOTE}audio/${hymn.id}/manifest.json`, { cache: "force-cache" }));
+    const r = await fetch(`${AUDIO}audio/${hymn.id}/manifest.json`, { cache: "no-cache" })
+      .catch(() => fetch(`${AUDIO}audio/${hymn.id}/manifest.json`, { cache: "force-cache" }));
     if (r.ok) manifest = await r.json();
-    // recordings live on the site, whichever copy of the player this is
-    if (manifest && REMOTE) manifest.stems.forEach((st) => { st.url = new URL(st.url, REMOTE).href; });
+    // recordings live in the audio store, whichever copy of the player this is
+    if (manifest && AUDIO) manifest.stems.forEach((st) => { st.url = new URL(st.url, AUDIO).href; });
   } catch { /* no sung stems for this hymn */ }
   syncSungControls();
 }
@@ -476,6 +486,9 @@ async function prepareStems() {
     rebuild();
     return;
   }
+  // the recording nearest the slider's tempo; it is stretched to the slider's tempo below
+  const tempos = stemTempos();
+  const recTempo = tempos.reduce((a, b) => (Math.abs(b - state.tempo) < Math.abs(a - state.tempo) ? b : a), tempos[0]);
   // In sol-fa mode each voice has one recording singing its note names, reused for every verse.
   const solfaWords = state.words === "solfa";
   const wanted = [];
@@ -484,29 +497,34 @@ async function prepareStems() {
     for (const k of hymnVoices()) {
       if (soundOf(k) !== "sung") continue; // this voice is set to the choir synth or piano
       const shift = verseShift(v);
-      const st = manifest.stems.find((x) => x.voice === k && x.tempo === state.tempo && (x.transpose ?? 0) === shift && x.verse === (solfaWords ? "solfa" : v));
+      const st = manifest.stems.find((x) => x.voice === k && x.tempo === recTempo && (x.transpose ?? 0) === shift && x.verse === (solfaWords ? "solfa" : v));
       if (st) wanted.push({ key: `${k}:${v}:${shift}`, url: st.url, offsetSec: st.offsetSec });
       else if (!solfaWords || v === state.verses[0]) missing.push(solfaWords ? VOICES[k].name : `${VOICES[k].name} ${v}`);
     }
-  }
-  const tempos = stemTempos();
-  if (!manifest.stems.some((x) => x.tempo === state.tempo)) {
-    const near = tempos.reduce((a, b) => (Math.abs(b - state.tempo) < Math.abs(a - state.tempo) ? b : a), tempos[0]);
-    toast(`The singers are recorded at ${tempos.join(", ")} a minute, so you hear the synth at ${state.tempo}.`, 9000, near ? { label: `Use ${near}`, fn: () => setTempo(near) } : null);
-    rebuild();
-    return;
   }
   toast("Loading the singers…", 0);
   try {
     const bufs = await engine.loadStems(wanted, (done, total) => {
       if (total) toast(`Loading the singers… ${done} of ${total}. You can press play now; the synth sings until they arrive.`, 0);
     });
+    // recorded at another tempo: stretch to the slider's tempo, keeping the pitch (everything scales by one ratio)
+    const ratio = recTempo / state.tempo;
+    if (Math.abs(ratio - 1) > 1e-3) {
+      const keys = [...bufs.keys()];
+      for (let i = 0; i < keys.length; i++) {
+        toast(`Fitting the singers to ${state.tempo} a minute… ${i + 1} of ${keys.length}`, 0);
+        await new Promise((r) => setTimeout(r, 0));
+        bufs.set(keys[i], engine.stretched(bufs.get(keys[i]), ratio));
+      }
+    }
     engine.setStemBuffers(bufs);
-    for (const w of wanted) if (bufs.has(w.key)) stemInfo.set(w.key, { offsetSec: w.offsetSec, duration: bufs.get(w.key).duration });
+    for (const w of wanted) if (bufs.has(w.key)) stemInfo.set(w.key, { offsetSec: w.offsetSec * ratio, duration: bufs.get(w.key).duration });
     if (bufs.failed.length) toast(`${bufs.failed.length} recording${bufs.failed.length === 1 ? "" : "s"} did not arrive (slow connection?), so the synth sings ${bufs.failed.length === 1 ? "that part" : "those parts"}. Reload to try again.`, 8000);
     const what = solfaWords ? "singing sol-fa" : "in this key and tempo";
-    toast(missing.length ? `Singers ready. Synth until recorded ${what}: ${missing.join(", ")}.` : "Singers ready.", 7000, missing.length ? { label: "Record them", fn: renderSingers } : null);
-    $("credit").textContent = manifest.credit || "";
+    const far = Math.abs(recTempo / state.tempo - 1) > 0.25 ? ` Recorded at ${recTempo}; this far from it the voices can sound smeared.` : "";
+    toast((missing.length ? `Singers ready. Synth until recorded ${what}: ${missing.join(", ")}.` : "Singers ready.") + far, far ? 9000 : 7000, missing.length ? { label: "Record them", fn: renderSingers } : null);
+    // the singers' voices must be credited (their licence); the code credit stays with the code
+    $("credit").textContent = (manifest.credit || "").replace(/;\s*synthesis code.*$/i, "");
   } catch (err) {
     toast(`The singers could not load: ${err.message}`, 7000);
   }
@@ -565,6 +583,21 @@ function xmlOptions(extra = {}) {
   };
 }
 
+// the accompaniment on a grand staff (right hand, left hand) under the voices, to practise it from
+const pianoShown = () => state.accStaff && state.accomp !== "off" && state.view !== "presenter";
+let pianoCache = null;
+function scoreHymn() {
+  if (!pianoShown()) return hymn;
+  if (pianoCache?.hymn !== hymn || pianoCache.style !== state.accomp) {
+    pianoCache = { hymn, style: state.accomp, h: { ...hymn, voices: { ...hymn.voices, ...pianoVoices(hymn, state.accomp) } } };
+  }
+  return pianoCache.h;
+}
+function withPiano(opts) {
+  if (!pianoShown()) return opts;
+  return { ...opts, tracks: [...opts.tracks, ["R"], ["L"]], trackWords: [...opts.trackWords, false, false] };
+}
+
 function wordsVerse() {
   const loc = perf && locate(perf, engine.now());
   return loc ? loc.verse : state.verses[0];
@@ -604,8 +637,8 @@ async function renderAll() {
     words.render(hymn, { words: state.words === "none" ? "all" : state.words, verse: renderedVerse, chords: state.chords, chordName: (n) => chordLabel(n) });
     positionHeaders(null);
   } else {
-    const opts = xmlOptions();
-    view.render(buildMusicXML(hymn, opts), { mode: state.view, zoom: state.zoom, width: viewport.clientWidth - 8, tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose });
+    const opts = withPiano(xmlOptions());
+    view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: viewport.clientWidth - 8, tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose });
     buildLane();
     positionHeaders(view.systems[0]);
     drawLoopBoxes();
@@ -628,8 +661,9 @@ const iconBtn = (act, ch, pressed, label) =>
 
 function voiceRow(k, single) {
   const name = k === "acc" ? "Accompaniment" : VOICES[k].name;
-  return `<div class="track-voice" style="--vc: var(--${k})">
-      ${single ? "" : `<span class="vname">${name}</span>`}
+  // on a shared staff each voice is one compact row, led by its coloured letter
+  return `<div class="track-voice${single ? "" : " compact"}" style="--vc: var(--${k})">
+      ${single ? "" : `<span class="vname" title="${name}">${k === "acc" ? "Acc" : k}</span>`}
       ${iconBtn("mute", k, !!state.mute[k], `Mute ${name}`)}
       ${iconBtn("solo", k, !!state.solo[k], `Hear only soloed voices: ${name}`)}
       <input type="range" min="0" max="1" step="0.01" value="${state.levels[k]}" data-ch="${k}" aria-label="${name} volume">
@@ -674,20 +708,8 @@ function buildHeaders() {
         ${iconBtn("hide", "", false, `Hide the ${trackName(t)} staff`)}
       </div>
       ${rows[0]}
-      ${t.length > 1 ? `<button class="divider split" data-split="${key}" aria-label="Split ${trackName(t)} onto two staves" title="Drag or click to give each voice its own staff">${ICON.grip}</button>` : ""}
       ${rows[1] || ""}`;
     headersEl.append(el);
-    const nextT = tracks[i + 1];
-    if (nextT && canJoin(t, nextT)) {
-      const j = document.createElement("button");
-      j.className = "divider join";
-      j.innerHTML = ICON.grip;
-      j.dataset.between = key;
-      j.dataset.join = `${key}|${trackKey(nextT)}`;
-      j.setAttribute("aria-label", `Join ${VOICES[t[0]].name} and ${VOICES[nextT[0]].name} on one staff`);
-      j.title = "Drag or click to put both voices on one staff, as in the hymnal";
-      headersEl.append(j);
-    }
   });
   // hidden staves stay in the list, so they can be brought back
   for (const t of tracksOfHymn().filter((x) => state.hidden.includes(trackKey(x)))) {
@@ -735,7 +757,7 @@ function buildHeaders() {
     } else if (act === "show") {
       c.onclick = () => { state.hidden = state.hidden.filter((k) => k !== key); save("hidden"); renderAll(); };
     } else if (act === "style") {
-      c.onchange = () => { state.accomp = c.value; save("accomp"); if (c.value !== "off") engine.loadPiano(); rebuild(); };
+      c.onchange = () => { state.accomp = c.value; save("accomp"); if (c.value !== "off") engine.loadPiano(); rebuild(); if (state.accStaff) renderAll(); };
     }
   });
   headersEl.querySelectorAll("select[data-sound]").forEach((sel) => {
@@ -748,39 +770,58 @@ function buildHeaders() {
       prepareStems();
     };
   });
-  headersEl.querySelectorAll(".divider").forEach((d) => {
-    const act = () => (d.dataset.join ? joinTracks(...d.dataset.join.split("|")) : splitTrack(d.dataset.split));
-    dragOrClick(d, act);
+  syncStavesMenu();
+}
+
+// ---- staves: the layout of the voices, chosen in the toolbar ------------------------------------------
+function setStaves(layout) {
+  state.tracks = layout.split("|").map((t) => t.split(""));
+  for (const t of state.tracks) {
+    const k = trackKey(t);
+    if (t.length > 1 && state.trackWords[k] === undefined) state.trackWords[k] = state.trackWords[t[0]] !== false;
+  }
+  // a voice hidden on its own stays hidden; a joined staff starts shown
+  state.hidden = state.hidden.filter((k) => state.tracks.some((t) => trackKey(t) === k));
+  save("tracks", "trackWords", "hidden");
+  renderAll();
+  window.scrollTo({ top: 0 });
+}
+
+// where the words go: under the top staff only, below the bottom staff only, or under every staff
+function wordsAt() {
+  const keys = visibleTracks().map(trackKey);
+  const on = keys.map((k) => state.trackWords[k] !== false);
+  if (on.every(Boolean)) return "every";
+  if (on.filter(Boolean).length === 1 && on[0]) return "top";
+  if (on.filter(Boolean).length === 1 && on[on.length - 1]) return "bottom";
+  return "";
+}
+
+function setWordsAt(where) {
+  const keys = visibleTracks().map(trackKey);
+  keys.forEach((k, i) => { state.trackWords[k] = where === "every" || (where === "top" ? i === 0 : i === keys.length - 1); });
+  save("trackWords");
+  renderAll();
+}
+
+function syncStavesMenu() {
+  const at = wordsAt();
+  document.querySelectorAll("#stavesMenu [data-words-at]").forEach((b) => {
+    b.setAttribute("role", "radio");
+    b.setAttribute("aria-checked", String(b.dataset.wordsAt === at));
   });
-}
-
-// a divider acts on a click, or on a short vertical drag (pull the voices together or apart)
-function dragOrClick(el, act) {
-  let start = null;
-  el.addEventListener("pointerdown", (e) => { start = e.clientY; el.setPointerCapture(e.pointerId); el.classList.add("dragging"); });
-  el.addEventListener("pointermove", (e) => { if (start !== null) el.style.transform = `translateY(${Math.max(-14, Math.min(14, e.clientY - start))}px)`; });
-  el.addEventListener("pointerup", () => { start = null; el.classList.remove("dragging"); el.style.transform = ""; act(); });
-  el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); act(); } });
-  el.onclick = (e) => e.preventDefault();
-}
-
-function joinTracks(aKey, bKey) {
-  const i = state.tracks.findIndex((t) => trackKey(t) === aKey);
-  const a = state.tracks[i];
-  const b = state.tracks[i + 1];
-  if (!b || trackKey(b) !== bKey) return;
-  state.tracks.splice(i, 2, [...a, ...b]);
-  const k = trackKey([...a, ...b]);
-  if (state.trackWords[k] === undefined) state.trackWords[k] = state.trackWords[aKey] !== false;
-  save("tracks", "trackWords");
-  renderAll();
-}
-
-function splitTrack(key) {
-  const i = state.tracks.findIndex((t) => trackKey(t) === key);
-  state.tracks.splice(i, 1, ...state.tracks[i].map((k) => [k]));
-  save("tracks");
-  renderAll();
+  const cur = state.tracks.map(trackKey).join("|");
+  const voices = Object.keys(hymn?.voices || {});
+  document.querySelectorAll("#stavesMenu [data-layout]").forEach((b) => {
+    b.setAttribute("role", "radio");
+    b.setAttribute("aria-checked", String(b.dataset.layout === cur));
+    // a melody-only song has nothing to lay out
+    b.hidden = voices.length < 4;
+  });
+  const ps = document.querySelector("#stavesMenu [data-acc-staff]");
+  ps.setAttribute("role", "menuitemcheckbox");
+  ps.setAttribute("aria-checked", String(pianoShown()));
+  $("stavesMenu").hidden = voices.length < 4;
 }
 
 /** Line the headers up with the staves of a system (tracks: the only one; page: the one playing). */
@@ -796,7 +837,8 @@ function positionHeaders(system) {
   }
   const offset = sheet.offsetTop;
   const staffEls = items.filter((el) => el.classList.contains("track") && !el.classList.contains("acc") && !el.classList.contains("is-hidden"));
-  const rest = items.filter((el) => el.classList.contains("is-hidden") || el.classList.contains("acc"));
+  const acc = items.find((el) => el.classList.contains("acc"));
+  const rest = items.filter((el) => el.classList.contains("is-hidden") || (el === acc && !pianoShown()));
   const staves = system.staves;
   const sysBottom = system.box.y + system.box.h + offset;
   let bottom = 0;
@@ -809,10 +851,18 @@ function positionHeaders(system) {
     el.style.height = `${Math.max(58, nextTop - top)}px`;
     bottom = Math.max(bottom, top + Math.max(58, nextTop - top));
   });
-  headersEl.querySelectorAll(".divider.join").forEach((j) => {
-    const i = staffEls.findIndex((el) => el.dataset.key === j.dataset.between);
-    const below = staffEls[i + 1];
-    if (below) j.style.top = below.style.top;
+  // the accompaniment's controls sit beside its two staves
+  const pianoTop = staves[staffEls.length];
+  if (acc && pianoShown() && pianoTop) {
+    const top = pianoTop.top - 26 + offset;
+    acc.style.top = `${top}px`;
+    acc.style.height = `${Math.max(58, sysBottom - top)}px`;
+    bottom = Math.max(bottom, top + Math.max(58, sysBottom - top));
+  }
+  // a box too short for its controls (staves close together) puts each voice on one row
+  staffEls.forEach((el) => {
+    el.classList.remove("tight");
+    if (el.scrollHeight > el.clientHeight + 1) el.classList.add("tight");
   });
   let y = Math.max(bottom, state.view === "tracks" ? $("lane").offsetTop : sysBottom);
   for (const el of rest) {
@@ -859,7 +909,7 @@ function rebuild(keep = true) {
   const wasPlaying = engine.playing;
   const loc = keep && perf ? locate(perf, engine.now()) : null;
   const stems = anySung() ? stemInfo : new Map();
-  perf = performance(hymn, { tempo: state.tempo, verses: state.verses, accomp: state.accomp, countIn: state.countIn, stems, intro: state.intro, interlude: state.interlude, shiftAt, metronome: state.metronome });
+  perf = performance(hymn, { tempo: state.tempo, verses: state.verses, accomp: state.accomp, countIn: state.countIn, countAt: state.countAt, introVoice: state.introVoice, stems, intro: state.intro, interlude: state.interlude, shiftAt, metronome: state.metronome });
   engine.load(perf.events);
   waterfall.setPerformance(perf);
   applyLoop();
@@ -1104,8 +1154,10 @@ $("altView").addEventListener("click", (e) => {
 // ---- the moving place ----------------------------------------------------
 
 let lastT = -1;
+let making = false; // a video is being made: its frames are drawn by the maker, not by the clock
 function frame() {
   requestAnimationFrame(frame);
+  if (making) return;
   paint(false);
   if (state.practice) drawPractice();
 }
@@ -1199,7 +1251,8 @@ function drawPractice() {
   const notes = (perf?.events || []).filter((e) => e.ch === voice && !e.stem && e.p > 0)
     .map((e) => ({ t: e.t, dur: e.dur, p: e.p, label: hymn.solfa?.[voice]?.[e.i] || "" }));
   // what you sing reaches the microphone a little after the sound left the speakers
-  const lag = engine.ctx ? (engine.ctx.outputLatency || 0) + (engine.ctx.baseLatency || 0) + 0.03 : 0;
+  // (engine.now() is already what the speakers are playing)
+  const lag = engine.ctx ? 0.03 : 0;
   // while the music plays, your voice is drawn against its clock; stopped, the lane is a tuner
   const tuner = !engine.playing;
   if (tuner !== drawPractice.tuner) { trace = []; drawPractice.tuner = tuner; }
@@ -1309,10 +1362,11 @@ function answerQuiz(btn) {
   $("quizPlay").textContent = "New tune";
 }
 
-function paint(force) {
+// tAt: draw the moment at that performance time instead of the playing one (frames of a video made offline)
+function paint(force, tAt) {
   if (!perf || !hymn) return;
-  const t = engine.now();
-  if (engine.playing && t >= perf.total && !engine.loop) {
+  const t = tAt ?? engine.now();
+  if (tAt === undefined && engine.playing && t >= perf.total && !engine.loop) {
     engine.stop();
     setPlaying(false);
     if (recording) setTimeout(finishRecording, 1200);
@@ -1320,7 +1374,10 @@ function paint(force) {
   const moving = engine.playing || force || Math.abs(t - lastT) > 1e-3;
   if (!moving && !stageWanted()) return;
   lastT = t;
-  const loc = locate(perf, t);
+  // once the introduction has played, nothing is lit until the singing starts (the count-in, if any, runs then):
+  // a lit note would look like the place to start singing
+  const at = locate(perf, t);
+  const loc = at?.done ? null : at;
   if (state.words === "current" && !unfolded() && loc && loc.verse !== renderedVerse && state.view !== "presenter") { renderAll(); return; }
   if (currentShift(loc) !== renderedShift) { renderAll(); return; } // the key changed here
   const refrainQ = hymn.marks.find((m) => /refrain|chorus/i.test(m.text))?.q ?? Infinity;
@@ -1341,11 +1398,12 @@ function paint(force) {
 
   if (stageWanted()) {
     presenter.draw({
-      hymn, q: sq, verseN, tracks: visibleTracks(), colors, t, heard, mode: state.presenterShows,
+      hymn, q: sq, verseN, tracks: visibleTracks(), colors, t, heard, mode: state.presenterShows, watermark: state.watermark,
+      only: loc?.kind === "intro" && state.introVoice ? [state.introVoice] : null,
       verseLabel: !loc ? `Verse ${state.verses[0]}` : loc.kind === "intro" ? "Introduction" : loc.kind === "interlude" ? "Interlude" : q >= refrainQ ? `Refrain, verse ${loc.verse}` : `Verse ${loc.verse}`,
       chord: state.chords && ci >= 0 ? chordLabel(hymn.chords[ci].name) : null,
       nextChord: state.chords && hymn.chords[ci + 1] ? chordLabel(hymn.chords[ci + 1].name) : null,
-      line: lines.now, nextLine: lines.nextText, piano: state.piano ? waterfall : null,
+      line: lines.now, nextLine: lines.nextText, stanza: lines.stanza, stanzaAt: lines.at, piano: state.piano ? waterfall : null,
       loop: state.loop.on ? { from: state.loop.from + copy * hymn.measures, to: state.loop.to + copy * hymn.measures } : null,
     });
     mirrorProjector();
@@ -1355,7 +1413,7 @@ function paint(force) {
     const alt = state.view === "solfa" ? solfa : words;
     if (!loc) alt.clear();
     else {
-      const el = state.view === "solfa" ? solfa.highlight(q, sung ? (q >= refrainQ ? 0 : loc.verse) : -2) : words.highlight(q, sung ? loc.verse : -2, q >= refrainQ);
+      const el = state.view === "solfa" ? solfa.highlight(q, sung ? (q >= refrainQ ? (hymn.refrains?.[loc.verse - 1] ? 1000 + loc.verse : 0) : loc.verse) : -2) : words.highlight(q, sung ? loc.verse : -2, q >= refrainQ);
       alt.markChord(ci, hymn);
       const target = state.view === "solfa" ? el : el?.closest(".w-line");
       if (engine.playing && target && target !== lastFollowEl) {
@@ -1421,6 +1479,17 @@ ribbon.addEventListener("pointerup", () => {
   else toast(`Playing will start from ${$("where").textContent.toLowerCase()}.`, 2500);
 });
 
+// page view: when not playing, the headers stay beside the line at the top of the window as the page scrolls
+window.addEventListener("scroll", () => {
+  if (engine.playing || state.view !== "page" || !view.systems?.length) return;
+  const toolbar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--toolbar-h")) || 52;
+  const y = window.scrollY + toolbar - (sheet.getBoundingClientRect().top + window.scrollY);
+  const sys = view.systems.filter((s) => s.box.y + s.box.h * 0.5 > y)[0] || view.systems.at(-1);
+  if (sys.el === lastSystem) return;
+  lastSystem = sys.el;
+  positionHeaders(sys);
+}, { passive: true });
+
 function follow(ph) {
   if (state.view === "tracks") {
     if (engine.playing) viewport.scrollLeft = ph.x - viewport.clientWidth * 0.33;
@@ -1436,25 +1505,79 @@ function follow(ph) {
   }
 }
 
+// ---- piano roll sheet ----------------------------------------------------------------------------
+// Docked above the words bar. Its handle opens and closes it (click, Enter or Space) and resizes it (drag).
+function setPianoOpen(open) {
+  const p = $("pianoPanel");
+  p.classList.toggle("open", open);
+  $("pianoHandle").setAttribute("aria-expanded", String(open));
+  store.set("pianoOpen", open);
+  paint(true);
+}
+
+function setupPianoSheet() {
+  const p = $("pianoPanel");
+  p.classList.toggle("open", store.get("pianoOpen", false)); // starts as just its bar
+  const h = $("pianoHandle");
+  h.setAttribute("aria-expanded", String(p.classList.contains("open")));
+  // a plain button: click opens or closes it; it gives focus back so Space stays play/pause
+  h.onclick = () => { setPianoOpen(!p.classList.contains("open")); h.blur(); };
+}
+
+// ---- tooltips ------------------------------------------------------------------------------------
+// One tooltip for every button with data-tip or title: shown straight away, kept inside the window.
+function setupTooltips() {
+  const tip = $("tip");
+  let cur = null;
+  const hide = () => { tip.hidden = true; cur = null; };
+  const show = (el) => {
+    if (el.title) { el.dataset.tip = el.title; el.removeAttribute("title"); } // no second, slow native tooltip
+    const text = el.dataset.tip;
+    if (!text) return hide();
+    cur = el;
+    tip.textContent = text;
+    tip.hidden = false;
+    const r = el.getBoundingClientRect();
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = r.left + r.width / 2 - tw / 2;
+    x = Math.max(6, Math.min(window.innerWidth - tw - 6, x));
+    let y = r.bottom + 7;
+    if (y + th > window.innerHeight - 6) y = r.top - th - 7; // no room below: show it above
+    tip.style.left = `${x}px`;
+    tip.style.top = `${y}px`;
+  };
+  document.addEventListener("pointerover", (e) => {
+    if (e.pointerType === "touch") return;
+    const el = e.target.closest?.("[data-tip], [title]");
+    if (el && el !== cur && !el.closest(".score")) show(el);
+    else if (!el) hide();
+  });
+  document.addEventListener("focusin", (e) => { const el = e.target.closest?.("[data-tip], [title]"); if (el && e.target.matches(":focus-visible")) show(el); });
+  document.addEventListener("focusout", hide);
+  document.addEventListener("pointerdown", hide);
+  window.addEventListener("scroll", hide, true);
+}
+
 function drawPianoPanel(t) {
   const c = $("pianoCanvas");
   const w = c.clientWidth;
   const h = c.clientHeight;
   const dpr = window.devicePixelRatio || 1;
-  if (c.width !== Math.round(w * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
+  if (!w || !h) return; // closed: nothing to draw
+  if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
   const g = c.getContext("2d");
   g.setTransform(dpr, 0, 0, dpr, 0, 0);
   waterfall.draw(g, 0, 0, w, h, t, colors, heard);
 }
 
 // words of one pass: the verse, then the refrain, split into sung lines
-function passSyllables(verse) { return [...(hymn.verses[verse - 1] || []), ...(hymn.refrain || [])]; }
+function passSyllables(verse) { return [...(hymn.verses[verse - 1] || []), ...(hymn.refrains?.[verse - 1] || hymn.refrain || [])]; }
 
 function splitLines(syl) {
   const out = [[]];
   syl.forEach((s, i) => {
     out[out.length - 1].push(i);
-    if ((s.s === "single" || s.s === "end") && /[,;:.!?]$/.test(s.t)) out.push([]);
+    if (s && (s.s === "single" || s.s === "end") && /[,;:.!?]$/.test(s.t)) out.push([]);
   });
   return out.filter((l) => l.length);
 }
@@ -1462,6 +1585,7 @@ function splitLines(syl) {
 function lineParts(syl, idxs, current) {
   return idxs.map((i) => {
     const s = syl[i];
+    if (!s) return { text: "", sung: false }; // a melisma note
     const join = s.s === "begin" || s.s === "middle" ? "" : " ";
     return { text: s.t + join, sung: i === current };
   });
@@ -1474,7 +1598,8 @@ function currentLines(loc) {
     const syl = passSyllables(next ?? loc.verse);
     const first = splitLines(syl)[0] || [];
     const nextText = lineParts(syl, first, -1).map((p) => p.text).join("");
-    return { now: [{ text: label, sung: false }], next: [], nextText: `Next: ${nextText}`, key: `${loc.pass}:inst` };
+    const stanza = splitLines(syl).map((l) => lineParts(syl, l, -1)); // the stanza to come, none of it lit yet
+    return { now: [{ text: label, sung: false }], next: [], nextText: `Next: ${nextText}`, key: `${loc.pass}:inst`, stanza, at: -1 };
   }
   const verse = loc ? loc.verse : state.verses[0];
   const syl = passSyllables(verse);
@@ -1483,11 +1608,13 @@ function currentLines(loc) {
   if (loc) {
     const lv = hymn.voices[hymn.lyricVoice];
     si = lv.findIndex((n) => n.q <= loc.q + 1e-6 && loc.q < n.q + n.d - 1e-6);
+    while (si > 0 && !syl[si]) si--; // a melisma keeps its syllable lit
   }
   const li = Math.max(0, ls.findIndex((l) => l.includes(si)));
   const now = ls[li] ? lineParts(syl, ls[li], si) : [];
   const next = ls[li + 1] ? lineParts(syl, ls[li + 1], -1) : [];
-  return { now, next, nextText: next.map((p) => p.text).join(""), key: `${loc?.pass}:${si}:${verse}` };
+  const stanza = ls.map((l, i) => lineParts(syl, l, i === li ? si : -1));
+  return { now, next, nextText: next.map((p) => p.text).join(""), key: `${loc?.pass}:${si}:${verse}`, stanza, at: loc ? li : -1 };
 }
 
 function updateNowbar(loc, ci, lines) {
@@ -1517,6 +1644,179 @@ function openStudio() {
   }, defaults);
 }
 
+// Record button: a dialog first, so the video's content is chosen, then recording starts
+function openRecordDialog() {
+  if (recording) { finishRecording(); return; }
+  const d = $("recDialog");
+  const chips = (box, items, isOn) => {
+    $(box).innerHTML = items.map(([v, l]) => `<label><input type="checkbox" value="${v}" ${isOn(v) ? "checked" : ""}>${l}</label>`).join("");
+  };
+  chips("recVerses", hymn.verses.map((_, i) => [i + 1, String(i + 1)]), (v) => state.verses.includes(Number(v)));
+  chips("recVoices", hymnVoices().map((k) => [k, VOICES[k].name]), (k) => !state.mute[k]);
+  $("recShows").value = state.presenterShows;
+  $("recAccomp").innerHTML = Object.entries(ACCOMP_STYLES).map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+  $("recAccomp").value = state.accomp;
+  for (const [id, key] of [["recIntro", "intro"], ["recInterlude", "interlude"]]) {
+    $(id).innerHTML = Object.entries(INSTRUMENTAL).map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+    $(id).value = state[key];
+  }
+  $("recCountIn").value = state.countIn ? state.countAt : "off";
+  // one video of the choir, and/or one per voice (each voice alone, its introduction playing its own line)
+  chips("recTakes", [["choir", "Choir"], ...hymnVoices().map((k) => [k, VOICES[k].name])], (v) => v === "choir");
+  const summary = () => {
+    const vs = [...$("recVerses").querySelectorAll("input:checked")].map((x) => x.value);
+    const voices = [...$("recVoices").querySelectorAll("input:checked")].map((x) => VOICES[x.value].name);
+    const takes = [...$("recTakes").querySelectorAll("input:checked")].length;
+    $("recSummary").textContent = `${hymn.number} ${hymn.title}: verse${vs.length === 1 ? "" : "s"} ${vs.join(", ") || "none"}; `
+      + `${voices.length ? voices.join(", ") : "no voices"}; at ${state.tempo} a minute; `
+      + `${takes === 1 ? "one mp4" : `${takes} mp4s`}.`;
+  };
+  d.querySelectorAll("input, select").forEach((el) => { el.onchange = summary; });
+  summary();
+  $("recCancel").onclick = () => d.close();
+  $("recStart").onclick = async () => {
+    const vs = [...$("recVerses").querySelectorAll("input:checked")].map((x) => Number(x.value));
+    if (!vs.length) return toast("Choose at least one verse.");
+    const on = new Set([...$("recVoices").querySelectorAll("input:checked")].map((x) => x.value));
+    state.verses = vs; store.set(`verses:${hymn.id}`, vs);
+    for (const k of hymnVoices()) state.mute[k] = !on.has(k);
+    state.presenterShows = $("recShows").value;
+    state.accomp = $("recAccomp").value;
+    state.intro = $("recIntro").value;
+    state.interlude = $("recInterlude").value;
+    state.countIn = $("recCountIn").value !== "off";
+    if (state.countIn) state.countAt = $("recCountIn").value;
+    const takes = [...$("recTakes").querySelectorAll("input:checked")].map((x) => x.value);
+    if (!takes.length) return toast("Choose at least one video.");
+    save("mute", "presenterShows", "accomp", "intro", "interlude", "countIn", "countAt");
+    // keep the rest of the page in step with what was chosen
+    $("presenterShows").value = state.presenterShows; $("intro").value = state.intro; $("interlude").value = state.interlude;
+    $("countIn").checked = state.countIn; $("countAt").value = state.countAt; buildVerseChips();
+    d.close();
+    if (state.accomp !== "off" || state.intro !== "none" || state.interlude !== "none") await engine.loadPiano();
+    if (anySung()) await prepareStems(); else rebuild();
+    buildHeaders();
+    applyMix();
+    if (canMakeVideo()) await makeTakeVideos(takes);
+    else await startRecording(); // an older browser: film the stage live
+  };
+  d.showModal();
+}
+
+// Every video is made ahead of time (see videomaker.js): smooth whatever the browser is doing, and the
+// takes after the first reuse the frames after the introduction.
+async function makeTakeVideos(takeKeys) {
+  if (state.view !== "presenter") { state.view = "presenter"; save("view"); await renderAll(); }
+  stopPlayback();
+  engine.ensure();
+  await engine.loadPiano();
+  const loopWas = state.loop.on;
+  if (loopWas) setLoop(state.loop.from, state.loop.to, false);
+  const choir = hymnVoices().filter((k) => !state.mute[k]);
+  making = true;
+  state.watermark = true;
+  const takes = takeKeys.map((key) => ({
+    name: key === "choir" ? "Choir" : VOICES[key].name,
+    setup: async () => {
+      state.introVoice = key === "choir" ? null : key;
+      rebuild(false);
+      await prepareStage();
+      const voices = key === "choir" ? choir : [key];
+      for (const k of hymnVoices()) engine.setMuted(k, !voices.includes(k));
+      // the takes differ only up to the first verse (the count-in after an introduction is the same in all)
+      const intro = perf.passes[0]?.kind === "intro";
+      const firstVerse = perf.passes.find((p) => p.kind === "verse");
+      const splitT = !intro ? 0 : firstVerse.t0 - (state.countIn && state.countAt === "verse" ? hymn.measureQ * perf.tm.spq : 0);
+      return { total: perf.total + 1, splitT };
+    },
+    drawAt: (t) => paint(true, t),
+    audio: () => engine.renderOffline(perf.events, perf.total + 1.5),
+  }));
+  const made = [];
+  try {
+    await makeVideos($("stage"), takes, {
+      progress: (text) => toast(text, 0),
+      onVideo: async (name, blob, audioCodec) => {
+        // Opus sound in an mp4 does not play everywhere: the server makes it AAC when it can
+        if (audioCodec !== "aac") {
+          try {
+            const r = await fetch("api/to-mp4", { method: "POST", body: blob });
+            if (r.ok) blob = new Blob([await r.arrayBuffer()], { type: "video/mp4" });
+          } catch { /* no server: keep it as it is */ }
+        }
+        made.push({ file: `${hymn.id}-${name}.mp4`, blob });
+      },
+    });
+    $("toast").hidden = true;
+    showMadeVideos(made);
+  } catch (err) {
+    toast(`The video could not be made: ${err.message}`, 8000);
+  } finally {
+    making = false;
+    state.introVoice = null;
+    state.watermark = false;
+    rebuild(false);
+    applyMix();
+    if (loopWas) setLoop(state.loop.from, state.loop.to, true);
+    paint(true);
+  }
+}
+
+// Finished videos are kept until the user saves them: nothing says "saved" before a file is really written.
+function showMadeVideos(made) {
+  const d = $("vidDialog");
+  const picker = "showSaveFilePicker" in window;
+  $("vidTitle").textContent = made.length === 1 ? "Your video is ready" : `Your ${made.length} videos are ready`;
+  $("vidNote").textContent = made.length === 1 ? "It is not saved yet. Choose where to keep it." : "They are not saved yet. Choose where to keep each one.";
+  const mb = (b) => `${(b.size / 1e6).toFixed(1)} MB`;
+  $("vidList").innerHTML = made.map((v, i) => `<li><span class="vname">${v.file}</span><span class="vsize">${mb(v.blob)}</span>`
+    + `<button class="ghost" data-save="${i}">Save…</button></li>`).join("");
+  const done = (i, where) => {
+    const li = $("vidList").children[i];
+    li.querySelector("[data-save]").replaceWith(Object.assign(document.createElement("span"), { className: "saved", textContent: where }));
+  };
+  const saveOne = async (i) => {
+    const v = made[i];
+    if (picker) {
+      try {
+        const fh = await window.showSaveFilePicker({ suggestedName: v.file, types: [{ description: "MP4 video", accept: { "video/mp4": [".mp4"] } }] });
+        const w = await fh.createWritable();
+        await w.write(v.blob);
+        await w.close();
+        done(i, `Saved as ${fh.name}`);
+      } catch (err) { if (err.name !== "AbortError") toast(`Could not save it: ${err.message}`, 6000); }
+      return;
+    }
+    // no save picker in this browser: it downloads, and the browser decides where (usually Downloads)
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(v.blob);
+    a.download = v.file;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 60000);
+    done(i, "Sent to your browser's downloads");
+  };
+  $("vidList").querySelectorAll("[data-save]").forEach((b) => { b.onclick = () => saveOne(Number(b.dataset.save)); });
+  $("vidSaveAll").hidden = made.length < 2 || !("showDirectoryPicker" in window);
+  $("vidSaveAll").onclick = async () => {
+    try {
+      const dir = await window.showDirectoryPicker({ mode: "readwrite" });
+      for (const [i, v] of made.entries()) {
+        const w = await (await dir.getFileHandle(v.file, { create: true })).createWritable();
+        await w.write(v.blob);
+        await w.close();
+        if ($("vidList").children[i].querySelector("[data-save]")) done(i, `Saved in ${dir.name}`);
+      }
+    } catch (err) { if (err.name !== "AbortError") toast(`Could not save them: ${err.message}`, 6000); }
+  };
+  $("vidClose").onclick = () => {
+    const unsaved = $("vidList").querySelectorAll("[data-save]").length;
+    if (unsaved && !confirm(`${unsaved === 1 ? "A video is" : `${unsaved} videos are`} not saved and will be lost. Close anyway?`)) return;
+    d.close();
+  };
+  d.oncancel = (e) => { e.preventDefault(); $("vidClose").onclick(); }; // Escape asks too
+  d.showModal();
+}
+
 async function startRecording() {
   if (recording) { finishRecording(); return; }
   if (state.view !== "presenter") { state.view = "presenter"; save("view"); await renderAll(); }
@@ -1526,7 +1826,16 @@ async function startRecording() {
   stopPlayback();
   const loopWas = state.loop.on;
   if (loopWas) setLoop(state.loop.from, state.loop.to, false);
-  const rec = presenter.record(engine.recordStream(), (blob) => {
+  state.watermark = true;
+  const rec = presenter.record(engine.recordStream(), async (blob) => {
+    // a webm recording is turned into a standard mp4 by the server when it can (players, phones, social sites)
+    if (!blob.type.includes("avc1") && !blob.type.includes("mp4")) {
+      toast("Making the video into an mp4…", 0);
+      try {
+        const r = await fetch("api/to-mp4", { method: "POST", body: blob });
+        if (r.ok) blob = new Blob([await r.arrayBuffer()], { type: "video/mp4" });
+      } catch { /* no server: keep the webm */ }
+    }
     const ext = blob.type.includes("mp4") ? "mp4" : "webm";
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
@@ -1538,7 +1847,8 @@ async function startRecording() {
   recording = { rec, loopWas };
   $("recordBtn").classList.add("recording");
   $("recordBtn").setAttribute("aria-label", "Stop recording");
-  $("recordBtn").dataset.tip = "Stop recording and save the video";
+  $("recordBtn").querySelector("span").textContent = "Stop recording and save the video";
+  document.querySelector("#moreMenu > summary").classList.add("recording");
   toast("Recording. It stops by itself at the end of the last verse.", 3000);
   await engine.play(0);
   setPlaying(true);
@@ -1548,10 +1858,12 @@ function finishRecording() {
   if (!recording) return;
   const r = recording;
   recording = null;
+  state.watermark = false;
   r.rec.stop();
   $("recordBtn").classList.remove("recording");
   $("recordBtn").setAttribute("aria-label", "Record a video");
-  $("recordBtn").dataset.tip = "Record the presenter to a video";
+  $("recordBtn").querySelector("span").textContent = "Record the presenter to a video";
+  document.querySelector("#moreMenu > summary").classList.remove("recording");
   if (r.loopWas) setLoop(state.loop.from, state.loop.to, true);
 }
 
@@ -1561,8 +1873,8 @@ async function doExport() {
   const name = `${hymn.id}-${tracks.map(trackKey).join("-")}.pdf`;
   toast("Making the PDF…", 0);
   try {
-    const opts = xmlOptions({ header: true, words: state.words === "current" ? "all" : state.words });
-    const pages = await exportPdf(tk, buildMusicXML(hymn, opts), hymn, name, $("measureHost"), verovioTranspose(currentShift(null)));
+    const opts = withPiano(xmlOptions({ header: true, words: state.words === "current" ? "all" : state.words }));
+    const pages = await exportPdf(tk, buildMusicXML(scoreHymn(), opts), hymn, name, $("measureHost"), verovioTranspose(currentShift(null)));
     toast(`Saved ${name} (${pages} ${pages === 1 ? "page" : "pages"})`);
   } catch (err) {
     toast(`The PDF could not be made: ${err.message}`);
@@ -1661,6 +1973,27 @@ function bindControls() {
   };
   toggle("chordsBtn", "chords", () => renderAll());
   toggle("pianoBtn", "piano", () => { $("pianoPanel").hidden = !state.piano || state.view === "presenter"; paint(true); });
+  setupPianoSheet();
+  const stavesMenu = $("stavesMenu");
+  stavesMenu.querySelectorAll("[data-layout]").forEach((b) => b.addEventListener("click", () => { stavesMenu.open = false; setStaves(b.dataset.layout); }));
+  stavesMenu.querySelector("[data-acc-staff]").addEventListener("click", () => {
+    stavesMenu.open = false;
+    state.accStaff = !state.accStaff;
+    // a piano staff needs something to show: start the accompaniment if it is off
+    if (state.accStaff && state.accomp === "off") { state.accomp = "church"; engine.loadPiano(); rebuild(); }
+    save("accStaff", "accomp");
+    renderAll();
+  });
+  stavesMenu.querySelectorAll("[data-words-at]").forEach((b) => b.addEventListener("click", () => { stavesMenu.open = false; setWordsAt(b.dataset.wordsAt); }));
+  document.addEventListener("click", (e) => { if (stavesMenu.open && !stavesMenu.contains(e.target)) stavesMenu.open = false; });
+  const setToolbarH = () => document.documentElement.style.setProperty("--toolbar-h", `${document.querySelector(".toolbar").offsetHeight}px`);
+  setToolbarH();
+  window.addEventListener("resize", setToolbarH);
+  setupTooltips();
+  // the More menu closes after a choice, and when clicking elsewhere
+  const more = $("moreMenu");
+  more.querySelectorAll(".menu-item").forEach((b) => b.addEventListener("click", () => { more.open = false; }));
+  document.addEventListener("click", (e) => { if (more.open && !more.contains(e.target)) more.open = false; });
   $("studioBtn").onclick = openStudio;
   $("studioClose").onclick = () => $("studio").close();
   $("studioReset").onclick = () => studio.reset();
@@ -1713,6 +2046,8 @@ function bindControls() {
   $("restoreRhythm").onclick = restoreRhythm;
   $("countIn").checked = state.countIn;
   $("countIn").onchange = (e) => { state.countIn = e.target.checked; save("countIn"); rebuild(); };
+  $("countAt").value = state.countAt;
+  $("countAt").onchange = (e) => { state.countAt = e.target.value; save("countAt"); rebuild(); };
   $("zoomIn").onclick = () => { state.zoom = Math.min(2, state.zoom * 1.15); save("zoom"); renderAll(); };
   $("zoomOut").onclick = () => { state.zoom = Math.max(0.6, state.zoom / 1.15); save("zoom"); renderAll(); };
   document.addEventListener("click", (e) => { const m = $("optionsMenu"); if (m.open && !m.contains(e.target)) m.open = false; });
@@ -1722,7 +2057,7 @@ function bindControls() {
   $("importAudioFile").onchange = (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) doImportAudio(f); };
   $("importFile").onchange = (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) doImport(f); };
   $("exportBtn").onclick = doExport;
-  $("recordBtn").onclick = startRecording;
+  $("recordBtn").onclick = openRecordDialog;
 
   let w = window.innerWidth;
   let timer;

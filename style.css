@@ -29,36 +29,36 @@ button, select, input { font: inherit; color: inherit; }
 /* the hymn number is the one loud thing, printed the way hymnals print it */
 .masthead {
   display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 0 20px;
-  padding: 16px clamp(16px, 3vw, 32px) 10px;
+  padding: 8px clamp(16px, 3vw, 32px) 6px;
 }
-.number { font: 800 clamp(52px, 7vw, 84px)/0.8 var(--serif); color: var(--gilt); letter-spacing: -0.02em; padding-bottom: 3px; }
-.titles h1 { font: 700 clamp(24px, 2.8vw, 34px)/1.1 var(--serif); margin: 0; color: var(--cloth); }
-.credits { margin: 4px 0 0; color: var(--muted); font: italic 400 16px/1.3 var(--serif); }
+.number { font: 800 clamp(36px, 4.4vw, 54px)/0.8 var(--serif); color: var(--gilt); letter-spacing: -0.02em; padding-bottom: 2px; }
+.titles h1 { font: 700 clamp(20px, 2.1vw, 27px)/1.1 var(--serif); margin: 0; color: var(--cloth); }
+.credits { margin: 2px 0 0; color: var(--muted); font: italic 400 14px/1.3 var(--serif); }
 .picker select { border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; padding: 6px 10px; max-width: 40vw; }
 
 /* ---- toolbar ---- */
 .toolbar {
   position: sticky; top: 0; z-index: 20;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
-  padding: 8px clamp(12px, 3vw, 32px);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px;
+  padding: 5px clamp(10px, 2vw, 24px);
   background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
 }
 .transport { display: flex; align-items: center; gap: 8px; }
 .play, .stop { border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; }
-.play { width: 48px; height: 48px; background: var(--cloth); color: var(--paper); }
+.play { width: 40px; height: 40px; background: var(--cloth); color: var(--paper); }
 .play:hover { background: #2a3a62; }
-.stop { width: 38px; height: 38px; background: var(--paper-2); color: var(--cloth); border: 1px solid var(--rule); }
+.stop { width: 32px; height: 32px; background: var(--paper-2); color: var(--cloth); border: 1px solid var(--rule); }
 .stop:hover { border-color: var(--cloth); }
 .play svg { width: 22px; height: 22px; fill: currentColor; }
 .stop svg { width: 16px; height: 16px; fill: currentColor; }
-.where { color: var(--muted); font-size: 14px; min-width: 150px; margin-left: 4px; }
+.where { color: var(--muted); font-size: 13px; min-width: 64px; max-width: 150px; margin-left: 2px; line-height: 1.2; }
 .tool { display: flex; align-items: center; gap: 6px; }
-.tempo span { color: var(--muted); font-size: 14px; min-width: 76px; }
-.tempo input { width: 110px; accent-color: var(--cloth); }
-.loop input { width: 54px; border: 1px solid var(--rule); border-radius: 6px; padding: 3px 6px; background: var(--paper); }
+.tempo span { color: var(--muted); font-size: 13px; min-width: 62px; }
+.tempo input { width: 72px; accent-color: var(--cloth); }
+.loop input { width: 46px; border: 1px solid var(--rule); border-radius: 6px; padding: 3px 6px; background: var(--paper); }
 .loop .dash { color: var(--muted); font-size: 14px; }
 .toggle, .seg, .ghost {
-  border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; padding: 5px 11px; cursor: pointer; font-size: 15px;
+  border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; padding: 4px 8px; cursor: pointer; font-size: 14px;
 }
 .toggle:hover, .seg:hover, .ghost:hover { border-color: var(--cloth); }
 .toggle[aria-pressed="true"], .seg[aria-pressed="true"] { background: var(--cloth); border-color: var(--cloth); color: var(--paper); }
@@ -66,11 +66,14 @@ button, select, input { font: inherit; color: inherit; }
 .views .seg { border-radius: 0; margin-left: -1px; }
 .views .seg:first-child { border-radius: 6px 0 0 6px; margin-left: 0; }
 .views .seg:last-child { border-radius: 0 6px 6px 0; }
-.files { margin-left: auto; }
+.more { margin-left: auto; }
+.menu.more > summary { list-style: none; padding: 0; width: 34px; height: 32px; display: inline-grid; place-items: center; }
+.more > summary svg { fill: currentColor; }
+.more > summary::-webkit-details-marker { display: none; }
 
 
 .menu { position: relative; }
-.menu summary { list-style: none; border: 1px solid var(--rule); border-radius: 6px; padding: 5px 11px; cursor: pointer; font-size: 15px; }
+.menu summary { list-style: none; border: 1px solid var(--rule); border-radius: 6px; padding: 4px 9px; cursor: pointer; font-size: 14px; }
 .menu summary::-webkit-details-marker { display: none; }
 .menu[open] summary { border-color: var(--cloth); }
 .menu-panel {
@@ -96,6 +99,10 @@ button, select, input { font: inherit; color: inherit; }
 .workspace.heads-collapsed { grid-template-columns: 34px minmax(0, 1fr); }
 .headers { position: relative; border-right: 1px solid var(--rule); background: var(--paper-2); align-self: stretch; }
 .viewport { position: relative; min-width: 0; }
+/* outside the staff-aligned views the sidebar stays in sight while the page scrolls */
+.headers.stacked { position: sticky; top: var(--toolbar-h, 52px); align-self: start; }
+.workspace { background: linear-gradient(to right, var(--paper-2) calc(var(--head-w) - 1px), var(--rule) calc(var(--head-w) - 1px), var(--rule) var(--head-w), transparent var(--head-w)); }
+.workspace.heads-collapsed { background: linear-gradient(to right, var(--paper-2) 33px, var(--rule) 33px, var(--rule) 34px, transparent 34px); }
 .workspace[data-view="tracks"] .viewport { overflow-x: auto; overflow-y: hidden; scrollbar-color: var(--rule) transparent; }
 .sheet { position: relative; }
 .workspace[data-view="tracks"] .sheet { width: max-content; }
@@ -117,6 +124,8 @@ button, select, input { font: inherit; color: inherit; }
 .score g.note.on-A g.verse.sung * { fill: var(--A); }
 .score g.note.on-T g.verse.sung * { fill: var(--T); }
 .score g.note.on-B g.verse.sung * { fill: var(--B); }
+.score g.note.on-R > :not(.verse), .score g.note.on-R > :not(.verse) *,
+.score g.note.on-L > :not(.verse), .score g.note.on-L > :not(.verse) * { fill: var(--acc); }
 .score g.harm.sounding text, .score g.harm.sounding tspan { fill: var(--gilt); font-weight: 700; }
 
 .loopbox-layer { position: absolute; inset: 0; pointer-events: none; }
@@ -133,12 +142,14 @@ button, select, input { font: inherit; color: inherit; }
   border: solid var(--gilt); border-width: 0 2px 9px 2px; border-bottom-color: transparent;
 }
 
-/* ---- a track header: name, icon buttons, volume; dividers join or split staves ---- */
+/* ---- a track header: name, icon buttons, volume (the staff layout is chosen in the toolbar) ---- */
 .track {
   position: absolute; left: 0; right: 0; padding: 6px 8px 6px 14px;
-  border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 3px; overflow: hidden;
+  border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 3px; overflow: clip;
 }
-.headers.stacked .track, .headers.stacked .divider { position: relative; top: auto !important; height: auto !important; }
+/* when the page scrolls, a voice's name and buttons stay in view just under the toolbar while its staff does */
+.track > .track-title { position: sticky; top: var(--toolbar-h, 52px); z-index: 2; background: var(--paper-2); box-shadow: 0 6px 6px -6px rgba(30, 42, 71, 0.18); }
+.headers.stacked .track { position: relative; top: auto !important; height: auto !important; }
 .track::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
 .track.joined::before { background: linear-gradient(var(--c) 0 50%, var(--c2) 50% 100%); }
 .track-title { display: flex; align-items: center; gap: 2px; }
@@ -160,16 +171,6 @@ button, select, input { font: inherit; color: inherit; }
 .track.is-hidden { opacity: 0.75; padding-top: 4px; padding-bottom: 4px; background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(30,42,71,0.035) 6px 12px); }
 .track.is-hidden .name { font-weight: 500; font-style: italic; }
 .track.acc select { border: 1px solid var(--rule); background: var(--paper); border-radius: 4px; padding: 2px 4px; font-size: 13px; width: 100%; }
-/* a divider between two voices: drag (or click) to join them on one staff, or to split them */
-.divider {
-  position: absolute; left: 14px; right: 8px; height: 14px; transform-origin: center; z-index: 3; margin-top: -7px;
-  display: grid; place-items: center; cursor: ns-resize; border: 0; padding: 0; color: var(--muted);
-  background: linear-gradient(var(--rule), var(--rule)) center / 100% 1px no-repeat;
-}
-.divider svg { width: 24px; height: 8px; background: var(--paper-2); padding: 0 4px; box-sizing: content-box; }
-.divider:hover, .divider.dragging { color: var(--cloth); background-image: linear-gradient(var(--cloth), var(--cloth)); }
-.divider.split { position: relative; left: auto; right: auto; margin: 1px 0; background-image: repeating-linear-gradient(90deg, var(--rule) 0 4px, transparent 4px 8px); background-size: 100% 1px; }
-.headers.stacked .divider.join { margin: 0; }
 
 /* chord lane under the tracks view */
 .lane { position: relative; height: 0; }
@@ -185,8 +186,6 @@ button, select, input { font: inherit; color: inherit; }
 .stage-wrap { padding: 12px clamp(8px, 2vw, 24px); }
 .stage-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
 
-.piano-panel { border-top: 1px solid var(--rule); }
-.piano-panel canvas { display: block; width: 100%; height: 230px; }
 
 /* now: chord and the line being sung */
 .nowbar {
@@ -327,17 +326,12 @@ button, select, input { font: inherit; color: inherit; }
 
 /* icon buttons with an immediate tooltip */
 .icon-btn {
-  position: relative; width: 36px; height: 34px; display: inline-grid; place-items: center; padding: 0; cursor: pointer;
+  position: relative; width: 32px; height: 30px; display: inline-grid; place-items: center; padding: 0; cursor: pointer;
   border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; color: var(--cloth);
 }
 .icon-btn svg { width: 20px; height: 20px; }
 .icon-btn:hover { border-color: var(--cloth); }
 .icon-btn.rec { color: var(--S); }
-.icon-btn
-[data-tip]:hover::after, [data-tip]:focus-visible::after {
-  content: attr(data-tip); position: absolute; top: calc(100% + 7px); right: 0; z-index: 40; white-space: nowrap;
-  background: var(--cloth); color: var(--paper); font: 500 13px/1.2 var(--sans); padding: 6px 9px; border-radius: 5px; pointer-events: none;
-}
 .tool-sep { width: 1px; height: 24px; background: var(--rule); margin: 0 4px; }
 
 /* each voice chooses its own sound in its sidebar row */
@@ -492,3 +486,99 @@ body.app #practicePanel, body.app #pianoPanel { display: none !important; }
 body.app .workspace { grid-template-columns: 1fr !important; }
 body.app { background: var(--paper, #fbf8f2); }
 .w-word { display: inline-flex; white-space: nowrap; }
+
+/* the More menu: import, export, presenter and recording, each with its words */
+.more-panel {
+  position: absolute; top: calc(100% + 6px); right: 0; bottom: auto; left: auto; width: max-content; min-width: 300px;
+  padding: 6px; border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 10px 28px rgba(30, 42, 71, 0.16);
+}
+.more-panel hr { border: 0; border-top: 1px solid var(--rule); margin: 4px 2px; }
+.menu-item {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 7px 10px; border: 0; border-radius: 5px;
+  background: none; color: var(--ink); font: 500 14.5px var(--sans); text-align: left; cursor: pointer;
+}
+.menu-item svg { width: 20px; height: 20px; flex: none; color: var(--cloth); }
+.menu-item:hover, .menu-item:focus-visible { background: var(--paper-2); }
+.menu-item.rec svg { color: var(--S); }
+.menu-item.recording { color: var(--S); font-weight: 700; }
+
+/* one tooltip for every button: shown at once, kept inside the window */
+.tip {
+  position: fixed; z-index: 200; max-width: 280px; pointer-events: none;
+  background: var(--cloth); color: var(--paper); font: 500 13px/1.3 var(--sans); padding: 6px 9px; border-radius: 5px;
+  box-shadow: 0 4px 14px rgba(30, 42, 71, 0.25);
+}
+
+/* piano roll: a bar docked at the very bottom of the window; click it to open or close the roll.
+   The words bar then sits just above it. */
+.piano-panel {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 24; border-top: 0;
+  background: var(--paper); box-shadow: 0 -8px 24px rgba(30, 42, 71, 0.14);
+}
+.sheet-handle {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 30px; cursor: pointer; padding: 0;
+  border: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--paper-2);
+  color: var(--cloth); font: 600 13px var(--sans);
+}
+.sheet-handle:hover { background: var(--rule); }
+.sheet-handle .chev { width: 18px; height: 18px; transition: transform 0.15s; }
+.piano-panel.open .sheet-handle .chev { transform: rotate(180deg); }
+.piano-panel canvas { display: block; width: 100%; height: min(260px, 42vh); }
+.piano-panel:not(.open) canvas { display: none; }
+body:has(#pianoPanel:not([hidden])) .nowbar { bottom: 30px; }
+body:has(#pianoPanel.open:not([hidden])) .nowbar { bottom: calc(min(260px, 42vh) + 30px); }
+/* the page scrolls far enough that nothing stays hidden behind the docked piano roll */
+body:has(#pianoPanel:not([hidden])) { padding-bottom: 30px; }
+body:has(#pianoPanel.open:not([hidden])) { padding-bottom: calc(min(260px, 42vh) + 30px); }
+#moreMenu > summary.recording { color: var(--paper); background: var(--S); border-color: var(--S); }
+
+/* Staves menu: the four ways of putting the voices on staves */
+.staves-panel {
+  position: absolute; top: calc(100% + 6px); right: 0; left: auto; bottom: auto; width: max-content; min-width: 280px;
+  padding: 6px; border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 10px 28px rgba(30, 42, 71, 0.16);
+}
+.menu-item .lay { min-width: 62px; font: 700 13px var(--sans); color: var(--cloth); letter-spacing: 0.04em; }
+.menu-item[aria-checked="true"] { background: var(--cloth); color: var(--paper); }
+.menu-item[aria-checked="true"] .lay { color: var(--gilt); }
+.staves-panel hr { border: 0; border-top: 1px solid var(--rule); margin: 4px 2px; }
+.menu-h { margin: 4px 10px 2px; font: 700 12px var(--sans); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* a shared staff (e.g. soprano and alto): each voice on one row, so both fit beside a closely spaced grand staff */
+.track-voice.compact { grid-template-columns: 18px auto auto minmax(40px, 1fr) 70px; gap: 0 2px; }
+.track-voice.compact .vname {
+  grid-column: auto; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 4px;
+  background: var(--vc); color: var(--paper); font: 700 11px var(--sans);
+}
+.track-voice.compact .vsound { grid-column: auto; font-size: 12px; padding: 1px 2px; }
+.track-voice.compact input[type="range"] { min-width: 40px; margin-left: 2px; }
+.track-voice.compact .ib { width: 24px; }
+.track.joined { padding-top: 3px; padding-bottom: 3px; gap: 1px; }
+.track.joined .track-title .name { font-size: 15px; }
+.track.joined .track-title .ib { height: 22px; }
+.track-voice.compact .ib { height: 22px; }
+.track-voice.compact .vsound { height: 22px; }
+/* a single voice whose staff sits close to the next: volume and sound on one row */
+.track.tight { padding-top: 3px; padding-bottom: 3px; gap: 1px; }
+.track.tight .track-voice:not(.compact) { grid-template-columns: auto auto minmax(40px, 1fr) 70px; gap: 0 2px; }
+.track.tight .track-voice:not(.compact) .vsound { grid-column: auto; font-size: 12px; padding: 1px 2px; height: 22px; }
+.track.tight .ib { height: 22px; }
+
+/* Record dialog: everything the video will contain, chosen before recording starts */
+.recdlg { border: 1px solid var(--rule); border-radius: 10px; padding: 18px 22px; background: var(--paper); color: var(--ink); width: min(520px, 94vw); }
+.recdlg::backdrop { background: rgba(30, 42, 71, 0.35); }
+.recdlg h2 { margin: 0 0 10px; font: 700 21px var(--serif); color: var(--cloth); }
+.rec-grid .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--paper-2); }
+.rec-grid .row > span { color: var(--muted); font-size: 14px; }
+.rec-grid select { border: 1px solid var(--rule); border-radius: 6px; padding: 4px 8px; background: var(--paper); }
+.rec-grid .chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.rec-grid .chips label { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--rule); border-radius: 999px; padding: 2px 9px; font-size: 14px; cursor: pointer; }
+.rec-grid .chips label:has(input:checked) { background: var(--cloth); border-color: var(--cloth); color: var(--paper); }
+.rec-grid .chips input { display: none; }
+.rec-sum { margin: 10px 0 0; color: var(--muted); font-size: 13.5px; }
+
+/* finished videos, each saved where the user chooses */
+.vid-list { list-style: none; margin: 12px 0 4px; padding: 0; display: grid; gap: 8px; }
+.vid-list li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; }
+.vid-list .vname { flex: 1; font-weight: 600; overflow-wrap: anywhere; }
+.vid-list .vsize { color: var(--muted); font-size: 13px; }
+.vid-list .saved { color: var(--cloth); font-weight: 600; font-size: 13.5px; }

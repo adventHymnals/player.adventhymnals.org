@@ -1,9 +1,359 @@
 [
  {
+  "id": "CH1941-1",
+  "book": "CH1941",
+  "number": "1",
+  "title": "Before Jehovah's Awful Throne",
+  "path": "data/CH1941/1.json"
+ },
+ {
+  "id": "CH1941-2",
+  "book": "CH1941",
+  "number": "2",
+  "title": "From All That Dwell Below the Skies",
+  "path": "data/CH1941/2.json"
+ },
+ {
+  "id": "CS1900-1",
+  "book": "CS1900",
+  "number": "1",
+  "title": "Lead Them to Thee",
+  "path": "data/CS1900/1.json"
+ },
+ {
+  "id": "CS1900-2",
+  "book": "CS1900",
+  "number": "2",
+  "title": "Tell Me the Old, Old Story",
+  "path": "data/CS1900/2.json"
+ },
+ {
+  "id": "CS1900-3",
+  "book": "CS1900",
+  "number": "3",
+  "title": "Jesus Loves Me",
+  "path": "data/CS1900/3.json"
+ },
+ {
+  "id": "CS1900-4",
+  "book": "CS1900",
+  "number": "4",
+  "title": "At the Door",
+  "path": "data/CS1900/4.json"
+ },
+ {
+  "id": "CS1900-5",
+  "book": "CS1900",
+  "number": "5",
+  "title": "Shall I Let Him In?",
+  "path": "data/CS1900/5.json"
+ },
+ {
+  "id": "CS1900-6",
+  "book": "CS1900",
+  "number": "6",
+  "title": "Make Room for Jesus",
+  "path": "data/CS1900/6.json"
+ },
+ {
+  "id": "CS1908-1",
+  "book": "CS1908",
+  "number": "1",
+  "title": "Christ or Barabbas?",
+  "path": "data/CS1908/1.json"
+ },
+ {
+  "id": "CS1908-2",
+  "book": "CS1908",
+  "number": "2",
+  "title": "White Leaves",
+  "path": "data/CS1908/2.json"
+ },
+ {
+  "id": "CS1908-3",
+  "book": "CS1908",
+  "number": "3",
+  "title": "Welcome! Wanderer, Welcome!",
+  "path": "data/CS1908/3.json"
+ },
+ {
+  "id": "CS1908-4",
+  "book": "CS1908",
+  "number": "4",
+  "title": "Drifting Away from the Saviour",
+  "path": "data/CS1908/4.json"
+ },
+ {
+  "id": "CS1908-5",
+  "book": "CS1908",
+  "number": "5",
+  "title": "Shall You? Shall I?",
+  "path": "data/CS1908/5.json"
+ },
+ {
+  "id": "CS1908-6",
+  "book": "CS1908",
+  "number": "6",
+  "title": "Nailed to the Cross",
+  "path": "data/CS1908/6.json"
+ },
+ {
+  "id": "CS1908-7",
+  "book": "CS1908",
+  "number": "7",
+  "title": "The Very Same Jesus",
+  "path": "data/CS1908/7.json"
+ },
+ {
+  "id": "CS1908-8",
+  "book": "CS1908",
+  "number": "8",
+  "title": "Jesus Is Calling",
+  "path": "data/CS1908/8.json"
+ },
+ {
+  "id": "CS1908-9",
+  "book": "CS1908",
+  "number": "9",
+  "title": "Over the Line",
+  "path": "data/CS1908/9.json"
+ },
+ {
+  "id": "CS1908-10",
+  "book": "CS1908",
+  "number": "10",
+  "title": "I Am the Way",
+  "path": "data/CS1908/10.json"
+ },
+ {
+  "id": "NZK-101",
+  "book": "NZK",
+  "number": "101",
+  "title": "Yesu Akwita",
+  "path": "data/NZK/101.json"
+ },
+ {
+  "id": "NZK-119",
+  "book": "NZK",
+  "number": "119",
+  "title": "Alilipa Bei",
+  "path": "data/NZK/119.json"
+ },
+ {
+  "id": "SDAH-1",
+  "book": "SDAH",
+  "number": "1",
+  "title": "Praise to the Lord",
+  "path": "data/SDAH/1.json"
+ },
+ {
+  "id": "SDAH-2",
+  "book": "SDAH",
+  "number": "2",
+  "title": "All Creatures of Our God and King",
+  "path": "data/SDAH/2.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
   "title": "Great Is Thy Faithfulness",
   "path": "data/SDAH/100.json"
+ },
+ {
+  "id": "SDAH-184",
+  "book": "SDAH",
+  "number": "184",
+  "title": "Jesus Paid It All",
+  "path": "data/SDAH/184.json"
+ },
+ {
+  "id": "SDAH-422",
+  "book": "SDAH",
+  "number": "422",
+  "title": "Marching to Zion",
+  "path": "data/SDAH/422.json"
+ },
+ {
+  "id": "SDAH-440",
+  "book": "SDAH",
+  "number": "440",
+  "title": "How Cheering Is the Christian's Hope",
+  "path": "data/SDAH/440.json"
+ },
+ {
+  "id": "SDAH-600",
+  "book": "SDAH",
+  "number": "600",
+  "title": "Hold Fast Till I Come",
+  "path": "data/SDAH/600.json"
+ },
+ {
+  "id": "SDAH-601",
+  "book": "SDAH",
+  "number": "601",
+  "title": "Watchmen, on the Walls of Zion",
+  "path": "data/SDAH/601.json"
+ },
+ {
+  "id": "SDAH-602",
+  "book": "SDAH",
+  "number": "602",
+  "title": "O Brother, Be Faithful",
+  "path": "data/SDAH/602.json"
+ },
+ {
+  "id": "SDAH-603",
+  "book": "SDAH",
+  "number": "603",
+  "title": "Christian, Seek Not Repose",
+  "path": "data/SDAH/603.json"
+ },
+ {
+  "id": "SDAH-604",
+  "book": "SDAH",
+  "number": "604",
+  "title": "We Know Not the Hour",
+  "path": "data/SDAH/604.json"
+ },
+ {
+  "id": "SDAH-605",
+  "book": "SDAH",
+  "number": "605",
+  "title": "My Soul, Be on Thy Guard",
+  "path": "data/SDAH/605.json"
+ },
+ {
+  "id": "SDAH-606",
+  "book": "SDAH",
+  "number": "606",
+  "title": "Once to Every Man and Nation",
+  "path": "data/SDAH/606.json"
+ },
+ {
+  "id": "SDAH-607",
+  "book": "SDAH",
+  "number": "607",
+  "title": "God of Grace and God of Glory",
+  "path": "data/SDAH/607.json"
+ },
+ {
+  "id": "SDAH-608",
+  "book": "SDAH",
+  "number": "608",
+  "title": "Faith Is the Victory",
+  "path": "data/SDAH/608.json"
+ },
+ {
+  "id": "SDAH-609",
+  "book": "SDAH",
+  "number": "609",
+  "title": "Am I a Soldier of the Cross?",
+  "path": "data/SDAH/609.json"
+ },
+ {
+  "id": "SDAH-610",
+  "book": "SDAH",
+  "number": "610",
+  "title": "Stand Like the Brave",
+  "path": "data/SDAH/610.json"
+ },
+ {
+  "id": "SDAH-611",
+  "book": "SDAH",
+  "number": "611",
+  "title": "Awake, My Soul!",
+  "path": "data/SDAH/611.json"
+ },
+ {
+  "id": "SDAH-612",
+  "book": "SDAH",
+  "number": "612",
+  "title": "Onward, Christian Soldiers!",
+  "path": "data/SDAH/612.json"
+ },
+ {
+  "id": "SDAH-613",
+  "book": "SDAH",
+  "number": "613",
+  "title": "Fight the Good Fight",
+  "path": "data/SDAH/613.json"
+ },
+ {
+  "id": "SDAH-614",
+  "book": "SDAH",
+  "number": "614",
+  "title": "Sound the Battle Cry",
+  "path": "data/SDAH/614.json"
+ },
+ {
+  "id": "SDAH-615",
+  "book": "SDAH",
+  "number": "615",
+  "title": "Rise Up, O Church of God",
+  "path": "data/SDAH/615.json"
+ },
+ {
+  "id": "SDAH-616",
+  "book": "SDAH",
+  "number": "616",
+  "title": "Soldiers of Christ, Arise",
+  "path": "data/SDAH/616.json"
+ },
+ {
+  "id": "SDAH-617",
+  "book": "SDAH",
+  "number": "617",
+  "title": "We Are Living, We Are Dwelling",
+  "path": "data/SDAH/617.json"
+ },
+ {
+  "id": "SDAH-618",
+  "book": "SDAH",
+  "number": "618",
+  "title": "Stand Up! Stand Up for Jesus!",
+  "path": "data/SDAH/618.json"
+ },
+ {
+  "id": "SDAH-619",
+  "book": "SDAH",
+  "number": "619",
+  "title": "Lead On, O King Eternal",
+  "path": "data/SDAH/619.json"
+ },
+ {
+  "id": "SDAH-620",
+  "book": "SDAH",
+  "number": "620",
+  "title": "On Jordan's Stormy Banks",
+  "path": "data/SDAH/620.json"
+ },
+ {
+  "id": "SDAH-621",
+  "book": "SDAH",
+  "number": "621",
+  "title": "Gracious Father, Guard Thy Children",
+  "path": "data/SDAH/621.json"
+ },
+ {
+  "id": "SDAH-623",
+  "book": "SDAH",
+  "number": "623",
+  "title": "I Will Follow Thee",
+  "path": "data/SDAH/623.json"
+ },
+ {
+  "id": "SDAH-624",
+  "book": "SDAH",
+  "number": "624",
+  "title": "I Want Jesus to Walk With Me",
+  "path": "data/SDAH/624.json"
+ },
+ {
+  "id": "WN-166",
+  "book": "WN",
+  "number": "166",
+  "title": "Jawar Owachona",
+  "path": "data/WN/166.json"
  }
 ]

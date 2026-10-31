@@ -62,7 +62,9 @@ export class Presenter {
       const anchors = [...onsets].map(([q, xs]) => ({ q, x: xs.reduce((a, b) => a + b, 0) / xs.length })).sort((a, b) => a.q - b.q);
       const measures = [...root.querySelectorAll("g.measure")].map((el) => ({ n: Number(el.dataset.n) + barOffset, box: rel(el) }));
       const qEnd = Math.max(...notes.map((n) => n.off).filter(Number.isFinite));
-      anchors.push({ q: qEnd, x: base.width - 30 });
+      // the line ends at its last barline, which on a short last line is well before the page edge
+      const staffEnd = Math.max(...measures.map((m) => m.box.x + m.box.w));
+      anchors.push({ q: qEnd, x: Number.isFinite(staffEnd) ? staffEnd - 4 : base.width - 30 });
       // keep the SVG at the measured size when it becomes an image
       root.setAttribute("width", base.width);
       root.setAttribute("height", base.height);
@@ -147,10 +149,117 @@ export class Presenter {
     g.textAlign = "left";
   }
 
-  draw(s) {
-    if (s.mode === "words") return this.drawWords(s);
+  /** Words only, the whole stanza at once (as the app's presenter shows it), the line being sung bright
+   *  and its syllable lit, the lines sung already dimmed. */
+  drawStanza(s) {
     const g = this.g;
     const c = s.colors;
+    g.fillStyle = c.cloth;
+    g.fillRect(0, 0, W, H);
+    g.textBaseline = "alphabetic";
+    g.textAlign = "left";
+    g.fillStyle = c.gilt;
+    g.font = `800 54px Alegreya, serif`;
+    g.fillText(s.hymn.number, MARGIN, 96);
+    const nw = g.measureText(s.hymn.number).width;
+    g.fillStyle = "rgba(252,251,247,0.82)";
+    g.font = `600 34px Alegreya, serif`;
+    g.fillText(s.hymn.title, MARGIN + nw + 22, 90);
+    g.textAlign = "right";
+    g.font = `italic 400 30px Alegreya, serif`;
+    g.fillStyle = "rgba(252,251,247,0.6)";
+    g.fillText(s.verseLabel || "", W - MARGIN, s.chord ? 150 : 90);
+    if (s.chord) { g.fillStyle = c.paper; g.font = `700 56px Alegreya, serif`; g.fillText(s.chord, W - MARGIN, 96); }
+
+    // the short phrases joined into fuller lines (as a hymnal prints them), each wrapped at word ends;
+    // the largest size at which the whole stanza fits
+    const lines = [];
+    const textOf = (parts) => parts.map((p) => p.text).join("");
+    (s.stanza || []).forEach((parts, li) => {
+      const last = lines.at(-1);
+      if (last && (textOf(last.parts) + textOf(parts)).length <= 40 && !/[.!?;]\s*$/.test(textOf(last.parts))) {
+        last.parts.push(...parts);
+        last.lis.push(li);
+      } else lines.push({ parts: [...parts], lis: [li] });
+    });
+    g.textAlign = "left";
+    const top = 170;
+    const room = H - top - 70;
+    const maxW = W - 2 * 150;
+    let size = 76;
+    let rows;
+    for (;;) {
+      g.font = `500 ${size}px Alegreya, serif`;
+      rows = [];
+      lines.forEach(({ parts, lis }) => {
+        const li = lis.includes(s.stanzaAt) ? s.stanzaAt : lis[0];
+        let row = [];
+        let rowW = 0;
+        for (const part of parts) {
+          const w = g.measureText(part.text).width;
+          if (rowW + w > maxW && row.length && row.at(-1).text.endsWith(" ")) { rows.push({ li, parts: row }); row = []; rowW = 0; }
+          row.push({ ...part, w });
+          rowW += w;
+        }
+        rows.push({ li, parts: row });
+      });
+      if (rows.length * size * 1.32 <= room || size <= 30) break;
+      size -= 2;
+    }
+    const lineH = size * 1.32;
+    let y = top + (room - rows.length * lineH) / 2 + size;
+    const space = g.measureText(" ").width;
+    for (const row of rows) {
+      const total = row.parts.reduce((a, p) => a + p.w, 0) - (row.parts.at(-1)?.text.endsWith(" ") ? space : 0);
+      let x = (W - total) / 2;
+      const now = row.li === s.stanzaAt;
+      for (const p of row.parts) {
+        g.fillStyle = p.sung ? c.gilt : now ? c.paper : s.stanzaAt >= 0 && row.li < s.stanzaAt ? "rgba(252,251,247,0.38)" : "rgba(252,251,247,0.72)";
+        g.fillText(p.text, x, y);
+        if (p.sung) g.fillRect(x, y + size * 0.16, p.w - (p.text.endsWith(" ") ? space : 0), Math.max(3, size * 0.06));
+        x += p.w;
+      }
+      y += lineH;
+    }
+    g.textAlign = "left";
+  }
+
+  draw(s) {
+    if (s.mode === "stanza") { this.drawStanza(s); this.drawMark(s); return; }
+    if (s.mode === "words") { this.drawWords(s); this.drawMark(s); return; }
+    this.drawScore(s);
+    this.drawMark(s);
+  }
+
+  /** The watermark of every recorded video (anyone can make one on the site, so it is always there):
+   *  "Advent Hymnals" faintly across the middle, corner to corner, and the address in the corner. */
+  drawMark(s) {
+    if (!s.watermark) return;
+    const g = this.g;
+    const dark = s.mode === "words" || s.mode === "stanza";
+    g.save();
+    g.fillStyle = dark ? "#ffffff" : s.colors.cloth;
+    g.translate(W / 2, H / 2);
+    g.rotate(-Math.atan2(H, W));
+    g.textAlign = "center";
+    g.textBaseline = "middle";
+    g.font = `800 170px Alegreya, serif`;
+    g.globalAlpha = dark ? 0.08 : 0.07;
+    g.fillText("Advent Hymnals", 0, 0);
+    g.restore();
+    g.save();
+    g.textAlign = "right";
+    g.textBaseline = "alphabetic";
+    g.font = `600 30px "Alegreya Sans", sans-serif`;
+    g.globalAlpha = dark ? 0.55 : 0.5;
+    g.fillStyle = dark ? "#ffffff" : s.colors.cloth;
+    g.fillText("adventhymnals.org", W - 36, H - 30);
+    g.restore();
+  }
+
+  drawScore(s) {
+    const g = this.g;
+    const c = { ...s.colors, paper: s.colors.stage || s.colors.paper }; // the stage is cream, easier on the eyes than white
     g.fillStyle = c.paper;
     g.fillRect(0, 0, W, H);
 
@@ -204,6 +313,7 @@ export class Presenter {
       for (const n of cur.notes) {
         if (!(n.on <= q + 1e-6 && q < n.off - 1e-6)) continue;
         const voice = (s.tracks[n.staffN - 1] || [])[n.layer - 1] ?? (s.tracks[n.staffN - 1] || [])[0];
+        if (s.only && !s.only.includes(voice)) continue; // an introduction for one voice lights only that voice
         g.fillStyle = c[voice] || c.cloth;
         g.globalAlpha = 0.28;
         g.beginPath();
@@ -282,7 +392,10 @@ export class Presenter {
   record(audioStream, onDone) {
     const video = this.canvas.captureStream(30);
     const stream = new MediaStream([...video.getVideoTracks(), ...audioStream.getAudioTracks()]);
-    const types = ['video/mp4;codecs="avc1.42E01E,mp4a.40.2"', "video/mp4", "video/webm;codecs=vp9,opus", "video/webm"];
+    // H.264/AAC mp4 when the browser can record it; otherwise webm (a plain "video/mp4" is often VP9/Opus inside,
+    // which most players and phones cannot open), converted to mp4 afterwards by the server
+    const types = ['video/mp4;codecs="avc1.640028,mp4a.40.2"', 'video/mp4;codecs="avc1.42E01E,mp4a.40.2"',
+      "video/webm;codecs=vp9,opus", "video/webm;codecs=vp8,opus", "video/webm"];
     const mimeType = types.find((t) => MediaRecorder.isTypeSupported(t)) || "";
     const rec = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
     const chunks = [];
