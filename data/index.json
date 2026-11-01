@@ -238,6 +238,13 @@
   "path": "data/SDAH/113.json"
  },
  {
+  "id": "SDAH-114",
+  "book": "SDAH",
+  "number": "114",
+  "title": "There's a Wideness",
+  "path": "data/SDAH/114.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
