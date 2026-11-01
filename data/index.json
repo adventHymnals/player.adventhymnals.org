@@ -203,6 +203,13 @@
   "path": "data/SDAH/502.json"
  },
  {
+  "id": "SDAH-504",
+  "book": "SDAH",
+  "number": "504",
+  "title": "Lord Jesus, Think on Me",
+  "path": "data/SDAH/504.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
