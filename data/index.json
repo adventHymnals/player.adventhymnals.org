@@ -343,6 +343,13 @@
   "path": "data/SDAH/527.json"
  },
  {
+  "id": "SDAH-529",
+  "book": "SDAH",
+  "number": "529",
+  "title": "Under His Wings",
+  "path": "data/SDAH/529.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
