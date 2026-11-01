@@ -518,6 +518,41 @@
   "path": "data/SDAH/51.json"
  },
  {
+  "id": "SDAH-52",
+  "book": "SDAH",
+  "number": "52",
+  "title": "Now the Day Is Over",
+  "path": "data/SDAH/52.json"
+ },
+ {
+  "id": "SDAH-53",
+  "book": "SDAH",
+  "number": "53",
+  "title": "All Praise to Thee",
+  "path": "data/SDAH/53.json"
+ },
+ {
+  "id": "SDAH-54",
+  "book": "SDAH",
+  "number": "54",
+  "title": "O Gladsome Light",
+  "path": "data/SDAH/54.json"
+ },
+ {
+  "id": "SDAH-55",
+  "book": "SDAH",
+  "number": "55",
+  "title": "Jesus, Tender Shepherd, Hear Me",
+  "path": "data/SDAH/55.json"
+ },
+ {
+  "id": "SDAH-56",
+  "book": "SDAH",
+  "number": "56",
+  "title": "The Day Thou Gavest",
+  "path": "data/SDAH/56.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
