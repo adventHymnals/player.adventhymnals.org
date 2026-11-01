@@ -644,6 +644,13 @@
   "path": "data/SDAH/668.json"
  },
  {
+  "id": "SDAH-670",
+  "book": "SDAH",
+  "number": "670",
+  "title": "We Give Thee But Thine Own",
+  "path": "data/SDAH/670.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
