@@ -287,6 +287,41 @@
   "path": "data/SDAH/20.json"
  },
  {
+  "id": "SDAH-21",
+  "book": "SDAH",
+  "number": "21",
+  "title": "Immortal, Invisible, God Only Wise",
+  "path": "data/SDAH/21.json"
+ },
+ {
+  "id": "SDAH-22",
+  "book": "SDAH",
+  "number": "22",
+  "title": "God Is Our Song",
+  "path": "data/SDAH/22.json"
+ },
+ {
+  "id": "SDAH-23",
+  "book": "SDAH",
+  "number": "23",
+  "title": "Now the Joyful Bells A-Ringing",
+  "path": "data/SDAH/23.json"
+ },
+ {
+  "id": "SDAH-24",
+  "book": "SDAH",
+  "number": "24",
+  "title": "Every Star Shall Sing a Carol",
+  "path": "data/SDAH/24.json"
+ },
+ {
+  "id": "SDAH-25",
+  "book": "SDAH",
+  "number": "25",
+  "title": "Praise the Lord, His Glories Show",
+  "path": "data/SDAH/25.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
