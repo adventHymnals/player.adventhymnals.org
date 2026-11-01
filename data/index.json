@@ -189,6 +189,41 @@
   "path": "data/SDAH/7.json"
  },
  {
+  "id": "SDAH-8",
+  "book": "SDAH",
+  "number": "8",
+  "title": "We Gather Together",
+  "path": "data/SDAH/8.json"
+ },
+ {
+  "id": "SDAH-9",
+  "book": "SDAH",
+  "number": "9",
+  "title": "Let All the World in Every Corner Sing",
+  "path": "data/SDAH/9.json"
+ },
+ {
+  "id": "SDAH-10",
+  "book": "SDAH",
+  "number": "10",
+  "title": "Come, Christians, Join to Sing",
+  "path": "data/SDAH/10.json"
+ },
+ {
+  "id": "SDAH-11",
+  "book": "SDAH",
+  "number": "11",
+  "title": "The God of Abraham Praise",
+  "path": "data/SDAH/11.json"
+ },
+ {
+  "id": "SDAH-12",
+  "book": "SDAH",
+  "number": "12",
+  "title": "Joyful, Joyful, We Adore Thee",
+  "path": "data/SDAH/12.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
