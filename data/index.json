@@ -581,6 +581,13 @@
   "path": "data/SDAH/659.json"
  },
  {
+  "id": "SDAH-660",
+  "book": "SDAH",
+  "number": "660",
+  "title": "Glory Be to the Father",
+  "path": "data/SDAH/660.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
