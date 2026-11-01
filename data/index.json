@@ -189,6 +189,13 @@
   "path": "data/SDAH/500.json"
  },
  {
+  "id": "SDAH-501",
+  "book": "SDAH",
+  "number": "501",
+  "title": "'Tis the Blessed Hour of Prayer",
+  "path": "data/SDAH/501.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
