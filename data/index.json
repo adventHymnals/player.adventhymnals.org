@@ -203,6 +203,13 @@
   "path": "data/SDAH/502.json"
  },
  {
+  "id": "SDAH-503",
+  "book": "SDAH",
+  "number": "503",
+  "title": "A Quiet Place",
+  "path": "data/SDAH/503.json"
+ },
+ {
   "id": "SDAH-504",
   "book": "SDAH",
   "number": "504",
