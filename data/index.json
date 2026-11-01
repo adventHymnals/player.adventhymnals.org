@@ -273,6 +273,13 @@
   "path": "data/SDAH/123.json"
  },
  {
+  "id": "SDAH-124",
+  "book": "SDAH",
+  "number": "124",
+  "title": "Away in a Manger",
+  "path": "data/SDAH/124.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
