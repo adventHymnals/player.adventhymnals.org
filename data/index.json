@@ -231,6 +231,13 @@
   "path": "data/SDAH/112.json"
  },
  {
+  "id": "SDAH-113",
+  "book": "SDAH",
+  "number": "113",
+  "title": "As Pants the Hart",
+  "path": "data/SDAH/113.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
