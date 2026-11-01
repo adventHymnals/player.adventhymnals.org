@@ -616,6 +616,27 @@
   "path": "data/SDAH/65.json"
  },
  {
+  "id": "SDAH-66",
+  "book": "SDAH",
+  "number": "66",
+  "title": "God Be With You",
+  "path": "data/SDAH/66.json"
+ },
+ {
+  "id": "SDAH-67",
+  "book": "SDAH",
+  "number": "67",
+  "title": "O Lord, Now Let Your Servant",
+  "path": "data/SDAH/67.json"
+ },
+ {
+  "id": "SDAH-68",
+  "book": "SDAH",
+  "number": "68",
+  "title": "On Our Way Rejoicing",
+  "path": "data/SDAH/68.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
