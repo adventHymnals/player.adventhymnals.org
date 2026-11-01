@@ -448,6 +448,13 @@
   "path": "data/SDAH/551.json"
  },
  {
+  "id": "SDAH-552",
+  "book": "SDAH",
+  "number": "552",
+  "title": "The Lord's My Shepherd",
+  "path": "data/SDAH/552.json"
+ },
+ {
   "id": "SDAH-553",
   "book": "SDAH",
   "number": "553",
