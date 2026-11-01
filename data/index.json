@@ -154,6 +154,41 @@
   "path": "data/SDAH/2.json"
  },
  {
+  "id": "SDAH-3",
+  "book": "SDAH",
+  "number": "3",
+  "title": "God Himself Is With Us",
+  "path": "data/SDAH/3.json"
+ },
+ {
+  "id": "SDAH-4",
+  "book": "SDAH",
+  "number": "4",
+  "title": "Praise, My Soul, the King of Heaven",
+  "path": "data/SDAH/4.json"
+ },
+ {
+  "id": "SDAH-5",
+  "book": "SDAH",
+  "number": "5",
+  "title": "All My Hope on God Is Founded",
+  "path": "data/SDAH/5.json"
+ },
+ {
+  "id": "SDAH-6",
+  "book": "SDAH",
+  "number": "6",
+  "title": "O Worship the Lord",
+  "path": "data/SDAH/6.json"
+ },
+ {
+  "id": "SDAH-7",
+  "book": "SDAH",
+  "number": "7",
+  "title": "The Lord in Zion Reigneth",
+  "path": "data/SDAH/7.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
