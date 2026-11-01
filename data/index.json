@@ -287,6 +287,13 @@
   "path": "data/SDAH/126.json"
  },
  {
+  "id": "SDAH-127",
+  "book": "SDAH",
+  "number": "127",
+  "title": "Infant Holy, Infant Lowly",
+  "path": "data/SDAH/127.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
