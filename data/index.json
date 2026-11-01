@@ -336,6 +336,13 @@
   "path": "data/SDAH/524.json"
  },
  {
+  "id": "SDAH-527",
+  "book": "SDAH",
+  "number": "527",
+  "title": "From Every Stormy Wind",
+  "path": "data/SDAH/527.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
