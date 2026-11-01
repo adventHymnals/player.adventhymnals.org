@@ -182,6 +182,13 @@
   "path": "data/SDAH/440.json"
  },
  {
+  "id": "SDAH-500",
+  "book": "SDAH",
+  "number": "500",
+  "title": "Take Time to Be Holy",
+  "path": "data/SDAH/500.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
