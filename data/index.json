@@ -728,6 +728,13 @@
   "path": "data/SDAH/683.json"
  },
  {
+  "id": "SDAH-684",
+  "book": "SDAH",
+  "number": "684",
+  "title": "Hear Our Prayer, O Lord",
+  "path": "data/SDAH/684.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
