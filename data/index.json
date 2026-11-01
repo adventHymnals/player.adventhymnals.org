@@ -336,6 +336,13 @@
   "path": "data/SDAH/621.json"
  },
  {
+  "id": "SDAH-622",
+  "book": "SDAH",
+  "number": "622",
+  "title": "Come, Come, Ye Saints",
+  "path": "data/SDAH/622.json"
+ },
+ {
   "id": "SDAH-623",
   "book": "SDAH",
   "number": "623",
@@ -362,6 +369,181 @@
   "number": "626",
   "title": "In a Little While We're Going Home",
   "path": "data/SDAH/626.json"
+ },
+ {
+  "id": "SDAH-627",
+  "book": "SDAH",
+  "number": "627",
+  "title": "Jacob's Ladder",
+  "path": "data/SDAH/627.json"
+ },
+ {
+  "id": "SDAH-629",
+  "book": "SDAH",
+  "number": "629",
+  "title": "O Happy Band of Pilgrims",
+  "path": "data/SDAH/629.json"
+ },
+ {
+  "id": "SDAH-630",
+  "book": "SDAH",
+  "number": "630",
+  "title": "Rise, My Soul, and Stretch Thy Wings",
+  "path": "data/SDAH/630.json"
+ },
+ {
+  "id": "SDAH-631",
+  "book": "SDAH",
+  "number": "631",
+  "title": "When on Life a Darkness Falls",
+  "path": "data/SDAH/631.json"
+ },
+ {
+  "id": "SDAH-632",
+  "book": "SDAH",
+  "number": "632",
+  "title": "Until Then",
+  "path": "data/SDAH/632.json"
+ },
+ {
+  "id": "SDAH-633",
+  "book": "SDAH",
+  "number": "633",
+  "title": "When We All Get to Heaven",
+  "path": "data/SDAH/633.json"
+ },
+ {
+  "id": "SDAH-634",
+  "book": "SDAH",
+  "number": "634",
+  "title": "Come, All Christians, Be Committed",
+  "path": "data/SDAH/634.json"
+ },
+ {
+  "id": "SDAH-635",
+  "book": "SDAH",
+  "number": "635",
+  "title": "Lord of All Good",
+  "path": "data/SDAH/635.json"
+ },
+ {
+  "id": "SDAH-636",
+  "book": "SDAH",
+  "number": "636",
+  "title": "God, Whose Giving Knows No Ending",
+  "path": "data/SDAH/636.json"
+ },
+ {
+  "id": "SDAH-637",
+  "book": "SDAH",
+  "number": "637",
+  "title": "Son of God, Eternal Savior",
+  "path": "data/SDAH/637.json"
+ },
+ {
+  "id": "SDAH-638",
+  "book": "SDAH",
+  "number": "638",
+  "title": "The Wise May Bring Their Learning",
+  "path": "data/SDAH/638.json"
+ },
+ {
+  "id": "SDAH-639",
+  "book": "SDAH",
+  "number": "639",
+  "title": "A Diligent and Grateful Heart",
+  "path": "data/SDAH/639.json"
+ },
+ {
+  "id": "SDAH-640",
+  "book": "SDAH",
+  "number": "640",
+  "title": "For Beauty of Meadows",
+  "path": "data/SDAH/640.json"
+ },
+ {
+  "id": "SDAH-641",
+  "book": "SDAH",
+  "number": "641",
+  "title": "God in His Love for Us",
+  "path": "data/SDAH/641.json"
+ },
+ {
+  "id": "SDAH-642",
+  "book": "SDAH",
+  "number": "642",
+  "title": "We Praise Thee With Our Minds",
+  "path": "data/SDAH/642.json"
+ },
+ {
+  "id": "SDAH-643",
+  "book": "SDAH",
+  "number": "643",
+  "title": "Father, Who on Us Do Shower",
+  "path": "data/SDAH/643.json"
+ },
+ {
+  "id": "SDAH-644",
+  "book": "SDAH",
+  "number": "644",
+  "title": "O God, Whose Will Is Life and Good",
+  "path": "data/SDAH/644.json"
+ },
+ {
+  "id": "SDAH-646",
+  "book": "SDAH",
+  "number": "646",
+  "title": "To the Name That Brings Salvation",
+  "path": "data/SDAH/646.json"
+ },
+ {
+  "id": "SDAH-647",
+  "book": "SDAH",
+  "number": "647",
+  "title": "Mine Eyes Have Seen the Glory",
+  "path": "data/SDAH/647.json"
+ },
+ {
+  "id": "SDAH-648",
+  "book": "SDAH",
+  "number": "648",
+  "title": "I Vow to Thee, My Country",
+  "path": "data/SDAH/648.json"
+ },
+ {
+  "id": "SDAH-649",
+  "book": "SDAH",
+  "number": "649",
+  "title": "Lord, While for All Mankind",
+  "path": "data/SDAH/649.json"
+ },
+ {
+  "id": "SDAH-650",
+  "book": "SDAH",
+  "number": "650",
+  "title": "Our Father, by Whose Name",
+  "path": "data/SDAH/650.json"
+ },
+ {
+  "id": "SDAH-652",
+  "book": "SDAH",
+  "number": "652",
+  "title": "Love at Home",
+  "path": "data/SDAH/652.json"
+ },
+ {
+  "id": "SDAH-653",
+  "book": "SDAH",
+  "number": "653",
+  "title": "Lead Them, My God, to Thee",
+  "path": "data/SDAH/653.json"
+ },
+ {
+  "id": "SDAH-654",
+  "book": "SDAH",
+  "number": "654",
+  "title": "Lord, Bless Our Homes",
+  "path": "data/SDAH/654.json"
  },
  {
   "id": "WN-166",
