@@ -406,6 +406,13 @@
   "path": "data/SDAH/541.json"
  },
  {
+  "id": "SDAH-543",
+  "book": "SDAH",
+  "number": "543",
+  "title": "Jesus, Friend of Little Children",
+  "path": "data/SDAH/543.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
