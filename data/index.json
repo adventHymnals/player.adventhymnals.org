@@ -805,6 +805,41 @@
   "path": "data/SDAH/88.json"
  },
  {
+  "id": "SDAH-89",
+  "book": "SDAH",
+  "number": "89",
+  "title": "Let All on Earth Their Voices Raise",
+  "path": "data/SDAH/89.json"
+ },
+ {
+  "id": "SDAH-90",
+  "book": "SDAH",
+  "number": "90",
+  "title": "Eternal God, Whose Power Upholds",
+  "path": "data/SDAH/90.json"
+ },
+ {
+  "id": "SDAH-91",
+  "book": "SDAH",
+  "number": "91",
+  "title": "Ye Watchers and Ye Holy Ones",
+  "path": "data/SDAH/91.json"
+ },
+ {
+  "id": "SDAH-92",
+  "book": "SDAH",
+  "number": "92",
+  "title": "This Is My Father's World",
+  "path": "data/SDAH/92.json"
+ },
+ {
+  "id": "SDAH-93",
+  "book": "SDAH",
+  "number": "93",
+  "title": "All Things Bright and Beautiful",
+  "path": "data/SDAH/93.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
