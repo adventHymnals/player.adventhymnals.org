@@ -686,6 +686,13 @@
   "path": "data/SDAH/675.json"
  },
  {
+  "id": "SDAH-676",
+  "book": "SDAH",
+  "number": "676",
+  "title": "Thy Word Is a Lantern",
+  "path": "data/SDAH/676.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
