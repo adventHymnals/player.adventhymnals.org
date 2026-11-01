@@ -133,6 +133,13 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-89",
+  "book": "NZK",
+  "number": "89",
+  "title": "Asubuhi",
+  "path": "data/NZK/89.json"
+ },
+ {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
@@ -390,6 +397,34 @@
   "number": "35",
   "title": "With Songs and Honors",
   "path": "data/SDAH/35.json"
+ },
+ {
+  "id": "SDAH-36",
+  "book": "SDAH",
+  "number": "36",
+  "title": "O Thou in Whose Presence",
+  "path": "data/SDAH/36.json"
+ },
+ {
+  "id": "SDAH-37",
+  "book": "SDAH",
+  "number": "37",
+  "title": "O Sing, My Soul, Your Maker's Praise",
+  "path": "data/SDAH/37.json"
+ },
+ {
+  "id": "SDAH-38",
+  "book": "SDAH",
+  "number": "38",
+  "title": "Arise, My Soul, Arise!",
+  "path": "data/SDAH/38.json"
+ },
+ {
+  "id": "SDAH-39",
+  "book": "SDAH",
+  "number": "39",
+  "title": "Lord, in the Morning",
+  "path": "data/SDAH/39.json"
  },
  {
   "id": "SDAH-100",
