@@ -252,6 +252,13 @@
   "path": "data/SDAH/510.json"
  },
  {
+  "id": "SDAH-511",
+  "book": "SDAH",
+  "number": "511",
+  "title": "I Know Whom I Have Believed",
+  "path": "data/SDAH/511.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
