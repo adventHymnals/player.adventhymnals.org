@@ -322,6 +322,41 @@
   "path": "data/SDAH/25.json"
  },
  {
+  "id": "SDAH-26",
+  "book": "SDAH",
+  "number": "26",
+  "title": "Praise the Lord! You Heavens Adore Him",
+  "path": "data/SDAH/26.json"
+ },
+ {
+  "id": "SDAH-27",
+  "book": "SDAH",
+  "number": "27",
+  "title": "Rejoice, Ye Pure in Heart",
+  "path": "data/SDAH/27.json"
+ },
+ {
+  "id": "SDAH-28",
+  "book": "SDAH",
+  "number": "28",
+  "title": "Praise We the Lord",
+  "path": "data/SDAH/28.json"
+ },
+ {
+  "id": "SDAH-29",
+  "book": "SDAH",
+  "number": "29",
+  "title": "Sing Praise to God",
+  "path": "data/SDAH/29.json"
+ },
+ {
+  "id": "SDAH-30",
+  "book": "SDAH",
+  "number": "30",
+  "title": "Holy God, We Praise Your Name",
+  "path": "data/SDAH/30.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
