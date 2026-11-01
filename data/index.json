@@ -742,6 +742,13 @@
   "path": "data/SDAH/686.json"
  },
  {
+  "id": "SDAH-688",
+  "book": "SDAH",
+  "number": "688",
+  "title": "Surely, Surely",
+  "path": "data/SDAH/688.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
