@@ -144,6 +144,9 @@ function rootXml(tag, spelled) {
 }
 
 // Soprano/alto read treble; tenor and bass read bass, as in the hymnal (also the tenor on its own staff).
+// the words on a hidden lyric voice (see buildMusicXML) show although their note is hidden
+export const SVG_CSS = "g.verse{visibility:visible}";
+
 export function clefFor(voices) {
   if (voices.some((k) => k === "S" || k === "A" || k === "R")) return ["G", 2, 0];
   return ["F", 4, 0];
@@ -233,6 +236,10 @@ export function buildMusicXML(h, opts) {
     const id = `P${si + 1}`;
     const clef = clefFor(voices);
     const twoVoices = voices.length > 1;
+    // words under a staff without the lyric voice (e.g. under tenor/bass) ride on a hidden copy of the
+    // lyric voice's rhythm, or a syllable sung while this staff holds a note would have nowhere to go
+    const ghost = !!opts.trackWords?.[si] && opts.words !== "none" && opts.words !== "solfa"
+      && !voices.includes(h.lyricVoice) && !voices.some((k) => h.voiceWords?.[k] || PIANO_HANDS[k]);
     let wedgeOpen = false; // LilyPond ends a hairpin at the next dynamic; MusicXML needs an explicit stop
     let xml = "";
     passes.forEach((passVerse, j) => {
@@ -334,6 +341,7 @@ export function buildMusicXML(h, opts) {
             const stem = twoVoices ? `<stem>${vi === 0 ? "up" : "down"}</stem>` : "";
             const words = !opts.trackWords?.[si] ? ""
               : opts.words === "solfa" ? solfaFor(k, n, vi + 1)
+              : ghost ? ""
               : vi === 0 || !upperOnsets.has(n.q) ? lyricsFor(n.q, passVerse, k, h.voices[k].indexOf(n)) : "";
             mx += `<note><pitch><step>${n.step}</step>${n.alter ? `<alter>${n.alter}</alter>` : ""}<octave>${n.oct}</octave></pitch>`
               + `<duration>${Math.round(n.d * DIV)}</duration>${ties}<voice>${vi + 1}</voice><type>${noteType(written, n.dots)}</type>`
@@ -351,6 +359,24 @@ export function buildMusicXML(h, opts) {
           }
           if (inBar.length && at < barEnd(h, m) - 1e-6) mx += restXml(barEnd(h, m) - at, vi + 1);
         });
+        if (ghost) {
+          const gv = voices.length + 1;
+          const hide = (x) => x.replaceAll("<note>", '<note print-object="no">');
+          const lv = h.voices[h.lyricVoice];
+          const pitch = clef[0] === "F" ? ["D", 3] : ["B", 4];
+          mx += `<backup><duration>${Math.round((barEnd(h, m) - barStart(h, m)) * DIV)}</duration></backup>`;
+          let at = barStart(h, m);
+          for (const n of lv.filter((x) => x.m === m)) {
+            if (n.q > at + 1e-6) mx += hide(restXml(n.q - at, gv));
+            at = n.q + n.d;
+            const written = n.tup ? (n.d * n.tup[0]) / n.tup[1] : n.d;
+            const tm = n.tup ? `<time-modification><actual-notes>${n.tup[0]}</actual-notes><normal-notes>${n.tup[1]}</normal-notes></time-modification>` : "";
+            mx += `<note print-object="no"><pitch><step>${pitch[0]}</step><octave>${pitch[1]}</octave></pitch>`
+              + `<duration>${Math.round(n.d * DIV)}</duration><voice>${gv}</voice><type>${noteType(written, n.dots)}</type>`
+              + `${"<dot/>".repeat(n.dots)}${tm}${lyricsFor(n.q, passVerse, h.lyricVoice, lv.indexOf(n))}</note>`;
+          }
+          if (at < barEnd(h, m) - 1e-6) mx += hide(restXml(barEnd(h, m) - at, gv, at === barStart(h, m)));
+        }
         const lastPass = j === passes.length - 1;
         if (m === h.measures) mx += `<barline location="right"><bar-style>${lastPass ? "light-heavy" : "light-light"}</bar-style></barline>`;
         else if (h.marks.some((mk) => mk.m === m + 1)) mx += `<barline location="right"><bar-style>light-light</bar-style></barline>`;
@@ -762,7 +788,7 @@ export function instrumentalRange(h, kind) {
 
 /** Where the phrases of the first verse (and refrain) begin: 0, every syllable after one that ends with
  *  punctuation, and the end. Falls back to the bar lines when the hymn has no words. */
-function phraseBounds(h) {
+export function phraseBounds(h) {
   const lv = h.voices[h.lyricVoice] || [];
   const syl = [...(h.verses[0] || []), ...(h.refrains?.[0] || h.refrain || [])];
   const out = new Set([0, h.totalQ]);

@@ -1,3 +1,4 @@
+import { SVG_CSS } from "./core.js";
 // Export the score as shown (tracks, words, chords) to a vector PDF, in the browser.
 // Uses Verovio for letter-size pages, svg2pdf.js + jsPDF to write the PDF.
 
@@ -85,7 +86,7 @@ export async function exportPdf(tk, xml, hymn, filename, host, transpose = "") {
   tk.setOptions({
     pageWidth: 2159, pageHeight: 2794, pageMarginLeft: 120, pageMarginRight: 120, pageMarginTop: 100, pageMarginBottom: 120,
     scale: 100, breaks: "auto", adjustPageHeight: false, adjustPageWidth: false, header: "auto", footer: "none",
-    svgHtml5: false, svgViewBox: true, svgAdditionalAttribute: [], lyricSize: 4.2, spacingStaff: 12,
+    svgHtml5: false, svgViewBox: true, svgAdditionalAttribute: [], lyricSize: 4.2, spacingStaff: 12, svgCss: SVG_CSS,
     transpose,
   });
   tk.loadData(xml);

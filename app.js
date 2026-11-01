@@ -1,6 +1,6 @@
 import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
-  trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate,
+  trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds,
 } from "./core.js";
 import { Engine } from "./audio.js";
 import { ScoreView } from "./scoreview.js";
@@ -36,7 +36,9 @@ const AUDIO = document.querySelector('meta[name="ah-audio"]')?.content || REMOTE
 // and the hymns themselves (the list and each hymn's file): the published site reads them from the same store,
 // so a new hymn goes live by upload, with no rebuild of the site
 const DATA = document.querySelector('meta[name="ah-data"]')?.content || REMOTE;
-const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED;
+// ?make=: the automatic social videos (see "automatic videos" below); the URL's settings are never saved
+const MAKE = new URLSearchParams(location.search).get("make") ? new URLSearchParams(location.search) : null;
+const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED || !!MAKE;
 const store = {
   get(k, d) { if (NO_STORE) return d; try { const v = localStorage.getItem(`hymn2:${k}`); return v === null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { if (NO_STORE) return; try { localStorage.setItem(`hymn2:${k}`, JSON.stringify(v)); } catch { /* private mode */ } },
@@ -65,6 +67,7 @@ const state = {
   countAt: store.get("countAt", "start"), // the count-in bar: at the very start, or after the introduction
   introVoice: null, // while making a one-voice video: the voice its introduction plays
   watermark: false, // while making a video: its watermark is drawn (always, on every video)
+  format: "landscape", // while making an automatic video: "vertical" draws the tall stage of a Short
   // each voice's sound: "sung" (recorded singers), "choir" (synthesised aah) or "piano";
   // unset means singers when a recording exists, else the choir synth
   voiceSounds: store.get("voiceSounds", {}),
@@ -361,7 +364,7 @@ async function boot() {
     const v = new URLSearchParams(location.search).get("view");
     if (v && ["tracks", "page", "solfa", "words", "presenter"].includes(v)) state.view = v;
   }
-  if (asked && !hymnList.some((x) => x.id === asked)) { notInStudio(asked); return; }
+  if (asked && !hymnList.some((x) => x.id === asked)) { if (MAKE) makeFailed(asked, "the Studio has no such hymn"); notInStudio(asked); return; }
   picker.onchange = () => { location.hash = picker.value; loadHymn(hymnList.find((x) => x.id === picker.value)); };
   bindControls();
   try {
@@ -380,6 +383,7 @@ async function boot() {
   await document.fonts.ready;
   await loadHymn(hymnList.find((x) => x.id === picker.value));
   requestAnimationFrame(frame);
+  if (MAKE) runMake();
 }
 
 /** A hymn the site linked to that the Studio has no score for yet. */
@@ -1381,7 +1385,12 @@ function paint(force, tAt) {
   // a lit note would look like the place to start singing
   const at = locate(perf, t);
   const loc = at?.done ? null : at;
-  if (state.words === "current" && !unfolded() && loc && loc.verse !== renderedVerse && state.view !== "presenter") { renderAll(); return; }
+  if (state.words === "current" && !unfolded() && loc && loc.verse !== renderedVerse) {
+    if (state.view !== "presenter") { renderAll(); return; }
+    // the presenter only needs its score again, with this verse's words
+    renderedVerse = loc.verse;
+    prepareStage().then(() => paint(true));
+  }
   if (currentShift(loc) !== renderedShift) { renderAll(); return; } // the key changed here
   const refrainQ = hymn.marks.find((m) => /refrain|chorus/i.test(m.text))?.q ?? Infinity;
   const q = loc ? loc.q : null;
@@ -1402,6 +1411,7 @@ function paint(force, tAt) {
   if (stageWanted()) {
     presenter.draw({
       hymn, q: sq, verseN, tracks: visibleTracks(), colors, t, heard, mode: state.presenterShows, watermark: state.watermark,
+      format: state.format, badge: state.format === "vertical" ? hymnBadge() : null,
       only: loc?.kind === "intro" && state.introVoice ? [state.introVoice] : null,
       verseLabel: !loc ? `Verse ${state.verses[0]}` : loc.kind === "intro" ? "Introduction" : loc.kind === "interlude" ? "Interlude" : q >= refrainQ ? `Refrain, verse ${loc.verse}` : `Verse ${loc.verse}`,
       chord: state.chords && ci >= 0 ? chordLabel(hymn.chords[ci].name) : null,
@@ -1941,6 +1951,412 @@ async function doImportAudio(file) {
     if (s.status === "error") { toast(`The recording could not be transcribed: ${s.error}`, 10000); return; }
     toast(s.message || "Transcribing the recording…", 0);
   }
+}
+
+// ---- automatic videos (?make=) -------------------------------------------------------------------
+// The social pipeline (social/post.py) loads e.g. ?make=choir,alto,rehearsal&format=landscape#SDAH-610 in a
+// headless browser. The page makes those videos with no dialog and POSTs each one, with a sidecar JSON (and
+// thumbnails, with thumb=1), to server.py, which keeps them in out/videos/<id>/. window.AH_MAKE and a console
+// line ("AH-MAKE DONE <id>" or "AH-MAKE ERROR <id> <message>") say how it went. The URL's settings are used for
+// this page only and never saved, so the same URL always makes the same videos. The spec is
+// social/SPEC-player.md.
+
+const HYMNAL_NAMES = { SDAH: "SDA Hymnal", CS1900: "Christ in Song", CS1908: "Christ in Song", CH1941: "Church Hymnal 1941", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye" };
+const hymnBadge = () => `${HYMNAL_NAMES[hymn.book] || hymn.book} ${hymn.number}`;
+const LOGO = "brand/logo.svg"; // the one place the logo comes from
+const END_VOICE = "audio/endcard/cta.wav"; // spoken: "Which hymn should we sing next? Tell us in the comments."
+const END_CARD = {
+  landscape: { secs: 10, voiceAt: 0.8, lines: ["Which hymn should we sing next?", "Tell us in the comments", "Learn your part · player.adventhymnals.org"] },
+  vertical: { secs: 4, voiceAt: 0.4, lines: ["Full hymn ▶ on our channel", "Which hymn next? Comment below"] },
+};
+const SHORT_MAX = 58; // seconds: one file fits YouTube Shorts, Reels and TikTok
+const MAKE_TAKES = ["choir", "soprano", "alto", "tenor", "bass", "rehearsal", "short"];
+const voiceOfTake = (take) => Object.keys(VOICES).find((k) => VOICES[k].name.toLowerCase() === take);
+const takeLabel = (take) => (take === "choir" ? "SATB Choir" : take === "rehearsal" ? "All Parts Rehearsal" : `${VOICES[voiceOfTake(take)]?.name} Part`);
+const refrainAt = () => hymn.marks.find((m) => /refrain|chorus/i.test(m.text))?.q ?? null;
+
+function makeFailed(id, message) {
+  window.AH_MAKE = { ...(window.AH_MAKE || { files: [] }), state: "error", error: message };
+  console.log(`AH-MAKE ERROR ${id} ${message}`);
+}
+
+/** A performance like rebuild()'s, for one section of an automatic video. */
+const perfFor = (verses, introVoice, extra = {}) => performance(hymn, {
+  tempo: state.tempo, verses, accomp: state.accomp, countIn: state.countIn, countAt: state.countAt, introVoice,
+  stems: anySung() ? stemInfo : new Map(), intro: state.intro, interlude: state.interlude, shiftAt, metronome: false, ...extra,
+});
+
+// A take is a timeline of parts, each { kind: "music" | "card" | "end", t0, dur }. A music part plays a
+// performance from its time `from` with some `voices`, and its sound rings `ring` seconds into the next part.
+function useMusic(it) {
+  perf = it.perf;
+  state.verses = it.verses;
+  state.introVoice = it.introVoice;
+}
+
+function drawTimeline(tl, t) {
+  const it = tl.items.findLast((x) => t >= x.t0 - 1e-9) ?? tl.items[0];
+  const k = t - it.t0;
+  const mark = (dark, cornerOnly = false) => (state.format === "vertical" ? presenter.drawVerticalMark(dark ? "#ffffff" : colors.cloth, cornerOnly)
+    : presenter.drawMark({ watermark: true, colors, mode: dark ? "words" : "score" }, cornerOnly));
+  if (it.kind === "music") { useMusic(it); paint(true, it.from + k); return; }
+  if (it.kind === "card") {
+    presenter.drawTitleCard({ hymn, colors, title: it.title, voice: it.voice, badge: hymnBadge() });
+    mark(false);
+    return;
+  }
+  if (!tl.last) { // the end card fades in over the last picture of the music
+    const m = tl.items.findLast((x) => x.kind === "music");
+    useMusic(m);
+    paint(true, m.from + m.dur);
+    tl.last = Object.assign(document.createElement("canvas"), { width: $("stage").width, height: $("stage").height });
+    tl.last.getContext("2d").drawImage($("stage"), 0, 0);
+  }
+  presenter.drawEndCard({ k, last: tl.last, logo: makeAssets.logo, lines: END_CARD[state.format].lines });
+  mark(true, true); // the card is all brand already: no diagonal across the call to action
+}
+
+/** The sound of a take: each music part rendered offline and laid in place, then the spoken end card,
+ *  matched to the singing's loudness. */
+async function timelineAudio(tl) {
+  const rate = 48000;
+  const out = new AudioBuffer({ numberOfChannels: 2, length: Math.ceil(tl.total * rate), sampleRate: rate });
+  for (const it of tl.items.filter((x) => x.kind === "music")) {
+    for (const k of hymnVoices()) engine.setMuted(k, !it.voices.includes(k));
+    const len = Math.min(it.dur + it.ring, tl.total - it.t0);
+    const buf = await engine.renderOffline(it.perf.events, it.from + len + 0.05, rate);
+    const fadeIn = it.from > 0 ? 0.08 * rate : 0; // a clip from the middle of a hymn starts softly
+    const fadeOut = (it.ring > 0.5 ? 0.6 : 0.25) * rate;
+    const n = Math.round(len * rate);
+    const at = Math.round(it.t0 * rate);
+    const from = Math.round(it.from * rate);
+    for (let c = 0; c < 2; c++) {
+      const src = buf.getChannelData(Math.min(c, buf.numberOfChannels - 1));
+      const dst = out.getChannelData(c);
+      for (let i = 0; i < n && at + i < dst.length && from + i < src.length; i++) {
+        const gain = Math.min(1, fadeIn ? i / fadeIn : 1, (n - i) / fadeOut);
+        dst[at + i] += src[from + i] * gain;
+      }
+    }
+  }
+  const end = tl.items.find((x) => x.kind === "end");
+  const voice = makeAssets.voice;
+  if (end && voice) {
+    // as loud as the singing: the RMS of the sounding samples of each
+    const rms = (chs, a, b) => {
+      let sum = 0;
+      let count = 0;
+      for (const d of chs) for (let i = a; i < b; i++) if (Math.abs(d[i]) > 0.003) { sum += d[i] * d[i]; count++; }
+      return count ? Math.sqrt(sum / count) : 0;
+    };
+    const outCh = [out.getChannelData(0), out.getChannelData(1)];
+    const vCh = [voice.getChannelData(0), voice.getChannelData(voice.numberOfChannels > 1 ? 1 : 0)];
+    const music = rms(outCh, 0, Math.round(end.t0 * rate));
+    const spoken = rms(vCh, 0, voice.length);
+    let peak = 0;
+    for (const d of vCh) for (const x of d) peak = Math.max(peak, Math.abs(x));
+    const gain = Math.min(music && spoken ? music / spoken : 1, peak ? 0.89 / peak : 1);
+    const at = Math.round((end.t0 + END_CARD[state.format].voiceAt) * rate);
+    for (let c = 0; c < 2; c++) {
+      for (let i = 0; i < voice.length && at + i < out.length; i++) outCh[c][at + i] += vCh[c][i] * gain;
+    }
+  }
+  return out;
+}
+
+/** YouTube chapters: the first at 0, each at least 10 s long, at least 3 of them (else none). */
+function tidyChapters(list, total) {
+  const out = [];
+  for (const c of [...list].sort((a, b) => a.t - b.t)) {
+    const ch = { ...c };
+    while (out.length && ch.t - out.at(-1).t < 10) out.pop(); // the short one before joins the one before it
+    if (!out.length) ch.t = 0;
+    out.push(ch);
+  }
+  while (out.length > 1 && total - out.at(-1).t < 10) out.pop();
+  return out.length >= 3 ? out.map((c) => ({ t: Math.round(c.t * 10) / 10, label: c.label })) : [];
+}
+
+/** One chapter per verse and refrain of a performance that starts at `offset` in the video. */
+function chaptersOf(p, offset = 0) {
+  const rq = refrainAt();
+  const out = [];
+  p.passes.forEach((pass, k) => {
+    if (pass.kind === "intro") out.push({ t: offset + pass.t0, label: "Introduction" });
+    if (pass.kind !== "verse") return;
+    out.push({ t: offset + pass.t0, label: `Verse ${pass.verse}` });
+    if (rq !== null) out.push({ t: offset + passTime(p, k, rq), label: "Refrain" });
+  });
+  return out;
+}
+
+/** The whole hymn sung by `voices` (the choir, or one voice), then the end card. */
+function songTimeline(verses, voices, introVoice, endcard) {
+  const p = perfFor(verses, introVoice);
+  const items = [{ kind: "music", t0: 0, dur: endcard ? p.total : p.total + 1, from: 0, perf: p, verses, voices, introVoice, ring: endcard ? 1.2 : 0 }];
+  let total = items[0].dur;
+  if (endcard) { items.push({ kind: "end", t0: total, dur: END_CARD[state.format].secs }); total += END_CARD[state.format].secs; }
+  // every take shares the frames after its introduction (see videomaker.js)
+  const intro = p.passes[0]?.kind === "intro";
+  const firstVerse = p.passes.find((x) => x.kind === "verse");
+  const splitT = !intro ? 0 : firstVerse.t0 - (state.countIn && state.countAt === "verse" ? hymn.measureQ * p.tm.spq : 0);
+  return { items, total, splitT, chapters: tidyChapters(chaptersOf(p), total), verses };
+}
+
+/** Soprano, alto, tenor and bass each alone (partVerses), then the choir (verses), each after a 2 s card. */
+function rehearsalTimeline(verses, partVerses, choir, endcard) {
+  const sections = [
+    ...hymnVoices().map((k) => ({ title: `${VOICES[k].name} part`, chapter: VOICES[k].name, voices: [k], introVoice: k, verses: partVerses, voice: k })),
+    { title: "Choir", chapter: "Choir", voices: choir, introVoice: null, verses, voice: null },
+  ];
+  const items = [];
+  const chapters = [];
+  let t = 0;
+  sections.forEach((s, i) => {
+    chapters.push({ t, label: s.chapter });
+    items.push({ kind: "card", t0: t, dur: 2, title: s.title, voice: s.voice });
+    t += 2;
+    const p = perfFor(s.verses, s.introVoice);
+    const last = i === sections.length - 1;
+    const dur = last && endcard ? p.total : p.total + 1;
+    items.push({ kind: "music", t0: t, dur, from: 0, perf: p, verses: s.verses, voices: s.voices, introVoice: s.introVoice, ring: last && endcard ? 1.2 : 0 });
+    t += dur;
+  });
+  if (endcard) { items.push({ kind: "end", t0: t, dur: END_CARD[state.format].secs }); t += END_CARD[state.format].secs; }
+  return { items, total: t, splitT: t, chapters: tidyChapters(chapters, t), verses };
+}
+
+/** What clip=fit (the default) means for this hymn: the last verse with its refrain when the whole short
+ *  stays within 58 s, else the refrain alone, or verse 1 when there is no refrain. */
+function resolveClip(clip, endcard) {
+  if (clip && clip !== "fit") return clip;
+  const last = hymn.verses.length;
+  const p = perfFor([last], null, { countIn: false, intro: "none", interlude: "none" });
+  const card = endcard ? END_CARD.vertical.secs : 0;
+  if (p.total + card + 0.5 <= SHORT_MAX) return `whole:${last}`;
+  return refrainAt() !== null ? "refrain" : "verse:1";
+}
+
+/** The short: one refrain, verse or stretch (clip=refrain | verse:N | whole:N, a verse with its refrain |
+ *  q:FROM-TO), singing from the first moment, then the 4 s end card; at most 58 s, cut at the end of a
+ *  phrase when it would be longer. */
+function shortTimeline(spec, choir, endcard) {
+  const rq = refrainAt();
+  let verse = 1;
+  let qFrom = 0;
+  let qTo = hymn.totalQ;
+  let label;
+  if (spec === "refrain") {
+    if (rq === null) throw new Error("this hymn has no refrain; use clip=verse:N");
+    [qFrom, label] = [rq, "Refrain"];
+  } else if (/^verse:\d+$/.test(spec)) {
+    verse = Number(spec.split(":")[1]);
+    if (!hymn.verses[verse - 1]) throw new Error(`there is no verse ${verse}`);
+    if (rq !== null) qTo = rq;
+    label = `Verse ${verse}`;
+  } else if (/^whole:\d+$/.test(spec)) {
+    verse = Number(spec.split(":")[1]);
+    if (!hymn.verses[verse - 1]) throw new Error(`there is no verse ${verse}`);
+    label = rq !== null ? `Verse ${verse} and refrain` : `Verse ${verse}`;
+  } else if (/^q:[\d.]+-[\d.]+$/.test(spec)) {
+    [qFrom, qTo] = spec.slice(2).split("-").map(Number);
+    if (!(qFrom < qTo && qTo <= hymn.totalQ)) throw new Error(`clip ${spec} is not inside the hymn`);
+    label = "Excerpt";
+  } else throw new Error(`clip ${spec} is not fit, refrain, verse:N or q:FROM-TO`);
+  const p = perfFor([verse], null, { countIn: false, intro: "none", interlude: "none" });
+  const card = endcard ? END_CARD.vertical.secs : 0;
+  const fromS = Math.max(0, passTime(p, 0, qFrom) - 0.1);
+  let toS = passTime(p, 0, qTo);
+  const room = SHORT_MAX - card - 0.5;
+  if (toS - fromS > room) { // too long: end where a phrase does, the latest that fits
+    const ends = phraseBounds(hymn).filter((q) => q > qFrom && passTime(p, 0, q) - fromS <= room);
+    qTo = ends.at(-1) ?? qFrom;
+    toS = qTo > qFrom ? passTime(p, 0, qTo) : fromS + room;
+  }
+  const ends = qTo >= hymn.totalQ - 1e-6; // the hymn's own last chord may ring; elsewhere the next words must not
+  const items = [{ kind: "music", t0: 0, dur: toS - fromS + (card ? 0 : 1), from: fromS, perf: p, verses: [verse], voices: choir, introVoice: null, ring: card ? (ends ? 1.2 : 0.25) : 0 }];
+  let total = items[0].dur;
+  if (card) { items.push({ kind: "end", t0: total, dur: card }); total += card; }
+  return { items, total, splitT: total, chapters: [], verses: [verse], clip: { label, fromS: Math.round(fromS * 1000) / 1000, toS: Math.round(toS * 1000) / 1000 } };
+}
+
+const makeAssets = { logo: null, voice: null };
+
+async function loadMakeAssets() {
+  // the logo, rasterised large so it stays sharp at any size it is drawn
+  try {
+    const svg = (await (await fetch(LOGO)).text()).replace("<svg ", '<svg width="800" height="800" ');
+    const img = new Image();
+    img.src = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+    await img.decode();
+    makeAssets.logo = img;
+  } catch { /* no logo: the cards are drawn without it */ }
+  try {
+    const r = await fetch(`${AUDIO}${END_VOICE}`, { cache: "no-cache" });
+    if (r.ok) makeAssets.voice = await new OfflineAudioContext(2, 1, 48000).decodeAudioData(await r.arrayBuffer());
+  } catch { /* no voice yet: the end card is silent */ }
+  for (const f of ["800 54px Alegreya", "700 46px Alegreya", "600 34px Alegreya", "500 52px Alegreya", "400 34px Alegreya",
+    "italic 400 30px Alegreya", "600 30px 'Alegreya Sans'", "700 40px 'Alegreya Sans'", "500 36px 'Alegreya Sans'", "800 58px 'Alegreya Sans'"]) {
+    await document.fonts.load(f).catch(() => {});
+  }
+}
+
+/** The hymn's first line as people know it: the first phrases of verse 1, up to four words at least. */
+function firstLine() {
+  const syl = passSyllables(1);
+  let text = "";
+  for (const line of splitLines(syl)) {
+    text += lineParts(syl, line, -1).map((x) => x.text).join("");
+    if (text.trim().split(/\s+/).length >= 4) break;
+  }
+  return text.trim().replace(/[,;:.!?]+$/, "");
+}
+
+function stemsVersion() {
+  if (!manifest) return null;
+  if (manifest.version) return String(manifest.version);
+  let h = 0x811c9dc5; // FNV-1a of the manifest: any new recording changes it
+  for (const ch of JSON.stringify(manifest)) { h ^= ch.charCodeAt(0); h = Math.imul(h, 0x01000193) >>> 0; }
+  return h.toString(16).padStart(8, "0");
+}
+
+async function postFile(name, blob, reencode = false) {
+  const r = await fetch(`api/video?id=${encodeURIComponent(hymn.id)}&name=${encodeURIComponent(name)}${reencode ? "&reencode=1" : ""}`, { method: "POST", body: blob });
+  if (!r.ok) throw new Error(`server.py did not keep ${name}: ${(await r.json().catch(() => ({}))).error || r.status}`);
+  window.AH_MAKE.files.push(name);
+}
+
+async function runMake() {
+  const id = hymn?.id || decodeURIComponent(location.hash.slice(1));
+  window.AH_MAKE = { state: "working", files: [], error: null, progress: "" };
+  const p = MAKE;
+  const stage = $("stage");
+  try {
+    if (!hymn) throw new Error("the hymn did not load");
+    if (!canMakeVideo()) throw new Error("this browser cannot encode video (WebCodecs)");
+    const format = p.get("format") || "landscape";
+    if (!["landscape", "vertical"].includes(format)) throw new Error(`format ${format} is not landscape or vertical`);
+    const wanted = p.get("make").split(",").map((x) => x.trim()).filter(Boolean);
+    const bad = wanted.filter((x) => !MAKE_TAKES.includes(x));
+    if (bad.length) throw new Error(`unknown take ${bad.join(", ")}`);
+    if (wanted.includes("short") && format !== "vertical") throw new Error("short needs format=vertical");
+    const missingVoice = wanted.filter((x) => voiceOfTake(x) && !hymnVoices().includes(voiceOfTake(x)));
+    if (missingVoice.length) throw new Error(`this hymn has no ${missingVoice.join(", ")} part`);
+    const all = hymn.verses.map((_, i) => i + 1);
+    const verseList = (v, name) => {
+      if (!v || v === "all") return all;
+      const list = v.split(",").map(Number);
+      if (!list.length || list.some((n) => !all.includes(n))) throw new Error(`${name}=${v}: the hymn has verses ${all.join(", ")}`);
+      return list;
+    };
+    const verses = verseList(p.get("verses"), "verses");
+    const partVerses = verseList(p.get("partVerses") || "1", "partVerses");
+    const endcard = p.get("endcard") !== "off";
+    const short = wanted.includes("short");
+    let clip = null;
+
+    // the settings: the URL's, else the hymn's own, else the defaults of a fresh profile
+    const pick = (name, ok, fallback) => {
+      const v = p.get(name);
+      if (v === null) return fallback;
+      if (!ok(v)) throw new Error(`${name}=${v} is not allowed`);
+      return v;
+    };
+    state.format = format;
+    state.tempo = Number(pick("tempo", (v) => Number(v) >= 30 && Number(v) <= 240, hymn.tempo));
+    state.accomp = pick("accomp", (v) => v in ACCOMP_STYLES, state.accomp);
+    state.intro = short ? "none" : pick("intro", (v) => v in INSTRUMENTAL, "none");
+    state.interlude = pick("interlude", (v) => v in INSTRUMENTAL, state.interlude);
+    const countIn = short ? "off" : pick("countIn", (v) => ["start", "verse", "off"].includes(v), "start");
+    state.countIn = countIn !== "off";
+    if (state.countIn) state.countAt = countIn;
+    state.presenterShows = pick("shows", (v) => ["score", "words", "stanza"].includes(v), format === "vertical" ? "words" : "score");
+    state.mute = {};
+    state.solo = {};
+    state.transpose = 0;
+    state.lastVerseUp = 0;
+    state.view = "presenter";
+
+    window.AH_MAKE.progress = "Loading the singers";
+    await loadMakeAssets();
+    engine.ensure();
+    await engine.loadPiano();
+    if (short) clip = resolveClip(p.get("clip"), endcard);
+    const sungVerses = short ? [shortVerse(clip)] : [...new Set([...verses, ...(wanted.includes("rehearsal") ? partVerses : [])])].sort((a, b) => a - b);
+    state.verses = sungVerses;
+    if (!manifest) throw new Error("this hymn has no sung recording yet");
+    await prepareStems();
+    const missing = sungVerses.flatMap((v) => hymnVoices().filter((k) => !stemInfo.has(`${k}:${v}:0`)).map((k) => `${k}${v}`));
+    if (missing.length) throw new Error(`sung stems missing at ${state.tempo} a minute: ${missing.join(" ")}`);
+    if (format === "vertical") { stage.width = 1080; stage.height = 1920; }
+    await renderAll();
+    await prepareStage();
+    applyMix();
+
+    const choir = hymnVoices();
+    const plan = [];
+    for (const take of wanted) {
+      if (take === "choir") plan.push({ take, tl: songTimeline(verses, choir, null, endcard) });
+      else if (take === "rehearsal") plan.push({ take, tl: rehearsalTimeline(verses, partVerses, choir, endcard) });
+      else if (take === "short") plan.push({ take, tl: shortTimeline(clip, choir, endcard) });
+      else { const k = voiceOfTake(take); plan.push({ take, tl: songTimeline(verses, [k], k, endcard) }); }
+    }
+    // the takes that share frames first, the rest after (each of those is drawn whole)
+    plan.sort((a, b) => (a.tl.splitT >= a.tl.total) - (b.tl.splitT >= b.tl.total));
+    making = true;
+    state.watermark = true;
+    let said = 0;
+    await makeVideos(stage, plan.map(({ take, tl }) => ({
+      name: take,
+      setup: async () => { useMusic(tl.items.find((x) => x.kind === "music")); return { total: tl.total, splitT: tl.splitT }; },
+      drawAt: (t) => drawTimeline(tl, t),
+      audio: () => timelineAudio(tl),
+    })), {
+      progress: (text) => {
+        window.AH_MAKE.progress = text;
+        if (Date.now() - said > 15000) { said = Date.now(); console.log(`AH-MAKE PROGRESS ${id} ${text}`); }
+      },
+      onVideo: async (take, blob, audioCodec, videoCodec) => {
+        const { tl } = plan.find((x) => x.take === take);
+        const name = `${hymn.id}-${take}-${format}`;
+        // VP9 or Opus inside (a browser without H.264/AAC encoders): the server makes it H.264/AAC
+        await postFile(`${name}.mp4`, blob, audioCodec !== "aac" || videoCodec !== "avc");
+        const end = tl.items.find((x) => x.kind === "end");
+        const meta = {
+          hymnId: hymn.id, book: hymn.book, number: hymn.number, title: hymn.title, firstLine: firstLine(),
+          poet: hymn.poet || "", composer: hymn.composer || "", copyright: hymn.copyright || "",
+          take, format, verses: tl.verses, durationS: Math.round(tl.total * 100) / 100, chapters: tl.chapters,
+          clip: tl.clip || null, endcard: end ? { startS: Math.round(end.t0 * 100) / 100 } : null,
+          player: null, stems: stemsVersion(), // server.py fills in the player's git commit
+          tempo: state.tempo, accomp: state.accomp, intro: state.intro, countIn,
+          ...(take === "rehearsal" ? { partVerses } : {}),
+        };
+        await postFile(`${name}.json`, new Blob([JSON.stringify(meta)], { type: "application/json" }));
+        console.log(`AH-MAKE FILE ${id} ${name}.mp4`);
+      },
+    });
+    if (p.get("thumb") === "1") {
+      for (const take of wanted.filter((x) => x !== "short")) {
+        const c = document.createElement("canvas");
+        const k = voiceOfTake(take) || null;
+        presenter.drawThumb(c, { hymn, colors, badge: hymnBadge(), label: takeLabel(take), voice: k, logo: makeAssets.logo });
+        await postFile(`${hymn.id}-${take}-thumb.png`, await new Promise((r) => c.toBlob(r, "image/png")));
+      }
+    }
+    window.AH_MAKE.state = "done";
+    window.AH_MAKE.progress = "";
+    console.log(`AH-MAKE DONE ${id}`);
+  } catch (err) {
+    makeFailed(id, err?.message || String(err));
+  } finally {
+    making = false;
+    state.watermark = false;
+  }
+}
+
+/** The verse a short's clip comes from. */
+function shortVerse(clip) {
+  return /^(verse|whole):\d+$/.test(clip) ? Number(clip.split(":")[1]) : 1;
 }
 
 // ---- controls ------------------------------------------------------------

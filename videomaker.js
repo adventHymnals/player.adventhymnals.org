@@ -99,7 +99,8 @@ const sameBytes = (a, b) => {
  * takes: [{ name, setup(): Promise<{ total, splitT }>, drawAt(t), audio(): Promise<AudioBuffer> }]
  *   setup() readies the take and returns its length and the time where its frames stop differing from the
  *   other takes (the end of the introduction); every take must share the frames from splitT on.
- * onVideo(name, blob, audioCodec) for each finished take; progress(text) while working.
+ *   splitT >= total: the take shares no frames with the others.
+ * onVideo(name, blob, audioCodec, videoCodec) for each finished take; progress(text) while working.
  */
 export async function makeVideos(canvas, takes, { onVideo, progress }) {
   const vc = await videoCodec(canvas.width, canvas.height);
@@ -116,15 +117,18 @@ export async function makeVideos(canvas, takes, { onVideo, progress }) {
     const draw = (i) => take.drawAt(i / FPS);
     let video;
     const intro = split > 0 ? await encodeFrames(canvas, vc, 0, split, draw, say("pictures")) : [];
-    if (!shared || shared.from !== split || shared.frames !== frames) {
+    if (split >= frames) video = intro; // a take that shares nothing (the rehearsal): leave the shared frames be
+    else if (!shared || shared.from !== split || shared.frames !== frames) {
       // the frames after the introduction follow on from the ones just drawn (the drawing keeps a little state)
       shared = { from: split, frames, chunks: await encodeFrames(canvas, vc, split, frames, draw, say("pictures")) };
     }
-    const spliceable = !intro.length || sameBytes(intro[0].meta?.decoderConfig?.description, shared.chunks[0]?.meta?.decoderConfig?.description);
-    if (spliceable) video = [...intro, ...shared.chunks];
-    else video = await encodeFrames(canvas, vc, 0, frames, draw, say("pictures")); // encoders disagreed: this take whole
+    if (!video) {
+      const spliceable = !intro.length || sameBytes(intro[0].meta?.decoderConfig?.description, shared.chunks[0]?.meta?.decoderConfig?.description);
+      if (spliceable) video = [...intro, ...shared.chunks];
+      else video = await encodeFrames(canvas, vc, 0, frames, draw, say("pictures")); // encoders disagreed: this take whole
+    }
     progress(`Making the ${label} video: putting it together…`);
     await breathe();
-    await onVideo(take.name, mux(vc, ac, video, audio), ac.mux);
+    await onVideo(take.name, mux(vc, ac, video, audio), ac.mux, vc.mux);
   }
 }

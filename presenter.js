@@ -1,3 +1,4 @@
+import { SVG_CSS } from "./core.js";
 // Presenter stage (also the video source): one system at a time on a fixed 1920x1080 canvas.
 // The playhead sweeps left to right; behind it the next system is uncovered, so when the eye
 // returns to the left edge the next line is already there.
@@ -28,7 +29,7 @@ export class Presenter {
       svgAdditionalAttribute: ["staff@n", "layer@n", "verse@n", "measure@n"],
       breaks: "auto", adjustPageWidth: false, adjustPageHeight: true,
       pageWidth: Math.round(((W - 2 * MARGIN) * 100) / scale), pageHeight: 100, // one system per page
-      pageMarginLeft: 20, pageMarginRight: 40, pageMarginTop: 30, pageMarginBottom: 20, lyricSize: 4.4, spacingStaff: 10,
+      pageMarginLeft: 20, pageMarginRight: 40, pageMarginTop: 30, pageMarginBottom: 20, lyricSize: 4.4, spacingStaff: 10, svgCss: SVG_CSS,
       transpose,
     });
     tk.loadData(xml);
@@ -173,15 +174,7 @@ export class Presenter {
 
     // the short phrases joined into fuller lines (as a hymnal prints them), each wrapped at word ends;
     // the largest size at which the whole stanza fits
-    const lines = [];
-    const textOf = (parts) => parts.map((p) => p.text).join("");
-    (s.stanza || []).forEach((parts, li) => {
-      const last = lines.at(-1);
-      if (last && (textOf(last.parts) + textOf(parts)).length <= 40 && !/[.!?;]\s*$/.test(textOf(last.parts))) {
-        last.parts.push(...parts);
-        last.lis.push(li);
-      } else lines.push({ parts: [...parts], lis: [li] });
-    });
+    const lines = joinPhrases(s.stanza);
     g.textAlign = "left";
     const top = 170;
     const room = H - top - 70;
@@ -224,7 +217,223 @@ export class Presenter {
     g.textAlign = "left";
   }
 
+  /** The tall stage (1080x1920) of a Short. Everything stays inside the zone that YouTube Shorts, Reels and
+   *  TikTok all leave clear (x 60-940, y 220-1480): the hymnal and number, the title, then the line being
+   *  sung, large, with the next under it. */
+  drawVertical(s) {
+    const g = this.g;
+    const c = s.colors;
+    const w = this.canvas.width;
+    const h = this.canvas.height;
+    const L = SAFE.x0;
+    const R = SAFE.x1;
+    const mid = (L + R) / 2;
+    g.fillStyle = c.cloth;
+    g.fillRect(0, 0, w, h);
+    g.textBaseline = "alphabetic";
+    // the badge: "SDA Hymnal 610"
+    g.font = `700 40px "Alegreya Sans", sans-serif`;
+    const badge = s.badge || s.hymn.number;
+    const bw = g.measureText(badge).width + 48;
+    g.fillStyle = BRAND.gold;
+    roundRect(g, mid - bw / 2, SAFE.y0 + 20, bw, 64, 32);
+    g.fill();
+    g.fillStyle = BRAND.maroon;
+    g.textAlign = "center";
+    g.fillText(badge, mid, SAFE.y0 + 66);
+    // the title, two lines at most
+    let y = SAFE.y0 + 190;
+    g.fillStyle = c.paper;
+    for (const line of wrapText(g, s.hymn.title, R - L, 76, 2, `700 SIZEpx Alegreya, serif`)) {
+      g.fillText(line, mid, y);
+      y += 90;
+    }
+    g.fillStyle = "rgba(252,251,247,0.6)";
+    g.font = `italic 400 40px Alegreya, serif`;
+    g.fillText(s.verseLabel || "", mid, y + 4);
+
+    // the line being sung (short phrases joined, as a hymnal prints them), wrapped at word ends, its sung
+    // part lit; the next line under it, dimmer
+    const joined = joinPhrases(s.stanza, 30, /[.;]\s*$/); // "Glory! glory! Hallelujah!" is one line here
+    const at = joined.findIndex((l) => l.lis.includes(s.stanzaAt));
+    const now = at >= 0 ? joined[at].parts : s.line || [];
+    const nextText = at >= 0 ? (joined[at + 1]?.parts || []).map((p) => p.text).join("") : s.nextLine || "";
+    const size = 80;
+    const lineH = size * 1.28;
+    const big = `500 ${size}px Alegreya, serif`;
+    g.font = big;
+    const space = g.measureText(" ").width;
+    const rows = [[]];
+    let rowW = 0;
+    for (const part of now) {
+      const pw = g.measureText(part.text).width;
+      if (rowW + pw > R - L && rows.at(-1).length && rows.at(-1).at(-1).text.endsWith(" ")) { rows.push([]); rowW = 0; }
+      rows.at(-1).push({ ...part, w: pw });
+      rowW += pw;
+    }
+    const next = wrapText(g, nextText, R - L, 64, 2, `400 SIZEpx Alegreya, serif`, 64); // never under 64 px
+    const block = rows.length * lineH + 40 + next.length * 64 * 1.25;
+    let ly = Math.max(y + 140, (SAFE.y0 + 560 + SAFE.y1 - 120) / 2 - block / 2) + size;
+    g.textAlign = "left";
+    g.font = big;
+    for (const row of rows) {
+      const total = row.reduce((a, p) => a + p.w, 0) - (row.at(-1)?.text.endsWith(" ") ? space : 0);
+      let x = mid - total / 2;
+      for (const p of row) {
+        g.fillStyle = p.sung ? c.gilt : c.paper;
+        g.fillText(p.text, x, ly);
+        if (p.sung) g.fillRect(x, ly + 14, p.w - (p.text.endsWith(" ") ? space : 0), 6);
+        x += p.w;
+      }
+      ly += lineH;
+    }
+    g.textAlign = "center";
+    g.fillStyle = "rgba(252,251,247,0.5)";
+    g.font = `400 64px Alegreya, serif`;
+    ly += 40 - lineH + 64 * 1.25;
+    for (const line of next) { g.fillText(line, mid, ly); ly += 64 * 1.25; }
+    g.textAlign = "left";
+  }
+
+  /** The watermark of a tall video: the same faint name across the middle, and the address at the
+   *  bottom right of the clear zone (the platforms' buttons cover the real corner). */
+  drawVerticalMark(ink = "#ffffff", cornerOnly = false) {
+    const g = this.g;
+    const w = this.canvas.width;
+    const h = this.canvas.height;
+    if (!cornerOnly) {
+      g.save();
+      g.fillStyle = ink;
+      g.translate(w / 2, h / 2);
+      g.rotate(-Math.atan2(h, w));
+      g.textAlign = "center";
+      g.textBaseline = "middle";
+      g.font = `800 150px Alegreya, serif`;
+      g.globalAlpha = 0.07;
+      g.fillText("Advent Hymnals", 0, 0);
+      g.restore();
+    }
+    g.save();
+    g.textAlign = "right";
+    g.font = `600 34px "Alegreya Sans", sans-serif`;
+    g.globalAlpha = 0.6;
+    g.fillStyle = ink;
+    g.fillText("adventhymnals.org", SAFE.x1, SAFE.y1 - 20);
+    g.restore();
+  }
+
+  /** The card at the end of every automatic video, k seconds into it. It fades in over `last` (the final
+   *  frame of the music) in half a second. A wide video keeps its bottom 40 % plain: YouTube's end screen
+   *  (subscribe, next video) goes there. lines: [big, middle, small]. */
+  drawEndCard({ k, last, logo, lines }) {
+    const g = this.g;
+    const w = this.canvas.width;
+    const h = this.canvas.height;
+    const tall = h > w;
+    if (last && k < 0.5) g.drawImage(last, 0, 0);
+    g.save();
+    g.globalAlpha = Math.min(1, k / 0.5);
+    g.fillStyle = BRAND.maroon;
+    g.fillRect(0, 0, w, h);
+    const mid = tall ? (SAFE.x0 + SAFE.x1) / 2 : w / 2;
+    const room = tall ? SAFE.x1 - SAFE.x0 : w - 200;
+    const d = tall ? 300 : 250; // the logo, centred in the top third (of the clear zone, when tall)
+    const cy = tall ? SAFE.y0 + 300 : 195;
+    drawLogo(g, logo, mid, cy, d);
+    g.textAlign = "center";
+    g.textBaseline = "alphabetic";
+    let y = cy + d / 2 + (tall ? 190 : 140);
+    const sizes = tall ? [76, 56, 34] : [84, 56, 34];
+    lines.forEach((text, i) => {
+      if (!text) return;
+      let size = sizes[i];
+      const font = (px) => `${i === 0 ? 800 : i === 1 ? 500 : 600} ${px}px ${i === 2 ? '"Alegreya Sans", sans-serif' : "Alegreya, serif"}`;
+      g.font = font(size);
+      while (g.measureText(text).width > room && size > 24) g.font = font(--size);
+      g.fillStyle = i === 1 ? BRAND.gold : i === 2 ? "rgba(252,251,247,0.82)" : "#fcfbf7";
+      g.fillText(text, mid, y);
+      y += i === 0 ? size * 1.0 : size * 1.25 + 12;
+    });
+    g.restore();
+  }
+
+  /** A card between the sections of the rehearsal video: "Alto part", in the voice's colour. */
+  drawTitleCard({ hymn, colors, title, voice, badge }) {
+    const g = this.g;
+    const w = this.canvas.width;
+    const h = this.canvas.height;
+    const tall = h > w;
+    const mid = tall ? (SAFE.x0 + SAFE.x1) / 2 : w / 2;
+    g.fillStyle = colors.stage || colors.paper;
+    g.fillRect(0, 0, w, h);
+    g.fillStyle = colors[voice] || colors.cloth;
+    g.fillRect(0, 0, w, tall ? SAFE.y0 : 24);
+    g.textAlign = "center";
+    g.textBaseline = "alphabetic";
+    const cy = tall ? (SAFE.y0 + SAFE.y1) / 2 : h / 2;
+    g.fillStyle = colors[voice] || colors.cloth;
+    g.font = `800 ${tall ? 120 : 150}px Alegreya, serif`;
+    g.fillText(title, mid, cy);
+    g.fillStyle = colors.cloth;
+    g.font = `600 ${tall ? 48 : 54}px Alegreya, serif`;
+    const sub = wrapText(g, `${hymn.title}`, tall ? SAFE.x1 - SAFE.x0 : w - 300, tall ? 48 : 54, 2, `600 SIZEpx Alegreya, serif`);
+    sub.forEach((line, i) => g.fillText(line, mid, cy + 110 + i * 64));
+    g.fillStyle = colors.muted;
+    g.font = `500 36px "Alegreya Sans", sans-serif`;
+    g.fillText(badge || "", mid, cy + 110 + sub.length * 64 + 20);
+    g.textAlign = "left";
+  }
+
+  /** A 1280x720 thumbnail on `canvas`: the first line of the score, faint, behind the title (two lines at
+   *  most), a badge with the hymnal and number, what the video is ("Alto Part") and the logo. */
+  drawThumb(canvas, { hymn, colors, badge, label, voice, logo }) {
+    const g = canvas.getContext("2d");
+    const w = (canvas.width = 1280);
+    const h = (canvas.height = 720);
+    g.fillStyle = colors.stage || colors.paper;
+    g.fillRect(0, 0, w, h);
+    const pg = this.pages[0];
+    if (pg?.img) {
+      const k = (w + 160) / pg.w;
+      g.globalAlpha = 0.16;
+      g.drawImage(pg.img, -80, h - pg.h * k - 10, pg.w * k, pg.h * k);
+      g.globalAlpha = 1;
+      // a wash of the stage colour behind the words, so the title reads at a glance
+      const wash = g.createLinearGradient(0, 0, w, 0);
+      wash.addColorStop(0, colors.stage || colors.paper);
+      wash.addColorStop(0.75, "rgba(244,236,217,0.55)");
+      wash.addColorStop(1, "rgba(244,236,217,0)");
+      g.fillStyle = wash;
+      g.fillRect(0, 0, w, h);
+    }
+    // the badge
+    g.textBaseline = "alphabetic";
+    g.font = `700 44px "Alegreya Sans", sans-serif`;
+    const bw = g.measureText(badge).width + 56;
+    g.fillStyle = BRAND.maroon;
+    roundRect(g, 60, 52, bw, 76, 38);
+    g.fill();
+    g.fillStyle = BRAND.gold;
+    g.fillText(badge, 88, 106);
+    // the title, as large as fits in two lines (at least 90 px)
+    g.fillStyle = colors.cloth;
+    const lines = wrapText(g, hymn.title, w - 120, 124, 2, `800 SIZEpx Alegreya, serif`, 90);
+    const size = Number(/(\d+)px/.exec(g.font)[1]);
+    lines.forEach((line, i) => g.fillText(line, 60, 150 + size * (i + 1) * 1.02));
+    // what this video is
+    g.font = `800 58px "Alegreya Sans", sans-serif`;
+    const lw = g.measureText(label).width + 60;
+    const ly = 150 + size * lines.length * 1.02 + 40;
+    g.fillStyle = colors[voice] || BRAND.gold;
+    roundRect(g, 60, ly, lw, 92, 18);
+    g.fill();
+    g.fillStyle = voice ? "#ffffff" : BRAND.maroon;
+    g.fillText(label, 90, ly + 66);
+    drawLogo(g, logo, w - 110, h - 110, 150);
+  }
+
   draw(s) {
+    if (s.format === "vertical") { this.drawVertical(s); if (s.watermark) this.drawVerticalMark(); return; }
     if (s.mode === "stanza") { this.drawStanza(s); this.drawMark(s); return; }
     if (s.mode === "words") { this.drawWords(s); this.drawMark(s); return; }
     this.drawScore(s);
@@ -233,20 +442,22 @@ export class Presenter {
 
   /** The watermark of every recorded video (anyone can make one on the site, so it is always there):
    *  "Advent Hymnals" faintly across the middle, corner to corner, and the address in the corner. */
-  drawMark(s) {
+  drawMark(s, cornerOnly = false) {
     if (!s.watermark) return;
     const g = this.g;
     const dark = s.mode === "words" || s.mode === "stanza";
-    g.save();
-    g.fillStyle = dark ? "#ffffff" : s.colors.cloth;
-    g.translate(W / 2, H / 2);
-    g.rotate(-Math.atan2(H, W));
-    g.textAlign = "center";
-    g.textBaseline = "middle";
-    g.font = `800 170px Alegreya, serif`;
-    g.globalAlpha = dark ? 0.08 : 0.07;
-    g.fillText("Advent Hymnals", 0, 0);
-    g.restore();
+    if (!cornerOnly) { // (the end card has the address only)
+      g.save();
+      g.fillStyle = dark ? "#ffffff" : s.colors.cloth;
+      g.translate(W / 2, H / 2);
+      g.rotate(-Math.atan2(H, W));
+      g.textAlign = "center";
+      g.textBaseline = "middle";
+      g.font = `800 170px Alegreya, serif`;
+      g.globalAlpha = dark ? 0.08 : 0.07;
+      g.fillText("Advent Hymnals", 0, 0);
+      g.restore();
+    }
     g.save();
     g.textAlign = "right";
     g.textBaseline = "alphabetic";
@@ -404,6 +615,68 @@ export class Presenter {
     rec.start(1000);
     return { stop: () => rec.state !== "inactive" && rec.stop(), mimeType: rec.mimeType };
   }
+}
+
+// the brand of the social videos: the site's maroon and a brighter gold (reads better small)
+export const BRAND = { maroon: "#8C2F39", gold: "#D4A845" };
+// a tall video's clear zone: the platforms' buttons and captions cover the right 140 px and the bottom 440 px
+export const SAFE = { x0: 60, x1: 940, y0: 220, y1: 1480 };
+
+/** The short phrases of a stanza joined into fuller lines, as a hymnal prints them: [{ parts, lis }].
+ *  A line takes the next phrase while it stays within `max` characters and has not ended at `stop`. */
+function joinPhrases(stanza, max = 40, stop = /[.!?;]\s*$/) {
+  const lines = [];
+  const textOf = (parts) => parts.map((p) => p.text).join("");
+  (stanza || []).forEach((parts, li) => {
+    const last = lines.at(-1);
+    if (last && (textOf(last.parts) + textOf(parts)).length <= max && !stop.test(textOf(last.parts))) {
+      last.parts.push(...parts);
+      last.lis.push(li);
+    } else lines.push({ parts: [...parts], lis: [li] });
+  });
+  return lines;
+}
+
+function roundRect(g, x, y, w, h, r) {
+  g.beginPath();
+  g.moveTo(x + r, y);
+  g.arcTo(x + w, y, x + w, y + h, r);
+  g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r);
+  g.arcTo(x, y, x + w, y, r);
+  g.closePath();
+}
+
+/** Lines of `text` wrapped at spaces to `width`, at most `max` of them: the largest size from `size`
+ *  down to `least` at which it fits (font: a CSS font with SIZE for the size). Leaves g.font set. */
+function wrapText(g, text, width, size, max, font, least = Math.round(size * 0.6)) {
+  const words = String(text).split(/\s+/).filter(Boolean);
+  for (let px = size; ; px -= 2) {
+    g.font = font.replace("SIZE", px);
+    const lines = [""];
+    for (const word of words) {
+      const tryLine = lines.at(-1) ? `${lines.at(-1)} ${word}` : word;
+      if (g.measureText(tryLine).width > width && lines.at(-1)) lines.push(word);
+      else lines[lines.length - 1] = tryLine;
+    }
+    if ((lines.length <= max && lines.every((l) => g.measureText(l).width <= width)) || px <= least) {
+      if (lines.length > max) { lines.length = max; lines[max - 1] += "…"; }
+      return lines.filter(Boolean);
+    }
+  }
+}
+
+/** The logo (a round image) with a thin gold ring, so it shows on the maroon cards too. */
+function drawLogo(g, logo, cx, cy, d) {
+  if (!logo) return;
+  g.save();
+  g.drawImage(logo, cx - d / 2, cy - d / 2, d, d);
+  g.strokeStyle = BRAND.gold;
+  g.lineWidth = Math.max(2, d / 60);
+  g.beginPath();
+  g.arc(cx, cy, d / 2 - g.lineWidth / 2, 0, Math.PI * 2);
+  g.stroke();
+  g.restore();
 }
 
 function svgImage(svg) {

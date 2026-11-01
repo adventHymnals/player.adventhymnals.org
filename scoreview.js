@@ -1,3 +1,4 @@
+import { SVG_CSS } from "./core.js";
 // Renders the score with Verovio in "tracks" (one long system) or "page" (stacked systems) mode,
 // and knows where every staff, bar and note is, for headers, highlighting and the playhead.
 
@@ -20,7 +21,7 @@ export class ScoreView {
     const base = {
       scale, header: "none", footer: "none", svgHtml5: true, svgViewBox: true, svgAdditionalAttribute: SVG_ATTRS,
       pageMarginLeft: 30, pageMarginRight: 60, pageMarginTop: 50, pageMarginBottom: 40, lyricSize: 4.2,
-      spacingStaff: 14, adjustPageHeight: true,
+      spacingStaff: 14, adjustPageHeight: true, svgCss: SVG_CSS,
       transpose, // the toolkit keeps options between calls, so always set it
     };
     if (mode === "tracks") {
