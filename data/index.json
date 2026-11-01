@@ -700,6 +700,13 @@
   "path": "data/SDAH/677.json"
  },
  {
+  "id": "SDAH-679",
+  "book": "SDAH",
+  "number": "679",
+  "title": "God Be in My Head",
+  "path": "data/SDAH/679.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
