@@ -217,6 +217,13 @@
   "path": "data/SDAH/505.json"
  },
  {
+  "id": "SDAH-506",
+  "book": "SDAH",
+  "number": "506",
+  "title": "A Mighty Fortress",
+  "path": "data/SDAH/506.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
