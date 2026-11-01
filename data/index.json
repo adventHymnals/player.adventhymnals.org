@@ -147,6 +147,20 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-26",
+  "book": "NZK",
+  "number": "26",
+  "title": "Tupe Amani",
+  "path": "data/NZK/26.json"
+ },
+ {
+  "id": "NZK-38",
+  "book": "NZK",
+  "number": "38",
+  "title": "Nasifu Shani ya Mungu",
+  "path": "data/NZK/38.json"
+ },
+ {
   "id": "NZK-50",
   "book": "NZK",
   "number": "50",
@@ -754,6 +768,41 @@
   "number": "83",
   "title": "O Worship the King",
   "path": "data/SDAH/83.json"
+ },
+ {
+  "id": "SDAH-84",
+  "book": "SDAH",
+  "number": "84",
+  "title": "God the Omnipotent",
+  "path": "data/SDAH/84.json"
+ },
+ {
+  "id": "SDAH-85",
+  "book": "SDAH",
+  "number": "85",
+  "title": "Eternal Father, Strong to Save",
+  "path": "data/SDAH/85.json"
+ },
+ {
+  "id": "SDAH-86",
+  "book": "SDAH",
+  "number": "86",
+  "title": "How Great Thou Art",
+  "path": "data/SDAH/86.json"
+ },
+ {
+  "id": "SDAH-87",
+  "book": "SDAH",
+  "number": "87",
+  "title": "God Who Spoke in the Beginning",
+  "path": "data/SDAH/87.json"
+ },
+ {
+  "id": "SDAH-88",
+  "book": "SDAH",
+  "number": "88",
+  "title": "I Sing the Mighty Power of God",
+  "path": "data/SDAH/88.json"
  },
  {
   "id": "SDAH-100",
@@ -2317,6 +2366,13 @@
   "path": "data/WN/33.json"
  },
  {
+  "id": "WN-55",
+  "book": "WN",
+  "number": "55",
+  "title": "Awero Teko mar Nyasaye",
+  "path": "data/WN/55.json"
+ },
+ {
   "id": "WN-67",
   "book": "WN",
   "number": "67",
@@ -2336,5 +2392,12 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json"
+ },
+ {
+  "id": "WN-311",
+  "book": "WN",
+  "number": "311",
+  "title": "Ruoth Nyasacha",
+  "path": "data/WN/311.json"
  }
 ]
