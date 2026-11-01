@@ -287,6 +287,13 @@
   "path": "data/SDAH/517.json"
  },
  {
+  "id": "SDAH-518",
+  "book": "SDAH",
+  "number": "518",
+  "title": "Standing on the Promises",
+  "path": "data/SDAH/518.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
