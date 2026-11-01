@@ -434,6 +434,13 @@
   "path": "data/SDAH/549.json"
  },
  {
+  "id": "SDAH-553",
+  "book": "SDAH",
+  "number": "553",
+  "title": "Jesus, Guide Our Way",
+  "path": "data/SDAH/553.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
