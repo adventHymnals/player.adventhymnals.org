@@ -329,6 +329,13 @@
   "path": "data/SDAH/135.json"
  },
  {
+  "id": "SDAH-136",
+  "book": "SDAH",
+  "number": "136",
+  "title": "Good Christians, Now Rejoice",
+  "path": "data/SDAH/136.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
