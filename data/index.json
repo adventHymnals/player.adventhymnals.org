@@ -175,6 +175,13 @@
   "path": "data/SDAH/102.json"
  },
  {
+  "id": "SDAH-103",
+  "book": "SDAH",
+  "number": "103",
+  "title": "O God, Our Help",
+  "path": "data/SDAH/103.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
