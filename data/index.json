@@ -126,6 +126,13 @@
   "path": "data/CS1908/10.json"
  },
  {
+  "id": "NZK-1",
+  "book": "NZK",
+  "number": "1",
+  "title": "Mtakatifu, Mtakatifu, Mtakatifu",
+  "path": "data/NZK/1.json"
+ },
+ {
   "id": "NZK-9",
   "book": "NZK",
   "number": "9",
@@ -635,6 +642,41 @@
   "number": "68",
   "title": "On Our Way Rejoicing",
   "path": "data/SDAH/68.json"
+ },
+ {
+  "id": "SDAH-69",
+  "book": "SDAH",
+  "number": "69",
+  "title": "Lord, Make Us More Holy",
+  "path": "data/SDAH/69.json"
+ },
+ {
+  "id": "SDAH-70",
+  "book": "SDAH",
+  "number": "70",
+  "title": "Praise Ye the Father",
+  "path": "data/SDAH/70.json"
+ },
+ {
+  "id": "SDAH-71",
+  "book": "SDAH",
+  "number": "71",
+  "title": "Come, Thou Almighty King",
+  "path": "data/SDAH/71.json"
+ },
+ {
+  "id": "SDAH-72",
+  "book": "SDAH",
+  "number": "72",
+  "title": "Creator of the Stars of Night",
+  "path": "data/SDAH/72.json"
+ },
+ {
+  "id": "SDAH-73",
+  "book": "SDAH",
+  "number": "73",
+  "title": "Holy, Holy, Holy",
+  "path": "data/SDAH/73.json"
  },
  {
   "id": "SDAH-100",
