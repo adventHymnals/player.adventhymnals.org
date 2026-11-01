@@ -735,6 +735,13 @@
   "path": "data/SDAH/684.json"
  },
  {
+  "id": "SDAH-686",
+  "book": "SDAH",
+  "number": "686",
+  "title": "Bless Thou the Gifts",
+  "path": "data/SDAH/686.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
