@@ -714,6 +714,13 @@
   "path": "data/SDAH/680.json"
  },
  {
+  "id": "SDAH-681",
+  "book": "SDAH",
+  "number": "681",
+  "title": "This Is the Day the Lord Hath Made",
+  "path": "data/SDAH/681.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
