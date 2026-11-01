@@ -133,6 +133,13 @@
   "path": "data/NZK/1.json"
  },
  {
+  "id": "NZK-5",
+  "book": "NZK",
+  "number": "5",
+  "title": "Na Tumwabudu Mfalme Mtukufu",
+  "path": "data/NZK/5.json"
+ },
+ {
   "id": "NZK-9",
   "book": "NZK",
   "number": "9",
@@ -712,6 +719,41 @@
   "number": "78",
   "title": "For God So Loved Us",
   "path": "data/SDAH/78.json"
+ },
+ {
+  "id": "SDAH-79",
+  "book": "SDAH",
+  "number": "79",
+  "title": "O Love of God, How Strong and True!",
+  "path": "data/SDAH/79.json"
+ },
+ {
+  "id": "SDAH-80",
+  "book": "SDAH",
+  "number": "80",
+  "title": "O World of God",
+  "path": "data/SDAH/80.json"
+ },
+ {
+  "id": "SDAH-81",
+  "book": "SDAH",
+  "number": "81",
+  "title": "Though I Speak With Tongues",
+  "path": "data/SDAH/81.json"
+ },
+ {
+  "id": "SDAH-82",
+  "book": "SDAH",
+  "number": "82",
+  "title": "Before Jehovah's Awful Throne",
+  "path": "data/SDAH/82.json"
+ },
+ {
+  "id": "SDAH-83",
+  "book": "SDAH",
+  "number": "83",
+  "title": "O Worship the King",
+  "path": "data/SDAH/83.json"
  },
  {
   "id": "SDAH-100",
@@ -2252,6 +2294,13 @@
   "number": "695",
   "title": "Praise God, From Whom All Blessings",
   "path": "data/SDAH/695.json"
+ },
+ {
+  "id": "WN-5",
+  "book": "WN",
+  "number": "5",
+  "title": "To Pakuru Ruoth",
+  "path": "data/WN/5.json"
  },
  {
   "id": "WN-9",
