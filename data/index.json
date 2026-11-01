@@ -196,6 +196,13 @@
   "path": "data/SDAH/501.json"
  },
  {
+  "id": "SDAH-502",
+  "book": "SDAH",
+  "number": "502",
+  "title": "Sun of My Soul",
+  "path": "data/SDAH/502.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
