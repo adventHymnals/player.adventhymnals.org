@@ -224,6 +224,13 @@
   "path": "data/SDAH/110.json"
  },
  {
+  "id": "SDAH-112",
+  "book": "SDAH",
+  "number": "112",
+  "title": "Let Us With a Gladsome Mind",
+  "path": "data/SDAH/112.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
