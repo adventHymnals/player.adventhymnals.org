@@ -238,6 +238,13 @@
   "path": "data/SDAH/508.json"
  },
  {
+  "id": "SDAH-509",
+  "book": "SDAH",
+  "number": "509",
+  "title": "How Firm a Foundation",
+  "path": "data/SDAH/509.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
