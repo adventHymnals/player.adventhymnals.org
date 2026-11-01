@@ -182,6 +182,13 @@
   "path": "data/SDAH/103.json"
  },
  {
+  "id": "SDAH-105",
+  "book": "SDAH",
+  "number": "105",
+  "title": "Sing to the Great Jehovah's Praise",
+  "path": "data/SDAH/105.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
