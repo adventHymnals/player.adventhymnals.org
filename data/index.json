@@ -133,6 +133,13 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-50",
+  "book": "NZK",
+  "number": "50",
+  "title": "Mungu Nawe Nanyi Daima",
+  "path": "data/NZK/50.json"
+ },
+ {
   "id": "NZK-89",
   "book": "NZK",
   "number": "89",
@@ -586,6 +593,27 @@
   "number": "61",
   "title": "God Is Here!",
   "path": "data/SDAH/61.json"
+ },
+ {
+  "id": "SDAH-62",
+  "book": "SDAH",
+  "number": "62",
+  "title": "How Lovely Is Thy Dwelling Place",
+  "path": "data/SDAH/62.json"
+ },
+ {
+  "id": "SDAH-64",
+  "book": "SDAH",
+  "number": "64",
+  "title": "Lord, Dismiss Us With Thy Blessing",
+  "path": "data/SDAH/64.json"
+ },
+ {
+  "id": "SDAH-65",
+  "book": "SDAH",
+  "number": "65",
+  "title": "God Be With You",
+  "path": "data/SDAH/65.json"
  },
  {
   "id": "SDAH-100",
@@ -2133,6 +2161,20 @@
   "number": "9",
   "title": "Jachwechna gi Ruodha",
   "path": "data/WN/9.json"
+ },
+ {
+  "id": "WN-33",
+  "book": "WN",
+  "number": "33",
+  "title": "Wuonwa, Gonywa Gi Gweth Mari",
+  "path": "data/WN/33.json"
+ },
+ {
+  "id": "WN-67",
+  "book": "WN",
+  "number": "67",
+  "title": "Nyasachwa Mondo Obed Kodu",
+  "path": "data/WN/67.json"
  },
  {
   "id": "WN-133",
