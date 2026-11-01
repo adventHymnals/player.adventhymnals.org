@@ -252,6 +252,41 @@
   "path": "data/SDAH/15.json"
  },
  {
+  "id": "SDAH-16",
+  "book": "SDAH",
+  "number": "16",
+  "title": "All People That on Earth Do Dwell",
+  "path": "data/SDAH/16.json"
+ },
+ {
+  "id": "SDAH-17",
+  "book": "SDAH",
+  "number": "17",
+  "title": "Lord of All Being, Throned Afar",
+  "path": "data/SDAH/17.json"
+ },
+ {
+  "id": "SDAH-18",
+  "book": "SDAH",
+  "number": "18",
+  "title": "O Morning Star, How Fair and Bright",
+  "path": "data/SDAH/18.json"
+ },
+ {
+  "id": "SDAH-19",
+  "book": "SDAH",
+  "number": "19",
+  "title": "O Sing a New Song to the Lord",
+  "path": "data/SDAH/19.json"
+ },
+ {
+  "id": "SDAH-20",
+  "book": "SDAH",
+  "number": "20",
+  "title": "O Praise Ye the Lord",
+  "path": "data/SDAH/20.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
