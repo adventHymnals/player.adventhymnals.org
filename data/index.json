@@ -343,6 +343,13 @@
   "path": "data/SDAH/137.json"
  },
  {
+  "id": "SDAH-139",
+  "book": "SDAH",
+  "number": "139",
+  "title": "While Shepherds Watched Their Flocks",
+  "path": "data/SDAH/139.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
