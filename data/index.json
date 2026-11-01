@@ -350,6 +350,13 @@
   "path": "data/SDAH/529.json"
  },
  {
+  "id": "SDAH-532",
+  "book": "SDAH",
+  "number": "532",
+  "title": "Day by Day",
+  "path": "data/SDAH/532.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
