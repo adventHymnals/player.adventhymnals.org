@@ -672,6 +672,13 @@
   "path": "data/SDAH/673.json"
  },
  {
+  "id": "SDAH-674",
+  "book": "SDAH",
+  "number": "674",
+  "title": "Shalom",
+  "path": "data/SDAH/674.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
