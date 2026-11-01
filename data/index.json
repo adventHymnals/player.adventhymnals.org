@@ -203,6 +203,13 @@
   "path": "data/SDAH/107.json"
  },
  {
+  "id": "SDAH-108",
+  "book": "SDAH",
+  "number": "108",
+  "title": "Amazing Grace",
+  "path": "data/SDAH/108.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
