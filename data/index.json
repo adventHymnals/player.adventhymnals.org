@@ -427,6 +427,41 @@
   "path": "data/SDAH/39.json"
  },
  {
+  "id": "SDAH-40",
+  "book": "SDAH",
+  "number": "40",
+  "title": "The Dawn of God's Dear Sabbath",
+  "path": "data/SDAH/40.json"
+ },
+ {
+  "id": "SDAH-41",
+  "book": "SDAH",
+  "number": "41",
+  "title": "O Splendor of God's Glory Bright",
+  "path": "data/SDAH/41.json"
+ },
+ {
+  "id": "SDAH-42",
+  "book": "SDAH",
+  "number": "42",
+  "title": "Now That the Daylight Fills the Sky",
+  "path": "data/SDAH/42.json"
+ },
+ {
+  "id": "SDAH-43",
+  "book": "SDAH",
+  "number": "43",
+  "title": "When Morning Gilds the Skies",
+  "path": "data/SDAH/43.json"
+ },
+ {
+  "id": "SDAH-44",
+  "book": "SDAH",
+  "number": "44",
+  "title": "Morning Has Broken",
+  "path": "data/SDAH/44.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
