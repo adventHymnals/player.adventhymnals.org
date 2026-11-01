@@ -357,6 +357,13 @@
   "path": "data/SDAH/532.json"
  },
  {
+  "id": "SDAH-533",
+  "book": "SDAH",
+  "number": "533",
+  "title": "O for a Faith",
+  "path": "data/SDAH/533.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
