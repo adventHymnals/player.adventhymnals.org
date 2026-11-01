@@ -462,6 +462,13 @@
   "path": "data/SDAH/557.json"
  },
  {
+  "id": "SDAH-562",
+  "book": "SDAH",
+  "number": "562",
+  "title": "Come, Sing a Song of Harvest",
+  "path": "data/SDAH/562.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
