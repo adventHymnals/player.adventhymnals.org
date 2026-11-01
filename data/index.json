@@ -721,6 +721,13 @@
   "path": "data/SDAH/681.json"
  },
  {
+  "id": "SDAH-683",
+  "book": "SDAH",
+  "number": "683",
+  "title": "Jesus, Stand Among Us",
+  "path": "data/SDAH/683.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
