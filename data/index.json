@@ -462,6 +462,41 @@
   "path": "data/SDAH/44.json"
  },
  {
+  "id": "SDAH-45",
+  "book": "SDAH",
+  "number": "45",
+  "title": "Open Now Thy Gates of Beauty",
+  "path": "data/SDAH/45.json"
+ },
+ {
+  "id": "SDAH-46",
+  "book": "SDAH",
+  "number": "46",
+  "title": "Abide With Me, 'Tis Eventide",
+  "path": "data/SDAH/46.json"
+ },
+ {
+  "id": "SDAH-47",
+  "book": "SDAH",
+  "number": "47",
+  "title": "God, Who Made the Earth and Heaven",
+  "path": "data/SDAH/47.json"
+ },
+ {
+  "id": "SDAH-48",
+  "book": "SDAH",
+  "number": "48",
+  "title": "Softly Now the Light of Day",
+  "path": "data/SDAH/48.json"
+ },
+ {
+  "id": "SDAH-49",
+  "book": "SDAH",
+  "number": "49",
+  "title": "Savior, Breathe an Evening Blessing",
+  "path": "data/SDAH/49.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
