@@ -126,6 +126,13 @@
   "path": "data/CS1908/10.json"
  },
  {
+  "id": "NZK-9",
+  "book": "NZK",
+  "number": "9",
+  "title": "Mwumbaji, Mfalme",
+  "path": "data/NZK/9.json"
+ },
+ {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
@@ -222,6 +229,27 @@
   "number": "12",
   "title": "Joyful, Joyful, We Adore Thee",
   "path": "data/SDAH/12.json"
+ },
+ {
+  "id": "SDAH-13",
+  "book": "SDAH",
+  "number": "13",
+  "title": "New Songs of Celebration Render",
+  "path": "data/SDAH/13.json"
+ },
+ {
+  "id": "SDAH-14",
+  "book": "SDAH",
+  "number": "14",
+  "title": "Let Us Praise the Name of the Lord",
+  "path": "data/SDAH/14.json"
+ },
+ {
+  "id": "SDAH-15",
+  "book": "SDAH",
+  "number": "15",
+  "title": "My Maker and My King",
+  "path": "data/SDAH/15.json"
  },
  {
   "id": "SDAH-100",
@@ -1762,6 +1790,13 @@
   "number": "695",
   "title": "Praise God, From Whom All Blessings",
   "path": "data/SDAH/695.json"
+ },
+ {
+  "id": "WN-9",
+  "book": "WN",
+  "number": "9",
+  "title": "Jachwechna gi Ruodha",
+  "path": "data/WN/9.json"
  },
  {
   "id": "WN-166",
