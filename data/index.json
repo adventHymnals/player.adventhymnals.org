@@ -623,6 +623,13 @@
   "path": "data/SDAH/665.json"
  },
  {
+  "id": "SDAH-666",
+  "book": "SDAH",
+  "number": "666",
+  "title": "Cast Thy Burden Upon the Lord",
+  "path": "data/SDAH/666.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
