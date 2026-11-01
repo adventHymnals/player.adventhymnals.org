@@ -749,6 +749,13 @@
   "path": "data/SDAH/688.json"
  },
  {
+  "id": "SDAH-690",
+  "book": "SDAH",
+  "number": "690",
+  "title": "Dismiss Us, Lord, With Blessing",
+  "path": "data/SDAH/690.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
