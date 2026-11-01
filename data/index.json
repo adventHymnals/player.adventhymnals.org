@@ -259,6 +259,13 @@
   "path": "data/SDAH/511.json"
  },
  {
+  "id": "SDAH-513",
+  "book": "SDAH",
+  "number": "513",
+  "title": "In Heavenly Love Abiding",
+  "path": "data/SDAH/513.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
