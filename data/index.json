@@ -679,6 +679,41 @@
   "path": "data/SDAH/73.json"
  },
  {
+  "id": "SDAH-74",
+  "book": "SDAH",
+  "number": "74",
+  "title": "Like a River Glorious",
+  "path": "data/SDAH/74.json"
+ },
+ {
+  "id": "SDAH-75",
+  "book": "SDAH",
+  "number": "75",
+  "title": "The Wonder of It All",
+  "path": "data/SDAH/75.json"
+ },
+ {
+  "id": "SDAH-76",
+  "book": "SDAH",
+  "number": "76",
+  "title": "O Love That Wilt Not Let Me Go",
+  "path": "data/SDAH/76.json"
+ },
+ {
+  "id": "SDAH-77",
+  "book": "SDAH",
+  "number": "77",
+  "title": "O Love of God Most Full",
+  "path": "data/SDAH/77.json"
+ },
+ {
+  "id": "SDAH-78",
+  "book": "SDAH",
+  "number": "78",
+  "title": "For God So Loved Us",
+  "path": "data/SDAH/78.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
