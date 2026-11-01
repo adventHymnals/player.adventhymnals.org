@@ -756,6 +756,13 @@
   "path": "data/SDAH/690.json"
  },
  {
+  "id": "SDAH-691",
+  "book": "SDAH",
+  "number": "691",
+  "title": "Lead Me, Lord",
+  "path": "data/SDAH/691.json"
+ },
+ {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
