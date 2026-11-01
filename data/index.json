@@ -357,6 +357,41 @@
   "path": "data/SDAH/30.json"
  },
  {
+  "id": "SDAH-31",
+  "book": "SDAH",
+  "number": "31",
+  "title": "Tell Out, My Soul",
+  "path": "data/SDAH/31.json"
+ },
+ {
+  "id": "SDAH-32",
+  "book": "SDAH",
+  "number": "32",
+  "title": "When in Our Music God Is Glorified",
+  "path": "data/SDAH/32.json"
+ },
+ {
+  "id": "SDAH-33",
+  "book": "SDAH",
+  "number": "33",
+  "title": "Sing a New Song to the Lord",
+  "path": "data/SDAH/33.json"
+ },
+ {
+  "id": "SDAH-34",
+  "book": "SDAH",
+  "number": "34",
+  "title": "Wake the Song",
+  "path": "data/SDAH/34.json"
+ },
+ {
+  "id": "SDAH-35",
+  "book": "SDAH",
+  "number": "35",
+  "title": "With Songs and Honors",
+  "path": "data/SDAH/35.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
