@@ -413,6 +413,13 @@
   "path": "data/SDAH/543.json"
  },
  {
+  "id": "SDAH-545",
+  "book": "SDAH",
+  "number": "545",
+  "title": "Savior, Like a Shepherd",
+  "path": "data/SDAH/545.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
