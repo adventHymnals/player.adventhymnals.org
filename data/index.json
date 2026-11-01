@@ -140,6 +140,13 @@
   "path": "data/NZK/89.json"
  },
  {
+  "id": "NZK-91",
+  "book": "NZK",
+  "number": "91",
+  "title": "Kaa Nami",
+  "path": "data/NZK/91.json"
+ },
+ {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
@@ -495,6 +502,20 @@
   "number": "49",
   "title": "Savior, Breathe an Evening Blessing",
   "path": "data/SDAH/49.json"
+ },
+ {
+  "id": "SDAH-50",
+  "book": "SDAH",
+  "number": "50",
+  "title": "Abide With Me",
+  "path": "data/SDAH/50.json"
+ },
+ {
+  "id": "SDAH-51",
+  "book": "SDAH",
+  "number": "51",
+  "title": "Day Is Dying in the West",
+  "path": "data/SDAH/51.json"
  },
  {
   "id": "SDAH-100",
@@ -2042,6 +2063,13 @@
   "number": "9",
   "title": "Jachwechna gi Ruodha",
   "path": "data/WN/9.json"
+ },
+ {
+  "id": "WN-133",
+  "book": "WN",
+  "number": "133",
+  "title": "Bedi Kod An",
+  "path": "data/WN/133.json"
  },
  {
   "id": "WN-166",
