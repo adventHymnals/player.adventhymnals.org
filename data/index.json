@@ -322,6 +322,13 @@
   "path": "data/SDAH/522.json"
  },
  {
+  "id": "SDAH-523",
+  "book": "SDAH",
+  "number": "523",
+  "title": "My Faith Has Found a Resting Place",
+  "path": "data/SDAH/523.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
