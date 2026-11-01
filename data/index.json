@@ -553,6 +553,41 @@
   "path": "data/SDAH/56.json"
  },
  {
+  "id": "SDAH-57",
+  "book": "SDAH",
+  "number": "57",
+  "title": "Now All the Woods Are Sleeping",
+  "path": "data/SDAH/57.json"
+ },
+ {
+  "id": "SDAH-58",
+  "book": "SDAH",
+  "number": "58",
+  "title": "Hark, the Vesper Hymn Is Stealing",
+  "path": "data/SDAH/58.json"
+ },
+ {
+  "id": "SDAH-59",
+  "book": "SDAH",
+  "number": "59",
+  "title": "Great Our Joy as Now We Gather",
+  "path": "data/SDAH/59.json"
+ },
+ {
+  "id": "SDAH-60",
+  "book": "SDAH",
+  "number": "60",
+  "title": "Blessed Jesus, at Thy Word",
+  "path": "data/SDAH/60.json"
+ },
+ {
+  "id": "SDAH-61",
+  "book": "SDAH",
+  "number": "61",
+  "title": "God Is Here!",
+  "path": "data/SDAH/61.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
