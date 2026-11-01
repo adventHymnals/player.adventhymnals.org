@@ -525,6 +525,13 @@
   "path": "data/SDAH/577.json"
  },
  {
+  "id": "SDAH-579",
+  "book": "SDAH",
+  "number": "579",
+  "title": "'Tis Love That Makes Us Happy",
+  "path": "data/SDAH/579.json"
+ },
+ {
   "id": "SDAH-600",
   "book": "SDAH",
   "number": "600",
