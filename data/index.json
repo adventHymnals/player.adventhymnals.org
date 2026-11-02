@@ -175,6 +175,13 @@
   "path": "data/CS1908/174.json"
  },
  {
+  "id": "CS1908-179",
+  "book": "CS1908",
+  "number": "179",
+  "title": "Come to Jesus",
+  "path": "data/CS1908/179.json"
+ },
+ {
   "id": "CS1908-192",
   "book": "CS1908",
   "number": "192",
@@ -6417,6 +6424,13 @@
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
   "path": "data/WN/150.json"
+ },
+ {
+  "id": "WN-156",
+  "book": "WN",
+  "number": "156",
+  "title": "Bi Ka Yesu",
+  "path": "data/WN/156.json"
  },
  {
   "id": "WN-160",
