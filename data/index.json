@@ -154,6 +154,13 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-24",
+  "book": "NZK",
+  "number": "24",
+  "title": "Jina Lake Yesu Tamu",
+  "path": "data/NZK/24.json"
+ },
+ {
   "id": "NZK-25",
   "book": "NZK",
   "number": "25",
@@ -1820,6 +1827,20 @@
   "path": "data/SDAH/236.json"
  },
  {
+  "id": "SDAH-237",
+  "book": "SDAH",
+  "number": "237",
+  "title": "In the Cross of Christ I Glory",
+  "path": "data/SDAH/237.json"
+ },
+ {
+  "id": "SDAH-238",
+  "book": "SDAH",
+  "number": "238",
+  "title": "How Sweet the Name!",
+  "path": "data/SDAH/238.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3204,6 +3225,13 @@
   "number": "9",
   "title": "Jachwechna gi Ruodha",
   "path": "data/WN/9.json"
+ },
+ {
+  "id": "WN-23",
+  "book": "WN",
+  "number": "23",
+  "title": "Aheri, Aheri",
+  "path": "data/WN/23.json"
  },
  {
   "id": "WN-33",
