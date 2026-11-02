@@ -679,6 +679,13 @@
   "path": "data/NZK/141.json"
  },
  {
+  "id": "NZK-142",
+  "book": "NZK",
+  "number": "142",
+  "title": "Nasikia Sauti Yako",
+  "path": "data/NZK/142.json"
+ },
+ {
   "id": "NZK-143",
   "book": "NZK",
   "number": "143",
@@ -2849,6 +2856,13 @@
   "path": "data/SDAH/281.json"
  },
  {
+  "id": "SDAH-282",
+  "book": "SDAH",
+  "number": "282",
+  "title": "I Hear Thy Welcome Voice",
+  "path": "data/SDAH/282.json"
+ },
+ {
   "id": "SDAH-283",
   "book": "SDAH",
   "number": "283",
@@ -3057,6 +3071,13 @@
   "number": "312",
   "title": "Near the Cross",
   "path": "data/SDAH/312.json"
+ },
+ {
+  "id": "SDAH-313",
+  "book": "SDAH",
+  "number": "313",
+  "title": "Just as I Am",
+  "path": "data/SDAH/313.json"
  },
  {
   "id": "SDAH-314",
