@@ -3542,6 +3542,13 @@
   "path": "data/SDAH/442.json"
  },
  {
+  "id": "SDAH-443",
+  "book": "SDAH",
+  "number": "443",
+  "title": "There'll Be No Sorrow There",
+  "path": "data/SDAH/443.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
