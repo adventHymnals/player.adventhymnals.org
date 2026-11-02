@@ -203,6 +203,13 @@
   "path": "data/NZK/29.json"
  },
  {
+  "id": "NZK-30",
+  "book": "NZK",
+  "number": "30",
+  "title": "Yesu Unipendaye",
+  "path": "data/NZK/30.json"
+ },
+ {
   "id": "NZK-31",
   "book": "NZK",
   "number": "31",
@@ -3897,6 +3904,20 @@
   "number": "488",
   "title": "At First I Prayed for Light",
   "path": "data/SDAH/488.json"
+ },
+ {
+  "id": "SDAH-489",
+  "book": "SDAH",
+  "number": "489",
+  "title": "Jesus, Lover of My Soul",
+  "path": "data/SDAH/489.json"
+ },
+ {
+  "id": "SDAH-490",
+  "book": "SDAH",
+  "number": "490",
+  "title": "Jesus, Lover of My Soul",
+  "path": "data/SDAH/490.json"
  },
  {
   "id": "SDAH-500",
