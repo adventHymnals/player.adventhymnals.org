@@ -294,6 +294,13 @@
   "path": "data/NZK/56.json"
  },
  {
+  "id": "NZK-61",
+  "book": "NZK",
+  "number": "61",
+  "title": "Bwana Nami",
+  "path": "data/NZK/61.json"
+ },
+ {
   "id": "NZK-64",
   "book": "NZK",
   "number": "64",
@@ -3626,6 +3633,13 @@
   "path": "data/SDAH/455.json"
  },
  {
+  "id": "SDAH-456",
+  "book": "SDAH",
+  "number": "456",
+  "title": "My Lord and I",
+  "path": "data/SDAH/456.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
@@ -5143,6 +5157,13 @@
   "number": "77",
   "title": "Kony Jo Madwaro Tho",
   "path": "data/WN/77.json"
+ },
+ {
+  "id": "WN-83",
+  "book": "WN",
+  "number": "83",
+  "title": "Yesu Osiep Malongo",
+  "path": "data/WN/83.json"
  },
  {
   "id": "WN-87",
