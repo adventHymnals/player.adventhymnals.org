@@ -315,6 +315,13 @@
   "path": "data/NZK/119.json"
  },
  {
+  "id": "NZK-120",
+  "book": "NZK",
+  "number": "120",
+  "title": "Msalaba Wa Yesu",
+  "path": "data/NZK/120.json"
+ },
+ {
   "id": "NZK-121",
   "book": "NZK",
   "number": "121",
@@ -2478,6 +2485,13 @@
   "path": "data/SDAH/311.json"
  },
  {
+  "id": "SDAH-312",
+  "book": "SDAH",
+  "number": "312",
+  "title": "Near the Cross",
+  "path": "data/SDAH/312.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4009,6 +4023,13 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json"
+ },
+ {
+  "id": "WN-167",
+  "book": "WN",
+  "number": "167",
+  "title": "Yesu, Kar Msalabani",
+  "path": "data/WN/167.json"
  },
  {
   "id": "WN-168",
