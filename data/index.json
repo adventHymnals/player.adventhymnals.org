@@ -357,6 +357,13 @@
   "path": "data/NZK/64.json"
  },
  {
+  "id": "NZK-67",
+  "book": "NZK",
+  "number": "67",
+  "title": "Kesha Roho Yangu",
+  "path": "data/NZK/67.json"
+ },
+ {
   "id": "NZK-69",
   "book": "NZK",
   "number": "69",
@@ -747,6 +754,13 @@
   "number": "171",
   "title": "Hukumu",
   "path": "data/NZK/171.json"
+ },
+ {
+  "id": "NZK-173",
+  "book": "NZK",
+  "number": "173",
+  "title": "Hatujui Saa",
+  "path": "data/NZK/173.json"
  },
  {
   "id": "NZK-175",
