@@ -490,6 +490,13 @@
   "path": "data/NZK/122.json"
  },
  {
+  "id": "NZK-135",
+  "book": "NZK",
+  "number": "135",
+  "title": "Kwa Maombi Nachangamka",
+  "path": "data/NZK/135.json"
+ },
+ {
   "id": "NZK-139",
   "book": "NZK",
   "number": "139",
@@ -3799,6 +3806,13 @@
   "number": "477",
   "title": "Come, Ye Disconsolate",
   "path": "data/SDAH/477.json"
+ },
+ {
+  "id": "SDAH-478",
+  "book": "SDAH",
+  "number": "478",
+  "title": "Sweet Hour of Prayer",
+  "path": "data/SDAH/478.json"
  },
  {
   "id": "SDAH-500",
