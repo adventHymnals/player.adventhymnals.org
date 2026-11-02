@@ -2639,6 +2639,13 @@
   "path": "data/SDAH/330.json"
  },
  {
+  "id": "SDAH-331",
+  "book": "SDAH",
+  "number": "331",
+  "title": "O Jesus, I Have Promised",
+  "path": "data/SDAH/331.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4254,6 +4261,13 @@
   "number": "212",
   "title": "Adwaro Bedo Nyathi Yesu",
   "path": "data/WN/212.json"
+ },
+ {
+  "id": "WN-218",
+  "book": "WN",
+  "number": "218",
+  "title": "Yesu An Adwaro",
+  "path": "data/WN/218.json"
  },
  {
   "id": "WN-227",
