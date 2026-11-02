@@ -168,6 +168,13 @@
   "path": "data/CS1908/632.json"
  },
  {
+  "id": "CS1908-882",
+  "book": "CS1908",
+  "number": "882",
+  "title": "One Sweetly Solemn Thought",
+  "path": "data/CS1908/882.json"
+ },
+ {
   "id": "NZK-1",
   "book": "NZK",
   "number": "1",
@@ -810,6 +817,13 @@
   "number": "152",
   "title": "Karibu Na Wewe, Mungu Wangu",
   "path": "data/NZK/152.json"
+ },
+ {
+  "id": "NZK-153",
+  "book": "NZK",
+  "number": "153",
+  "title": "Fikira Moja Tu",
+  "path": "data/NZK/153.json"
  },
  {
   "id": "NZK-155",
@@ -6347,6 +6361,13 @@
   "number": "220",
   "title": "Otelona",
   "path": "data/WN/220.json"
+ },
+ {
+  "id": "WN-222",
+  "book": "WN",
+  "number": "222",
+  "title": "Paro Achiel Mamit",
+  "path": "data/WN/222.json"
  },
  {
   "id": "WN-227",
