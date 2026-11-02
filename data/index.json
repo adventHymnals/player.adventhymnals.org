@@ -1512,6 +1512,20 @@
   "path": "data/SDAH/195.json"
  },
  {
+  "id": "SDAH-196",
+  "book": "SDAH",
+  "number": "196",
+  "title": "Tell Me the Old, Old Story",
+  "path": "data/SDAH/196.json"
+ },
+ {
+  "id": "SDAH-197",
+  "book": "SDAH",
+  "number": "197",
+  "title": "The King of Love My Shepherd Is",
+  "path": "data/SDAH/197.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -2938,6 +2952,13 @@
   "number": "67",
   "title": "Nyasachwa Mondo Obed Kodu",
   "path": "data/WN/67.json"
+ },
+ {
+  "id": "WN-69",
+  "book": "WN",
+  "number": "69",
+  "title": "Puonja Injili Lilo",
+  "path": "data/WN/69.json"
  },
  {
   "id": "WN-133",
