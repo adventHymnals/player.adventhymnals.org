@@ -210,6 +210,13 @@
   "path": "data/NZK/34.json"
  },
  {
+  "id": "NZK-35",
+  "book": "NZK",
+  "number": "35",
+  "title": "Nimekombolewa Na Yesu",
+  "path": "data/NZK/35.json"
+ },
+ {
   "id": "NZK-37",
   "book": "NZK",
   "number": "37",
@@ -2702,6 +2709,13 @@
   "path": "data/SDAH/336.json"
  },
  {
+  "id": "SDAH-337",
+  "book": "SDAH",
+  "number": "337",
+  "title": "Redeemed!",
+  "path": "data/SDAH/337.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4135,6 +4149,13 @@
   "number": "43",
   "title": "Adwaro Ng'eyo Wach Yesu",
   "path": "data/WN/43.json"
+ },
+ {
+  "id": "WN-44",
+  "book": "WN",
+  "number": "44",
+  "title": "Ang'eyo Yesu Osewara",
+  "path": "data/WN/44.json"
  },
  {
   "id": "WN-48",
