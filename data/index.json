@@ -511,6 +511,13 @@
   "path": "data/NZK/158.json"
  },
  {
+  "id": "NZK-159",
+  "book": "NZK",
+  "number": "159",
+  "title": "Anakuja Upesi",
+  "path": "data/NZK/159.json"
+ },
+ {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
@@ -3528,6 +3535,13 @@
   "path": "data/SDAH/441.json"
  },
  {
+  "id": "SDAH-442",
+  "book": "SDAH",
+  "number": "442",
+  "title": "How Sweet Are the Tidings",
+  "path": "data/SDAH/442.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
@@ -5255,6 +5269,13 @@
   "number": "235",
   "title": "Wuoth Pod Odong' Marom Nade?",
   "path": "data/WN/235.json"
+ },
+ {
+  "id": "WN-236",
+  "book": "WN",
+  "number": "236",
+  "title": "Gin Weche Mamit",
+  "path": "data/WN/236.json"
  },
  {
   "id": "WN-238",
