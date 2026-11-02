@@ -3780,6 +3780,13 @@
   "path": "data/SDAH/474.json"
  },
  {
+  "id": "SDAH-475",
+  "book": "SDAH",
+  "number": "475",
+  "title": "Balm in Gilead",
+  "path": "data/SDAH/475.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
