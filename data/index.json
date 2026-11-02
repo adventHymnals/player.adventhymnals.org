@@ -315,6 +315,13 @@
   "path": "data/NZK/103.json"
  },
  {
+  "id": "NZK-108",
+  "book": "NZK",
+  "number": "108",
+  "title": "Tumesikia Mbiu",
+  "path": "data/NZK/108.json"
+ },
+ {
   "id": "NZK-111",
   "book": "NZK",
   "number": "111",
@@ -2730,6 +2737,13 @@
   "path": "data/SDAH/339.json"
  },
  {
+  "id": "SDAH-340",
+  "book": "SDAH",
+  "number": "340",
+  "title": "Jesus Saves",
+  "path": "data/SDAH/340.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4268,6 +4282,13 @@
   "number": "143",
   "title": "Yesu Oluongowa Koro",
   "path": "data/WN/143.json"
+ },
+ {
+  "id": "WN-147",
+  "book": "WN",
+  "number": "147",
+  "title": "Wasewinjo Wach Maber",
+  "path": "data/WN/147.json"
  },
  {
   "id": "WN-150",
