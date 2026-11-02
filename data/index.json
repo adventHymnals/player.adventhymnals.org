@@ -273,6 +273,13 @@
   "path": "data/NZK/52.json"
  },
  {
+  "id": "NZK-53",
+  "book": "NZK",
+  "number": "53",
+  "title": "Napenda Kuhubiri",
+  "path": "data/NZK/53.json"
+ },
+ {
   "id": "NZK-54",
   "book": "NZK",
   "number": "54",
@@ -3640,6 +3647,13 @@
   "path": "data/SDAH/456.json"
  },
  {
+  "id": "SDAH-457",
+  "book": "SDAH",
+  "number": "457",
+  "title": "I Love to Tell the Story",
+  "path": "data/SDAH/457.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
@@ -5136,6 +5150,13 @@
   "number": "71",
   "title": "Puonja Wach Biblos",
   "path": "data/WN/71.json"
+ },
+ {
+  "id": "WN-73",
+  "book": "WN",
+  "number": "73",
+  "title": "Ahero Nyiso Weche",
+  "path": "data/WN/73.json"
  },
  {
   "id": "WN-75",
