@@ -308,6 +308,13 @@
   "path": "data/NZK/80.json"
  },
  {
+  "id": "NZK-86",
+  "book": "NZK",
+  "number": "86",
+  "title": "Ukaribie Tena",
+  "path": "data/NZK/86.json"
+ },
+ {
   "id": "NZK-89",
   "book": "NZK",
   "number": "89",
@@ -3029,6 +3036,13 @@
   "number": "379",
   "title": "We Give This Child to You",
   "path": "data/SDAH/379.json"
+ },
+ {
+  "id": "SDAH-380",
+  "book": "SDAH",
+  "number": "380",
+  "title": "Welcome, Day of Sweet Repose",
+  "path": "data/SDAH/380.json"
  },
  {
   "id": "SDAH-422",
