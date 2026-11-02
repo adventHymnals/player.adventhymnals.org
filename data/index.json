@@ -259,6 +259,13 @@
   "path": "data/NZK/101.json"
  },
  {
+  "id": "NZK-111",
+  "book": "NZK",
+  "number": "111",
+  "title": "Tabibu Mkuu",
+  "path": "data/NZK/111.json"
+ },
+ {
   "id": "NZK-119",
   "book": "NZK",
   "number": "119",
@@ -1967,6 +1974,13 @@
   "path": "data/SDAH/253.json"
  },
  {
+  "id": "SDAH-254",
+  "book": "SDAH",
+  "number": "254",
+  "title": "The Great Physician Now Is Near",
+  "path": "data/SDAH/254.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3442,6 +3456,13 @@
   "number": "134",
   "title": "Wang' Chieng Koro Podhonwa",
   "path": "data/WN/134.json"
+ },
+ {
+  "id": "WN-150",
+  "book": "WN",
+  "number": "150",
+  "title": "Jathieth Maduong' Osudo Ka",
+  "path": "data/WN/150.json"
  },
  {
   "id": "WN-166",
