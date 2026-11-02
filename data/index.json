@@ -3857,6 +3857,20 @@
   "path": "data/SDAH/483.json"
  },
  {
+  "id": "SDAH-484",
+  "book": "SDAH",
+  "number": "484",
+  "title": "I Need Thee, Precious Jesus",
+  "path": "data/SDAH/484.json"
+ },
+ {
+  "id": "SDAH-485",
+  "book": "SDAH",
+  "number": "485",
+  "title": "I Must Tell Jesus",
+  "path": "data/SDAH/485.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
