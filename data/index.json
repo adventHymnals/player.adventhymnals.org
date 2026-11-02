@@ -3290,6 +3290,13 @@
   "path": "data/SDAH/411.json"
  },
  {
+  "id": "SDAH-412",
+  "book": "SDAH",
+  "number": "412",
+  "title": "Cover With His Life",
+  "path": "data/SDAH/412.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
