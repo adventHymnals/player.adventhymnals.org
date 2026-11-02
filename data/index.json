@@ -1484,6 +1484,13 @@
   "path": "data/SDAH/110.json"
  },
  {
+  "id": "SDAH-111",
+  "book": "SDAH",
+  "number": "111",
+  "title": "It Took a Miracle",
+  "path": "data/SDAH/111.json"
+ },
+ {
   "id": "SDAH-112",
   "book": "SDAH",
   "number": "112",
