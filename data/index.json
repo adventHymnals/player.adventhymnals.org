@@ -322,6 +322,13 @@
   "path": "data/NZK/121.json"
  },
  {
+  "id": "NZK-122",
+  "book": "NZK",
+  "number": "122",
+  "title": "Yote Namtolea Yesu",
+  "path": "data/NZK/122.json"
+ },
+ {
   "id": "NZK-139",
   "book": "NZK",
   "number": "139",
@@ -2450,6 +2457,13 @@
   "path": "data/SDAH/308.json"
  },
  {
+  "id": "SDAH-309",
+  "book": "SDAH",
+  "number": "309",
+  "title": "I Surrender All",
+  "path": "data/SDAH/309.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3981,6 +3995,13 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json"
+ },
+ {
+  "id": "WN-168",
+  "book": "WN",
+  "number": "168",
+  "title": "Duto Amiyo Ruoth Yesu",
+  "path": "data/WN/168.json"
  },
  {
   "id": "WN-169",
