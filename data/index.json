@@ -1743,6 +1743,20 @@
   "path": "data/SDAH/223.json"
  },
  {
+  "id": "SDAH-224",
+  "book": "SDAH",
+  "number": "224",
+  "title": "Seek Ye First the Kingdom",
+  "path": "data/SDAH/224.json"
+ },
+ {
+  "id": "SDAH-226",
+  "book": "SDAH",
+  "number": "226",
+  "title": "Lift Up Your Heads",
+  "path": "data/SDAH/226.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
