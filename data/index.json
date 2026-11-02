@@ -371,6 +371,13 @@
   "path": "data/NZK/191.json"
  },
  {
+  "id": "NZK-192",
+  "book": "NZK",
+  "number": "192",
+  "title": "Mwamba Wenye Imara",
+  "path": "data/NZK/192.json"
+ },
+ {
   "id": "NZK-196",
   "book": "NZK",
   "number": "196",
@@ -2359,6 +2366,13 @@
   "path": "data/SDAH/299.json"
  },
  {
+  "id": "SDAH-300",
+  "book": "SDAH",
+  "number": "300",
+  "title": "Rock of Ages",
+  "path": "data/SDAH/300.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3932,6 +3946,13 @@
   "number": "284",
   "title": "Ruodha Dak Ipogna Kuon Mar Ngima",
   "path": "data/WN/284.json"
+ },
+ {
+  "id": "WN-285",
+  "book": "WN",
+  "number": "285",
+  "title": "Yesu Ruoth Nisethona",
+  "path": "data/WN/285.json"
  },
  {
   "id": "WN-301",
