@@ -182,6 +182,13 @@
   "path": "data/NZK/26.json"
  },
  {
+  "id": "NZK-29",
+  "book": "NZK",
+  "number": "29",
+  "title": "Yesu, Nakupenda",
+  "path": "data/NZK/29.json"
+ },
+ {
   "id": "NZK-31",
   "book": "NZK",
   "number": "31",
@@ -2555,6 +2562,13 @@
   "path": "data/SDAH/320.json"
  },
  {
+  "id": "SDAH-321",
+  "book": "SDAH",
+  "number": "321",
+  "title": "My Jesus, I Love Thee",
+  "path": "data/SDAH/321.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3960,6 +3974,13 @@
   "number": "33",
   "title": "Wuonwa, Gonywa Gi Gweth Mari",
   "path": "data/WN/33.json"
+ },
+ {
+  "id": "WN-36",
+  "book": "WN",
+  "number": "36",
+  "title": "Ruoth Yesu, Nithona",
+  "path": "data/WN/36.json"
  },
  {
   "id": "WN-38",
