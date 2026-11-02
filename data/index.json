@@ -3353,6 +3353,13 @@
   "path": "data/SDAH/419.json"
  },
  {
+  "id": "SDAH-420",
+  "book": "SDAH",
+  "number": "420",
+  "title": "Jerusalem, My Happy Home",
+  "path": "data/SDAH/420.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
