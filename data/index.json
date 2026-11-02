@@ -504,6 +504,13 @@
   "path": "data/NZK/103.json"
  },
  {
+  "id": "NZK-104",
+  "book": "NZK",
+  "number": "104",
+  "title": "Yesu Aliniita, Njoo",
+  "path": "data/NZK/104.json"
+ },
+ {
   "id": "NZK-107",
   "book": "NZK",
   "number": "107",
@@ -4074,6 +4081,13 @@
   "path": "data/SDAH/464.json"
  },
  {
+  "id": "SDAH-465",
+  "book": "SDAH",
+  "number": "465",
+  "title": "I Heard the Voice of Jesus",
+  "path": "data/SDAH/465.json"
+ },
+ {
   "id": "SDAH-466",
   "book": "SDAH",
   "number": "466",
@@ -5920,6 +5934,13 @@
   "number": "143",
   "title": "Yesu Oluongowa Koro",
   "path": "data/WN/143.json"
+ },
+ {
+  "id": "WN-144",
+  "book": "WN",
+  "number": "144",
+  "title": "Nawinjo Yesu Kowacho",
+  "path": "data/WN/144.json"
  },
  {
   "id": "WN-146",
