@@ -161,6 +161,13 @@
   "path": "data/CS1908/57.json"
  },
  {
+  "id": "CS1908-86",
+  "book": "CS1908",
+  "number": "86",
+  "title": "There's a Great Day Coming",
+  "path": "data/CS1908/86.json"
+ },
+ {
   "id": "CS1908-93",
   "book": "CS1908",
   "number": "93",
