@@ -3367,6 +3367,13 @@
   "path": "data/SDAH/355.json"
  },
  {
+  "id": "SDAH-356",
+  "book": "SDAH",
+  "number": "356",
+  "title": "All Who Love and Serve Your City",
+  "path": "data/SDAH/356.json"
+ },
+ {
   "id": "SDAH-357",
   "book": "SDAH",
   "number": "357",
@@ -5661,6 +5668,13 @@
   "number": "686",
   "title": "Bless Thou the Gifts",
   "path": "data/SDAH/686.json"
+ },
+ {
+  "id": "SDAH-687",
+  "book": "SDAH",
+  "number": "687",
+  "title": "The Lord Is in His Holy Temple",
+  "path": "data/SDAH/687.json"
  },
  {
   "id": "SDAH-688",

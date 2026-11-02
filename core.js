@@ -89,7 +89,7 @@ function noteType(d, dots) {
 
 // A silence of d quarter notes as rests that can be written (whole, half, ..., dotted), longest first;
 // a part that only fits in triplets (thirds of a beat, beside triplet notes) becomes triplet rests.
-const REST_KINDS = [[6, 0, 4], [4, 0, 4], [3, 1, 2], [2, 0, 2], [1.5, 1, 1], [1, 0, 1], [0.75, 1, 0.5], [0.5, 0, 0.5], [0.375, 1, 0.25], [0.25, 0, 0.25], [0.125, 0, 0.125]];
+const REST_KINDS = [[6, 1, 4], [4, 0, 4], [3, 1, 2], [2, 0, 2], [1.5, 1, 1], [1, 0, 1], [0.75, 1, 0.5], [0.5, 0, 0.5], [0.375, 1, 0.25], [0.25, 0, 0.25], [0.125, 0, 0.125]];
 function greedyRests(d) {
   const out = [];
   let left = d;
