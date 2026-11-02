@@ -329,6 +329,13 @@
   "path": "data/NZK/189.json"
  },
  {
+  "id": "NZK-191",
+  "book": "NZK",
+  "number": "191",
+  "title": "Mkate Wa Mbingu",
+  "path": "data/NZK/191.json"
+ },
+ {
   "id": "NZK-196",
   "book": "NZK",
   "number": "196",
@@ -2114,6 +2121,13 @@
   "path": "data/SDAH/270.json"
  },
  {
+  "id": "SDAH-271",
+  "book": "SDAH",
+  "number": "271",
+  "title": "Break Thou the Bread of Life",
+  "path": "data/SDAH/271.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3645,6 +3659,13 @@
   "number": "283",
   "title": "Yesu Wabiro Iri",
   "path": "data/WN/283.json"
+ },
+ {
+  "id": "WN-284",
+  "book": "WN",
+  "number": "284",
+  "title": "Ruodha Dak Ipogna Kuon Mar Ngima",
+  "path": "data/WN/284.json"
  },
  {
   "id": "WN-301",
