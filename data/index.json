@@ -301,6 +301,13 @@
   "path": "data/NZK/64.json"
  },
  {
+  "id": "NZK-70",
+  "book": "NZK",
+  "number": "70",
+  "title": "Wapenzi Wa Bwana",
+  "path": "data/NZK/70.json"
+ },
+ {
   "id": "NZK-80",
   "book": "NZK",
   "number": "80",
@@ -4919,6 +4926,13 @@
   "number": "111",
   "title": "Wakwayi, Ruoth, Kuom Tekoni",
   "path": "data/WN/111.json"
+ },
+ {
+  "id": "WN-116",
+  "book": "WN",
+  "number": "116",
+  "title": "Biuru, Jo Nyasaye",
+  "path": "data/WN/116.json"
  },
  {
   "id": "WN-119",
