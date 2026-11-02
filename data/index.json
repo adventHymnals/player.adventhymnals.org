@@ -287,6 +287,13 @@
   "path": "data/NZK/101.json"
  },
  {
+  "id": "NZK-103",
+  "book": "NZK",
+  "number": "103",
+  "title": "Njoni Kwangu",
+  "path": "data/NZK/103.json"
+ },
+ {
   "id": "NZK-111",
   "book": "NZK",
   "number": "111",
@@ -3757,6 +3764,13 @@
   "number": "139",
   "title": "Ringra Namiyo In",
   "path": "data/WN/139.json"
+ },
+ {
+  "id": "WN-143",
+  "book": "WN",
+  "number": "143",
+  "title": "Yesu Oluongowa Koro",
+  "path": "data/WN/143.json"
  },
  {
   "id": "WN-150",
