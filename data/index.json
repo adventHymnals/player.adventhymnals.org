@@ -1932,6 +1932,13 @@
   "path": "data/SDAH/249.json"
  },
  {
+  "id": "SDAH-250",
+  "book": "SDAH",
+  "number": "250",
+  "title": "O for a Thousand Tongues to Sing",
+  "path": "data/SDAH/250.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3323,6 +3330,13 @@
   "number": "23",
   "title": "Aheri, Aheri",
   "path": "data/WN/23.json"
+ },
+ {
+  "id": "WN-26",
+  "book": "WN",
+  "number": "26",
+  "title": "Ji Duto Te Mondo Giwer",
+  "path": "data/WN/26.json"
  },
  {
   "id": "WN-33",
