@@ -287,6 +287,13 @@
   "path": "data/NZK/164.json"
  },
  {
+  "id": "NZK-167",
+  "book": "NZK",
+  "number": "167",
+  "title": "Yu Hai, Yu Hai",
+  "path": "data/NZK/167.json"
+ },
+ {
   "id": "NZK-175",
   "book": "NZK",
   "number": "175",
@@ -1937,6 +1944,13 @@
   "number": "250",
   "title": "O for a Thousand Tongues to Sing",
   "path": "data/SDAH/250.json"
+ },
+ {
+  "id": "SDAH-251",
+  "book": "SDAH",
+  "number": "251",
+  "title": "He Lives",
+  "path": "data/SDAH/251.json"
  },
  {
   "id": "SDAH-422",
