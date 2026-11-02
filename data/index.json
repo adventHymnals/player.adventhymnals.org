@@ -301,6 +301,13 @@
   "path": "data/NZK/111.json"
  },
  {
+  "id": "NZK-114",
+  "book": "NZK",
+  "number": "114",
+  "title": "Yesu Nataka Kutakaswa Sana",
+  "path": "data/NZK/114.json"
+ },
+ {
   "id": "NZK-115",
   "book": "NZK",
   "number": "115",
@@ -2527,6 +2534,13 @@
   "path": "data/SDAH/317.json"
  },
  {
+  "id": "SDAH-318",
+  "book": "SDAH",
+  "number": "318",
+  "title": "Whiter Than Snow",
+  "path": "data/SDAH/318.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4044,6 +4058,13 @@
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
   "path": "data/WN/150.json"
+ },
+ {
+  "id": "WN-161",
+  "book": "WN",
+  "number": "161",
+  "title": "Ruoth Yesu, Agombo Bedo Nga'ti",
+  "path": "data/WN/161.json"
  },
  {
   "id": "WN-162",
