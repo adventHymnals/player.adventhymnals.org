@@ -2660,6 +2660,13 @@
   "path": "data/SDAH/332.json"
  },
  {
+  "id": "SDAH-333",
+  "book": "SDAH",
+  "number": "333",
+  "title": "On Jordan's Banks the Baptist's Cry",
+  "path": "data/SDAH/333.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
