@@ -168,6 +168,13 @@
   "path": "data/CS1908/430.json"
  },
  {
+  "id": "CS1908-509",
+  "book": "CS1908",
+  "number": "509",
+  "title": "Stand on the Rock",
+  "path": "data/CS1908/509.json"
+ },
+ {
   "id": "CS1908-515",
   "book": "CS1908",
   "number": "515",
@@ -6158,6 +6165,13 @@
   "number": "95",
   "title": "Jarit Go Tung' Mar Injili",
   "path": "data/WN/95.json"
+ },
+ {
+  "id": "WN-101",
+  "book": "WN",
+  "number": "101",
+  "title": "Chunguru Matek",
+  "path": "data/WN/101.json"
  },
  {
   "id": "WN-111",
