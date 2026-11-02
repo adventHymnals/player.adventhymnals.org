@@ -344,6 +344,181 @@ async function loadList() {
 
 function fillPicker() {
   $("hymnPicker").innerHTML = hymnList.map((x) => `<option value="${x.id}">${x.book} ${x.number}, ${x.title}</option>`).join("");
+  setupFinder();
+}
+
+// ---- the hymn finder: search, and the dropdown of every hymn, filtered by hymnal and by sound ----
+
+const BOOK_NAMES = {
+  SDAH: "SDA Hymnal", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", CH1941: "Church Hymnal 1941",
+  CS1900: "Christ in Song 1900", CS1908: "Christ in Song 1908", RECORDED: "Recorded",
+};
+const BOOK_ORDER = ["SDAH", "NZK", "WN", "CH1941", "CS1908", "CS1900"]; // the hymnals in use first, then the older ones
+const bookCodes = () => [...new Set(hymnList.map((x) => x.book))].sort((a, b) => ((BOOK_ORDER.indexOf(a) + 1) || 99) - ((BOOK_ORDER.indexOf(b) + 1) || 99));
+const SOUNDS = [["all", "All"], ["sung", "Singers ready"], ["midi", "MIDI only"]];
+const finder = { q: "", books: store.get("finderBooks", []), sound: store.get("finderSound", "all"), shown: [], active: 0, ready: false };
+const escHtml = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const normQ = (t) => String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+
+/** The hymns the finder shows: those in the chosen hymnals and sound, best match first. */
+function finderMatches(q, { books = finder.books, sound = finder.sound } = {}) {
+  const nq = normQ(q);
+  const m = nq.match(/^([a-z]+\d*)?\s*(\d+)$/); // "240", or "nzk 89"
+  const words = nq ? nq.split(" ") : [];
+  const out = [];
+  for (const x of hymnList) {
+    if (books.length && !books.includes(x.book)) continue;
+    if (sound === "sung" && !x.sung) continue;
+    if (sound === "midi" && x.sung) continue;
+    if (!nq) { out.push({ x, s: 0 }); continue; }
+    const t = normQ(x.title);
+    let s = 0;
+    if (m && (!m[1] || x.book.toLowerCase().startsWith(m[1]))) {
+      if (x.number === m[2]) s = 100;
+      else if (x.number.startsWith(m[2])) s = 60 - x.number.length;
+    }
+    if (!s && t.startsWith(nq)) s = 80;
+    if (!s && words.every((w) => t.includes(w) || x.book.toLowerCase() === w)) s = 50;
+    if (s) out.push({ x, s: s + (x.book === "SDAH" ? 1 : 0) });
+  }
+  return nq ? out.sort((a, b) => b.s - a.s).map((o) => o.x) : out.map((o) => o.x);
+}
+
+function markMatch(title, q) {
+  const words = normQ(q).split(" ").filter((w) => w.length > 1 && !/^\d+$/.test(w));
+  let html = escHtml(title);
+  for (const w of words) html = html.replace(new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "i"), "<mark>$1</mark>");
+  return html;
+}
+
+function setupFinder() {
+  if (finder.ready) { renderFinder(); return; }
+  finder.ready = true;
+  const top = $("finderTop"), query = $("finderQuery"), panel = $("finderPanel"), btn = $("finderBtn"), list = $("finderList");
+  const books = bookCodes();
+  finder.books = finder.books.filter((b) => books.includes(b));
+  if (!SOUNDS.some(([k]) => k === finder.sound)) finder.sound = "all";
+  const open = (focusPanel) => {
+    if (panel.hidden) {
+      panel.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      top.setAttribute("aria-expanded", "true");
+      renderFinder(true);
+    }
+    if (focusPanel) query.focus();
+  };
+  const close = () => {
+    panel.hidden = true;
+    btn.setAttribute("aria-expanded", "false");
+    top.setAttribute("aria-expanded", "false");
+  };
+  finder.close = close;
+  const setQ = (v, from) => {
+    finder.q = v;
+    if (from !== top) top.value = v;
+    if (from !== query) query.value = v;
+    finder.active = 0;
+    renderFinder(!v);
+  };
+  btn.onclick = () => (panel.hidden ? open(true) : close());
+  top.oninput = () => { open(false); setQ(top.value, top); };
+  top.onfocus = () => { if (top.value) open(false); };
+  query.oninput = () => setQ(query.value, query);
+  const keys = (e) => {
+    const n = finder.shown.length;
+    if (e.key === "ArrowDown") { e.preventDefault(); open(false); finder.active = Math.min(finder.active + 1, n - 1); highlight(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); finder.active = Math.max(finder.active - 1, 0); highlight(); }
+    else if (e.key === "PageDown") { e.preventDefault(); finder.active = Math.min(finder.active + 10, n - 1); highlight(); }
+    else if (e.key === "PageUp") { e.preventDefault(); finder.active = Math.max(finder.active - 10, 0); highlight(); }
+    else if (e.key === "Enter") { e.preventDefault(); if (finder.shown[finder.active]) chooseHymn(finder.shown[finder.active].id); }
+    else if (e.key === "Escape") { if (!panel.hidden) { e.stopPropagation(); close(); } else if (top.value) setQ("", null); }
+  };
+  top.onkeydown = keys;
+  query.onkeydown = keys;
+  list.onclick = (e) => { const li = e.target.closest("li[data-id]"); if (li) chooseHymn(li.dataset.id); };
+  list.onmousemove = (e) => {
+    const li = e.target.closest("li[data-id]");
+    if (li && Number(li.dataset.i) !== finder.active) { finder.active = Number(li.dataset.i); highlight(false); }
+  };
+  $("finderBooks").onclick = (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    const code = b.dataset.book;
+    finder.books = !code ? [] : finder.books.includes(code) ? finder.books.filter((x) => x !== code) : [...finder.books, code];
+    if (finder.books.length === books.length) finder.books = [];
+    store.set("finderBooks", finder.books);
+    finder.active = 0;
+    renderFinder(!finder.q);
+  };
+  $("finderSound").onclick = (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    finder.sound = b.dataset.sound;
+    store.set("finderSound", finder.sound);
+    finder.active = 0;
+    renderFinder(!finder.q);
+  };
+  // outside the finder closes it
+  document.addEventListener("pointerdown", (e) => { if (!panel.hidden && !e.target.closest("#finder")) close(); });
+  // "/" jumps to the search box, as on most sites
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && !e.target.closest("input, select, textarea, [contenteditable]")) { e.preventDefault(); top.focus(); top.select(); }
+  });
+  renderFinder();
+}
+
+function chooseHymn(id) {
+  finder.close?.();
+  $("finderTop").blur();
+  const picker = $("hymnPicker");
+  if (picker.value === id && !document.body.classList.contains("missing")) return;
+  picker.value = id;
+  picker.dispatchEvent(new Event("change"));
+  syncFinderLabel();
+}
+
+function syncFinderLabel() {
+  const x = hymnList.find((h) => h.id === $("hymnPicker").value);
+  $("finderLabel").textContent = x ? `${x.book} ${x.number}` : "Hymns";
+}
+
+function renderFinder(scrollToCurrent = false) {
+  if (!finder.ready) return;
+  const bookList = bookCodes();
+  // counts in each chip follow the other filter, so they say what clicking would show
+  const inSound = finderMatches("", { books: [], sound: finder.sound });
+  const inBooks = finderMatches("", { books: finder.books, sound: "all" });
+  $("finderBooks").innerHTML = [`<button type="button" aria-pressed="${!finder.books.length}">All<small>${inSound.length}</small></button>`]
+    .concat(bookList.map((b) => `<button type="button" data-book="${b}" aria-pressed="${finder.books.includes(b)}" title="${escHtml(BOOK_NAMES[b] || b)}">${b}<small>${inSound.filter((x) => x.book === b).length}</small></button>`)).join("");
+  $("finderSound").innerHTML = SOUNDS.map(([k, label]) => {
+    const n = k === "all" ? inBooks.length : inBooks.filter((x) => (k === "sung" ? x.sung : !x.sung)).length;
+    return `<button type="button" role="radio" data-sound="${k}" aria-checked="${finder.sound === k}">${label}<small>${n}</small></button>`;
+  }).join("");
+  const shown = finderMatches(finder.q);
+  finder.shown = shown;
+  const cur = $("hymnPicker").value;
+  if (scrollToCurrent && !finder.q) { const i = shown.findIndex((x) => x.id === cur); finder.active = Math.max(0, i); }
+  finder.active = Math.min(finder.active, Math.max(0, shown.length - 1));
+  const filtered = finder.books.length || finder.sound !== "all";
+  $("finderCount").textContent = !shown.length ? "" : `${shown.length} hymn${shown.length === 1 ? "" : "s"}${finder.q ? ` ${shown.length === 1 ? "matches" : "match"} “${finder.q.trim()}”` : ""}${filtered ? " in the chosen filters" : ""}`;
+  $("finderList").innerHTML = shown.length ? shown.map((x, i) => `<li role="option" id="fo-${i}" data-i="${i}" data-id="${escHtml(x.id)}" aria-selected="${i === finder.active}"${x.id === cur ? ' class="current"' : ""}>
+      <span class="f-num"><small>${x.book}</small>${escHtml(x.number)}</span>
+      <span class="f-title">${markMatch(x.title, finder.q)}</span>
+      <span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>
+    </li>`).join("")
+    : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try All hymnals or All sounds." : "."}</li>`;
+  highlight(true, scrollToCurrent);
+}
+
+function highlight(scroll = true, center = false) {
+  const list = $("finderList");
+  list.querySelectorAll('li[aria-selected="true"]').forEach((li) => li.setAttribute("aria-selected", "false"));
+  const li = list.querySelector(`#fo-${finder.active}`);
+  if (!li) return;
+  li.setAttribute("aria-selected", "true");
+  $("finderTop").setAttribute("aria-activedescendant", li.id);
+  $("finderQuery").setAttribute("aria-activedescendant", li.id);
+  if (scroll) li.scrollIntoView({ block: center ? "center" : "nearest" });
 }
 
 async function boot() {
@@ -403,6 +578,7 @@ function notInStudio(id) {
   </div>`);
   const picker = $("hymnPicker");
   picker.value = "";
+  syncFinderLabel();
   picker.onchange = () => { location.hash = picker.value; };
   window.addEventListener("hashchange", () => location.reload(), { once: true });
 }
@@ -434,6 +610,7 @@ async function loadHymn(entry) {
     return;
   }
   store.set("hymn", hymn.id);
+  syncFinderLabel();
   document.title = `${hymn.number} ${hymn.title}`;
   $("hymnNumber").textContent = hymn.number;
   $("hymnTitle").textContent = hymn.title;

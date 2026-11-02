@@ -2072,6 +2072,20 @@
   "path": "data/SDAH/264.json"
  },
  {
+  "id": "SDAH-265",
+  "book": "SDAH",
+  "number": "265",
+  "title": "Breathe on Me, Breath of God",
+  "path": "data/SDAH/265.json"
+ },
+ {
+  "id": "SDAH-266",
+  "book": "SDAH",
+  "number": "266",
+  "title": "Spirit of God",
+  "path": "data/SDAH/266.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",

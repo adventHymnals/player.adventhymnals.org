@@ -34,7 +34,44 @@ button, select, input { font: inherit; color: inherit; }
 .number { font: 800 clamp(36px, 4.4vw, 54px)/0.8 var(--serif); color: var(--gilt); letter-spacing: -0.02em; padding-bottom: 2px; }
 .titles h1 { font: 700 clamp(20px, 2.1vw, 27px)/1.1 var(--serif); margin: 0; color: var(--cloth); }
 .credits { margin: 2px 0 0; color: var(--muted); font: italic 400 14px/1.3 var(--serif); }
-.picker select { border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; padding: 6px 10px; max-width: 40vw; }
+/* the hymn finder: a search box, and the dropdown of every hymn with filters by hymnal and sound */
+.finder { position: relative; display: flex; gap: 8px; align-items: center; }
+.finder-search { position: relative; display: flex; align-items: center; }
+.finder-search svg { position: absolute; left: 9px; width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.finder-search input { border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; padding: 6px 10px 6px 31px; width: 15rem; }
+.finder-search input:focus { border-color: var(--gilt); outline: none; box-shadow: 0 0 0 3px var(--loop); }
+.finder-btn { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; padding: 6px 8px 6px 12px; cursor: pointer; white-space: nowrap; font-weight: 600; }
+.finder-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
+.finder-btn[aria-expanded="true"] { border-color: var(--gilt); }
+.finder-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.finder-panel {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 40; width: min(460px, calc(100vw - 32px));
+  display: flex; flex-direction: column; gap: 8px; max-height: min(72vh, 640px);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px;
+  box-shadow: 0 14px 40px rgba(30, 42, 71, 0.18);
+}
+.finder-panel .finder-search input { width: 100%; }
+.finder-panel .finder-search { width: 100%; }
+.finder-row { display: grid; grid-template-columns: 4.6rem 1fr; gap: 8px; align-items: start; }
+.finder-h { font: 700 12px/26px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.finder-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.finder-chips button { border: 1px solid var(--rule); background: transparent; border-radius: 999px; padding: 2px 10px; cursor: pointer; font-size: 14px; line-height: 20px; }
+.finder-chips button small { color: var(--muted); margin-left: 3px; font-size: 12px; }
+.finder-chips button[aria-pressed="true"], .finder-chips button[aria-checked="true"] { background: var(--cloth); border-color: var(--cloth); color: var(--paper); }
+.finder-chips button[aria-pressed="true"] small, .finder-chips button[aria-checked="true"] small { color: inherit; opacity: .75; }
+.finder-count { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
+.finder-list { list-style: none; margin: 0 -12px -12px; padding: 0 0 6px; overflow-y: auto; overscroll-behavior: contain; border-top: 1px solid var(--rule); min-height: 0; }
+.finder-list li { display: grid; grid-template-columns: 4.4rem 1fr auto; gap: 10px; align-items: baseline; padding: 7px 12px; cursor: pointer; border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent); }
+.finder-list li[aria-selected="true"] { background: var(--paper-2); }
+.finder-list li.current { box-shadow: inset 3px 0 0 var(--gilt); }
+.finder-list .f-num { font: 700 15px var(--serif); color: var(--gilt); white-space: nowrap; }
+.finder-list .f-num small { font: 600 11px var(--sans); color: var(--muted); margin-right: 4px; letter-spacing: .03em; }
+.finder-list .f-title { font: 500 16px/1.25 var(--serif); color: var(--cloth); min-width: 0; }
+.finder-list mark { background: var(--loop); color: inherit; border-radius: 2px; }
+.f-sound { font: 600 11px/18px var(--sans); padding: 0 7px; border-radius: 999px; white-space: nowrap; letter-spacing: .03em; }
+.f-sound.sung { background: color-mix(in srgb, var(--T) 14%, transparent); color: var(--T); }
+.f-sound.midi { color: var(--muted); border: 1px solid var(--rule); }
+.finder-empty { padding: 18px 12px; color: var(--muted); }
 
 /* ---- toolbar ---- */
 .toolbar {
@@ -213,7 +250,9 @@ button, select, input { font: inherit; color: inherit; }
   :root { --head-w: 150px; }
   .masthead { grid-template-columns: auto 1fr; }
   .picker { grid-column: 1 / -1; margin-top: 8px; }
-  .picker select { width: 100%; max-width: 100%; }
+  .finder-search:not(.in-panel) { flex: 1; }
+  .finder-search input { width: 100%; }
+  .finder-panel { left: 0; right: 0; width: auto; }
   .files { margin-left: 0; }
   .where { min-width: 0; }
   .track-voice input[type="range"] { display: none; }

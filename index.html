@@ -21,10 +21,36 @@
     <h1 id="hymnTitle">Loading hymn</h1>
     <p class="credits" id="hymnCredits"></p>
   </div>
-  <label class="picker">
-    <span class="visually-hidden">Choose a hymn</span>
-    <select id="hymnPicker"></select>
-  </label>
+  <div class="picker finder" id="finder">
+    <label class="finder-search">
+      <span class="visually-hidden">Find a hymn</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" id="finderTop" placeholder="Find a hymn: number or title" autocomplete="off" spellcheck="false"
+        role="combobox" aria-controls="finderList" aria-expanded="false">
+    </label>
+    <button class="finder-btn" id="finderBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="finderPanel" data-tip="All the hymns, by hymnal">
+      <span id="finderLabel">Hymns</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <select id="hymnPicker" hidden tabindex="-1" aria-hidden="true"></select>
+    <div class="finder-panel" id="finderPanel" hidden>
+      <label class="finder-search in-panel">
+        <span class="visually-hidden">Search the hymns</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        <input type="search" id="finderQuery" placeholder="Number or title" autocomplete="off" spellcheck="false" aria-controls="finderList">
+      </label>
+      <div class="finder-row">
+        <span class="finder-h">Hymnals</span>
+        <div class="finder-chips" id="finderBooks" role="group" aria-label="Hymnals to show"></div>
+      </div>
+      <div class="finder-row">
+        <span class="finder-h">Sound</span>
+        <div class="finder-chips" id="finderSound" role="radiogroup" aria-label="Sound"></div>
+      </div>
+      <p class="finder-count" id="finderCount" aria-live="polite"></p>
+      <ul class="finder-list" id="finderList" role="listbox" aria-label="Hymns"></ul>
+    </div>
+  </div>
 </header>
 
 <div class="toolbar" role="toolbar" aria-label="Playback and view">
