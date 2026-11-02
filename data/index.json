@@ -3395,6 +3395,13 @@
   "path": "data/SDAH/424.json"
  },
  {
+  "id": "SDAH-425",
+  "book": "SDAH",
+  "number": "425",
+  "title": "Holy, Holy, Is What the Angels Sing",
+  "path": "data/SDAH/425.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
