@@ -2681,6 +2681,13 @@
   "path": "data/SDAH/334.json"
  },
  {
+  "id": "SDAH-335",
+  "book": "SDAH",
+  "number": "335",
+  "title": "What a Wonderful Savior",
+  "path": "data/SDAH/335.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4121,6 +4128,13 @@
   "number": "48",
   "title": "Yesu Kristo Oberna Ngang'",
   "path": "data/WN/48.json"
+ },
+ {
+  "id": "WN-50",
+  "book": "WN",
+  "number": "50",
+  "title": "Kristo Obed Misango Mar Golo Richo",
+  "path": "data/WN/50.json"
  },
  {
   "id": "WN-55",
