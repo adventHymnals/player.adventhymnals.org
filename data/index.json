@@ -3087,6 +3087,13 @@
   "path": "data/SDAH/384.json"
  },
  {
+  "id": "SDAH-385",
+  "book": "SDAH",
+  "number": "385",
+  "title": "Crowning Jewel of Creation",
+  "path": "data/SDAH/385.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
