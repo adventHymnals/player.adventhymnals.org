@@ -1617,6 +1617,20 @@
   "path": "data/SDAH/130.json"
  },
  {
+  "id": "SDAH-131",
+  "book": "SDAH",
+  "number": "131",
+  "title": "Lo, How a Rose E'er Blooming",
+  "path": "data/SDAH/131.json"
+ },
+ {
+  "id": "SDAH-132",
+  "book": "SDAH",
+  "number": "132",
+  "title": "O Come, All Ye Faithful",
+  "path": "data/SDAH/132.json"
+ },
+ {
   "id": "SDAH-134",
   "book": "SDAH",
   "number": "134",
