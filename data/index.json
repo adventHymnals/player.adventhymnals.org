@@ -546,6 +546,13 @@
   "path": "data/NZK/175.json"
  },
  {
+  "id": "NZK-179",
+  "book": "NZK",
+  "number": "179",
+  "title": "Watafurahi",
+  "path": "data/NZK/179.json"
+ },
+ {
   "id": "NZK-188",
   "book": "NZK",
   "number": "188",
@@ -3423,6 +3430,13 @@
   "path": "data/SDAH/429.json"
  },
  {
+  "id": "SDAH-430",
+  "book": "SDAH",
+  "number": "430",
+  "title": "Joy By and By",
+  "path": "data/SDAH/430.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
@@ -5164,6 +5178,13 @@
   "number": "253",
   "title": "Koro Kawuono Ruodhwa Man E Polo",
   "path": "data/WN/253.json"
+ },
+ {
+  "id": "WN-263",
+  "book": "WN",
+  "number": "263",
+  "title": "Ji Noyud Mor Ka Tich Orumo",
+  "path": "data/WN/263.json"
  },
  {
   "id": "WN-283",
