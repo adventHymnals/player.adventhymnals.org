@@ -154,6 +154,13 @@
   "path": "data/NZK/26.json"
  },
  {
+  "id": "NZK-34",
+  "book": "NZK",
+  "number": "34",
+  "title": "Nipe Habari za Yesu",
+  "path": "data/NZK/34.json"
+ },
+ {
   "id": "NZK-38",
   "book": "NZK",
   "number": "38",
@@ -1160,6 +1167,20 @@
   "number": "150",
   "title": "Who Is He in Yonder Stall?",
   "path": "data/SDAH/150.json"
+ },
+ {
+  "id": "SDAH-151",
+  "book": "SDAH",
+  "number": "151",
+  "title": "Jesus Walked This Lonesome Valley",
+  "path": "data/SDAH/151.json"
+ },
+ {
+  "id": "SDAH-152",
+  "book": "SDAH",
+  "number": "152",
+  "title": "Tell Me the Story of Jesus",
+  "path": "data/SDAH/152.json"
  },
  {
   "id": "SDAH-184",
@@ -2553,6 +2574,13 @@
   "number": "33",
   "title": "Wuonwa, Gonywa Gi Gweth Mari",
   "path": "data/WN/33.json"
+ },
+ {
+  "id": "WN-43",
+  "book": "WN",
+  "number": "43",
+  "title": "Adwaro Ng'eyo Wach Yesu",
+  "path": "data/WN/43.json"
  },
  {
   "id": "WN-55",
