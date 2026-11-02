@@ -1904,6 +1904,20 @@
   "path": "data/SDAH/245.json"
  },
  {
+  "id": "SDAH-246",
+  "book": "SDAH",
+  "number": "246",
+  "title": "Worthy, Worthy Is the Lamb",
+  "path": "data/SDAH/246.json"
+ },
+ {
+  "id": "SDAH-247",
+  "book": "SDAH",
+  "number": "247",
+  "title": "Come, My Way",
+  "path": "data/SDAH/247.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
