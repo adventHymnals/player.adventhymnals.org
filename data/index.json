@@ -133,6 +133,13 @@
   "path": "data/CS1908/21.json"
  },
  {
+  "id": "CS1908-42",
+  "book": "CS1908",
+  "number": "42",
+  "title": "How Shall We Stand in the Judgment",
+  "path": "data/CS1908/42.json"
+ },
+ {
   "id": "CS1908-49",
   "book": "CS1908",
   "number": "49",
