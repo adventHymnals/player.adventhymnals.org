@@ -511,6 +511,13 @@
   "path": "data/NZK/192.json"
  },
  {
+  "id": "NZK-193",
+  "book": "NZK",
+  "number": "193",
+  "title": "Sauti Yake Mchungaji",
+  "path": "data/NZK/193.json"
+ },
+ {
   "id": "NZK-195",
   "book": "NZK",
   "number": "195",
@@ -2884,6 +2891,13 @@
   "path": "data/SDAH/360.json"
  },
  {
+  "id": "SDAH-361",
+  "book": "SDAH",
+  "number": "361",
+  "title": "Hark! 'Tis the Shepherd's Voice I Hear",
+  "path": "data/SDAH/361.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4604,6 +4618,13 @@
   "number": "285",
   "title": "Yesu Ruoth Nisethona",
   "path": "data/WN/285.json"
+ },
+ {
+  "id": "WN-286",
+  "book": "WN",
+  "number": "286",
+  "title": "Winjuru Tinde Dwond Jakwath",
+  "path": "data/WN/286.json"
  },
  {
   "id": "WN-301",
