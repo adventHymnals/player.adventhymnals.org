@@ -3381,6 +3381,13 @@
   "path": "data/SDAH/422.json"
  },
  {
+  "id": "SDAH-423",
+  "book": "SDAH",
+  "number": "423",
+  "title": "Glorious Things of Thee Are Spoken",
+  "path": "data/SDAH/423.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
