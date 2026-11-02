@@ -231,6 +231,13 @@
   "path": "data/NZK/119.json"
  },
  {
+  "id": "NZK-161",
+  "book": "NZK",
+  "number": "161",
+  "title": "Piga Panda",
+  "path": "data/NZK/161.json"
+ },
+ {
   "id": "NZK-163",
   "book": "NZK",
   "number": "163",
@@ -1636,6 +1643,27 @@
   "number": "210",
   "title": "Wake, Awake, for Night Is Flying",
   "path": "data/SDAH/210.json"
+ },
+ {
+  "id": "SDAH-211",
+  "book": "SDAH",
+  "number": "211",
+  "title": "Lo! He Comes",
+  "path": "data/SDAH/211.json"
+ },
+ {
+  "id": "SDAH-212",
+  "book": "SDAH",
+  "number": "212",
+  "title": "'Tis Almost Time for the Lord to Come",
+  "path": "data/SDAH/212.json"
+ },
+ {
+  "id": "SDAH-213",
+  "book": "SDAH",
+  "number": "213",
+  "title": "Jesus Is Coming Again",
+  "path": "data/SDAH/213.json"
  },
  {
   "id": "SDAH-422",
@@ -3106,6 +3134,13 @@
   "number": "227",
   "title": "Be Yesu Ling",
   "path": "data/WN/227.json"
+ },
+ {
+  "id": "WN-238",
+  "book": "WN",
+  "number": "238",
+  "title": "Gouru Bu, Goyeuru Matek",
+  "path": "data/WN/238.json"
  },
  {
   "id": "WN-301",
