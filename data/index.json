@@ -1344,6 +1344,41 @@
   "path": "data/SDAH/175.json"
  },
  {
+  "id": "SDAH-176",
+  "book": "SDAH",
+  "number": "176",
+  "title": "Hail the Day That Sees Him Rise",
+  "path": "data/SDAH/176.json"
+ },
+ {
+  "id": "SDAH-177",
+  "book": "SDAH",
+  "number": "177",
+  "title": "Jesus, Your Blood and Righteousness",
+  "path": "data/SDAH/177.json"
+ },
+ {
+  "id": "SDAH-178",
+  "book": "SDAH",
+  "number": "178",
+  "title": "The Unveiled Christ",
+  "path": "data/SDAH/178.json"
+ },
+ {
+  "id": "SDAH-179",
+  "book": "SDAH",
+  "number": "179",
+  "title": "The Wonders of Redeeming Love",
+  "path": "data/SDAH/179.json"
+ },
+ {
+  "id": "SDAH-180",
+  "book": "SDAH",
+  "number": "180",
+  "title": "O Listen to Our Wondrous Story",
+  "path": "data/SDAH/180.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
