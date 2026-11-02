@@ -840,6 +840,41 @@
   "path": "data/SDAH/93.json"
  },
  {
+  "id": "SDAH-94",
+  "book": "SDAH",
+  "number": "94",
+  "title": "Nature With Open Volume Stands",
+  "path": "data/SDAH/94.json"
+ },
+ {
+  "id": "SDAH-95",
+  "book": "SDAH",
+  "number": "95",
+  "title": "Spring Has Now Unwrapped the Flowers",
+  "path": "data/SDAH/95.json"
+ },
+ {
+  "id": "SDAH-96",
+  "book": "SDAH",
+  "number": "96",
+  "title": "The Spacious Firmament",
+  "path": "data/SDAH/96.json"
+ },
+ {
+  "id": "SDAH-97",
+  "book": "SDAH",
+  "number": "97",
+  "title": "Lord of the Boundless Curves of Space",
+  "path": "data/SDAH/97.json"
+ },
+ {
+  "id": "SDAH-98",
+  "book": "SDAH",
+  "number": "98",
+  "title": "Can You Count the Stars?",
+  "path": "data/SDAH/98.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
