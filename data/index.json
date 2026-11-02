@@ -308,6 +308,13 @@
   "path": "data/NZK/175.json"
  },
  {
+  "id": "NZK-189",
+  "book": "NZK",
+  "number": "189",
+  "title": "Tubatize Upya",
+  "path": "data/NZK/189.json"
+ },
+ {
   "id": "NZK-196",
   "book": "NZK",
   "number": "196",
@@ -1988,6 +1995,27 @@
   "path": "data/SDAH/255.json"
  },
  {
+  "id": "SDAH-256",
+  "book": "SDAH",
+  "number": "256",
+  "title": "Ye Servants of God",
+  "path": "data/SDAH/256.json"
+ },
+ {
+  "id": "SDAH-257",
+  "book": "SDAH",
+  "number": "257",
+  "title": "Come Down, O Love Divine",
+  "path": "data/SDAH/257.json"
+ },
+ {
+  "id": "SDAH-258",
+  "book": "SDAH",
+  "number": "258",
+  "title": "Baptize Us Anew",
+  "path": "data/SDAH/258.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3498,6 +3526,13 @@
   "number": "238",
   "title": "Gouru Bu, Goyeuru Matek",
   "path": "data/WN/238.json"
+ },
+ {
+  "id": "WN-283",
+  "book": "WN",
+  "number": "283",
+  "title": "Yesu Wabiro Iri",
+  "path": "data/WN/283.json"
  },
  {
   "id": "WN-301",
