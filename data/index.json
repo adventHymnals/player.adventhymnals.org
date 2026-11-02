@@ -3171,6 +3171,13 @@
   "path": "data/SDAH/326.json"
  },
  {
+  "id": "SDAH-327",
+  "book": "SDAH",
+  "number": "327",
+  "title": "I'd Rather Have Jesus",
+  "path": "data/SDAH/327.json"
+ },
+ {
   "id": "SDAH-328",
   "book": "SDAH",
   "number": "328",
@@ -4942,6 +4949,13 @@
   "path": "data/SDAH/584.json"
  },
  {
+  "id": "SDAH-585",
+  "book": "SDAH",
+  "number": "585",
+  "title": "When Christ Was Lifted From the Earth",
+  "path": "data/SDAH/585.json"
+ },
+ {
   "id": "SDAH-586",
   "book": "SDAH",
   "number": "586",
@@ -5395,6 +5409,13 @@
   "number": "650",
   "title": "Our Father, by Whose Name",
   "path": "data/SDAH/650.json"
+ },
+ {
+  "id": "SDAH-651",
+  "book": "SDAH",
+  "number": "651",
+  "title": "Happy the Home That Welcomes You",
+  "path": "data/SDAH/651.json"
  },
  {
   "id": "SDAH-652",
