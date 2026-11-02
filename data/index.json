@@ -427,6 +427,13 @@
   "path": "data/NZK/175.json"
  },
  {
+  "id": "NZK-188",
+  "book": "NZK",
+  "number": "188",
+  "title": "Wimbi Litakasalo",
+  "path": "data/NZK/188.json"
+ },
+ {
   "id": "NZK-189",
   "book": "NZK",
   "number": "189",
@@ -2644,6 +2651,13 @@
   "number": "331",
   "title": "O Jesus, I Have Promised",
   "path": "data/SDAH/331.json"
+ },
+ {
+  "id": "SDAH-332",
+  "book": "SDAH",
+  "number": "332",
+  "title": "The Cleansing Wave",
+  "path": "data/SDAH/332.json"
  },
  {
   "id": "SDAH-422",
