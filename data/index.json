@@ -1680,6 +1680,13 @@
   "path": "data/SDAH/139.json"
  },
  {
+  "id": "SDAH-140",
+  "book": "SDAH",
+  "number": "140",
+  "title": "Thou Didst Leave Thy Throne",
+  "path": "data/SDAH/140.json"
+ },
+ {
   "id": "SDAH-141",
   "book": "SDAH",
   "number": "141",
