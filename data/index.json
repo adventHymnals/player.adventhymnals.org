@@ -315,6 +315,13 @@
   "path": "data/NZK/111.json"
  },
  {
+  "id": "NZK-113",
+  "book": "NZK",
+  "number": "113",
+  "title": "Bubujiko",
+  "path": "data/NZK/113.json"
+ },
+ {
   "id": "NZK-114",
   "book": "NZK",
   "number": "114",
@@ -2688,6 +2695,13 @@
   "path": "data/SDAH/335.json"
  },
  {
+  "id": "SDAH-336",
+  "book": "SDAH",
+  "number": "336",
+  "title": "There Is a Fountain",
+  "path": "data/SDAH/336.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4226,6 +4240,13 @@
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
   "path": "data/WN/150.json"
+ },
+ {
+  "id": "WN-160",
+  "book": "WN",
+  "number": "160",
+  "title": "Nitie Remo Ma Nochwer",
+  "path": "data/WN/160.json"
  },
  {
   "id": "WN-161",
