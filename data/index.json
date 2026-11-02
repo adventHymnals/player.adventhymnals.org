@@ -182,6 +182,13 @@
   "path": "data/NZK/91.json"
  },
  {
+  "id": "NZK-92",
+  "book": "NZK",
+  "number": "92",
+  "title": "Magharibi Jua",
+  "path": "data/NZK/92.json"
+ },
+ {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
@@ -2469,6 +2476,13 @@
   "number": "133",
   "title": "Bedi Kod An",
   "path": "data/WN/133.json"
+ },
+ {
+  "id": "WN-134",
+  "book": "WN",
+  "number": "134",
+  "title": "Wang' Chieng Koro Podhonwa",
+  "path": "data/WN/134.json"
  },
  {
   "id": "WN-166",
