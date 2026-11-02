@@ -5782,6 +5782,13 @@
   "path": "data/SDAH/695.json"
  },
  {
+  "id": "WN-1",
+  "book": "WN",
+  "number": "1",
+  "title": "Nyasachwa Man Malo",
+  "path": "data/WN/1.json"
+ },
+ {
   "id": "WN-3",
   "book": "WN",
   "number": "3",
@@ -6263,6 +6270,13 @@
   "number": "253",
   "title": "Koro Kawuono Ruodhwa Man E Polo",
   "path": "data/WN/253.json"
+ },
+ {
+  "id": "WN-258",
+  "book": "WN",
+  "number": "258",
+  "title": "Anane Wang' Yesu Kristo",
+  "path": "data/WN/258.json"
  },
  {
   "id": "WN-259",
