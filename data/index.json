@@ -3416,6 +3416,13 @@
   "path": "data/SDAH/428.json"
  },
  {
+  "id": "SDAH-429",
+  "book": "SDAH",
+  "number": "429",
+  "title": "Jerusalem the Golden",
+  "path": "data/SDAH/429.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
