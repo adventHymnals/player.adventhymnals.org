@@ -1666,6 +1666,20 @@
   "path": "data/SDAH/213.json"
  },
  {
+  "id": "SDAH-214",
+  "book": "SDAH",
+  "number": "214",
+  "title": "We Have This Hope",
+  "path": "data/SDAH/214.json"
+ },
+ {
+  "id": "SDAH-215",
+  "book": "SDAH",
+  "number": "215",
+  "title": "The King Shall Come",
+  "path": "data/SDAH/215.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
