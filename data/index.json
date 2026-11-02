@@ -154,6 +154,13 @@
   "path": "data/CS1908/174.json"
  },
  {
+  "id": "CS1908-229",
+  "book": "CS1908",
+  "number": "229",
+  "title": "Sunlight in the Heart",
+  "path": "data/CS1908/229.json"
+ },
+ {
   "id": "CS1908-286",
   "book": "CS1908",
   "number": "286",
@@ -425,6 +432,13 @@
   "number": "44",
   "title": "Urafiki Wa Yesu",
   "path": "data/NZK/44.json"
+ },
+ {
+  "id": "NZK-45",
+  "book": "NZK",
+  "number": "45",
+  "title": "Mwanga Umo Moyoni",
+  "path": "data/NZK/45.json"
  },
  {
   "id": "NZK-47",
