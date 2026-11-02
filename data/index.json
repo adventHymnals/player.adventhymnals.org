@@ -1274,6 +1274,41 @@
   "path": "data/SDAH/165.json"
  },
  {
+  "id": "SDAH-166",
+  "book": "SDAH",
+  "number": "166",
+  "title": "Christ the Lord Is Risen Today",
+  "path": "data/SDAH/166.json"
+ },
+ {
+  "id": "SDAH-167",
+  "book": "SDAH",
+  "number": "167",
+  "title": "Alleluia! Sing to Jesus!",
+  "path": "data/SDAH/167.json"
+ },
+ {
+  "id": "SDAH-168",
+  "book": "SDAH",
+  "number": "168",
+  "title": "And Have the Bright Immensities",
+  "path": "data/SDAH/168.json"
+ },
+ {
+  "id": "SDAH-169",
+  "book": "SDAH",
+  "number": "169",
+  "title": "Come, You Faithful",
+  "path": "data/SDAH/169.json"
+ },
+ {
+  "id": "SDAH-170",
+  "book": "SDAH",
+  "number": "170",
+  "title": "Come, You Faithful",
+  "path": "data/SDAH/170.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
@@ -2714,6 +2749,13 @@
   "number": "311",
   "title": "Ruoth Nyasacha",
   "path": "data/WN/311.json"
+ },
+ {
+  "id": "WN-316",
+  "book": "WN",
+  "number": "316",
+  "title": "Yesu Kristo Osechier",
+  "path": "data/WN/316.json"
  },
  {
   "id": "WN-317",
