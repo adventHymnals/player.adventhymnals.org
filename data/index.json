@@ -1309,6 +1309,13 @@
   "path": "data/SDAH/529.json"
  },
  {
+  "id": "SDAH-530",
+  "book": "SDAH",
+  "number": "530",
+  "title": "It Is Well With My Soul",
+  "path": "data/SDAH/530.json"
+ },
+ {
   "id": "SDAH-531",
   "book": "SDAH",
   "number": "531",
