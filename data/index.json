@@ -490,6 +490,13 @@
   "path": "data/NZK/122.json"
  },
  {
+  "id": "NZK-126",
+  "book": "NZK",
+  "number": "126",
+  "title": "Nina Haja Nawe",
+  "path": "data/NZK/126.json"
+ },
+ {
   "id": "NZK-135",
   "book": "NZK",
   "number": "135",
@@ -3841,6 +3848,13 @@
   "number": "482",
   "title": "Father, Lead Me Day by Day",
   "path": "data/SDAH/482.json"
+ },
+ {
+  "id": "SDAH-483",
+  "book": "SDAH",
+  "number": "483",
+  "title": "I Need Thee Every Hour",
+  "path": "data/SDAH/483.json"
  },
  {
   "id": "SDAH-500",
