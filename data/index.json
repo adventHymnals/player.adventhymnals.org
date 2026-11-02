@@ -1197,6 +1197,13 @@
   "path": "data/SDAH/511.json"
  },
  {
+  "id": "SDAH-512",
+  "book": "SDAH",
+  "number": "512",
+  "title": "Just When I Need Him Most",
+  "path": "data/SDAH/512.json"
+ },
+ {
   "id": "SDAH-513",
   "book": "SDAH",
   "number": "513",
