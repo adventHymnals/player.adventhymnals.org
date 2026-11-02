@@ -532,6 +532,13 @@
   "path": "data/NZK/147.json"
  },
  {
+  "id": "NZK-152",
+  "book": "NZK",
+  "number": "152",
+  "title": "Karibu Na Wewe, Mungu Wangu",
+  "path": "data/NZK/152.json"
+ },
+ {
   "id": "NZK-158",
   "book": "NZK",
   "number": "158",
@@ -3757,6 +3764,13 @@
   "number": "472",
   "title": "A Song of Heaven and Homeland",
   "path": "data/SDAH/472.json"
+ },
+ {
+  "id": "SDAH-473",
+  "book": "SDAH",
+  "number": "473",
+  "title": "Nearer My God, to Thee",
+  "path": "data/SDAH/473.json"
  },
  {
   "id": "SDAH-500",
