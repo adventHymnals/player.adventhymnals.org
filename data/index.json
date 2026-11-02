@@ -161,6 +161,13 @@
   "path": "data/CS1908/49.json"
  },
  {
+  "id": "CS1908-52",
+  "book": "CS1908",
+  "number": "52",
+  "title": "Jesus of Nazareth Passeth By",
+  "path": "data/CS1908/52.json"
+ },
+ {
   "id": "CS1908-57",
   "book": "CS1908",
   "number": "57",
