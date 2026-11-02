@@ -511,6 +511,13 @@
   "path": "data/NZK/130.json"
  },
  {
+  "id": "NZK-134",
+  "book": "NZK",
+  "number": "134",
+  "title": "Tafuta Daima Utakatifu",
+  "path": "data/NZK/134.json"
+ },
+ {
   "id": "NZK-135",
   "book": "NZK",
   "number": "135",
@@ -5815,6 +5822,13 @@
   "number": "189",
   "title": "Yesu Kristo En Osiepwa",
   "path": "data/WN/189.json"
+ },
+ {
+  "id": "WN-192",
+  "book": "WN",
+  "number": "192",
+  "title": "Tim Kinda Mar Lemo",
+  "path": "data/WN/192.json"
  },
  {
   "id": "WN-205",
