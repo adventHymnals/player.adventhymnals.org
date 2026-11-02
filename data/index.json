@@ -168,6 +168,13 @@
   "path": "data/CS1908/632.json"
  },
  {
+  "id": "CS1908-860",
+  "book": "CS1908",
+  "number": "860",
+  "title": "Is My Name Written There?",
+  "path": "data/CS1908/860.json"
+ },
+ {
   "id": "CS1908-882",
   "book": "CS1908",
   "number": "882",
@@ -887,6 +894,13 @@
   "number": "167",
   "title": "Yu Hai, Yu Hai",
   "path": "data/NZK/167.json"
+ },
+ {
+  "id": "NZK-170",
+  "book": "NZK",
+  "number": "170",
+  "title": "Jina Langu Limeandikwa Je",
+  "path": "data/NZK/170.json"
  },
  {
   "id": "NZK-171",
@@ -6396,6 +6410,13 @@
   "number": "238",
   "title": "Gouru Bu, Goyeuru Matek",
   "path": "data/WN/238.json"
+ },
+ {
+  "id": "WN-249",
+  "book": "WN",
+  "number": "249",
+  "title": "Ruodha Ok Agomb Moko",
+  "path": "data/WN/249.json"
  },
  {
   "id": "WN-253",
