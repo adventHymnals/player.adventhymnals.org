@@ -322,6 +322,13 @@
   "path": "data/NZK/139.json"
  },
  {
+  "id": "NZK-141",
+  "book": "NZK",
+  "number": "141",
+  "title": "Chini Ya Msalaba",
+  "path": "data/NZK/141.json"
+ },
+ {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
@@ -2385,6 +2392,13 @@
   "number": "302",
   "title": "Deeper Yet",
   "path": "data/SDAH/302.json"
+ },
+ {
+  "id": "SDAH-303",
+  "book": "SDAH",
+  "number": "303",
+  "title": "Beneath the Cross of Jesus",
+  "path": "data/SDAH/303.json"
  },
  {
   "id": "SDAH-422",
