@@ -2758,6 +2758,13 @@
   "path": "data/SDAH/341.json"
  },
  {
+  "id": "SDAH-343",
+  "book": "SDAH",
+  "number": "343",
+  "title": "I Will Sing of My Redeemer",
+  "path": "data/SDAH/343.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
