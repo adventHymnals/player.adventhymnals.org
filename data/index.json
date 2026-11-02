@@ -336,6 +336,13 @@
   "path": "data/NZK/64.json"
  },
  {
+  "id": "NZK-69",
+  "book": "NZK",
+  "number": "69",
+  "title": "Cha Kutumaini Sina",
+  "path": "data/NZK/69.json"
+ },
+ {
   "id": "NZK-70",
   "book": "NZK",
   "number": "70",
@@ -509,6 +516,13 @@
   "number": "122",
   "title": "Yote Namtolea Yesu",
   "path": "data/NZK/122.json"
+ },
+ {
+  "id": "NZK-123",
+  "book": "NZK",
+  "number": "123",
+  "title": "Yesu Kwa Imani",
+  "path": "data/NZK/123.json"
  },
  {
   "id": "NZK-126",
@@ -5850,6 +5864,13 @@
   "number": "176",
   "title": "Nyasaye Noolnwa Gweth Polo",
   "path": "data/WN/176.json"
+ },
+ {
+  "id": "WN-182",
+  "book": "WN",
+  "number": "182",
+  "title": "Koro Wagenoi",
+  "path": "data/WN/182.json"
  },
  {
   "id": "WN-184",
