@@ -1484,6 +1484,34 @@
   "path": "data/SDAH/191.json"
  },
  {
+  "id": "SDAH-192",
+  "book": "SDAH",
+  "number": "192",
+  "title": "O Shepherd Divine",
+  "path": "data/SDAH/192.json"
+ },
+ {
+  "id": "SDAH-193",
+  "book": "SDAH",
+  "number": "193",
+  "title": "Savior, Teach Me",
+  "path": "data/SDAH/193.json"
+ },
+ {
+  "id": "SDAH-194",
+  "book": "SDAH",
+  "number": "194",
+  "title": "Sing We of the Modern City",
+  "path": "data/SDAH/194.json"
+ },
+ {
+  "id": "SDAH-195",
+  "book": "SDAH",
+  "number": "195",
+  "title": "Showers of Blessing",
+  "path": "data/SDAH/195.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -2931,6 +2959,13 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json"
+ },
+ {
+  "id": "WN-176",
+  "book": "WN",
+  "number": "176",
+  "title": "Nyasaye Noolnwa Gweth Polo",
+  "path": "data/WN/176.json"
  },
  {
   "id": "WN-227",
