@@ -182,6 +182,13 @@
   "path": "data/CS1908/573.json"
  },
  {
+  "id": "CS1908-598",
+  "book": "CS1908",
+  "number": "598",
+  "title": "Kept for Jesus",
+  "path": "data/CS1908/598.json"
+ },
+ {
   "id": "CS1908-632",
   "book": "CS1908",
   "number": "632",
@@ -6396,6 +6403,13 @@
   "number": "212",
   "title": "Adwaro Bedo Nyathi Yesu",
   "path": "data/WN/212.json"
+ },
+ {
+  "id": "WN-213",
+  "book": "WN",
+  "number": "213",
+  "title": "Teko Nyasaye Orita",
+  "path": "data/WN/213.json"
  },
  {
   "id": "WN-218",
