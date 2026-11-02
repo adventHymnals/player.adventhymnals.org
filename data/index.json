@@ -546,6 +546,13 @@
   "path": "data/NZK/175.json"
  },
  {
+  "id": "NZK-176",
+  "book": "NZK",
+  "number": "176",
+  "title": "Ati Tuonane Mtoni",
+  "path": "data/NZK/176.json"
+ },
+ {
   "id": "NZK-179",
   "book": "NZK",
   "number": "179",
@@ -3444,6 +3451,13 @@
   "path": "data/SDAH/431.json"
  },
  {
+  "id": "SDAH-432",
+  "book": "SDAH",
+  "number": "432",
+  "title": "Shall We Gather at the River",
+  "path": "data/SDAH/432.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
@@ -5185,6 +5199,13 @@
   "number": "253",
   "title": "Koro Kawuono Ruodhwa Man E Polo",
   "path": "data/WN/253.json"
+ },
+ {
+  "id": "WN-259",
+  "book": "WN",
+  "number": "259",
+  "title": "Wanachokre E Aora",
+  "path": "data/WN/259.json"
  },
  {
   "id": "WN-263",
