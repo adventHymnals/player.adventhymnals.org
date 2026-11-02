@@ -154,6 +154,13 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-23",
+  "book": "NZK",
+  "number": "23",
+  "title": "Yesu Furaha Ya Moyo",
+  "path": "data/NZK/23.json"
+ },
+ {
   "id": "NZK-24",
   "book": "NZK",
   "number": "24",
@@ -1860,6 +1867,20 @@
   "number": "241",
   "title": "Jesus, the Very Thought of Thee",
   "path": "data/SDAH/241.json"
+ },
+ {
+  "id": "SDAH-242",
+  "book": "SDAH",
+  "number": "242",
+  "title": "Jesus, Thou Joy of Loving Hearts",
+  "path": "data/SDAH/242.json"
+ },
+ {
+  "id": "SDAH-243",
+  "book": "SDAH",
+  "number": "243",
+  "title": "King of Glory, King of Peace",
+  "path": "data/SDAH/243.json"
  },
  {
   "id": "SDAH-422",
