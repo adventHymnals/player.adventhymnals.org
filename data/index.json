@@ -308,6 +308,13 @@
   "path": "data/NZK/80.json"
  },
  {
+  "id": "NZK-82",
+  "book": "NZK",
+  "number": "82",
+  "title": "Ni Siku Ya Furaha",
+  "path": "data/NZK/82.json"
+ },
+ {
   "id": "NZK-86",
   "book": "NZK",
   "number": "86",
@@ -3050,6 +3057,13 @@
   "number": "381",
   "title": "Holy Sabbath Day of Rest",
   "path": "data/SDAH/381.json"
+ },
+ {
+  "id": "SDAH-382",
+  "book": "SDAH",
+  "number": "382",
+  "title": "O Day of Rest and Gladness",
+  "path": "data/SDAH/382.json"
  },
  {
   "id": "SDAH-422",
