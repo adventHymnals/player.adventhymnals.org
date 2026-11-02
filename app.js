@@ -36,6 +36,9 @@ const AUDIO = document.querySelector('meta[name="ah-audio"]')?.content || REMOTE
 // and the hymns themselves (the list and each hymn's file): the published site reads them from the same store,
 // so a new hymn goes live by upload, with no rebuild of the site
 const DATA = document.querySelector('meta[name="ah-data"]')?.content || REMOTE;
+// search by idea (the site's API; online only). A local copy of the player asks a local backend.
+const IDEA_API = document.querySelector('meta[name="ah-idea"]')?.content
+  || (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://127.0.0.1:8000/api/plugins/adventhymnals/public/search/idea/" : "https://adventhymnals.org/api/search/idea");
 // ?make=: the automatic social videos (see "automatic videos" below); the URL's settings are never saved
 const MAKE = new URLSearchParams(location.search).get("make") ? new URLSearchParams(location.search) : null;
 const NO_STORE = new URLSearchParams(location.search).has("test") || EMBED || !!MAKE;
@@ -385,6 +388,8 @@ const search = { ms: null, words: null, loading: null, terms: new Map(), snips: 
 // one term per word: lower case, no accents, apostrophes dropped ("o'er" -> "oer", "'tis" -> "tis")
 const termOf = (t) => t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "");
 const tokenize = (text) => String(text).split(/[\s\-–—_/,.;:!?"“”‘’()[\]{}…]+/);
+// short words that say little on their own, for deciding what a partial match must contain
+const WEAK = new Set(["when", "am", "are", "was", "were", "will", "shall", "so", "as", "by", "from", "this", "that", "his", "her", "its", "your", "you", "who", "what", "how", "not", "no", "but", "or", "if", "then", "there", "here", "into", "up", "out", "day", "come", "let", "hymn", "song", "about"]);
 const STOP = new Set(["the", "a", "an", "and", "of", "to", "in", "o", "is", "my", "me", "i", "we", "our", "thy", "thee", "thou", "for", "with", "be", "on", "at", "it", "us", "his", "he", "all"]);
 
 function loadScript(src) {
@@ -430,6 +435,35 @@ function ensureSearch() {
   return search.loading;
 }
 
+// ---- search by idea: hymns close in meaning, from the server (online only; offline the words still work) ----
+
+const idea = { q: "", books: "", ids: [], lines: new Map(), timer: 0, ctrl: null };
+const ideaWanted = (q) => (normQ(q).match(/[a-z]{2,}/g) || []).length >= 2 && !/^\s*[a-z]*\d*\s*\d+\s*$/i.test(q);
+
+function askIdea(q) {
+  clearTimeout(idea.timer);
+  if (!ideaWanted(q) || !navigator.onLine) { idea.q = ""; idea.ids = []; return; }
+  const books = finder.books.join(",");
+  if (q === idea.q && books === idea.books) return;
+  idea.timer = setTimeout(async () => {
+    idea.ctrl?.abort();
+    idea.ctrl = new AbortController();
+    try {
+      const u = new URL(IDEA_API, location.href);
+      u.searchParams.set("q", q);
+      u.searchParams.set("limit", "50");
+      if (books) u.searchParams.set("books", books);
+      const r = await fetch(u, { signal: idea.ctrl.signal });
+      if (!r.ok) throw new Error(String(r.status));
+      const data = await r.json();
+      const have = new Set(hymnList.map((x) => x.id));
+      const rows = data.results.filter((x) => have.has(x.hymn_id) && x.score >= 0.45); // only hymns this player can play
+      Object.assign(idea, { q, books, ids: rows.map((x) => x.hymn_id), lines: new Map(rows.map((x) => [x.hymn_id, x.line])) });
+      if (finder.q === q) renderFinder();
+    } catch { /* offline or the server is busy: the words search stands alone */ }
+  }, 350);
+}
+
 /** Hymns matching words: ids with a score, best first, and the terms each matched. */
 function wordHits(q) {
   if (!search.ms) return null;
@@ -438,7 +472,15 @@ function wordHits(q) {
   // every word must be there (allowing typos); if nothing has them all, the hymns with most of them
   let res = search.ms.search(q, { combineWith: "AND" });
   let partial = false;
-  if (!res.length) { res = search.ms.search(q, { combineWith: "OR" }); partial = true; }
+  if (!res.length) {
+    // the hymns with at least half the words that carry meaning ("afraid", "alone"; not "when", "I", "am")
+    const meaningful = [...new Set(qTerms.filter((t) => !STOP.has(t) && !WEAK.has(t)))];
+    const need = Math.max(1, Math.ceil(meaningful.length / 2));
+    res = search.ms.search(q, { combineWith: "OR" })
+      .filter((r) => r.queryTerms.filter((t) => meaningful.includes(t)).length >= need)
+      .slice(0, 20);
+    partial = true;
+  }
   search.partial = partial && res.length > 0;
   const phrase = qTerms.join(" ");
   const out = res.map((r) => {
@@ -554,6 +596,7 @@ function setupFinder() {
   finder.close = close;
   const setQ = (v, from) => {
     finder.q = v;
+    askIdea(v.trim());
     if (/[a-z]/i.test(v) && !search.ms) ensureSearch().then(() => { if (finder.q) renderFinder(); }).catch(() => toast("The search could not load the words; titles and numbers still work.", 5000));
     if (from !== top) top.value = v;
     if (from !== query) query.value = v;
@@ -584,6 +627,7 @@ function setupFinder() {
   const setBooks = (b) => {
     finder.books = b.length === books.length ? [] : b;
     store.set("finderBooks", finder.books);
+    askIdea(finder.q.trim());
     refilter();
     renderBookList();
   };
@@ -682,16 +726,37 @@ function renderFinder(scrollToCurrent = false) {
   const sortSel = $("finderSort");
   sortSel.value = finder.sort;
   sortSel.options[0].textContent = finder.q.trim() ? "Best match" : "Hymnal, number";
-  const shown = finderMatches(finder.q);
+  let words = finderMatches(finder.q);
+  // the hymns about the same idea (only those the filters keep). All the words found: the words
+  // first, then the idea. Only some of them: the idea first, it reads the question better
+  const keepIdea = new Set(finderMatches("").map((x) => x.id));
+  let ideaRows = finder.q.trim() && idea.q === finder.q.trim()
+    ? idea.ids.filter((id) => keepIdea.has(id)).map((id) => hymnList.find((x) => x.id === id)) : [];
+  const ideaFirst = ideaRows.length && search.ms && search.partial;
+  if (ideaFirst) {
+    const inIdea = new Set(ideaRows.map((x) => x.id));
+    words = words.filter((x) => !inIdea.has(x.id));
+  } else {
+    const inWords = new Set(words.map((x) => x.id));
+    ideaRows = ideaRows.filter((x) => !inWords.has(x.id));
+  }
+  const shown = ideaFirst ? ideaRows.concat(words) : words.concat(ideaRows);
+  const isIdea = new Set(ideaRows.map((x) => x.id));
   finder.shown = shown;
   const cur = $("hymnPicker").value;
   if (scrollToCurrent && !finder.q) { const i = shown.findIndex((x) => x.id === cur); finder.active = Math.max(0, i); }
   finder.active = Math.min(finder.active, Math.max(0, shown.length - 1));
   const filtered = n || finder.sound !== "all";
-  $("finderCount").textContent = !shown.length ? "" : finder.q && search.ms && search.partial && /[a-z]/i.test(finder.q) ? `No hymn has all of “${finder.q.trim()}”; these have some of the words` : `${shown.length} hymn${shown.length === 1 ? "" : "s"}${finder.q ? ` ${shown.length === 1 ? "matches" : "match"} “${finder.q.trim()}”` : ""}${filtered ? " in the chosen filters" : ""}`;
-  $("finderList").innerHTML = shown.length ? shown.map((x, i) => `<li role="option" id="fo-${i}" data-i="${i}" data-id="${escHtml(x.id)}" aria-selected="${i === finder.active}"${x.id === cur ? ' class="current"' : ""}>
+  const nW = words.length, q0 = finder.q.trim();
+  const wordsSay = !q0 ? `${nW} hymn${nW === 1 ? "" : "s"}`
+    : search.ms && search.partial && /[a-z]/i.test(q0) ? (nW ? `No hymn has all of “${q0}”; ${nW} have some of the words` : `No hymn has the words “${q0}”`)
+    : nW ? `${nW} hymn${nW === 1 ? "" : "s"} ${nW === 1 ? "matches" : "match"} “${q0}”` : `No hymn has the words “${q0}”`;
+  $("finderCount").textContent = !shown.length ? "" : `${wordsSay}${ideaRows.length ? `, ${ideaRows.length} more about this idea` : ""}${filtered ? " in the chosen filters" : ""}`;
+  $("finderList").innerHTML = shown.length ? shown.map((x, i) => `${ideaFirst ? (i === 0 ? `<li class="finder-sep" role="presentation">About this idea</li>` : i === ideaRows.length && words.length ? `<li class="finder-sep" role="presentation">Some of the words</li>` : "")
+      : i === words.length && ideaRows.length ? `<li class="finder-sep" role="presentation">About this idea</li>` : ""}<li role="option" id="fo-${i}" data-i="${i}" data-id="${escHtml(x.id)}" aria-selected="${i === finder.active}"${x.id === cur ? ' class="current"' : ""}>
       <span class="f-num"><small>${escHtml(x.book)}</small>${escHtml(x.number)}</span>
-      <span class="f-title">${markMatch(x.title, finder.q)}${finder.q && search.ms ? ((sn) => (sn ? `<span class="f-snip">${sn}</span>` : ""))(snippetFor(x.id, finder.q)) : ""}</span>
+      <span class="f-title">${isIdea.has(x.id) ? `${escHtml(x.title)}<span class="f-snip">${escHtml(idea.lines.get(x.id) || "")}</span>`
+        : `${markMatch(x.title, finder.q)}${finder.q && search.ms ? ((sn) => (sn ? `<span class="f-snip">${sn}</span>` : ""))(snippetFor(x.id, finder.q)) : ""}`}</span>
       <span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>
     </li>`).join("")
     : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try all hymnals or all sounds." : "."}</li>`;

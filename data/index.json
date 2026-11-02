@@ -2373,6 +2373,13 @@
   "path": "data/SDAH/300.json"
  },
  {
+  "id": "SDAH-301",
+  "book": "SDAH",
+  "number": "301",
+  "title": "Nearer, Still Nearer",
+  "path": "data/SDAH/301.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
