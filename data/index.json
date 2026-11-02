@@ -644,6 +644,13 @@
   "path": "data/NZK/147.json"
  },
  {
+  "id": "NZK-151",
+  "book": "NZK",
+  "number": "151",
+  "title": "Huniongoza Mwokozi",
+  "path": "data/NZK/151.json"
+ },
+ {
   "id": "NZK-152",
   "book": "NZK",
   "number": "152",
@@ -656,6 +663,13 @@
   "number": "155",
   "title": "Njiani Huniongoza",
   "path": "data/NZK/155.json"
+ },
+ {
+  "id": "NZK-156",
+  "book": "NZK",
+  "number": "156",
+  "title": "Uniongoze Jehova",
+  "path": "data/NZK/156.json"
  },
  {
   "id": "NZK-158",
@@ -5962,6 +5976,13 @@
   "number": "218",
   "title": "Yesu An Adwaro",
   "path": "data/WN/218.json"
+ },
+ {
+  "id": "WN-220",
+  "book": "WN",
+  "number": "220",
+  "title": "Otelona",
+  "path": "data/WN/220.json"
  },
  {
   "id": "WN-227",
