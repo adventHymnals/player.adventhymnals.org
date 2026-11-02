@@ -3717,6 +3717,20 @@
   "path": "data/SDAH/466.json"
  },
  {
+  "id": "SDAH-467",
+  "book": "SDAH",
+  "number": "467",
+  "title": "Life Is Great! So Sing About It",
+  "path": "data/SDAH/467.json"
+ },
+ {
+  "id": "SDAH-468",
+  "book": "SDAH",
+  "number": "468",
+  "title": "A Child of the King",
+  "path": "data/SDAH/468.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
