@@ -280,6 +280,13 @@
   "path": "data/NZK/54.json"
  },
  {
+  "id": "NZK-56",
+  "book": "NZK",
+  "number": "56",
+  "title": "Waponye Watu",
+  "path": "data/NZK/56.json"
+ },
+ {
   "id": "NZK-80",
   "book": "NZK",
   "number": "80",
@@ -2926,6 +2933,13 @@
   "path": "data/SDAH/366.json"
  },
  {
+  "id": "SDAH-367",
+  "book": "SDAH",
+  "number": "367",
+  "title": "Rescue the Perishing",
+  "path": "data/SDAH/367.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4443,6 +4457,13 @@
   "number": "75",
   "title": "Adwaro Ngeyo Wach Yesu",
   "path": "data/WN/75.json"
+ },
+ {
+  "id": "WN-77",
+  "book": "WN",
+  "number": "77",
+  "title": "Kony Jo Madwaro Tho",
+  "path": "data/WN/77.json"
  },
  {
   "id": "WN-87",
