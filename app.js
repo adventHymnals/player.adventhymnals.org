@@ -379,29 +379,146 @@ const SORTERS = {
   book: (a, b) => bookName(a.book).localeCompare(bookName(b.book)) || numOf(a) - numOf(b),
 };
 
-/** The hymns the finder shows: those in the chosen hymnals and sound, in the chosen order. */
+// ---- full-text search: titles, every verse and the writers, forgiving typos (MiniSearch, in the page: works offline) ----
+
+const search = { ms: null, words: null, loading: null, terms: new Map(), snips: new Map() };
+// one term per word: lower case, no accents, apostrophes dropped ("o'er" -> "oer", "'tis" -> "tis")
+const termOf = (t) => t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "");
+const tokenize = (text) => String(text).split(/[\s\-–—_/,.;:!?"“”‘’()[\]{}…]+/);
+const STOP = new Set(["the", "a", "an", "and", "of", "to", "in", "o", "is", "my", "me", "i", "we", "our", "thy", "thee", "thou", "for", "with", "be", "on", "at", "it", "us", "his", "he", "all"]);
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.append(s);
+  });
+}
+
+/** Load the words and build the index, once, the first time someone searches with words. */
+function ensureSearch() {
+  search.loading ??= (async () => {
+    const local = () => fetch("data/words.json", { cache: "no-cache" }).catch(() => fetch("data/words.json", { cache: "force-cache" }));
+    let words = null;
+    if (DATA) {
+      try { const r = await fetch(`${DATA}data/words.json`, { cache: "no-cache" }); if (r.ok) words = await r.json(); } catch { /* offline: the bundled copy */ }
+    }
+    if (!words) words = await (await local()).json();
+    if (!window.MiniSearch) await loadScript("vendor/minisearch-7.1.0.min.js");
+    const ms = new window.MiniSearch({
+      fields: ["title", "first", "words", "by"],
+      tokenize,
+      processTerm: (t) => termOf(t) || null,
+      searchOptions: {
+        boost: { title: 4, first: 2.5, by: 1.5 },
+        // the word being typed may be unfinished; longer words may be mistyped
+        prefix: (term, i, terms) => i === terms.length - 1 || term.length > 4,
+        fuzzy: (term) => (term.length > 7 ? 0.25 : term.length > 3 ? 1 : false),
+        weights: { fuzzy: 0.35, prefix: 0.6 },
+      },
+    });
+    ms.addAll(hymnList.map((x) => {
+      const w = words[x.id] || { v: [], by: "" };
+      const first = (w.v[0] || "").split(/(?<=[,;:.!?])\s+/).slice(0, 2).join(" ");
+      return { id: x.id, title: x.title, first, words: w.v.join(" \n "), by: w.by || "" };
+    }));
+    search.words = words;
+    search.ms = ms;
+  })().catch((e) => { search.loading = null; throw e; });
+  return search.loading;
+}
+
+/** Hymns matching words: ids with a score, best first, and the terms each matched. */
+function wordHits(q) {
+  if (!search.ms) return null;
+  const qTerms = tokenize(q).map(termOf).filter(Boolean);
+  if (!qTerms.length) return [];
+  // every word must be there (allowing typos); if nothing has them all, the hymns with most of them
+  let res = search.ms.search(q, { combineWith: "AND" });
+  let partial = false;
+  if (!res.length) { res = search.ms.search(q, { combineWith: "OR" }); partial = true; }
+  search.partial = partial && res.length > 0;
+  const phrase = qTerms.join(" ");
+  const out = res.map((r) => {
+    const w = search.words[r.id];
+    const all = ` ${tokenize((w?.v || []).join(" ")).map(termOf).filter(Boolean).join(" ")} `;
+    const title = ` ${tokenize(hymnList.find((x) => x.id === r.id)?.title || "").map(termOf).join(" ")} `;
+    let s = r.score;
+    if (qTerms.length > 1 && title.includes(` ${phrase} `)) s *= 4; // the exact words, in order
+    else if (qTerms.length > 1 && all.includes(` ${phrase} `)) s *= 3;
+    else if (title.startsWith(` ${phrase}`)) s *= 2;
+    search.terms.set(r.id, new Set(r.terms));
+    return { id: r.id, s, partial };
+  });
+  return out.sort((a, b) => b.s - a.s);
+}
+
+/** The line of the hymn the search matched, when the title doesn't show why it's there. */
+function snippetFor(id, q) {
+  const w = search.words?.[id];
+  const terms = search.terms.get(id);
+  if (!w || !terms) return "";
+  const x = hymnList.find((h) => h.id === id);
+  const titleTerms = new Set(tokenize(x?.title || "").map(termOf));
+  const wanted = [...terms].filter((t) => !titleTerms.has(t));
+  if (!wanted.length) return "";
+  const phrase = tokenize(q).map(termOf).filter(Boolean).join(" ");
+  let best = null;
+  for (const verse of w.v) {
+    const chunks = verse.split(/(?<=[,;:.!?])\s+/);
+    for (let i = 0; i < chunks.length; i++) {
+      for (const span of [1, 2]) { // a phrase may run over a comma
+        const text = chunks.slice(i, i + span).join(" ");
+        const ts = tokenize(text).map(termOf);
+        const hits = wanted.filter((t) => ts.includes(t)).length + (phrase && ` ${ts.join(" ")} `.includes(` ${phrase} `) ? 10 : 0);
+        const score = hits * 10 - span - text.length / 200;
+        if (hits && (!best || score > best.score)) best = { score, text };
+      }
+    }
+  }
+  if (!best) return "";
+  // mark the matched words
+  return best.text.split(/(\s+)/).map((tok) => {
+    const t = termOf(tok);
+    return t && terms.has(t) && !STOP.has(t) ? `<mark>${escHtml(tok)}</mark>` : escHtml(tok);
+  }).join("");
+}
+
+/** The hymns the finder shows: those in the chosen hymnals and sound, in the chosen order.
+ *  A number ("240", "nzk 89") finds by number; words search the titles, verses and writers. */
 function finderMatches(q, { books = finder.books, sound = finder.sound, sort = finder.sort } = {}) {
   const nq = normQ(q);
+  const keep = (x) => !(books.length && !books.includes(x.book)) && !(sound === "sung" && !x.sung) && !(sound === "midi" && x.sung);
+  if (!nq) return hymnList.filter(keep).sort(SORTERS[sort] || byBookNum);
+  search.terms = new Map(); // which words each hymn matched, for its line under the title
+  search.partial = false;
+  const scored = new Map(); // id -> score
   const m = nq.match(/^([a-z]+\d*)?\s*(\d+)$/); // "240", or "nzk 89"
-  const words = nq ? nq.split(" ") : [];
-  const out = [];
-  for (const x of hymnList) {
-    if (books.length && !books.includes(x.book)) continue;
-    if (sound === "sung" && !x.sung) continue;
-    if (sound === "midi" && x.sung) continue;
-    if (!nq) { out.push({ x, s: 0 }); continue; }
-    const t = normQ(x.title);
-    let s = 0;
-    if (m && (!m[1] || x.book.toLowerCase().startsWith(m[1]))) {
-      if (x.number === m[2]) s = 100;
-      else if (x.number.startsWith(m[2])) s = 60 - x.number.length;
+  if (m) {
+    for (const x of hymnList) {
+      if (m[1] && !x.book.toLowerCase().startsWith(m[1])) continue;
+      if (x.number === m[2]) scored.set(x.id, 1e6 + (x.book === "SDAH" ? 1 : 0));
+      else if (x.number.startsWith(m[2])) scored.set(x.id, 1e5 - x.number.length);
     }
-    if (!s && t.startsWith(nq)) s = 80;
-    if (!s && words.every((w) => t.includes(w) || x.book.toLowerCase() === w)) s = 50;
-    if (s) out.push({ x, s: s + (x.book === "SDAH" ? 1 : 0) });
   }
-  if (SORTERS[sort]) return out.map((o) => o.x).sort(SORTERS[sort]);
-  return nq ? out.sort((a, b) => b.s - a.s || byBookNum(a.x, b.x)).map((o) => o.x) : out.map((o) => o.x).sort(byBookNum);
+  const hits = /[a-z]/.test(nq) ? wordHits(q) : [];
+  if (hits === null) {
+    // the words are still loading: titles for now
+    const words = nq.split(" ");
+    for (const x of hymnList) {
+      const t = normQ(x.title);
+      if (t.startsWith(nq)) scored.set(x.id, Math.max(scored.get(x.id) || 0, 80));
+      else if (words.every((w) => t.includes(w))) scored.set(x.id, Math.max(scored.get(x.id) || 0, 50));
+    }
+  } else {
+    for (const h of hits) if (!scored.has(h.id)) scored.set(h.id, h.s);
+  }
+  const byId = new Map(hymnList.map((x) => [x.id, x]));
+  const out = [...scored.keys()].map((id) => byId.get(id)).filter((x) => x && keep(x));
+  if (SORTERS[sort]) return out.sort(SORTERS[sort]);
+  return out.sort((a, b) => scored.get(b.id) - scored.get(a.id) || byBookNum(a, b));
 }
 
 function markMatch(title, q) {
@@ -437,6 +554,7 @@ function setupFinder() {
   finder.close = close;
   const setQ = (v, from) => {
     finder.q = v;
+    if (/[a-z]/i.test(v) && !search.ms) ensureSearch().then(() => { if (finder.q) renderFinder(); }).catch(() => toast("The search could not load the words; titles and numbers still work.", 5000));
     if (from !== top) top.value = v;
     if (from !== query) query.value = v;
     finder.active = 0;
@@ -570,10 +688,10 @@ function renderFinder(scrollToCurrent = false) {
   if (scrollToCurrent && !finder.q) { const i = shown.findIndex((x) => x.id === cur); finder.active = Math.max(0, i); }
   finder.active = Math.min(finder.active, Math.max(0, shown.length - 1));
   const filtered = n || finder.sound !== "all";
-  $("finderCount").textContent = !shown.length ? "" : `${shown.length} hymn${shown.length === 1 ? "" : "s"}${finder.q ? ` ${shown.length === 1 ? "matches" : "match"} “${finder.q.trim()}”` : ""}${filtered ? " in the chosen filters" : ""}`;
+  $("finderCount").textContent = !shown.length ? "" : finder.q && search.ms && search.partial && /[a-z]/i.test(finder.q) ? `No hymn has all of “${finder.q.trim()}”; these have some of the words` : `${shown.length} hymn${shown.length === 1 ? "" : "s"}${finder.q ? ` ${shown.length === 1 ? "matches" : "match"} “${finder.q.trim()}”` : ""}${filtered ? " in the chosen filters" : ""}`;
   $("finderList").innerHTML = shown.length ? shown.map((x, i) => `<li role="option" id="fo-${i}" data-i="${i}" data-id="${escHtml(x.id)}" aria-selected="${i === finder.active}"${x.id === cur ? ' class="current"' : ""}>
       <span class="f-num"><small>${escHtml(x.book)}</small>${escHtml(x.number)}</span>
-      <span class="f-title">${markMatch(x.title, finder.q)}</span>
+      <span class="f-title">${markMatch(x.title, finder.q)}${finder.q && search.ms ? ((sn) => (sn ? `<span class="f-snip">${sn}</span>` : ""))(snippetFor(x.id, finder.q)) : ""}</span>
       <span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>
     </li>`).join("")
     : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try all hymnals or all sounds." : "."}</li>`;
