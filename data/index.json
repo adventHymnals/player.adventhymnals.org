@@ -2471,6 +2471,13 @@
   "path": "data/SDAH/310.json"
  },
  {
+  "id": "SDAH-311",
+  "book": "SDAH",
+  "number": "311",
+  "title": "I Would Be Like Jesus",
+  "path": "data/SDAH/311.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
