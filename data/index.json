@@ -168,6 +168,13 @@
   "path": "data/NZK/10.json"
  },
  {
+  "id": "NZK-12",
+  "book": "NZK",
+  "number": "12",
+  "title": "Msifu Mungu",
+  "path": "data/NZK/12.json"
+ },
+ {
   "id": "NZK-18",
   "book": "NZK",
   "number": "18",
@@ -810,6 +817,20 @@
   "number": "179",
   "title": "Watafurahi",
   "path": "data/NZK/179.json"
+ },
+ {
+  "id": "NZK-184",
+  "book": "NZK",
+  "number": "184",
+  "title": "Panapo Pendo",
+  "path": "data/NZK/184.json"
+ },
+ {
+  "id": "NZK-185",
+  "book": "NZK",
+  "number": "185",
+  "title": "Mungu, Mapenzi Makamilifu",
+  "path": "data/NZK/185.json"
  },
  {
   "id": "NZK-188",
