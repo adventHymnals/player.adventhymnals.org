@@ -175,6 +175,13 @@
   "path": "data/NZK/38.json"
  },
  {
+  "id": "NZK-49",
+  "book": "NZK",
+  "number": "49",
+  "title": "Ninaye Rafiki",
+  "path": "data/NZK/49.json"
+ },
+ {
   "id": "NZK-50",
   "book": "NZK",
   "number": "50",
@@ -1412,6 +1419,34 @@
   "number": "184",
   "title": "Jesus Paid It All",
   "path": "data/SDAH/184.json"
+ },
+ {
+  "id": "SDAH-185",
+  "book": "SDAH",
+  "number": "185",
+  "title": "Jesus Is All the World to Me",
+  "path": "data/SDAH/185.json"
+ },
+ {
+  "id": "SDAH-186",
+  "book": "SDAH",
+  "number": "186",
+  "title": "I've Found a Friend",
+  "path": "data/SDAH/186.json"
+ },
+ {
+  "id": "SDAH-187",
+  "book": "SDAH",
+  "number": "187",
+  "title": "Jesus, What a Friend for Sinners",
+  "path": "data/SDAH/187.json"
+ },
+ {
+  "id": "SDAH-188",
+  "book": "SDAH",
+  "number": "188",
+  "title": "My Song Is Love Unknown",
+  "path": "data/SDAH/188.json"
  },
  {
   "id": "SDAH-422",
@@ -2814,11 +2849,25 @@
   "path": "data/WN/43.json"
  },
  {
+  "id": "WN-48",
+  "book": "WN",
+  "number": "48",
+  "title": "Yesu Kristo Oberna Ngang'",
+  "path": "data/WN/48.json"
+ },
+ {
   "id": "WN-55",
   "book": "WN",
   "number": "55",
   "title": "Awero Teko mar Nyasaye",
   "path": "data/WN/55.json"
+ },
+ {
+  "id": "WN-66",
+  "book": "WN",
+  "number": "66",
+  "title": "Aseyudo Osiep Maber",
+  "path": "data/WN/66.json"
  },
  {
   "id": "WN-67",
