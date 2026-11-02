@@ -392,6 +392,13 @@
   "path": "data/NZK/70.json"
  },
  {
+  "id": "NZK-73",
+  "book": "NZK",
+  "number": "73",
+  "title": "Bwana, Uniongoze Juu",
+  "path": "data/NZK/73.json"
+ },
+ {
   "id": "NZK-76",
   "book": "NZK",
   "number": "76",
@@ -635,6 +642,13 @@
   "number": "137",
   "title": "Saa Heri Ya Sala",
   "path": "data/NZK/137.json"
+ },
+ {
+  "id": "NZK-138",
+  "book": "NZK",
+  "number": "138",
+  "title": "Nitakuandama Kote",
+  "path": "data/NZK/138.json"
  },
  {
   "id": "NZK-139",
@@ -5831,6 +5845,13 @@
   "path": "data/WN/111.json"
  },
  {
+  "id": "WN-112",
+  "book": "WN",
+  "number": "112",
+  "title": "Keduru Jo Ka Yesu",
+  "path": "data/WN/112.json"
+ },
+ {
   "id": "WN-116",
   "book": "WN",
   "number": "116",
@@ -5997,6 +6018,13 @@
   "number": "195",
   "title": "Ka Yesu Ni Koda",
   "path": "data/WN/195.json"
+ },
+ {
+  "id": "WN-201",
+  "book": "WN",
+  "number": "201",
+  "title": "Analu Bang'i Jakonya",
+  "path": "data/WN/201.json"
  },
  {
   "id": "WN-205",
