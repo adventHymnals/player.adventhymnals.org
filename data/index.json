@@ -126,6 +126,13 @@
   "path": "data/CS1908/10.json"
  },
  {
+  "id": "CS1908-57",
+  "book": "CS1908",
+  "number": "57",
+  "title": "No, Not One",
+  "path": "data/CS1908/57.json"
+ },
+ {
   "id": "CS1908-632",
   "book": "CS1908",
   "number": "632",
@@ -299,6 +306,13 @@
   "number": "43",
   "title": "Furaha Gani!",
   "path": "data/NZK/43.json"
+ },
+ {
+  "id": "NZK-44",
+  "book": "NZK",
+  "number": "44",
+  "title": "Urafiki Wa Yesu",
+  "path": "data/NZK/44.json"
  },
  {
   "id": "NZK-47",
@@ -5934,6 +5948,13 @@
   "number": "61",
   "title": "Osiep Manade En Mor Manade",
   "path": "data/WN/61.json"
+ },
+ {
+  "id": "WN-62",
+  "book": "WN",
+  "number": "62",
+  "title": "Onge Osiep Moro Kaka Yesu",
+  "path": "data/WN/62.json"
  },
  {
   "id": "WN-66",
