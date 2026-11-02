@@ -168,6 +168,13 @@
   "path": "data/NZK/10.json"
  },
  {
+  "id": "NZK-18",
+  "book": "NZK",
+  "number": "18",
+  "title": "Mwokozi, Kama Mchunga",
+  "path": "data/NZK/18.json"
+ },
+ {
   "id": "NZK-20",
   "book": "NZK",
   "number": "20",
