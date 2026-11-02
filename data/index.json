@@ -2919,6 +2919,13 @@
   "path": "data/SDAH/365.json"
  },
  {
+  "id": "SDAH-366",
+  "book": "SDAH",
+  "number": "366",
+  "title": "O Where Are the Reapers?",
+  "path": "data/SDAH/366.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4436,6 +4443,13 @@
   "number": "75",
   "title": "Adwaro Ngeyo Wach Yesu",
   "path": "data/WN/75.json"
+ },
+ {
+  "id": "WN-87",
+  "book": "WN",
+  "number": "87",
+  "title": "Jokeyo Ni Kanye",
+  "path": "data/WN/87.json"
  },
  {
   "id": "WN-111",
