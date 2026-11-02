@@ -1841,6 +1841,27 @@
   "path": "data/SDAH/238.json"
  },
  {
+  "id": "SDAH-239",
+  "book": "SDAH",
+  "number": "239",
+  "title": "Jesus, Priceless Treasure",
+  "path": "data/SDAH/239.json"
+ },
+ {
+  "id": "SDAH-240",
+  "book": "SDAH",
+  "number": "240",
+  "title": "Fairest Lord Jesus",
+  "path": "data/SDAH/240.json"
+ },
+ {
+  "id": "SDAH-241",
+  "book": "SDAH",
+  "number": "241",
+  "title": "Jesus, the Very Thought of Thee",
+  "path": "data/SDAH/241.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
