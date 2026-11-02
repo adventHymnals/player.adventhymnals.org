@@ -210,6 +210,13 @@
   "path": "data/CS1908/632.json"
  },
  {
+  "id": "CS1908-846",
+  "book": "CS1908",
+  "number": "846",
+  "title": "Asleep in Jesus",
+  "path": "data/CS1908/846.json"
+ },
+ {
   "id": "CS1908-860",
   "book": "CS1908",
   "number": "860",
@@ -6550,6 +6557,13 @@
   "number": "268",
   "title": "Wawinjo Mar Dala Maler",
   "path": "data/WN/268.json"
+ },
+ {
+  "id": "WN-281",
+  "book": "WN",
+  "number": "281",
+  "title": "Nindo Kuom Yesu",
+  "path": "data/WN/281.json"
  },
  {
   "id": "WN-283",
