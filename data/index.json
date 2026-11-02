@@ -168,6 +168,13 @@
   "path": "data/CS1908/286.json"
  },
  {
+  "id": "CS1908-288",
+  "book": "CS1908",
+  "number": "288",
+  "title": "Blessed Be the Name",
+  "path": "data/CS1908/288.json"
+ },
+ {
   "id": "CS1908-300",
   "book": "CS1908",
   "number": "300",
@@ -285,6 +292,13 @@
   "number": "10",
   "title": "Kristo Wa Neema Zote",
   "path": "data/NZK/10.json"
+ },
+ {
+  "id": "NZK-11",
+  "book": "NZK",
+  "number": "11",
+  "title": "Jina La Bwana Li Heri",
+  "path": "data/NZK/11.json"
  },
  {
   "id": "NZK-12",
