@@ -147,6 +147,13 @@
   "path": "data/CS1908/399.json"
  },
  {
+  "id": "CS1908-430",
+  "book": "CS1908",
+  "number": "430",
+  "title": "Another Six Days' Work",
+  "path": "data/CS1908/430.json"
+ },
+ {
   "id": "CS1908-515",
   "book": "CS1908",
   "number": "515",
@@ -474,6 +481,13 @@
   "number": "80",
   "title": "Tupe Moto Wa Injili",
   "path": "data/NZK/80.json"
+ },
+ {
+  "id": "NZK-81",
+  "book": "NZK",
+  "number": "81",
+  "title": "Siku Sita Zimepita",
+  "path": "data/NZK/81.json"
  },
  {
   "id": "NZK-82",
