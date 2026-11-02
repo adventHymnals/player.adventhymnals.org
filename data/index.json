@@ -1092,6 +1092,41 @@
   "path": "data/SDAH/139.json"
  },
  {
+  "id": "SDAH-141",
+  "book": "SDAH",
+  "number": "141",
+  "title": "What Child Is This?",
+  "path": "data/SDAH/141.json"
+ },
+ {
+  "id": "SDAH-142",
+  "book": "SDAH",
+  "number": "142",
+  "title": "Angels We Have Heard on High",
+  "path": "data/SDAH/142.json"
+ },
+ {
+  "id": "SDAH-143",
+  "book": "SDAH",
+  "number": "143",
+  "title": "Silent Night, Holy Night",
+  "path": "data/SDAH/143.json"
+ },
+ {
+  "id": "SDAH-144",
+  "book": "SDAH",
+  "number": "144",
+  "title": "O Sing a Song of Bethlehem",
+  "path": "data/SDAH/144.json"
+ },
+ {
+  "id": "SDAH-145",
+  "book": "SDAH",
+  "number": "145",
+  "title": "Songs of Thankfulness and Praise",
+  "path": "data/SDAH/145.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
