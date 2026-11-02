@@ -2401,6 +2401,13 @@
   "path": "data/SDAH/303.json"
  },
  {
+  "id": "SDAH-304",
+  "book": "SDAH",
+  "number": "304",
+  "title": "Faith of Our Fathers",
+  "path": "data/SDAH/304.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4016,5 +4023,12 @@
   "number": "317",
   "title": "Kik Chunyi a Ka'e Chandruok",
   "path": "data/WN/317.json"
+ },
+ {
+  "id": "WN-318",
+  "book": "WN",
+  "number": "318",
+  "title": "Yie Mar Kwerewa",
+  "path": "data/WN/318.json"
  }
 ]
