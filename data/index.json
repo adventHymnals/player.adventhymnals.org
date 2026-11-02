@@ -280,6 +280,13 @@
   "path": "data/NZK/54.json"
  },
  {
+  "id": "NZK-55",
+  "book": "NZK",
+  "number": "55",
+  "title": "Twapanda Mapema",
+  "path": "data/NZK/55.json"
+ },
+ {
   "id": "NZK-56",
   "book": "NZK",
   "number": "56",
@@ -2954,6 +2961,13 @@
   "path": "data/SDAH/368.json"
  },
  {
+  "id": "SDAH-369",
+  "book": "SDAH",
+  "number": "369",
+  "title": "Bringing in the Sheaves",
+  "path": "data/SDAH/369.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4471,6 +4485,13 @@
   "number": "75",
   "title": "Adwaro Ngeyo Wach Yesu",
   "path": "data/WN/75.json"
+ },
+ {
+  "id": "WN-76",
+  "book": "WN",
+  "number": "76",
+  "title": "Chwoyo Ndalo Duto",
+  "path": "data/WN/76.json"
  },
  {
   "id": "WN-77",
