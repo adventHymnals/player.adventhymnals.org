@@ -126,6 +126,13 @@
   "path": "data/CS1908/10.json"
  },
  {
+  "id": "CS1908-49",
+  "book": "CS1908",
+  "number": "49",
+  "title": "Weighed and Wanting",
+  "path": "data/CS1908/49.json"
+ },
+ {
   "id": "CS1908-57",
   "book": "CS1908",
   "number": "57",
@@ -6431,6 +6438,13 @@
   "number": "249",
   "title": "Ruodha Ok Agomb Moko",
   "path": "data/WN/249.json"
+ },
+ {
+  "id": "WN-251",
+  "book": "WN",
+  "number": "251",
+  "title": "Ka Jabura Nong'ad Buchwa",
+  "path": "data/WN/251.json"
  },
  {
   "id": "WN-253",
