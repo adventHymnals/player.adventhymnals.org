@@ -378,6 +378,13 @@
   "path": "data/NZK/145.json"
  },
  {
+  "id": "NZK-146",
+  "book": "NZK",
+  "number": "146",
+  "title": "Twae Wangu Uzima",
+  "path": "data/NZK/146.json"
+ },
+ {
   "id": "NZK-147",
   "book": "NZK",
   "number": "147",
@@ -2623,6 +2630,13 @@
   "number": "329",
   "title": "Take the World, but Give Me Jesus",
   "path": "data/SDAH/329.json"
+ },
+ {
+  "id": "SDAH-330",
+  "book": "SDAH",
+  "number": "330",
+  "title": "Take My Life and Let It Be",
+  "path": "data/SDAH/330.json"
  },
  {
   "id": "SDAH-422",
