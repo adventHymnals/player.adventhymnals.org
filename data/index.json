@@ -245,6 +245,13 @@
   "path": "data/NZK/40.json"
  },
  {
+  "id": "NZK-47",
+  "book": "NZK",
+  "number": "47",
+  "title": "Ni Heri Kifungo",
+  "path": "data/NZK/47.json"
+ },
+ {
   "id": "NZK-49",
   "book": "NZK",
   "number": "49",
@@ -2814,6 +2821,13 @@
   "path": "data/SDAH/349.json"
  },
  {
+  "id": "SDAH-350",
+  "book": "SDAH",
+  "number": "350",
+  "title": "Blest Be the Tie That Binds",
+  "path": "data/SDAH/350.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4310,6 +4324,13 @@
   "number": "69",
   "title": "Puonja Injili Lilo",
   "path": "data/WN/69.json"
+ },
+ {
+  "id": "WN-70",
+  "book": "WN",
+  "number": "70",
+  "title": "Nyasaye Wachokore",
+  "path": "data/WN/70.json"
  },
  {
   "id": "WN-71",
