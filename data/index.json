@@ -133,6 +133,13 @@
   "path": "data/NZK/1.json"
  },
  {
+  "id": "NZK-3",
+  "book": "NZK",
+  "number": "3",
+  "title": "Mungu Atukuzwe",
+  "path": "data/NZK/3.json"
+ },
+ {
   "id": "NZK-4",
   "book": "NZK",
   "number": "4",
@@ -2744,6 +2751,13 @@
   "path": "data/SDAH/340.json"
  },
  {
+  "id": "SDAH-341",
+  "book": "SDAH",
+  "number": "341",
+  "title": "To God Be the Glory",
+  "path": "data/SDAH/341.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4107,6 +4121,13 @@
   "number": "695",
   "title": "Praise God, From Whom All Blessings",
   "path": "data/SDAH/695.json"
+ },
+ {
+  "id": "WN-3",
+  "book": "WN",
+  "number": "3",
+  "title": "Duong' Obed Ni Wuonwa",
+  "path": "data/WN/3.json"
  },
  {
   "id": "WN-4",
