@@ -875,6 +875,13 @@
   "path": "data/SDAH/98.json"
  },
  {
+  "id": "SDAH-99",
+  "book": "SDAH",
+  "number": "99",
+  "title": "God Will Take Care of You",
+  "path": "data/SDAH/99.json"
+ },
+ {
   "id": "SDAH-100",
   "book": "SDAH",
   "number": "100",
@@ -2469,5 +2476,12 @@
   "number": "311",
   "title": "Ruoth Nyasacha",
   "path": "data/WN/311.json"
+ },
+ {
+  "id": "WN-317",
+  "book": "WN",
+  "number": "317",
+  "title": "Kik Chunyi a Ka'e Chandruok",
+  "path": "data/WN/317.json"
  }
 ]
