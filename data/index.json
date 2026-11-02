@@ -1953,6 +1953,20 @@
   "path": "data/SDAH/251.json"
  },
  {
+  "id": "SDAH-252",
+  "book": "SDAH",
+  "number": "252",
+  "title": "Come, Let Us Sing",
+  "path": "data/SDAH/252.json"
+ },
+ {
+  "id": "SDAH-253",
+  "book": "SDAH",
+  "number": "253",
+  "title": "There's No Other Name Like Jesus",
+  "path": "data/SDAH/253.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
