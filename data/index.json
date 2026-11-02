@@ -1799,6 +1799,27 @@
   "path": "data/SDAH/233.json"
  },
  {
+  "id": "SDAH-234",
+  "book": "SDAH",
+  "number": "234",
+  "title": "Christ Is the World's Light",
+  "path": "data/SDAH/234.json"
+ },
+ {
+  "id": "SDAH-235",
+  "book": "SDAH",
+  "number": "235",
+  "title": "Christ Is Made the Sure Foundation",
+  "path": "data/SDAH/235.json"
+ },
+ {
+  "id": "SDAH-236",
+  "book": "SDAH",
+  "number": "236",
+  "title": "I Love Thee",
+  "path": "data/SDAH/236.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
