@@ -1183,6 +1183,27 @@
   "path": "data/SDAH/152.json"
  },
  {
+  "id": "SDAH-153",
+  "book": "SDAH",
+  "number": "153",
+  "title": "Prince of Peace, Control My Will",
+  "path": "data/SDAH/153.json"
+ },
+ {
+  "id": "SDAH-154",
+  "book": "SDAH",
+  "number": "154",
+  "title": "When I Survey the Wondrous Cross",
+  "path": "data/SDAH/154.json"
+ },
+ {
+  "id": "SDAH-155",
+  "book": "SDAH",
+  "number": "155",
+  "title": "When I Survey the Wondrous Cross",
+  "path": "data/SDAH/155.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
