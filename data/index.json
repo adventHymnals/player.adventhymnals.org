@@ -3465,6 +3465,13 @@
   "path": "data/SDAH/433.json"
  },
  {
+  "id": "SDAH-434",
+  "book": "SDAH",
+  "number": "434",
+  "title": "We Speak of the Realms",
+  "path": "data/SDAH/434.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
@@ -5220,6 +5227,13 @@
   "number": "263",
   "title": "Ji Noyud Mor Ka Tich Orumo",
   "path": "data/WN/263.json"
+ },
+ {
+  "id": "WN-268",
+  "book": "WN",
+  "number": "268",
+  "title": "Wawinjo Mar Dala Maler",
+  "path": "data/WN/268.json"
  },
  {
   "id": "WN-283",
