@@ -2310,6 +2310,13 @@
   "path": "data/SDAH/293.json"
  },
  {
+  "id": "SDAH-294",
+  "book": "SDAH",
+  "number": "294",
+  "title": "Power in the Blood",
+  "path": "data/SDAH/294.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3834,6 +3841,13 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json"
+ },
+ {
+  "id": "WN-169",
+  "book": "WN",
+  "number": "169",
+  "title": "Yesu Luongi, We Ting'ni Mar Richo",
+  "path": "data/WN/169.json"
  },
  {
   "id": "WN-176",
