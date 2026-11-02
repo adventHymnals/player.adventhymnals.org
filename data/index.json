@@ -273,6 +273,13 @@
   "path": "data/NZK/92.json"
  },
  {
+  "id": "NZK-98",
+  "book": "NZK",
+  "number": "98",
+  "title": "Nilikupa Wewe",
+  "path": "data/NZK/98.json"
+ },
+ {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
@@ -2198,6 +2205,13 @@
   "path": "data/SDAH/280.json"
  },
  {
+  "id": "SDAH-281",
+  "book": "SDAH",
+  "number": "281",
+  "title": "I Gave My Life for Thee",
+  "path": "data/SDAH/281.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3694,6 +3708,13 @@
   "number": "134",
   "title": "Wang' Chieng Koro Podhonwa",
   "path": "data/WN/134.json"
+ },
+ {
+  "id": "WN-139",
+  "book": "WN",
+  "number": "139",
+  "title": "Ringra Namiyo In",
+  "path": "data/WN/139.json"
  },
  {
   "id": "WN-150",
