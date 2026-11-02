@@ -6552,6 +6552,13 @@
   "path": "data/WN/223.json"
  },
  {
+  "id": "WN-226",
+  "book": "WN",
+  "number": "226",
+  "title": "Yesu Kotaya Pile",
+  "path": "data/WN/226.json"
+ },
+ {
   "id": "WN-227",
   "book": "WN",
   "number": "227",
