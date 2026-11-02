@@ -371,6 +371,13 @@
   "path": "data/NZK/144.json"
  },
  {
+  "id": "NZK-145",
+  "book": "NZK",
+  "number": "145",
+  "title": "Namtaka Bwana Yesu",
+  "path": "data/NZK/145.json"
+ },
+ {
   "id": "NZK-147",
   "book": "NZK",
   "number": "147",
@@ -2611,6 +2618,13 @@
   "path": "data/SDAH/328.json"
  },
  {
+  "id": "SDAH-329",
+  "book": "SDAH",
+  "number": "329",
+  "title": "Take the World, but Give Me Jesus",
+  "path": "data/SDAH/329.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4198,6 +4212,13 @@
   "number": "205",
   "title": "An Ni Mari Ruoth",
   "path": "data/WN/205.json"
+ },
+ {
+  "id": "WN-206",
+  "book": "WN",
+  "number": "206",
+  "title": "Kaw Piny Duto Miya Yesu",
+  "path": "data/WN/206.json"
  },
  {
   "id": "WN-208",
