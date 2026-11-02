@@ -3332,6 +3332,13 @@
   "path": "data/SDAH/354.json"
  },
  {
+  "id": "SDAH-355",
+  "book": "SDAH",
+  "number": "355",
+  "title": "Where Cross the Crowded Ways of Life",
+  "path": "data/SDAH/355.json"
+ },
+ {
   "id": "SDAH-357",
   "book": "SDAH",
   "number": "357",
@@ -3825,7 +3832,7 @@
   "id": "SDAH-428",
   "book": "SDAH",
   "number": "428",
-  "title": "There's a Song in the Air",
+  "title": "Sweet By and By",
   "path": "data/SDAH/428.json"
  },
  {
@@ -4945,7 +4952,7 @@
   "id": "SDAH-590",
   "book": "SDAH",
   "number": "590",
-  "title": "Where Cross the Crowded Ways of Life",
+  "title": "Trust and Obey",
   "path": "data/SDAH/590.json"
  },
  {
