@@ -154,6 +154,13 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-10",
+  "book": "NZK",
+  "number": "10",
+  "title": "Kristo Wa Neema Zote",
+  "path": "data/NZK/10.json"
+ },
+ {
   "id": "NZK-23",
   "book": "NZK",
   "number": "23",
@@ -2667,6 +2674,13 @@
   "path": "data/SDAH/333.json"
  },
  {
+  "id": "SDAH-334",
+  "book": "SDAH",
+  "number": "334",
+  "title": "Come, Thou Fount of Every Blessing",
+  "path": "data/SDAH/334.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4051,6 +4065,13 @@
   "number": "9",
   "title": "Jachwechna gi Ruodha",
   "path": "data/WN/9.json"
+ },
+ {
+  "id": "WN-10",
+  "book": "WN",
+  "number": "10",
+  "title": "Kristo In Wuon Ng'wono Duto",
+  "path": "data/WN/10.json"
  },
  {
   "id": "WN-23",
