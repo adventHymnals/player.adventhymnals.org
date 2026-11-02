@@ -2086,6 +2086,20 @@
   "path": "data/SDAH/266.json"
  },
  {
+  "id": "SDAH-267",
+  "book": "SDAH",
+  "number": "267",
+  "title": "Spirit Divine",
+  "path": "data/SDAH/267.json"
+ },
+ {
+  "id": "SDAH-268",
+  "book": "SDAH",
+  "number": "268",
+  "title": "Holy Spirit, Light Divine",
+  "path": "data/SDAH/268.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
