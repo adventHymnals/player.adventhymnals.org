@@ -2877,6 +2877,13 @@
   "path": "data/SDAH/359.json"
  },
  {
+  "id": "SDAH-360",
+  "book": "SDAH",
+  "number": "360",
+  "title": "From the Eastern Mountains",
+  "path": "data/SDAH/360.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
