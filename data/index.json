@@ -1708,6 +1708,20 @@
   "path": "data/SDAH/218.json"
  },
  {
+  "id": "SDAH-219",
+  "book": "SDAH",
+  "number": "219",
+  "title": "When Jesus Comes in Glory",
+  "path": "data/SDAH/219.json"
+ },
+ {
+  "id": "SDAH-221",
+  "book": "SDAH",
+  "number": "221",
+  "title": "Rejoice, the Lord Is King",
+  "path": "data/SDAH/221.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
