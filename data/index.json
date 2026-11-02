@@ -511,6 +511,13 @@
   "path": "data/NZK/135.json"
  },
  {
+  "id": "NZK-136",
+  "book": "NZK",
+  "number": "136",
+  "title": "Niwe Kama Yesu",
+  "path": "data/NZK/136.json"
+ },
+ {
   "id": "NZK-139",
   "book": "NZK",
   "number": "139",
@@ -3918,6 +3925,20 @@
   "number": "490",
   "title": "Jesus, Lover of My Soul",
   "path": "data/SDAH/490.json"
+ },
+ {
+  "id": "SDAH-491",
+  "book": "SDAH",
+  "number": "491",
+  "title": "In the Hour of Trial",
+  "path": "data/SDAH/491.json"
+ },
+ {
+  "id": "SDAH-492",
+  "book": "SDAH",
+  "number": "492",
+  "title": "Like Jesus",
+  "path": "data/SDAH/492.json"
  },
  {
   "id": "SDAH-500",
