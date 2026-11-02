@@ -224,6 +224,13 @@
   "path": "data/CS1908/236.json"
  },
  {
+  "id": "CS1908-239",
+  "book": "CS1908",
+  "number": "239",
+  "title": "Bring Ye All the Tithes",
+  "path": "data/CS1908/239.json"
+ },
+ {
   "id": "CS1908-286",
   "book": "CS1908",
   "number": "286",
@@ -6417,6 +6424,13 @@
   "number": "136",
   "title": "Puothe Chiek E Pinje Duto",
   "path": "data/WN/136.json"
+ },
+ {
+  "id": "WN-137",
+  "book": "WN",
+  "number": "137",
+  "title": "Winji Weche Ma Nondiki",
+  "path": "data/WN/137.json"
  },
  {
   "id": "WN-139",
