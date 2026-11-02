@@ -378,6 +378,13 @@
   "path": "data/NZK/197.json"
  },
  {
+  "id": "NZK-212",
+  "book": "NZK",
+  "number": "212",
+  "title": "Mtazame Mwokozi",
+  "path": "data/NZK/212.json"
+ },
+ {
   "id": "SDAH-1",
   "book": "SDAH",
   "number": "1",
@@ -2273,6 +2280,13 @@
   "number": "289",
   "title": "The Savior Is Waiting",
   "path": "data/SDAH/289.json"
+ },
+ {
+  "id": "SDAH-290",
+  "book": "SDAH",
+  "number": "290",
+  "title": "Turn Your Eyes Upon Jesus",
+  "path": "data/SDAH/290.json"
  },
  {
   "id": "SDAH-422",
