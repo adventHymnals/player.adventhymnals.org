@@ -525,6 +525,13 @@
   "path": "data/NZK/130.json"
  },
  {
+  "id": "NZK-133",
+  "book": "NZK",
+  "number": "133",
+  "title": "Popote Na Yesu",
+  "path": "data/NZK/133.json"
+ },
+ {
   "id": "NZK-134",
   "book": "NZK",
   "number": "134",
@@ -5857,6 +5864,13 @@
   "number": "192",
   "title": "Tim Kinda Mar Lemo",
   "path": "data/WN/192.json"
+ },
+ {
+  "id": "WN-195",
+  "book": "WN",
+  "number": "195",
+  "title": "Ka Yesu Ni Koda",
+  "path": "data/WN/195.json"
  },
  {
   "id": "WN-205",
