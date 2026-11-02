@@ -1239,6 +1239,41 @@
   "path": "data/SDAH/160.json"
  },
  {
+  "id": "SDAH-161",
+  "book": "SDAH",
+  "number": "161",
+  "title": "Throned Upon the Awful Tree",
+  "path": "data/SDAH/161.json"
+ },
+ {
+  "id": "SDAH-162",
+  "book": "SDAH",
+  "number": "162",
+  "title": "Wondrous Love",
+  "path": "data/SDAH/162.json"
+ },
+ {
+  "id": "SDAH-163",
+  "book": "SDAH",
+  "number": "163",
+  "title": "At the Cross",
+  "path": "data/SDAH/163.json"
+ },
+ {
+  "id": "SDAH-164",
+  "book": "SDAH",
+  "number": "164",
+  "title": "There Is a Green Hill Far Away",
+  "path": "data/SDAH/164.json"
+ },
+ {
+  "id": "SDAH-165",
+  "book": "SDAH",
+  "number": "165",
+  "title": "Look, You Saints! the Sight Is Glorious",
+  "path": "data/SDAH/165.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
