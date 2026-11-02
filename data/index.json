@@ -525,6 +525,13 @@
   "path": "data/NZK/167.json"
  },
  {
+  "id": "NZK-171",
+  "book": "NZK",
+  "number": "171",
+  "title": "Hukumu",
+  "path": "data/NZK/171.json"
+ },
+ {
   "id": "NZK-175",
   "book": "NZK",
   "number": "175",
@@ -3318,6 +3325,13 @@
   "path": "data/SDAH/415.json"
  },
  {
+  "id": "SDAH-416",
+  "book": "SDAH",
+  "number": "416",
+  "title": "The Judgment Has Set",
+  "path": "data/SDAH/416.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -5052,6 +5066,13 @@
   "number": "238",
   "title": "Gouru Bu, Goyeuru Matek",
   "path": "data/WN/238.json"
+ },
+ {
+  "id": "WN-253",
+  "book": "WN",
+  "number": "253",
+  "title": "Koro Kawuono Ruodhwa Man E Polo",
+  "path": "data/WN/253.json"
  },
  {
   "id": "WN-283",
