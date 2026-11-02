@@ -371,6 +371,13 @@
   "path": "data/NZK/70.json"
  },
  {
+  "id": "NZK-76",
+  "book": "NZK",
+  "number": "76",
+  "title": "Mrithi Ufalme",
+  "path": "data/NZK/76.json"
+ },
+ {
   "id": "NZK-80",
   "book": "NZK",
   "number": "80",
@@ -698,6 +705,13 @@
   "number": "159",
   "title": "Anakuja Upesi",
   "path": "data/NZK/159.json"
+ },
+ {
+  "id": "NZK-160",
+  "book": "NZK",
+  "number": "160",
+  "title": "Watakatifu Kesheni",
+  "path": "data/NZK/160.json"
  },
  {
   "id": "NZK-161",
