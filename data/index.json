@@ -3752,6 +3752,13 @@
   "path": "data/SDAH/471.json"
  },
  {
+  "id": "SDAH-472",
+  "book": "SDAH",
+  "number": "472",
+  "title": "A Song of Heaven and Homeland",
+  "path": "data/SDAH/472.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
