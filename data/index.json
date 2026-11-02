@@ -308,6 +308,13 @@
   "path": "data/NZK/119.json"
  },
  {
+  "id": "NZK-121",
+  "book": "NZK",
+  "number": "121",
+  "title": "Katika Wenye Dhambi",
+  "path": "data/NZK/121.json"
+ },
+ {
   "id": "NZK-139",
   "book": "NZK",
   "number": "139",
@@ -2317,6 +2324,13 @@
   "path": "data/SDAH/294.json"
  },
  {
+  "id": "SDAH-295",
+  "book": "SDAH",
+  "number": "295",
+  "title": "Chief of Sinners",
+  "path": "data/SDAH/295.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3855,6 +3869,13 @@
   "number": "176",
   "title": "Nyasaye Noolnwa Gweth Polo",
   "path": "data/WN/176.json"
+ },
+ {
+  "id": "WN-184",
+  "book": "WN",
+  "number": "184",
+  "title": "Kat' Abed Jaketh Maduong'",
+  "path": "data/WN/184.json"
  },
  {
   "id": "WN-227",
