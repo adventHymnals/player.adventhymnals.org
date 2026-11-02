@@ -147,6 +147,13 @@
   "path": "data/CS1908/93.json"
  },
  {
+  "id": "CS1908-286",
+  "book": "CS1908",
+  "number": "286",
+  "title": "More Like Jesus",
+  "path": "data/CS1908/286.json"
+ },
+ {
   "id": "CS1908-399",
   "book": "CS1908",
   "number": "399",
@@ -5950,6 +5957,13 @@
   "path": "data/WN/10.json"
  },
  {
+  "id": "WN-21",
+  "book": "WN",
+  "number": "21",
+  "title": "Adwaro Ket Kod Yesu",
+  "path": "data/WN/21.json"
+ },
+ {
   "id": "WN-23",
   "book": "WN",
   "number": "23",
@@ -6543,6 +6557,13 @@
   "number": "311",
   "title": "Ruoth Nyasacha",
   "path": "data/WN/311.json"
+ },
+ {
+  "id": "WN-315",
+  "book": "WN",
+  "number": "315",
+  "title": "In Koso An?",
+  "path": "data/WN/315.json"
  },
  {
   "id": "WN-316",
