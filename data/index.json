@@ -245,6 +245,13 @@
   "path": "data/NZK/40.json"
  },
  {
+  "id": "NZK-43",
+  "book": "NZK",
+  "number": "43",
+  "title": "Furaha Gani!",
+  "path": "data/NZK/43.json"
+ },
+ {
   "id": "NZK-47",
   "book": "NZK",
   "number": "47",
@@ -3731,6 +3738,13 @@
   "path": "data/SDAH/468.json"
  },
  {
+  "id": "SDAH-469",
+  "book": "SDAH",
+  "number": "469",
+  "title": "Leaning on the Everlasting Arms",
+  "path": "data/SDAH/469.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
@@ -5192,6 +5206,13 @@
   "number": "57",
   "title": "Roho Mar Nyasaye Ibina",
   "path": "data/WN/57.json"
+ },
+ {
+  "id": "WN-61",
+  "book": "WN",
+  "number": "61",
+  "title": "Osiep Manade En Mor Manade",
+  "path": "data/WN/61.json"
  },
  {
   "id": "WN-66",
