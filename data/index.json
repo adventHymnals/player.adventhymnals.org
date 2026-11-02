@@ -3815,6 +3815,20 @@
   "path": "data/SDAH/478.json"
  },
  {
+  "id": "SDAH-479",
+  "book": "SDAH",
+  "number": "479",
+  "title": "Tread Softly",
+  "path": "data/SDAH/479.json"
+ },
+ {
+  "id": "SDAH-480",
+  "book": "SDAH",
+  "number": "480",
+  "title": "Dear Lord and Father",
+  "path": "data/SDAH/480.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
