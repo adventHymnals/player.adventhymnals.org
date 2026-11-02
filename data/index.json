@@ -3787,6 +3787,20 @@
   "path": "data/SDAH/475.json"
  },
  {
+  "id": "SDAH-476",
+  "book": "SDAH",
+  "number": "476",
+  "title": "Burdens Are Lifted at Calvary",
+  "path": "data/SDAH/476.json"
+ },
+ {
+  "id": "SDAH-477",
+  "book": "SDAH",
+  "number": "477",
+  "title": "Come, Ye Disconsolate",
+  "path": "data/SDAH/477.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
