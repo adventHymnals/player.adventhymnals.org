@@ -2016,6 +2016,20 @@
   "path": "data/SDAH/258.json"
  },
  {
+  "id": "SDAH-259",
+  "book": "SDAH",
+  "number": "259",
+  "title": "Draw Us in the Spirit's Tether",
+  "path": "data/SDAH/259.json"
+ },
+ {
+  "id": "SDAH-260",
+  "book": "SDAH",
+  "number": "260",
+  "title": "Hover O'er Me, Holy Spirit",
+  "path": "data/SDAH/260.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
