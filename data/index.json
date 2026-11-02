@@ -336,6 +336,13 @@
   "path": "data/NZK/103.json"
  },
  {
+  "id": "NZK-107",
+  "book": "NZK",
+  "number": "107",
+  "title": "Sauti Ni Yake Bwana",
+  "path": "data/NZK/107.json"
+ },
+ {
   "id": "NZK-108",
   "book": "NZK",
   "number": "108",
@@ -2863,6 +2870,13 @@
   "path": "data/SDAH/358.json"
  },
  {
+  "id": "SDAH-359",
+  "book": "SDAH",
+  "number": "359",
+  "title": "Hark! the Voice of Jesus Calling",
+  "path": "data/SDAH/359.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4422,6 +4436,13 @@
   "number": "143",
   "title": "Yesu Oluongowa Koro",
   "path": "data/WN/143.json"
+ },
+ {
+  "id": "WN-146",
+  "book": "WN",
+  "number": "146",
+  "title": "Winji Dwond Yesu Kawuono",
+  "path": "data/WN/146.json"
  },
  {
   "id": "WN-147",
