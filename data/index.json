@@ -259,6 +259,13 @@
   "path": "data/CS1908/573.json"
  },
  {
+  "id": "CS1908-581",
+  "book": "CS1908",
+  "number": "581",
+  "title": "Angry Words! Oh, Let Them Never",
+  "path": "data/CS1908/581.json"
+ },
+ {
   "id": "CS1908-598",
   "book": "CS1908",
   "number": "598",
@@ -943,6 +950,13 @@
   "number": "147",
   "title": "Uishi Ndani Yangu",
   "path": "data/NZK/147.json"
+ },
+ {
+  "id": "NZK-150",
+  "book": "NZK",
+  "number": "150",
+  "title": "Hacha, Maneno Mabaya",
+  "path": "data/NZK/150.json"
  },
  {
   "id": "NZK-151",
@@ -6564,6 +6578,13 @@
   "number": "218",
   "title": "Yesu An Adwaro",
   "path": "data/WN/218.json"
+ },
+ {
+  "id": "WN-219",
+  "book": "WN",
+  "number": "219",
+  "title": "Weche Mag Mirima",
+  "path": "data/WN/219.json"
  },
  {
   "id": "WN-220",
