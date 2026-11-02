@@ -301,6 +301,13 @@
   "path": "data/CS1908/632.json"
  },
  {
+  "id": "CS1908-811",
+  "book": "CS1908",
+  "number": "811",
+  "title": "Walk in the Light",
+  "path": "data/CS1908/811.json"
+ },
+ {
   "id": "CS1908-846",
   "book": "CS1908",
   "number": "846",
