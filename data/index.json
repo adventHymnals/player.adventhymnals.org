@@ -1309,6 +1309,41 @@
   "path": "data/SDAH/170.json"
  },
  {
+  "id": "SDAH-171",
+  "book": "SDAH",
+  "number": "171",
+  "title": "Thine Is the Glory",
+  "path": "data/SDAH/171.json"
+ },
+ {
+  "id": "SDAH-172",
+  "book": "SDAH",
+  "number": "172",
+  "title": "The Strife Is O'er",
+  "path": "data/SDAH/172.json"
+ },
+ {
+  "id": "SDAH-173",
+  "book": "SDAH",
+  "number": "173",
+  "title": "Good Christian Friends, Rejoice!",
+  "path": "data/SDAH/173.json"
+ },
+ {
+  "id": "SDAH-174",
+  "book": "SDAH",
+  "number": "174",
+  "title": "Star of Our Hope",
+  "path": "data/SDAH/174.json"
+ },
+ {
+  "id": "SDAH-175",
+  "book": "SDAH",
+  "number": "175",
+  "title": "Now the Green Blade Rises",
+  "path": "data/SDAH/175.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
