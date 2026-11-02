@@ -140,6 +140,13 @@
   "path": "data/CS1908/93.json"
  },
  {
+  "id": "CS1908-399",
+  "book": "CS1908",
+  "number": "399",
+  "title": "Happy Day",
+  "path": "data/CS1908/399.json"
+ },
+ {
   "id": "CS1908-515",
   "book": "CS1908",
   "number": "515",
@@ -285,6 +292,13 @@
   "number": "35",
   "title": "Nimekombolewa Na Yesu",
   "path": "data/NZK/35.json"
+ },
+ {
+  "id": "NZK-36",
+  "book": "NZK",
+  "number": "36",
+  "title": "Siku Kuu",
+  "path": "data/NZK/36.json"
  },
  {
   "id": "NZK-37",
