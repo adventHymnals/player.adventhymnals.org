@@ -147,6 +147,13 @@
   "path": "data/NZK/9.json"
  },
  {
+  "id": "NZK-25",
+  "book": "NZK",
+  "number": "25",
+  "title": "Taji Mvikeni",
+  "path": "data/NZK/25.json"
+ },
+ {
   "id": "NZK-26",
   "book": "NZK",
   "number": "26",
@@ -1720,6 +1727,20 @@
   "number": "221",
   "title": "Rejoice, the Lord Is King",
   "path": "data/SDAH/221.json"
+ },
+ {
+  "id": "SDAH-222",
+  "book": "SDAH",
+  "number": "222",
+  "title": "Hark! Ten Thousand Harps and Voices",
+  "path": "data/SDAH/222.json"
+ },
+ {
+  "id": "SDAH-223",
+  "book": "SDAH",
+  "number": "223",
+  "title": "Crown Him With Many Crowns",
+  "path": "data/SDAH/223.json"
  },
  {
   "id": "SDAH-422",
