@@ -147,6 +147,13 @@
   "path": "data/CS1908/93.json"
  },
  {
+  "id": "CS1908-174",
+  "book": "CS1908",
+  "number": "174",
+  "title": "Even Me",
+  "path": "data/CS1908/174.json"
+ },
+ {
   "id": "CS1908-286",
   "book": "CS1908",
   "number": "286",
@@ -6081,6 +6088,13 @@
   "number": "55",
   "title": "Awero Teko mar Nyasaye",
   "path": "data/WN/55.json"
+ },
+ {
+  "id": "WN-56",
+  "book": "WN",
+  "number": "56",
+  "title": "Ruoth Awinjo Wach Mar Gwethni",
+  "path": "data/WN/56.json"
  },
  {
   "id": "WN-57",
