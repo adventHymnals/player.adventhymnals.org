@@ -2408,6 +2408,13 @@
   "path": "data/SDAH/304.json"
  },
  {
+  "id": "SDAH-305",
+  "book": "SDAH",
+  "number": "305",
+  "title": "Give Me Jesus",
+  "path": "data/SDAH/305.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
