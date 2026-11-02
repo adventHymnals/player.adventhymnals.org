@@ -1918,6 +1918,20 @@
   "path": "data/SDAH/247.json"
  },
  {
+  "id": "SDAH-248",
+  "book": "SDAH",
+  "number": "248",
+  "title": "O, How I Love Jesus",
+  "path": "data/SDAH/248.json"
+ },
+ {
+  "id": "SDAH-249",
+  "book": "SDAH",
+  "number": "249",
+  "title": "Praise Him! Praise Him!",
+  "path": "data/SDAH/249.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
