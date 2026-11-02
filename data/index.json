@@ -2548,6 +2548,13 @@
   "path": "data/SDAH/319.json"
  },
  {
+  "id": "SDAH-320",
+  "book": "SDAH",
+  "number": "320",
+  "title": "Lord of Creation",
+  "path": "data/SDAH/320.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
