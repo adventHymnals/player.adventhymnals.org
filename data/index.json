@@ -357,6 +357,13 @@
   "path": "data/NZK/144.json"
  },
  {
+  "id": "NZK-147",
+  "book": "NZK",
+  "number": "147",
+  "title": "Uishi Ndani Yangu",
+  "path": "data/NZK/147.json"
+ },
+ {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
@@ -2506,6 +2513,13 @@
   "path": "data/SDAH/315.json"
  },
  {
+  "id": "SDAH-316",
+  "book": "SDAH",
+  "number": "316",
+  "title": "Live Out Thy Life Within Me",
+  "path": "data/SDAH/316.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4079,6 +4093,13 @@
   "number": "205",
   "title": "An Ni Mari Ruoth",
   "path": "data/WN/205.json"
+ },
+ {
+  "id": "WN-208",
+  "book": "WN",
+  "number": "208",
+  "title": "Bedi Mangima Kuoma",
+  "path": "data/WN/208.json"
  },
  {
   "id": "WN-212",
