@@ -308,6 +308,13 @@
   "path": "data/NZK/92.json"
  },
  {
+  "id": "NZK-94",
+  "book": "NZK",
+  "number": "94",
+  "title": "Po Pote Mashamba Yajaa",
+  "path": "data/NZK/94.json"
+ },
+ {
   "id": "NZK-98",
   "book": "NZK",
   "number": "98",
@@ -2849,6 +2856,13 @@
   "path": "data/SDAH/357.json"
  },
  {
+  "id": "SDAH-358",
+  "book": "SDAH",
+  "number": "358",
+  "title": "Far and Near the Fields Are Teeming",
+  "path": "data/SDAH/358.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4387,6 +4401,13 @@
   "number": "134",
   "title": "Wang' Chieng Koro Podhonwa",
   "path": "data/WN/134.json"
+ },
+ {
+  "id": "WN-136",
+  "book": "WN",
+  "number": "136",
+  "title": "Puothe Chiek E Pinje Duto",
+  "path": "data/WN/136.json"
  },
  {
   "id": "WN-139",
