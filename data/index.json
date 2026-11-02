@@ -301,6 +301,13 @@
   "path": "data/NZK/111.json"
  },
  {
+  "id": "NZK-115",
+  "book": "NZK",
+  "number": "115",
+  "title": "Naendea Msalaba",
+  "path": "data/NZK/115.json"
+ },
+ {
   "id": "NZK-119",
   "book": "NZK",
   "number": "119",
@@ -2429,6 +2436,13 @@
   "path": "data/SDAH/306.json"
  },
  {
+  "id": "SDAH-307",
+  "book": "SDAH",
+  "number": "307",
+  "title": "I Am Coming to the Cross",
+  "path": "data/SDAH/307.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3946,6 +3960,13 @@
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
   "path": "data/WN/150.json"
+ },
+ {
+  "id": "WN-162",
+  "book": "WN",
+  "number": "162",
+  "title": "Abiro Ni Msalaba",
+  "path": "data/WN/162.json"
  },
  {
   "id": "WN-166",
