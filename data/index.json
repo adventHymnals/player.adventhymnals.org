@@ -287,6 +287,13 @@
   "path": "data/NZK/56.json"
  },
  {
+  "id": "NZK-64",
+  "book": "NZK",
+  "number": "64",
+  "title": "Piga Panda Ya Injili",
+  "path": "data/NZK/64.json"
+ },
+ {
   "id": "NZK-80",
   "book": "NZK",
   "number": "80",
@@ -2940,6 +2947,13 @@
   "path": "data/SDAH/367.json"
  },
  {
+  "id": "SDAH-368",
+  "book": "SDAH",
+  "number": "368",
+  "title": "Watchman, Blow the Gospel Trumpet",
+  "path": "data/SDAH/368.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4471,6 +4485,13 @@
   "number": "87",
   "title": "Jokeyo Ni Kanye",
   "path": "data/WN/87.json"
+ },
+ {
+  "id": "WN-95",
+  "book": "WN",
+  "number": "95",
+  "title": "Jarit Go Tung' Mar Injili",
+  "path": "data/WN/95.json"
  },
  {
   "id": "WN-111",
