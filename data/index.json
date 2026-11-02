@@ -3402,6 +3402,13 @@
   "path": "data/SDAH/425.json"
  },
  {
+  "id": "SDAH-426",
+  "book": "SDAH",
+  "number": "426",
+  "title": "I Shall See the King",
+  "path": "data/SDAH/426.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
