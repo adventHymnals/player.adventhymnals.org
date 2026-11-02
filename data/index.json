@@ -315,6 +315,13 @@
   "path": "data/NZK/82.json"
  },
  {
+  "id": "NZK-84",
+  "book": "NZK",
+  "number": "84",
+  "title": "Ikumbuke Sabato",
+  "path": "data/NZK/84.json"
+ },
+ {
   "id": "NZK-85",
   "book": "NZK",
   "number": "85",
@@ -3106,6 +3113,13 @@
   "number": "387",
   "title": "Come, O Sabbath Day",
   "path": "data/SDAH/387.json"
+ },
+ {
+  "id": "SDAH-388",
+  "book": "SDAH",
+  "number": "388",
+  "title": "Don't Forget the Sabbath",
+  "path": "data/SDAH/388.json"
  },
  {
   "id": "SDAH-422",
