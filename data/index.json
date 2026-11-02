@@ -3332,6 +3332,13 @@
   "path": "data/SDAH/416.json"
  },
  {
+  "id": "SDAH-417",
+  "book": "SDAH",
+  "number": "417",
+  "title": "O Solemn Thought",
+  "path": "data/SDAH/417.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
