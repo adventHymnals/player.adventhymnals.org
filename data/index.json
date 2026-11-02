@@ -1204,6 +1204,41 @@
   "path": "data/SDAH/155.json"
  },
  {
+  "id": "SDAH-156",
+  "book": "SDAH",
+  "number": "156",
+  "title": "O Sacred Head Now Wounded",
+  "path": "data/SDAH/156.json"
+ },
+ {
+  "id": "SDAH-157",
+  "book": "SDAH",
+  "number": "157",
+  "title": "Go to Dark Gethsemane",
+  "path": "data/SDAH/157.json"
+ },
+ {
+  "id": "SDAH-158",
+  "book": "SDAH",
+  "number": "158",
+  "title": "Were You There?",
+  "path": "data/SDAH/158.json"
+ },
+ {
+  "id": "SDAH-159",
+  "book": "SDAH",
+  "number": "159",
+  "title": "The Old Rugged Cross",
+  "path": "data/SDAH/159.json"
+ },
+ {
+  "id": "SDAH-160",
+  "book": "SDAH",
+  "number": "160",
+  "title": "Ride On in Majesty",
+  "path": "data/SDAH/160.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
