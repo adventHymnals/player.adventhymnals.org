@@ -133,6 +133,13 @@
   "path": "data/NZK/1.json"
  },
  {
+  "id": "NZK-4",
+  "book": "NZK",
+  "number": "4",
+  "title": "Jina La Yesu Salamu",
+  "path": "data/NZK/4.json"
+ },
+ {
   "id": "NZK-5",
   "book": "NZK",
   "number": "5",
@@ -1757,6 +1764,20 @@
   "path": "data/SDAH/226.json"
  },
  {
+  "id": "SDAH-227",
+  "book": "SDAH",
+  "number": "227",
+  "title": "Jesus Shall Reign",
+  "path": "data/SDAH/227.json"
+ },
+ {
+  "id": "SDAH-229",
+  "book": "SDAH",
+  "number": "229",
+  "title": "All Hail the Power of Jesus' Name",
+  "path": "data/SDAH/229.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3120,6 +3141,13 @@
   "number": "695",
   "title": "Praise God, From Whom All Blessings",
   "path": "data/SDAH/695.json"
+ },
+ {
+  "id": "WN-4",
+  "book": "WN",
+  "number": "4",
+  "title": "Nying Yesu Mondo Yudi Pak",
+  "path": "data/WN/4.json"
  },
  {
   "id": "WN-5",
