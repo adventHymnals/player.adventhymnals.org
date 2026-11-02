@@ -266,6 +266,13 @@
   "path": "data/NZK/50.json"
  },
  {
+  "id": "NZK-51",
+  "book": "NZK",
+  "number": "51",
+  "title": "Kuwa Na Yesu Mwokozi",
+  "path": "data/NZK/51.json"
+ },
+ {
   "id": "NZK-52",
   "book": "NZK",
   "number": "52",
@@ -3673,6 +3680,20 @@
   "number": "460",
   "title": "As Water to the Thirsty",
   "path": "data/SDAH/460.json"
+ },
+ {
+  "id": "SDAH-461",
+  "book": "SDAH",
+  "number": "461",
+  "title": "Be Still, My Soul",
+  "path": "data/SDAH/461.json"
+ },
+ {
+  "id": "SDAH-462",
+  "book": "SDAH",
+  "number": "462",
+  "title": "Blessed Assurance, Jesus Is Mine!",
+  "path": "data/SDAH/462.json"
  },
  {
   "id": "SDAH-500",
