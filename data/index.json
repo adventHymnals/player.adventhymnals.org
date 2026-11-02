@@ -259,6 +259,13 @@
   "path": "data/NZK/175.json"
  },
  {
+  "id": "NZK-196",
+  "book": "NZK",
+  "number": "196",
+  "title": "Vito Vya Thamani",
+  "path": "data/NZK/196.json"
+ },
+ {
   "id": "NZK-197",
   "book": "NZK",
   "number": "197",
@@ -1685,6 +1692,20 @@
   "number": "216",
   "title": "When the Roll Is Called Up Yonder",
   "path": "data/SDAH/216.json"
+ },
+ {
+  "id": "SDAH-217",
+  "book": "SDAH",
+  "number": "217",
+  "title": "The Church Has Waited Long",
+  "path": "data/SDAH/217.json"
+ },
+ {
+  "id": "SDAH-218",
+  "book": "SDAH",
+  "number": "218",
+  "title": "When He Cometh",
+  "path": "data/SDAH/218.json"
  },
  {
   "id": "SDAH-422",
@@ -3169,6 +3190,13 @@
   "number": "301",
   "title": "Yesu 'Hera Ang'eyo",
   "path": "data/WN/301.json"
+ },
+ {
+  "id": "WN-302",
+  "book": "WN",
+  "number": "302",
+  "title": "Yesu 'Biro",
+  "path": "data/WN/302.json"
  },
  {
   "id": "WN-311",
