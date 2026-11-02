@@ -5838,6 +5838,13 @@
   "path": "data/WN/26.json"
  },
  {
+  "id": "WN-29",
+  "book": "WN",
+  "number": "29",
+  "title": "Yesu Jakwath Moheroa",
+  "path": "data/WN/29.json"
+ },
+ {
   "id": "WN-33",
   "book": "WN",
   "number": "33",
@@ -6139,6 +6146,13 @@
   "path": "data/WN/169.json"
  },
  {
+  "id": "WN-175",
+  "book": "WN",
+  "number": "175",
+  "title": "Geno Kristo Kelonwa Mor",
+  "path": "data/WN/175.json"
+ },
+ {
   "id": "WN-176",
   "book": "WN",
   "number": "176",
@@ -6333,6 +6347,13 @@
   "number": "286",
   "title": "Winjuru Tinde Dwond Jakwath",
   "path": "data/WN/286.json"
+ },
+ {
+  "id": "WN-291",
+  "book": "WN",
+  "number": "291",
+  "title": "An Ayie Ruoth Yesu Koro",
+  "path": "data/WN/291.json"
  },
  {
   "id": "WN-301",
