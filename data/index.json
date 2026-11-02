@@ -3829,6 +3829,20 @@
   "path": "data/SDAH/480.json"
  },
  {
+  "id": "SDAH-481",
+  "book": "SDAH",
+  "number": "481",
+  "title": "Dear Lord and Father",
+  "path": "data/SDAH/481.json"
+ },
+ {
+  "id": "SDAH-482",
+  "book": "SDAH",
+  "number": "482",
+  "title": "Father, Lead Me Day by Day",
+  "path": "data/SDAH/482.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
