@@ -210,6 +210,13 @@
   "path": "data/NZK/38.json"
  },
  {
+  "id": "NZK-40",
+  "book": "NZK",
+  "number": "40",
+  "title": "Nijaze Sasa",
+  "path": "data/NZK/40.json"
+ },
+ {
   "id": "NZK-49",
   "book": "NZK",
   "number": "49",
@@ -3463,6 +3470,13 @@
   "number": "55",
   "title": "Awero Teko mar Nyasaye",
   "path": "data/WN/55.json"
+ },
+ {
+  "id": "WN-57",
+  "book": "WN",
+  "number": "57",
+  "title": "Roho Mar Nyasaye Ibina",
+  "path": "data/WN/57.json"
  },
  {
   "id": "WN-66",
