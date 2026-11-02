@@ -3129,6 +3129,13 @@
   "path": "data/SDAH/389.json"
  },
  {
+  "id": "SDAH-390",
+  "book": "SDAH",
+  "number": "390",
+  "title": "We Love Thy Sabbath, Lord",
+  "path": "data/SDAH/390.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4681,6 +4688,13 @@
   "number": "111",
   "title": "Wakwayi, Ruoth, Kuom Tekoni",
   "path": "data/WN/111.json"
+ },
+ {
+  "id": "WN-119",
+  "book": "WN",
+  "number": "119",
+  "title": "Sabato Mari, Ruoth",
+  "path": "data/WN/119.json"
  },
  {
   "id": "WN-133",
