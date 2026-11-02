@@ -504,6 +504,13 @@
   "path": "data/NZK/126.json"
  },
  {
+  "id": "NZK-130",
+  "book": "NZK",
+  "number": "130",
+  "title": "Yesu Kwetu Ni Rafiki",
+  "path": "data/NZK/130.json"
+ },
+ {
   "id": "NZK-135",
   "book": "NZK",
   "number": "135",
@@ -3962,6 +3969,20 @@
   "path": "data/SDAH/497.json"
  },
  {
+  "id": "SDAH-498",
+  "book": "SDAH",
+  "number": "498",
+  "title": "Still, Still With Thee",
+  "path": "data/SDAH/498.json"
+ },
+ {
+  "id": "SDAH-499",
+  "book": "SDAH",
+  "number": "499",
+  "title": "What a Friend We Have in Jesus",
+  "path": "data/SDAH/499.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
@@ -5654,6 +5675,13 @@
   "number": "184",
   "title": "Kat' Abed Jaketh Maduong'",
   "path": "data/WN/184.json"
+ },
+ {
+  "id": "WN-189",
+  "book": "WN",
+  "number": "189",
+  "title": "Yesu Kristo En Osiepwa",
+  "path": "data/WN/189.json"
  },
  {
   "id": "WN-205",
