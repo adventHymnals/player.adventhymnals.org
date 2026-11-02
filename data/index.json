@@ -154,6 +154,13 @@
   "path": "data/NZK/26.json"
  },
  {
+  "id": "NZK-31",
+  "book": "NZK",
+  "number": "31",
+  "title": "Niimbe Pendo Lake",
+  "path": "data/NZK/31.json"
+ },
+ {
   "id": "NZK-34",
   "book": "NZK",
   "number": "34",
@@ -1377,6 +1384,27 @@
   "number": "180",
   "title": "O Listen to Our Wondrous Story",
   "path": "data/SDAH/180.json"
+ },
+ {
+  "id": "SDAH-181",
+  "book": "SDAH",
+  "number": "181",
+  "title": "Does Jesus Care?",
+  "path": "data/SDAH/181.json"
+ },
+ {
+  "id": "SDAH-182",
+  "book": "SDAH",
+  "number": "182",
+  "title": "Christ Is Alive",
+  "path": "data/SDAH/182.json"
+ },
+ {
+  "id": "SDAH-183",
+  "book": "SDAH",
+  "number": "183",
+  "title": "I Will Sing of Jesus' Love",
+  "path": "data/SDAH/183.json"
  },
  {
   "id": "SDAH-184",
@@ -2772,6 +2800,13 @@
   "path": "data/WN/33.json"
  },
  {
+  "id": "WN-38",
+  "book": "WN",
+  "number": "38",
+  "title": "Anawer Hera Yesu",
+  "path": "data/WN/38.json"
+ },
+ {
   "id": "WN-43",
   "book": "WN",
   "number": "43",
@@ -2812,6 +2847,13 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json"
+ },
+ {
+  "id": "WN-227",
+  "book": "WN",
+  "number": "227",
+  "title": "Be Yesu Ling",
+  "path": "data/WN/227.json"
  },
  {
   "id": "WN-311",
