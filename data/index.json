@@ -490,6 +490,13 @@
   "path": "data/NZK/192.json"
  },
  {
+  "id": "NZK-195",
+  "book": "NZK",
+  "number": "195",
+  "title": "Msingi Wa Kanisa",
+  "path": "data/NZK/195.json"
+ },
+ {
   "id": "NZK-196",
   "book": "NZK",
   "number": "196",
@@ -2791,6 +2798,13 @@
   "number": "347",
   "title": "Built on the Rock",
   "path": "data/SDAH/347.json"
+ },
+ {
+  "id": "SDAH-348",
+  "book": "SDAH",
+  "number": "348",
+  "title": "The Church Has One Foundation",
+  "path": "data/SDAH/348.json"
  },
  {
   "id": "SDAH-422",
