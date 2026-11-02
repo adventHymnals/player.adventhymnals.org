@@ -224,6 +224,13 @@
   "path": "data/NZK/50.json"
  },
  {
+  "id": "NZK-54",
+  "book": "NZK",
+  "number": "54",
+  "title": "Nataka Nimjue Yesu",
+  "path": "data/NZK/54.json"
+ },
+ {
   "id": "NZK-89",
   "book": "NZK",
   "number": "89",
@@ -1883,6 +1890,20 @@
   "path": "data/SDAH/243.json"
  },
  {
+  "id": "SDAH-244",
+  "book": "SDAH",
+  "number": "244",
+  "title": "My Song Shall Be of Jesus",
+  "path": "data/SDAH/244.json"
+ },
+ {
+  "id": "SDAH-245",
+  "book": "SDAH",
+  "number": "245",
+  "title": "More About Jesus",
+  "path": "data/SDAH/245.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3330,6 +3351,13 @@
   "number": "69",
   "title": "Puonja Injili Lilo",
   "path": "data/WN/69.json"
+ },
+ {
+  "id": "WN-75",
+  "book": "WN",
+  "number": "75",
+  "title": "Adwaro Ngeyo Wach Yesu",
+  "path": "data/WN/75.json"
  },
  {
   "id": "WN-133",
