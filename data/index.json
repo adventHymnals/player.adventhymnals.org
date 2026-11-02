@@ -161,6 +161,13 @@
   "path": "data/CS1908/515.json"
  },
  {
+  "id": "CS1908-573",
+  "book": "CS1908",
+  "number": "573",
+  "title": "Hear the Pennies Dropping",
+  "path": "data/CS1908/573.json"
+ },
+ {
   "id": "CS1908-632",
   "book": "CS1908",
   "number": "632",
@@ -1013,6 +1020,13 @@
   "number": "199",
   "title": "Upendo Ni Furaha",
   "path": "data/NZK/199.json"
+ },
+ {
+  "id": "NZK-202",
+  "book": "NZK",
+  "number": "202",
+  "title": "Sikia Mlio",
+  "path": "data/NZK/202.json"
  },
  {
   "id": "NZK-212",
