@@ -518,6 +518,13 @@
   "path": "data/NZK/141.json"
  },
  {
+  "id": "NZK-143",
+  "book": "NZK",
+  "number": "143",
+  "title": "Naamini",
+  "path": "data/NZK/143.json"
+ },
+ {
   "id": "NZK-144",
   "book": "NZK",
   "number": "144",
@@ -3869,6 +3876,13 @@
   "number": "485",
   "title": "I Must Tell Jesus",
   "path": "data/SDAH/485.json"
+ },
+ {
+  "id": "SDAH-486",
+  "book": "SDAH",
+  "number": "486",
+  "title": "I Do Believe",
+  "path": "data/SDAH/486.json"
  },
  {
   "id": "SDAH-500",
