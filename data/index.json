@@ -329,6 +329,13 @@
   "path": "data/NZK/141.json"
  },
  {
+  "id": "NZK-144",
+  "book": "NZK",
+  "number": "144",
+  "title": "Ni Wako Bwana",
+  "path": "data/NZK/144.json"
+ },
+ {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
@@ -2415,6 +2422,13 @@
   "path": "data/SDAH/305.json"
  },
  {
+  "id": "SDAH-306",
+  "book": "SDAH",
+  "number": "306",
+  "title": "Draw Me Nearer",
+  "path": "data/SDAH/306.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3960,6 +3974,13 @@
   "number": "184",
   "title": "Kat' Abed Jaketh Maduong'",
   "path": "data/WN/184.json"
+ },
+ {
+  "id": "WN-205",
+  "book": "WN",
+  "number": "205",
+  "title": "An Ni Mari Ruoth",
+  "path": "data/WN/205.json"
  },
  {
   "id": "WN-227",
