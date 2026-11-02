@@ -154,6 +154,13 @@
   "path": "data/CS1908/286.json"
  },
  {
+  "id": "CS1908-300",
+  "book": "CS1908",
+  "number": "300",
+  "title": "Glory to His Name",
+  "path": "data/CS1908/300.json"
+ },
+ {
   "id": "CS1908-399",
   "book": "CS1908",
   "number": "399",
@@ -271,6 +278,13 @@
   "number": "18",
   "title": "Mwokozi, Kama Mchunga",
   "path": "data/NZK/18.json"
+ },
+ {
+  "id": "NZK-19",
+  "book": "NZK",
+  "number": "19",
+  "title": "Msalabani Pa Mwokozi",
+  "path": "data/NZK/19.json"
  },
  {
   "id": "NZK-20",
@@ -5969,6 +5983,13 @@
   "number": "10",
   "title": "Kristo In Wuon Ng'wono Duto",
   "path": "data/WN/10.json"
+ },
+ {
+  "id": "WN-19",
+  "book": "WN",
+  "number": "19",
+  "title": "Kama Yesu Chon Notho E Yath",
+  "path": "data/WN/19.json"
  },
  {
   "id": "WN-21",
