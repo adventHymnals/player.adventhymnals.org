@@ -1785,6 +1785,20 @@
   "path": "data/SDAH/230.json"
  },
  {
+  "id": "SDAH-232",
+  "book": "SDAH",
+  "number": "232",
+  "title": "At the Name of Jesus",
+  "path": "data/SDAH/232.json"
+ },
+ {
+  "id": "SDAH-233",
+  "book": "SDAH",
+  "number": "233",
+  "title": "Christ, Whose Glory Fills the Skies",
+  "path": "data/SDAH/233.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
