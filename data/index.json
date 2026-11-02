@@ -3094,6 +3094,13 @@
   "path": "data/SDAH/385.json"
  },
  {
+  "id": "SDAH-386",
+  "book": "SDAH",
+  "number": "386",
+  "title": "The Sacred Anthem",
+  "path": "data/SDAH/386.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
