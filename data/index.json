@@ -168,6 +168,13 @@
   "path": "data/NZK/10.json"
  },
  {
+  "id": "NZK-20",
+  "book": "NZK",
+  "number": "20",
+  "title": "Mungu Wetu Yeye Mwamba",
+  "path": "data/NZK/20.json"
+ },
+ {
   "id": "NZK-23",
   "book": "NZK",
   "number": "23",
@@ -530,6 +537,13 @@
   "number": "126",
   "title": "Nina Haja Nawe",
   "path": "data/NZK/126.json"
+ },
+ {
+  "id": "NZK-129",
+  "book": "NZK",
+  "number": "129",
+  "title": "Kumtegemea Mwokozi",
+  "path": "data/NZK/129.json"
  },
  {
   "id": "NZK-130",
