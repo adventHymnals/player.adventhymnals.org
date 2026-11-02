@@ -504,6 +504,13 @@
   "path": "data/NZK/147.json"
  },
  {
+  "id": "NZK-158",
+  "book": "NZK",
+  "number": "158",
+  "title": "U Mwendo Gani Nyumbani?",
+  "path": "data/NZK/158.json"
+ },
+ {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
@@ -3500,6 +3507,13 @@
   "path": "data/SDAH/438.json"
  },
  {
+  "id": "SDAH-439",
+  "book": "SDAH",
+  "number": "439",
+  "title": "How Far From Home?",
+  "path": "data/SDAH/439.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
@@ -5227,6 +5241,13 @@
   "number": "227",
   "title": "Be Yesu Ling",
   "path": "data/WN/227.json"
+ },
+ {
+  "id": "WN-235",
+  "book": "WN",
+  "number": "235",
+  "title": "Wuoth Pod Odong' Marom Nade?",
+  "path": "data/WN/235.json"
  },
  {
   "id": "WN-238",
