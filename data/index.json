@@ -3885,6 +3885,20 @@
   "path": "data/SDAH/486.json"
  },
  {
+  "id": "SDAH-487",
+  "book": "SDAH",
+  "number": "487",
+  "title": "In the Garden",
+  "path": "data/SDAH/487.json"
+ },
+ {
+  "id": "SDAH-488",
+  "book": "SDAH",
+  "number": "488",
+  "title": "At First I Prayed for Light",
+  "path": "data/SDAH/488.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
