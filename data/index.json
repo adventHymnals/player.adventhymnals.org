@@ -3472,6 +3472,13 @@
   "path": "data/SDAH/434.json"
  },
  {
+  "id": "SDAH-435",
+  "book": "SDAH",
+  "number": "435",
+  "title": "The Glory Song",
+  "path": "data/SDAH/435.json"
+ },
+ {
   "id": "SDAH-440",
   "book": "SDAH",
   "number": "440",
@@ -5227,6 +5234,13 @@
   "number": "263",
   "title": "Ji Noyud Mor Ka Tich Orumo",
   "path": "data/WN/263.json"
+ },
+ {
+  "id": "WN-267",
+  "book": "WN",
+  "number": "267",
+  "title": "Ka Tichna Rumo",
+  "path": "data/WN/267.json"
  },
  {
   "id": "WN-268",
