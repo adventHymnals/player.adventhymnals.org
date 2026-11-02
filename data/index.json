@@ -2912,6 +2912,13 @@
   "path": "data/SDAH/363.json"
  },
  {
+  "id": "SDAH-365",
+  "book": "SDAH",
+  "number": "365",
+  "title": "O Zion, Haste",
+  "path": "data/SDAH/365.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
