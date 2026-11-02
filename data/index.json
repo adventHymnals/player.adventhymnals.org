@@ -3045,6 +3045,13 @@
   "path": "data/SDAH/380.json"
  },
  {
+  "id": "SDAH-381",
+  "book": "SDAH",
+  "number": "381",
+  "title": "Holy Sabbath Day of Rest",
+  "path": "data/SDAH/381.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
