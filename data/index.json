@@ -315,6 +315,13 @@
   "path": "data/NZK/82.json"
  },
  {
+  "id": "NZK-85",
+  "book": "NZK",
+  "number": "85",
+  "title": "Salama Tumepita",
+  "path": "data/NZK/85.json"
+ },
+ {
   "id": "NZK-86",
   "book": "NZK",
   "number": "86",
@@ -3071,6 +3078,13 @@
   "number": "383",
   "title": "O Day of Rest and Gladness",
   "path": "data/SDAH/383.json"
+ },
+ {
+  "id": "SDAH-384",
+  "book": "SDAH",
+  "number": "384",
+  "title": "Safely Through Another Week",
+  "path": "data/SDAH/384.json"
  },
  {
   "id": "SDAH-422",
