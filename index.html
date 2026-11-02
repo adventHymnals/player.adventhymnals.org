@@ -34,21 +34,43 @@
     </button>
     <select id="hymnPicker" hidden tabindex="-1" aria-hidden="true"></select>
     <div class="finder-panel" id="finderPanel" hidden>
-      <label class="finder-search in-panel">
-        <span class="visually-hidden">Search the hymns</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
-        <input type="search" id="finderQuery" placeholder="Number or title" autocomplete="off" spellcheck="false" aria-controls="finderList">
-      </label>
-      <div class="finder-row">
-        <span class="finder-h">Hymnals</span>
-        <div class="finder-chips" id="finderBooks" role="group" aria-label="Hymnals to show"></div>
-      </div>
-      <div class="finder-row">
-        <span class="finder-h">Sound</span>
+      <div class="finder-view" id="finderMain">
+        <label class="finder-search in-panel">
+          <span class="visually-hidden">Search the hymns</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+          <input type="search" id="finderQuery" placeholder="Number or title" autocomplete="off" spellcheck="false" aria-controls="finderList">
+        </label>
+        <div class="finder-tools">
+          <button type="button" class="finder-field" id="finderBooksBtn" aria-haspopup="dialog">
+            <span class="finder-h">Hymnals</span><span class="finder-val" id="finderBooksVal">All</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <label class="finder-field">
+            <span class="finder-h">Sort</span>
+            <select id="finderSort" aria-label="Sort the hymns"></select>
+          </label>
+        </div>
         <div class="finder-chips" id="finderSound" role="radiogroup" aria-label="Sound"></div>
+        <div class="finder-picked" id="finderPicked"></div>
+        <p class="finder-count" id="finderCount" aria-live="polite"></p>
+        <ul class="finder-list" id="finderList" role="listbox" aria-label="Hymns"></ul>
       </div>
-      <p class="finder-count" id="finderCount" aria-live="polite"></p>
-      <ul class="finder-list" id="finderList" role="listbox" aria-label="Hymns"></ul>
+      <div class="finder-view" id="finderBooksView" hidden role="group" aria-label="Choose hymnals">
+        <div class="finder-books-head">
+          <button type="button" class="ghost finder-back" id="finderBack" aria-label="Back to the hymns">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <strong>Hymnals</strong>
+          <button type="button" class="ghost" id="finderBooksAll">All</button>
+        </div>
+        <label class="finder-search in-panel">
+          <span class="visually-hidden">Find a hymnal</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+          <input type="search" id="finderBookQuery" placeholder="Find a hymnal" autocomplete="off" spellcheck="false">
+        </label>
+        <ul class="finder-booklist" id="finderBookList"></ul>
+        <button type="button" class="finder-done" id="finderBooksDone">Show the hymns</button>
+      </div>
     </div>
   </div>
 </header>

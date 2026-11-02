@@ -347,21 +347,40 @@ function fillPicker() {
   setupFinder();
 }
 
-// ---- the hymn finder: search, and the dropdown of every hymn, filtered by hymnal and by sound ----
+// ---- the hymn finder: search, and the dropdown of every hymn, filtered by hymnal and sound, sorted ----
 
+// short names for the hymnals; a hymnal not listed here shows its code
 const BOOK_NAMES = {
-  SDAH: "SDA Hymnal", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", CH1941: "Church Hymnal 1941",
+  SDAH: "Seventh-day Adventist Hymnal", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", CH1941: "Church Hymnal 1941",
   CS1900: "Christ in Song 1900", CS1908: "Christ in Song 1908", RECORDED: "Recorded",
 };
 const BOOK_ORDER = ["SDAH", "NZK", "WN", "CH1941", "CS1908", "CS1900"]; // the hymnals in use first, then the older ones
-const bookCodes = () => [...new Set(hymnList.map((x) => x.book))].sort((a, b) => ((BOOK_ORDER.indexOf(a) + 1) || 99) - ((BOOK_ORDER.indexOf(b) + 1) || 99));
+const bookRank = (b) => (BOOK_ORDER.indexOf(b) + 1) || 99;
+const bookCodes = () => [...new Set(hymnList.map((x) => x.book))].sort((a, b) => bookRank(a) - bookRank(b) || a.localeCompare(b));
+const bookName = (b) => BOOK_NAMES[b] || b;
 const SOUNDS = [["all", "All"], ["sung", "Singers ready"], ["midi", "MIDI only"]];
-const finder = { q: "", books: store.get("finderBooks", []), sound: store.get("finderSound", "all"), shown: [], active: 0, ready: false };
+// "auto": by hymnal and number, or best match first while searching
+const SORTS = [["auto", "Hymnal, number"], ["number", "Number 1→9"], ["number-desc", "Number 9→1"],
+  ["title", "Title A→Z"], ["title-desc", "Title Z→A"], ["book", "Hymnal A→Z"]];
+const finder = {
+  q: "", books: store.get("finderBooks", []), sound: store.get("finderSound", "all"), sort: store.get("finderSort", "auto"),
+  bookQ: "", shown: [], active: 0, ready: false,
+};
 const escHtml = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-const normQ = (t) => String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+const normQ = (t) => String(t).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+const numOf = (x) => parseInt(x.number, 10) || 0;
+const byBookNum = (a, b) => bookRank(a.book) - bookRank(b.book) || a.book.localeCompare(b.book) || numOf(a) - numOf(b);
+const titleKey = (x) => normQ(x.title).replace(/^(the|a|o) /, "");
+const SORTERS = {
+  number: (a, b) => numOf(a) - numOf(b) || byBookNum(a, b),
+  "number-desc": (a, b) => numOf(b) - numOf(a) || byBookNum(a, b),
+  title: (a, b) => titleKey(a).localeCompare(titleKey(b)) || byBookNum(a, b),
+  "title-desc": (a, b) => titleKey(b).localeCompare(titleKey(a)) || byBookNum(a, b),
+  book: (a, b) => bookName(a.book).localeCompare(bookName(b.book)) || numOf(a) - numOf(b),
+};
 
-/** The hymns the finder shows: those in the chosen hymnals and sound, best match first. */
-function finderMatches(q, { books = finder.books, sound = finder.sound } = {}) {
+/** The hymns the finder shows: those in the chosen hymnals and sound, in the chosen order. */
+function finderMatches(q, { books = finder.books, sound = finder.sound, sort = finder.sort } = {}) {
   const nq = normQ(q);
   const m = nq.match(/^([a-z]+\d*)?\s*(\d+)$/); // "240", or "nzk 89"
   const words = nq ? nq.split(" ") : [];
@@ -381,13 +400,14 @@ function finderMatches(q, { books = finder.books, sound = finder.sound } = {}) {
     if (!s && words.every((w) => t.includes(w) || x.book.toLowerCase() === w)) s = 50;
     if (s) out.push({ x, s: s + (x.book === "SDAH" ? 1 : 0) });
   }
-  return nq ? out.sort((a, b) => b.s - a.s).map((o) => o.x) : out.map((o) => o.x);
+  if (SORTERS[sort]) return out.map((o) => o.x).sort(SORTERS[sort]);
+  return nq ? out.sort((a, b) => b.s - a.s || byBookNum(a.x, b.x)).map((o) => o.x) : out.map((o) => o.x).sort(byBookNum);
 }
 
 function markMatch(title, q) {
   const words = normQ(q).split(" ").filter((w) => w.length > 1 && !/^\d+$/.test(w));
   let html = escHtml(title);
-  for (const w of words) html = html.replace(new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "i"), "<mark>$1</mark>");
+  for (const w of words) html = html.replace(new RegExp(`(${w})`, "i"), "<mark>$1</mark>");
   return html;
 }
 
@@ -398,14 +418,16 @@ function setupFinder() {
   const books = bookCodes();
   finder.books = finder.books.filter((b) => books.includes(b));
   if (!SOUNDS.some(([k]) => k === finder.sound)) finder.sound = "all";
+  if (!SORTS.some(([k]) => k === finder.sort)) finder.sort = "auto";
   const open = (focusPanel) => {
     if (panel.hidden) {
       panel.hidden = false;
+      showBooks(false);
       btn.setAttribute("aria-expanded", "true");
       top.setAttribute("aria-expanded", "true");
       renderFinder(true);
     }
-    if (focusPanel) query.focus();
+    if (focusPanel && matchMedia("(pointer: fine)").matches) query.focus(); // no keyboard popping up on a phone
   };
   const close = () => {
     panel.hidden = true;
@@ -421,7 +443,7 @@ function setupFinder() {
     renderFinder(!v);
   };
   btn.onclick = () => (panel.hidden ? open(true) : close());
-  top.oninput = () => { open(false); setQ(top.value, top); };
+  top.oninput = () => { open(false); showBooks(false); setQ(top.value, top); };
   top.onfocus = () => { if (top.value) open(false); };
   query.oninput = () => setQ(query.value, query);
   const keys = (e) => {
@@ -440,24 +462,47 @@ function setupFinder() {
     const li = e.target.closest("li[data-id]");
     if (li && Number(li.dataset.i) !== finder.active) { finder.active = Number(li.dataset.i); highlight(false); }
   };
-  $("finderBooks").onclick = (e) => {
-    const b = e.target.closest("button");
-    if (!b) return;
-    const code = b.dataset.book;
-    finder.books = !code ? [] : finder.books.includes(code) ? finder.books.filter((x) => x !== code) : [...finder.books, code];
-    if (finder.books.length === books.length) finder.books = [];
+  const refilter = () => { finder.active = 0; renderFinder(!finder.q); };
+  const setBooks = (b) => {
+    finder.books = b.length === books.length ? [] : b;
     store.set("finderBooks", finder.books);
-    finder.active = 0;
-    renderFinder(!finder.q);
+    refilter();
+    renderBookList();
   };
   $("finderSound").onclick = (e) => {
     const b = e.target.closest("button");
     if (!b) return;
     finder.sound = b.dataset.sound;
     store.set("finderSound", finder.sound);
-    finder.active = 0;
-    renderFinder(!finder.q);
+    refilter();
   };
+  $("finderSort").innerHTML = SORTS.map(([k, label]) => `<option value="${k}">${label}</option>`).join("");
+  $("finderSort").onchange = (e) => { finder.sort = e.target.value; store.set("finderSort", finder.sort); refilter(); };
+  // the chosen hymnals, each a chip that takes it off again
+  $("finderPicked").onclick = (e) => { const b = e.target.closest("button[data-book]"); if (b) setBooks(finder.books.filter((x) => x !== b.dataset.book)); };
+
+  // the hymnals: a searchable checklist of its own, so hundreds of hymnals still fit, phone or desktop
+  const showBooks = (on) => {
+    $("finderMain").hidden = on;
+    $("finderBooksView").hidden = !on;
+    if (on) {
+      finder.bookQ = "";
+      $("finderBookQuery").value = "";
+      renderBookList();
+      if (matchMedia("(pointer: fine)").matches) $("finderBookQuery").focus();
+    }
+  };
+  $("finderBooksBtn").onclick = () => showBooks(true);
+  $("finderBack").onclick = $("finderBooksDone").onclick = () => { showBooks(false); renderFinder(!finder.q); };
+  $("finderBooksAll").onclick = () => setBooks([]);
+  $("finderBookQuery").oninput = (e) => { finder.bookQ = e.target.value; renderBookList(); };
+  $("finderBookQuery").onkeydown = (e) => { if (e.key === "Escape") { e.stopPropagation(); showBooks(false); } };
+  $("finderBookList").onchange = (e) => {
+    const code = e.target.value;
+    // starting from "all", the first tick narrows to that one hymnal
+    setBooks(e.target.checked ? [...finder.books, code] : (finder.books.length ? finder.books : books).filter((x) => x !== code));
+  };
+
   // outside the finder closes it
   document.addEventListener("pointerdown", (e) => { if (!panel.hidden && !e.target.closest("#finder")) close(); });
   // "/" jumps to the search box, as on most sites
@@ -465,6 +510,19 @@ function setupFinder() {
     if (e.key === "/" && !e.target.closest("input, select, textarea, [contenteditable]")) { e.preventDefault(); top.focus(); top.select(); }
   });
   renderFinder();
+}
+
+function renderBookList() {
+  const nq = normQ(finder.bookQ);
+  const inSound = finderMatches("", { books: [], sound: finder.sound, sort: "auto" });
+  const codes = bookCodes().filter((b) => !nq || normQ(`${b} ${bookName(b)}`).includes(nq));
+  $("finderBooksAll").setAttribute("aria-pressed", String(!finder.books.length));
+  $("finderBookList").innerHTML = codes.length ? codes.map((b) => `<li><label>
+      <input type="checkbox" value="${escHtml(b)}"${finder.books.includes(b) ? " checked" : ""}>
+      <span class="b-name">${escHtml(bookName(b))}${bookName(b) !== b ? `<small>${escHtml(b)}</small>` : ""}</span>
+      <span class="b-n">${inSound.filter((x) => x.book === b).length}</span>
+    </label></li>`).join("") : `<li class="finder-empty">No hymnal matches “${escHtml(finder.bookQ.trim())}”.</li>`;
+  $("finderBooksDone").textContent = `Show ${finderMatches(finder.q).length} hymns`;
 }
 
 function chooseHymn(id) {
@@ -484,29 +542,32 @@ function syncFinderLabel() {
 
 function renderFinder(scrollToCurrent = false) {
   if (!finder.ready) return;
-  const bookList = bookCodes();
-  // counts in each chip follow the other filter, so they say what clicking would show
-  const inSound = finderMatches("", { books: [], sound: finder.sound });
-  const inBooks = finderMatches("", { books: finder.books, sound: "all" });
-  $("finderBooks").innerHTML = [`<button type="button" aria-pressed="${!finder.books.length}">All<small>${inSound.length}</small></button>`]
-    .concat(bookList.map((b) => `<button type="button" data-book="${b}" aria-pressed="${finder.books.includes(b)}" title="${escHtml(BOOK_NAMES[b] || b)}">${b}<small>${inSound.filter((x) => x.book === b).length}</small></button>`)).join("");
+  const n = finder.books.length;
+  $("finderBooksVal").textContent = !n ? "All" : n === 1 ? bookName(finder.books[0]) : `${n} hymnals`;
+  $("finderPicked").innerHTML = n > 1 && n <= 6
+    ? finder.books.map((b) => `<button type="button" data-book="${escHtml(b)}" aria-label="Stop showing ${escHtml(bookName(b))}">${escHtml(b)}</button>`).join("") : "";
+  // the sound counts follow the chosen hymnals, so they say what clicking would show
+  const inBooks = finderMatches("", { books: finder.books, sound: "all", sort: "auto" });
   $("finderSound").innerHTML = SOUNDS.map(([k, label]) => {
-    const n = k === "all" ? inBooks.length : inBooks.filter((x) => (k === "sung" ? x.sung : !x.sung)).length;
-    return `<button type="button" role="radio" data-sound="${k}" aria-checked="${finder.sound === k}">${label}<small>${n}</small></button>`;
+    const c = k === "all" ? inBooks.length : inBooks.filter((x) => (k === "sung" ? x.sung : !x.sung)).length;
+    return `<button type="button" role="radio" data-sound="${k}" aria-checked="${finder.sound === k}">${label}<small>${c}</small></button>`;
   }).join("");
+  const sortSel = $("finderSort");
+  sortSel.value = finder.sort;
+  sortSel.options[0].textContent = finder.q.trim() ? "Best match" : "Hymnal, number";
   const shown = finderMatches(finder.q);
   finder.shown = shown;
   const cur = $("hymnPicker").value;
   if (scrollToCurrent && !finder.q) { const i = shown.findIndex((x) => x.id === cur); finder.active = Math.max(0, i); }
   finder.active = Math.min(finder.active, Math.max(0, shown.length - 1));
-  const filtered = finder.books.length || finder.sound !== "all";
+  const filtered = n || finder.sound !== "all";
   $("finderCount").textContent = !shown.length ? "" : `${shown.length} hymn${shown.length === 1 ? "" : "s"}${finder.q ? ` ${shown.length === 1 ? "matches" : "match"} “${finder.q.trim()}”` : ""}${filtered ? " in the chosen filters" : ""}`;
   $("finderList").innerHTML = shown.length ? shown.map((x, i) => `<li role="option" id="fo-${i}" data-i="${i}" data-id="${escHtml(x.id)}" aria-selected="${i === finder.active}"${x.id === cur ? ' class="current"' : ""}>
-      <span class="f-num"><small>${x.book}</small>${escHtml(x.number)}</span>
+      <span class="f-num"><small>${escHtml(x.book)}</small>${escHtml(x.number)}</span>
       <span class="f-title">${markMatch(x.title, finder.q)}</span>
       <span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>
     </li>`).join("")
-    : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try All hymnals or All sounds." : "."}</li>`;
+    : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try all hymnals or all sounds." : "."}</li>`;
   highlight(true, scrollToCurrent);
 }
 

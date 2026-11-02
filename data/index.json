@@ -2100,6 +2100,20 @@
   "path": "data/SDAH/268.json"
  },
  {
+  "id": "SDAH-269",
+  "book": "SDAH",
+  "number": "269",
+  "title": "Come, Holy Spirit",
+  "path": "data/SDAH/269.json"
+ },
+ {
+  "id": "SDAH-270",
+  "book": "SDAH",
+  "number": "270",
+  "title": "O Holy Dove of God Descending",
+  "path": "data/SDAH/270.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",

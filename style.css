@@ -46,21 +46,41 @@ button, select, input { font: inherit; color: inherit; }
 .finder-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
 .finder-panel {
   position: absolute; top: calc(100% + 6px); right: 0; z-index: 40; width: min(460px, calc(100vw - 32px));
-  display: flex; flex-direction: column; gap: 8px; max-height: min(72vh, 640px);
+  display: flex; flex-direction: column; height: min(72vh, 640px);
   background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px;
   box-shadow: 0 14px 40px rgba(30, 42, 71, 0.18);
 }
-.finder-panel .finder-search input { width: 100%; }
-.finder-panel .finder-search { width: 100%; }
-.finder-row { display: grid; grid-template-columns: 4.6rem 1fr; gap: 8px; align-items: start; }
-.finder-h { font: 700 12px/26px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.finder-view { display: flex; flex-direction: column; gap: 8px; min-height: 0; flex: 1; }
+.finder-panel .finder-search, .finder-panel .finder-search input { width: 100%; }
+.finder-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.finder-field { display: flex; align-items: center; gap: 6px; min-width: 0; border: 1px solid var(--rule); background: transparent; border-radius: 6px; padding: 4px 8px; cursor: pointer; text-align: left; }
+.finder-field select { flex: 1; min-width: 0; border: 0; background: transparent; padding: 2px 0; cursor: pointer; font-weight: 600; }
+.finder-field svg { width: 16px; height: 16px; flex: none; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.finder-val { flex: 1; min-width: 0; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.finder-h { font: 700 11px/1 var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .finder-chips { display: flex; flex-wrap: wrap; gap: 5px; }
-.finder-chips button { border: 1px solid var(--rule); background: transparent; border-radius: 999px; padding: 2px 10px; cursor: pointer; font-size: 14px; line-height: 20px; }
+.finder-chips button, .finder-picked button { border: 1px solid var(--rule); background: transparent; border-radius: 999px; padding: 2px 10px; cursor: pointer; font-size: 14px; line-height: 20px; }
 .finder-chips button small { color: var(--muted); margin-left: 3px; font-size: 12px; }
-.finder-chips button[aria-pressed="true"], .finder-chips button[aria-checked="true"] { background: var(--cloth); border-color: var(--cloth); color: var(--paper); }
-.finder-chips button[aria-pressed="true"] small, .finder-chips button[aria-checked="true"] small { color: inherit; opacity: .75; }
+.finder-chips button[aria-checked="true"] { background: var(--cloth); border-color: var(--cloth); color: var(--paper); }
+.finder-chips button[aria-checked="true"] small { color: inherit; opacity: .75; }
+.finder-picked { display: flex; flex-wrap: wrap; gap: 5px; }
+.finder-picked:empty { display: none; }
+.finder-picked button { background: var(--paper-2); font-size: 13px; padding: 1px 6px 1px 10px; }
+.finder-picked button::after { content: "×"; margin-left: 6px; color: var(--muted); }
+.finder-books-head { display: flex; align-items: center; gap: 8px; }
+.finder-books-head strong { flex: 1; font: 700 17px var(--serif); color: var(--cloth); }
+.finder-books-head button { border: 0; background: transparent; cursor: pointer; padding: 4px 8px; border-radius: 6px; font-weight: 600; color: var(--muted); }
+.finder-back svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.finder-booklist { list-style: none; margin: 0 -12px; padding: 0; overflow-y: auto; overscroll-behavior: contain; border-top: 1px solid var(--rule); flex: 1; min-height: 120px; }
+.finder-booklist label { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 8px 12px; cursor: pointer; border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent); }
+.finder-booklist label:hover { background: var(--paper-2); }
+.finder-booklist input { width: 18px; height: 18px; accent-color: var(--cloth); margin: 0; }
+.finder-booklist .b-name { min-width: 0; font: 500 15px/1.25 var(--serif); color: var(--cloth); }
+.finder-booklist .b-name small { display: block; font: 600 11px var(--sans); color: var(--muted); letter-spacing: .03em; }
+.finder-booklist .b-n { font-size: 13px; color: var(--muted); }
+.finder-done { border: 0; border-radius: 8px; padding: 9px; background: var(--cloth); color: var(--paper); font-weight: 700; cursor: pointer; }
 .finder-count { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
-.finder-list { list-style: none; margin: 0 -12px -12px; padding: 0 0 6px; overflow-y: auto; overscroll-behavior: contain; border-top: 1px solid var(--rule); min-height: 0; }
+.finder-list { list-style: none; margin: 0 -12px -12px; padding: 0 0 6px; overflow-y: auto; overscroll-behavior: contain; border-top: 1px solid var(--rule); min-height: 0; flex: 1; }
 .finder-list li { display: grid; grid-template-columns: 4.4rem 1fr auto; gap: 10px; align-items: baseline; padding: 7px 12px; cursor: pointer; border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent); }
 .finder-list li[aria-selected="true"] { background: var(--paper-2); }
 .finder-list li.current { box-shadow: inset 3px 0 0 var(--gilt); }
@@ -252,7 +272,7 @@ button, select, input { font: inherit; color: inherit; }
   .picker { grid-column: 1 / -1; margin-top: 8px; }
   .finder-search:not(.in-panel) { flex: 1; }
   .finder-search input { width: 100%; }
-  .finder-panel { left: 0; right: 0; width: auto; }
+  .finder-panel { left: 0; right: 0; width: auto; height: min(78vh, 640px); }
   .files { margin-left: 0; }
   .where { min-width: 0; }
   .track-voice input[type="range"] { display: none; }
