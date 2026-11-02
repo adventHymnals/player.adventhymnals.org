@@ -2443,6 +2443,13 @@
   "path": "data/SDAH/307.json"
  },
  {
+  "id": "SDAH-308",
+  "book": "SDAH",
+  "number": "308",
+  "title": "Wholly Thine",
+  "path": "data/SDAH/308.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4002,6 +4009,13 @@
   "number": "205",
   "title": "An Ni Mari Ruoth",
   "path": "data/WN/205.json"
+ },
+ {
+  "id": "WN-212",
+  "book": "WN",
+  "number": "212",
+  "title": "Adwaro Bedo Nyathi Yesu",
+  "path": "data/WN/212.json"
  },
  {
   "id": "WN-227",
