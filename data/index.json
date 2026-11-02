@@ -168,6 +168,13 @@
   "path": "data/NZK/34.json"
  },
  {
+  "id": "NZK-37",
+  "book": "NZK",
+  "number": "37",
+  "title": "Pendo Lako, Ee Mwokozi",
+  "path": "data/NZK/37.json"
+ },
+ {
   "id": "NZK-38",
   "book": "NZK",
   "number": "38",
@@ -222,6 +229,13 @@
   "number": "119",
   "title": "Alilipa Bei",
   "path": "data/NZK/119.json"
+ },
+ {
+  "id": "NZK-197",
+  "book": "NZK",
+  "number": "197",
+  "title": "Anipenda Ni Kweli",
+  "path": "data/NZK/197.json"
  },
  {
   "id": "SDAH-1",
@@ -1447,6 +1461,27 @@
   "number": "188",
   "title": "My Song Is Love Unknown",
   "path": "data/SDAH/188.json"
+ },
+ {
+  "id": "SDAH-189",
+  "book": "SDAH",
+  "number": "189",
+  "title": "All That Thrills My Soul",
+  "path": "data/SDAH/189.json"
+ },
+ {
+  "id": "SDAH-190",
+  "book": "SDAH",
+  "number": "190",
+  "title": "Jesus Loves Me",
+  "path": "data/SDAH/190.json"
+ },
+ {
+  "id": "SDAH-191",
+  "book": "SDAH",
+  "number": "191",
+  "title": "Love Divine",
+  "path": "data/SDAH/191.json"
  },
  {
   "id": "SDAH-422",
@@ -2903,6 +2938,13 @@
   "number": "227",
   "title": "Be Yesu Ling",
   "path": "data/WN/227.json"
+ },
+ {
+  "id": "WN-301",
+  "book": "WN",
+  "number": "301",
+  "title": "Yesu 'Hera Ang'eyo",
+  "path": "data/WN/301.json"
  },
  {
   "id": "WN-311",
