@@ -231,11 +231,25 @@
   "path": "data/NZK/119.json"
  },
  {
+  "id": "NZK-163",
+  "book": "NZK",
+  "number": "163",
+  "title": "Anakuja Bwana Yesu",
+  "path": "data/NZK/163.json"
+ },
+ {
   "id": "NZK-164",
   "book": "NZK",
   "number": "164",
   "title": "Mishale Ya Nuru",
   "path": "data/NZK/164.json"
+ },
+ {
+  "id": "NZK-175",
+  "book": "NZK",
+  "number": "175",
+  "title": "Uso Kwa Uso",
+  "path": "data/NZK/175.json"
  },
  {
   "id": "NZK-197",
@@ -1587,6 +1601,20 @@
   "number": "205",
   "title": "Gleams of the Golden Morning",
   "path": "data/SDAH/205.json"
+ },
+ {
+  "id": "SDAH-206",
+  "book": "SDAH",
+  "number": "206",
+  "title": "Face to Face",
+  "path": "data/SDAH/206.json"
+ },
+ {
+  "id": "SDAH-207",
+  "book": "SDAH",
+  "number": "207",
+  "title": "It May Be at Morn",
+  "path": "data/SDAH/207.json"
  },
  {
   "id": "SDAH-422",
