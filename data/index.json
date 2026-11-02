@@ -2471,6 +2471,13 @@
   "path": "data/SDAH/224.json"
  },
  {
+  "id": "SDAH-225",
+  "book": "SDAH",
+  "number": "225",
+  "title": "God Is Working His Purpose Out",
+  "path": "data/SDAH/225.json"
+ },
+ {
   "id": "SDAH-226",
   "book": "SDAH",
   "number": "226",
@@ -2504,6 +2511,13 @@
   "number": "230",
   "title": "All Glory, Laud, and Honor",
   "path": "data/SDAH/230.json"
+ },
+ {
+  "id": "SDAH-231",
+  "book": "SDAH",
+  "number": "231",
+  "title": "Blest Be the King",
+  "path": "data/SDAH/231.json"
  },
  {
   "id": "SDAH-232",
@@ -3339,6 +3353,13 @@
   "path": "data/SDAH/350.json"
  },
  {
+  "id": "SDAH-351",
+  "book": "SDAH",
+  "number": "351",
+  "title": "Thy Hand, O God, Has Guided",
+  "path": "data/SDAH/351.json"
+ },
+ {
   "id": "SDAH-352",
   "book": "SDAH",
   "number": "352",
@@ -3638,6 +3659,13 @@
   "number": "394",
   "title": "Far From All Care",
   "path": "data/SDAH/394.json"
+ },
+ {
+  "id": "SDAH-395",
+  "book": "SDAH",
+  "number": "395",
+  "title": "As Birds Unto the Genial Homeland",
+  "path": "data/SDAH/395.json"
  },
  {
   "id": "SDAH-396",
@@ -4338,6 +4366,13 @@
   "number": "495",
   "title": "Near to the Heart of God",
   "path": "data/SDAH/495.json"
+ },
+ {
+  "id": "SDAH-496",
+  "book": "SDAH",
+  "number": "496",
+  "title": "Eternal Love, We Have No Good",
+  "path": "data/SDAH/496.json"
  },
  {
   "id": "SDAH-497",
