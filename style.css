@@ -66,7 +66,8 @@ button, select, input { font: inherit; color: inherit; }
 .finder-picked { display: flex; flex-wrap: wrap; gap: 5px; }
 .finder-picked:empty { display: none; }
 .finder-picked button { background: var(--paper-2); font-size: 13px; padding: 1px 6px 1px 10px; }
-.finder-picked button::after { content: "×"; margin-left: 6px; color: var(--muted); }
+.finder-picked button[data-book]::after { content: "×"; margin-left: 6px; color: var(--muted); }
+.finder-picked button.more { background: transparent; padding: 1px 10px; font-weight: 600; color: var(--cloth); }
 .finder-books-head { display: flex; align-items: center; gap: 8px; }
 .finder-books-head strong { flex: 1; font: 700 17px var(--serif); color: var(--cloth); }
 .finder-books-head button { border: 0; background: transparent; cursor: pointer; padding: 4px 8px; border-radius: 6px; font-weight: 600; color: var(--muted); }
@@ -641,3 +642,7 @@ body:has(#pianoPanel.open:not([hidden])) { padding-bottom: calc(min(260px, 42vh)
 .vid-list .vname { flex: 1; font-weight: 600; overflow-wrap: anywhere; }
 .vid-list .vsize { color: var(--muted); font-size: 13px; }
 .vid-list .saved { color: var(--cloth); font-weight: 600; font-size: 13.5px; }
+@media (max-width: 480px) {
+  /* the hymnals and sort fields keep their values readable on a phone; the value says what each is */
+  .finder-field .finder-h { display: none; }
+}

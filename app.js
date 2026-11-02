@@ -479,13 +479,19 @@ function setupFinder() {
   $("finderSort").innerHTML = SORTS.map(([k, label]) => `<option value="${k}">${label}</option>`).join("");
   $("finderSort").onchange = (e) => { finder.sort = e.target.value; store.set("finderSort", finder.sort); refilter(); };
   // the chosen hymnals, each a chip that takes it off again
-  $("finderPicked").onclick = (e) => { const b = e.target.closest("button[data-book]"); if (b) setBooks(finder.books.filter((x) => x !== b.dataset.book)); };
+  $("finderPicked").onclick = (e) => {
+    if (e.target.closest("button[data-more]")) { showBooks(true); return; }
+    const b = e.target.closest("button[data-book]");
+    if (b) setBooks(finder.books.filter((x) => x !== b.dataset.book));
+  };
 
   // the hymnals: a searchable checklist of its own, so hundreds of hymnals still fit, phone or desktop
   const showBooks = (on) => {
     $("finderMain").hidden = on;
     $("finderBooksView").hidden = !on;
     if (on) {
+      const all = bookCodes();
+      finder.bookOrder = [...all.filter((b) => finder.books.includes(b)), ...all.filter((b) => !finder.books.includes(b))];
       finder.bookQ = "";
       $("finderBookQuery").value = "";
       renderBookList();
@@ -515,7 +521,7 @@ function setupFinder() {
 function renderBookList() {
   const nq = normQ(finder.bookQ);
   const inSound = finderMatches("", { books: [], sound: finder.sound, sort: "auto" });
-  const codes = bookCodes().filter((b) => !nq || normQ(`${b} ${bookName(b)}`).includes(nq));
+  const codes = (finder.bookOrder || bookCodes()).filter((b) => !nq || normQ(`${b} ${bookName(b)}`).includes(nq));
   $("finderBooksAll").setAttribute("aria-pressed", String(!finder.books.length));
   $("finderBookList").innerHTML = codes.length ? codes.map((b) => `<li><label>
       <input type="checkbox" value="${escHtml(b)}"${finder.books.includes(b) ? " checked" : ""}>
@@ -543,9 +549,12 @@ function syncFinderLabel() {
 function renderFinder(scrollToCurrent = false) {
   if (!finder.ready) return;
   const n = finder.books.length;
-  $("finderBooksVal").textContent = !n ? "All" : n === 1 ? bookName(finder.books[0]) : `${n} hymnals`;
-  $("finderPicked").innerHTML = n > 1 && n <= 6
-    ? finder.books.map((b) => `<button type="button" data-book="${escHtml(b)}" aria-label="Stop showing ${escHtml(bookName(b))}">${escHtml(b)}</button>`).join("") : "";
+  $("finderBooksVal").textContent = !n ? "All hymnals" : n === 1 ? bookName(finder.books[0]) : `${n} hymnals`;
+  // each chosen hymnal as a chip whose × takes it off; past a few, "+N more" opens the checklist
+  const PICKED_MAX = 3;
+  $("finderPicked").innerHTML = finder.books.slice(0, PICKED_MAX)
+    .map((b) => `<button type="button" data-book="${escHtml(b)}" title="${escHtml(bookName(b))}" aria-label="Stop showing ${escHtml(bookName(b))}">${escHtml(b)}</button>`).join("")
+    + (n > PICKED_MAX ? `<button type="button" class="more" data-more aria-label="All ${n} chosen hymnals">+${n - PICKED_MAX} more</button>` : "");
   // the sound counts follow the chosen hymnals, so they say what clicking would show
   const inBooks = finderMatches("", { books: finder.books, sound: "all", sort: "auto" });
   $("finderSound").innerHTML = SOUNDS.map(([k, label]) => {

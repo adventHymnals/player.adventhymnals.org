@@ -231,6 +231,13 @@
   "path": "data/NZK/50.json"
  },
  {
+  "id": "NZK-52",
+  "book": "NZK",
+  "number": "52",
+  "title": "Nipe Biblia",
+  "path": "data/NZK/52.json"
+ },
+ {
   "id": "NZK-54",
   "book": "NZK",
   "number": "54",
@@ -2128,6 +2135,13 @@
   "path": "data/SDAH/271.json"
  },
  {
+  "id": "SDAH-272",
+  "book": "SDAH",
+  "number": "272",
+  "title": "Give Me the Bible",
+  "path": "data/SDAH/272.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -3589,6 +3603,13 @@
   "number": "69",
   "title": "Puonja Injili Lilo",
   "path": "data/WN/69.json"
+ },
+ {
+  "id": "WN-71",
+  "book": "WN",
+  "number": "71",
+  "title": "Puonja Wach Biblos",
+  "path": "data/WN/71.json"
  },
  {
   "id": "WN-75",
