@@ -175,6 +175,13 @@
   "path": "data/CS1908/229.json"
  },
  {
+  "id": "CS1908-236",
+  "book": "CS1908",
+  "number": "236",
+  "title": "Since I Have Been Redeemed",
+  "path": "data/CS1908/236.json"
+ },
+ {
   "id": "CS1908-286",
   "book": "CS1908",
   "number": "286",
@@ -6102,6 +6109,13 @@
   "number": "38",
   "title": "Anawer Hera Yesu",
   "path": "data/WN/38.json"
+ },
+ {
+  "id": "WN-39",
+  "book": "WN",
+  "number": "39",
+  "title": "Nitie Wer Mamit E Dhoga",
+  "path": "data/WN/39.json"
  },
  {
   "id": "WN-43",
