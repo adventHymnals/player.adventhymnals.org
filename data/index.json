@@ -2492,6 +2492,13 @@
   "path": "data/SDAH/312.json"
  },
  {
+  "id": "SDAH-314",
+  "book": "SDAH",
+  "number": "314",
+  "title": "Just as I Am",
+  "path": "data/SDAH/314.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
