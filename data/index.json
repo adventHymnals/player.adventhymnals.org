@@ -357,6 +357,20 @@
   "path": "data/NZK/64.json"
  },
  {
+  "id": "NZK-65",
+  "book": "NZK",
+  "number": "65",
+  "title": "Twendeni Askari",
+  "path": "data/NZK/65.json"
+ },
+ {
+  "id": "NZK-66",
+  "book": "NZK",
+  "number": "66",
+  "title": "Roho Yangu Amka Sasa",
+  "path": "data/NZK/66.json"
+ },
+ {
   "id": "NZK-67",
   "book": "NZK",
   "number": "67",
