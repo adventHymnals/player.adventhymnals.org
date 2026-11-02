@@ -1778,6 +1778,13 @@
   "path": "data/SDAH/229.json"
  },
  {
+  "id": "SDAH-230",
+  "book": "SDAH",
+  "number": "230",
+  "title": "All Glory, Laud, and Honor",
+  "path": "data/SDAH/230.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
