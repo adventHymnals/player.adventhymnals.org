@@ -154,6 +154,13 @@
   "path": "data/CS1908/174.json"
  },
  {
+  "id": "CS1908-192",
+  "book": "CS1908",
+  "number": "192",
+  "title": "He Brought Me Out",
+  "path": "data/CS1908/192.json"
+ },
+ {
   "id": "CS1908-229",
   "book": "CS1908",
   "number": "229",
@@ -6655,6 +6662,13 @@
   "number": "302",
   "title": "Yesu 'Biro",
   "path": "data/WN/302.json"
+ },
+ {
+  "id": "WN-308",
+  "book": "WN",
+  "number": "308",
+  "title": "Nogola E Bugo",
+  "path": "data/WN/308.json"
  },
  {
   "id": "WN-311",
