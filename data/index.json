@@ -301,6 +301,13 @@
   "path": "data/NZK/119.json"
  },
  {
+  "id": "NZK-139",
+  "book": "NZK",
+  "number": "139",
+  "title": "Uniimbie Tena",
+  "path": "data/NZK/139.json"
+ },
+ {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
@@ -2231,6 +2238,13 @@
   "number": "285",
   "title": "Jesus Calls Us",
   "path": "data/SDAH/285.json"
+ },
+ {
+  "id": "SDAH-286",
+  "book": "SDAH",
+  "number": "286",
+  "title": "Wonderful Words of Life",
+  "path": "data/SDAH/286.json"
  },
  {
   "id": "SDAH-422",
