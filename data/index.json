@@ -2380,6 +2380,13 @@
   "path": "data/SDAH/301.json"
  },
  {
+  "id": "SDAH-302",
+  "book": "SDAH",
+  "number": "302",
+  "title": "Deeper Yet",
+  "path": "data/SDAH/302.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
