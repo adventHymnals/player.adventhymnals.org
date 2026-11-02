@@ -399,6 +399,13 @@
   "path": "data/NZK/92.json"
  },
  {
+  "id": "NZK-93",
+  "book": "NZK",
+  "number": "93",
+  "title": "Jua La Rohoni Mwangu",
+  "path": "data/NZK/93.json"
+ },
+ {
   "id": "NZK-94",
   "book": "NZK",
   "number": "94",
@@ -469,6 +476,13 @@
   "path": "data/NZK/115.json"
  },
  {
+  "id": "NZK-118",
+  "book": "NZK",
+  "number": "118",
+  "title": "Nilipotoka Kabisa",
+  "path": "data/NZK/118.json"
+ },
+ {
   "id": "NZK-119",
   "book": "NZK",
   "number": "119",
@@ -530,6 +544,13 @@
   "number": "136",
   "title": "Niwe Kama Yesu",
   "path": "data/NZK/136.json"
+ },
+ {
+  "id": "NZK-137",
+  "book": "NZK",
+  "number": "137",
+  "title": "Saa Heri Ya Sala",
+  "path": "data/NZK/137.json"
  },
  {
   "id": "NZK-139",
@@ -5773,6 +5794,13 @@
   "number": "162",
   "title": "Abiro Ni Msalaba",
   "path": "data/WN/162.json"
+ },
+ {
+  "id": "WN-165",
+  "book": "WN",
+  "number": "165",
+  "title": "Asebayo Mabor Kod Ruoth",
+  "path": "data/WN/165.json"
  },
  {
   "id": "WN-166",
