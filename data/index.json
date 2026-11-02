@@ -1526,6 +1526,27 @@
   "path": "data/SDAH/197.json"
  },
  {
+  "id": "SDAH-198",
+  "book": "SDAH",
+  "number": "198",
+  "title": "And Can It Be?",
+  "path": "data/SDAH/198.json"
+ },
+ {
+  "id": "SDAH-199",
+  "book": "SDAH",
+  "number": "199",
+  "title": "The Head That Once Was Crowned",
+  "path": "data/SDAH/199.json"
+ },
+ {
+  "id": "SDAH-200",
+  "book": "SDAH",
+  "number": "200",
+  "title": "The Lord Is Coming",
+  "path": "data/SDAH/200.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
