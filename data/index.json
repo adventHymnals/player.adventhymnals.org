@@ -3948,6 +3948,20 @@
   "path": "data/SDAH/494.json"
  },
  {
+  "id": "SDAH-495",
+  "book": "SDAH",
+  "number": "495",
+  "title": "Near to the Heart of God",
+  "path": "data/SDAH/495.json"
+ },
+ {
+  "id": "SDAH-497",
+  "book": "SDAH",
+  "number": "497",
+  "title": "O Gracious Father of Mankind",
+  "path": "data/SDAH/497.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
