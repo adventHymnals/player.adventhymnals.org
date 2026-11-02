@@ -3654,6 +3654,20 @@
   "path": "data/SDAH/457.json"
  },
  {
+  "id": "SDAH-458",
+  "book": "SDAH",
+  "number": "458",
+  "title": "More Love to Thee",
+  "path": "data/SDAH/458.json"
+ },
+ {
+  "id": "SDAH-459",
+  "book": "SDAH",
+  "number": "459",
+  "title": "As the Bridegroom to His Chosen",
+  "path": "data/SDAH/459.json"
+ },
+ {
   "id": "SDAH-500",
   "book": "SDAH",
   "number": "500",
