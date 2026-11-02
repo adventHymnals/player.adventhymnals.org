@@ -126,6 +126,13 @@
   "path": "data/CS1908/10.json"
  },
  {
+  "id": "CS1908-632",
+  "book": "CS1908",
+  "number": "632",
+  "title": "Holy Spirit, Faithful Guide",
+  "path": "data/CS1908/632.json"
+ },
+ {
   "id": "NZK-1",
   "book": "NZK",
   "number": "1",
@@ -278,6 +285,13 @@
   "number": "40",
   "title": "Nijaze Sasa",
   "path": "data/NZK/40.json"
+ },
+ {
+  "id": "NZK-41",
+  "book": "NZK",
+  "number": "41",
+  "title": "Roho Mtakatifu",
+  "path": "data/NZK/41.json"
  },
  {
   "id": "NZK-43",
@@ -5906,6 +5920,13 @@
   "number": "57",
   "title": "Roho Mar Nyasaye Ibina",
   "path": "data/WN/57.json"
+ },
+ {
+  "id": "WN-58",
+  "book": "WN",
+  "number": "58",
+  "title": "Muya Maler Jatendwa",
+  "path": "data/WN/58.json"
  },
  {
   "id": "WN-61",
