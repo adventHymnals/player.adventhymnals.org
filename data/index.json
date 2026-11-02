@@ -1127,6 +1127,41 @@
   "path": "data/SDAH/145.json"
  },
  {
+  "id": "SDAH-146",
+  "book": "SDAH",
+  "number": "146",
+  "title": "I Think When I Read That Sweet Story",
+  "path": "data/SDAH/146.json"
+ },
+ {
+  "id": "SDAH-147",
+  "book": "SDAH",
+  "number": "147",
+  "title": "Christ Upon the Mountain Peak",
+  "path": "data/SDAH/147.json"
+ },
+ {
+  "id": "SDAH-148",
+  "book": "SDAH",
+  "number": "148",
+  "title": "O Love, How Deep, How Broad",
+  "path": "data/SDAH/148.json"
+ },
+ {
+  "id": "SDAH-149",
+  "book": "SDAH",
+  "number": "149",
+  "title": "Once in Royal David's City",
+  "path": "data/SDAH/149.json"
+ },
+ {
+  "id": "SDAH-150",
+  "book": "SDAH",
+  "number": "150",
+  "title": "Who Is He in Yonder Stall?",
+  "path": "data/SDAH/150.json"
+ },
+ {
   "id": "SDAH-184",
   "book": "SDAH",
   "number": "184",
