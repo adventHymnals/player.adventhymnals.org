@@ -630,6 +630,13 @@
   "path": "data/SDAH/62.json"
  },
  {
+  "id": "SDAH-63",
+  "book": "SDAH",
+  "number": "63",
+  "title": "O Come, Let Us Sing to the Lord",
+  "path": "data/SDAH/63.json"
+ },
+ {
   "id": "SDAH-64",
   "book": "SDAH",
   "number": "64",
