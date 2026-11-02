@@ -2590,6 +2590,13 @@
   "path": "data/SDAH/324.json"
  },
  {
+  "id": "SDAH-325",
+  "book": "SDAH",
+  "number": "325",
+  "title": "Jesus, I My Cross Have Taken",
+  "path": "data/SDAH/325.json"
+ },
+ {
   "id": "SDAH-422",
   "book": "SDAH",
   "number": "422",
@@ -4184,6 +4191,13 @@
   "number": "208",
   "title": "Bedi Mangima Kuoma",
   "path": "data/WN/208.json"
+ },
+ {
+  "id": "WN-211",
+  "book": "WN",
+  "number": "211",
+  "title": "Aseweyo Tich Maricho",
+  "path": "data/WN/211.json"
  },
  {
   "id": "WN-212",
