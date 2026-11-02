@@ -182,6 +182,13 @@
   "path": "data/NZK/20.json"
  },
  {
+  "id": "NZK-22",
+  "book": "NZK",
+  "number": "22",
+  "title": "Usinipite Mwokozi",
+  "path": "data/NZK/22.json"
+ },
+ {
   "id": "NZK-23",
   "book": "NZK",
   "number": "23",
