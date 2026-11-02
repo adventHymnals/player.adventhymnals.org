@@ -231,6 +231,13 @@
   "path": "data/NZK/119.json"
  },
  {
+  "id": "NZK-164",
+  "book": "NZK",
+  "number": "164",
+  "title": "Mishale Ya Nuru",
+  "path": "data/NZK/164.json"
+ },
+ {
   "id": "NZK-197",
   "book": "NZK",
   "number": "197",
@@ -1545,6 +1552,41 @@
   "number": "200",
   "title": "The Lord Is Coming",
   "path": "data/SDAH/200.json"
+ },
+ {
+  "id": "SDAH-201",
+  "book": "SDAH",
+  "number": "201",
+  "title": "Christ Is Coming",
+  "path": "data/SDAH/201.json"
+ },
+ {
+  "id": "SDAH-202",
+  "book": "SDAH",
+  "number": "202",
+  "title": "Hail Him the King of Glory",
+  "path": "data/SDAH/202.json"
+ },
+ {
+  "id": "SDAH-203",
+  "book": "SDAH",
+  "number": "203",
+  "title": "This Is the Threefold Truth",
+  "path": "data/SDAH/203.json"
+ },
+ {
+  "id": "SDAH-204",
+  "book": "SDAH",
+  "number": "204",
+  "title": "Come, Thou Long Expected Jesus",
+  "path": "data/SDAH/204.json"
+ },
+ {
+  "id": "SDAH-205",
+  "book": "SDAH",
+  "number": "205",
+  "title": "Gleams of the Golden Morning",
+  "path": "data/SDAH/205.json"
  },
  {
   "id": "SDAH-422",
