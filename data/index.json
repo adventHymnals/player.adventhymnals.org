@@ -455,6 +455,13 @@
   "path": "data/CS1908/83.json"
  },
  {
+  "id": "CS1908-84",
+  "book": "CS1908",
+  "number": "84",
+  "title": "At the Door",
+  "path": "data/CS1908/84.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
