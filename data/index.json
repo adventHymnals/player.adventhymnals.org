@@ -357,6 +357,13 @@
   "path": "data/CS1908/59.json"
  },
  {
+  "id": "CS1908-60",
+  "book": "CS1908",
+  "number": "60",
+  "title": "Only a Step",
+  "path": "data/CS1908/60.json"
+ },
+ {
   "id": "CS1908-61",
   "book": "CS1908",
   "number": "61",
