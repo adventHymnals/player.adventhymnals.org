@@ -182,6 +182,13 @@
   "path": "data/CH1941/26.json"
  },
  {
+  "id": "CH1941-27",
+  "book": "CH1941",
+  "number": "27",
+  "title": "Blessed Jesus, at Thy Word",
+  "path": "data/CH1941/27.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
