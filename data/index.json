@@ -336,6 +336,13 @@
   "path": "data/CS1908/541.json"
  },
  {
+  "id": "CS1908-554",
+  "book": "CS1908",
+  "number": "554",
+  "title": "Speak to My Soul",
+  "path": "data/CS1908/554.json"
+ },
+ {
   "id": "CS1908-555",
   "book": "CS1908",
   "number": "555",
@@ -6214,6 +6221,13 @@
   "number": "10",
   "title": "Kristo In Wuon Ng'wono Duto",
   "path": "data/WN/10.json"
+ },
+ {
+  "id": "WN-15",
+  "book": "WN",
+  "number": "15",
+  "title": "Wuo Gi Chunya",
+  "path": "data/WN/15.json"
  },
  {
   "id": "WN-19",
