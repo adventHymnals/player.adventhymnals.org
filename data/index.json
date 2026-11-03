@@ -294,6 +294,13 @@
   "path": "data/CH1941/42.json"
  },
  {
+  "id": "CH1941-43",
+  "book": "CH1941",
+  "number": "43",
+  "title": "When Morning Gilds the Skies",
+  "path": "data/CH1941/43.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
