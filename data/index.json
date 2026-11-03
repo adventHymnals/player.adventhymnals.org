@@ -553,6 +553,13 @@
   "path": "data/CS1908/102.json"
  },
  {
+  "id": "CS1908-103",
+  "book": "CS1908",
+  "number": "103",
+  "title": "Take Me as I Am",
+  "path": "data/CS1908/103.json"
+ },
+ {
   "id": "CS1908-104",
   "book": "CS1908",
   "number": "104",
