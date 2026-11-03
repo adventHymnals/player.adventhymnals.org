@@ -161,6 +161,13 @@
   "path": "data/CS1908/15.json"
  },
  {
+  "id": "CS1908-20",
+  "book": "CS1908",
+  "number": "20",
+  "title": "Shall I Let Him In?",
+  "path": "data/CS1908/20.json"
+ },
+ {
   "id": "CS1908-21",
   "book": "CS1908",
   "number": "21",
