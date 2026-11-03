@@ -595,6 +595,13 @@
   "path": "data/CS1908/113.json"
  },
  {
+  "id": "CS1908-114",
+  "book": "CS1908",
+  "number": "114",
+  "title": "All Have Gone Astray",
+  "path": "data/CS1908/114.json"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
