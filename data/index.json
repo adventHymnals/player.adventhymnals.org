@@ -301,6 +301,13 @@
   "path": "data/CS1908/43.json"
  },
  {
+  "id": "CS1908-45",
+  "book": "CS1908",
+  "number": "45",
+  "title": "While Jesus Whispers",
+  "path": "data/CS1908/45.json"
+ },
+ {
   "id": "CS1908-49",
   "book": "CS1908",
   "number": "49",
