@@ -231,6 +231,13 @@
   "path": "data/CH1941/33.json"
  },
  {
+  "id": "CH1941-34",
+  "book": "CH1941",
+  "number": "34",
+  "title": "Saviour, Again to Thy Dear Name",
+  "path": "data/CH1941/34.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -1356,6 +1363,13 @@
   "number": "26",
   "title": "Tupe Amani",
   "path": "data/NZK/26.json"
+ },
+ {
+  "id": "NZK-27",
+  "book": "NZK",
+  "number": "27",
+  "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
+  "path": "data/NZK/27.json"
  },
  {
   "id": "NZK-29",
