@@ -406,6 +406,13 @@
   "path": "data/CS1908/598.json"
  },
  {
+  "id": "CS1908-608",
+  "book": "CS1908",
+  "number": "608",
+  "title": "My Sabbath Home",
+  "path": "data/CS1908/608.json"
+ },
+ {
   "id": "CS1908-631",
   "book": "CS1908",
   "number": "631",
@@ -6536,6 +6543,13 @@
   "number": "119",
   "title": "Sabato Mari, Ruoth",
   "path": "data/WN/119.json"
+ },
+ {
+  "id": "WN-123",
+  "book": "WN",
+  "number": "123",
+  "title": "In Skul Marwa Mar Sabato",
+  "path": "data/WN/123.json"
  },
  {
   "id": "WN-133",
