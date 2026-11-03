@@ -357,6 +357,13 @@
   "path": "data/CH1941/51.json"
  },
  {
+  "id": "CH1941-52",
+  "book": "CH1941",
+  "number": "52",
+  "title": "Now the Day Is Over",
+  "path": "data/CH1941/52.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
