@@ -280,6 +280,20 @@
   "path": "data/CH1941/40.json"
  },
  {
+  "id": "CH1941-41",
+  "book": "CH1941",
+  "number": "41",
+  "title": "O Christ, With Each Returning Morn",
+  "path": "data/CH1941/41.json"
+ },
+ {
+  "id": "CH1941-42",
+  "book": "CH1941",
+  "number": "42",
+  "title": "New Every Morning",
+  "path": "data/CH1941/42.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
