@@ -224,6 +224,13 @@
   "path": "data/CS1908/29.json"
  },
  {
+  "id": "CS1908-30",
+  "book": "CS1908",
+  "number": "30",
+  "title": "Able to Deliver",
+  "path": "data/CS1908/30.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
