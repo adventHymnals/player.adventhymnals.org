@@ -217,6 +217,13 @@
   "path": "data/CS1908/27.json"
  },
  {
+  "id": "CS1908-29",
+  "book": "CS1908",
+  "number": "29",
+  "title": "Ring the Bells of Heaven",
+  "path": "data/CS1908/29.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
