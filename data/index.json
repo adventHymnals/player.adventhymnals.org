@@ -532,6 +532,13 @@
   "path": "data/CH1941/76.json"
  },
  {
+  "id": "CH1941-77",
+  "book": "CH1941",
+  "number": "77",
+  "title": "Ye Watchers and Ye Holy Ones",
+  "path": "data/CH1941/77.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
