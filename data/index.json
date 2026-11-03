@@ -315,6 +315,13 @@
   "path": "data/CS1908/300.json"
  },
  {
+  "id": "CS1908-305",
+  "book": "CS1908",
+  "number": "305",
+  "title": "I Remember Calvary",
+  "path": "data/CS1908/305.json"
+ },
+ {
   "id": "CS1908-310",
   "book": "CS1908",
   "number": "310",
@@ -6907,6 +6914,13 @@
   "number": "227",
   "title": "Be Yesu Ling",
   "path": "data/WN/227.json"
+ },
+ {
+  "id": "WN-231",
+  "book": "WN",
+  "number": "231",
+  "title": "Kwonde Duto Motelona",
+  "path": "data/WN/231.json"
  },
  {
   "id": "WN-235",
