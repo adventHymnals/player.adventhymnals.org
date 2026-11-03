@@ -630,6 +630,34 @@
   "path": "data/CH1941/90.json"
  },
  {
+  "id": "CH1941-91",
+  "book": "CH1941",
+  "number": "91",
+  "title": "The Spacious Firmament",
+  "path": "data/CH1941/91.json"
+ },
+ {
+  "id": "CH1941-92",
+  "book": "CH1941",
+  "number": "92",
+  "title": "There Is a Book",
+  "path": "data/CH1941/92.json"
+ },
+ {
+  "id": "CH1941-93",
+  "book": "CH1941",
+  "number": "93",
+  "title": "I Sing the Mighty Power",
+  "path": "data/CH1941/93.json"
+ },
+ {
+  "id": "CH1941-94",
+  "book": "CH1941",
+  "number": "94",
+  "title": "All Beautiful the March of Days",
+  "path": "data/CH1941/94.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
