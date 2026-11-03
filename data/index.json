@@ -217,6 +217,13 @@
   "path": "data/CS1908/100.json"
  },
  {
+  "id": "CS1908-104",
+  "book": "CS1908",
+  "number": "104",
+  "title": "Art Thou Weary?",
+  "path": "data/CS1908/104.json"
+ },
+ {
   "id": "CS1908-112",
   "book": "CS1908",
   "number": "112",
@@ -950,6 +957,13 @@
   "number": "111",
   "title": "Tabibu Mkuu",
   "path": "data/NZK/111.json"
+ },
+ {
+  "id": "NZK-112",
+  "book": "NZK",
+  "number": "112",
+  "title": "Wewe Umechoka Sana",
+  "path": "data/NZK/112.json"
  },
  {
   "id": "NZK-113",
