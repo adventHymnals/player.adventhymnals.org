@@ -182,6 +182,13 @@
   "path": "data/CS1908/25.json"
  },
  {
+  "id": "CS1908-27",
+  "book": "CS1908",
+  "number": "27",
+  "title": "There Is Power in the Blood",
+  "path": "data/CS1908/27.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
