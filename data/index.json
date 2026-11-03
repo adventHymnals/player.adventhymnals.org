@@ -735,6 +735,13 @@
   "path": "data/NZK/56.json"
  },
  {
+  "id": "NZK-58",
+  "book": "NZK",
+  "number": "58",
+  "title": "Zitakuwa Nyota Tajini",
+  "path": "data/NZK/58.json"
+ },
+ {
   "id": "NZK-61",
   "book": "NZK",
   "number": "61",
@@ -873,6 +880,13 @@
   "number": "94",
   "title": "Po Pote Mashamba Yajaa",
   "path": "data/NZK/94.json"
+ },
+ {
+  "id": "NZK-95",
+  "book": "NZK",
+  "number": "95",
+  "title": "Zileteni Zaka Kwa Hazina",
+  "path": "data/NZK/95.json"
  },
  {
   "id": "NZK-98",
