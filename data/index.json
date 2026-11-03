@@ -406,6 +406,13 @@
   "path": "data/CH1941/58.json"
  },
  {
+  "id": "CH1941-59",
+  "book": "CH1941",
+  "number": "59",
+  "title": "The Sun Rolls Down",
+  "path": "data/CH1941/59.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
