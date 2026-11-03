@@ -574,6 +574,13 @@
   "path": "data/CS1908/106.json"
  },
  {
+  "id": "CS1908-111",
+  "book": "CS1908",
+  "number": "111",
+  "title": "Ashamed of Jesus",
+  "path": "data/CS1908/111.json"
+ },
+ {
   "id": "CS1908-112",
   "book": "CS1908",
   "number": "112",
