@@ -392,6 +392,13 @@
   "path": "data/CH1941/56.json"
  },
  {
+  "id": "CH1941-57",
+  "book": "CH1941",
+  "number": "57",
+  "title": "The Day Thou Gavest",
+  "path": "data/CH1941/57.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
