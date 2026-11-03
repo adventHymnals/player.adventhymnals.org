@@ -308,6 +308,13 @@
   "path": "data/CH1941/44.json"
  },
  {
+  "id": "CH1941-45",
+  "book": "CH1941",
+  "number": "45",
+  "title": "The Sun Is on the Land",
+  "path": "data/CH1941/45.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
