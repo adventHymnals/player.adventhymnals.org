@@ -231,6 +231,13 @@
   "path": "data/CS1908/30.json"
  },
  {
+  "id": "CS1908-31",
+  "book": "CS1908",
+  "number": "31",
+  "title": "Come, Great Deliverer, Come",
+  "path": "data/CS1908/31.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
