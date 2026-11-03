@@ -301,6 +301,13 @@
   "path": "data/CH1941/43.json"
  },
  {
+  "id": "CH1941-44",
+  "book": "CH1941",
+  "number": "44",
+  "title": "Awake, My Soul",
+  "path": "data/CH1941/44.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
