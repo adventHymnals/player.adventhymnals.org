@@ -273,6 +273,13 @@
   "path": "data/CH1941/39.json"
  },
  {
+  "id": "CH1941-40",
+  "book": "CH1941",
+  "number": "40",
+  "title": "Sweetly the Holy Hymn",
+  "path": "data/CH1941/40.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
