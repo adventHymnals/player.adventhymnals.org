@@ -490,6 +490,13 @@
   "path": "data/CH1941/70.json"
  },
  {
+  "id": "CH1941-71",
+  "book": "CH1941",
+  "number": "71",
+  "title": "My Maker and My King",
+  "path": "data/CH1941/71.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
