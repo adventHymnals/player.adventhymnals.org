@@ -427,6 +427,13 @@
   "path": "data/CS1908/73.json"
  },
  {
+  "id": "CS1908-75",
+  "book": "CS1908",
+  "number": "75",
+  "title": "Seeking for Me",
+  "path": "data/CS1908/75.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
