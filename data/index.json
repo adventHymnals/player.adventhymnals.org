@@ -672,6 +672,13 @@
   "path": "data/NZK/45.json"
  },
  {
+  "id": "NZK-46",
+  "book": "NZK",
+  "number": "46",
+  "title": "Miguuni Pake Yesu",
+  "path": "data/NZK/46.json"
+ },
+ {
   "id": "NZK-47",
   "book": "NZK",
   "number": "47",
