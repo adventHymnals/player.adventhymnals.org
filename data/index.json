@@ -6517,6 +6517,13 @@
   "path": "data/WN/10.json"
  },
  {
+  "id": "WN-12",
+  "book": "WN",
+  "number": "12",
+  "title": "Ji Duto Mondo Wer Wendni",
+  "path": "data/WN/12.json"
+ },
+ {
   "id": "WN-15",
   "book": "WN",
   "number": "15",
