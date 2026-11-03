@@ -518,6 +518,13 @@
   "path": "data/CS1908/93.json"
  },
  {
+  "id": "CS1908-96",
+  "book": "CS1908",
+  "number": "96",
+  "title": "What Hast Thou Done?",
+  "path": "data/CS1908/96.json"
+ },
+ {
   "id": "CS1908-100",
   "book": "CS1908",
   "number": "100",
