@@ -343,6 +343,13 @@
   "path": "data/CS1908/57.json"
  },
  {
+  "id": "CS1908-58",
+  "book": "CS1908",
+  "number": "58",
+  "title": "His Way With Thee",
+  "path": "data/CS1908/58.json"
+ },
+ {
   "id": "CS1908-61",
   "book": "CS1908",
   "number": "61",
@@ -7005,6 +7012,13 @@
   "number": "208",
   "title": "Bedi Mangima Kuoma",
   "path": "data/WN/208.json"
+ },
+ {
+  "id": "WN-210",
+  "book": "WN",
+  "number": "210",
+  "title": "Diyie Dak Kod Yesu",
+  "path": "data/WN/210.json"
  },
  {
   "id": "WN-211",
