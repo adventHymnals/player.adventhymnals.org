@@ -14,11 +14,53 @@
   "path": "data/CH1941/2.json"
  },
  {
+  "id": "CH1941-3",
+  "book": "CH1941",
+  "number": "3",
+  "title": "Come, Thou Almighty King",
+  "path": "data/CH1941/3.json"
+ },
+ {
   "id": "CH1941-4",
   "book": "CH1941",
   "number": "4",
   "title": "With Reverence Let the Saints Appear",
   "path": "data/CH1941/4.json"
+ },
+ {
+  "id": "CH1941-5",
+  "book": "CH1941",
+  "number": "5",
+  "title": "God's Free Mercy Streameth",
+  "path": "data/CH1941/5.json"
+ },
+ {
+  "id": "CH1941-6",
+  "book": "CH1941",
+  "number": "6",
+  "title": "O Worship the Lord",
+  "path": "data/CH1941/6.json"
+ },
+ {
+  "id": "CH1941-7",
+  "book": "CH1941",
+  "number": "7",
+  "title": "The Lord in Zion Reigneth",
+  "path": "data/CH1941/7.json"
+ },
+ {
+  "id": "CH1941-8",
+  "book": "CH1941",
+  "number": "8",
+  "title": "We Gather Together",
+  "path": "data/CH1941/8.json"
+ },
+ {
+  "id": "CH1941-9",
+  "book": "CH1941",
+  "number": "9",
+  "title": "Praise Ye the Father",
+  "path": "data/CH1941/9.json"
  },
  {
   "id": "CH1941-10",
