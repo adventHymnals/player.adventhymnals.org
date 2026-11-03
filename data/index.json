@@ -294,6 +294,13 @@
   "path": "data/CS1908/300.json"
  },
  {
+  "id": "CS1908-310",
+  "book": "CS1908",
+  "number": "310",
+  "title": "All for Jesus",
+  "path": "data/CS1908/310.json"
+ },
+ {
   "id": "CS1908-399",
   "book": "CS1908",
   "number": "399",
@@ -6368,6 +6375,13 @@
   "number": "62",
   "title": "Onge Osiep Moro Kaka Yesu",
   "path": "data/WN/62.json"
+ },
+ {
+  "id": "WN-64",
+  "book": "WN",
+  "number": "64",
+  "title": "Kabedo E Tiend Ruoth Yesu",
+  "path": "data/WN/64.json"
  },
  {
   "id": "WN-66",
