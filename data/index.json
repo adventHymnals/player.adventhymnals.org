@@ -420,6 +420,13 @@
   "path": "data/CS1908/72.json"
  },
  {
+  "id": "CS1908-73",
+  "book": "CS1908",
+  "number": "73",
+  "title": "Just a Word for Jesus",
+  "path": "data/CS1908/73.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
