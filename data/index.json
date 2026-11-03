@@ -35,6 +35,13 @@
   "path": "data/CH1941/11.json"
  },
  {
+  "id": "CH1941-14",
+  "book": "CH1941",
+  "number": "14",
+  "title": "Praise Ye the Lord",
+  "path": "data/CH1941/14.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
