@@ -434,6 +434,13 @@
   "path": "data/CS1908/75.json"
  },
  {
+  "id": "CS1908-77",
+  "book": "CS1908",
+  "number": "77",
+  "title": "Like as a Father",
+  "path": "data/CS1908/77.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
