@@ -483,6 +483,13 @@
   "path": "data/CS1908/88.json"
  },
  {
+  "id": "CS1908-89",
+  "book": "CS1908",
+  "number": "89",
+  "title": "Almost Persuaded",
+  "path": "data/CS1908/89.json"
+ },
+ {
   "id": "CS1908-93",
   "book": "CS1908",
   "number": "93",
