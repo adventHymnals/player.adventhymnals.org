@@ -665,6 +665,13 @@
   "path": "data/CS1908/126.json"
  },
  {
+  "id": "CS1908-127",
+  "book": "CS1908",
+  "number": "127",
+  "title": "Decisive Day",
+  "path": "data/CS1908/127.json"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
