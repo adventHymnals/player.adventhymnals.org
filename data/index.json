@@ -735,6 +735,34 @@
   "path": "data/CS1908/140.json"
  },
  {
+  "id": "CS1908-141",
+  "book": "CS1908",
+  "number": "141",
+  "title": "Thy Work Alone",
+  "path": "data/CS1908/141.json"
+ },
+ {
+  "id": "CS1908-142",
+  "book": "CS1908",
+  "number": "142",
+  "title": "Cleansed",
+  "path": "data/CS1908/142.json"
+ },
+ {
+  "id": "CS1908-143",
+  "book": "CS1908",
+  "number": "143",
+  "title": "Born",
+  "path": "data/CS1908/143.json"
+ },
+ {
+  "id": "CS1908-144",
+  "book": "CS1908",
+  "number": "144",
+  "title": "Coming",
+  "path": "data/CS1908/144.json"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
