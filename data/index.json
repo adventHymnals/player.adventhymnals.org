@@ -182,6 +182,13 @@
   "path": "data/CS1908/22.json"
  },
  {
+  "id": "CS1908-23",
+  "book": "CS1908",
+  "number": "23",
+  "title": "Repeating Calvary",
+  "path": "data/CS1908/23.json"
+ },
+ {
   "id": "CS1908-25",
   "book": "CS1908",
   "number": "25",
