@@ -602,6 +602,34 @@
   "path": "data/CH1941/86.json"
  },
  {
+  "id": "CH1941-87",
+  "book": "CH1941",
+  "number": "87",
+  "title": "Lead Us, Heavenly Father",
+  "path": "data/CH1941/87.json"
+ },
+ {
+  "id": "CH1941-88",
+  "book": "CH1941",
+  "number": "88",
+  "title": "O God of Bethel",
+  "path": "data/CH1941/88.json"
+ },
+ {
+  "id": "CH1941-89",
+  "book": "CH1941",
+  "number": "89",
+  "title": "God Is the Refuge",
+  "path": "data/CH1941/89.json"
+ },
+ {
+  "id": "CH1941-90",
+  "book": "CH1941",
+  "number": "90",
+  "title": "Now Thank We All Our God",
+  "path": "data/CH1941/90.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
