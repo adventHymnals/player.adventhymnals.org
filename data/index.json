@@ -266,6 +266,13 @@
   "path": "data/CS1908/37.json"
  },
  {
+  "id": "CS1908-38",
+  "book": "CS1908",
+  "number": "38",
+  "title": "The Passover",
+  "path": "data/CS1908/38.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
