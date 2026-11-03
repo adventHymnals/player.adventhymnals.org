@@ -203,6 +203,13 @@
   "path": "data/CH1941/29.json"
  },
  {
+  "id": "CH1941-30",
+  "book": "CH1941",
+  "number": "30",
+  "title": "Lord, We Come Before Thee Now",
+  "path": "data/CH1941/30.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
