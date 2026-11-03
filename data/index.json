@@ -406,6 +406,13 @@
   "path": "data/CS1908/68.json"
  },
  {
+  "id": "CS1908-69",
+  "book": "CS1908",
+  "number": "69",
+  "title": "Pure Gold",
+  "path": "data/CS1908/69.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
