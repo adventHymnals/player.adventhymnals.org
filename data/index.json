@@ -154,6 +154,13 @@
   "path": "data/CS1908/14.json"
  },
  {
+  "id": "CS1908-15",
+  "book": "CS1908",
+  "number": "15",
+  "title": "Get Right With God",
+  "path": "data/CS1908/15.json"
+ },
+ {
   "id": "CS1908-21",
   "book": "CS1908",
   "number": "21",
