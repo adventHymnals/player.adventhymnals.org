@@ -546,6 +546,13 @@
   "path": "data/CS1908/100.json"
  },
  {
+  "id": "CS1908-102",
+  "book": "CS1908",
+  "number": "102",
+  "title": "A Sinner Like Me",
+  "path": "data/CS1908/102.json"
+ },
+ {
   "id": "CS1908-104",
   "book": "CS1908",
   "number": "104",
