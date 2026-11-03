@@ -385,6 +385,13 @@
   "path": "data/CH1941/55.json"
  },
  {
+  "id": "CH1941-56",
+  "book": "CH1941",
+  "number": "56",
+  "title": "Again as Evening's Shadow Falls",
+  "path": "data/CH1941/56.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
