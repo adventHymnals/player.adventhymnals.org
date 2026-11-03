@@ -679,6 +679,27 @@
   "path": "data/CH1941/97.json"
  },
  {
+  "id": "CH1941-98",
+  "book": "CH1941",
+  "number": "98",
+  "title": "On Hills and Vales of Heaven",
+  "path": "data/CH1941/98.json"
+ },
+ {
+  "id": "CH1941-99",
+  "book": "CH1941",
+  "number": "99",
+  "title": "It Came Upon the Midnight Clear",
+  "path": "data/CH1941/99.json"
+ },
+ {
+  "id": "CH1941-100",
+  "book": "CH1941",
+  "number": "100",
+  "title": "To Us a Child of Hope Is Born",
+  "path": "data/CH1941/100.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
