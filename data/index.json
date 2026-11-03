@@ -567,6 +567,13 @@
   "path": "data/CS1908/104.json"
  },
  {
+  "id": "CS1908-106",
+  "book": "CS1908",
+  "number": "106",
+  "title": "Believing and Receiving",
+  "path": "data/CS1908/106.json"
+ },
+ {
   "id": "CS1908-112",
   "book": "CS1908",
   "number": "112",
