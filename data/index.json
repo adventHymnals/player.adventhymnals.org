@@ -504,6 +504,13 @@
   "path": "data/CH1941/72.json"
  },
  {
+  "id": "CH1941-73",
+  "book": "CH1941",
+  "number": "73",
+  "title": "Holy, Holy, Holy",
+  "path": "data/CH1941/73.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
