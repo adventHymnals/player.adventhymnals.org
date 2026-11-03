@@ -644,6 +644,13 @@
   "path": "data/CS1908/122.json"
  },
  {
+  "id": "CS1908-123",
+  "book": "CS1908",
+  "number": "123",
+  "title": "Arise, My Soul, Arise!",
+  "path": "data/CS1908/123.json"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
