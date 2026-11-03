@@ -413,6 +413,13 @@
   "path": "data/CH1941/59.json"
  },
  {
+  "id": "CH1941-60",
+  "book": "CH1941",
+  "number": "60",
+  "title": "O Blessed Hour",
+  "path": "data/CH1941/60.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
