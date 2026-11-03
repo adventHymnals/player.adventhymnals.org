@@ -413,6 +413,13 @@
   "path": "data/CS1908/69.json"
  },
  {
+  "id": "CS1908-72",
+  "book": "CS1908",
+  "number": "72",
+  "title": "Who'll Be the Next?",
+  "path": "data/CS1908/72.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
