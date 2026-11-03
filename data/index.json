@@ -658,6 +658,27 @@
   "path": "data/CH1941/94.json"
  },
  {
+  "id": "CH1941-95",
+  "book": "CH1941",
+  "number": "95",
+  "title": "The Glory of the Spring",
+  "path": "data/CH1941/95.json"
+ },
+ {
+  "id": "CH1941-96",
+  "book": "CH1941",
+  "number": "96",
+  "title": "Glorious Are the Lofty Mountains",
+  "path": "data/CH1941/96.json"
+ },
+ {
+  "id": "CH1941-97",
+  "book": "CH1941",
+  "number": "97",
+  "title": "Lord of the Ocean",
+  "path": "data/CH1941/97.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
