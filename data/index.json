@@ -147,6 +147,20 @@
   "path": "data/CH1941/21.json"
  },
  {
+  "id": "CH1941-22",
+  "book": "CH1941",
+  "number": "22",
+  "title": "For the Beauty of the Earth",
+  "path": "data/CH1941/22.json"
+ },
+ {
+  "id": "CH1941-23",
+  "book": "CH1941",
+  "number": "23",
+  "title": "Lord, With Glowing Heart I'd Praise Thee",
+  "path": "data/CH1941/23.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
