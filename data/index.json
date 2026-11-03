@@ -385,6 +385,13 @@
   "path": "data/CS1908/65.json"
  },
  {
+  "id": "CS1908-66",
+  "book": "CS1908",
+  "number": "66",
+  "title": "Yield Not to Temptation",
+  "path": "data/CS1908/66.json"
+ },
+ {
   "id": "CS1908-86",
   "book": "CS1908",
   "number": "86",
