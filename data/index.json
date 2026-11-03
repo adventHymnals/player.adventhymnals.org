@@ -714,6 +714,20 @@
   "path": "data/CS1908/135.json"
  },
  {
+  "id": "CS1908-137",
+  "book": "CS1908",
+  "number": "137",
+  "title": "There Is a Line",
+  "path": "data/CS1908/137.json"
+ },
+ {
+  "id": "CS1908-138",
+  "book": "CS1908",
+  "number": "138",
+  "title": "The Wonders of Redeeming Love",
+  "path": "data/CS1908/138.json"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
