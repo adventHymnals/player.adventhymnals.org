@@ -14,6 +14,20 @@
   "path": "data/CH1941/2.json"
  },
  {
+  "id": "CH1941-4",
+  "book": "CH1941",
+  "number": "4",
+  "title": "With Reverence Let the Saints Appear",
+  "path": "data/CH1941/4.json"
+ },
+ {
+  "id": "CH1941-10",
+  "book": "CH1941",
+  "number": "10",
+  "title": "Praise, O Praise Our God and King!",
+  "path": "data/CH1941/10.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
