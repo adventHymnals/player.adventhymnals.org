@@ -161,6 +161,13 @@
   "path": "data/CH1941/23.json"
  },
  {
+  "id": "CH1941-24",
+  "book": "CH1941",
+  "number": "24",
+  "title": "How Pleasant, How Divinely Fair",
+  "path": "data/CH1941/24.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
