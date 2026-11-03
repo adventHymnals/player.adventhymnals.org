@@ -182,6 +182,13 @@
   "path": "data/CS1908/25.json"
  },
  {
+  "id": "CS1908-26",
+  "book": "CS1908",
+  "number": "26",
+  "title": "Ye Must Be Born Again",
+  "path": "data/CS1908/26.json"
+ },
+ {
   "id": "CS1908-27",
   "book": "CS1908",
   "number": "27",
