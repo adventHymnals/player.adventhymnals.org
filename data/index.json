@@ -77,6 +77,20 @@
   "path": "data/CH1941/11.json"
  },
  {
+  "id": "CH1941-12",
+  "book": "CH1941",
+  "number": "12",
+  "title": "Praise to the Lord",
+  "path": "data/CH1941/12.json"
+ },
+ {
+  "id": "CH1941-13",
+  "book": "CH1941",
+  "number": "13",
+  "title": "All People That on Earth Do Dwell",
+  "path": "data/CH1941/13.json"
+ },
+ {
   "id": "CH1941-14",
   "book": "CH1941",
   "number": "14",
@@ -84,11 +98,32 @@
   "path": "data/CH1941/14.json"
  },
  {
+  "id": "CH1941-15",
+  "book": "CH1941",
+  "number": "15",
+  "title": "All Glory, Laud, and Honor",
+  "path": "data/CH1941/15.json"
+ },
+ {
   "id": "CH1941-16",
   "book": "CH1941",
   "number": "16",
   "title": "Praise the Lord, His Glories Show",
   "path": "data/CH1941/16.json"
+ },
+ {
+  "id": "CH1941-17",
+  "book": "CH1941",
+  "number": "17",
+  "title": "Rejoice, Ye Pure in Heart",
+  "path": "data/CH1941/17.json"
+ },
+ {
+  "id": "CH1941-18",
+  "book": "CH1941",
+  "number": "18",
+  "title": "O for a Heart to Praise My God!",
+  "path": "data/CH1941/18.json"
  },
  {
   "id": "CH1941-19",
