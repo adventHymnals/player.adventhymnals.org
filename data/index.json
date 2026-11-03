@@ -329,6 +329,13 @@
   "path": "data/CS1908/527.json"
  },
  {
+  "id": "CS1908-530",
+  "book": "CS1908",
+  "number": "530",
+  "title": "Forward",
+  "path": "data/CS1908/530.json"
+ },
+ {
   "id": "CS1908-541",
   "book": "CS1908",
   "number": "541",
@@ -6459,6 +6466,13 @@
   "number": "102",
   "title": "Rituru, Lemuru",
   "path": "data/WN/102.json"
+ },
+ {
+  "id": "WN-110",
+  "book": "WN",
+  "number": "110",
+  "title": "Kristo En Jatelowa",
+  "path": "data/WN/110.json"
  },
  {
   "id": "WN-111",
