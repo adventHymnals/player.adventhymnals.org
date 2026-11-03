@@ -273,6 +273,13 @@
   "path": "data/CS1908/38.json"
  },
  {
+  "id": "CS1908-39",
+  "book": "CS1908",
+  "number": "39",
+  "title": "In the Silent Midnight Watches",
+  "path": "data/CS1908/39.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
