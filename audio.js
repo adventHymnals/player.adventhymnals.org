@@ -203,10 +203,18 @@ export class Engine {
    * stems that arrived; a stem that fails or takes longer than `timeout` ms is left out (its
    * voice falls back to the synth). onProgress(done, total) reports each one.
    */
+  /** Let go of every decoded recording (a new hymn is opening). */
+  dropStems() { this.stems?.clear(); this.stemGen = (this.stemGen || 0) + 1; this.setStemBuffers(new Map()); }
+
   async loadStems(list, onProgress = () => {}, timeout = 25000) {
     this.ensure();
     this.stems = this.stems || new Map();
-    const todo = [...new Set(list.map((s) => s.url))].filter((u) => !this.stems.has(u));
+    // Only this hymn's recordings stay decoded: each is tens of MB of samples, and keeping every
+    // hymn's made a phone run out of memory (and hang) after a few songs.
+    const keep = new Set(list.map((s) => s.url));
+    for (const u of [...this.stems.keys()]) if (!keep.has(u)) this.stems.delete(u);
+    const gen = (this.stemGen = (this.stemGen || 0) + 1); // a newer call makes this one's late arrivals unwanted
+    const todo = [...keep].filter((u) => !this.stems.has(u));
     let done = 0;
     const total = todo.length;
     const failed = [];
@@ -215,9 +223,9 @@ export class Engine {
       const ctl = new AbortController();
       const timer = setTimeout(() => ctl.abort(), timeout);
       try {
-        const r = await fetch(url, { signal: ctl.signal });
-        if (!r.ok) throw new Error(String(r.status));
-        this.stems.set(url, await this.ctx.decodeAudioData(await r.arrayBuffer()));
+        const buf = await this.ctx.decodeAudioData(await singers.fetch(url, ctl.signal));
+        if (gen === this.stemGen) this.stems.set(url, buf);
+
       } catch {
         failed.push(url);
       } finally {
@@ -228,6 +236,7 @@ export class Engine {
     const map = new Map();
     for (const s of list) if (this.stems.has(s.url)) map.set(s.key, this.stems.get(s.url));
     map.failed = failed;
+    map.stale = gen !== this.stemGen; // another hymn (or other verses) asked since
     return map;
   }
 
@@ -409,3 +418,58 @@ export class Engine {
     }
   }
 }
+
+// ---- saved singers (?app) ---------------------------------------------------------------------------
+// In the app the recordings (and each hymn's list of them) are kept on the phone once heard, as the
+// small compressed files, so a hymn sung before plays again offline and without downloading. The
+// app lists them by hymn, with their size, and clears all or chosen hymns. Elsewhere this is off.
+const SINGERS = "ah-singers";
+const hymnOf = (url) => decodeURIComponent((new URL(url).pathname.match(/\/audio\/([^/]+)\//) || [])[1] || "");
+export const singers = {
+  on: false,
+  async cache() { if (!this.on) return null; try { return await caches.open(SINGERS); } catch { return null; } },
+  /** A recording's bytes: from the phone when saved, else downloaded (and saved). */
+  async fetch(url, signal) {
+    const c = await this.cache();
+    const hit = c && (await c.match(url).catch(() => null));
+    if (hit) return hit.arrayBuffer();
+    const r = await fetch(url, { signal });
+    if (!r.ok) throw new Error(String(r.status));
+    if (c) c.put(url, r.clone()).catch(() => { /* phone full: play without saving */ });
+    return r.arrayBuffer();
+  },
+  /** A hymn's list of recordings: fresh when online (and saved), the saved one when not. */
+  async manifest(url) {
+    const c = await this.cache();
+    try {
+      const r = await fetch(url, { cache: "no-cache" });
+      if (r.ok) { c?.put(url, r.clone()).catch(() => {}); return r; }
+      if (r.status === 404) return r;
+    } catch { /* offline */ }
+    const hit = c && (await c.match(url).catch(() => null));
+    return hit || fetch(url, { cache: "force-cache" });
+  },
+  /** [{ hymn, bytes, files }] for every hymn with saved singers, largest first. */
+  async list() {
+    const c = await this.cache();
+    if (!c) return [];
+    const by = new Map();
+    for (const req of await c.keys()) {
+      const id = hymnOf(req.url);
+      if (!id) continue;
+      const r = await c.match(req);
+      const n = Number(r?.headers.get("content-length")) || (await r?.blob())?.size || 0;
+      const x = by.get(id) || { hymn: id, bytes: 0, files: 0 };
+      x.bytes += n; if (!req.url.endsWith("manifest.json")) x.files++;
+      by.set(id, x);
+    }
+    return [...by.values()].filter((x) => x.files).sort((a, b) => b.bytes - a.bytes);
+  },
+  /** Clear the saved singers of these hymns, or of every hymn when ids is null. */
+  async clear(ids) {
+    const c = await this.cache();
+    if (!c) return;
+    const want = ids ? new Set(ids) : null;
+    for (const req of await c.keys()) if (!want || want.has(hymnOf(req.url))) await c.delete(req);
+  },
+};

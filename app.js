@@ -2,7 +2,7 @@ import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
   trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds,
 } from "./core.js";
-import { Engine } from "./audio.js";
+import { Engine, singers } from "./audio.js";
 import { ScoreView } from "./scoreview.js";
 import { SolfaView, WordsView } from "./solfa.js";
 import { Waterfall } from "./waterfall.js";
@@ -27,6 +27,7 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const EMBED = new URLSearchParams(location.search).has("embed");
 // ?app: inside the Android app, which draws its own controls and drives this page through window.AHStudio
 const APP = new URLSearchParams(location.search).has("app");
+singers.on = APP; // the app keeps the singers it has played (and lets them be cleared)
 // ?remote=<url>: this copy is bundled in the app; hymn data and recordings come from that site
 // (the live list and new hymns when online, the bundled copy when not)
 const REMOTE = new URLSearchParams(location.search).get("remote") || "";
@@ -90,12 +91,21 @@ const state = {
   singVoice: store.get("singVoice", "S"),
   muteMine: store.get("muteMine", true),
   anyOctave: store.get("anyOctave", true),
+  // ?app, the staff view: "line by line", one line at a time, the next line uncovered behind the
+  // playhead (as the presenter does), instead of the whole page scrolling
+  sweep: store.get("sweep", false),
+  altZoom: store.get("altZoom", 1), // the sol-fa and words views, pinched larger or smaller
 };
 let hymnWritten = null; // the hymn as transcribed; `hymn` may be a rhythm variant of it
 // key changes made while playing: from section k at score position q, move by delta semitones
 let liveChanges = [];
 let renderedShift = 0;
 const save = (...keys) => keys.forEach((k) => store.set(k, state[k]));
+// ?app: the hymn the app asked for last. Until it has loaded, the page reports it is not ready,
+// so the app can never play (or show) the hymn it had before.
+const appWant = { id: null, missing: false, loading: false };
+let bootDone;
+const bootReady = new Promise((r) => { bootDone = r; });
 
 const engine = new Engine();
 const waterfall = new Waterfall();
@@ -792,7 +802,10 @@ async function boot() {
     const v = new URLSearchParams(location.search).get("view");
     if (v && ["tracks", "page", "solfa", "words", "presenter"].includes(v)) state.view = v;
   }
-  if (asked && !hymnList.some((x) => x.id === asked)) { if (MAKE) makeFailed(asked, "the Studio has no such hymn"); notInStudio(asked); return; }
+  if (APP && asked && !hymnList.some((x) => x.id === asked)) {
+    appWant.id = asked; appWant.missing = true;
+    picker.value = hymnList.some((x) => x.id === store.get("hymn")) ? store.get("hymn") : hymnList[0].id;
+  } else if (asked && !hymnList.some((x) => x.id === asked)) { if (MAKE) makeFailed(asked, "the Studio has no such hymn"); notInStudio(asked); return; }
   picker.onchange = () => { location.hash = picker.value; loadHymn(hymnList.find((x) => x.id === picker.value)); };
   bindControls();
   try {
@@ -803,6 +816,7 @@ async function boot() {
     return;
   }
   view = new ScoreView(tk, $("score"));
+  if (APP) { setupPinch(); $("altView").style.zoom = String(state.altZoom); }
   setupPractice();
   solfa = new SolfaView($("altView"));
   words = new WordsView($("altView"));
@@ -810,6 +824,7 @@ async function boot() {
   studio = new Studio($("studio"));
   await document.fonts.ready;
   await loadHymn(hymnList.find((x) => x.id === picker.value));
+  bootDone();
   requestAnimationFrame(frame);
   if (MAKE) runMake();
 }
@@ -855,6 +870,7 @@ function setupEmbed() {
 
 async function loadHymn(entry) {
   stopPlayback();
+  if (hymn && hymn.id !== entry.id) engine.dropStems(); // the last hymn's singers leave memory
   try {
     hymn = await (await fetch(entry.path).then((r) => (r.ok ? r : Promise.reject(r))).catch(() => fetch(entry.fallback || entry.path))).json();
     hymnWritten = hymn;
@@ -867,6 +883,7 @@ async function loadHymn(entry) {
   document.title = `${hymn.number} ${hymn.title}`;
   $("hymnNumber").textContent = hymn.number;
   $("hymnTitle").textContent = hymn.title;
+  $("hymnEnglish").textContent = hymn.english || entry.english || "";  // NZK/WN: the English hymn it translates
   $("hymnCredits").textContent = [hymn.poet && `Words by ${hymn.poet}`, hymn.composer && `music by ${hymn.composer}`].filter(Boolean).join(", ");
   $("copyright").textContent = hymn.copyright;
   state.tempo = store.get(`tempo:${hymn.id}`, hymn.tempo);
@@ -891,8 +908,7 @@ async function loadManifest() {
   manifest = null;
   stemInfo = new Map();
   try {
-    const r = await fetch(`${AUDIO}audio/${hymn.id}/manifest.json`, { cache: "no-cache" })
-      .catch(() => fetch(`${AUDIO}audio/${hymn.id}/manifest.json`, { cache: "force-cache" }));
+    const r = await singers.manifest(`${AUDIO}audio/${hymn.id}/manifest.json`);
     if (r.ok) manifest = await r.json();
     // recordings live in the audio store, whichever copy of the player this is
     if (manifest && AUDIO) manifest.stems.forEach((st) => { st.url = new URL(st.url, AUDIO).href; });
@@ -944,6 +960,7 @@ async function prepareStems() {
     const bufs = await engine.loadStems(wanted, (done, total) => {
       if (total) toast(`Loading the singers… ${done} of ${total}. You can press play now; the synth sings until they arrive.`, 0);
     });
+    if (bufs.stale) return; // a newer request (another hymn) has taken over
     // recorded at another tempo: stretch to the slider's tempo, keeping the pitch (everything scales by one ratio)
     const ratio = recTempo / state.tempo;
     if (Math.abs(ratio - 1) > 1e-3) {
@@ -1054,6 +1071,7 @@ async function renderAll() {
   // the docked practice panel sits just above the words bar (or at the bottom when it is hidden)
   document.documentElement.style.setProperty("--nowbar-h", `${$("nowbar").hidden ? 0 : $("nowbar").offsetHeight}px`);
   sheet.hidden = !isScoreView();
+  clearSweep();
   $("altView").hidden = isScoreView() || state.view === "presenter";
   buildHeaders();
   lastSystem = null;
@@ -1077,6 +1095,7 @@ async function renderAll() {
     const opts = withPiano(xmlOptions());
     view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: viewport.clientWidth - 8, tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose });
     buildLane();
+    setupSweep();
     positionHeaders(view.systems[0]);
     drawLoopBoxes();
     drawSyncMarks();
@@ -1553,7 +1572,9 @@ let drag = null;
 sheet.addEventListener("pointerdown", (e) => {
   if (!view || e.button !== 0 || e.target.closest(".loop-edge")) return;
   const r = $("score").getBoundingClientRect();
-  drag = { bar: view.barAt(e.clientX - r.left, e.clientY - r.top), x: e.clientX, moved: false, note: e.target.closest("g.note") };
+  // in the app a finger scrolls and pinches; tapping a note still plays from there
+  const bar = APP && e.pointerType === "touch" ? null : view.barAt(e.clientX - r.left, e.clientY - r.top);
+  drag = { bar, x: e.clientX, moved: false, note: e.target.closest("g.note") };
 });
 window.addEventListener("pointermove", (e) => {
   if (!drag || drag.bar === null) return;
@@ -1874,6 +1895,7 @@ function paint(force, tAt) {
     const start = !engine.playing && !loc ? view.playhead(0) : null;
     if (start) placeRibbon(start);
     else ribbon.hidden = true;
+    if (sweeping() && (start || !lastSystem)) { const p0 = start || view.playhead(0); if (p0) sweepTo(p0, false); }
   } else {
     view.highlight(sq, verseN);
     const cj = ci + copy * hymn.chords.length;
@@ -1938,6 +1960,7 @@ function follow(ph) {
     if (engine.playing) viewport.scrollLeft = ph.x - viewport.clientWidth * 0.33;
     return;
   }
+  if (sweeping()) { sweepTo(ph); return; }
   if (ph.system.el !== lastSystem) {
     lastSystem = ph.system.el;
     positionHeaders(ph.system);
@@ -1946,6 +1969,123 @@ function follow(ph) {
       window.scrollTo({ top: top - window.innerHeight * 0.2, behavior: reduceMotion ? "auto" : "smooth" });
     }
   }
+}
+
+// ---- line by line (?app, the staff view) ----------------------------------------------------------
+// One line of the score at a time, as the presenter shows it: once three quarters of the line is
+// sung, the next line is uncovered behind the playhead, from barline to barline, so when the eye
+// goes back to the left the next line is already there.
+const SWEEP_PAD = 14;
+const sweep = { el: null, inner: null, i: -1, x: 0 };
+const sweeping = () => APP && state.sweep && state.view === "page" && !!view?.systems?.length;
+
+function clearSweep() {
+  viewport.classList.remove("sweeping");
+  viewport.style.height = "";
+  sheet.style.transform = "";
+  if (sweep.el) sweep.el.hidden = true;
+  sweep.i = -1;
+}
+
+function setupSweep() {
+  if (!sweeping()) return;
+  if (!sweep.el) {
+    sweep.el = document.createElement("div");
+    sweep.el.className = "sweep-next";
+    sweep.el.setAttribute("aria-hidden", "true");
+    viewport.append(sweep.el);
+  }
+  // a copy of the score, unlit, from which the next line is shown
+  sweep.el.innerHTML = `<div class="score">${$("score").innerHTML}</div>`;
+  sweep.inner = sweep.el.firstChild;
+  sweep.el.hidden = true;
+  const h = Math.max(...view.systems.map((s) => s.box.h)) + 2 * SWEEP_PAD;
+  viewport.classList.add("sweeping");
+  viewport.style.height = `${Math.ceil(h)}px`;
+  sweep.el.style.left = `${sheet.offsetLeft}px`;
+  sweep.el.style.width = `${sheet.offsetWidth}px`;
+  sweep.el.style.height = `${Math.ceil(h)}px`;
+  sweep.i = -1;
+}
+
+function sweepTo(ph, wipe = true) {
+  const sys = ph.system;
+  const i = view.systems.indexOf(sys);
+  if (i !== sweep.i) {
+    sweep.i = i;
+    sweep.x = 0;
+    lastSystem = sys.el;
+    sheet.style.transform = `translateY(${SWEEP_PAD - sys.box.y}px)`;
+    sweep.el.hidden = true;
+    // as tall as this line and the next, so nothing of the line after peeks in below
+    const tall = (k) => { // a line, and below it only the clear space before the line after it
+      const s = view.systems[k];
+      if (!s) return 0;
+      const after = view.systems[k + 1];
+      return s.box.h + (after ? Math.max(0, Math.min(SWEEP_PAD, after.box.y - s.box.y - s.box.h - 4)) : SWEEP_PAD);
+    };
+    const h = `${Math.floor(SWEEP_PAD + Math.max(tall(i), tall(i + 1)))}px`;
+    viewport.style.height = h;
+    sweep.el.style.height = h;
+  }
+  const next = view.systems[i + 1];
+  const a = sys.anchors;
+  if (!next || !a.length || !wipe) { sweep.el.hidden = true; return; }
+  const startAt = a[0].x + (a[a.length - 1].x - a[0].x) * 0.75;
+  if (ph.x <= startAt) return;
+  // the edge sits on a barline of the next line and stays well behind the playhead
+  const lines = view.measures.filter((m) => m.system === next.el).map((m) => m.box.x + m.box.w).sort((p, q) => p - q);
+  const target = lines.filter((x) => x <= ph.x - 70).pop() ?? 0;
+  sweep.x = engine.playing && !reduceMotion ? sweep.x + (target - sweep.x) * 0.18 : target;
+  if (sweep.x < 2) { sweep.el.hidden = true; return; }
+  const soft = 28;
+  sweep.el.hidden = false;
+  sweep.inner.style.transform = `translateY(${SWEEP_PAD - next.box.y}px)`;
+  const m = `linear-gradient(to right, #000 ${Math.max(0, sweep.x - soft)}px, transparent ${sweep.x}px)`;
+  sweep.el.style.maskImage = m;
+  sweep.el.style.webkitMaskImage = m;
+}
+
+// ---- pinch to zoom (?app) ------------------------------------------------------------------------
+// Two fingers make the score (staff), or the sol-fa and words, larger or smaller. While pinching the
+// view is only stretched; on letting go it is laid out again at the new size.
+function setupPinch() {
+  let p = null;
+  const dist = (t) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+  const target = () => (isScoreView() ? sheet : state.view === "solfa" || state.view === "words" ? $("altView") : null);
+  workspace.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 2) return;
+    drag = null; // two fingers: neither a loop nor a tap on a note
+    const el = target();
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const z = el === sheet ? 1 : state.altZoom; // CSS zoom scales the box, not the transform origin
+    const mx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+    const my = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+    p = { el, d: dist(e.touches), k: 1, base: el.style.transform || "" };
+    el.style.transition = "none";
+    el.style.transformOrigin = `${(mx - r.left) / z}px ${(my - r.top) / z}px`;
+  }, { passive: true });
+  workspace.addEventListener("touchmove", (e) => {
+    if (!p || e.touches.length !== 2) return;
+    e.preventDefault();
+    const now = p.el === sheet ? state.zoom : state.altZoom;
+    p.k = Math.max(0.5 / now, Math.min(2.5 / now, dist(e.touches) / p.d));
+    p.el.style.transform = `${p.base} scale(${p.k})`;
+  }, { passive: false });
+  const end = (e) => {
+    if (!p || e.touches.length >= 2) return;
+    const { el, k, base } = p;
+    p = null;
+    el.style.transform = base;
+    el.style.transformOrigin = "";
+    el.style.transition = "";
+    if (Math.abs(k - 1) < 0.04) return;
+    if (el === sheet) { state.zoom = Math.max(0.5, Math.min(2.5, state.zoom * k)); save("zoom"); renderAll(); }
+    else { state.altZoom = Math.max(0.5, Math.min(2.5, state.altZoom * k)); save("altZoom"); el.style.zoom = String(state.altZoom); }
+  };
+  workspace.addEventListener("touchend", end);
+  workspace.addEventListener("touchcancel", end);
 }
 
 // ---- piano roll sheet ----------------------------------------------------------------------------
@@ -2945,22 +3085,50 @@ window.AHStudio = {
     const b = document.querySelector(`.views .seg[data-view="${v}"]`);
     if (b) b.click(); else { state.view = v; save("view"); renderAll(); }
   },
-  /** Switch to another hymn without reloading the page. False when the Studio doesn't have it. */
+  /** Switch to another hymn without reloading the page. False when the Studio doesn't have it.
+   *  Whatever was playing stops at once; until the new hymn has loaded, state() says it is not
+   *  ready, so the app's play button can't start the old one. A later open() wins over this one. */
   async open(id, v) {
+    appWant.id = id;
+    appWant.missing = false;
+    if (engine.playing) stopPlayback();
+    await bootReady;
+    if (appWant.id !== id) return false;
     const entry = hymnList.find((x) => x.id === id);
-    if (!entry) return false;
+    if (!entry) { appWant.missing = true; if (engine.playing) stopPlayback(); return false; }
     if (hymn?.id !== id) {
-      stopPlayback();
-      $("hymnPicker").value = id;
-      history.replaceState(null, "", `${location.pathname}${location.search}#${id}`);
-      await loadHymn(entry);
+      appWant.loading = true;
+      try {
+        stopPlayback();
+        $("hymnPicker").value = id;
+        history.replaceState(null, "", `${location.pathname}${location.search}#${id}`);
+        await loadHymn(entry);
+      } finally { if (appWant.id === id) appWant.loading = false; }
+      if (appWant.id !== id) return false;
     }
     if (v) this.view(v);
     return true;
   },
+  /** The app's view options: words ("all" | "current" | "solfa" | "none": every verse, only the one
+   *  being sung, sol-fa names, none), sweep (the staff line by line), staves ("S|A|T|B", "SA|TB", …). */
+  set(name, value) {
+    if (name === "words" && ["all", "current", "solfa", "none"].includes(value)) {
+      const r = document.querySelector(`input[name="wordsMode"][value="${value}"]`);
+      if (r) { r.checked = true; r.dispatchEvent(new Event("change", { bubbles: true })); }
+    } else if (name === "sweep") {
+      state.sweep = !!value; save("sweep"); renderAll();
+    } else if (name === "staves" && /^[SATB|]+$/.test(value)) {
+      setStaves(value);
+    }
+  },
+  /** Saved singers, for the app's Settings: starts the count; savedList holds the answer (JSON) when done. */
+  saved() { this.savedList = null; singers.list().then((l) => { this.savedList = JSON.stringify(l); }, () => { this.savedList = "[]"; }); },
+  savedList: null,
+  /** Clear saved singers: the given hymn ids, or all of them when none are given. Then recounts. */
+  clearSaved(ids) { this.savedList = null; singers.clear(ids && ids.length ? ids : null).finally(() => this.saved()); },
   /** The hymns the Studio can play. */
   hymns() { return JSON.stringify(hymnList.map((x) => x.id)); },
-  toggle() { return togglePlay(); },
+  toggle() { if (appWant.id && (appWant.id !== hymn?.id || appWant.loading)) return; return togglePlay(); },
   stop() { stopPlayback(); },
   setMute(ch, on) { state.mute[ch] = !!on; save("mute"); applyMix(); buildHeaders(); },
   setSolo(ch, on) { state.solo[ch] = !!on; save("solo"); applyMix(); buildHeaders(); },
@@ -2986,8 +3154,11 @@ window.AHStudio = {
         sound: sel?.value ?? "", sounds: sel ? [...sel.options].map((o) => ({ value: o.value, label: o.textContent })) : [],
       };
     });
+    const want = appWant.id ?? hymn?.id ?? null;
     return JSON.stringify({
-      ready: !!perf, hymn: hymn?.id ?? null, title: hymn?.title ?? "", view: state.view,
+      ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
+      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
+      staves: state.tracks.map((t) => t.join("")).join("|"),
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
     });
   },

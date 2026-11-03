@@ -1719,931 +1719,1064 @@
   "book": "NZK",
   "number": "1",
   "title": "Mtakatifu, Mtakatifu, Mtakatifu",
-  "path": "data/NZK/1.json"
+  "path": "data/NZK/1.json",
+  "english": "Holy, Holy, Holy"
  },
  {
   "id": "NZK-3",
   "book": "NZK",
   "number": "3",
   "title": "Mungu Atukuzwe",
-  "path": "data/NZK/3.json"
+  "path": "data/NZK/3.json",
+  "english": "To God Be the Glory"
  },
  {
   "id": "NZK-4",
   "book": "NZK",
   "number": "4",
   "title": "Jina La Yesu Salamu",
-  "path": "data/NZK/4.json"
+  "path": "data/NZK/4.json",
+  "english": "All Hail the Power of Jesus' Name"
  },
  {
   "id": "NZK-5",
   "book": "NZK",
   "number": "5",
   "title": "Na Tumwabudu Mfalme Mtukufu",
-  "path": "data/NZK/5.json"
+  "path": "data/NZK/5.json",
+  "english": "O Worship the King"
  },
  {
   "id": "NZK-9",
   "book": "NZK",
   "number": "9",
   "title": "Mwumbaji, Mfalme",
-  "path": "data/NZK/9.json"
+  "path": "data/NZK/9.json",
+  "english": "My Maker and My King"
  },
  {
   "id": "NZK-10",
   "book": "NZK",
   "number": "10",
   "title": "Kristo Wa Neema Zote",
-  "path": "data/NZK/10.json"
+  "path": "data/NZK/10.json",
+  "english": "Come, Thou Fount of Every Blessing"
  },
  {
   "id": "NZK-11",
   "book": "NZK",
   "number": "11",
   "title": "Jina La Bwana Li Heri",
-  "path": "data/NZK/11.json"
+  "path": "data/NZK/11.json",
+  "english": "Blessed Be the Name"
  },
  {
   "id": "NZK-12",
   "book": "NZK",
   "number": "12",
   "title": "Msifu Mungu",
-  "path": "data/NZK/12.json"
+  "path": "data/NZK/12.json",
+  "english": "Praise God, From Whom All Blessings Flow"
  },
  {
   "id": "NZK-18",
   "book": "NZK",
   "number": "18",
   "title": "Mwokozi, Kama Mchunga",
-  "path": "data/NZK/18.json"
+  "path": "data/NZK/18.json",
+  "english": "Savior, Like a Shepherd Lead Us"
  },
  {
   "id": "NZK-19",
   "book": "NZK",
   "number": "19",
   "title": "Msalabani Pa Mwokozi",
-  "path": "data/NZK/19.json"
+  "path": "data/NZK/19.json",
+  "english": "Glory to His Name"
  },
  {
   "id": "NZK-20",
   "book": "NZK",
   "number": "20",
   "title": "Mungu Wetu Yeye Mwamba",
-  "path": "data/NZK/20.json"
+  "path": "data/NZK/20.json",
+  "english": "A Shelter in the Time of Storm"
  },
  {
   "id": "NZK-22",
   "book": "NZK",
   "number": "22",
   "title": "Usinipite Mwokozi",
-  "path": "data/NZK/22.json"
+  "path": "data/NZK/22.json",
+  "english": "Pass Me Not, O Gentle Savior"
  },
  {
   "id": "NZK-23",
   "book": "NZK",
   "number": "23",
   "title": "Yesu Furaha Ya Moyo",
-  "path": "data/NZK/23.json"
+  "path": "data/NZK/23.json",
+  "english": "Jesus, Thou Joy of Loving Hearts"
  },
  {
   "id": "NZK-24",
   "book": "NZK",
   "number": "24",
   "title": "Jina Lake Yesu Tamu",
-  "path": "data/NZK/24.json"
+  "path": "data/NZK/24.json",
+  "english": "How Sweet the Name of Jesus Sounds"
  },
  {
   "id": "NZK-25",
   "book": "NZK",
   "number": "25",
   "title": "Taji Mvikeni",
-  "path": "data/NZK/25.json"
+  "path": "data/NZK/25.json",
+  "english": "Crown Him With Many Crowns"
  },
  {
   "id": "NZK-26",
   "book": "NZK",
   "number": "26",
   "title": "Tupe Amani",
-  "path": "data/NZK/26.json"
+  "path": "data/NZK/26.json",
+  "english": "God the Omnipotent"
  },
  {
   "id": "NZK-27",
   "book": "NZK",
   "number": "27",
   "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
-  "path": "data/NZK/27.json"
+  "path": "data/NZK/27.json",
+  "english": "Savior, Again to Thy Dear Name"
  },
  {
   "id": "NZK-29",
   "book": "NZK",
   "number": "29",
   "title": "Yesu, Nakupenda",
-  "path": "data/NZK/29.json"
+  "path": "data/NZK/29.json",
+  "english": "My Jesus, I Love Thee"
  },
  {
   "id": "NZK-30",
   "book": "NZK",
   "number": "30",
   "title": "Yesu Unipendaye",
-  "path": "data/NZK/30.json"
+  "path": "data/NZK/30.json",
+  "english": "Jesus, Lover of My Soul"
  },
  {
   "id": "NZK-31",
   "book": "NZK",
   "number": "31",
   "title": "Niimbe Pendo Lake",
-  "path": "data/NZK/31.json"
+  "path": "data/NZK/31.json",
+  "english": "I Will Sing of Jesus' Love"
  },
  {
   "id": "NZK-34",
   "book": "NZK",
   "number": "34",
   "title": "Nipe Habari za Yesu",
-  "path": "data/NZK/34.json"
+  "path": "data/NZK/34.json",
+  "english": "Tell Me the Story of Jesus"
  },
  {
   "id": "NZK-35",
   "book": "NZK",
   "number": "35",
   "title": "Nimekombolewa Na Yesu",
-  "path": "data/NZK/35.json"
+  "path": "data/NZK/35.json",
+  "english": "Redeemed! How I Love to Proclaim It"
  },
  {
   "id": "NZK-36",
   "book": "NZK",
   "number": "36",
   "title": "Siku Kuu",
-  "path": "data/NZK/36.json"
+  "path": "data/NZK/36.json",
+  "english": "O Happy Day"
  },
  {
   "id": "NZK-37",
   "book": "NZK",
   "number": "37",
   "title": "Pendo Lako, Ee Mwokozi",
-  "path": "data/NZK/37.json"
+  "path": "data/NZK/37.json",
+  "english": "Love Divine, All Loves Excelling"
  },
  {
   "id": "NZK-38",
   "book": "NZK",
   "number": "38",
   "title": "Nasifu Shani ya Mungu",
-  "path": "data/NZK/38.json"
+  "path": "data/NZK/38.json",
+  "english": "I Sing the Mighty Power of God"
  },
  {
   "id": "NZK-40",
   "book": "NZK",
   "number": "40",
   "title": "Nijaze Sasa",
-  "path": "data/NZK/40.json"
+  "path": "data/NZK/40.json",
+  "english": "Fill Me Now"
  },
  {
   "id": "NZK-41",
   "book": "NZK",
   "number": "41",
   "title": "Roho Mtakatifu",
-  "path": "data/NZK/41.json"
+  "path": "data/NZK/41.json",
+  "english": "Holy Spirit, Faithful Guide"
  },
  {
   "id": "NZK-43",
   "book": "NZK",
   "number": "43",
   "title": "Furaha Gani!",
-  "path": "data/NZK/43.json"
+  "path": "data/NZK/43.json",
+  "english": "Leaning on the Everlasting Arms"
  },
  {
   "id": "NZK-44",
   "book": "NZK",
   "number": "44",
   "title": "Urafiki Wa Yesu",
-  "path": "data/NZK/44.json"
+  "path": "data/NZK/44.json",
+  "english": "No, Not One"
  },
  {
   "id": "NZK-45",
   "book": "NZK",
   "number": "45",
   "title": "Mwanga Umo Moyoni",
-  "path": "data/NZK/45.json"
+  "path": "data/NZK/45.json",
+  "english": "Sunlight in the Heart"
  },
  {
   "id": "NZK-46",
   "book": "NZK",
   "number": "46",
   "title": "Miguuni Pake Yesu",
-  "path": "data/NZK/46.json"
+  "path": "data/NZK/46.json",
+  "english": "Sitting at the Feet of Jesus"
  },
  {
   "id": "NZK-47",
   "book": "NZK",
   "number": "47",
   "title": "Ni Heri Kifungo",
-  "path": "data/NZK/47.json"
+  "path": "data/NZK/47.json",
+  "english": "Blest Be the Tie That Binds"
  },
  {
   "id": "NZK-49",
   "book": "NZK",
   "number": "49",
   "title": "Ninaye Rafiki",
-  "path": "data/NZK/49.json"
+  "path": "data/NZK/49.json",
+  "english": "I've Found a Friend"
  },
  {
   "id": "NZK-50",
   "book": "NZK",
   "number": "50",
   "title": "Mungu Nawe Nanyi Daima",
-  "path": "data/NZK/50.json"
+  "path": "data/NZK/50.json",
+  "english": "God Be With You"
  },
  {
   "id": "NZK-51",
   "book": "NZK",
   "number": "51",
   "title": "Kuwa Na Yesu Mwokozi",
-  "path": "data/NZK/51.json"
+  "path": "data/NZK/51.json",
+  "english": "Blessed Assurance"
  },
  {
   "id": "NZK-52",
   "book": "NZK",
   "number": "52",
   "title": "Nipe Biblia",
-  "path": "data/NZK/52.json"
+  "path": "data/NZK/52.json",
+  "english": "Give Me the Bible"
  },
  {
   "id": "NZK-53",
   "book": "NZK",
   "number": "53",
   "title": "Napenda Kuhubiri",
-  "path": "data/NZK/53.json"
+  "path": "data/NZK/53.json",
+  "english": "I Love to Tell the Story"
  },
  {
   "id": "NZK-54",
   "book": "NZK",
   "number": "54",
   "title": "Nataka Nimjue Yesu",
-  "path": "data/NZK/54.json"
+  "path": "data/NZK/54.json",
+  "english": "More About Jesus"
  },
  {
   "id": "NZK-55",
   "book": "NZK",
   "number": "55",
   "title": "Twapanda Mapema",
-  "path": "data/NZK/55.json"
+  "path": "data/NZK/55.json",
+  "english": "Bringing in the Sheaves"
  },
  {
   "id": "NZK-56",
   "book": "NZK",
   "number": "56",
   "title": "Waponye Watu",
-  "path": "data/NZK/56.json"
+  "path": "data/NZK/56.json",
+  "english": "Rescue the Perishing"
  },
  {
   "id": "NZK-58",
   "book": "NZK",
   "number": "58",
   "title": "Zitakuwa Nyota Tajini",
-  "path": "data/NZK/58.json"
+  "path": "data/NZK/58.json",
+  "english": "Will There Be Any Stars in My Crown?"
  },
  {
   "id": "NZK-61",
   "book": "NZK",
   "number": "61",
   "title": "Bwana Nami",
-  "path": "data/NZK/61.json"
+  "path": "data/NZK/61.json",
+  "english": "My Lord and I"
  },
  {
   "id": "NZK-64",
   "book": "NZK",
   "number": "64",
   "title": "Piga Panda Ya Injili",
-  "path": "data/NZK/64.json"
+  "path": "data/NZK/64.json",
+  "english": "Watchman, Blow the Gospel Trumpet"
  },
  {
   "id": "NZK-65",
   "book": "NZK",
   "number": "65",
   "title": "Twendeni Askari",
-  "path": "data/NZK/65.json"
+  "path": "data/NZK/65.json",
+  "english": "Onward, Christian Soldiers"
  },
  {
   "id": "NZK-66",
   "book": "NZK",
   "number": "66",
   "title": "Roho Yangu Amka Sasa",
-  "path": "data/NZK/66.json"
+  "path": "data/NZK/66.json",
+  "english": "Awake, My Soul"
  },
  {
   "id": "NZK-67",
   "book": "NZK",
   "number": "67",
   "title": "Kesha Roho Yangu",
-  "path": "data/NZK/67.json"
+  "path": "data/NZK/67.json",
+  "english": "My Soul, Be on Thy Guard"
  },
  {
   "id": "NZK-69",
   "book": "NZK",
   "number": "69",
   "title": "Cha Kutumaini Sina",
-  "path": "data/NZK/69.json"
+  "path": "data/NZK/69.json",
+  "english": "My Hope Is Built on Nothing Less"
  },
  {
   "id": "NZK-70",
   "book": "NZK",
   "number": "70",
   "title": "Wapenzi Wa Bwana",
-  "path": "data/NZK/70.json"
+  "path": "data/NZK/70.json",
+  "english": "Marching to Zion"
  },
  {
   "id": "NZK-73",
   "book": "NZK",
   "number": "73",
   "title": "Bwana, Uniongoze Juu",
-  "path": "data/NZK/73.json"
+  "path": "data/NZK/73.json",
+  "english": "Higher Ground"
  },
  {
   "id": "NZK-76",
   "book": "NZK",
   "number": "76",
   "title": "Mrithi Ufalme",
-  "path": "data/NZK/76.json"
+  "path": "data/NZK/76.json",
+  "english": "Heir of the Kingdom"
  },
  {
   "id": "NZK-78",
   "book": "NZK",
   "number": "78",
   "title": "Mpaka Lini Bwana",
-  "path": "data/NZK/78.json"
+  "path": "data/NZK/78.json",
+  "english": "How Long, O Lord Our Savior"
  },
  {
   "id": "NZK-80",
   "book": "NZK",
   "number": "80",
   "title": "Tupe Moto Wa Injili",
-  "path": "data/NZK/80.json"
+  "path": "data/NZK/80.json",
+  "english": "O for That Flame of Living Fire"
  },
  {
   "id": "NZK-81",
   "book": "NZK",
   "number": "81",
   "title": "Siku Sita Zimepita",
-  "path": "data/NZK/81.json"
+  "path": "data/NZK/81.json",
+  "english": "Another Six Days' Work Is Done"
  },
  {
   "id": "NZK-82",
   "book": "NZK",
   "number": "82",
   "title": "Ni Siku Ya Furaha",
-  "path": "data/NZK/82.json"
+  "path": "data/NZK/82.json",
+  "english": "O Day of Rest and Gladness"
  },
  {
   "id": "NZK-84",
   "book": "NZK",
   "number": "84",
   "title": "Ikumbuke Sabato",
-  "path": "data/NZK/84.json"
+  "path": "data/NZK/84.json",
+  "english": "Don't Forget the Sabbath"
  },
  {
   "id": "NZK-85",
   "book": "NZK",
   "number": "85",
   "title": "Salama Tumepita",
-  "path": "data/NZK/85.json"
+  "path": "data/NZK/85.json",
+  "english": "Safely Through Another Week"
  },
  {
   "id": "NZK-86",
   "book": "NZK",
   "number": "86",
   "title": "Ukaribie Tena",
-  "path": "data/NZK/86.json"
+  "path": "data/NZK/86.json",
+  "english": "Welcome, Day of Sweet Repose / Welcome, Welcome, Day of Rest"
  },
  {
   "id": "NZK-89",
   "book": "NZK",
   "number": "89",
   "title": "Asubuhi",
-  "path": "data/NZK/89.json"
+  "path": "data/NZK/89.json",
+  "english": "Lord, in the Morning"
  },
  {
   "id": "NZK-91",
   "book": "NZK",
   "number": "91",
   "title": "Kaa Nami",
-  "path": "data/NZK/91.json"
+  "path": "data/NZK/91.json",
+  "english": "Abide With Me"
  },
  {
   "id": "NZK-92",
   "book": "NZK",
   "number": "92",
   "title": "Magharibi Jua",
-  "path": "data/NZK/92.json"
+  "path": "data/NZK/92.json",
+  "english": "Day Is Dying in the West"
  },
  {
   "id": "NZK-93",
   "book": "NZK",
   "number": "93",
   "title": "Jua La Rohoni Mwangu",
-  "path": "data/NZK/93.json"
+  "path": "data/NZK/93.json",
+  "english": "Sun of My Soul"
  },
  {
   "id": "NZK-94",
   "book": "NZK",
   "number": "94",
   "title": "Po Pote Mashamba Yajaa",
-  "path": "data/NZK/94.json"
+  "path": "data/NZK/94.json",
+  "english": "Far and Near the Fields Are Teeming"
  },
  {
   "id": "NZK-95",
   "book": "NZK",
   "number": "95",
   "title": "Zileteni Zaka Kwa Hazina",
-  "path": "data/NZK/95.json"
+  "path": "data/NZK/95.json",
+  "english": "Bring Ye All the Tithes Into the Storehouse"
  },
  {
   "id": "NZK-98",
   "book": "NZK",
   "number": "98",
   "title": "Nilikupa Wewe",
-  "path": "data/NZK/98.json"
+  "path": "data/NZK/98.json",
+  "english": "I Gave My Life for Thee"
  },
  {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
   "title": "Yesu Akwita",
-  "path": "data/NZK/101.json"
+  "path": "data/NZK/101.json",
+  "english": "Jesus Is Calling"
  },
  {
   "id": "NZK-103",
   "book": "NZK",
   "number": "103",
   "title": "Njoni Kwangu",
-  "path": "data/NZK/103.json"
+  "path": "data/NZK/103.json",
+  "english": "Softly and Tenderly"
  },
  {
   "id": "NZK-104",
   "book": "NZK",
   "number": "104",
   "title": "Yesu Aliniita, Njoo",
-  "path": "data/NZK/104.json"
+  "path": "data/NZK/104.json",
+  "english": "I Heard the Voice of Jesus Say"
  },
  {
   "id": "NZK-107",
   "book": "NZK",
   "number": "107",
   "title": "Sauti Ni Yake Bwana",
-  "path": "data/NZK/107.json"
+  "path": "data/NZK/107.json",
+  "english": "Hark! the Voice of Jesus Calling"
  },
  {
   "id": "NZK-108",
   "book": "NZK",
   "number": "108",
   "title": "Tumesikia Mbiu",
-  "path": "data/NZK/108.json"
+  "path": "data/NZK/108.json",
+  "english": "Jesus Saves"
  },
  {
   "id": "NZK-109",
   "book": "NZK",
   "number": "109",
   "title": "Anisikiaye",
-  "path": "data/NZK/109.json"
+  "path": "data/NZK/109.json",
+  "english": "Whosoever Will"
  },
  {
   "id": "NZK-111",
   "book": "NZK",
   "number": "111",
   "title": "Tabibu Mkuu",
-  "path": "data/NZK/111.json"
+  "path": "data/NZK/111.json",
+  "english": "The Great Physician"
  },
  {
   "id": "NZK-112",
   "book": "NZK",
   "number": "112",
   "title": "Wewe Umechoka Sana",
-  "path": "data/NZK/112.json"
+  "path": "data/NZK/112.json",
+  "english": "Art Thou Weary, Art Thou Languid?"
  },
  {
   "id": "NZK-113",
   "book": "NZK",
   "number": "113",
   "title": "Bubujiko",
-  "path": "data/NZK/113.json"
+  "path": "data/NZK/113.json",
+  "english": "There Is a Fountain"
  },
  {
   "id": "NZK-114",
   "book": "NZK",
   "number": "114",
   "title": "Yesu Nataka Kutakaswa Sana",
-  "path": "data/NZK/114.json"
+  "path": "data/NZK/114.json",
+  "english": "Whiter Than Snow"
  },
  {
   "id": "NZK-115",
   "book": "NZK",
   "number": "115",
   "title": "Naendea Msalaba",
-  "path": "data/NZK/115.json"
+  "path": "data/NZK/115.json",
+  "english": "I Am Coming to the Cross"
  },
  {
   "id": "NZK-118",
   "book": "NZK",
   "number": "118",
   "title": "Nilipotoka Kabisa",
-  "path": "data/NZK/118.json"
+  "path": "data/NZK/118.json",
+  "english": "Lord, I'm Coming Home"
  },
  {
   "id": "NZK-119",
   "book": "NZK",
   "number": "119",
   "title": "Alilipa Bei",
-  "path": "data/NZK/119.json"
+  "path": "data/NZK/119.json",
+  "english": "Jesus Paid It All"
  },
  {
   "id": "NZK-120",
   "book": "NZK",
   "number": "120",
   "title": "Msalaba Wa Yesu",
-  "path": "data/NZK/120.json"
+  "path": "data/NZK/120.json",
+  "english": "Near the Cross"
  },
  {
   "id": "NZK-121",
   "book": "NZK",
   "number": "121",
   "title": "Katika Wenye Dhambi",
-  "path": "data/NZK/121.json"
+  "path": "data/NZK/121.json",
+  "english": "Chief of Sinners Though I Be"
  },
  {
   "id": "NZK-122",
   "book": "NZK",
   "number": "122",
   "title": "Yote Namtolea Yesu",
-  "path": "data/NZK/122.json"
+  "path": "data/NZK/122.json",
+  "english": "I Surrender All"
  },
  {
   "id": "NZK-123",
   "book": "NZK",
   "number": "123",
   "title": "Yesu Kwa Imani",
-  "path": "data/NZK/123.json"
+  "path": "data/NZK/123.json",
+  "english": "My Faith Looks Up to Thee"
  },
  {
   "id": "NZK-124",
   "book": "NZK",
   "number": "124",
   "title": "Umechoka, Je Umesumbuka",
-  "path": "data/NZK/124.json"
+  "path": "data/NZK/124.json",
+  "english": "Tell It to Jesus"
  },
  {
   "id": "NZK-126",
   "book": "NZK",
   "number": "126",
   "title": "Nina Haja Nawe",
-  "path": "data/NZK/126.json"
+  "path": "data/NZK/126.json",
+  "english": "I Need Thee Every Hour"
  },
  {
   "id": "NZK-127",
   "book": "NZK",
   "number": "127",
   "title": "Ni Salama Rohoni Mwangu",
-  "path": "data/NZK/127.json"
+  "path": "data/NZK/127.json",
+  "english": "It Is Well With My Soul"
  },
  {
   "id": "NZK-129",
   "book": "NZK",
   "number": "129",
   "title": "Kumtegemea Mwokozi",
-  "path": "data/NZK/129.json"
+  "path": "data/NZK/129.json",
+  "english": "'Tis So Sweet to Trust in Jesus"
  },
  {
   "id": "NZK-130",
   "book": "NZK",
   "number": "130",
   "title": "Yesu Kwetu Ni Rafiki",
-  "path": "data/NZK/130.json"
+  "path": "data/NZK/130.json",
+  "english": "What a Friend We Have in Jesus"
  },
  {
   "id": "NZK-131",
   "book": "NZK",
   "number": "131",
   "title": "Kwa Mahitaji Ya Kesho",
-  "path": "data/NZK/131.json"
+  "path": "data/NZK/131.json",
+  "english": "Lord, for Tomorrow and Its Needs"
  },
  {
   "id": "NZK-133",
   "book": "NZK",
   "number": "133",
   "title": "Popote Na Yesu",
-  "path": "data/NZK/133.json"
+  "path": "data/NZK/133.json",
+  "english": "Anywhere With Jesus"
  },
  {
   "id": "NZK-134",
   "book": "NZK",
   "number": "134",
   "title": "Tafuta Daima Utakatifu",
-  "path": "data/NZK/134.json"
+  "path": "data/NZK/134.json",
+  "english": "Take Time to Be Holy"
  },
  {
   "id": "NZK-135",
   "book": "NZK",
   "number": "135",
   "title": "Kwa Maombi Nachangamka",
-  "path": "data/NZK/135.json"
+  "path": "data/NZK/135.json",
+  "english": "Sweet Hour of Prayer"
  },
  {
   "id": "NZK-136",
   "book": "NZK",
   "number": "136",
   "title": "Niwe Kama Yesu",
-  "path": "data/NZK/136.json"
+  "path": "data/NZK/136.json",
+  "english": "Like Jesus"
  },
  {
   "id": "NZK-137",
   "book": "NZK",
   "number": "137",
   "title": "Saa Heri Ya Sala",
-  "path": "data/NZK/137.json"
+  "path": "data/NZK/137.json",
+  "english": "'Tis the Blessed Hour of Prayer"
  },
  {
   "id": "NZK-138",
   "book": "NZK",
   "number": "138",
   "title": "Nitakuandama Kote",
-  "path": "data/NZK/138.json"
+  "path": "data/NZK/138.json",
+  "english": "I Will Follow Thee"
  },
  {
   "id": "NZK-139",
   "book": "NZK",
   "number": "139",
   "title": "Uniimbie Tena",
-  "path": "data/NZK/139.json"
+  "path": "data/NZK/139.json",
+  "english": "Wonderful Words of Life"
  },
  {
   "id": "NZK-141",
   "book": "NZK",
   "number": "141",
   "title": "Chini Ya Msalaba",
-  "path": "data/NZK/141.json"
+  "path": "data/NZK/141.json",
+  "english": "Beneath the Cross of Jesus"
  },
  {
   "id": "NZK-142",
   "book": "NZK",
   "number": "142",
   "title": "Nasikia Sauti Yako",
-  "path": "data/NZK/142.json"
+  "path": "data/NZK/142.json",
+  "english": "I Hear Thy Welcome Voice"
  },
  {
   "id": "NZK-143",
   "book": "NZK",
   "number": "143",
   "title": "Naamini",
-  "path": "data/NZK/143.json"
+  "path": "data/NZK/143.json",
+  "english": "I Do Believe"
  },
  {
   "id": "NZK-144",
   "book": "NZK",
   "number": "144",
   "title": "Ni Wako Bwana",
-  "path": "data/NZK/144.json"
+  "path": "data/NZK/144.json",
+  "english": "Draw Me Nearer"
  },
  {
   "id": "NZK-145",
   "book": "NZK",
   "number": "145",
   "title": "Namtaka Bwana Yesu",
-  "path": "data/NZK/145.json"
+  "path": "data/NZK/145.json",
+  "english": "Take the World, but Give Me Jesus"
  },
  {
   "id": "NZK-146",
   "book": "NZK",
   "number": "146",
   "title": "Twae Wangu Uzima",
-  "path": "data/NZK/146.json"
+  "path": "data/NZK/146.json",
+  "english": "Take My Life and Let It Be"
  },
  {
   "id": "NZK-147",
   "book": "NZK",
   "number": "147",
   "title": "Uishi Ndani Yangu",
-  "path": "data/NZK/147.json"
+  "path": "data/NZK/147.json",
+  "english": "Live Out Thy Life Within Me"
  },
  {
   "id": "NZK-150",
   "book": "NZK",
   "number": "150",
   "title": "Hacha, Maneno Mabaya",
-  "path": "data/NZK/150.json"
+  "path": "data/NZK/150.json",
+  "english": "Angry Words! Oh, Let Them Never"
  },
  {
   "id": "NZK-151",
   "book": "NZK",
   "number": "151",
   "title": "Huniongoza Mwokozi",
-  "path": "data/NZK/151.json"
+  "path": "data/NZK/151.json",
+  "english": "He Leadeth Me"
  },
  {
   "id": "NZK-152",
   "book": "NZK",
   "number": "152",
   "title": "Karibu Na Wewe, Mungu Wangu",
-  "path": "data/NZK/152.json"
+  "path": "data/NZK/152.json",
+  "english": "Nearer, My God, to Thee"
  },
  {
   "id": "NZK-153",
   "book": "NZK",
   "number": "153",
   "title": "Fikira Moja Tu",
-  "path": "data/NZK/153.json"
+  "path": "data/NZK/153.json",
+  "english": "One Sweetly Solemn Thought"
  },
  {
   "id": "NZK-155",
   "book": "NZK",
   "number": "155",
   "title": "Njiani Huniongoza",
-  "path": "data/NZK/155.json"
+  "path": "data/NZK/155.json",
+  "english": "All the Way My Savior Leads Me"
  },
  {
   "id": "NZK-156",
   "book": "NZK",
   "number": "156",
   "title": "Uniongoze Jehova",
-  "path": "data/NZK/156.json"
+  "path": "data/NZK/156.json",
+  "english": "Guide Me, O Thou Great Jehovah"
  },
  {
   "id": "NZK-158",
   "book": "NZK",
   "number": "158",
   "title": "U Mwendo Gani Nyumbani?",
-  "path": "data/NZK/158.json"
+  "path": "data/NZK/158.json",
+  "english": "How Far From Home?"
  },
  {
   "id": "NZK-159",
   "book": "NZK",
   "number": "159",
   "title": "Anakuja Upesi",
-  "path": "data/NZK/159.json"
+  "path": "data/NZK/159.json",
+  "english": "How Sweet Are the Tidings"
  },
  {
   "id": "NZK-160",
   "book": "NZK",
   "number": "160",
   "title": "Watakatifu Kesheni",
-  "path": "data/NZK/160.json"
+  "path": "data/NZK/160.json",
+  "english": "Watch, Ye Saints"
  },
  {
   "id": "NZK-161",
   "book": "NZK",
   "number": "161",
   "title": "Piga Panda",
-  "path": "data/NZK/161.json"
+  "path": "data/NZK/161.json",
+  "english": "Jesus Is Coming Again"
  },
  {
   "id": "NZK-163",
   "book": "NZK",
   "number": "163",
   "title": "Anakuja Bwana Yesu",
-  "path": "data/NZK/163.json"
+  "path": "data/NZK/163.json",
+  "english": "It May Be at Morn"
  },
  {
   "id": "NZK-164",
   "book": "NZK",
   "number": "164",
   "title": "Mishale Ya Nuru",
-  "path": "data/NZK/164.json"
+  "path": "data/NZK/164.json",
+  "english": "Gleams of the Golden Morning"
  },
  {
   "id": "NZK-167",
   "book": "NZK",
   "number": "167",
   "title": "Yu Hai, Yu Hai",
-  "path": "data/NZK/167.json"
+  "path": "data/NZK/167.json",
+  "english": "He Lives"
  },
  {
   "id": "NZK-170",
   "book": "NZK",
   "number": "170",
   "title": "Jina Langu Limeandikwa Je",
-  "path": "data/NZK/170.json"
+  "path": "data/NZK/170.json",
+  "english": "Is My Name Written There?"
  },
  {
   "id": "NZK-171",
   "book": "NZK",
   "number": "171",
   "title": "Hukumu",
-  "path": "data/NZK/171.json"
+  "path": "data/NZK/171.json",
+  "english": "The Judgment Has Set"
  },
  {
   "id": "NZK-173",
   "book": "NZK",
   "number": "173",
   "title": "Hatujui Saa",
-  "path": "data/NZK/173.json"
+  "path": "data/NZK/173.json",
+  "english": "We Know Not the Hour"
  },
  {
   "id": "NZK-175",
   "book": "NZK",
   "number": "175",
   "title": "Uso Kwa Uso",
-  "path": "data/NZK/175.json"
+  "path": "data/NZK/175.json",
+  "english": "Face to Face"
  },
  {
   "id": "NZK-176",
   "book": "NZK",
   "number": "176",
   "title": "Ati Tuonane Mtoni",
-  "path": "data/NZK/176.json"
+  "path": "data/NZK/176.json",
+  "english": "Shall We Gather at the River"
  },
  {
   "id": "NZK-179",
   "book": "NZK",
   "number": "179",
   "title": "Watafurahi",
-  "path": "data/NZK/179.json"
+  "path": "data/NZK/179.json",
+  "english": "Joy By and By"
  },
  {
   "id": "NZK-184",
   "book": "NZK",
   "number": "184",
   "title": "Panapo Pendo",
-  "path": "data/NZK/184.json"
+  "path": "data/NZK/184.json",
+  "english": "Love at Home"
  },
  {
   "id": "NZK-185",
   "book": "NZK",
   "number": "185",
   "title": "Mungu, Mapenzi Makamilifu",
-  "path": "data/NZK/185.json"
+  "path": "data/NZK/185.json",
+  "english": "O Perfect Love"
  },
  {
   "id": "NZK-188",
   "book": "NZK",
   "number": "188",
   "title": "Wimbi Litakasalo",
-  "path": "data/NZK/188.json"
+  "path": "data/NZK/188.json",
+  "english": "The Cleansing Wave"
  },
  {
   "id": "NZK-189",
   "book": "NZK",
   "number": "189",
   "title": "Tubatize Upya",
-  "path": "data/NZK/189.json"
+  "path": "data/NZK/189.json",
+  "english": "Baptize Us Anew"
  },
  {
   "id": "NZK-191",
   "book": "NZK",
   "number": "191",
   "title": "Mkate Wa Mbingu",
-  "path": "data/NZK/191.json"
+  "path": "data/NZK/191.json",
+  "english": "Break Thou the Bread of Life"
  },
  {
   "id": "NZK-192",
   "book": "NZK",
   "number": "192",
   "title": "Mwamba Wenye Imara",
-  "path": "data/NZK/192.json"
+  "path": "data/NZK/192.json",
+  "english": "Rock of Ages"
  },
  {
   "id": "NZK-193",
   "book": "NZK",
   "number": "193",
   "title": "Sauti Yake Mchungaji",
-  "path": "data/NZK/193.json"
+  "path": "data/NZK/193.json",
+  "english": "Hark! 'Tis the Shepherd's Voice I Hear"
  },
  {
   "id": "NZK-195",
   "book": "NZK",
   "number": "195",
   "title": "Msingi Wa Kanisa",
-  "path": "data/NZK/195.json"
+  "path": "data/NZK/195.json",
+  "english": "The Church Has One Foundation"
  },
  {
   "id": "NZK-196",
   "book": "NZK",
   "number": "196",
   "title": "Vito Vya Thamani",
-  "path": "data/NZK/196.json"
+  "path": "data/NZK/196.json",
+  "english": "When He Cometh"
  },
  {
   "id": "NZK-197",
   "book": "NZK",
   "number": "197",
   "title": "Anipenda Ni Kweli",
-  "path": "data/NZK/197.json"
+  "path": "data/NZK/197.json",
+  "english": "Jesus Loves Me"
  },
  {
   "id": "NZK-199",
   "book": "NZK",
   "number": "199",
   "title": "Upendo Ni Furaha",
-  "path": "data/NZK/199.json"
+  "path": "data/NZK/199.json",
+  "english": "'Tis Love That Makes Us Happy"
  },
  {
   "id": "NZK-202",
   "book": "NZK",
   "number": "202",
   "title": "Sikia Mlio",
-  "path": "data/NZK/202.json"
+  "path": "data/NZK/202.json",
+  "english": "Hear the Pennies Dropping"
  },
  {
   "id": "NZK-212",
   "book": "NZK",
   "number": "212",
   "title": "Mtazame Mwokozi",
-  "path": "data/NZK/212.json"
+  "path": "data/NZK/212.json",
+  "english": "Turn Your Eyes Upon Jesus"
  },
  {
   "id": "SDAH-1",
@@ -7522,56 +7655,64 @@
   "book": "WN",
   "number": "3",
   "title": "Duong' Obed Ni Wuonwa",
-  "path": "data/WN/3.json"
+  "path": "data/WN/3.json",
+  "english": "To God Be the Glory"
  },
  {
   "id": "WN-4",
   "book": "WN",
   "number": "4",
   "title": "Nying Yesu Mondo Yudi Pak",
-  "path": "data/WN/4.json"
+  "path": "data/WN/4.json",
+  "english": "All Hail the Power of Jesus' Name"
  },
  {
   "id": "WN-5",
   "book": "WN",
   "number": "5",
   "title": "To Pakuru Ruoth",
-  "path": "data/WN/5.json"
+  "path": "data/WN/5.json",
+  "english": "O Worship the King"
  },
  {
   "id": "WN-9",
   "book": "WN",
   "number": "9",
   "title": "Jachwechna gi Ruodha",
-  "path": "data/WN/9.json"
+  "path": "data/WN/9.json",
+  "english": "My Maker and My King"
  },
  {
   "id": "WN-10",
   "book": "WN",
   "number": "10",
   "title": "Kristo In Wuon Ng'wono Duto",
-  "path": "data/WN/10.json"
+  "path": "data/WN/10.json",
+  "english": "Come, Thou Fount of Every Blessing"
  },
  {
   "id": "WN-12",
   "book": "WN",
   "number": "12",
   "title": "Ji Duto Mondo Wer Wendni",
-  "path": "data/WN/12.json"
+  "path": "data/WN/12.json",
+  "english": "Blessed Be the Name"
  },
  {
   "id": "WN-15",
   "book": "WN",
   "number": "15",
   "title": "Wuo Gi Chunya",
-  "path": "data/WN/15.json"
+  "path": "data/WN/15.json",
+  "english": "Speak to My Soul, Dear Jesus"
  },
  {
   "id": "WN-19",
   "book": "WN",
   "number": "19",
   "title": "Kama Yesu Chon Notho E Yath",
-  "path": "data/WN/19.json"
+  "path": "data/WN/19.json",
+  "english": "Glory to His Name"
  },
  {
   "id": "WN-21",
@@ -7585,14 +7726,16 @@
   "book": "WN",
   "number": "23",
   "title": "Aheri, Aheri",
-  "path": "data/WN/23.json"
+  "path": "data/WN/23.json",
+  "english": "I Love Thee"
  },
  {
   "id": "WN-26",
   "book": "WN",
   "number": "26",
   "title": "Ji Duto Te Mondo Giwer",
-  "path": "data/WN/26.json"
+  "path": "data/WN/26.json",
+  "english": "O for a Thousand Tongues to Sing"
  },
  {
   "id": "WN-29",
@@ -7606,196 +7749,224 @@
   "book": "WN",
   "number": "33",
   "title": "Wuonwa, Gonywa Gi Gweth Mari",
-  "path": "data/WN/33.json"
+  "path": "data/WN/33.json",
+  "english": "Lord, Dismiss Us With Thy Blessing"
  },
  {
   "id": "WN-36",
   "book": "WN",
   "number": "36",
   "title": "Ruoth Yesu, Nithona",
-  "path": "data/WN/36.json"
+  "path": "data/WN/36.json",
+  "english": "My Jesus, I Love Thee"
  },
  {
   "id": "WN-38",
   "book": "WN",
   "number": "38",
   "title": "Anawer Hera Yesu",
-  "path": "data/WN/38.json"
+  "path": "data/WN/38.json",
+  "english": "I Will Sing of Jesus' Love"
  },
  {
   "id": "WN-39",
   "book": "WN",
   "number": "39",
   "title": "Nitie Wer Mamit E Dhoga",
-  "path": "data/WN/39.json"
+  "path": "data/WN/39.json",
+  "english": "Since I Have Been Redeemed"
  },
  {
   "id": "WN-43",
   "book": "WN",
   "number": "43",
   "title": "Adwaro Ng'eyo Wach Yesu",
-  "path": "data/WN/43.json"
+  "path": "data/WN/43.json",
+  "english": "Tell Me the Story of Jesus"
  },
  {
   "id": "WN-44",
   "book": "WN",
   "number": "44",
   "title": "Ang'eyo Yesu Osewara",
-  "path": "data/WN/44.json"
+  "path": "data/WN/44.json",
+  "english": "Redeemed! How I Love to Proclaim It"
  },
  {
   "id": "WN-48",
   "book": "WN",
   "number": "48",
   "title": "Yesu Kristo Oberna Ngang'",
-  "path": "data/WN/48.json"
+  "path": "data/WN/48.json",
+  "english": "Jesus Is All the World to Me"
  },
  {
   "id": "WN-50",
   "book": "WN",
   "number": "50",
   "title": "Kristo Obed Misango Mar Golo Richo",
-  "path": "data/WN/50.json"
+  "path": "data/WN/50.json",
+  "english": "What a Wonderful Savior!"
  },
  {
   "id": "WN-55",
   "book": "WN",
   "number": "55",
   "title": "Awero Teko mar Nyasaye",
-  "path": "data/WN/55.json"
+  "path": "data/WN/55.json",
+  "english": "I Sing the Mighty Power of God"
  },
  {
   "id": "WN-56",
   "book": "WN",
   "number": "56",
   "title": "Ruoth Awinjo Wach Mar Gwethni",
-  "path": "data/WN/56.json"
+  "path": "data/WN/56.json",
+  "english": "Even Me"
  },
  {
   "id": "WN-57",
   "book": "WN",
   "number": "57",
   "title": "Roho Mar Nyasaye Ibina",
-  "path": "data/WN/57.json"
+  "path": "data/WN/57.json",
+  "english": "Fill Me Now"
  },
  {
   "id": "WN-58",
   "book": "WN",
   "number": "58",
   "title": "Muya Maler Jatendwa",
-  "path": "data/WN/58.json"
+  "path": "data/WN/58.json",
+  "english": "Holy Spirit, Faithful Guide"
  },
  {
   "id": "WN-61",
   "book": "WN",
   "number": "61",
   "title": "Osiep Manade En Mor Manade",
-  "path": "data/WN/61.json"
+  "path": "data/WN/61.json",
+  "english": "Leaning on the Everlasting Arms"
  },
  {
   "id": "WN-62",
   "book": "WN",
   "number": "62",
   "title": "Onge Osiep Moro Kaka Yesu",
-  "path": "data/WN/62.json"
+  "path": "data/WN/62.json",
+  "english": "No, Not One"
  },
  {
   "id": "WN-64",
   "book": "WN",
   "number": "64",
   "title": "Kabedo E Tiend Ruoth Yesu",
-  "path": "data/WN/64.json"
+  "path": "data/WN/64.json",
+  "english": "Sitting at the Feet of Jesus"
  },
  {
   "id": "WN-66",
   "book": "WN",
   "number": "66",
   "title": "Aseyudo Osiep Maber",
-  "path": "data/WN/66.json"
+  "path": "data/WN/66.json",
+  "english": "I've Found a Friend"
  },
  {
   "id": "WN-67",
   "book": "WN",
   "number": "67",
   "title": "Nyasachwa Mondo Obed Kodu",
-  "path": "data/WN/67.json"
+  "path": "data/WN/67.json",
+  "english": "God Be With You"
  },
  {
   "id": "WN-69",
   "book": "WN",
   "number": "69",
   "title": "Puonja Injili Lilo",
-  "path": "data/WN/69.json"
+  "path": "data/WN/69.json",
+  "english": "Tell Me the Old, Old Story"
  },
  {
   "id": "WN-70",
   "book": "WN",
   "number": "70",
   "title": "Nyasaye Wachokore",
-  "path": "data/WN/70.json"
+  "path": "data/WN/70.json",
+  "english": "Blest Be the Tie That Binds"
  },
  {
   "id": "WN-71",
   "book": "WN",
   "number": "71",
   "title": "Puonja Wach Biblos",
-  "path": "data/WN/71.json"
+  "path": "data/WN/71.json",
+  "english": "Give Me the Bible"
  },
  {
   "id": "WN-73",
   "book": "WN",
   "number": "73",
   "title": "Ahero Nyiso Weche",
-  "path": "data/WN/73.json"
+  "path": "data/WN/73.json",
+  "english": "I Love to Tell the Story"
  },
  {
   "id": "WN-75",
   "book": "WN",
   "number": "75",
   "title": "Adwaro Ngeyo Wach Yesu",
-  "path": "data/WN/75.json"
+  "path": "data/WN/75.json",
+  "english": "More About Jesus"
  },
  {
   "id": "WN-76",
   "book": "WN",
   "number": "76",
   "title": "Chwoyo Ndalo Duto",
-  "path": "data/WN/76.json"
+  "path": "data/WN/76.json",
+  "english": "Bringing in the Sheaves"
  },
  {
   "id": "WN-77",
   "book": "WN",
   "number": "77",
   "title": "Kony Jo Madwaro Tho",
-  "path": "data/WN/77.json"
+  "path": "data/WN/77.json",
+  "english": "Rescue the Perishing"
  },
  {
   "id": "WN-78",
   "book": "WN",
   "number": "78",
   "title": "Aparo Tinende",
-  "path": "data/WN/78.json"
+  "path": "data/WN/78.json",
+  "english": "Will There Be Any Stars in My Crown?"
  },
  {
   "id": "WN-83",
   "book": "WN",
   "number": "83",
   "title": "Yesu Osiep Malongo",
-  "path": "data/WN/83.json"
+  "path": "data/WN/83.json",
+  "english": "My Lord and I"
  },
  {
   "id": "WN-87",
   "book": "WN",
   "number": "87",
   "title": "Jokeyo Ni Kanye",
-  "path": "data/WN/87.json"
+  "path": "data/WN/87.json",
+  "english": "O Where Are the Reapers?"
  },
  {
   "id": "WN-95",
   "book": "WN",
   "number": "95",
   "title": "Jarit Go Tung' Mar Injili",
-  "path": "data/WN/95.json"
+  "path": "data/WN/95.json",
+  "english": "Watchman, Blow the Gospel Trumpet"
  },
  {
   "id": "WN-101",
@@ -7823,28 +7994,32 @@
   "book": "WN",
   "number": "111",
   "title": "Wakwayi, Ruoth, Kuom Tekoni",
-  "path": "data/WN/111.json"
+  "path": "data/WN/111.json",
+  "english": "O for That Flame of Living Fire"
  },
  {
   "id": "WN-112",
   "book": "WN",
   "number": "112",
   "title": "Keduru Jo Ka Yesu",
-  "path": "data/WN/112.json"
+  "path": "data/WN/112.json",
+  "english": "Soldiers of Christ, Arise"
  },
  {
   "id": "WN-116",
   "book": "WN",
   "number": "116",
   "title": "Biuru, Jo Nyasaye",
-  "path": "data/WN/116.json"
+  "path": "data/WN/116.json",
+  "english": "Marching to Zion"
  },
  {
   "id": "WN-119",
   "book": "WN",
   "number": "119",
   "title": "Sabato Mari, Ruoth",
-  "path": "data/WN/119.json"
+  "path": "data/WN/119.json",
+  "english": "We Love Thy Sabbath, Lord"
  },
  {
   "id": "WN-123",
@@ -7858,133 +8033,152 @@
   "book": "WN",
   "number": "133",
   "title": "Bedi Kod An",
-  "path": "data/WN/133.json"
+  "path": "data/WN/133.json",
+  "english": "Abide With Me"
  },
  {
   "id": "WN-134",
   "book": "WN",
   "number": "134",
   "title": "Wang' Chieng Koro Podhonwa",
-  "path": "data/WN/134.json"
+  "path": "data/WN/134.json",
+  "english": "Day Is Dying in the West"
  },
  {
   "id": "WN-136",
   "book": "WN",
   "number": "136",
   "title": "Puothe Chiek E Pinje Duto",
-  "path": "data/WN/136.json"
+  "path": "data/WN/136.json",
+  "english": "Far and Near the Fields Are Teeming"
  },
  {
   "id": "WN-137",
   "book": "WN",
   "number": "137",
   "title": "Winji Weche Ma Nondiki",
-  "path": "data/WN/137.json"
+  "path": "data/WN/137.json",
+  "english": "Bring Ye All the Tithes Into the Storehouse"
  },
  {
   "id": "WN-139",
   "book": "WN",
   "number": "139",
   "title": "Ringra Namiyo In",
-  "path": "data/WN/139.json"
+  "path": "data/WN/139.json",
+  "english": "I Gave My Life for Thee"
  },
  {
   "id": "WN-143",
   "book": "WN",
   "number": "143",
   "title": "Yesu Oluongowa Koro",
-  "path": "data/WN/143.json"
+  "path": "data/WN/143.json",
+  "english": "Softly and Tenderly"
  },
  {
   "id": "WN-144",
   "book": "WN",
   "number": "144",
   "title": "Nawinjo Yesu Kowacho",
-  "path": "data/WN/144.json"
+  "path": "data/WN/144.json",
+  "english": "I Heard the Voice of Jesus Say"
  },
  {
   "id": "WN-146",
   "book": "WN",
   "number": "146",
   "title": "Winji Dwond Yesu Kawuono",
-  "path": "data/WN/146.json"
+  "path": "data/WN/146.json",
+  "english": "Hark! the Voice of Jesus Calling"
  },
  {
   "id": "WN-147",
   "book": "WN",
   "number": "147",
   "title": "Wasewinjo Wach Maber",
-  "path": "data/WN/147.json"
+  "path": "data/WN/147.json",
+  "english": "Jesus Saves"
  },
  {
   "id": "WN-150",
   "book": "WN",
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
-  "path": "data/WN/150.json"
+  "path": "data/WN/150.json",
+  "english": "The Great Physician"
  },
  {
   "id": "WN-156",
   "book": "WN",
   "number": "156",
   "title": "Bi Ka Yesu",
-  "path": "data/WN/156.json"
+  "path": "data/WN/156.json",
+  "english": "Come to Jesus"
  },
  {
   "id": "WN-160",
   "book": "WN",
   "number": "160",
   "title": "Nitie Remo Ma Nochwer",
-  "path": "data/WN/160.json"
+  "path": "data/WN/160.json",
+  "english": "There Is a Fountain"
  },
  {
   "id": "WN-161",
   "book": "WN",
   "number": "161",
   "title": "Ruoth Yesu, Agombo Bedo Nga'ti",
-  "path": "data/WN/161.json"
+  "path": "data/WN/161.json",
+  "english": "Whiter Than Snow"
  },
  {
   "id": "WN-162",
   "book": "WN",
   "number": "162",
   "title": "Abiro Ni Msalaba",
-  "path": "data/WN/162.json"
+  "path": "data/WN/162.json",
+  "english": "I Am Coming to the Cross"
  },
  {
   "id": "WN-165",
   "book": "WN",
   "number": "165",
   "title": "Asebayo Mabor Kod Ruoth",
-  "path": "data/WN/165.json"
+  "path": "data/WN/165.json",
+  "english": "Lord, I'm Coming Home"
  },
  {
   "id": "WN-166",
   "book": "WN",
   "number": "166",
   "title": "Jawar Owachona",
-  "path": "data/WN/166.json"
+  "path": "data/WN/166.json",
+  "english": "Jesus Paid It All"
  },
  {
   "id": "WN-167",
   "book": "WN",
   "number": "167",
   "title": "Yesu, Kar Msalabani",
-  "path": "data/WN/167.json"
+  "path": "data/WN/167.json",
+  "english": "Near the Cross"
  },
  {
   "id": "WN-168",
   "book": "WN",
   "number": "168",
   "title": "Duto Amiyo Ruoth Yesu",
-  "path": "data/WN/168.json"
+  "path": "data/WN/168.json",
+  "english": "I Surrender All"
  },
  {
   "id": "WN-169",
   "book": "WN",
   "number": "169",
   "title": "Yesu Luongi, We Ting'ni Mar Richo",
-  "path": "data/WN/169.json"
+  "path": "data/WN/169.json",
+  "english": "There Is Power in the Blood"
  },
  {
   "id": "WN-170",
@@ -7998,7 +8192,8 @@
   "book": "WN",
   "number": "171",
   "title": "In Kiol Nikech Chandruok",
-  "path": "data/WN/171.json"
+  "path": "data/WN/171.json",
+  "english": "Tell It to Jesus"
  },
  {
   "id": "WN-175",
@@ -8012,70 +8207,80 @@
   "book": "WN",
   "number": "176",
   "title": "Nyasaye Noolnwa Gweth Polo",
-  "path": "data/WN/176.json"
+  "path": "data/WN/176.json",
+  "english": "Showers of Blessing"
  },
  {
   "id": "WN-182",
   "book": "WN",
   "number": "182",
   "title": "Koro Wagenoi",
-  "path": "data/WN/182.json"
+  "path": "data/WN/182.json",
+  "english": "My Faith Looks Up to Thee"
  },
  {
   "id": "WN-184",
   "book": "WN",
   "number": "184",
   "title": "Kat' Abed Jaketh Maduong'",
-  "path": "data/WN/184.json"
+  "path": "data/WN/184.json",
+  "english": "Chief of Sinners Though I Be"
  },
  {
   "id": "WN-189",
   "book": "WN",
   "number": "189",
   "title": "Yesu Kristo En Osiepwa",
-  "path": "data/WN/189.json"
+  "path": "data/WN/189.json",
+  "english": "What a Friend We Have in Jesus"
  },
  {
   "id": "WN-192",
   "book": "WN",
   "number": "192",
   "title": "Tim Kinda Mar Lemo",
-  "path": "data/WN/192.json"
+  "path": "data/WN/192.json",
+  "english": "Take Time to Be Holy"
  },
  {
   "id": "WN-195",
   "book": "WN",
   "number": "195",
   "title": "Ka Yesu Ni Koda",
-  "path": "data/WN/195.json"
+  "path": "data/WN/195.json",
+  "english": "Anywhere With Jesus"
  },
  {
   "id": "WN-201",
   "book": "WN",
   "number": "201",
   "title": "Analu Bang'i Jakonya",
-  "path": "data/WN/201.json"
+  "path": "data/WN/201.json",
+  "english": "I Will Follow Thee"
  },
  {
   "id": "WN-205",
   "book": "WN",
   "number": "205",
   "title": "An Ni Mari Ruoth",
-  "path": "data/WN/205.json"
+  "path": "data/WN/205.json",
+  "english": "Draw Me Nearer"
  },
  {
   "id": "WN-206",
   "book": "WN",
   "number": "206",
   "title": "Kaw Piny Duto Miya Yesu",
-  "path": "data/WN/206.json"
+  "path": "data/WN/206.json",
+  "english": "Take the World, but Give Me Jesus"
  },
  {
   "id": "WN-208",
   "book": "WN",
   "number": "208",
   "title": "Bedi Mangima Kuoma",
-  "path": "data/WN/208.json"
+  "path": "data/WN/208.json",
+  "english": "Live Out Thy Life Within Me"
  },
  {
   "id": "WN-210",
@@ -8089,14 +8294,16 @@
   "book": "WN",
   "number": "211",
   "title": "Aseweyo Tich Maricho",
-  "path": "data/WN/211.json"
+  "path": "data/WN/211.json",
+  "english": "Jesus, I My Cross Have Taken"
  },
  {
   "id": "WN-212",
   "book": "WN",
   "number": "212",
   "title": "Adwaro Bedo Nyathi Yesu",
-  "path": "data/WN/212.json"
+  "path": "data/WN/212.json",
+  "english": "Wholly Thine"
  },
  {
   "id": "WN-213",
@@ -8110,98 +8317,112 @@
   "book": "WN",
   "number": "218",
   "title": "Yesu An Adwaro",
-  "path": "data/WN/218.json"
+  "path": "data/WN/218.json",
+  "english": "O Jesus, I Have Promised"
  },
  {
   "id": "WN-219",
   "book": "WN",
   "number": "219",
   "title": "Weche Mag Mirima",
-  "path": "data/WN/219.json"
+  "path": "data/WN/219.json",
+  "english": "Angry Words! Oh, Let Them Never"
  },
  {
   "id": "WN-220",
   "book": "WN",
   "number": "220",
   "title": "Otelona",
-  "path": "data/WN/220.json"
+  "path": "data/WN/220.json",
+  "english": "He Leadeth Me"
  },
  {
   "id": "WN-222",
   "book": "WN",
   "number": "222",
   "title": "Paro Achiel Mamit",
-  "path": "data/WN/222.json"
+  "path": "data/WN/222.json",
+  "english": "One Sweetly Solemn Thought"
  },
  {
   "id": "WN-223",
   "book": "WN",
   "number": "223",
   "title": "Onego Abed Gi Yesu",
-  "path": "data/WN/223.json"
+  "path": "data/WN/223.json",
+  "english": "I Must Have the Savior With Me"
  },
  {
   "id": "WN-226",
   "book": "WN",
   "number": "226",
   "title": "Yesu Kotaya Pile",
-  "path": "data/WN/226.json"
+  "path": "data/WN/226.json",
+  "english": "Safe in the Arms of Jesus"
  },
  {
   "id": "WN-227",
   "book": "WN",
   "number": "227",
   "title": "Be Yesu Ling",
-  "path": "data/WN/227.json"
+  "path": "data/WN/227.json",
+  "english": "Does Jesus Care?"
  },
  {
   "id": "WN-231",
   "book": "WN",
   "number": "231",
   "title": "Kwonde Duto Motelona",
-  "path": "data/WN/231.json"
+  "path": "data/WN/231.json",
+  "english": "Where He Leads Me"
  },
  {
   "id": "WN-235",
   "book": "WN",
   "number": "235",
   "title": "Wuoth Pod Odong' Marom Nade?",
-  "path": "data/WN/235.json"
+  "path": "data/WN/235.json",
+  "english": "How Far From Home?"
  },
  {
   "id": "WN-236",
   "book": "WN",
   "number": "236",
   "title": "Gin Weche Mamit",
-  "path": "data/WN/236.json"
+  "path": "data/WN/236.json",
+  "english": "How Sweet Are the Tidings"
  },
  {
   "id": "WN-238",
   "book": "WN",
   "number": "238",
   "title": "Gouru Bu, Goyeuru Matek",
-  "path": "data/WN/238.json"
+  "path": "data/WN/238.json",
+  "english": "Jesus Is Coming Again"
  },
  {
   "id": "WN-249",
   "book": "WN",
   "number": "249",
   "title": "Ruodha Ok Agomb Moko",
-  "path": "data/WN/249.json"
+  "path": "data/WN/249.json",
+  "english": "Is My Name Written There?"
  },
  {
   "id": "WN-251",
   "book": "WN",
   "number": "251",
   "title": "Ka Jabura Nong'ad Buchwa",
-  "path": "data/WN/251.json"
+  "path": "data/WN/251.json",
+  "english": "Weighed and Wanting"
  },
  {
   "id": "WN-253",
   "book": "WN",
   "number": "253",
   "title": "Koro Kawuono Ruodhwa Man E Polo",
-  "path": "data/WN/253.json"
+  "path": "data/WN/253.json",
+  "english": "The Judgment Has Set"
  },
  {
   "id": "WN-258",
@@ -8215,63 +8436,72 @@
   "book": "WN",
   "number": "259",
   "title": "Wanachokre E Aora",
-  "path": "data/WN/259.json"
+  "path": "data/WN/259.json",
+  "english": "Shall We Gather at the River"
  },
  {
   "id": "WN-263",
   "book": "WN",
   "number": "263",
   "title": "Ji Noyud Mor Ka Tich Orumo",
-  "path": "data/WN/263.json"
+  "path": "data/WN/263.json",
+  "english": "Joy By and By"
  },
  {
   "id": "WN-267",
   "book": "WN",
   "number": "267",
   "title": "Ka Tichna Rumo",
-  "path": "data/WN/267.json"
+  "path": "data/WN/267.json",
+  "english": "The Glory Song"
  },
  {
   "id": "WN-268",
   "book": "WN",
   "number": "268",
   "title": "Wawinjo Mar Dala Maler",
-  "path": "data/WN/268.json"
+  "path": "data/WN/268.json",
+  "english": "We Speak of the Realms"
  },
  {
   "id": "WN-281",
   "book": "WN",
   "number": "281",
   "title": "Nindo Kuom Yesu",
-  "path": "data/WN/281.json"
+  "path": "data/WN/281.json",
+  "english": "Asleep in Jesus"
  },
  {
   "id": "WN-283",
   "book": "WN",
   "number": "283",
   "title": "Yesu Wabiro Iri",
-  "path": "data/WN/283.json"
+  "path": "data/WN/283.json",
+  "english": "Baptize Us Anew"
  },
  {
   "id": "WN-284",
   "book": "WN",
   "number": "284",
   "title": "Ruodha Dak Ipogna Kuon Mar Ngima",
-  "path": "data/WN/284.json"
+  "path": "data/WN/284.json",
+  "english": "Break Thou the Bread of Life"
  },
  {
   "id": "WN-285",
   "book": "WN",
   "number": "285",
   "title": "Yesu Ruoth Nisethona",
-  "path": "data/WN/285.json"
+  "path": "data/WN/285.json",
+  "english": "Rock of Ages"
  },
  {
   "id": "WN-286",
   "book": "WN",
   "number": "286",
   "title": "Winjuru Tinde Dwond Jakwath",
-  "path": "data/WN/286.json"
+  "path": "data/WN/286.json",
+  "english": "Hark! 'Tis the Shepherd's Voice I Hear"
  },
  {
   "id": "WN-291",
@@ -8285,28 +8515,32 @@
   "book": "WN",
   "number": "301",
   "title": "Yesu 'Hera Ang'eyo",
-  "path": "data/WN/301.json"
+  "path": "data/WN/301.json",
+  "english": "Jesus Loves Me"
  },
  {
   "id": "WN-302",
   "book": "WN",
   "number": "302",
   "title": "Yesu 'Biro",
-  "path": "data/WN/302.json"
+  "path": "data/WN/302.json",
+  "english": "When He Cometh"
  },
  {
   "id": "WN-308",
   "book": "WN",
   "number": "308",
   "title": "Nogola E Bugo",
-  "path": "data/WN/308.json"
+  "path": "data/WN/308.json",
+  "english": "He Brought Me Out"
  },
  {
   "id": "WN-311",
   "book": "WN",
   "number": "311",
   "title": "Ruoth Nyasacha",
-  "path": "data/WN/311.json"
+  "path": "data/WN/311.json",
+  "english": "How Great Thou Art"
  },
  {
   "id": "WN-315",
@@ -8320,20 +8554,23 @@
   "book": "WN",
   "number": "316",
   "title": "Yesu Kristo Osechier",
-  "path": "data/WN/316.json"
+  "path": "data/WN/316.json",
+  "english": "Christ the Lord Is Risen Today"
  },
  {
   "id": "WN-317",
   "book": "WN",
   "number": "317",
   "title": "Kik Chunyi a Ka'e Chandruok",
-  "path": "data/WN/317.json"
+  "path": "data/WN/317.json",
+  "english": "God Will Take Care of You"
  },
  {
   "id": "WN-318",
   "book": "WN",
   "number": "318",
   "title": "Yie Mar Kwerewa",
-  "path": "data/WN/318.json"
+  "path": "data/WN/318.json",
+  "english": "Faith of Our Fathers"
  }
 ]

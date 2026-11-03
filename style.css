@@ -34,6 +34,8 @@ button, select, input { font: inherit; color: inherit; }
 .number { font: 800 clamp(36px, 4.4vw, 54px)/0.8 var(--serif); color: var(--gilt); letter-spacing: -0.02em; padding-bottom: 2px; }
 .titles h1 { font: 700 clamp(20px, 2.1vw, 27px)/1.1 var(--serif); margin: 0; color: var(--cloth); }
 .credits { margin: 2px 0 0; color: var(--muted); font: italic 400 14px/1.3 var(--serif); }
+.english { margin: 1px 0 0; color: var(--muted); font: italic 400 13px/1.2 var(--serif); }
+.english:empty { display: none; }
 /* the hymn finder: a search box, and the dropdown of every hymn with filters by hymnal and sound */
 .finder { position: relative; display: flex; gap: 8px; align-items: center; }
 .finder-search { position: relative; display: flex; align-items: center; }
@@ -649,3 +651,13 @@ body:has(#pianoPanel.open:not([hidden])) { padding-bottom: calc(min(260px, 42vh)
 .finder-list .f-snip { display: block; margin-top: 2px; font: italic 400 14px/1.3 var(--serif); color: var(--muted); }
 .finder-list li.finder-sep { display: block; cursor: default; padding: 10px 12px 4px; font: 700 11px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); background: var(--paper-2); }
 .finder-list .f-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ?app: no column for the (hidden) voice names */
+body.app .workspace { background: none; }
+/* ?app: two fingers zoom the music (the page handles the pinch), one finger still scrolls */
+body.app .viewport { touch-action: pan-x pan-y; }
+/* ?app, staff line by line: one line shows; the next is uncovered behind the playhead */
+.viewport.sweeping { overflow: hidden; padding-bottom: 0 !important; }
+.viewport.sweeping .sheet { will-change: transform; }
+.sweep-next { position: absolute; top: 0; overflow: hidden; background: var(--paper, #fbf8f2); pointer-events: none; z-index: 4; }
+.sweep-next .score svg { display: block; width: 100%; height: auto; }
