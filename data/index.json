@@ -147,6 +147,13 @@
   "path": "data/CS1908/13.json"
  },
  {
+  "id": "CS1908-14",
+  "book": "CS1908",
+  "number": "14",
+  "title": "Sound the Alarm!",
+  "path": "data/CS1908/14.json"
+ },
+ {
   "id": "CS1908-21",
   "book": "CS1908",
   "number": "21",
