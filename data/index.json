@@ -133,6 +133,20 @@
   "path": "data/CH1941/19.json"
  },
  {
+  "id": "CH1941-20",
+  "book": "CH1941",
+  "number": "20",
+  "title": "Lord of All Being, Throned Afar",
+  "path": "data/CH1941/20.json"
+ },
+ {
+  "id": "CH1941-21",
+  "book": "CH1941",
+  "number": "21",
+  "title": "My Gracious Lord, I Own Thy Right",
+  "path": "data/CH1941/21.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
