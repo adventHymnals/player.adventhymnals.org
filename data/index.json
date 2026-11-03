@@ -357,6 +357,13 @@
   "path": "data/CS1908/541.json"
  },
  {
+  "id": "CS1908-552",
+  "book": "CS1908",
+  "number": "552",
+  "title": "Will There Be Any Stars?",
+  "path": "data/CS1908/552.json"
+ },
+ {
   "id": "CS1908-554",
   "book": "CS1908",
   "number": "554",
@@ -6452,6 +6459,13 @@
   "number": "77",
   "title": "Kony Jo Madwaro Tho",
   "path": "data/WN/77.json"
+ },
+ {
+  "id": "WN-78",
+  "book": "WN",
+  "number": "78",
+  "title": "Aparo Tinende",
+  "path": "data/WN/78.json"
  },
  {
   "id": "WN-83",
