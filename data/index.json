@@ -252,6 +252,13 @@
   "path": "data/CS1908/34.json"
  },
  {
+  "id": "CS1908-36",
+  "book": "CS1908",
+  "number": "36",
+  "title": "My Name in Mother's Prayer",
+  "path": "data/CS1908/36.json"
+ },
+ {
   "id": "CS1908-42",
   "book": "CS1908",
   "number": "42",
