@@ -294,6 +294,13 @@
   "path": "data/CS1908/42.json"
  },
  {
+  "id": "CS1908-43",
+  "book": "CS1908",
+  "number": "43",
+  "title": "When the King Comes In",
+  "path": "data/CS1908/43.json"
+ },
+ {
   "id": "CS1908-49",
   "book": "CS1908",
   "number": "49",
