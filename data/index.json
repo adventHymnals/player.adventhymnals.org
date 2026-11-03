@@ -441,6 +441,13 @@
   "path": "data/CS1908/691.json"
  },
  {
+  "id": "CS1908-716",
+  "book": "CS1908",
+  "number": "716",
+  "title": "How Long?",
+  "path": "data/CS1908/716.json"
+ },
+ {
   "id": "CS1908-811",
   "book": "CS1908",
   "number": "811",
@@ -817,6 +824,13 @@
   "number": "76",
   "title": "Mrithi Ufalme",
   "path": "data/NZK/76.json"
+ },
+ {
+  "id": "NZK-78",
+  "book": "NZK",
+  "number": "78",
+  "title": "Mpaka Lini Bwana",
+  "path": "data/NZK/78.json"
  },
  {
   "id": "NZK-80",
