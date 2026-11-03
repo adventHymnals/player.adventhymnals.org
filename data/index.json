@@ -560,6 +560,48 @@
   "path": "data/CH1941/80.json"
  },
  {
+  "id": "CH1941-81",
+  "book": "CH1941",
+  "number": "81",
+  "title": "O God, Our Help",
+  "path": "data/CH1941/81.json"
+ },
+ {
+  "id": "CH1941-82",
+  "book": "CH1941",
+  "number": "82",
+  "title": "Beneath Thy Wing",
+  "path": "data/CH1941/82.json"
+ },
+ {
+  "id": "CH1941-83",
+  "book": "CH1941",
+  "number": "83",
+  "title": "God of My Life",
+  "path": "data/CH1941/83.json"
+ },
+ {
+  "id": "CH1941-84",
+  "book": "CH1941",
+  "number": "84",
+  "title": "God Moves in a Mysterious Way",
+  "path": "data/CH1941/84.json"
+ },
+ {
+  "id": "CH1941-85",
+  "book": "CH1941",
+  "number": "85",
+  "title": "Eternal Light",
+  "path": "data/CH1941/85.json"
+ },
+ {
+  "id": "CH1941-86",
+  "book": "CH1941",
+  "number": "86",
+  "title": "The King of Love My Shepherd Is",
+  "path": "data/CH1941/86.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
