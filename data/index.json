@@ -476,6 +476,13 @@
   "path": "data/CH1941/68.json"
  },
  {
+  "id": "CH1941-69",
+  "book": "CH1941",
+  "number": "69",
+  "title": "High in the Heavens",
+  "path": "data/CH1941/69.json"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
