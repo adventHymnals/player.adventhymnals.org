@@ -664,7 +664,7 @@ body:has(#pianoPanel.open:not([hidden])) { padding-bottom: calc(min(260px, 42vh)
 .finder-list .f-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* ?app: no column for the (hidden) voice names */
-body.app { overflow-x: hidden; }
+body.app { overflow-x: hidden; } /* the page itself never; the score inside may */
 body.app .workspace { background: none; }
 /* ?app: two fingers zoom the music (the page handles the pinch), one finger still scrolls */
 body.app .viewport { touch-action: pan-x pan-y; }
@@ -676,8 +676,26 @@ body.app .viewport { touch-action: pan-x pan-y; }
 
 /* sol-fa line by line (?app): one line shows, the next comes in behind the singer */
 .alt-view.sf-sweeping { position: relative; overflow: hidden; padding-bottom: 0; }
-.alt-view.sf-sweeping .sf-flow { transition: transform 0.25s ease; }
+.alt-view.sf-sweeping .sf-flow { transition: none; }
 .sf-next { position: absolute; overflow: hidden; background: var(--paper, var(--bg, #fbf9f4)); pointer-events: none; }
 .sf-next .sf-flow { transition: none; }
 .sf-next .on, .sf-next .sung { color: inherit !important; font-weight: inherit !important; }
 .sf-next .sf-bar.cur { background: none; }
+
+/* the peel: the line being sung lies on top of the next and is peeled away behind the singer */
+.sweep-next, .sf-next { background: var(--paper); }
+.sweep-next::after, .sf-next::after { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--edge, 0px) - 2px); width: 2px;
+  background: var(--gilt); opacity: 0.55; }
+.sf-bar { position: relative; }
+.alt-view.sf-sweeping .sf-flow { position: relative; }
+
+/* in the app, a score pinched bigger than the screen scrolls sideways */
+body.app .viewport { overflow-x: auto; }
+body.app .viewport.sweeping { overflow-x: auto; overflow-y: hidden; }
+body.app .alt-view { overflow-x: auto; }
+body.app .alt-view.sf-sweeping { overflow-x: auto; overflow-y: hidden; }
+body.app .workspace[data-view="tracks"] .lane { display: none; }
+
+/* the app's words: one size for the whole hymn, as large as lets the longest line fill the screen */
+.w-sheet.w-fit { max-width: none; }
+.w-sheet.w-fit .w-line { white-space: nowrap; width: max-content; max-width: 100%; }

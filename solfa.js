@@ -124,6 +124,7 @@ export class SolfaView {
     this.voices = opts.voices;
     this.bars = [...this.content.querySelectorAll(".sf-bar")];
     this.bars.at(-1)?.classList.add("sf-final");
+    this.widthScale = opts.widthScale || 1;
     this.layout();
     const els = this.content.querySelectorAll("[data-c]");
     els.forEach((el) => { this.cells[Number(el.dataset.c)].el = el; });
@@ -137,6 +138,9 @@ export class SolfaView {
   layout() {
     const flow = this.content.querySelector(".sf-flow");
     if (!flow || !this.bars?.length) return;
+    // pinched bigger: the lines of the smallest size, wider than the screen (it scrolls sideways)
+    flow.style.width = "";
+    if (this.widthScale > 1) flow.style.width = `${Math.floor(flow.offsetWidth * this.widthScale)}px`;
     // natural widths first, all on one unwrapped row, each with the voices' letters as a line's first bar has
     flow.classList.add("measuring");
     for (const b of this.bars) { this.label(b, true); flow.append(b); }
@@ -300,9 +304,21 @@ export class WordsView {
       else if (h.refrain?.length && (v === verses[0] || opts.refrainEach)) html += block(h.refrain, refrainAt, label, 0);
     }
     this.content.innerHTML = `<div class="w-sheet${opts.chords ? " with-chords" : ""}">${html}</div>`;
+    if (opts.fit) this.fit();
     this.alt = new Set((h.refrains || []).map((r, i) => (r ? i + 1 : 0)).filter(Boolean));
     this.syls = withEnds([...this.content.querySelectorAll(".w-syl")].map((el) => ({ el, on: Number(el.dataset.q), verse: Number(el.dataset.v) })));
     this.chordEls = [...this.content.querySelectorAll(".w-chord")];
+  }
+
+  /** As large as the screen allows: the longest line just fills the width. */
+  fit() {
+    const sheet = this.content.querySelector(".w-sheet");
+    if (!sheet) return;
+    sheet.classList.add("w-fit");
+    sheet.style.fontSize = "20px";
+    const room = sheet.clientWidth;
+    const widest = Math.max(1, ...[...sheet.querySelectorAll(".w-line")].map((l) => l.scrollWidth));
+    sheet.style.fontSize = `${Math.max(12, Math.min(64, Math.floor(20 * (room / widest) * 0.97)))}px`;
   }
 
   /** Returns the element being sung, for scrolling. */

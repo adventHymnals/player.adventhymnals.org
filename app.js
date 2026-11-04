@@ -93,11 +93,14 @@ const state = {
   anyOctave: store.get("anyOctave", true),
   // ?app, the staff view: "line by line", one line at a time, the next line uncovered behind the
   // playhead (as the presenter does), instead of the whole page scrolling
-  sweep: store.get("sweep", false),
+  sweep: store.get("lineByLine", true), // the staff line by line, the next line peeled in behind the singer
   altZoom: store.get("altZoom", 1), // the sol-fa and words views, pinched larger or smaller
   solfaWordsAt: store.get("solfaWordsAt", "every"), // sol-fa: the words under every voice, or only the top one
-  solfaSweep: store.get("solfaSweep", false), // sol-fa line by line, as the staff
+  solfaSweep: store.get("solfaLineByLine", true), // sol-fa line by line, as the staff
+  solfaZoom: store.get("solfaZoom", 1), // the sol-fa, pinched larger or smaller (the app opens it at the smallest)
   instrumental: store.get("instrumental", false), // every voice played on the piano, no singing
+  singSolfa: store.get("singSolfa", false),
+  staffScroll: store.get("staffScroll", false), // the app's staff as one long line moving under a still playhead
   beforeInstrumental: store.get("beforeInstrumental", null),
 };
 let hymnWritten = null; // the hymn as transcribed; `hymn` may be a rhythm variant of it
@@ -804,7 +807,7 @@ async function boot() {
   if (APP) {
     document.body.classList.add("app");
     const v = new URLSearchParams(location.search).get("view");
-    if (v && ["tracks", "page", "solfa", "words", "presenter"].includes(v)) state.view = v;
+    if (v && ["tracks", "page", "solfa", "words", "presenter"].includes(v)) state.view = v === "page" && state.staffScroll ? "tracks" : v;
   }
   if (APP && asked && !hymnList.some((x) => x.id === asked)) {
     appWant.id = asked; appWant.missing = true;
@@ -820,7 +823,7 @@ async function boot() {
     return;
   }
   view = new ScoreView(tk, $("score"));
-  if (APP) { state.zoom = APP_ZOOM; setupPinch(); $("altView").style.zoom = String(state.altZoom); }
+  if (APP) { state.zoom = APP_ZOOM; state.solfaZoom = APP_ZOOM; state.altZoom = 1; setupPinch(); }
   setupPractice();
   solfa = new SolfaView($("altView"));
   words = new WordsView($("altView"));
@@ -947,7 +950,7 @@ async function prepareStems() {
   const tempos = stemTempos();
   const recTempo = tempos.reduce((a, b) => (Math.abs(b - state.tempo) < Math.abs(a - state.tempo) ? b : a), tempos[0]);
   // In sol-fa mode each voice has one recording singing its note names, reused for every verse.
-  const solfaWords = state.words === "solfa";
+  const solfaWords = state.words === "solfa" || state.singSolfa; // the singers sing their note names
   const wanted = [];
   const missing = [];
   for (const v of state.verses) {
@@ -1006,7 +1009,7 @@ async function renderSingers() {
     toast("Asking the server to record the singers…", 0);
     let res;
     try {
-      const what = state.words === "solfa" ? "&words=solfa" : `&verses=${verses.join(",")}`;
+      const what = state.words === "solfa" || state.singSolfa ? "&words=solfa" : `&verses=${verses.join(",")}`;
       res = await fetch(`api/sing?hymn=${hymn.id}&tempo=${state.tempo}${what}&transpose=${shift}`, { method: "POST" });
     } catch {
       toast("Recording the singers needs the hymn server. Start it with python3 server.py in the hymn-satb folder.");
@@ -1079,6 +1082,7 @@ async function renderAll() {
   $("altView").classList.remove("sf-sweeping");
   $("altView").style.height = "";
   $("altView").hidden = isScoreView() || state.view === "presenter";
+  $("altView").style.zoom = String(state.view === "solfa" ? state.solfaZoom : state.altZoom);
   buildHeaders();
   lastSystem = null;
   lastFollowEl = null;
@@ -1088,7 +1092,7 @@ async function renderAll() {
     await prepareStage();
   } else if (state.view === "solfa") {
     const voices = visibleVoices();
-    solfa.render(hymn, { voices, words: state.words, verse: renderedVerse, chords: state.chords, wordsUnder: state.solfaWordsAt === "top" ? (voices.includes("S") ? "S" : voices[0]) : "every", chordName: (n) => chordLabel(n) });
+    solfa.render(hymn, { voices, words: state.words, widthScale: appWide(state.solfaZoom), verse: renderedVerse, chords: state.chords, wordsUnder: state.solfaWordsAt === "top" ? voices[0] : state.solfaWordsAt === "bottom" ? voices[voices.length - 1] : "every", chordName: (n) => chordLabel(n) });
     if (state.showSync) {
       const marked = new Set(syncopations(hymn).map((x) => `${x.voice}:${x.q}`));
       for (const c of solfa.cells) if (marked.has(`${c.voice}:${c.on}`)) c.el?.classList.add("sync");
@@ -1096,11 +1100,13 @@ async function renderAll() {
     setupSolfaSweep();
     positionHeaders(null);
   } else if (state.view === "words") {
-    words.render(hymn, { words: state.words === "none" ? "all" : state.words, verse: renderedVerse, chords: state.chords, chordName: (n) => chordLabel(n) });
+    words.render(hymn, { fit: APP, words: state.words === "none" ? "all" : state.words, verse: renderedVerse, chords: state.chords, chordName: (n) => chordLabel(n) });
     positionHeaders(null);
   } else {
     const opts = withPiano(xmlOptions());
-    view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: viewport.clientWidth - 8, tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose });
+    // pinched bigger in the app: the sheet itself is wider than the screen, and scrolls sideways
+    sheet.style.width = state.view === "page" && appWide(state.zoom) > 1 ? `${Math.floor((viewport.clientWidth - 8) * appWide(state.zoom))}px` : "";
+    view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose });
     buildLane();
     setupSweep();
     positionHeaders(view.systems[0]);
@@ -1262,7 +1268,7 @@ function wordsAt() {
 
 function setWordsAt(where) {
   // in the sol-fa view the same menu places its words: under every voice, or the top one only
-  if (state.view === "solfa") { state.solfaWordsAt = where === "every" ? "every" : "top"; save("solfaWordsAt"); renderAll(); return; }
+  if (state.view === "solfa") { state.solfaWordsAt = where; save("solfaWordsAt"); renderAll(); return; }
   const keys = visibleTracks().map(trackKey);
   keys.forEach((k, i) => { state.trackWords[k] = where === "every" || (where === "top" ? i === 0 : i === keys.length - 1); });
   save("trackWords");
@@ -1895,7 +1901,7 @@ function paint(force, tAt) {
         if (li >= 0) solfaSweepTo(li, cell);
       } else if (engine.playing && target && target !== lastFollowEl) {
         lastFollowEl = target;
-        target.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
+        target.scrollIntoView({ block: "center", inline: "center", behavior: reduceMotion ? "auto" : "smooth" });
       }
     }
     if (state.piano) drawPianoPanel(t);
@@ -1973,7 +1979,8 @@ function follow(ph) {
     if (engine.playing) viewport.scrollLeft = ph.x - viewport.clientWidth * 0.33;
     return;
   }
-  if (sweeping()) { sweepTo(ph); return; }
+  if (sweeping()) { sweepTo(ph); if (engine.playing) keepInSight(viewport, ph.x); return; }
+  if (engine.playing) keepInSight(viewport, ph.x);
   if (ph.system.el !== lastSystem) {
     lastSystem = ph.system.el;
     positionHeaders(ph.system);
@@ -1989,9 +1996,18 @@ function follow(ph) {
 // sung, the next line is uncovered behind the playhead, from barline to barline, so when the eye
 // goes back to the left the next line is already there.
 const SWEEP_PAD = 14;
+const SWEEP_TOP = 2; // above a line: nothing of the line before it (its last words) shows
 const APP_ZOOM = 0.5; // the app's staff: the smallest the pinch allows, so the whole page width shows
+// In the app the lines are always those of the smallest size; pinched bigger, the page is wider than
+// the screen and scrolls sideways (it is not laid out again into shorter lines).
+const appWide = (z) => (APP ? Math.max(1, z / APP_ZOOM) : 1);
+/** Keep x (content px of a sideways-scrolling box) in sight: from the left third onwards. */
+function keepInSight(box, x) {
+  if (box.scrollWidth <= box.clientWidth + 4) return;
+  if (x < box.scrollLeft + 16 || x > box.scrollLeft + box.clientWidth * 0.8) box.scrollLeft = Math.max(0, x - box.clientWidth * 0.33);
+}
 const sweep = { el: null, inner: null, i: -1, x: 0, next: undefined };
-const sweeping = () => APP && state.sweep && state.view === "page" && !!view?.systems?.length;
+const sweeping = () => state.sweep && state.view === "page" && !!view?.systems?.length;
 
 function clearSweep() {
   viewport.classList.remove("sweeping");
@@ -2047,7 +2063,8 @@ function sweepTo(ph, wipe = true) {
     sweep.x = 0;
     sweep.next = undefined;
     lastSystem = sys.el;
-    sheet.style.transform = `translateY(${SWEEP_PAD - sys.box.y}px)`;
+    sheet.style.transform = `translateY(${SWEEP_TOP - sys.box.y}px)`;
+    if (engine.playing) viewport.scrollLeft = 0;
     sweep.el.hidden = true;
     // as tall as this line and the next, so nothing of the line after peeks in below
     const tall = (k) => { // a line, and below it only the clear space before the line after it
@@ -2057,43 +2074,51 @@ function sweepTo(ph, wipe = true) {
       return s.box.h + (after ? Math.max(0, Math.min(SWEEP_PAD, after.box.y - s.box.y - s.box.h - 4)) : SWEEP_PAD);
     };
     sweep.tall = tall;
-    const h = `${Math.floor(SWEEP_PAD + Math.max(tall(i), tall(i + 1)))}px`;
+    const h = `${Math.floor(SWEEP_TOP + Math.max(tall(i), tall(i + 1)))}px`;
     viewport.style.height = h;
     sweep.el.style.height = h;
   }
   const a = sys.anchors;
   if (!a.length || !wipe || !engine.playing) { sweep.el.hidden = true; return; }
-  const startAt = a[0].x + (a[a.length - 1].x - a[0].x) * 0.75;
-  if (ph.x <= startAt) return;
+  // the note being sung, and the one before it: the peel stops halfway between them, so the note
+  // being sung and its words are never covered
+  let k = a.findIndex((p) => p.x > ph.x + 0.5) - 1;
+  if (k < 0) k = a[0].x > ph.x ? 0 : a.length - 1;
+  const end = a[a.length - 1].x;
+  if (a[k].x < a[0].x + (end - a[0].x) * 0.5) return; // the first half of the line is still being sung
   if (sweep.next === undefined) {
-    // decided once per line, when the line is three quarters sung: it then never changes its mind
+    // decided once per line, at halfway: it then never changes its mind
     sweep.next = upcomingSystem(i);
     if (sweep.next >= 0) {
-      const h = `${Math.floor(SWEEP_PAD + Math.max(sweep.tall(i), sweep.tall(sweep.next)))}px`;
+      const h = `${Math.floor(SWEEP_TOP + Math.max(sweep.tall(i), sweep.tall(sweep.next)))}px`;
       viewport.style.height = h;
       sweep.el.style.height = h;
     }
   }
   const next = view.systems[sweep.next];
   if (!next) { sweep.el.hidden = true; return; }
-  // the edge sits on a barline of the next line and stays well behind the playhead
-  const lines = view.measures.filter((m) => m.system === next.el).map((m) => m.box.x + m.box.w).sort((p, q) => p - q);
-  const target = lines.filter((x) => x <= ph.x - 70).pop() ?? 0;
-  sweep.x = engine.playing && !reduceMotion ? sweep.x + (target - sweep.x) * 0.18 : target;
-  if (sweep.x < 2) { sweep.el.hidden = true; return; }
-  const soft = 28;
-  sweep.el.hidden = false;
-  sweep.inner.style.transform = `translateY(${SWEEP_PAD - next.box.y}px)`;
-  const m = `linear-gradient(to right, #000 ${Math.max(0, sweep.x - soft)}px, transparent ${sweep.x}px)`;
-  sweep.el.style.maskImage = m;
-  sweep.el.style.webkitMaskImage = m;
+  const edge = k > 0 ? (a[k - 1].x + a[k].x) / 2 : a[k].x - 6;
+  peel(sweep, edge);
+  sweep.inner.style.transform = `translateY(${SWEEP_TOP - next.box.y}px)`;
+}
+
+/** The line being sung lies on top of the next one; behind the singer it is peeled away: at halfway
+ *  everything sung so far at once, then note by note. The edge only ever moves right. */
+function peel(sw, edge) {
+  sw.x = Math.max(sw.x, edge);
+  if (sw.x < 2) { sw.el.hidden = true; return; }
+  sw.el.hidden = false;
+  sw.el.style.setProperty("--edge", `${sw.x}px`);
+  sw.el.style.clipPath = `inset(0 calc(100% - ${sw.x}px) 0 0)`;
+  sw.el.style.maskImage = "";
+  sw.el.style.webkitMaskImage = "";
 }
 
 // ---- sol-fa line by line (?app) -----------------------------------------------------------------
 // As the staff: one line of sol-fa at a time; once most of it is sung, the line that really comes next
 // (looked up in the performance) is uncovered behind the singer, bar by bar, from the left.
 const sfSweep = { el: null, inner: null, i: -1, x: 0, next: undefined };
-const solfaSweeping = () => APP && state.solfaSweep && state.view === "solfa" && !!solfa?.lines?.length;
+const solfaSweeping = () => state.solfaSweep && state.view === "solfa" && !!solfa?.lines?.length;
 const SF_PAD = 10;
 
 function setupSolfaSweep() {
@@ -2137,14 +2162,21 @@ function solfaSweepTo(li, cell) {
     sfSweep.next = undefined;
     sfSweep.el.hidden = true;
     flow.style.transform = `translateY(${SF_PAD - top(li)}px)`;
+    alt.scrollLeft = 0;
     fit(li);
   }
   if (!cell || !engine.playing) { sfSweep.el.hidden = true; return; }
+  // the column of the note being sung (its words start there too): the peel stops at its left edge
+  const beat = cell.closest(".sf-beat") || cell;
   const bar = cell.closest(".sf-bar");
-  const x = bar.offsetLeft + cell.offsetLeft;
-  if (x < line.el.offsetWidth * 0.6) return;
+  const x = bar.offsetLeft + beat.offsetLeft;
+  if (engine.playing) {
+    const r = cell.getBoundingClientRect(), A = alt.getBoundingClientRect();
+    if (alt.scrollWidth > alt.clientWidth + 4 && (r.right > A.right - 24 || r.left < A.left)) cell.scrollIntoView({ inline: "center", block: "nearest" });
+  }
+  if (x < line.el.offsetWidth * 0.5) return; // the first half of the line is still being sung
   if (sfSweep.next === undefined) {
-    // decided once per line, and never changed: the line the performance goes to after this one
+    // decided once per line, at halfway, and never changed: the line the performance goes to next
     sfSweep.next = -1;
     const t0 = engine.now();
     for (let dt = 0.2; t0 + dt < perf.total && dt < 60; dt += 0.2) {
@@ -2157,19 +2189,10 @@ function solfaSweepTo(li, cell) {
   }
   const next = lines[sfSweep.next];
   if (!next) { sfSweep.el.hidden = true; return; }
-  // the edge stops at a barline of the next line, well behind the note being sung
-  const edges = next.bars.map((b) => b.offsetLeft + b.offsetWidth).sort((p, q) => p - q);
-  const target = edges.filter((e) => e <= x - 40).pop() ?? 0;
-  sfSweep.x = !reduceMotion ? sfSweep.x + (target - sfSweep.x) * 0.18 : target;
-  if (sfSweep.x < 2) { sfSweep.el.hidden = true; return; }
-  sfSweep.el.hidden = false;
   sfSweep.el.style.top = `${flow.offsetTop}px`;
   sfSweep.el.style.height = alt.style.height;
   sfSweep.inner.style.transform = `translateY(${SF_PAD - top(sfSweep.next)}px)`;
-  const soft = 24;
-  const m = `linear-gradient(to right, #000 ${Math.max(0, sfSweep.x - soft)}px, transparent ${sfSweep.x}px)`;
-  sfSweep.el.style.maskImage = m;
-  sfSweep.el.style.webkitMaskImage = m;
+  peel(sfSweep, x - 3);
 }
 
 // ---- pinch to zoom (?app) ------------------------------------------------------------------------
@@ -2185,7 +2208,8 @@ function setupPinch() {
     const el = target();
     if (!el) return;
     const r = el.getBoundingClientRect();
-    const z = el === sheet ? 1 : state.altZoom; // CSS zoom scales the box, not the transform origin
+    const altKey = state.view === "solfa" ? "solfaZoom" : "altZoom";
+    const z = el === sheet ? 1 : state[altKey]; // CSS zoom scales the box, not the transform origin
     const mx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
     const my = (e.touches[0].clientY + e.touches[1].clientY) / 2;
     p = { el, d: dist(e.touches), k: 1, base: el.style.transform || "" };
@@ -2195,7 +2219,7 @@ function setupPinch() {
   workspace.addEventListener("touchmove", (e) => {
     if (!p || e.touches.length !== 2) return;
     e.preventDefault();
-    const now = p.el === sheet ? state.zoom : state.altZoom;
+    const now = p.el === sheet ? state.zoom : state[state.view === "solfa" ? "solfaZoom" : "altZoom"];
     p.k = Math.max(0.5 / now, Math.min(2.5 / now, dist(e.touches) / p.d));
     p.el.style.transform = `${p.base} scale(${p.k})`;
   }, { passive: false });
@@ -2208,7 +2232,11 @@ function setupPinch() {
     el.style.transition = "";
     if (Math.abs(k - 1) < 0.04) return;
     if (el === sheet) { state.zoom = Math.max(0.5, Math.min(2.5, state.zoom * k)); save("zoom"); renderAll(); }
-    else { state.altZoom = Math.max(0.5, Math.min(2.5, state.altZoom * k)); save("altZoom"); el.style.zoom = String(state.altZoom); if (state.view === "solfa") renderAll(); }
+    else {
+      const key = state.view === "solfa" ? "solfaZoom" : "altZoom";
+      state[key] = Math.max(0.5, Math.min(2.5, state[key] * k)); save(key); el.style.zoom = String(state[key]);
+      if (state.view === "solfa") renderAll(); // the lines are laid out again for the new size
+    }
   };
   workspace.addEventListener("touchend", end);
   workspace.addEventListener("touchcancel", end);
@@ -3146,6 +3174,12 @@ function bindControls() {
     if (document.body.classList.contains("full-page")) leaveFullPage();
     else if (state.loop.on && !$("optionsMenu").open && !$("studio").open) clearLoop();
   });
+  $("lineByLine").checked = state.sweep && state.solfaSweep;
+  $("lineByLine").onchange = (e) => {
+    state.sweep = state.solfaSweep = e.target.checked;
+    store.set("lineByLine", state.sweep); store.set("solfaLineByLine", state.solfaSweep);
+    renderAll();
+  };
   $("nowbarToggle").checked = state.nowbar;
   $("nowbarToggle").onchange = (e) => { state.nowbar = e.target.checked; save("nowbar"); $("nowbar").hidden = !state.nowbar || state.view === "presenter"; };
   for (const id of ["intro", "interlude"]) {
@@ -3207,6 +3241,7 @@ boot();
 window.AHStudio = {
   /** "words" | "solfa" | "page" | "tracks" | "presenter" */
   view(v) {
+    if (v === "page" && state.staffScroll) v = "tracks"; // the staff moving under a still playhead
     if (v === state.view) return;
     const b = document.querySelector(`.views .seg[data-view="${v}"]`);
     if (b) b.click(); else { state.view = v; save("view"); renderAll(); }
@@ -3227,6 +3262,8 @@ window.AHStudio = {
       try {
         stopPlayback();
         state.zoom = APP_ZOOM; save("zoom"); // each hymn opens at the smallest size: the whole page on the screen
+        state.solfaZoom = APP_ZOOM; save("solfaZoom"); // the sol-fa too
+        state.altZoom = 1; save("altZoom"); // the words fit themselves to the screen
         $("hymnPicker").value = id;
         history.replaceState(null, "", `${location.pathname}${location.search}#${id}`);
         await loadHymn(entry);
@@ -3243,7 +3280,7 @@ window.AHStudio = {
       const r = document.querySelector(`input[name="wordsMode"][value="${value}"]`);
       if (r) { r.checked = true; r.dispatchEvent(new Event("change", { bubbles: true })); }
     } else if (name === "sweep") {
-      state.sweep = !!value; save("sweep"); renderAll();
+      state.sweep = !!value; store.set("lineByLine", state.sweep); renderAll();
     } else if (name === "staves" && /^[SATB|]+$/.test(value)) {
       setStaves(value);
     } else if (name === "accStaff") {
@@ -3265,10 +3302,25 @@ window.AHStudio = {
       $("countIn").checked = !!value;
       $("countIn").dispatchEvent(new Event("change", { bubbles: true }));
     } else if (name === "fit") {
-      state.zoom = APP_ZOOM; save("zoom"); renderAll();
+      if (state.view === "solfa") { state.solfaZoom = APP_ZOOM; save("solfaZoom"); } else { state.zoom = APP_ZOOM; save("zoom"); }
+      renderAll();
     } else if (name === "solfaSweep") {
-      state.solfaSweep = !!value; save("solfaSweep"); renderAll();
-    } else if (name === "solfaWordsAt" && ["every", "top"].includes(value)) {
+      state.solfaSweep = !!value; store.set("solfaLineByLine", state.solfaSweep); renderAll();
+    } else if (name === "zoom" && Number(value) > 0) {
+      // the size, as a pinch sets it: the staff's or the sol-fa's, by the view
+      const z = Math.max(0.5, Math.min(2.5, Number(value)));
+      if (state.view === "solfa") { state.solfaZoom = z; save("solfaZoom"); } else { state.zoom = z; save("zoom"); }
+      renderAll();
+    } else if (name === "staffScroll") {
+      state.staffScroll = !!value; save("staffScroll");
+      if (state.view === "page" || state.view === "tracks") this.view(state.staffScroll ? "tracks" : "page");
+    } else if (name === "presenterShows" && ["score", "words", "stanza"].includes(value)) {
+      const sel = $("presenterShows");
+      sel.value = value;
+      sel.dispatchEvent(new Event("change", { bubbles: true }));
+    } else if (name === "singSolfa") {
+      state.singSolfa = !!value; save("singSolfa"); prepareStems();
+    } else if (name === "solfaWordsAt" && ["every", "top", "bottom"].includes(value)) {
       state.solfaWordsAt = value; save("solfaWordsAt"); renderAll();
     } else if (name === "instrumental") {
       // instruments only: every voice on the piano instead of singing; off brings the voices back as they were
@@ -3326,7 +3378,7 @@ window.AHStudio = {
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
       accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, zoom: state.zoom,
-      solfaSweep: !!state.solfaSweep, solfaWordsAt: state.solfaWordsAt, instrumental: !!state.instrumental,
+      solfaSweep: !!state.solfaSweep, solfaWordsAt: state.solfaWordsAt, instrumental: !!state.instrumental, singSolfa: !!state.singSolfa, staffScroll: !!state.staffScroll, presenterShows: state.presenterShows,
       accomps: Object.entries(ACCOMP_STYLES).map(([value, label]) => ({ value, label })),
       intros: Object.entries(INSTRUMENTAL).map(([value, label]) => ({ value, label })),
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
