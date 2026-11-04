@@ -1021,8 +1021,17 @@ function syncSungControls() {
     : tempos.length ? `Recorded at ${tempos.join(", ")} a minute.` : "No sung recording yet.";
 }
 
+/** Choosing who sings (recorded or live singers) means the voices sing: one left on the synth's "aah"
+ *  goes back to its singer (a stuck "choir" kept live singing silent on every hymn). */
+function voicesSing() {
+  let changed = false;
+  for (const ch of Object.keys(state.voiceSounds)) if (state.voiceSounds[ch] === "choir") { delete state.voiceSounds[ch]; changed = true; }
+  if (changed) { save("voiceSounds"); applyMix(); buildHeaders(); }
+}
+
 /** Choose the singing engine (remembered on this device). */
 function setSingEngine(v) {
+  voicesSing();
   state.singEngine = v;
   save("singEngine");
   syncSingersBtn();
@@ -3758,7 +3767,7 @@ window.AHStudio = {
       renderAll();
     } else if (name === "singEngine" && (value === "stems" || value === "warble" || value === null || value === "")) {
       appAnswered = true;
-      if ((value || null) === state.singEngine) prepareStems(); else setSingEngine(value || null);
+      if ((value || null) === state.singEngine) { voicesSing(); syncSungControls(); prepareStems(); } else setSingEngine(value || null);
     } else if (name === "solfaSweep") {
       state.solfaSweep = !!value; store.set("solfaLineByLine", state.solfaSweep); renderAll();
     } else if (name === "zoom" && Number(value) > 0) {
@@ -3783,11 +3792,18 @@ window.AHStudio = {
       if (on === !!state.instrumental) return;
       const chs = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length);
       if (on) {
-        state.beforeInstrumental = Object.fromEntries(chs.map((ch) => [ch, document.querySelector(`select.vsound[data-sound="${ch}"]`)?.value || "sung"]));
+        // only the sounds someone chose: a voice on its default (the singers, or the synth where there are
+        // none) goes back to its default, not to whatever its menu showed on this hymn
+        state.beforeInstrumental = Object.fromEntries(chs.map((ch) => [ch, state.voiceSounds[ch] ?? null]));
         save("beforeInstrumental");
       }
       state.instrumental = on; save("instrumental");
-      for (const ch of chs) this.setSound(ch, on ? "piano" : state.beforeInstrumental?.[ch] || "sung");
+      if (on) { for (const ch of chs) this.setSound(ch, "piano"); return; }
+      for (const ch of chs) {
+        const was = state.beforeInstrumental?.[ch];
+        if (was && was !== "piano") state.voiceSounds[ch] = was; else delete state.voiceSounds[ch];
+      }
+      save("voiceSounds"); applyMix(); syncSungControls(); buildHeaders(); prepareStems();
     }
   },
   /** Saved singers, for the app's Settings: starts the count; savedList holds the answer (JSON) when done. */
