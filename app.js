@@ -1890,7 +1890,12 @@ function paint(force, tAt) {
   }
   if (state.view === "solfa" || state.view === "words") {
     const alt = state.view === "solfa" ? solfa : words;
-    if (!loc) { alt.clear(); if (solfaSweeping() && sfSweep.i < 0) solfaSweepTo(0, null); }
+    if (!loc) {
+      alt.clear();
+      // nothing sounding (stopped, counting in, or between the introduction and verse 1): show the line
+      // where the singing starts, whole, not the half-peeled line the introduction ended on
+      if (solfaSweeping()) { const at = comingUp(t); const k = at ? sfLineAt(at.q) : 0; if (k >= 0 && k !== sfSweep.i) solfaSweepTo(k, null); }
+    }
     else {
       const el = state.view === "solfa" ? solfa.highlight(q, sung ? (q >= refrainQ ? (hymn.refrains?.[loc.verse - 1] ? 1000 + loc.verse : 0) : loc.verse) : -2) : words.highlight(q, sung ? loc.verse : -2, q >= refrainQ);
       alt.markChord(ci, hymn);
@@ -1898,7 +1903,8 @@ function paint(force, tAt) {
       if (solfaSweeping()) {
         const cell = [...solfa.active][0]?.el;
         const li = cell ? solfa.lines.findIndex((l) => l.el.contains(cell)) : -1;
-        if (li >= 0) solfaSweepTo(li, cell);
+        const brief = li !== sfSweep.i && sfSweep.i >= 0 && engine.playing && loc.kind !== "verse" && briefVisit(t, li, (a) => sfLineAt(a.q));
+        if (li >= 0 && !brief) solfaSweepTo(li, cell);
       } else if (engine.playing && target && target !== lastFollowEl) {
         lastFollowEl = target;
         target.scrollIntoView({ block: "center", inline: "center", behavior: reduceMotion ? "auto" : "smooth" });
@@ -1914,7 +1920,12 @@ function paint(force, tAt) {
     const start = !engine.playing && !loc ? view.playhead(0) : null;
     if (start) placeRibbon(start);
     else ribbon.hidden = true;
-    if (sweeping() && (start || !lastSystem)) { const p0 = start || view.playhead(0); if (p0) sweepTo(p0, false); }
+    if (sweeping()) {
+      // as the sol-fa: the line where the singing starts, whole
+      const at = start ? null : comingUp(t);
+      const p0 = start || (at && view.playhead(scoreQ(at))) || view.playhead(0);
+      if (p0 && view.systems.indexOf(p0.system) !== sweep.i) sweepTo(p0, false);
+    }
   } else {
     view.highlight(sq, verseN);
     const cj = ci + copy * hymn.chords.length;
@@ -1979,7 +1990,16 @@ function follow(ph) {
     if (engine.playing) viewport.scrollLeft = ph.x - viewport.clientWidth * 0.33;
     return;
   }
-  if (sweeping()) { sweepTo(ph); if (engine.playing) keepInSight(viewport, ph.x); return; }
+  if (sweeping()) {
+    const k = view.systems.indexOf(ph.system);
+    const t = engine.now();
+    const at = locate(perf, t);
+    // an introduction or interlude touching a line for a moment does not turn the page
+    if (k !== sweep.i && sweep.i >= 0 && engine.playing && at?.kind !== "verse" && briefVisit(t, k, systemOf)) return;
+    sweepTo(ph);
+    if (engine.playing) keepInSight(viewport, ph.x);
+    return;
+  }
   if (engine.playing) keepInSight(viewport, ph.x);
   if (ph.system.el !== lastSystem) {
     lastSystem = ph.system.el;
@@ -2042,18 +2062,8 @@ function setupSweep() {
 
 // The line that will really be sung after line i: not always the one below it (verse 2 goes back to
 // the top, a refrain or a repeat jumps). Found by looking ahead in the performance from now.
-function upcomingSystem(i) {
-  const t0 = engine.now();
-  for (let dt = 0.2; t0 + dt < perf.total && dt < 60; dt += 0.2) {
-    const at = locate(perf, t0 + dt);
-    if (!at || at.done) continue; // a rest between verses: keep looking
-    const p = view.playhead(scoreQ(at));
-    if (!p) continue;
-    const k = view.systems.indexOf(p.system);
-    if (k !== i) return k;
-  }
-  return -1;
-}
+const systemOf = (at) => { const p = view.playhead(scoreQ(at)); return p ? view.systems.indexOf(p.system) : -1; };
+function upcomingSystem(i) { return lineAfter(engine.now(), i, systemOf); }
 
 function sweepTo(ph, wipe = true) {
   const sys = ph.system;
@@ -2083,6 +2093,8 @@ function sweepTo(ph, wipe = true) {
   // peeled in two steps, not continuously: at three quarters of the line, its first half; at nine
   // tenths, up to three quarters; the rest when the singing goes back to the left. Each edge is the
   // barline at or before that point.
+  if (ph.x < (sweep.lastX ?? 0) - 30) { sweep.x = 0; sweep.next = undefined; sweep.el.hidden = true; } // went back on this line
+  sweep.lastX = ph.x;
   const end = a[a.length - 1].x;
   const at = (ph.x - a[0].x) / Math.max(1, end - a[0].x);
   if (at < 0.75) return;
@@ -2113,6 +2125,48 @@ function peel(sw, edge) {
   sw.el.style.clipPath = `inset(0 calc(100% - ${sw.x}px) 0 0)`;
   sw.el.style.maskImage = "";
   sw.el.style.webkitMaskImage = "";
+}
+
+/** The line the music goes to after line `from`, from time t: lineOf(at) gives a position's line. A line
+ *  only touched for a moment (an introduction running a few notes over into it) is passed over. */
+const BRIEF = 1.5; // seconds
+function lineAfter(t, from, lineOf) {
+  let cand = -1, since = 0, away = false;
+  for (let dt = 0.1; t + dt < perf.total && dt < 60; dt += 0.1) {
+    const at = locate(perf, t + dt);
+    const k = at && !at.done ? lineOf(at) : -1;
+    if (k === -1) away = true;
+    // back on this same line after a break (the introduction done, verse 1 starts here): the page
+    // starts over, there is no other line to uncover
+    if (k === from && away) return -1;
+    if (cand >= 0) {
+      if (k === cand) { if (dt - since >= BRIEF) return cand; continue; }
+      if (k === -1 && dt - since < BRIEF) continue; // silence: decide by what follows
+      cand = -1;
+      away = true;
+    }
+    if (k >= 0 && k !== from) { cand = k; since = dt; }
+  }
+  return cand;
+}
+
+/** True when the music is in line k only for a moment from time t (and is not singing there). */
+function briefVisit(t, k, lineOf) {
+  for (let dt = 0; dt < BRIEF; dt += 0.1) {
+    const at = locate(perf, t + dt);
+    if (!at || at.done || lineOf(at) !== k) return true;
+  }
+  return false;
+}
+
+/** Where the music next sounds after time t (within ten seconds), or null. */
+function comingUp(t) {
+  if (!perf) return null;
+  for (let dt = 0.1; dt < 10 && t + dt < perf.total; dt += 0.1) {
+    const at = locate(perf, t + dt);
+    if (at && !at.done) return at;
+  }
+  return null;
 }
 
 // ---- sol-fa line by line (?app) -----------------------------------------------------------------
@@ -2176,17 +2230,12 @@ function solfaSweepTo(li, cell) {
     if (alt.scrollWidth > alt.clientWidth + 4 && (r.right > A.right - 24 || r.left < A.left)) cell.scrollIntoView({ inline: "center", block: "nearest" });
   }
   const W = line.el.offsetWidth;
+  if (x < (sfSweep.lastX ?? 0) - 30) { sfSweep.x = 0; sfSweep.next = undefined; sfSweep.el.hidden = true; } // went back on this line
+  sfSweep.lastX = x;
   if (x < W * 0.75) return; // peeled in two steps, as the staff
   if (sfSweep.next === undefined) {
     // decided once per line, at three quarters, and never changed: the line the performance goes to next
-    sfSweep.next = -1;
-    const t0 = engine.now();
-    for (let dt = 0.2; t0 + dt < perf.total && dt < 60; dt += 0.2) {
-      const at = locate(perf, t0 + dt);
-      if (!at || at.done) continue;
-      const k = sfLineAt(at.q);
-      if (k >= 0 && k !== li) { sfSweep.next = k; break; }
-    }
+    sfSweep.next = lineAfter(engine.now(), li, (a) => sfLineAt(a.q));
     if (sfSweep.next >= 0) fit(sfSweep.next);
   }
   const next = lines[sfSweep.next];
