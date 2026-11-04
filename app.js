@@ -2216,12 +2216,15 @@ function answerQuiz(btn) {
 }
 
 // tAt: draw the moment at that performance time instead of the playing one (frames of a video made offline)
+/** How many times a hymn has played to its end (AHStudio.state().ends). */
+let playEnds = 0;
 function paint(force, tAt) {
   if (!perf || !hymn) return;
   const t = tAt ?? engine.now();
   if (tAt === undefined && engine.playing && t >= perf.total && !engine.loop) {
     engine.stop();
     setPlaying(false);
+    playEnds++; // the app's playlists move on to the next hymn when this counts up
     if (recording) setTimeout(finishRecording, 1200);
   }
   const moving = engine.playing || force || Math.abs(t - lastT) > 1e-3;
@@ -2406,13 +2409,21 @@ function keepInSight(box, x) {
   if (box.scrollWidth <= box.clientWidth + 4) return;
   if (x < box.scrollLeft + 16 || x > box.scrollLeft + box.clientWidth * 0.8) box.scrollLeft = Math.max(0, x - box.clientWidth * 0.33);
 }
-const sweep = { el: null, inner: null, i: -1, x: 0, next: undefined };
+const sweep = { el: null, inner: null, i: -1, x: 0, next: undefined, head: 0, foot: 0 };
+// Every line is placed by its top staff line, all at the same height (room above it for the line with
+// the most above its staff: high notes, stems, a tempo mark), so the staff doesn't jump up or down from
+// one line to the next, nor between the line being sung and the next one under it (Brian, 4 Nov 2026).
+const staffTop = (s) => s.staves[0]?.top ?? s.box.y;
+const sweepShift = (s) => SWEEP_TOP + sweep.head - staffTop(s);
+// only that line shows: nothing of the line above or below it
+const sweepClip = (s, side = 0) => `inset(${Math.floor(s.box.y - 1)}px ${side}px calc(100% - ${Math.ceil(s.box.y + s.box.h + SWEEP_PAD)}px) ${side}px)`;
 const sweeping = () => state.sweep && state.view === "page" && !!view?.systems?.length;
 
 function clearSweep() {
   viewport.classList.remove("sweeping");
   viewport.style.height = "";
   sheet.style.transform = "";
+  sheet.style.clipPath = "";
   if (sweep.el) sweep.el.hidden = true;
   sweep.i = -1;
   sweep.next = undefined;
@@ -2431,7 +2442,9 @@ function setupSweep() {
   sweep.inner = sweep.el.firstChild;
   sweep.el.hidden = true;
   sweep.next = undefined;
-  const h = Math.max(...view.systems.map((s) => s.box.h)) + 2 * SWEEP_PAD;
+  sweep.head = Math.max(...view.systems.map((s) => staffTop(s) - s.box.y));
+  sweep.foot = Math.max(...view.systems.map((s) => s.box.y + s.box.h - staffTop(s)));
+  const h = SWEEP_TOP + sweep.head + sweep.foot + SWEEP_PAD;
   viewport.classList.add("sweeping");
   viewport.style.height = `${Math.ceil(h)}px`;
   sweep.el.style.left = `${sheet.offsetLeft}px`;
@@ -2453,20 +2466,10 @@ function sweepTo(ph, wipe = true) {
     sweep.x = 0;
     sweep.next = undefined;
     lastSystem = sys.el;
-    sheet.style.transform = `translateY(${SWEEP_TOP - sys.box.y}px)`;
+    sheet.style.transform = `translateY(${sweepShift(sys)}px)`;
+    sheet.style.clipPath = sweepClip(sys, -50);
     if (engine.playing) viewport.scrollLeft = 0;
     sweep.el.hidden = true;
-    // as tall as this line and the next, so nothing of the line after peeks in below
-    const tall = (k) => { // a line, and below it only the clear space before the line after it
-      const s = view.systems[k];
-      if (!s) return 0;
-      const after = view.systems[k + 1];
-      return s.box.h + (after ? Math.max(0, Math.min(SWEEP_PAD, after.box.y - s.box.y - s.box.h - 4)) : SWEEP_PAD);
-    };
-    sweep.tall = tall;
-    const h = `${Math.floor(SWEEP_TOP + Math.max(tall(i), tall(i + 1)))}px`;
-    viewport.style.height = h;
-    sweep.el.style.height = h;
   }
   const a = sys.anchors;
   if (!a.length || !wipe || !engine.playing) { sweep.el.hidden = true; return; }
@@ -2481,11 +2484,6 @@ function sweepTo(ph, wipe = true) {
   if (sweep.next === undefined) {
     // decided once per line, at three quarters: it then never changes its mind
     sweep.next = upcomingSystem(i);
-    if (sweep.next >= 0) {
-      const h = `${Math.floor(SWEEP_TOP + Math.max(sweep.tall(i), sweep.tall(sweep.next)))}px`;
-      viewport.style.height = h;
-      sweep.el.style.height = h;
-    }
   }
   const next = view.systems[sweep.next];
   if (!next) { sweep.el.hidden = true; return; }
@@ -2493,24 +2491,22 @@ function sweepTo(ph, wipe = true) {
   const ends = (el) => view.measures.filter((m) => m.system === el).map((m) => m.box.x + m.box.w);
   const mine = ends(sys.el).filter((x) => x <= upTo + 1);
   const edge = mine.length ? Math.max(...mine) : upTo;
-  // the next line shows whole bars only: up to its last barline before the edge, then plain paper
-  const theirs = ends(next.el).filter((x) => x <= edge + 1);
-  peel(sweep, edge, theirs.length ? Math.max(...theirs) : 0);
-  sweep.inner.style.transform = `translateY(${SWEEP_TOP - next.box.y}px)`;
+  peel(sweep, edge);
+  sweep.inner.style.transform = `translateY(${sweepShift(next)}px)`;
+  sweep.inner.style.clipPath = sweepClip(next, -50);
 }
 
 /** The line being sung lies on top of the next one; behind the singer it is peeled away in steps.
  *  The edge only ever moves right. */
-function peel(sw, edge, shown = edge) {
-  // the line being sung is gone left of `edge` (a barline of its own); of the next line, whole bars up
-  // to `shown` (a barline of the next line), and plain paper between
-  if (edge > sw.x) sw.shown = shown;
+function peel(sw, edge) {
+  // the line being sung is gone left of `edge` (a barline of its own); the next line lies whole beneath
+  // it and shows right up to the edge, as a map's top layer dragged away shows the one under it: no
+  // plain paper between the two (Brian, 4 Nov 2026)
   sw.x = Math.max(sw.x, edge);
   if (sw.x < 2) { sw.el.hidden = true; return; }
   sw.el.hidden = false;
   sw.el.style.setProperty("--edge", `${sw.x}px`);
   sw.el.style.clipPath = `inset(0 calc(100% - ${sw.x}px) 0 0)`;
-  sw.inner.style.clipPath = `inset(-50px calc(100% - ${Math.max(0, (sw.shown ?? sw.x) + 3)}px) -50px 0)`;
   sw.el.style.maskImage = "";
   sw.el.style.webkitMaskImage = "";
 }
@@ -2635,8 +2631,7 @@ function solfaSweepTo(li, cell) {
   const ends = (l) => l.bars.map((b) => b.offsetLeft + b.offsetWidth);
   const mine = ends(line).filter((e) => e <= upTo + 1);
   const edge = mine.length ? Math.max(...mine) : upTo;
-  const theirs = ends(next).filter((e) => e <= edge + 1);
-  peel(sfSweep, edge, theirs.length ? Math.max(...theirs) : 0);
+  peel(sfSweep, edge);
 }
 
 // ---- pinch to zoom (?app) ------------------------------------------------------------------------
@@ -3839,7 +3834,7 @@ window.AHStudio = {
       intros: Object.entries(INSTRUMENTAL).map(([value, label]) => ({ value, label })),
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
       stemsBytes: stemsCost.bytes, stemsSaved: stemsCost.saved,
-      repeating: !!state.loop.on, repeatLabel: state.loop.on ? (state.loop.from === state.loop.to ? `bar ${state.loop.from}` : `bars ${state.loop.from}–${state.loop.to}`) : "",
+      ends: playEnds, repeating: !!state.loop.on, repeatLabel: state.loop.on ? (state.loop.from === state.loop.to ? `bar ${state.loop.from}` : `bars ${state.loop.from}–${state.loop.to}`) : "",
       singEngine: singEngine(), singEngines: singingCfg.warble ? [{ value: "stems", label: "Recorded singers" }, { value: "warble", label: "Live singing (beta)" }] : [],
       credits: useWarble() ? singingCfg.warble.credits() : "",
     });
