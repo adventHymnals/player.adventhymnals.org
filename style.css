@@ -322,6 +322,14 @@ button, select, input { font: inherit; color: inherit; }
 .sf-end { font: 500 19px var(--serif); align-self: center; }
 .w-sheet { max-width: 46rem; margin: 0 auto; font: 400 clamp(22px, 2.4vw, 30px)/1.5 var(--serif); }
 .w-line { margin: 0 0 2px; }
+/* a repeat chosen in the words: the words repeated, and a way out at their end */
+.w-syl.w-looped { background: color-mix(in srgb, var(--gilt) 30%, transparent); box-shadow: 0 2px 0 var(--gilt); }
+.w-syl.w-pending { background: color-mix(in srgb, var(--gilt) 18%, transparent); }
+.w-loop-clear { display: inline-flex; align-items: center; gap: 4px; margin: 0 0 0 8px; padding: 3px 10px 3px 8px; vertical-align: middle; border: 1px solid var(--gilt); border-radius: 999px; background: var(--paper); color: var(--gilt); font: 700 13px/1.2 var(--sans); cursor: pointer; white-space: nowrap; }
+.w-loop-clear::before { content: "×"; font-size: 17px; line-height: 1; }
+.w-loop-clear:hover { background: var(--gilt); color: var(--paper); }
+/* a held or dragged word chooses a repeat, never starts the phone's text selection (Copy / Select all) */
+.w-syl, body.app .alt-view { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .w-block { margin: 0 0 28px; }
 .w-block h3 { font: italic 600 18px var(--serif); color: var(--gilt); margin: 0 0 4px; }
 .w-syl { display: inline-flex; flex-direction: column; vertical-align: bottom; }

@@ -338,6 +338,7 @@ export class Engine {
   /** Loop between performance times a and b (seconds), or clear with null. */
   setLoop(a, b) {
     this.loop = a === null || b <= a ? null : { a, b };
+    if (!this.loop) clearTimeout(this.nativeWrap); // out of a repeat: the app's singer just sings on
     if (this.loop && this.playing) {
       const t = this.now();
       if (t < this.loop.a || t >= this.loop.b) this.play(this.loop.a);

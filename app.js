@@ -1339,6 +1339,7 @@ async function renderAll() {
     positionHeaders(null);
   } else if (state.view === "words") {
     words.render(hymn, { fit: APP, words: state.words === "none" ? "all" : state.words, verse: renderedVerse, chords: state.chords, chordName: (n) => chordLabel(n) });
+    drawWordsLoop();
     positionHeaders(null);
   } else {
     const opts = withPiano(xmlOptions());
@@ -1756,14 +1757,15 @@ function syncLoopInputs() {
   syncRhythmButtons();
 }
 
-function applyLoop() {
+function applyLoop(pass = null) {
   if (!perf || !hymn) return;
-  if (!state.loop.on) { engine.setLoop(null); drawLoopBoxes(); return; }
+  if (!state.loop.on) { engine.setLoop(null); drawLoopBoxes(); drawWordsLoop(); return; }
   const loc = locate(perf, engine.now());
-  const [a, b] = barSpan(hymn, perf, loc ? loc.pass : 0, state.loop.from, state.loop.to);
+  const [a, b] = barSpan(hymn, perf, pass ?? (loc ? loc.pass : 0), state.loop.from, state.loop.to);
   engine.setLoop(a, b);
   if (!engine.playing && (engine.pausedAt < a || engine.pausedAt >= b)) engine.pausedAt = a;
   drawLoopBoxes();
+  drawWordsLoop();
 }
 
 function clearLoop() {
@@ -1869,9 +1871,126 @@ window.addEventListener("pointerup", () => {
   }
 });
 // in sol-fa and words views, click a note or word to jump there
+// ---- the Words view: choose words to repeat, as dragging across bars does in the score ----
+// Drag across words (mouse), or press and hold a line (touch: that line repeats; hold another line of the
+// same stanza to stretch the repeat to it). The words repeated are marked, with an x at their end; the x,
+// Escape or a tap on a word outside them stops the repeat and the music plays on.
+let wordsLoopV = null; // the stanza (data-v) the repeat was chosen in, for marking it
+let wordsPress = null;
+const wordsOn = () => state.view === "words";
+const sylOf = (el) => el?.closest?.(".w-syl[data-q]");
+function sylsBetween(a, b) {
+  const block = a.closest(".w-block");
+  if (!block || block !== b.closest(".w-block")) return [a];
+  const all = [...block.querySelectorAll(".w-syl[data-q]")];
+  const i = all.indexOf(a), j = all.indexOf(b);
+  return all.slice(Math.min(i, j), Math.max(i, j) + 1);
+}
+function markPending(syls) {
+  for (const el of $("altView").querySelectorAll(".w-pending")) el.classList.remove("w-pending");
+  for (const el of syls || []) el.classList.add("w-pending");
+}
+/** Repeat the bars these words are sung in, in their stanza. */
+function repeatWords(syls) {
+  if (!perf || !syls.length) return;
+  const qs = syls.map((el) => Number(el.dataset.q));
+  const v = Number(syls[0].dataset.v || 0), want = v >= 1000 ? v - 1000 : v;
+  const from = barAt(hymn, Math.min(...qs)), to = barAt(hymn, Math.max(...qs));
+  // in that stanza (the refrain shared by all verses stays in the verse playing)
+  const loc = locate(perf, engine.now());
+  let k = want > 0 ? perf.passes.findIndex((p) => p.kind === "verse" && p.verse === want) : -1;
+  if (k < 0) k = loc?.kind === "verse" ? loc.pass : perf.passes.findIndex((p) => p.kind === "verse");
+  wordsLoopV = String(syls[0].dataset.v);
+  state.loop = { on: true, from, to };
+  syncLoopInputs();
+  applyLoop(k); // the music goes to the repeat's start unless it is already inside it
+  paint(true);
+  toast(from === to ? `Repeating bar ${from}. Tap × to stop.` : `Repeating bars ${from} to ${to}. Tap × to stop.`, 3500);
+}
+/** Mark the words of the repeat in the Words view (and put the way out at their end). */
+function drawWordsLoop() {
+  const root = $("altView");
+  for (const el of root.querySelectorAll(".w-looped")) el.classList.remove("w-looped");
+  root.querySelector(".w-loop-clear")?.remove();
+  if (!wordsOn() || !state.loop.on || !hymn) return;
+  const loc = perf && locate(perf, engine.now());
+  const playingV = loc?.kind === "verse" ? String(passVerse(loc.pass)) : null;
+  const blocks = [...root.querySelectorAll(".w-block")];
+  const block = blocks.find((b) => b.dataset.v === wordsLoopV) || blocks.find((b) => b.dataset.v === playingV) || null;
+  if (!block) return;
+  const marked = [...block.querySelectorAll(".w-syl[data-q]")].filter((el) => {
+    const m = barAt(hymn, Number(el.dataset.q));
+    return m >= state.loop.from && m <= state.loop.to;
+  });
+  marked.forEach((el) => el.classList.add("w-looped"));
+  const last = marked[marked.length - 1];
+  if (!last) return;
+  const x = document.createElement("button");
+  x.className = "w-loop-clear";
+  x.textContent = "Stop repeating";
+  x.title = "Stop repeating; the music plays on (Esc)";
+  x.setAttribute("aria-label", "Stop repeating");
+  x.addEventListener("pointerdown", (e) => e.stopPropagation());
+  x.onclick = (e) => { e.stopPropagation(); stopRepeat(); };
+  last.after(x);
+}
+const passVerse = (k) => perf?.passes[k]?.verse;
+/** Out of the repeat: the music plays on from where it is. */
+function stopRepeat() {
+  if (!state.loop.on) return;
+  wordsLoopV = null;
+  clearLoop();
+}
+
+$("altView").addEventListener("pointerdown", (e) => {
+  const s = wordsOn() && sylOf(e.target);
+  if (!s || e.button > 0) return;
+  wordsPress = { start: s, last: s, x: e.clientX, y: e.clientY, drag: false, done: false, touch: e.pointerType !== "mouse" };
+  wordsPress.timer = setTimeout(() => { // press and hold: this line repeats (or the repeat stretches to it)
+    const p = wordsPress;
+    if (!p || p.drag) return;
+    p.done = true;
+    const line = [...(s.closest(".w-line")?.querySelectorAll(".w-syl[data-q]") || [s])];
+    const looped = [...$("altView").querySelectorAll(".w-looped")];
+    const sameBlock = looped.length && looped[0].closest(".w-block") === s.closest(".w-block");
+    navigator.vibrate?.(15);
+    if (sameBlock && !line.every((el) => looped.includes(el))) { // stretch the repeat to this line: from the first of both to the last
+      const all = [...s.closest(".w-block").querySelectorAll(".w-syl[data-q]")];
+      const ix = [...looped, ...line].map((el) => all.indexOf(el));
+      repeatWords(all.slice(Math.min(...ix), Math.max(...ix) + 1));
+    } else repeatWords(line);
+  }, 550);
+});
+window.addEventListener("pointermove", (e) => {
+  const p = wordsPress;
+  if (!p || p.done) return;
+  if (!p.drag && Math.hypot(e.clientX - p.x, e.clientY - p.y) < 8) return;
+  clearTimeout(p.timer);
+  if (p.touch) { wordsPress = null; return; } // a finger moving scrolls the words
+  p.drag = true;
+  const s = sylOf(document.elementFromPoint(e.clientX, e.clientY));
+  if (s) p.last = s;
+  markPending(sylsBetween(p.start, p.last));
+});
+window.addEventListener("pointerup", () => {
+  const p = wordsPress;
+  if (!p) return;
+  clearTimeout(p.timer);
+  markPending(null);
+  if (p.drag) { p.done = true; repeatWords(sylsBetween(p.start, p.last)); }
+  // the click that follows a hold or a drag is not a tap
+  if (p.done) setTimeout(() => { if (wordsPress === p) wordsPress = null; }, 400); else wordsPress = null;
+});
+$("altView").addEventListener("contextmenu", (e) => { if (sylOf(e.target) || APP) e.preventDefault(); });
+$("altView").addEventListener("selectstart", (e) => { if (sylOf(e.target) || APP) e.preventDefault(); });
+
 $("altView").addEventListener("click", (e) => {
+  if (wordsPress?.done) { wordsPress = null; return; } // it chose a repeat
+  if (e.target.closest(".w-loop-clear")) return;
   const t = e.target.closest("[data-q], [data-c]");
   if (!t || !perf) return;
+  // a tap on words outside the repeat leaves it, and goes there
+  if (wordsOn() && state.loop.on && t.classList.contains("w-syl") && !t.classList.contains("w-looped")) { wordsLoopV = null; setLoop(state.loop.from, state.loop.to, false); }
   const q = t.dataset.q !== undefined ? Number(t.dataset.q) : solfa.cells[Number(t.dataset.c)]?.on;
   if (q === undefined) return;
   const loc = locate(perf, engine.now());
@@ -3497,7 +3616,7 @@ function bindControls() {
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
     if (document.body.classList.contains("full-page")) leaveFullPage();
-    else if (state.loop.on && !$("optionsMenu").open && !$("studio").open) clearLoop();
+    else if (state.loop.on && !$("optionsMenu").open && !$("studio").open) stopRepeat();
   });
   $("lineByLine").checked = state.sweep && state.solfaSweep;
   $("lineByLine").onchange = (e) => {
@@ -3677,6 +3796,8 @@ window.AHStudio = {
   clearSaved(ids) { this.savedList = null; singers.clear(ids && ids.length ? ids : null).finally(() => this.saved()); },
   /** The hymns the Studio can play. */
   hymns() { return JSON.stringify(hymnList.map((x) => x.id)); },
+  /** Out of a repeat (the app's Back gesture): the music plays on from where it is. */
+  stopRepeat() { stopRepeat(); },
   toggle() { if (appWant.id && (appWant.id !== hymn?.id || appWant.loading)) return; return togglePlay(); },
   stop() { stopPlayback(); },
   setMute(ch, on) { state.mute[ch] = !!on; save("mute"); applyMix(); buildHeaders(); },
@@ -3718,6 +3839,7 @@ window.AHStudio = {
       intros: Object.entries(INSTRUMENTAL).map(([value, label]) => ({ value, label })),
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
       stemsBytes: stemsCost.bytes, stemsSaved: stemsCost.saved,
+      repeating: !!state.loop.on, repeatLabel: state.loop.on ? (state.loop.from === state.loop.to ? `bar ${state.loop.from}` : `bars ${state.loop.from}–${state.loop.to}`) : "",
       singEngine: singEngine(), singEngines: singingCfg.warble ? [{ value: "stems", label: "Recorded singers" }, { value: "warble", label: "Live singing (beta)" }] : [],
       credits: useWarble() ? singingCfg.warble.credits() : "",
     });
