@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warble bench</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; margin: 16px; background: #fff; color: #111; }
+  pre { white-space: pre-wrap; font-size: 14px; }
+</style>
+</head>
+<body>
+<h3>Live singing speed test</h3>
+<p>Sings SDAH 108 verse 1 with 1 voice, then all 4, as the player does (one worker per voice).</p>
+<pre id="out">starting…</pre>
+<script type="module">
+// warble/bench.html[?workers=N]: how fast this device sings (x real time; above 1 can play live)
+import { loadSinging } from "./warble.js";
+const out = document.getElementById("out");
+const log = (s) => { out.textContent += `\n${s}`; document.title = s; };
+out.textContent = `${navigator.userAgent}\ncores ${navigator.hardwareConcurrency}, cross-origin isolated ${self.crossOriginIsolated}`;
+try {
+  const { warble: w } = await loadSinging(["../data/singing.json"]);
+  const h = await (await fetch("../data/SDAH/108.json")).json();
+  const ctx = new OfflineAudioContext(1, 1, 44100);
+  let t = performance.now();
+  await w.start((f, text) => { document.title = text; });
+  log(`model ready in ${((performance.now() - t) / 1000).toFixed(1)} s, ${w.workers.length} workers`);
+  const pass = await w.features(h, 1, 96, 0);
+  const secs = (pass.T * 512) / 44100;
+  for (const n of [1, 4]) {
+    w.drop();
+    t = performance.now();
+    await Promise.all(pass.voices.slice(0, n).map((v) => w.render(pass.T, v, w.gen, () => {})));
+    const dt = (performance.now() - t) / 1000;
+    log(`${n} voice${n > 1 ? "s" : ""}: ${secs.toFixed(1)} s of singing in ${dt.toFixed(1)} s = ${(secs / dt).toFixed(2)}x real time`);
+  }
+  log("DONE");
+} catch (e) { log(`ERROR ${e.message}`); }
+</script>
+</body>
+</html>

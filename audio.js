@@ -78,8 +78,36 @@ export class Engine {
     }
   }
 
-  setLevel(ch, v) { this.levels[ch] = v; this.applyLevels(); }
-  setMuted(ch, m) { this.muted[ch] = m; this.applyLevels(); }
+  setLevel(ch, v) { this.levels[ch] = v; this.applyLevels(); this.nativeGains(); }
+  setMuted(ch, m) { this.muted[ch] = m; this.applyLevels(); this.nativeGains(); }
+
+  // ---- the Android app's own live singer (AHNative.warble, sing/tiny/RUNTIME.md) ----
+  // Stem events marked `native` (a pass key) are sung by the app, not by Web Audio: the app gets the
+  // passes' places on the timeline, and while it sings its audio is the clock.
+  setNative(n) { this.native = n; }
+  nativeSegs() {
+    const segs = new Map();
+    for (const e of this.stemEvents || []) if (e.native && !segs.has(e.native)) segs.set(e.native, { key: e.native, at: e.t });
+    return [...segs.values()];
+  }
+  nativePlay(fromT) {
+    const segs = this.native ? this.nativeSegs() : [];
+    if (!segs.length) { this.nativeStop(); return; }
+    this.nativeGains(true);
+    try { this.native.play(JSON.stringify({ from: fromT, segs })); this.nativeOn = true; } catch { this.nativeOn = false; }
+  }
+  nativeStop() {
+    clearTimeout(this.nativeWrap);
+    if (this.nativeOn) { try { this.native.stop(); } catch { /* the app went away */ } }
+    this.nativeOn = false;
+  }
+  nativeGains(force = false) {
+    if (!this.native) return;
+    const g = JSON.stringify(Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.muted[k] ? 0 : this.levels[k] ?? 0.8])));
+    if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
+    this.nativeG = g;
+    try { this.native.gains(g); } catch { /* not singing */ }
+  }
 
   loadPiano() {
     if (this.pianoLoading) return this.pianoLoading;
@@ -251,6 +279,7 @@ export class Engine {
   }
 
   startStem(e, at, offset = 0) {
+    if (e.native) return; // the app sings it
     const buf = this.stemBuffers?.get(e.stem);
     if (!buf) return;
     const c = this.ctx;
@@ -267,9 +296,32 @@ export class Engine {
     src.start(at, offset);
     this.track([src], g, at + buf.duration - offset);
     this.liveStems = this.liveStems || new Set();
-    const item = { src, g };
+    const item = { src, g, id: `${e.stem}@${e.t.toFixed(3)}` };
     this.liveStems.add(item);
     src.addEventListener("ended", () => this.liveStems.delete(item));
+  }
+
+  /** New events on the same timeline while playing (singers arrived): no restart. Stems that should be
+   * sounding now join in; what is already scheduled plays on. */
+  swap(events) {
+    const before = JSON.stringify(this.nativeSegs());
+    this.load(events);
+    if (!this.playing) return;
+    if (this.native && JSON.stringify(this.nativeSegs()) !== before) this.nativePlay(this.now());
+    const ct = this.ctx.currentTime;
+    const horizonT = ct + 0.2 - this.startAt; // scheduled up to here
+    this.next = this.indexAt(horizonT);
+    // recordings no longer in the performance (the singers changed) stop now, with a short fade
+    const keep = new Set(this.stemEvents.map((e) => `${e.stem}@${e.t.toFixed(3)}`));
+    for (const item of [...(this.liveStems || [])]) {
+      if (keep.has(item.id) && this.stemBuffers?.get(item.id.split("@")[0]) === item.src.buffer) continue;
+      try { item.g.gain.setTargetAtTime(0, ct, 0.03); item.src.stop(ct + 0.15); } catch { /* already stopped */ }
+      this.liveStems.delete(item);
+    }
+    const live = new Set([...(this.liveStems || [])].map((s) => s.id));
+    for (const e of this.stemEvents) {
+      if (e.t < horizonT && e.t + e.dur > ct - this.startAt && !live.has(`${e.stem}@${e.t.toFixed(3)}`)) this.startStem(e, this.startAt + e.t);
+    }
   }
 
   // stems that should already be sounding at performance time t (after a seek or a loop wrap)
@@ -298,6 +350,10 @@ export class Engine {
   // after currentTime (0.1-0.3 s on Bluetooth and phones), so without this the score runs ahead.
   now() {
     if (!this.playing) return this.pausedAt ?? 0;
+    if (this.nativeOn) { // the app's singer is the clock while it sings
+      const p = Number(this.native.pos());
+      if (p >= 0) return p;
+    }
     const ct = this.ctx.currentTime - this.latency();
     let s = this.clock[0].startAt;
     for (const c of this.clock) if (c.from <= ct) s = c.startAt;
@@ -322,6 +378,7 @@ export class Engine {
     this.clock = [{ from: -Infinity, startAt: this.startAt }];
     this.next = this.indexAt(fromT);
     this.resumeStems(fromT, this.startAt + fromT);
+    this.nativePlay(fromT);
     this.playing = true;
     clearInterval(this.timer);
     this.timer = setInterval(() => this.pump(), 25);
@@ -342,6 +399,7 @@ export class Engine {
         while (this.clock.length > 1 && this.clock[1].from <= this.ctx.currentTime) this.clock.shift();
         this.next = this.indexAt(this.loop.a);
         this.resumeStems(this.loop.a, wrapAt);
+        if (this.nativeOn) { const a = this.loop.a; clearTimeout(this.nativeWrap); this.nativeWrap = setTimeout(() => this.nativePlay(a), Math.max(0, (wrapAt - this.ctx.currentTime) * 1000)); }
         continue;
       }
       if (!e) break;
@@ -398,6 +456,7 @@ export class Engine {
   pause() {
     if (!this.playing) return;
     this.pausedAt = this.now();
+    this.nativeStop();
     this.playing = false;
     clearInterval(this.timer);
     this.stopSources();

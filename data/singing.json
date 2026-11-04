@@ -1,0 +1,9 @@
+{
+ "default": "stems",
+ "warble": {
+  "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-11cedb94ef25.onnx",
+  "sha256": "11cedb94ef256461e1dd4b0b272062428933db45319629f90688790882236ae3",
+  "version": "warble-m-src colab run-m-src step 15000",
+  "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0."
+ }
+}

@@ -882,7 +882,7 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
     const verseShift = shifts.size === 1 ? [...shifts][0] : null;
     for (const key of Object.keys(h.voices)) { // a melody-only song has just the soprano
       const stem = verseShift === null ? null : stems.get(`${key}:${verse}:${verseShift}`);
-      if (stem) events.push({ t: t0 + stem.offsetSec, dur: stem.duration, ch: key, stem: `${key}:${verse}:${verseShift}`, v: 1, pass: k, q: 0, p: 0 });
+      if (stem) events.push({ t: t0 + stem.offsetSec, dur: stem.duration, ch: key, stem: `${key}:${verse}:${verseShift}`, native: stem.native, v: 1, pass: k, q: 0, p: 0 });
       h.voices[key].forEach((n, i) => {
         const tn = t0 + tm.qToT(n.q);
         events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: levels[key][i], pass: k, q: n.q, i, silent: !!stem });
