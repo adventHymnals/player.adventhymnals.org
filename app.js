@@ -1338,7 +1338,9 @@ async function renderAll() {
     setupSolfaSweep();
     positionHeaders(null);
   } else if (state.view === "words") {
-    words.render(hymn, { fit: APP, words: state.words === "none" ? "all" : state.words, verse: renderedVerse, chords: state.chords, chordName: (n) => chordLabel(n) });
+    // the Words view always shows every verse: "only the verse being sung" (and "no words") is for the
+    // staff and sol-fa; sol-fa names, when chosen, still show here (Brian, 4 Nov 2026)
+    words.render(hymn, { fit: APP, words: state.words === "solfa" ? "solfa" : "all", verse: renderedVerse, chords: state.chords, chordName: (n) => chordLabel(n) });
     drawWordsLoop();
     positionHeaders(null);
   } else {
@@ -2234,7 +2236,7 @@ function paint(force, tAt) {
   // a lit note would look like the place to start singing
   const at = locate(perf, t);
   const loc = at?.done ? null : at;
-  if (state.words === "current" && !unfolded() && loc && loc.verse !== renderedVerse) {
+  if (state.words === "current" && state.view !== "words" && !unfolded() && loc && loc.verse !== renderedVerse) {
     if (state.view !== "presenter") { renderAll(); return; }
     // the presenter only needs its score again, with this verse's words
     renderedVerse = loc.verse;
@@ -3582,9 +3584,9 @@ function bindControls() {
 
   const WORDS_HINT = {
     all: "Every verse under the music, as in the hymnal.",
-    current: "Only the verse being sung; it changes as you go.",
+    current: "Only the verse being sung, in the staff and sol-fa; it changes as you go. The Words view shows every verse.",
     solfa: "Each voice's own note names (doh, re, mi) in the key being sung, for sight-singing.",
-    none: "Plain staves. The line being sung still shows in the bar below.",
+    none: "Plain staves. The line being sung still shows in the bar below. The Words view shows every verse.",
   };
   $("wordsHint").textContent = WORDS_HINT[state.words];
   document.querySelectorAll('input[name="wordsMode"]').forEach((r) => {

@@ -316,15 +316,18 @@ export class WordsView {
     this.chordEls = [...this.content.querySelectorAll(".w-chord")];
   }
 
-  /** As large as the screen allows: the longest line just fills the width. */
+  /** As large as the screen allows: most lines (four in five) fill the width on one line; the few
+   *  longer ones wrap, rather than one long line making every word small. */
   fit() {
     const sheet = this.content.querySelector(".w-sheet");
     if (!sheet) return;
-    sheet.classList.add("w-fit");
+    sheet.classList.add("w-fit", "w-measure");
     sheet.style.fontSize = "20px";
     const room = sheet.clientWidth;
-    const widest = Math.max(1, ...[...sheet.querySelectorAll(".w-line")].map((l) => l.scrollWidth));
-    sheet.style.fontSize = `${Math.max(12, Math.min(64, Math.floor(20 * (room / widest) * 0.97)))}px`;
+    const ws = [...sheet.querySelectorAll(".w-line")].map((l) => l.scrollWidth).sort((a, b) => a - b);
+    const widest = Math.max(1, ws[Math.floor((ws.length - 1) * 0.8)] ?? 1);
+    sheet.classList.remove("w-measure"); // shown, a line too long for the screen (pinched bigger) wraps
+    sheet.style.fontSize = `${Math.max(16, Math.min(64, Math.floor(20 * (room / widest) * 0.97)))}px`;
   }
 
   /** Returns the element being sung, for scrolling. */

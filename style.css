@@ -725,7 +725,9 @@ body.app .workspace[data-view="tracks"] .lane { display: none; }
 
 /* the app's words: one size for the whole hymn, as large as lets the longest line fill the screen */
 .w-sheet.w-fit { max-width: none; }
-.w-sheet.w-fit .w-line { white-space: nowrap; width: max-content; max-width: 100%; }
+/* measured on one line each (to size the words), then shown wrapping: the words never scroll sideways */
+.w-sheet.w-measure .w-line { white-space: nowrap; width: max-content; }
+body.app .workspace[data-view="words"] .alt-view { overflow-x: hidden; }
 
 /* sol-fa line by line: the key line stays on top; nothing of the line above shows behind it */
 .alt-view.sf-sweeping .sf-key { position: relative; z-index: 5; background: var(--paper); margin: 0; padding: 6px 0 4px; }
