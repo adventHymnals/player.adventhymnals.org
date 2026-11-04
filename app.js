@@ -2110,19 +2110,27 @@ function sweepTo(ph, wipe = true) {
   const next = view.systems[sweep.next];
   if (!next) { sweep.el.hidden = true; return; }
   const upTo = sys.box.x + sys.box.w * (at >= 0.9 ? 0.75 : 0.5);
-  const bars = view.measures.filter((m) => m.system === sys.el).map((m) => m.box.x + m.box.w).filter((x) => x <= upTo + 1);
-  peel(sweep, bars.length ? Math.max(...bars) : upTo);
+  const ends = (el) => view.measures.filter((m) => m.system === el).map((m) => m.box.x + m.box.w);
+  const mine = ends(sys.el).filter((x) => x <= upTo + 1);
+  const edge = mine.length ? Math.max(...mine) : upTo;
+  // the next line shows whole bars only: up to its last barline before the edge, then plain paper
+  const theirs = ends(next.el).filter((x) => x <= edge + 1);
+  peel(sweep, edge, theirs.length ? Math.max(...theirs) : 0);
   sweep.inner.style.transform = `translateY(${SWEEP_TOP - next.box.y}px)`;
 }
 
 /** The line being sung lies on top of the next one; behind the singer it is peeled away in steps.
  *  The edge only ever moves right. */
-function peel(sw, edge) {
+function peel(sw, edge, shown = edge) {
+  // the line being sung is gone left of `edge` (a barline of its own); of the next line, whole bars up
+  // to `shown` (a barline of the next line), and plain paper between
+  if (edge > sw.x) sw.shown = shown;
   sw.x = Math.max(sw.x, edge);
   if (sw.x < 2) { sw.el.hidden = true; return; }
   sw.el.hidden = false;
   sw.el.style.setProperty("--edge", `${sw.x}px`);
   sw.el.style.clipPath = `inset(0 calc(100% - ${sw.x}px) 0 0)`;
+  sw.inner.style.clipPath = `inset(-50px calc(100% - ${Math.max(0, (sw.shown ?? sw.x) + 3)}px) -50px 0)`;
   sw.el.style.maskImage = "";
   sw.el.style.webkitMaskImage = "";
 }
@@ -2244,8 +2252,11 @@ function solfaSweepTo(li, cell) {
   sfSweep.el.style.height = alt.style.height;
   sfSweep.inner.style.transform = `translateY(${SF_PAD - top(sfSweep.next)}px)`;
   const upTo = W * (x >= W * 0.9 ? 0.75 : 0.5);
-  const edges = line.bars.map((b) => b.offsetLeft + b.offsetWidth).filter((e) => e <= upTo + 1);
-  peel(sfSweep, edges.length ? Math.max(...edges) : upTo);
+  const ends = (l) => l.bars.map((b) => b.offsetLeft + b.offsetWidth);
+  const mine = ends(line).filter((e) => e <= upTo + 1);
+  const edge = mine.length ? Math.max(...mine) : upTo;
+  const theirs = ends(next).filter((e) => e <= edge + 1);
+  peel(sfSweep, edge, theirs.length ? Math.max(...theirs) : 0);
 }
 
 // ---- pinch to zoom (?app) ------------------------------------------------------------------------
