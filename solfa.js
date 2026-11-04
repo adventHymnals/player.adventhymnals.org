@@ -205,11 +205,17 @@ export class SolfaView {
         const ns = inBar.filter((n) => n.q >= ba - 1e-6 && n.q < ba + beat - 1e-6);
         const parts = ns.map((n) => {
           const idx = sylAt.get(n.q);
-          const s = !isRefrain ? h.verses[v - 1]?.[idx] : v > 1000 ? h.refrains[v - 1001]?.[idx - refrainAt] : h.refrain[idx - refrainAt];
+          let s, dv = v;
+          if (isRefrain) s = v > 1000 ? h.refrains[v - 1001]?.[idx - refrainAt] : h.refrain[idx - refrainAt];
+          else if (idx < refrainAt) s = h.verses[v - 1]?.[idx];
+          // the refrain starting inside a verse bar (its pickup, e.g. "Mwam-ba"): the verse's own refrain
+          // words on its row, or the refrain once, on the first row
+          else if (h.refrains?.[v - 1]) { s = h.refrains[v - 1][idx - refrainAt]; dv = 1000 + v; }
+          else if (v === verses[0]) { s = h.refrain?.[idx - refrainAt]; dv = 0; }
           if (!s) return "";
           const label = idx === 0 && !isRefrain ? `${v}. ` : idx === refrainAt && v > 1000 ? `${v - 1000}. ` : "";
           const dash = s.s === "begin" || s.s === "middle" ? "-" : "";
-          return `<span class="sf-syl" data-q="${n.q}" data-v="${v}">${esc(label + s.t + dash)}</span>`;
+          return `<span class="sf-syl" data-q="${n.q}" data-v="${dv}">${esc(label + s.t + dash)}</span>`;
         });
         out += `<span class="sf-beat">${parts.join(" ")}</span>`;
       }

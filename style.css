@@ -675,7 +675,7 @@ body.app .viewport { touch-action: pan-x pan-y; }
 .sweep-next .score svg { display: block; width: 100%; height: auto; }
 
 /* sol-fa line by line (?app): one line shows, the next comes in behind the singer */
-.alt-view.sf-sweeping { position: relative; overflow: hidden; padding-bottom: 0; }
+.alt-view.sf-sweeping { position: relative; overflow: hidden; padding-top: 0; padding-bottom: 0; }
 .alt-view.sf-sweeping .sf-flow { transition: none; }
 .sf-next { position: absolute; overflow: hidden; background: var(--paper, var(--bg, #fbf9f4)); pointer-events: none; }
 .sf-next .sf-flow { transition: none; }
@@ -699,3 +699,6 @@ body.app .workspace[data-view="tracks"] .lane { display: none; }
 /* the app's words: one size for the whole hymn, as large as lets the longest line fill the screen */
 .w-sheet.w-fit { max-width: none; }
 .w-sheet.w-fit .w-line { white-space: nowrap; width: max-content; max-width: 100%; }
+
+/* sol-fa line by line: the key line stays on top; nothing of the line above shows behind it */
+.alt-view.sf-sweeping .sf-key { position: relative; z-index: 5; background: var(--paper); margin: 0; padding: 6px 0 4px; }
