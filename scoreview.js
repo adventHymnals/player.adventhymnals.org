@@ -110,7 +110,13 @@ export class ScoreView {
   }
 
   systemAt(q) {
-    return this.systems.find((s) => q >= s.qStart - 1e-6 && q < s.qEnd - 1e-6) || this.systems[this.systems.length - 1];
+    // a rest at the end of a line falls between one line's last note and the next line's first:
+    // it belongs to the line it is written on, the last one starting before it (not the last line)
+    const inside = this.systems.find((s) => q >= s.qStart - 1e-6 && q < s.qEnd - 1e-6);
+    if (inside) return inside;
+    let best = null;
+    for (const s of this.systems) if (s.qStart <= q + 1e-6 && (!best || s.qStart >= best.qStart)) best = s;
+    return best || this.systems[0];
   }
 
   /** Smooth playhead: interpolates between note onsets. */

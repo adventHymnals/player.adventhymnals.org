@@ -816,7 +816,7 @@ async function boot() {
     return;
   }
   view = new ScoreView(tk, $("score"));
-  if (APP) { setupPinch(); $("altView").style.zoom = String(state.altZoom); }
+  if (APP) { state.zoom = 1; setupPinch(); $("altView").style.zoom = String(state.altZoom); }
   setupPractice();
   solfa = new SolfaView($("altView"));
   words = new WordsView($("altView"));
@@ -1976,7 +1976,7 @@ function follow(ph) {
 // sung, the next line is uncovered behind the playhead, from barline to barline, so when the eye
 // goes back to the left the next line is already there.
 const SWEEP_PAD = 14;
-const sweep = { el: null, inner: null, i: -1, x: 0 };
+const sweep = { el: null, inner: null, i: -1, x: 0, next: undefined };
 const sweeping = () => APP && state.sweep && state.view === "page" && !!view?.systems?.length;
 
 function clearSweep() {
@@ -1985,6 +1985,7 @@ function clearSweep() {
   sheet.style.transform = "";
   if (sweep.el) sweep.el.hidden = true;
   sweep.i = -1;
+  sweep.next = undefined;
 }
 
 function setupSweep() {
@@ -1999,6 +2000,7 @@ function setupSweep() {
   sweep.el.innerHTML = `<div class="score">${$("score").innerHTML}</div>`;
   sweep.inner = sweep.el.firstChild;
   sweep.el.hidden = true;
+  sweep.next = undefined;
   const h = Math.max(...view.systems.map((s) => s.box.h)) + 2 * SWEEP_PAD;
   viewport.classList.add("sweeping");
   viewport.style.height = `${Math.ceil(h)}px`;
@@ -2008,12 +2010,28 @@ function setupSweep() {
   sweep.i = -1;
 }
 
+// The line that will really be sung after line i: not always the one below it (verse 2 goes back to
+// the top, a refrain or a repeat jumps). Found by looking ahead in the performance from now.
+function upcomingSystem(i) {
+  const t0 = engine.now();
+  for (let dt = 0.2; t0 + dt < perf.total && dt < 60; dt += 0.2) {
+    const at = locate(perf, t0 + dt);
+    if (!at || at.done) continue; // a rest between verses: keep looking
+    const p = view.playhead(scoreQ(at));
+    if (!p) continue;
+    const k = view.systems.indexOf(p.system);
+    if (k !== i) return k;
+  }
+  return -1;
+}
+
 function sweepTo(ph, wipe = true) {
   const sys = ph.system;
   const i = view.systems.indexOf(sys);
   if (i !== sweep.i) {
     sweep.i = i;
     sweep.x = 0;
+    sweep.next = undefined;
     lastSystem = sys.el;
     sheet.style.transform = `translateY(${SWEEP_PAD - sys.box.y}px)`;
     sweep.el.hidden = true;
@@ -2024,15 +2042,26 @@ function sweepTo(ph, wipe = true) {
       const after = view.systems[k + 1];
       return s.box.h + (after ? Math.max(0, Math.min(SWEEP_PAD, after.box.y - s.box.y - s.box.h - 4)) : SWEEP_PAD);
     };
+    sweep.tall = tall;
     const h = `${Math.floor(SWEEP_PAD + Math.max(tall(i), tall(i + 1)))}px`;
     viewport.style.height = h;
     sweep.el.style.height = h;
   }
-  const next = view.systems[i + 1];
   const a = sys.anchors;
-  if (!next || !a.length || !wipe) { sweep.el.hidden = true; return; }
+  if (!a.length || !wipe || !engine.playing) { sweep.el.hidden = true; return; }
   const startAt = a[0].x + (a[a.length - 1].x - a[0].x) * 0.75;
   if (ph.x <= startAt) return;
+  if (sweep.next === undefined) {
+    // decided once per line, when the line is three quarters sung: it then never changes its mind
+    sweep.next = upcomingSystem(i);
+    if (sweep.next >= 0) {
+      const h = `${Math.floor(SWEEP_PAD + Math.max(sweep.tall(i), sweep.tall(sweep.next)))}px`;
+      viewport.style.height = h;
+      sweep.el.style.height = h;
+    }
+  }
+  const next = view.systems[sweep.next];
+  if (!next) { sweep.el.hidden = true; return; }
   // the edge sits on a barline of the next line and stays well behind the playhead
   const lines = view.measures.filter((m) => m.system === next.el).map((m) => m.box.x + m.box.w).sort((p, q) => p - q);
   const target = lines.filter((x) => x <= ph.x - 70).pop() ?? 0;
@@ -3091,7 +3120,7 @@ window.AHStudio = {
   async open(id, v) {
     appWant.id = id;
     appWant.missing = false;
-    if (engine.playing) stopPlayback();
+    if (engine.playing && id !== hymn?.id) stopPlayback(); // the same hymn in another view plays on
     await bootReady;
     if (appWant.id !== id) return false;
     const entry = hymnList.find((x) => x.id === id);
@@ -3100,6 +3129,7 @@ window.AHStudio = {
       appWant.loading = true;
       try {
         stopPlayback();
+        state.zoom = 1; save("zoom"); // each hymn opens with the whole width of the score on the screen
         $("hymnPicker").value = id;
         history.replaceState(null, "", `${location.pathname}${location.search}#${id}`);
         await loadHymn(entry);
@@ -3119,6 +3149,26 @@ window.AHStudio = {
       state.sweep = !!value; save("sweep"); renderAll();
     } else if (name === "staves" && /^[SATB|]+$/.test(value)) {
       setStaves(value);
+    } else if (name === "accStaff") {
+      const want = !!value;
+      if (want === !!state.accStaff) return;
+      document.querySelector("#stavesMenu [data-acc-staff]")?.click();
+    } else if (name === "wordsAt" && ["top", "bottom", "every"].includes(value)) {
+      setWordsAt(value);
+    } else if (name === "accomp" && value in ACCOMP_STYLES) {
+      state.accomp = value; save("accomp");
+      if (value !== "off") engine.loadPiano();
+      else if (state.accStaff) { state.accStaff = false; save("accStaff"); }
+      rebuild(); renderAll();
+    } else if ((name === "intro" || name === "interlude") && value in INSTRUMENTAL) {
+      const sel = $(name);
+      sel.value = value;
+      sel.dispatchEvent(new Event("change", { bubbles: true }));
+    } else if (name === "countIn") {
+      $("countIn").checked = !!value;
+      $("countIn").dispatchEvent(new Event("change", { bubbles: true }));
+    } else if (name === "fit") {
+      state.zoom = 1; save("zoom"); renderAll();
     }
   },
   /** Saved singers, for the app's Settings: starts the count; savedList holds the answer (JSON) when done. */
@@ -3158,7 +3208,10 @@ window.AHStudio = {
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
-      staves: state.tracks.map((t) => t.join("")).join("|"),
+      staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
+      accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, zoom: state.zoom,
+      accomps: Object.entries(ACCOMP_STYLES).map(([value, label]) => ({ value, label })),
+      intros: Object.entries(INSTRUMENTAL).map(([value, label]) => ({ value, label })),
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
     });
   },
