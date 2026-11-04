@@ -2080,14 +2080,14 @@ function sweepTo(ph, wipe = true) {
   }
   const a = sys.anchors;
   if (!a.length || !wipe || !engine.playing) { sweep.el.hidden = true; return; }
-  // the note being sung, and the one before it: the peel stops halfway between them, so the note
-  // being sung and its words are never covered
-  let k = a.findIndex((p) => p.x > ph.x + 0.5) - 1;
-  if (k < 0) k = a[0].x > ph.x ? 0 : a.length - 1;
+  // peeled in two steps, not continuously: at three quarters of the line, its first half; at nine
+  // tenths, up to three quarters; the rest when the singing goes back to the left. Each edge is the
+  // barline at or before that point.
   const end = a[a.length - 1].x;
-  if (a[k].x < a[0].x + (end - a[0].x) * 0.5) return; // the first half of the line is still being sung
+  const at = (ph.x - a[0].x) / Math.max(1, end - a[0].x);
+  if (at < 0.75) return;
   if (sweep.next === undefined) {
-    // decided once per line, at halfway: it then never changes its mind
+    // decided once per line, at three quarters: it then never changes its mind
     sweep.next = upcomingSystem(i);
     if (sweep.next >= 0) {
       const h = `${Math.floor(SWEEP_TOP + Math.max(sweep.tall(i), sweep.tall(sweep.next)))}px`;
@@ -2097,13 +2097,14 @@ function sweepTo(ph, wipe = true) {
   }
   const next = view.systems[sweep.next];
   if (!next) { sweep.el.hidden = true; return; }
-  const edge = k > 0 ? (a[k - 1].x + a[k].x) / 2 : a[k].x - 6;
-  peel(sweep, edge);
+  const upTo = sys.box.x + sys.box.w * (at >= 0.9 ? 0.75 : 0.5);
+  const bars = view.measures.filter((m) => m.system === sys.el).map((m) => m.box.x + m.box.w).filter((x) => x <= upTo + 1);
+  peel(sweep, bars.length ? Math.max(...bars) : upTo);
   sweep.inner.style.transform = `translateY(${SWEEP_TOP - next.box.y}px)`;
 }
 
-/** The line being sung lies on top of the next one; behind the singer it is peeled away: at halfway
- *  everything sung so far at once, then note by note. The edge only ever moves right. */
+/** The line being sung lies on top of the next one; behind the singer it is peeled away in steps.
+ *  The edge only ever moves right. */
 function peel(sw, edge) {
   sw.x = Math.max(sw.x, edge);
   if (sw.x < 2) { sw.el.hidden = true; return; }
@@ -2174,9 +2175,10 @@ function solfaSweepTo(li, cell) {
     const r = cell.getBoundingClientRect(), A = alt.getBoundingClientRect();
     if (alt.scrollWidth > alt.clientWidth + 4 && (r.right > A.right - 24 || r.left < A.left)) cell.scrollIntoView({ inline: "center", block: "nearest" });
   }
-  if (x < line.el.offsetWidth * 0.5) return; // the first half of the line is still being sung
+  const W = line.el.offsetWidth;
+  if (x < W * 0.75) return; // peeled in two steps, as the staff
   if (sfSweep.next === undefined) {
-    // decided once per line, at halfway, and never changed: the line the performance goes to next
+    // decided once per line, at three quarters, and never changed: the line the performance goes to next
     sfSweep.next = -1;
     const t0 = engine.now();
     for (let dt = 0.2; t0 + dt < perf.total && dt < 60; dt += 0.2) {
@@ -2192,7 +2194,9 @@ function solfaSweepTo(li, cell) {
   sfSweep.el.style.top = `${flow.offsetTop}px`;
   sfSweep.el.style.height = alt.style.height;
   sfSweep.inner.style.transform = `translateY(${SF_PAD - top(sfSweep.next)}px)`;
-  peel(sfSweep, x - 3);
+  const upTo = W * (x >= W * 0.9 ? 0.75 : 0.5);
+  const edges = line.bars.map((b) => b.offsetLeft + b.offsetWidth).filter((e) => e <= upTo + 1);
+  peel(sfSweep, edges.length ? Math.max(...edges) : upTo);
 }
 
 // ---- pinch to zoom (?app) ------------------------------------------------------------------------

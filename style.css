@@ -684,8 +684,6 @@ body.app .viewport { touch-action: pan-x pan-y; }
 
 /* the peel: the line being sung lies on top of the next and is peeled away behind the singer */
 .sweep-next, .sf-next { background: var(--paper); }
-.sweep-next::after, .sf-next::after { content: ""; position: absolute; top: 0; bottom: 0; left: calc(var(--edge, 0px) - 2px); width: 2px;
-  background: var(--gilt); opacity: 0.55; }
 .sf-bar { position: relative; }
 .alt-view.sf-sweeping .sf-flow { position: relative; }
 
