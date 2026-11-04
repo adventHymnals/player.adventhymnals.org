@@ -141,7 +141,7 @@ export class Warble {
     this.jobs.clear();
   }
 
-  passKey(h, verse, tempo, transpose) { return `${h.id}${h.variant ? `~${variantId(h)}` : ""}:${verse === "solfa" ? "solfa" : `v${verse}`}:t${tempo}:k${transpose}`; }
+  passKey(h, verse, tempo, transpose) { return `${h.id}${h.tune ? `@${h.tune.key}` : ""}${h.variant ? `~${variantId(h)}` : ""}:${verse === "solfa" ? "solfa" : `v${verse}`}:t${tempo}:k${transpose}`; }
 
   /** The features for one pass (all the hymn's voices, SATB order). */
   async features(h, verse, tempo, transpose) {

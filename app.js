@@ -897,6 +897,52 @@ function setupEmbed() {
   document.querySelector(".toolbar").append(out);
 }
 
+// ---- tunes ---------------------------------------------------------------------------------------
+// A hymn's words may be sung to another tune: one the hymnals print them with, or one of the same meter and
+// foot. data/tunes.json (tools/build_tunes.py) lists, per hymn, those whose notes the words fit one to one;
+// the choice is remembered for each hymn.
+let tunesTable = null;
+const tunesReady = fetch("data/tunes.json").then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((t) => (tunesTable = t));
+const tuneChoices = (id) => tunesTable?.[id] || null;
+const chosenTune = (id) => { const k = store.get(`tune:${id}`, ""); return (k && tuneChoices(id)?.alts.find((a) => a.tune === k)) || null; };
+/** The syllables of `words` poured in order into the notes of `pattern` that carry one. */
+const fillWords = (pattern, words) => { const syl = (words || []).filter(Boolean); let i = 0; return (pattern || []).map((s) => (s ? syl[i++] ?? null : null)); };
+/** Hymn x's words on the music of the tune `alt` (taken from the player hymn that carries it). */
+async function withTune(x, alt) {
+  const src = hymnList.find((e) => e.id === alt.from);
+  if (!src) return x;
+  const y = await (await fetch(src.path)).json();
+  return {
+    ...y, id: x.id, book: x.book, number: x.number, title: x.title, english: x.english, poet: x.poet,
+    copyright: [...new Set([x.copyright, y.copyright].filter(Boolean))].join(" "),
+    verses: x.verses.map((v) => fillWords(y.verses[0], v)),
+    refrain: y.refrain ? fillWords(y.refrain, x.refrain) : y.refrain, refrains: undefined,
+    tune: { key: alt.tune, name: alt.name, from: alt.from },
+  };
+}
+/** The tune picker beside the title: shown only for a hymn that has another tune. */
+function syncTunePicker() {
+  const c = hymn && tuneChoices(hymn.id);
+  $("tunePick").hidden = !c;
+  if (!c) return;
+  const sel = $("tunePicker");
+  sel.innerHTML = [`<option value="">${escHtml(c.name || "As printed")} (printed)</option>`, ...c.alts.map((a) => `<option value="${escHtml(a.tune)}">${escHtml(a.name)}</option>`)].join("");
+  sel.value = hymn.tune?.key || "";
+  sel.onchange = () => setTune(sel.value);
+}
+/** Sing this hymn to another tune ("" = the printed one); remembered for the hymn. */
+async function setTune(key) {
+  if (!hymn) return;
+  const entry = hymnList.find((e) => e.id === hymn.id);
+  if (!entry || (hymn.tune?.key || "") === (key || "")) return;
+  store.set(`tune:${hymn.id}`, key || "");
+  engine.dropStems(); // the old tune's singers are no use now
+  singingCfg.warble?.drop();
+  try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
+  await loadHymn(entry);
+  toast(hymn.tune ? `Sung to ${hymn.tune.name}. Recorded singers only sing the printed tune, so live singing or the synth sings this one.` : "The printed tune.", 5000);
+}
+
 async function loadHymn(entry) {
   stopPlayback();
   if (hymn && hymn.id !== entry.id) appAnswered = false; // the app asks again for this hymn
@@ -907,6 +953,9 @@ async function loadHymn(entry) {
   }
   try {
     hymn = await (await fetch(entry.path).then((r) => (r.ok ? r : Promise.reject(r))).catch(() => fetch(entry.fallback || entry.path))).json();
+    await tunesReady;
+    const alt = chosenTune(hymn.id);
+    if (alt) { try { hymn = await withTune(hymn, alt); } catch { /* the tune's music is missing: the printed tune */ } }
     hymnWritten = hymn;
   } catch {
     $("score").innerHTML = `<p class="status">This hymn's file is missing: ${entry.path}. Run <code>python3 build_web.py</code>, then reload.</p>`;
@@ -918,7 +967,8 @@ async function loadHymn(entry) {
   $("hymnNumber").textContent = hymn.number;
   $("hymnTitle").textContent = hymn.title;
   $("hymnEnglish").textContent = hymn.english || entry.english || "";  // NZK/WN: the English hymn it translates
-  $("hymnCredits").textContent = [hymn.poet && `Words by ${hymn.poet}`, hymn.composer && `music by ${hymn.composer}`].filter(Boolean).join(", ");
+  $("hymnCredits").textContent = [hymn.poet && `Words by ${hymn.poet}`, hymn.tune ? `sung to ${hymn.tune.name}${hymn.composer ? ` (${hymn.composer})` : ""}` : hymn.composer && `music by ${hymn.composer}`].filter(Boolean).join(", ");
+  syncTunePicker();
   $("copyright").textContent = hymn.copyright;
   state.tempo = store.get(`tempo:${hymn.id}`, hymn.tempo);
   state.transpose = store.get(`transpose:${hymn.id}`, 0);
@@ -942,6 +992,7 @@ async function loadManifest() {
   await singingReady; // which singers to use (data/singing.json)
   manifest = null;
   stemInfo = new Map();
+  if (hymn.tune) { syncSungControls(); return; } // recorded singers sing the printed tune only
   try {
     const r = await singers.manifest(`${AUDIO}audio/${hymn.id}/manifest.json`);
     if (r.ok) manifest = await r.json();
@@ -3784,6 +3835,9 @@ window.AHStudio = {
     } else if (name === "countIn") {
       $("countIn").checked = !!value;
       $("countIn").dispatchEvent(new Event("change", { bubbles: true }));
+    } else if (name === "tune") {
+      // another tune for this hymn's words ("" = the printed one), from state().tunes
+      setTune(String(value || ""));
     } else if (name === "countAt" && (value === "start" || value === "verse")) {
       // the count-in bar: at the very start, or after the introduction (just before verse 1)
       $("countAt").value = value;
@@ -3877,6 +3931,9 @@ window.AHStudio = {
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
       accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, countAt: state.countAt, zoom: state.zoom,
+      // the tune: "" the printed one; tunes: the choices ({value, label, why: "printed" | "fits"}), empty when there are none
+      tune: hymn?.tune?.key || "",
+      tunes: (() => { const c = hymn && tuneChoices(hymn.id); return c ? [{ value: "", label: c.name || "As printed", why: "own" }, ...c.alts.map((a) => ({ value: a.tune, label: a.name, why: a.why }))] : []; })(),
       solfaSweep: !!state.solfaSweep, solfaWordsAt: state.solfaWordsAt, instrumental: !!state.instrumental, singSolfa: !!state.singSolfa, staffScroll: !!state.staffScroll, presenterShows: state.presenterShows,
       accomps: Object.entries(ACCOMP_STYLES).map(([value, label]) => ({ value, label })),
       intros: Object.entries(INSTRUMENTAL).map(([value, label]) => ({ value, label })),

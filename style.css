@@ -34,6 +34,10 @@ button, select, input { font: inherit; color: inherit; }
 .number { font: 800 clamp(36px, 4.4vw, 54px)/0.8 var(--serif); color: var(--gilt); letter-spacing: -0.02em; padding-bottom: 2px; }
 .titles h1 { font: 700 clamp(20px, 2.1vw, 27px)/1.1 var(--serif); margin: 0; color: var(--cloth); }
 .credits { margin: 2px 0 0; color: var(--muted); font: italic 400 14px/1.3 var(--serif); }
+/* the tune: the one printed, or another the words fit (data/tunes.json) */
+.tune-pick { display: inline-flex; gap: 6px; align-items: center; margin-top: 4px; font: 400 14px/1.3 var(--sans, inherit); color: var(--muted); }
+.tune-pick[hidden] { display: none; }
+.tune-pick select { font: inherit; color: var(--ink, inherit); background: transparent; border: 1px solid currentColor; border-radius: 6px; padding: 1px 4px; }
 .english { margin: 1px 0 0; color: var(--muted); font: italic 400 13px/1.2 var(--serif); }
 .english:empty { display: none; }
 /* the hymn finder: a search box, and the dropdown of every hymn with filters by hymnal and sound */
