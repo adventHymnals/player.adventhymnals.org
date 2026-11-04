@@ -813,13 +813,14 @@ export const passTime = (perf, k, q) => {
  * Full performance: an optional count-in bar and introduction, one pass per chosen verse, and
  * optional instrumental interludes between verses.
  * stems: Map "S:1:0" (voice:verse:transpose) -> { offsetSec, duration } of sung recordings at this tempo; their voice's
- * notes stay in the timeline (for highlighting and the waterfall) but are marked silent.
+ * notes stay in the timeline (for highlighting and the waterfall) but are marked silent. A stem event may play a
+ * stretch of its recording: from off seconds in, for dur (cut: it ends before the recording does).
  * Returns { events: [{t, dur, p, ch, v, pass, q, silent?, stem?}],
  *           passes: [{kind: "intro"|"verse"|"interlude", verse, t0, qFrom, qTo}], total, tm, lead }
  */
 // countAt: the count-in bar comes at the very start ("start") or after the introduction, just before the singing ("verse").
 // introVoice: a voice whose own line the introduction plays (over a soft accompaniment), for a one-voice practice video.
-export function performance(h, { tempo, verses, accomp, countIn, countAt = "start", introVoice = null, stems = new Map(), intro = "none", interlude = "none", shiftAt = () => 0, metronome = false }) {
+export function performance(h, { tempo, verses, accomp, countIn, countAt = "start", introVoice = null, stems = new Map(), intro = "none", interlude = "none", shiftAt = () => 0, metronome = false, split = true }) {
   const tm = timeMap(h, tempo);
   // sections follow straight on, in time: the last bar is already full (or short by the pickup that starts the next)
   const gap = 0;
@@ -877,15 +878,32 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
     const t0 = t;
     const pass = { kind: "verse", verse, t0, qFrom: 0, qTo: h.totalQ };
     passes.push(pass);
-    // a recording fits a verse sung wholly in one key; a key change inside the verse uses the synth
-    const shifts = new Set(lv.map((n) => shiftAt(k, pass, n.q)));
-    const verseShift = shifts.size === 1 ? [...shifts][0] : null;
+    // A key change inside the verse splits it where the key moves: each stretch is sung by the recording
+    // (or live singing) of this verse in that stretch's key, played from that point (off: seconds into it),
+    // or by the synth where there is none. Without split, a verse not in one key is all synth.
+    const runs = [];
+    for (const n of lv) {
+      const s = shiftAt(k, pass, n.q);
+      if (!runs.length || runs[runs.length - 1].s !== s) runs.push({ s, q: runs.length ? n.q : 0 });
+    }
+    if (!runs.length) runs.push({ s: shiftAt(k, pass, 0), q: 0 });
+    const XF = 0.03; // the two recordings overlap this long, crossfaded, just before the bar where the key moves
     for (const key of Object.keys(h.voices)) { // a melody-only song has just the soprano
-      const stem = verseShift === null ? null : stems.get(`${key}:${verse}:${verseShift}`);
-      if (stem) events.push({ t: t0 + stem.offsetSec, dur: stem.duration, ch: key, stem: `${key}:${verse}:${verseShift}`, native: stem.native, v: 1, pass: k, q: 0, p: 0 });
+      const sung = runs.map((r, j) => {
+        const stem = runs.length > 1 && !split ? null : stems.get(`${key}:${verse}:${r.s}`);
+        if (!stem) return null;
+        const s0 = t0 + stem.offsetSec; // where this recording's audio starts
+        const a = j ? t0 + tm.qToT(r.q) - 0.06 - XF / 2 : s0;
+        const b = j < runs.length - 1 ? t0 + tm.qToT(runs[j + 1].q) - 0.06 + XF / 2 : s0 + stem.duration;
+        if (b <= a) return null;
+        events.push({ t: a, dur: b - a, off: a - s0, cut: j < runs.length - 1, ch: key, stem: `${key}:${verse}:${r.s}`, native: stem.native, v: 1, pass: k, q: r.q, p: 0 });
+        return true;
+      });
       h.voices[key].forEach((n, i) => {
         const tn = t0 + tm.qToT(n.q);
-        events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: levels[key][i], pass: k, q: n.q, i, silent: !!stem });
+        let j = runs.length - 1;
+        while (j > 0 && runs[j].q > n.q + 1e-6) j--;
+        events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: levels[key][i], pass: k, q: n.q, i, silent: !!sung[j] });
       });
     }
     for (const n of acc) {

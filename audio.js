@@ -11,6 +11,7 @@ const FORMANTS = { // "ah", lowered for deeper voices
 const PAN = { S: -0.35, A: -0.12, T: 0.12, B: 0.35, acc: 0, click: 0 };
 const PIANO_URL = "https://tonejs.github.io/audio/salamander/";
 const SAMPLE_NAMES = ["C", "Ds", "Fs", "A"];
+const STEM_XF = 0.03; // crossfade between two stretches of singing (core.js XF)
 const freq = (p) => 440 * 2 ** ((p - 69) / 12);
 
 export class Engine {
@@ -87,7 +88,12 @@ export class Engine {
   setNative(n) { this.native = n; }
   nativeSegs() {
     const segs = new Map();
-    for (const e of this.stemEvents || []) if (e.native && !segs.has(e.native)) segs.set(e.native, { key: e.native, at: e.t });
+    // at: where the pass's audio starts; a stretch of it (a key change inside the verse) also has from/to
+    for (const e of this.stemEvents || []) {
+      const id = `${e.native}@${e.t.toFixed(3)}`;
+      if (!e.native || segs.has(id)) continue;
+      segs.set(id, e.off || e.cut ? { key: e.native, at: e.t - (e.off || 0), from: e.t, to: e.t + e.dur } : { key: e.native, at: e.t });
+    }
     return [...segs.values()];
   }
   nativePlay(fromT) {
@@ -217,6 +223,7 @@ export class Engine {
     const item = { sources, gain, until };
     this.live.add(item);
     sources[sources.length - 1].onended = () => { gain.disconnect(); this.live.delete(item); };
+    return item;
   }
 
   // ---- transport ----------------------------------------------------------
@@ -292,13 +299,29 @@ export class Engine {
     // a stem may begin before the pass (pickup consonants); start partway in if so
     const now = c.currentTime;
     if (at < now) { offset += now - at; at = now; }
-    if (offset >= buf.duration) return;
-    src.start(at, offset);
-    this.track([src], g, at + buf.duration - offset);
+    const dur = Math.min(e.dur ?? buf.duration, buf.duration - (e.off || 0));
+    if (offset >= dur) return;
+    // a stretch of the recording (a key change inside the verse): fade in where it takes over
+    if (e.off && offset < STEM_XF) { g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(1, at + STEM_XF - offset); }
+    src.start(at, (e.off || 0) + offset);
     this.liveStems = this.liveStems || new Set();
-    const item = { src, g, id: `${e.stem}@${e.t.toFixed(3)}` };
+    const item = { src, g, id: `${e.stem}@${e.t.toFixed(3)}`, end: Infinity };
     this.liveStems.add(item);
     src.addEventListener("ended", () => this.liveStems.delete(item));
+    item.tracked = this.track([src], g, at + dur - offset);
+    if (e.cut) this.endStem(item, at + dur - offset);
+  }
+
+  /** A playing stem ends at ctx time `end`, fading out over the crossfade (another stretch takes over). */
+  endStem(item, end) {
+    if (Math.abs(item.end - end) < 1e-4) return;
+    item.end = end;
+    const g = item.g.gain, at = Math.max(this.ctx.currentTime, end - STEM_XF);
+    g.cancelScheduledValues(at);
+    g.setValueAtTime(g.value, at);
+    g.linearRampToValueAtTime(0, Math.max(at + 0.005, end));
+    try { item.src.stop(end + 0.01); } catch { /* already stopped */ }
+    if (item.tracked) item.tracked.until = end + 0.01;
   }
 
   /** New events on the same timeline while playing (singers arrived): no restart. Stems that should be
@@ -312,9 +335,14 @@ export class Engine {
     const horizonT = ct + 0.2 - this.startAt; // scheduled up to here
     this.next = this.indexAt(horizonT);
     // recordings no longer in the performance (the singers changed) stop now, with a short fade
-    const keep = new Set(this.stemEvents.map((e) => `${e.stem}@${e.t.toFixed(3)}`));
+    const keep = new Map(this.stemEvents.map((e) => [`${e.stem}@${e.t.toFixed(3)}`, e]));
     for (const item of [...(this.liveStems || [])]) {
-      if (keep.has(item.id) && this.stemBuffers?.get(item.id.split("@")[0]) === item.src.buffer) continue;
+      const e = keep.get(item.id);
+      if (e && this.stemBuffers?.get(e.stem) === item.src.buffer) {
+        // the same stretch plays on; a key change may have moved where it ends
+        if (e.cut) this.endStem(item, this.startAt + e.t + e.dur);
+        continue;
+      }
       try { item.g.gain.setTargetAtTime(0, ct, 0.03); item.src.stop(ct + 0.15); } catch { /* already stopped */ }
       this.liveStems.delete(item);
     }

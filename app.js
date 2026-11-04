@@ -284,9 +284,11 @@ function changeKey(delta) {
     let q = barEnd(hymn, barAt(hymn, loc.q));
     if (q >= perf.passes[k].qTo - 1e-6 && perf.passes[k + 1]) { k += 1; q = perf.passes[k].qFrom; }
     liveChanges.push({ k, q, delta });
-    rebuild();
+    const live = useWarble() && anySung() && !awaitingApp();
     const to = prettyChord(keyFor(shiftAt(k, perf.passes[k], q)).name);
     toast(`Moving to ${to} at bar ${barAt(hymn, q)}.`, 3000);
+    if (live) { rebuild(true, true); paint(true); prepareWarble(true); } // the live singers follow into the new key
+    else rebuild();
   } else {
     state.transpose = Math.max(-11, Math.min(11, state.transpose + delta));
     store.set(`transpose:${hymn.id}`, state.transpose);
@@ -305,8 +307,9 @@ function resetKey() {
 }
 
 function noteStemsTransposed() {
+  if (useWarble()) return; // live singing sings any key
   if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && !e.inst && "SATB".includes(e.ch) && e.pass >= 0)) {
-    if (!noteStemsTransposed.shown) toast("A key change inside a verse is sung by the synth until the next verse; recordings cover whole verses in one key.", 6000);
+    if (!noteStemsTransposed.shown) toast("The recorded singers sing in the key they were recorded in, so after a key change the synth sings. Live singing follows the key.", 6000);
     noteStemsTransposed.shown = true;
   }
 }
@@ -1109,20 +1112,38 @@ async function prepareStems() {
 /** Live singing: every chosen verse sung on this device (Warble), the verse sung first made first.
  * Until a verse is ready its voices are sung by the synth, so nothing waits and nothing stutters. */
 let warbleGen = 0;
-async function prepareWarble() {
+/** The passes live singing sings: each chosen verse in each key it is sung in (a key change while playing
+ *  adds the new key from there on), the verse being sung first. */
+function warbleList() {
+  const solfaWords = state.words === "solfa" || state.singSolfa;
+  const out = [];
+  const add = (v, transpose) => { if (!out.some((x) => x.v === v && x.transpose === transpose)) out.push({ v, verse: solfaWords ? "solfa" : v, transpose }); };
+  if (!liveChanges.length || !perf) { for (const v of state.verses) add(v, verseShift(v)); return out; }
+  const at = (engine.playing && locate(perf, engine.now())?.pass) || 0;
+  const ks = perf.passes.map((p, k) => (p.kind === "verse" ? k : -1)).filter((k) => k >= 0);
+  for (const k of [...ks.filter((k) => k >= at), ...ks.filter((k) => k < at)]) {
+    const p = perf.passes[k];
+    add(p.verse, shiftAt(k, p, 0));
+    for (const c of liveChanges) if (c.k === k) add(p.verse, shiftAt(k, p, c.q));
+  }
+  return out;
+}
+/** keep: a key change while playing; what is sung already stays, the new keys are added as they are ready */
+async function prepareWarble(keep = false) {
   const w = singingCfg.warble;
   const gen = ++warbleGen;
-  stemInfo = new Map();
-  engine.setStemBuffers(new Map());
+  if (!keep) {
+    stemInfo = new Map();
+    engine.setStemBuffers(new Map());
+  }
   if (!anySung() || !hymn) { w.cancelAll(); rebuild(); return; }
   $("credit").textContent = w.credits();
   const native = Warble.native();
-  if (native) return prepareNativeWarble(native, w, gen);
-  rebuild();
-  const solfaWords = state.words === "solfa" || state.singSolfa;
-  const list = state.verses.map((v) => ({ v, verse: solfaWords ? "solfa" : v, transpose: verseShift(v) }));
+  if (native) return prepareNativeWarble(native, w, gen, keep);
+  if (!keep) rebuild();
+  const list = warbleList();
   const tempo = state.tempo;
-  const bufs = new Map();
+  const bufs = keep ? new Map(engine.stemBuffers || []) : new Map();
   let total = 0, shown = 0;
   const sungSoFar = () => { // the verses ready now become singers, without interrupting the music
     engine.setStemBuffers(new Map(bufs));
@@ -1140,7 +1161,7 @@ async function prepareWarble() {
         const pct = all ? Math.floor((100 * done) / all) : 100;
         if (pct === shown) return;
         shown = pct;
-        toast(`Live singing: preparing the singers… ${pct}%. You can press play now; the synth sings each verse until its singers are ready.`, 0);
+        toast(keep ? `Live singing: learning the new key… ${pct}%. The synth sings until then.` : `Live singing: preparing the singers… ${pct}%. You can press play now; the synth sings each verse until its singers are ready.`, 0);
       },
       onPass: (key, voices) => {
         if (gen !== warbleGen) return;
@@ -1159,7 +1180,8 @@ async function prepareWarble() {
     const secs = (Date.now() - t0) / 1000;
     const mix = total / Math.max(1, hymnVoices().length); // seconds of music, all voices together
     const speed = total && secs > 0.5 ? ` (${(mix / secs).toFixed(1)}× real time)` : "";
-    toast(`Live singers ready${speed}.`, 4000);
+    if (keep) { if (shown) toast("The live singers are in the new key.", 3000); }
+    else toast(`Live singers ready${speed}.`, 4000);
     console.info(`warble: ${mix.toFixed(1)} s of ${hymnVoices().length}-voice singing in ${secs.toFixed(1)} s with ${w.workers.length} workers${speed}`);
   } catch (err) {
     if (err?.cancelled || gen !== warbleGen) return;
@@ -1170,14 +1192,13 @@ async function prepareWarble() {
 /** Inside the Android app: its native engine sings (faster than WASM). The page makes the features
  * and hands each pass over (AHNative.warble.load); the engine plays them on the player's timeline. */
 let nativeModel = null;
-async function prepareNativeWarble(native, w, gen) {
+async function prepareNativeWarble(native, w, gen, keep = false) {
   engine.setNative(native);
   window.AHWarble = { onEvent: onNativeWarble };
   if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
-  const solfaWords = state.words === "solfa" || state.singSolfa;
   const failed = [];
-  for (const v of state.verses) {
-    const verse = solfaWords ? "solfa" : v, transpose = verseShift(v);
+  for (const { v, verse, transpose } of warbleList()) {
+    if (keep && [...stemInfo.keys()].some((x) => x.endsWith(`:${v}:${transpose}`))) continue; // already loaded
     const key = w.passKey(hymn, verse, state.tempo, transpose);
     let pass;
     try { pass = await w.features(hymn, verse, state.tempo, transpose); } catch (err) { failed.push(`${v}: ${err.message}`); continue; }
@@ -1195,6 +1216,11 @@ async function prepareNativeWarble(native, w, gen) {
   if (gen !== warbleGen) return;
   rebuild(true, true);
   if (failed.length) toast(`Live singing could not sing verse ${failed.join("; ")}. The synth sings it.`, 8000);
+}
+
+/** Can the app's singer play a stretch of a pass (segs with from/to), for a key change inside a verse? */
+function nativeSplits() {
+  try { return !!JSON.parse(Warble.native()?.available() || "null")?.windows; } catch { return false; }
 }
 
 function onNativeWarble(json) {
@@ -1641,7 +1667,7 @@ function rebuild(keep = true, seamless = false) {
   const wasPlaying = engine.playing;
   const loc = keep && perf ? locate(perf, engine.now()) : null;
   const stems = anySung() ? stemInfo : new Map();
-  perf = performance(hymn, { tempo: state.tempo, verses: state.verses, accomp: state.accomp, countIn: state.countIn, countAt: state.countAt, introVoice: state.introVoice, stems, intro: state.intro, interlude: state.interlude, shiftAt, metronome: state.metronome });
+  perf = performance(hymn, { tempo: state.tempo, verses: state.verses, accomp: state.accomp, countIn: state.countIn, countAt: state.countAt, introVoice: state.introVoice, stems, intro: state.intro, interlude: state.interlude, shiftAt, metronome: state.metronome, split: !(useWarble() && Warble.native()) || nativeSplits() });
   if (seamless && wasPlaying) { // only the sounds changed (singers arrived): swap them in without a restart
     engine.swap(perf.events);
     waterfall.setPerformance(perf);
