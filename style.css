@@ -291,8 +291,19 @@ button, select, input { font: inherit; color: inherit; }
 .workspace:not([data-view="tracks"]):not([data-view="page"]) .lane { display: none; }
 .sf-key { font: italic 500 18px var(--serif); color: var(--cloth); margin: 6px 0 14px; }
 .sf-time { color: var(--muted); margin-left: 10px; font-style: normal; }
-.sf-flow { display: flex; flex-wrap: wrap; align-items: flex-end; row-gap: 22px; }
-.sf-bar { display: flex; flex-direction: column; padding: 0 2px; border-radius: 4px; }
+.sf-flow { display: flex; flex-direction: column; row-gap: 22px; width: 100%; }
+.sf-flow.measuring { flex-direction: row; flex-wrap: nowrap; width: max-content; align-items: flex-start; }
+.sf-line { display: flex; align-items: flex-start; width: 100%; }
+/* a bar is a grid: every row (notes of each voice, words, chords) shares the beat columns */
+.sf-bar { display: grid; grid-template-columns: auto repeat(var(--nb, 1), minmax(max-content, 1fr)); align-items: baseline;
+  padding: 0 2px; border-radius: 4px; flex: 1 1 auto; }
+.sf-bar > .sf-row { display: contents; }
+.sf-bar > .sf-mark { grid-column: 1 / -1; }
+.sf-bar.sf-first { grid-template-columns: auto auto repeat(var(--nb, 1), minmax(max-content, 1fr)); }
+.sf-lab { font-size: 13px; font-weight: 800; color: var(--vc, var(--muted)); padding-right: 6px; }
+.sf-bar .sf-beat { min-width: 2.2em; }
+.sf-short .sf-bar { flex-grow: 0; }
+.sf-final { border-right: 3px double var(--muted); }
 .sf-bar.cur { background: rgba(168, 130, 46, 0.09); }
 .sf-mark { font: italic 14px var(--serif); color: var(--muted); height: 18px; }
 .sf-row { display: flex; align-items: baseline; font: 500 19px/1.55 var(--serif); white-space: nowrap; }
@@ -653,6 +664,7 @@ body:has(#pianoPanel.open:not([hidden])) { padding-bottom: calc(min(260px, 42vh)
 .finder-list .f-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* ?app: no column for the (hidden) voice names */
+body.app { overflow-x: hidden; }
 body.app .workspace { background: none; }
 /* ?app: two fingers zoom the music (the page handles the pinch), one finger still scrolls */
 body.app .viewport { touch-action: pan-x pan-y; }
@@ -661,3 +673,11 @@ body.app .viewport { touch-action: pan-x pan-y; }
 .viewport.sweeping .sheet { will-change: transform; }
 .sweep-next { position: absolute; top: 0; overflow: hidden; background: var(--paper, #fbf8f2); pointer-events: none; z-index: 4; }
 .sweep-next .score svg { display: block; width: 100%; height: auto; }
+
+/* sol-fa line by line (?app): one line shows, the next comes in behind the singer */
+.alt-view.sf-sweeping { position: relative; overflow: hidden; padding-bottom: 0; }
+.alt-view.sf-sweeping .sf-flow { transition: transform 0.25s ease; }
+.sf-next { position: absolute; overflow: hidden; background: var(--paper, var(--bg, #fbf9f4)); pointer-events: none; }
+.sf-next .sf-flow { transition: none; }
+.sf-next .on, .sf-next .sung { color: inherit !important; font-weight: inherit !important; }
+.sf-next .sf-bar.cur { background: none; }

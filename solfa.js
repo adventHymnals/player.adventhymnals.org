@@ -59,7 +59,8 @@ export class SolfaView {
   }
 
   /**
-   * opts: { voices: ["S","A","T","B"], words: "all"|"current"|"none", verse, chords: bool, wordsUnder: "S"|null }
+   * opts: { voices: ["S","A","T","B"], words: "all"|"current"|"none", verse, chords: bool,
+   *         wordsUnder: "S" | "every" | null (the words under one voice, or under every voice) }
    */
   render(h, opts) {
     const dohStep = dohOf(h);
@@ -70,6 +71,10 @@ export class SolfaView {
     const lv = h.voices[h.lyricVoice];
     const refrainAt = h.refrainNote ?? Infinity;
     const sylAt = new Map(lv.map((n, i) => [n.q, i]));
+    // every bar has the same rows, so the bars on a line line up: verse bars and refrain bars alike
+    const alts = (h.refrains || []).filter(Boolean).length;
+    this.wordRows = opts.words === "none" ? 0 : opts.words === "current" ? 1 : Math.max(h.verses.length, 1 + alts);
+    const under = (k) => opts.words !== "none" && (opts.wordsUnder === "every" || k === opts.wordsUnder);
     const name = opts.chordName || ((n) => prettyChord(n));
     const keyName = name(spellTonic(h, dohStep));
     let html = `<div class="sf-key">Doh is ${esc(keyName)} <span class="sf-time">${h.time[0]}/${h.time[1]}</span></div>`;
@@ -81,9 +86,9 @@ export class SolfaView {
       const b = barEnd(h, m);
       const nb = Math.max(1, Math.round((b - a) / beat));
       const mark = h.marks.find((x) => x.m === m);
-      html += `<div class="sf-bar" data-bar="${m}">${mark ? `<div class="sf-mark">${esc(mark.text)}</div>` : `<div class="sf-mark"></div>`}`;
+      html += `<div class="sf-bar" data-bar="${m}" style="--nb: ${nb}">${mark ? `<div class="sf-mark">${esc(mark.text)}</div>` : `<div class="sf-mark"></div>`}`;
       if (opts.chords) {
-        html += `<div class="sf-row sf-chords">`;
+        html += `<div class="sf-row sf-chords"><span class="sf-bl"></span>`;
         for (let i = 0; i < nb; i++) {
           const ba = a + i * beat;
           const cs = h.chords.filter((c) => c.q >= ba - 1e-6 && c.q < ba + beat - 1e-6);
@@ -110,18 +115,73 @@ export class SolfaView {
           html += `<span class="sf-beat">${cell}</span>`;
         }
         html += `</div>`;
-        if (k === opts.wordsUnder && opts.words !== "none") html += this.wordsRows(h, a, b, beat, nb, sylAt, refrainAt, opts);
+        if (under(k)) html += this.wordsRows(h, a, b, beat, nb, sylAt, refrainAt, opts);
       }
       html += `</div>`;
     }
-    html += `<span class="sf-bl sf-end">‖</span></div>`;
+    html += `</div>`;
     this.content.innerHTML = html;
+    this.voices = opts.voices;
+    this.bars = [...this.content.querySelectorAll(".sf-bar")];
+    this.bars.at(-1)?.classList.add("sf-final");
+    this.layout();
     const els = this.content.querySelectorAll("[data-c]");
     els.forEach((el) => { this.cells[Number(el.dataset.c)].el = el; });
     this.syls = withEnds([...this.content.querySelectorAll(".sf-syl")].map((el) => ({ el, on: Number(el.dataset.q), verse: Number(el.dataset.v) })));
     this.chordEls = [...this.content.querySelectorAll(".sf-chord")];
-    this.bars = [...this.content.querySelectorAll(".sf-bar")];
     this.active = new Set();
+  }
+
+  /** Bars into lines that fill the width, as a printed sol-fa page: each line starts with the voices'
+   *  letters, its bars stretched so every line ends at the right edge. Again after a resize or zoom. */
+  layout() {
+    const flow = this.content.querySelector(".sf-flow");
+    if (!flow || !this.bars?.length) return;
+    // natural widths first, all on one unwrapped row, each with the voices' letters as a line's first bar has
+    flow.classList.add("measuring");
+    for (const b of this.bars) { this.label(b, true); flow.append(b); }
+    flow.querySelectorAll(".sf-line").forEach((l) => l.remove());
+    const withLabel = this.bars.map((b) => b.getBoundingClientRect().width);
+    for (const b of this.bars) this.label(b, false);
+    const widths = this.bars.map((b) => b.getBoundingClientRect().width);
+    flow.classList.remove("measuring");
+    const avail = flow.getBoundingClientRect().width - 2;
+    const lines = [];
+    let cur = [], w = 0;
+    this.bars.forEach((b, i) => {
+      const add = cur.length ? widths[i] : withLabel[i];
+      if (cur.length && w + add > avail) { lines.push(cur); cur = []; w = 0; }
+      cur.push(i); w += cur.length === 1 ? withLabel[i] : widths[i];
+    });
+    if (cur.length) lines.push(cur);
+    this.lines = lines.map((idx, n) => {
+      const line = document.createElement("div");
+      line.className = "sf-line";
+      this.label(this.bars[idx[0]], true);
+      for (const i of idx) line.append(this.bars[i]);
+      const used = withLabel[idx[0]] + idx.slice(1).reduce((t, i) => t + widths[i], 0);
+      // the last line stretches only when it is nearly full; a bar wider than the screen is shrunk
+      if (n === lines.length - 1 && used < avail * 0.7) line.classList.add("sf-short");
+      if (used > avail) line.style.zoom = String(Math.max(0.5, avail / used));
+      flow.append(line);
+      return { el: line, bars: idx.map((i) => this.bars[i]) };
+    });
+  }
+
+  /** The voices' letters at the start of a bar's rows (the first bar on a line), or none. */
+  label(bar, on) {
+    bar.querySelectorAll(".sf-lab").forEach((x) => x.remove());
+    bar.classList.toggle("sf-first", on);
+    if (!on) return;
+    let k = 0;
+    for (const row of bar.children) {
+      if (!row.classList.contains("sf-row")) continue;
+      const lab = document.createElement("span");
+      lab.className = "sf-lab";
+      lab.setAttribute("aria-hidden", "true");
+      if (row.classList.contains("sf-voice")) lab.textContent = this.voices[k++];
+      row.prepend(lab);
+    }
   }
 
   wordsRows(h, a, b, beat, nb, sylAt, refrainAt, opts) {
@@ -151,6 +211,7 @@ export class SolfaView {
       }
       out += `</div>`;
     }
+    for (let k = verses.length; k < this.wordRows; k++) out += `<div class="sf-row sf-words"><span class="sf-bl"></span>${`<span class="sf-beat">&nbsp;</span>`.repeat(nb)}</div>`;
     return out;
   }
 
@@ -181,7 +242,7 @@ function withEnds(syls) {
   for (const s of syls) { if (!byVerse.has(s.verse)) byVerse.set(s.verse, []); byVerse.get(s.verse).push(s); }
   for (const list of byVerse.values()) {
     list.sort((a, b) => a.on - b.on);
-    list.forEach((s, i) => { s.end = list[i + 1] ? list[i + 1].on : Infinity; });
+    list.forEach((s, i) => { let j = i + 1; while (list[j] && list[j].on <= s.on + 1e-6) j++; s.end = list[j] ? list[j].on : Infinity; });
   }
   return syls;
 }
