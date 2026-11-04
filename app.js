@@ -3749,6 +3749,10 @@ window.AHStudio = {
     } else if (name === "countIn") {
       $("countIn").checked = !!value;
       $("countIn").dispatchEvent(new Event("change", { bubbles: true }));
+    } else if (name === "countAt" && (value === "start" || value === "verse")) {
+      // the count-in bar: at the very start, or after the introduction (just before verse 1)
+      $("countAt").value = value;
+      $("countAt").dispatchEvent(new Event("change", { bubbles: true }));
     } else if (name === "fit") {
       if (state.view === "solfa") { state.solfaZoom = APP_ZOOM; save("solfaZoom"); } else { state.zoom = APP_ZOOM; save("zoom"); }
       renderAll();
@@ -3830,7 +3834,7 @@ window.AHStudio = {
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
-      accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, zoom: state.zoom,
+      accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, countAt: state.countAt, zoom: state.zoom,
       solfaSweep: !!state.solfaSweep, solfaWordsAt: state.solfaWordsAt, instrumental: !!state.instrumental, singSolfa: !!state.singSolfa, staffScroll: !!state.staffScroll, presenterShows: state.presenterShows,
       accomps: Object.entries(ACCOMP_STYLES).map(([value, label]) => ({ value, label })),
       intros: Object.entries(INSTRUMENTAL).map(([value, label]) => ({ value, label })),
