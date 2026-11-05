@@ -362,9 +362,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="tip" id="tip" role="tooltip" hidden></div>
 
-<!-- the notation engine, served with the page (no network needed); the CDN only if the local copy is missing -->
-<script src="vendor/verovio-toolkit-wasm-6.2.0.js" defer
-        onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/verovio@6.2.0/dist/verovio-toolkit-wasm.js';document.head.appendChild(s)"></script>
+<!-- the notation engine (vendor/verovio-toolkit-wasm-6.2.0.js) is loaded by app.js when a view first draws music -->
 <script type="module" src="app.js"></script>
 </body>
 </html>

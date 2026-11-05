@@ -121,6 +121,32 @@ const bootReady = new Promise((r) => { bootDone = r; });
 const engine = new Engine();
 const waterfall = new Waterfall();
 let tk = null;
+/** The notation engine (Verovio), started only when something draws music: the Score view, Presenter,
+ *  the projector or a PDF. Started, it takes 70-150 MB, which the words, sol-fa and playback never need. */
+let tkLoading = null;
+const VEROVIO = "vendor/verovio-toolkit-wasm-6.2.0.js";
+const VEROVIO_CDN = "https://cdn.jsdelivr.net/npm/verovio@6.2.0/dist/verovio-toolkit-wasm.js";
+function ensureVerovio() {
+  if (tk) return Promise.resolve(tk);
+  tkLoading ??= (async () => {
+    if (!window.verovio) await loadScript(VEROVIO).catch(() => loadScript(VEROVIO_CDN));
+    // ready when a toolkit can be made (its start-up may finish before any "initialized" hook is set)
+    const since = Date.now();
+    for (;;) {
+      try { tk = new window.verovio.toolkit(); break; } catch (e) {
+        if (Date.now() - since > 20000) throw e;
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    }
+    if (view) view.tk = tk;
+    return tk;
+  })().catch((e) => { tkLoading = null; throw e; });
+  return tkLoading;
+}
+const needsNotation = () => isScoreView() || state.view === "presenter" || projectorOpen();
+const notationFailed = () => {
+  $("score").innerHTML = `<p class="status">The score viewer could not load. Check the internet connection and reload the page.</p>`;
+};
 let view = null;
 let solfa = null;
 let words = null;
@@ -376,19 +402,6 @@ function readColors() {
 
 // ---- boot -----------------------------------------------------------------
 
-function verovioReady() {
-  return new Promise((resolve, reject) => {
-    const started = Date.now();
-    const wait = () => {
-      if (window.verovio?.module) {
-        if (window.verovio.module.calledRun) resolve();
-        else window.verovio.module.onRuntimeInitialized = resolve;
-      } else if (Date.now() - started > 20000) reject(new Error("verovio"));
-      else setTimeout(wait, 50);
-    };
-    wait();
-  });
-}
 
 let hymnList = [];
 /** A download that gives up after [ms] (a weak connection never holds the player up for good). */
@@ -542,6 +555,7 @@ const STOP = new Set(["the", "a", "an", "and", "of", "to", "in", "o", "is", "my"
 function loadScript(src) {
   return new Promise((resolve, reject) => {
     const s = document.createElement("script");
+    s.charset = "utf-8"; // Verovio carries its program as text: read any other way, it doesn't compile
     s.src = src;
     s.onload = resolve;
     s.onerror = reject;
@@ -945,14 +959,11 @@ async function boot() {
   } else if (asked && !hymnList.some((x) => x.id === asked)) { if (MAKE) makeFailed(asked, "the Studio has no such hymn"); notInStudio(asked); return; }
   picker.onchange = () => { location.hash = picker.value; loadHymn(hymnList.find((x) => x.id === picker.value)); };
   bindControls();
-  try {
-    await verovioReady();
-    tk = new window.verovio.toolkit();
-  } catch {
-    $("score").innerHTML = `<p class="status">The score viewer could not load. Check the internet connection and reload the page.</p>`;
-    return;
+  // the notation engine only when the first view draws music (renderAll starts it otherwise)
+  view = new ScoreView(null, $("score"));
+  if (needsNotation()) {
+    try { await ensureVerovio(); } catch { notationFailed(); return; }
   }
-  view = new ScoreView(tk, $("score"));
   if (APP) { state.zoom = APP_ZOOM; state.solfaZoom = APP_ZOOM; state.altZoom = 1; setupPinch(); }
   setupPractice();
   solfa = new SolfaView($("altView"));
@@ -1544,7 +1555,10 @@ function wordsVerse() {
 }
 
 async function renderAll() {
-  if (!tk || !hymn) return;
+  if (!hymn) return;
+  if (!tk && needsNotation()) {
+    try { await ensureVerovio(); } catch { notationFailed(); return; }
+  }
   renderedVerse = wordsVerse();
   renderedShift = currentShift(perf && locate(perf, engine.now()));
   syncKeyLabel();
@@ -1602,6 +1616,7 @@ async function renderAll() {
 async function prepareStage() {
   const opts = xmlOptions();
   const key = JSON.stringify([hymn.id, opts, state.words === "current" ? renderedVerse : 0, renderedShift]);
+  try { await ensureVerovio(); } catch { return; }
   await presenter.prepare(tk, buildMusicXML(hymn, opts), key, hymn.pickup > 0 ? 1 : 0, verovioTranspose(renderedShift));
 }
 
@@ -3292,7 +3307,8 @@ function finishRecording() {
 }
 
 async function doExport() {
-  if (!tk || !hymn) return;
+  if (!hymn) return;
+  try { await ensureVerovio(); } catch { toast("The score engine could not load. Check the internet connection."); return; }
   const tracks = visibleTracks();
   const name = `${hymn.id}-${tracks.map(trackKey).join("-")}.pdf`;
   toast("Making the PDF…", 0);
