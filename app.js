@@ -3823,8 +3823,10 @@ window.AHStudio = {
   /** Switch to another hymn without reloading the page. False when the Studio doesn't have it.
    *  Whatever was playing stops at once; until the new hymn has loaded, state() says it is not
    *  ready, so the app's play button can't start the old one. A later open() wins over this one. */
-  async open(id, v) {
+  async open(id, v, tune) {
     appWant.id = id;
+    // a queue or playlist item sung to a chosen tune ("" the printed one): remembered for the hymn, as the picker does
+    if (typeof tune === "string") store.set(`tune:${id}`, tune);
     appWant.missing = false;
     if (engine.playing && id !== hymn?.id) stopPlayback(); // the same hymn in another view plays on
     await bootReady;
@@ -3850,6 +3852,10 @@ window.AHStudio = {
         try { await appLoading; } finally { appLoading = null; }
       } finally { if (appWant.id === id) appWant.loading = false; }
       if (appWant.id !== id || hymn?.id !== id) return false;
+    } else if (typeof tune === "string" && (hymn.tune?.key || "") !== tune) {
+      appWant.loading = true;
+      try { await setTune(tune); } finally { if (appWant.id === id) appWant.loading = false; }
+      if (appWant.id !== id) return false;
     }
     if (v) this.view(v);
     return true;
@@ -3960,6 +3966,12 @@ window.AHStudio = {
     t.dispatchEvent(new Event("change", { bubbles: true }));
   },
   key(step) { $(step > 0 ? "keyUp" : "keyDown").click(); },
+  /** The tunes a hymn's words can be sung to, for the app's queue and playlists: [{value, label, why}],
+   *  the printed tune first (value ""); empty when there is only the printed one (or the list hasn't loaded). */
+  tunesOf(id) {
+    const c = tuneChoices(id);
+    return JSON.stringify(c ? [{ value: "", label: c.name || "As printed", why: "own" }, ...c.alts.map((a) => ({ value: a.tune, label: a.name, why: a.why }))] : []);
+  },
   state() {
     const voices = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length).map((ch) => {
       const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
