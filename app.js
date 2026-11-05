@@ -2344,15 +2344,20 @@ function answerQuiz(btn) {
 // tAt: draw the moment at that performance time instead of the playing one (frames of a video made offline)
 /** How many times a hymn has played to its end (AHStudio.state().ends). */
 let playEnds = 0;
+/** The hymn has played to its end: stop, and count it. Checked on every frame, and also each time the app
+ *  asks for state(): with the screen locked no frames are drawn, and the app's queue waited for the screen. */
+function endIfDone() {
+  if (!perf || !hymn || !engine.playing || engine.loop || engine.now() < perf.total) return false;
+  engine.stop();
+  setPlaying(false);
+  playEnds++; // the app's playlists move on to the next hymn when this counts up
+  if (recording) setTimeout(finishRecording, 1200);
+  return true;
+}
 function paint(force, tAt) {
   if (!perf || !hymn) return;
   const t = tAt ?? engine.now();
-  if (tAt === undefined && engine.playing && t >= perf.total && !engine.loop) {
-    engine.stop();
-    setPlaying(false);
-    playEnds++; // the app's playlists move on to the next hymn when this counts up
-    if (recording) setTimeout(finishRecording, 1200);
-  }
+  if (tAt === undefined) endIfDone();
   const moving = engine.playing || force || Math.abs(t - lastT) > 1e-3;
   if (!moving && !stageWanted()) return;
   lastT = t;
@@ -3973,6 +3978,7 @@ window.AHStudio = {
     return JSON.stringify(c ? [{ value: "", label: c.name || "As printed", why: "own" }, ...c.alts.map((a) => ({ value: a.tune, label: a.name, why: a.why }))] : []);
   },
   state() {
+    endIfDone();
     const voices = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length).map((ch) => {
       const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
       return {
