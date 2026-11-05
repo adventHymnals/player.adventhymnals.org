@@ -64,13 +64,18 @@ export class ScoreView {
   }
 
   rel(el) {
-    const c = this.content.getBoundingClientRect();
+    const c = this.box || this.content.getBoundingClientRect(); // measureGeometry reads it once for all
     const r = el.getBoundingClientRect();
     return { x: r.left - c.left, y: r.top - c.top, w: r.width, h: r.height };
   }
 
   /** Recompute positions (after render or resize). */
   measureGeometry() {
+    this.box = this.content.getBoundingClientRect();
+    try { this.measureAll(); } finally { this.box = null; }
+  }
+
+  measureAll() {
     this.systems = [...this.content.querySelectorAll("g.system")].map((el) => {
       const box = this.rel(el);
       const staves = [...el.querySelectorAll("g.staff")].reduce((acc, st) => {

@@ -34,7 +34,9 @@ async function idbPutOnly(key, value) {
     const db = await idb();
     await new Promise((res) => {
       const tx = db.transaction(STORE, "readwrite"), st = tx.objectStore(STORE);
-      st.clear(); st.put(value, key); // a new model replaces the old one
+      // keep the models singing.json still offers (the listener may switch between live voices); drop the rest
+      const q = st.getAllKeys();
+      q.onsuccess = () => { for (const k of q.result) if (k !== key && !Warble.keep.has(k)) st.delete(k); st.put(value, key); };
       tx.oncomplete = res; tx.onerror = res; tx.onabort = res;
     });
   } catch { /* private mode or full: sing without saving */ }
@@ -54,6 +56,10 @@ export class Warble {
   /** cfg: data/singing.json's "warble" object; base: the URL singing.json came from */
   constructor(cfg, base) {
     this.cfg = cfg;
+    this.id = cfg.id || "";
+    this.engine = this.id ? `warble-${this.id}` : "warble"; // the first live voice is plain "warble"
+    this.label = cfg.label || "Live singers";
+    this.speakers = cfg.speakers || undefined; // { S, A, T, B } singer numbers; the frontend's default when absent
     this.modelUrl = new URL(cfg.model, base).href;
     this.workers = [];
     this.ready = null;
@@ -141,13 +147,13 @@ export class Warble {
     this.jobs.clear();
   }
 
-  passKey(h, verse, tempo, transpose) { return `${h.id}${h.tune ? `@${h.tune.key}` : ""}${h.variant ? `~${variantId(h)}` : ""}:${verse === "solfa" ? "solfa" : `v${verse}`}:t${tempo}:k${transpose}`; }
+  passKey(h, verse, tempo, transpose) { return `${this.id ? `${this.id}/` : ""}${h.id}${h.tune ? `@${h.tune.key}` : ""}${h.variant ? `~${variantId(h)}` : ""}:${verse === "solfa" ? "solfa" : `v${verse}`}:t${tempo}:k${transpose}`; }
 
   /** The features for one pass (all the hymn's voices, SATB order). */
   async features(h, verse, tempo, transpose) {
     const lex = await this.lexicon();
     const voices = "SATB".split("").filter((k) => h.voices[k]);
-    const pass = passFrames(h, voices, verse, tempo, transpose, lex);
+    const pass = passFrames(h, voices, verse, tempo, transpose, lex, this.speakers);
     return { ...pass, letters: voices.join("") };
   }
 
@@ -241,25 +247,36 @@ export class Warble {
   credits() { return this.cfg.credits || "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0."; }
 }
 
-/** data/singing.json -> { default, warble: Warble|null } (null when there is no live singer configured) */
+/** data/singing.json -> { default, warble, voices }: voices are the live singers offered (singing.json's
+ *  "voices" list, else its one "warble"), each a Warble; warble is the first (engine "warble"), null when none. */
 export async function loadSinging(urls) {
   for (const url of urls) {
     try {
       const r = await fetch(url, { cache: "no-cache" });
       if (!r.ok) continue;
       const cfg = await r.json();
-      let warble = cfg.warble?.model ? new Warble(cfg.warble, new URL(url, location.href)) : null;
-      // offered only where it can sing: the model saved on this device, or reachable
-      const sha = (cfg.warble?.sha256 || "").toLowerCase();
-      const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };
-      if (warble && !(sha && (appHas() || (await idbHas(sha))))) {
-        const ok = await fetch(warble.modelUrl, { method: "HEAD" }).then((x) => x.ok, () => false);
-        if (!ok) warble = null;
+      const base = new URL(url, location.href);
+      const list = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model);
+      Warble.keep = new Set(list.map((c) => (c.sha256 || "").toLowerCase()).filter(Boolean));
+      const voices = [];
+      for (const [i, c] of list.entries()) {
+        const w = new Warble(i === 0 ? { ...c, id: "" } : c, base);
+        // offered only where it can sing: the model saved on this device, or reachable
+        const sha = (c.sha256 || "").toLowerCase();
+        const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };
+        if (!(sha && (appHas() || (await idbHas(sha))))) {
+          const ok = await fetch(w.modelUrl, { method: "HEAD" }).then((x) => x.ok, () => false);
+          if (!ok) continue;
+        }
+        voices.push(w);
       }
-      return { default: cfg.default === "warble" ? "warble" : "stems", warble };
+      if (voices[0] && voices[0].id) { voices[0].id = ""; voices[0].engine = "warble"; } // the first that can sing is "warble"
+      const dflt = cfg.default && voices.some((w) => w.engine === cfg.default) ? cfg.default : "stems";
+      return { default: dflt, warble: voices[0] || null, voices };
     } catch { /* offline or absent: try the next */ }
   }
-  return { default: "stems", warble: null };
+  return { default: "stems", warble: null, voices: [] };
 }
+Warble.keep = new Set();
 
 export { LEAD };

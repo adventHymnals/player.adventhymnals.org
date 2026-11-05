@@ -137,10 +137,14 @@ let manifest = null; // sung stems for this hymn, if rendered
 let stemInfo = new Map(); // "S:1:0" (voice:verse:transpose) -> { offsetSec, duration } usable at the current tempo
 // the two singing engines: recorded singers (stems, per hymn/tempo/key) and live singing (Warble, any hymn);
 // data/singing.json says which is the default, the listener may choose per device
-let singingCfg = { default: "stems", warble: null };
-const singingReady = loadSinging([...new Set([`${DATA}data/singing.json`, "data/singing.json"])]).then((c) => { singingCfg = c; });
+let singingCfg = { default: "stems", warble: null, voices: [] };
+// live voices: engine "warble" (the first in singing.json) or "warble-<id>" (the others)
+const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-"));
+const liveVoice = (v) => singingCfg.voices.find((w) => w.engine === v) || null;
+const otherLive = (v) => { for (const w of singingCfg.voices) if (w.engine !== v) w.cancelAll(); }; // only the chosen voice works
+const singingReady = loadSinging([...new Set([`${DATA}data/singing.json`, "data/singing.json"])]).then((c) => { singingCfg = c; offerLiveVoices(); });
 const nativeEngineRaw = () => { try { return window.AHNative?.warble?.engine?.() ?? ""; } catch { return ""; } };
-const nativeEngine = () => { const e = nativeEngineRaw(); return e === "stems" || e === "warble" ? e : null; };
+const nativeEngine = () => { const e = nativeEngineRaw(); return e === "stems" || isLive(e) ? e : null; };
 // ?app where the app asks "Who sings?" at Play: nothing is loaded for either singer until it has answered
 // (AHStudio.set("singEngine", …)) for the hymn that is open
 // The web page asks at Play too: until then nothing is loaded for either singer, so choosing live
@@ -149,8 +153,13 @@ let appAnswered = false;
 const asksAtPlay = () => !!singingCfg.warble && !APP && !EMBED && !MAKE && state.singAsk !== false;
 const awaitingApp = () => !appAnswered && (APP ? nativeEngineRaw() === "ask" : asksAtPlay());
 const whoSings = () => (state.instrumental ? "instrumental" : singEngine());
-const singEngine = () => (singingCfg.warble ? state.singEngine || nativeEngine() || singingCfg.default : "stems");
-const useWarble = () => singEngine() === "warble" && !!singingCfg.warble;
+const singEngine = () => {
+  if (!singingCfg.warble) return "stems";
+  const e = state.singEngine || nativeEngine() || singingCfg.default;
+  return isLive(e) && !liveVoice(e) ? "warble" : e; // a live voice no longer offered: the first
+};
+const useWarble = () => isLive(singEngine()) && !!singingCfg.warble;
+const liveW = () => liveVoice(singEngine()) || singingCfg.warble; // the live voice that sings now
 
 const tracksOfHymn = () => state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
 const visibleTracks = () => tracksOfHymn().filter((t) => !state.hidden.includes(trackKey(t)));
@@ -937,7 +946,7 @@ async function setTune(key) {
   if (!entry || (hymn.tune?.key || "") === (key || "")) return;
   store.set(`tune:${hymn.id}`, key || "");
   engine.dropStems(); // the old tune's singers are no use now
-  singingCfg.warble?.drop();
+  for (const w of singingCfg.voices) w.drop();
   try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
   await loadHymn(entry);
   toast(hymn.tune ? `Sung to ${hymn.tune.name}. Recorded singers only sing the printed tune, so live singing or the synth sings this one.` : "The printed tune.", 5000);
@@ -948,11 +957,13 @@ async function loadHymn(entry) {
   if (hymn && hymn.id !== entry.id) appAnswered = false; // the app asks again for this hymn
   if (hymn && hymn.id !== entry.id) { // the last hymn's singers leave memory
     engine.dropStems();
-    singingCfg.warble?.drop();
+    for (const w of singingCfg.voices) w.drop();
     try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
   }
   try {
-    hymn = await (await fetch(entry.path).then((r) => (r.ok ? r : Promise.reject(r))).catch(() => fetch(entry.fallback || entry.path))).json();
+    const next = await (await fetch(entry.path).then((r) => (r.ok ? r : Promise.reject(r))).catch(() => fetch(entry.fallback || entry.path))).json();
+    if (APP && appWant.id && appWant.id !== entry.id) return; // the app has asked for another hymn since: draw that one
+    hymn = next;
     await tunesReady;
     const alt = chosenTune(hymn.id);
     if (alt) { try { hymn = await withTune(hymn, alt); } catch { /* the tune's music is missing: the printed tune */ } }
@@ -1002,6 +1013,30 @@ async function loadManifest() {
   syncSungControls();
 }
 
+/** Each live voice after the first gets its own choice in "Who sings?" and in the settings' list. */
+function offerLiveVoices() {
+  const first = document.querySelector('#singDialog [data-engine="warble"]');
+  const opt = document.querySelector('#singEngine option[value="warble"]');
+  singingCfg.voices.forEach((w, i) => {
+    if (i === 0) {
+      if (first) first.querySelector("strong").firstChild.textContent = `${w.label} `;
+      if (opt) opt.textContent = `${w.label} (beta)`;
+      return;
+    }
+    if (first && !document.querySelector(`#singDialog [data-engine="${w.engine}"]`)) {
+      const b = first.cloneNode(true);
+      b.dataset.engine = w.engine;
+      b.querySelector("strong").firstChild.textContent = `${w.label} `;
+      b.querySelector("small").removeAttribute("id");
+      [...document.querySelectorAll('#singDialog [data-engine^="warble"]')].pop().after(b);
+    }
+    if (opt && !document.querySelector(`#singEngine option[value="${w.engine}"]`)) {
+      const o = new Option(`${w.label} (beta)`, w.engine);
+      [...document.querySelectorAll('#singEngine option[value^="warble"]')].pop().after(o);
+    }
+  });
+}
+
 /** Who sings? Live singers, recorded singers or instruments only, each with what it costs. Asked at Play
  *  once for each hymn opened (unless "Don't ask again"), and whenever the Singers button is clicked.
  *  Nothing is downloaded for either singer before the answer. Resolves false when cancelled. */
@@ -1016,9 +1051,12 @@ function chooseSingers(from, always = false) {
   if (recorded) updateStemsCost().then(() => {
     if (stemsCost.bytes) stemsNote.textContent = `Real voices · downloads ${(stemsCost.bytes / 1e6).toFixed(stemsCost.bytes < 1e7 ? 1 : 0)} MB for this hymn`;
   });
-  const liveNote = $("singLiveNote");
-  liveNote.textContent = "Sung on this device · nothing to download for each hymn · any tempo or key";
-  singingCfg.warble.saved().then((has) => { if (!has) liveNote.textContent += " (the first time: the singers, 17 MB, once)"; });
+  for (const w of singingCfg.voices) {
+    const liveNote = d.querySelector(`[data-engine="${w.engine}"] small`);
+    if (!liveNote) continue;
+    liveNote.textContent = "Sung on this device · nothing to download for each hymn · any tempo or key";
+    w.saved().then((has) => { if (!has) liveNote.textContent += " (the first time: the singers, 17 MB, once)"; });
+  }
   const now = whoSings();
   for (const b of d.querySelectorAll(".sing-choice")) b.classList.toggle("current", b.dataset.engine === now);
   $("singNoAsk").checked = state.singAsk === false;
@@ -1042,7 +1080,7 @@ function chooseWhoSings(v) {
   if (v === "instrumental") { window.AHStudio.set("instrumental", true); syncSingersBtn(); return; }
   if (state.instrumental) { // the voices come back with the new singers already chosen (no detour via the other)
     state.singEngine = v; save("singEngine");
-    if (v !== "warble") singingCfg.warble?.cancelAll();
+    otherLive(v);
     window.AHStudio.set("instrumental", false);
     syncSungControls();
   } else if (v !== singEngine() || !state.singEngine) setSingEngine(v);
@@ -1055,7 +1093,7 @@ function syncSingersBtn() {
   const b = headersEl.querySelector(".singers-btn");
   if (!b) return;
   const v = whoSings();
-  const label = { warble: "Live singers", stems: "Recorded singers", instrumental: "Instruments only" }[v] || "Singers";
+  const label = isLive(v) ? liveVoice(v)?.label || "Live singers" : { stems: "Recorded singers", instrumental: "Instruments only" }[v] || "Singers";
   if (!SINGER_ICONS[v]) SINGER_ICONS[v] = document.querySelector(`#singDialog [data-engine="${v}"] .sing-ico`)?.innerHTML || "";
   b.innerHTML = `${SINGER_ICONS[v]}<span>${label}</span>`;
   b.title = `${label}: click to choose who sings`;
@@ -1089,7 +1127,7 @@ function setSingEngine(v) {
   state.singEngine = v;
   save("singEngine");
   syncSingersBtn();
-  if (v !== "warble") singingCfg.warble?.cancelAll();
+  otherLive(v);
   syncSungControls();
   buildHeaders();
   prepareStems();
@@ -1181,7 +1219,7 @@ function warbleList() {
 }
 /** keep: a key change while playing; what is sung already stays, the new keys are added as they are ready */
 async function prepareWarble(keep = false) {
-  const w = singingCfg.warble;
+  const w = liveW();
   const gen = ++warbleGen;
   if (!keep) {
     stemInfo = new Map();
@@ -3770,9 +3808,11 @@ boot();
 // panel) and drives this page through these few calls; it reads state() to
 // redraw them. Everything goes through the page's own handlers, so the app
 // and the page can never disagree about what is playing or muted.
+/** The hymn the app opened, while it loads (AHStudio.open loads one at a time). */
+let appLoading = null;
 window.AHStudio = {
   /** live singing: which passes are sung by Warble now, and how fast it went (for tests and the app) */
-  warble() { return JSON.stringify({ engine: singEngine(), ready: [...stemInfo.keys()], speed: singingCfg.warble?.speed ?? null, workers: singingCfg.warble?.workers?.length ?? 0 }); },
+  warble() { return JSON.stringify({ engine: singEngine(), ready: [...stemInfo.keys()], voice: useWarble() ? liveW().engine : null, speed: liveW()?.speed ?? null, workers: liveW()?.workers?.length ?? 0 }); },
   /** "words" | "solfa" | "page" | "tracks" | "presenter" */
   view(v) {
     if (v === "page" && state.staffScroll) v = "tracks"; // the staff moving under a still playhead
@@ -3794,15 +3834,22 @@ window.AHStudio = {
     if (hymn?.id !== id) {
       appWant.loading = true;
       try {
+        // one hymn loads at a time: two loads side by side could finish the wrong way round and leave
+        // the hymn asked for first on the screen while the app waits for the one asked for last
+        while (appLoading) await appLoading;
+        if (appWant.id !== id) return false;
         stopPlayback();
         state.zoom = APP_ZOOM; save("zoom"); // each hymn opens at the smallest size: the whole page on the screen
         state.solfaZoom = APP_ZOOM; save("solfaZoom"); // the sol-fa too
         state.altZoom = 1; save("altZoom"); // the words fit themselves to the screen
+        // drawn once, in the view asked for (not first in the last hymn's view, then again)
+        if (v) { state.view = v === "page" && state.staffScroll ? "tracks" : v; save("view"); }
         $("hymnPicker").value = id;
         history.replaceState(null, "", `${location.pathname}${location.search}#${id}`);
-        await loadHymn(entry);
+        appLoading = loadHymn(entry);
+        try { await appLoading; } finally { appLoading = null; }
       } finally { if (appWant.id === id) appWant.loading = false; }
-      if (appWant.id !== id) return false;
+      if (appWant.id !== id || hymn?.id !== id) return false;
     }
     if (v) this.view(v);
     return true;
@@ -3845,7 +3892,7 @@ window.AHStudio = {
     } else if (name === "fit") {
       if (state.view === "solfa") { state.solfaZoom = APP_ZOOM; save("solfaZoom"); } else { state.zoom = APP_ZOOM; save("zoom"); }
       renderAll();
-    } else if (name === "singEngine" && (value === "stems" || value === "warble" || value === null || value === "")) {
+    } else if (name === "singEngine" && (value === "stems" || isLive(value) || value === null || value === "")) {
       appAnswered = true;
       if ((value || null) === state.singEngine) { voicesSing(); syncSungControls(); prepareStems(); } else setSingEngine(value || null);
     } else if (name === "solfaSweep") {
@@ -3940,8 +3987,8 @@ window.AHStudio = {
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
       stemsBytes: stemsCost.bytes, stemsSaved: stemsCost.saved,
       ends: playEnds, repeating: !!state.loop.on, repeatLabel: state.loop.on ? (state.loop.from === state.loop.to ? `bar ${state.loop.from}` : `bars ${state.loop.from}–${state.loop.to}`) : "",
-      singEngine: singEngine(), singEngines: singingCfg.warble ? [{ value: "stems", label: "Recorded singers" }, { value: "warble", label: "Live singing (beta)" }] : [],
-      credits: useWarble() ? singingCfg.warble.credits() : "",
+      singEngine: singEngine(), singEngines: singingCfg.warble ? [{ value: "stems", label: "Recorded singers" }, ...singingCfg.voices.map((w) => ({ value: w.engine, label: w.label }))] : [],
+      credits: useWarble() ? liveW().credits() : "",
     });
   },
 };

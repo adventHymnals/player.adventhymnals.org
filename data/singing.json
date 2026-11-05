@@ -5,5 +5,29 @@
   "sha256": "11cedb94ef256461e1dd4b0b272062428933db45319629f90688790882236ae3",
   "version": "warble-m-src colab run-m-src step 15000",
   "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0."
- }
+ },
+ "voices": [
+  {
+   "id": "v1",
+   "label": "Live singers",
+   "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-11cedb94ef25.onnx",
+   "sha256": "11cedb94ef256461e1dd4b0b272062428933db45319629f90688790882236ae3",
+   "version": "warble-m-src colab run-m-src step 15000",
+   "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0."
+  },
+  {
+   "id": "v2",
+   "label": "Live singers v2",
+   "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-e1155fc4dc1f.onnx",
+   "sha256": "e1155fc4dc1f43745d40db23d25919b6ca5c5035086ece66804abf4c79f422fb",
+   "version": "warble-v2-m-src colab run-v2b-m-src step 70000 (EMA)",
+   "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
+   "speakers": {
+    "S": 4,
+    "A": 2,
+    "T": 3,
+    "B": 10
+   }
+  }
+ ]
 }

@@ -556,13 +556,13 @@ export function voiceFrames(h, voice, verse, tempo, T, transpose, lex) {
 }
 
 /** Every voice of one pass (verse k + refrain, or "solfa"): [{ voice, speaker, ph, prog, f0 }], T. */
-export function passFrames(h, voices, verse, tempo, transpose, lex) {
+export function passFrames(h, voices, verse, tempo, transpose, lex, speakers = SPEAKER) {
   let T = null;
   const out = [];
   for (const v of voices) {
     const r = voiceFrames(h, v, verse, tempo, T, transpose, lex);
     T = r.T;
-    out.push({ voice: v, speaker: SPEAKER[v], ph: r.ph, prog: r.prog, f0: r.f0 });
+    out.push({ voice: v, speaker: speakers[v] ?? SPEAKER[v], ph: r.ph, prog: r.prog, f0: r.f0 });
   }
   return { T, voices: out };
 }
