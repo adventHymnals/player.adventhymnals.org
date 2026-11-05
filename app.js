@@ -1,6 +1,6 @@
 import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
-  trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds,
+  trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds, countQ,
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
@@ -3028,7 +3028,7 @@ async function makeTakeVideos(takeKeys) {
       // the takes differ only up to the first verse (the count-in after an introduction is the same in all)
       const intro = perf.passes[0]?.kind === "intro";
       const firstVerse = perf.passes.find((p) => p.kind === "verse");
-      const splitT = !intro ? 0 : firstVerse.t0 - (state.countIn && state.countAt === "verse" ? hymn.measureQ * perf.tm.spq : 0);
+      const splitT = !intro ? 0 : firstVerse.t0 - (state.countIn && state.countAt === "verse" ? countQ(hymn) * perf.tm.spq : 0);
       return { total: perf.total + 1, splitT };
     },
     drawAt: (t) => paint(true, t),
@@ -3388,7 +3388,7 @@ function songTimeline(verses, voices, introVoice, endcard) {
   // every take shares the frames after its introduction (see videomaker.js)
   const intro = p.passes[0]?.kind === "intro";
   const firstVerse = p.passes.find((x) => x.kind === "verse");
-  const splitT = !intro ? 0 : firstVerse.t0 - (state.countIn && state.countAt === "verse" ? hymn.measureQ * p.tm.spq : 0);
+  const splitT = !intro ? 0 : firstVerse.t0 - (state.countIn && state.countAt === "verse" ? countQ(hymn) * p.tm.spq : 0);
   return { items, total, splitT, chapters: tidyChapters(chaptersOf(p), total), verses };
 }
 

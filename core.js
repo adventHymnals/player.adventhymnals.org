@@ -759,14 +759,23 @@ export const INSTRUMENTAL = {
 };
 
 /** Score range [qFrom, qTo) played by an introduction or interlude choice, or null. */
+/** A bar to count with: the hymn's own, or 4 beats where the score has no real bars (a chant-like hymn
+ *  written as one long bar, e.g. SDAH-131 at 70/4), so the count-in doesn't click through the whole hymn. */
+export function countQ(h) {
+  return h.measureQ > 12 ? 4 : h.measureQ;
+}
+
 export function instrumentalRange(h, kind) {
   if (!kind || kind === "none") return null;
   if (kind === "all") return [0, h.totalQ];
   if (kind === "refrain") {
     const r = h.marks.find((m) => /refrain|chorus/i.test(m.text));
-    return r ? [r.q, h.totalQ] : [barStart(h, Math.max(1, h.measures - 3)), h.totalQ];
+    return r ? [r.q, h.totalQ] : [countQ(h) !== h.measureQ ? Math.max(0, h.totalQ - 4 * countQ(h)) : barStart(h, Math.max(1, h.measures - 3)), h.totalQ];
   }
   const n = /8$/.test(kind) ? 8 : 4;
+  // a score with no real bars (one long bar) counts bars of 4 beats instead
+  const barQ = countQ(h);
+  const loose = barQ !== h.measureQ;
   // The bars are only a guide: an introduction ends (or an ending begins) where a phrase of the words does,
   // the phrase boundary nearest to that many bars ("Awake, my soul! stretch every nerve," and not on into "And").
   const bounds = phraseBounds(h);
@@ -774,14 +783,14 @@ export function instrumentalRange(h, kind) {
   const up = h.pickup > 0 && h.pickup < h.measureQ ? h.pickup : 0;
   const nearest = (q) => {
     const b = bounds.reduce((x, y) => (Math.abs(y - q) < Math.abs(x - q) ? y : x), bounds[0]);
-    return Math.abs(b - q) <= h.measureQ * 1.5 ? b : null;
+    return Math.abs(b - q) <= barQ * 1.5 ? b : null;
   };
   if (kind.startsWith("first")) {
-    const bars = barEnd(h, Math.min(h.measures, n + (up ? 1 : 0)));
+    const bars = loose ? Math.min(h.totalQ, n * barQ) : barEnd(h, Math.min(h.measures, n + (up ? 1 : 0)));
     const end = nearest(bars) ?? (bars < h.totalQ ? bars - up : bars);
     return [0, end > 0 ? end : h.totalQ];
   }
-  const bars = barStart(h, Math.max(1, h.measures - n + 1));
+  const bars = loose ? Math.max(0, h.totalQ - n * barQ) : barStart(h, Math.max(1, h.measures - n + 1));
   const start = nearest(bars) ?? Math.max(0, bars - up);
   return [start < h.totalQ ? start : 0, h.totalQ];
 }
@@ -824,7 +833,7 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
   const tm = timeMap(h, tempo);
   // sections follow straight on, in time: the last bar is already full (or short by the pickup that starts the next)
   const gap = 0;
-  const countBar = countIn ? h.measureQ * tm.spq : 0;
+  const countBar = countIn ? countQ(h) * tm.spq : 0;
   const events = [];
   const passes = [];
   const acc = accompaniment(h, accomp);
@@ -841,7 +850,7 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
   let countT = -1; // when the count-in bar starts
   const countBarAt = (t0) => {
     countT = t0;
-    for (let q = 0; q < h.measureQ - 1e-6; q += clickBeat) events.push({ t: t0 + q * tm.spq, dur: 0.05, p: q === 0 ? 96 : 89, ch: "click", v: 0.6, pass: -1, q });
+    for (let q = 0; q < countQ(h) - 1e-6; q += clickBeat) events.push({ t: t0 + q * tm.spq, dur: 0.05, p: q === 0 ? 96 : 89, ch: "click", v: 0.6, pass: -1, q });
   };
   if (countFirst) countBarAt(0);
   const lead = countFirst ? countBar : 0;
@@ -919,7 +928,7 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
   const fullBeats = Math.round(h.measureQ / beat);
   const beats = [];
   // the count-in bar counts too: 1, 2, 3 before the music starts
-  if (countT >= 0) for (let b = 0; b < fullBeats; b++) beats.push({ t: countT + b * beat * tm.spq, bar: 0, beat: b, pass: -1 });
+  if (countT >= 0) for (let b = 0; b < Math.round(countQ(h) / beat); b++) beats.push({ t: countT + b * beat * tm.spq, bar: 0, beat: b, pass: -1 });
   passes.forEach((p, k) => {
     for (let m = 1; m <= h.measures; m++) {
       const nb = beatsInBar(m);
