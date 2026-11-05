@@ -38,6 +38,7 @@ const AUDIO = document.querySelector('meta[name="ah-audio"]')?.content || REMOTE
 // and the hymns themselves (the list and each hymn's file): the published site reads them from the same store,
 // so a new hymn goes live by upload, with no rebuild of the site
 const DATA = document.querySelector('meta[name="ah-data"]')?.content || REMOTE;
+singers.synced = !!DATA; // the app keeps its saved lists of recordings up to date itself (syncHymns)
 // search by idea (the site's API; online only). A local copy of the player asks a local backend.
 const IDEA_API = document.querySelector('meta[name="ah-idea"]')?.content
   || (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://127.0.0.1:8000/api/plugins/adventhymnals/public/search/idea/" : "https://adventhymnals.org/api/search/idea");
@@ -142,7 +143,7 @@ let singingCfg = { default: "stems", warble: null, voices: [] };
 const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-"));
 const liveVoice = (v) => singingCfg.voices.find((w) => w.engine === v) || null;
 const otherLive = (v) => { for (const w of singingCfg.voices) if (w.engine !== v) w.cancelAll(); }; // only the chosen voice works
-const singingReady = loadSinging([...new Set([`${DATA}data/singing.json`, "data/singing.json"])]).then((c) => { singingCfg = c; offerLiveVoices(); });
+const singingReady = loadSinging([...new Set(["data/singing.json", `${DATA}data/singing.json`])]) // the copy on the phone first.then((c) => { singingCfg = c; offerLiveVoices(); });
 const nativeEngineRaw = () => { try { return window.AHNative?.warble?.engine?.() ?? ""; } catch { return ""; } };
 const nativeEngine = () => { const e = nativeEngineRaw(); return e === "stems" || isLive(e) ? e : null; };
 // ?app where the app asks "Who sings?" at Play: nothing is loaded for either singer until it has answered
@@ -378,19 +379,101 @@ function verovioReady() {
 }
 
 let hymnList = [];
-async function loadList() {
-  // fresh when online; the cached copy when not (the Android app plays offline what it played before)
-  const local = () => fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
-  if (DATA) {
-    try {
-      const r = await fetch(`${DATA}data/index.json`, { cache: "no-cache" });
-      if (!r.ok) throw new Error(String(r.status));
-      hymnList = (await r.json()).map((x) => ({ ...x, path: new URL(x.path, DATA).href, fallback: x.path }));
-      return fillPicker();
-    } catch { /* offline: the bundled list */ }
+/** A download that gives up after [ms] (a weak connection never holds the player up for good). */
+function fetchWithin(url, ms, opts = {}) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), ms);
+  return fetch(url, { ...opts, signal: ctl.signal }).finally(() => clearTimeout(t));
+}
+/** The app: hymns changed on the site since this copy of the player, saved on the phone by [syncHymns]. */
+const HYMNS = "ah-hymns";
+const hymnStore = async () => { try { return await caches.open(HYMNS); } catch { return null; } };
+const SITE_INDEX = "https://ah-hymns.invalid/site-index.json"; // the site's list, as last fetched
+const SAVED_V = "ah-hymn-saved"; // { id: the version of the copy saved in HYMNS }
+const savedV = () => { try { return JSON.parse(localStorage.getItem(SAVED_V) || "{}"); } catch { return {}; } };
+/** Hymns new on the site come at the next check (never while one opens). */
+let listFresh = Promise.resolve();
+/** Lay the site's list over the player's own: where each hymn's newest copy is, which have singers, new hymns. */
+function overlaySite(site) {
+  const have = new Map(hymnList.map((x) => [x.id, x]));
+  let added = false;
+  for (const x of site) {
+    const remote = new URL(x.path, DATA).href;
+    const mine = have.get(x.id);
+    if (mine) Object.assign(mine, { remote, siteV: x.v, sung: x.sung, sv: x.sv, title: x.title });
+    else { hymnList.push({ ...x, path: null, remote, siteV: x.v }); added = true; }
   }
+  return added;
+}
+async function loadList() {
+  // only what is on the phone: opening the player never waits for the internet
+  const local = () => fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
   hymnList = await (await local()).json();
+  if (DATA) {
+    const c = await hymnStore();
+    const site = c && (await c.match(SITE_INDEX).then((r) => r?.json()).catch(() => null));
+    if (site) overlaySite(site);
+  }
   fillPicker();
+  if (DATA) setTimeout(() => syncHymns().catch(() => {}), 15000); // once the first hymn is up
+}
+
+/** Now and then (at most every 6 hours): the site's list, and only the hymns whose version changed,
+ *  saved on the phone in the background. A weak connection only delays the next check. */
+async function syncHymns(force = false) {
+  const AT = "ah-hymn-sync-at";
+  try { if (!force && Date.now() - Number(localStorage.getItem(AT) || 0) < 6 * 3600e3) return; } catch { /* no storage: check */ }
+  const c = await hymnStore();
+  if (!c) return;
+  const r = await fetchWithin(`${DATA}data/index.json`, 15000, { cache: "no-cache" });
+  if (!r.ok) return;
+  const site = await r.json();
+  const saved = savedV();
+  const mine = new Map(hymnList.map((x) => [x.id, x]));
+  for (const x of site) {
+    const own = mine.get(x.id);
+    const onPhone = saved[x.id] || (own?.path ? own.v : null);
+    if (!x.v || x.v === onPhone || x.v === own?.v) continue;
+    try {
+      const url = new URL(x.path, DATA).href;
+      const h = await fetchWithin(url, 15000, { cache: "no-cache" });
+      if (!h.ok) continue;
+      await c.put(url, h);
+      saved[x.id] = x.v;
+      try { localStorage.setItem(SAVED_V, JSON.stringify(saved)); } catch { /* full */ }
+    } catch { /* this one next time */ }
+  }
+  // the recorded singers' lists that changed, so opening a hymn never asks the site
+  const SV = "ah-singers-saved";
+  let sv = {}; try { sv = JSON.parse(localStorage.getItem(SV) || "{}"); } catch { /* none */ }
+  for (const x of site) {
+    if (!x.sung || !x.sv || sv[x.id] === x.sv) continue;
+    try { if (await singers.refreshManifest(`${AUDIO}audio/${x.id}/manifest.json`)) sv[x.id] = x.sv; } catch { /* next time */ }
+  }
+  try { localStorage.setItem(SV, JSON.stringify(sv)); } catch { /* full */ }
+  await c.put(SITE_INDEX, new Response(JSON.stringify(site), { headers: { "Content-Type": "application/json" } }));
+  if (overlaySite(site)) fillPicker();
+  try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ }
+}
+
+/** A hymn's score, from the phone: the copy saved from the site when it is the site's newest (or the
+ *  player's own is older), else the player's own. Only a hymn new on the site and not yet saved waits
+ *  for the internet, at most 10 s. */
+async function hymnJson(entry) {
+  const own = entry.path;
+  if (!entry.remote) return (await fetch(own)).json();
+  const newest = entry.siteV && entry.v !== entry.siteV; // the player's own copy is out of date
+  if (newest || !own) {
+    const c = await hymnStore();
+    const saved = c && (await c.match(entry.remote).catch(() => null));
+    if (saved) try { return await saved.json(); } catch { /* broken: below */ }
+  }
+  if (own) return (await fetch(own)).json();
+  const r = await fetchWithin(entry.remote, 10000);
+  if (!r.ok) throw new Error(String(r.status));
+  const keep = r.clone();
+  hymnStore().then((c) => c?.put(entry.remote, keep)).catch(() => {});
+  return r.json();
 }
 
 function fillPicker() {
@@ -961,7 +1044,7 @@ async function loadHymn(entry) {
     try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
   }
   try {
-    const next = await (await fetch(entry.path).then((r) => (r.ok ? r : Promise.reject(r))).catch(() => fetch(entry.fallback || entry.path))).json();
+    const next = await hymnJson(entry);
     if (APP && appWant.id && appWant.id !== entry.id) return; // the app has asked for another hymn since: draw that one
     hymn = next;
     await tunesReady;
@@ -1005,13 +1088,28 @@ async function loadManifest() {
   manifest = null;
   stemInfo = new Map();
   if (hymn.tune) { syncSungControls(); return; } // recorded singers sing the printed tune only
-  try {
-    // at most 12 s in all (a hanging download left the hymn opening for good, and every hymn after it)
-    const r = await Promise.race([singers.manifest(`${AUDIO}audio/${hymn.id}/manifest.json`),
-      new Promise((_, no) => setTimeout(() => no(new Error("slow")), 12000))]);
-    if (r.ok) manifest = await Promise.race([r.json(), new Promise((_, no) => setTimeout(() => no(new Error("slow")), 8000))]);
+  // the app knows from its list which hymns have recorded singers: the others never ask the site
+  if (DATA && !hymnList.find((x) => x.id === hymn.id)?.sung) { syncSungControls(); return; }
+  const id = hymn.id;
+  const url = `${AUDIO}audio/${id}/manifest.json`;
+  const take = (m) => {
     // recordings live in the audio store, whichever copy of the player this is
-    if (manifest && AUDIO) manifest.stems.forEach((st) => { st.url = new URL(st.url, AUDIO).href; });
+    if (m && AUDIO) m.stems.forEach((st) => { st.url = new URL(st.url, AUDIO).href; });
+    manifest = m;
+  };
+  try {
+    // the list saved on the phone at once; a list never saved comes in the background (the hymn opens
+    // without waiting, and its singers join when the list arrives)
+    const saved = await singers.saved(url);
+    if (saved) { if (saved.ok) take(await saved.json()); }
+    else {
+      singers.manifest(url).then(async (r) => {
+        if (!r.ok || hymn?.id !== id) return;
+        const m = await r.json();
+        if (hymn?.id !== id || manifest) return;
+        take(m); syncSungControls();
+      }).catch(() => { /* no singers for this hymn */ });
+    }
   } catch { /* no sung stems for this hymn */ }
   syncSungControls();
 }
@@ -3839,7 +3937,8 @@ window.AHStudio = {
     if (engine.playing && id !== hymn?.id) stopPlayback(); // the same hymn in another view plays on
     await bootReady;
     if (appWant.id !== id) return false;
-    const entry = hymnList.find((x) => x.id === id);
+    let entry = hymnList.find((x) => x.id === id);
+    if (!entry) { await listFresh; if (appWant.id !== id) return false; entry = hymnList.find((x) => x.id === id); } // new on the site since this copy
     if (!entry) { appWant.missing = true; if (engine.playing) stopPlayback(); return false; }
     if (hymn?.id !== id) {
       appWant.loading = true;

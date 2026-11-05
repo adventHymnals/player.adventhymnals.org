@@ -517,6 +517,8 @@ const SINGERS = "ah-singers";
 const hymnOf = (url) => decodeURIComponent((new URL(url).pathname.match(/\/audio\/([^/]+)\//) || [])[1] || "");
 export const singers = {
   on: false,
+  /** The app: the saved lists are kept up to date by its occasional check (the site always asks). */
+  synced: false,
   async cache() { if (!this.on) return null; try { return await caches.open(SINGERS); } catch { return null; } },
   /** A recording's bytes: from the phone when saved, else downloaded (and saved). */
   async fetch(url, signal) {
@@ -528,19 +530,39 @@ export const singers = {
     if (c) c.put(url, r.clone()).catch(() => { /* phone full: play without saving */ });
     return r.arrayBuffer();
   },
-  /** A hymn's list of recordings: fresh when online (and saved), the saved one when not. */
+  /** A hymn's list of recordings: the one saved on the phone (kept up to date by the app's occasional
+   *  check, [refreshManifest]); only a hymn whose list was never saved asks the site, at most 8 s. */
   async manifest(url) {
-    const c = await this.cache();
-    try {
-      // never wait for good on a weak connection (the hymn would never finish opening): 8 s, then the saved list
-      const ctl = new AbortController();
-      const t = setTimeout(() => ctl.abort(), 8000);
-      const r = await fetch(url, { cache: "no-cache", signal: ctl.signal }).finally(() => clearTimeout(t));
-      if (r.ok) { c?.put(url, r.clone()).catch(() => {}); return r; }
-      if (r.status === 404) return r;
-    } catch { /* offline, or too slow */ }
+    const c = await this.lists();
     const hit = c && (await c.match(url).catch(() => null));
+    if (hit && this.synced) return hit;
+    try {
+      const r = await this.download(url, 8000);
+      if (r.ok || r.status === 404) c?.put(url, r.clone()).catch(() => {});
+      return r;
+    } catch { /* offline, or too slow */ }
     return hit || fetch(url, { cache: "force-cache" });
+  },
+  /** The site's newest list for a hymn, saved (the app's occasional check, never while a hymn opens). */
+  async refreshManifest(url) {
+    const c = await this.lists();
+    const r = await this.download(url, 15000);
+    if (!c || !(r.ok || r.status === 404)) return false;
+    await c.put(url, r);
+    return true;
+  },
+  /** A hymn's list of recordings as saved on the phone (no download), or null. */
+  async saved(url) {
+    if (!this.synced) return null;
+    const c = await this.lists();
+    return (c && (await c.match(url).catch(() => null))) || null;
+  },
+  /** The recordings' lists are always saved (a few hundred bytes each), even with saving singers off. */
+  async lists() { try { return await caches.open(SINGERS); } catch { return null; } },
+  download(url, ms) {
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), ms);
+    return fetch(url, { cache: "no-cache", signal: ctl.signal }).finally(() => clearTimeout(t));
   },
   /** [{ hymn, bytes, files }] for every hymn with saved singers, largest first. */
   async list() {
