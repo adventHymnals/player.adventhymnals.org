@@ -249,13 +249,15 @@ export class Warble {
 
 /** data/singing.json -> { default, warble, voices }: voices are the live singers offered (singing.json's
  *  "voices" list, else its one "warble"), each a Warble; warble is the first (engine "warble"), null when none. */
-export async function loadSinging(urls) {
+export async function loadSinging(urls, page = location.href) {
+  // never waits for good on a weak connection: each try gives up after 8 s
+  const within = (ms) => (AbortSignal.timeout ? AbortSignal.timeout(ms) : undefined);
   for (const url of urls) {
     try {
-      const r = await fetch(url, { cache: "no-cache" });
+      const r = await fetch(url, { cache: "no-cache", signal: within(8000) });
       if (!r.ok) continue;
       const cfg = await r.json();
-      const base = new URL(url, location.href);
+      const base = new URL(url.startsWith("blob:") ? page : url, location.href);
       const list = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model);
       Warble.keep = new Set(list.map((c) => (c.sha256 || "").toLowerCase()).filter(Boolean));
       const voices = [];
@@ -265,7 +267,7 @@ export async function loadSinging(urls) {
         const sha = (c.sha256 || "").toLowerCase();
         const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };
         if (!(sha && (appHas() || (await idbHas(sha))))) {
-          const ok = await fetch(w.modelUrl, { method: "HEAD" }).then((x) => x.ok, () => false);
+          const ok = await fetch(w.modelUrl, { method: "HEAD", signal: within(8000) }).then((x) => x.ok, () => false);
           if (!ok) continue;
         }
         voices.push(w);

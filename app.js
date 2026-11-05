@@ -143,7 +143,19 @@ let singingCfg = { default: "stems", warble: null, voices: [] };
 const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-"));
 const liveVoice = (v) => singingCfg.voices.find((w) => w.engine === v) || null;
 const otherLive = (v) => { for (const w of singingCfg.voices) if (w.engine !== v) w.cancelAll(); }; // only the chosen voice works
-const singingReady = loadSinging([...new Set(["data/singing.json", `${DATA}data/singing.json`])]) // the copy on the phone first.then((c) => { singingCfg = c; offerLiveVoices(); });
+// which singers there are (data/singing.json): the app's saved copy (kept up to date by its occasional
+// check) at once, else the site (at most 8 s each try), else the player's own copy if it has one
+const SINGING_SAVED = "https://ah-hymns.invalid/singing.json";
+const singingReady = (async () => {
+  const urls = [];
+  if (DATA) {
+    try {
+      const r = await (await caches.open("ah-hymns")).match(SINGING_SAVED);
+      if (r) urls.push(URL.createObjectURL(await r.blob()));
+    } catch { /* nothing saved */ }
+  }
+  return loadSinging([...new Set([...urls, `${DATA}data/singing.json`, "data/singing.json"])], location.href);
+})().then((c) => { singingCfg = c; offerLiveVoices(); });
 const nativeEngineRaw = () => { try { return window.AHNative?.warble?.engine?.() ?? ""; } catch { return ""; } };
 const nativeEngine = () => { const e = nativeEngineRaw(); return e === "stems" || isLive(e) ? e : null; };
 // ?app where the app asks "Who sings?" at Play: nothing is loaded for either singer until it has answered
@@ -451,6 +463,10 @@ async function syncHymns(force = false) {
     try { if (await singers.refreshManifest(`${AUDIO}audio/${x.id}/manifest.json`)) sv[x.id] = x.sv; } catch { /* next time */ }
   }
   try { localStorage.setItem(SV, JSON.stringify(sv)); } catch { /* full */ }
+  try {
+    const g = await fetchWithin(`${DATA}data/singing.json`, 15000, { cache: "no-cache" });
+    if (g.ok) await c.put(SINGING_SAVED, g);
+  } catch { /* next time */ }
   await c.put(SITE_INDEX, new Response(JSON.stringify(site), { headers: { "Content-Type": "application/json" } }));
   if (overlaySite(site)) fillPicker();
   try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ }
