@@ -3958,6 +3958,14 @@ window.AHStudio = {
   setMute(ch, on) { state.mute[ch] = !!on; save("mute"); applyMix(); buildHeaders(); },
   setSolo(ch, on) { state.solo[ch] = !!on; save("solo"); applyMix(); buildHeaders(); },
   setLevel(ch, x) { state.levels[ch] = Math.max(0, Math.min(1, Number(x))); save("levels"); applyMix(); },
+  /** Where a voice is heard, -1 (left ear only) to 1 (right ear only), 0 both: two singers sharing earphones
+   *  each hear their own part from the one player, in time. */
+  setPan(ch, x) {
+    const v = Math.max(-1, Math.min(1, Number(x) || 0));
+    state.pans[ch] = v; save("pans");
+    engine.setPan(ch, v);
+    engine.nativeGains(true);
+  },
   setSound(ch, value) {
     const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
     if (!sel) return;
@@ -3982,7 +3990,7 @@ window.AHStudio = {
     const voices = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length).map((ch) => {
       const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
       return {
-        ch, name: VOICES[ch]?.name ?? ch, mute: !!state.mute[ch], solo: !!state.solo[ch], level: state.levels[ch] ?? 0.8,
+        ch, name: VOICES[ch]?.name ?? ch, mute: !!state.mute[ch], solo: !!state.solo[ch], level: state.levels[ch] ?? 0.8, pan: state.pans[ch] ?? 0,
         sound: sel?.value ?? "", sounds: sel ? [...sel.options].map((o) => ({ value: o.value, label: o.textContent })) : [],
       };
     });

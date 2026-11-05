@@ -109,7 +109,9 @@ export class Engine {
   }
   nativeGains(force = false) {
     if (!this.native) return;
-    const g = JSON.stringify(Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.muted[k] ? 0 : this.levels[k] ?? 0.8])));
+    // with each voice's place between the ears (the app sings them in stereo; older apps read only the letters)
+    const g = JSON.stringify({ ...Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.muted[k] ? 0 : this.levels[k] ?? 0.8])),
+      pan: Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.pans?.[k] ?? PAN[k]])) });
     if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
     this.nativeG = g;
     try { this.native.gains(g); } catch { /* not singing */ }
