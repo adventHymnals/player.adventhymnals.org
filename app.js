@@ -126,8 +126,24 @@ let tk = null;
 let tkLoading = null;
 const VEROVIO = "vendor/verovio-toolkit-wasm-6.2.0.js";
 const VEROVIO_CDN = "https://cdn.jsdelivr.net/npm/verovio@6.2.0/dist/verovio-toolkit-wasm.js";
+/** The app's own Verovio (the same 6.2.0, built natively): draws without the WebAssembly copy's memory. */
+class NativeToolkit {
+  constructor(n) { this.n = n; }
+  setOptions(o) { return this.n.setOptions(JSON.stringify(o)); }
+  loadData(d) { return this.n.loadData(d); }
+  getPageCount() { return this.n.getPageCount(); }
+  renderToSVG(page = 1) { return this.n.renderToSVG(page); }
+  renderToTimemap(o = {}) { return JSON.parse(this.n.renderToTimemap(JSON.stringify(o)) || "[]"); }
+}
+const nativeVerovio = () => { try { return window.AHNative?.verovio?.available?.() ? window.AHNative.verovio : null; } catch { return null; } };
 function ensureVerovio() {
   if (tk) return Promise.resolve(tk);
+  const n = nativeVerovio();
+  if (n) {
+    tk = new NativeToolkit(n);
+    if (view) view.tk = tk;
+    return Promise.resolve(tk);
+  }
   tkLoading ??= (async () => {
     if (!window.verovio) await loadScript(VEROVIO).catch(() => loadScript(VEROVIO_CDN));
     // ready when a toolkit can be made (its start-up may finish before any "initialized" hook is set)
