@@ -683,8 +683,11 @@ function svgImage(svg) {
   return new Promise((resolve, reject) => {
     const img = new Image();
     const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
-    img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
-    img.onerror = reject;
+    // never wait for good: an image that doesn't load (a page held in the background) gives up after 10 s,
+    // or the next hymn waited on it and the app's player stayed on "opening"
+    const t = setTimeout(() => reject(new Error("page image timed out")), 10000);
+    img.onload = () => { clearTimeout(t); URL.revokeObjectURL(url); resolve(img); };
+    img.onerror = (e) => { clearTimeout(t); reject(e); };
     img.src = url;
   });
 }

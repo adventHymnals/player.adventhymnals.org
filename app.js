@@ -3843,7 +3843,9 @@ window.AHStudio = {
       try {
         // one hymn loads at a time: two loads side by side could finish the wrong way round and leave
         // the hymn asked for first on the screen while the app waits for the one asked for last
-        while (appLoading) await appLoading;
+        // (but not for good: a load held up, say by a page in the background, lets the next one go after 10 s)
+        const since = Date.now();
+        while (appLoading && Date.now() - since < 10000) await Promise.race([appLoading, new Promise((r) => setTimeout(r, 1000))]);
         if (appWant.id !== id) return false;
         stopPlayback();
         state.zoom = APP_ZOOM; save("zoom"); // each hymn opens at the smallest size: the whole page on the screen
