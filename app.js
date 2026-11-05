@@ -1000,13 +1000,16 @@ async function loadHymn(entry) {
 }
 
 async function loadManifest() {
-  await singingReady; // which singers to use (data/singing.json)
+  // which singers to use (data/singing.json); never held up for good by a slow download
+  await Promise.race([singingReady, new Promise((r) => setTimeout(r, 10000))]);
   manifest = null;
   stemInfo = new Map();
   if (hymn.tune) { syncSungControls(); return; } // recorded singers sing the printed tune only
   try {
-    const r = await singers.manifest(`${AUDIO}audio/${hymn.id}/manifest.json`);
-    if (r.ok) manifest = await r.json();
+    // at most 12 s in all (a hanging download left the hymn opening for good, and every hymn after it)
+    const r = await Promise.race([singers.manifest(`${AUDIO}audio/${hymn.id}/manifest.json`),
+      new Promise((_, no) => setTimeout(() => no(new Error("slow")), 12000))]);
+    if (r.ok) manifest = await Promise.race([r.json(), new Promise((_, no) => setTimeout(() => no(new Error("slow")), 8000))]);
     // recordings live in the audio store, whichever copy of the player this is
     if (manifest && AUDIO) manifest.stems.forEach((st) => { st.url = new URL(st.url, AUDIO).href; });
   } catch { /* no sung stems for this hymn */ }

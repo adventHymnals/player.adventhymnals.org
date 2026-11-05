@@ -532,10 +532,13 @@ export const singers = {
   async manifest(url) {
     const c = await this.cache();
     try {
-      const r = await fetch(url, { cache: "no-cache" });
+      // never wait for good on a weak connection (the hymn would never finish opening): 8 s, then the saved list
+      const ctl = new AbortController();
+      const t = setTimeout(() => ctl.abort(), 8000);
+      const r = await fetch(url, { cache: "no-cache", signal: ctl.signal }).finally(() => clearTimeout(t));
       if (r.ok) { c?.put(url, r.clone()).catch(() => {}); return r; }
       if (r.status === 404) return r;
-    } catch { /* offline */ }
+    } catch { /* offline, or too slow */ }
     const hit = c && (await c.match(url).catch(() => null));
     return hit || fetch(url, { cache: "force-cache" });
   },
