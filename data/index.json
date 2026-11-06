@@ -5072,6 +5072,78 @@
   "v": "29a3f6d214d1b13d4a7f674443c1071bc0c0bfb818a3b079f34b1a3812d0991e"
  },
  {
+  "id": "CH1941-643",
+  "book": "CH1941",
+  "number": "643",
+  "title": "The Name of Jesus Is So Sweet",
+  "path": "data/CH1941/643.json",
+  "v": "45e9ba309d7f0159c2a7a5256f5c4e856fb43bf5f745b6feef49066d0d513a8a"
+ },
+ {
+  "id": "CH1941-644",
+  "book": "CH1941",
+  "number": "644",
+  "title": "Christ Has for Sin Atonement Made",
+  "path": "data/CH1941/644.json",
+  "v": "e4eff1cb34d4d463e2ac90ebbdcb893a39d9fda944c3a5e43840008738bcfb32"
+ },
+ {
+  "id": "CH1941-645",
+  "book": "CH1941",
+  "number": "645",
+  "title": "Praise Him! Praise Him!",
+  "path": "data/CH1941/645.json",
+  "v": "f1e24385eefab4d1b79186e51d8cfc1ad64865a5768895ffc59d3079140551db"
+ },
+ {
+  "id": "CH1941-646",
+  "book": "CH1941",
+  "number": "646",
+  "title": "This Is My Father's World",
+  "path": "data/CH1941/646.json",
+  "v": "094ed9fb645856064f12720a660ff855c5472cf53bfe4734ce78f4cf257be1b4"
+ },
+ {
+  "id": "CH1941-647",
+  "book": "CH1941",
+  "number": "647",
+  "title": "To God Be the Glory",
+  "path": "data/CH1941/647.json",
+  "v": "a87f4babf3f282d07c095a82df0f24ef4e742f6e84f98f0e5c6d717192e43361"
+ },
+ {
+  "id": "CH1941-649",
+  "book": "CH1941",
+  "number": "649",
+  "title": "Wake the Song",
+  "path": "data/CH1941/649.json",
+  "v": "8b2020b72e4ebddc8cf535f5ed3cdc06e71130d1383fa4fbaed35bdb4d5a4123"
+ },
+ {
+  "id": "CH1941-650",
+  "book": "CH1941",
+  "number": "650",
+  "title": "In Joyful High and Holy Lays",
+  "path": "data/CH1941/650.json",
+  "v": "227c817b48beb39b0fe1e37106e2902e72c24ae62df7aa6b0a817b9493d7b509"
+ },
+ {
+  "id": "CH1941-651",
+  "book": "CH1941",
+  "number": "651",
+  "title": "A Wonderful Saviour Is Jesus My Lord",
+  "path": "data/CH1941/651.json",
+  "v": "371ff2865dbadbc3426567cbc12f617015b13e2c9cf5ab66f2c50c0e01d2a005"
+ },
+ {
+  "id": "CH1941-652",
+  "book": "CH1941",
+  "number": "652",
+  "title": "There Shall Be Showers of Blessing",
+  "path": "data/CH1941/652.json",
+  "v": "82be44f30de5b440bf0bf695bab160bd3e26e1dc3706b5a7530f5cc44b10fe74"
+ },
+ {
   "id": "CH1941-653",
   "book": "CH1941",
   "number": "653",
@@ -5086,6 +5158,22 @@
   "title": "Holy Day, Jehovah's Rest",
   "path": "data/CH1941/654.json",
   "v": "d9fb1a81cf660c6ffd3fbf73bd218b33faeb46f6debf792a24f0ffa1eff31c0d"
+ },
+ {
+  "id": "CH1941-655",
+  "book": "CH1941",
+  "number": "655",
+  "title": "Give Me the Bible",
+  "path": "data/CH1941/655.json",
+  "v": "f3cb359de3868727981e70ce6fe08968372e6e7b01c80a464e4a994417f209ed"
+ },
+ {
+  "id": "CH1941-656",
+  "book": "CH1941",
+  "number": "656",
+  "title": "A Glory in the Word",
+  "path": "data/CH1941/656.json",
+  "v": "0184c901099b08bb3e4a564a3ef1fdf15ab9be8bb06e6dbbafbc47a91fc9a6ec"
  },
  {
   "id": "CS1900-1",
@@ -8758,6 +8846,62 @@
   "title": "The Voice of Jesus",
   "path": "data/CS1908/359.json",
   "v": "0c1294022bb8244cd6e0ae0bee22132c0aa18e16c8aebe2ae792b1a95b483a8f"
+ },
+ {
+  "id": "CS1908-360",
+  "book": "CS1908",
+  "number": "360",
+  "title": "I Heard the Voice of Jesus",
+  "path": "data/CS1908/360.json",
+  "v": "252660f38eb42734314f54833ef1909388b54480ffa1969fe270f8c1cfd8a46c"
+ },
+ {
+  "id": "CS1908-361",
+  "book": "CS1908",
+  "number": "361",
+  "title": "Majestic Sweetness",
+  "path": "data/CS1908/361.json",
+  "v": "8e5db1cde18d2b4a656ce13ea45ba102e227da1dfe0bad66a7e67aaa91ae6b59"
+ },
+ {
+  "id": "CS1908-362",
+  "book": "CS1908",
+  "number": "362",
+  "title": "The Word",
+  "path": "data/CS1908/362.json",
+  "v": "7e406ed73de4c75f7afaae31753596c49c16e19dc07d000767b2917ad5937987"
+ },
+ {
+  "id": "CS1908-363",
+  "book": "CS1908",
+  "number": "363",
+  "title": "Glorious",
+  "path": "data/CS1908/363.json",
+  "v": "ec2ebf88862b8c09c39b56599f8a9646aeeaabf1f91b0e2e108d1ddb7c4f1c4d"
+ },
+ {
+  "id": "CS1908-364",
+  "book": "CS1908",
+  "number": "364",
+  "title": "Secure",
+  "path": "data/CS1908/364.json",
+  "v": "d6c5cdd0402ed9520761a16d713354404568ae1672a6053fc7b6c6befa1ef989"
+ },
+ {
+  "id": "CS1908-365",
+  "book": "CS1908",
+  "number": "365",
+  "title": "Perfect",
+  "path": "data/CS1908/365.json",
+  "v": "e60264cc535f2d4b042c141812bb54c1213e7f1103236a176093c67833234121"
+ },
+ {
+  "id": "CS1908-366",
+  "book": "CS1908",
+  "number": "366",
+  "title": "Blessed Quietness",
+  "path": "data/CS1908/366.json",
+  "v": "11f3462b21cd47ebc2dffef36b1e6d9f2c46205e6a5956365498b912056898a4"
  },
  {
   "id": "CS1908-380",
