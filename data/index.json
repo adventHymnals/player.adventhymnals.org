@@ -1558,6 +1558,54 @@
   "v": "46e2004b6fbd4d2837d6f79ff547c2a63c35c8a0ec12214025bcb65b975e5617"
  },
  {
+  "id": "CH1941-172",
+  "book": "CH1941",
+  "number": "172",
+  "title": "Come, Sound His Praise",
+  "path": "data/CH1941/172.json",
+  "v": "e0b8f71bdf377e681bcca7c2eb51fe09fe9a0b682062ce5ee013e7e4694a1202"
+ },
+ {
+  "id": "CH1941-173",
+  "book": "CH1941",
+  "number": "173",
+  "title": "O Brother, Be Faithful",
+  "path": "data/CH1941/173.json",
+  "v": "b961d1230fda1672b658dd0c5712c6e6ae44c274caf2d56112e94b4015d03b79"
+ },
+ {
+  "id": "CH1941-174",
+  "book": "CH1941",
+  "number": "174",
+  "title": "Come, Lord, and Tarry Not",
+  "path": "data/CH1941/174.json",
+  "v": "052476ac738fb4afdc99f6938db112cd2aeeb87c7e1ffa29d6c20d2fed173d9d"
+ },
+ {
+  "id": "CH1941-175",
+  "book": "CH1941",
+  "number": "175",
+  "title": "Awake, Ye Saints",
+  "path": "data/CH1941/175.json",
+  "v": "59a16026db25f973f6834643765a6e4b4dcc9afa0b5e762214711e12257584fb"
+ },
+ {
+  "id": "CH1941-176",
+  "book": "CH1941",
+  "number": "176",
+  "title": "Lo! He Comes",
+  "path": "data/CH1941/176.json",
+  "v": "c6e4b1df19614201fe0fe81bc2d0b19168ebe5956da938620e6e066aba27aacb"
+ },
+ {
+  "id": "CH1941-177",
+  "book": "CH1941",
+  "number": "177",
+  "title": "The Church Has Waited Long",
+  "path": "data/CH1941/177.json",
+  "v": "74d3cce3fe5acd7d1a739904932f1b5af86e2449a9d829e8025cb09409dea6ba"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1962,6 +2010,30 @@
   "title": "Something for Jesus",
   "path": "data/CS1900/30.json",
   "v": "7e5bfc35ef505620e4e7de75161b4f3c1c4ba648489e897262b998b00c64e27a"
+ },
+ {
+  "id": "CS1900-31",
+  "book": "CS1900",
+  "number": "31",
+  "title": "Knocking, Knocking",
+  "path": "data/CS1900/31.json",
+  "v": "349434a947c524810f4fc983a4ef12bbe405efd1bcc4a73436ae6a2657c2ba2a"
+ },
+ {
+  "id": "CS1900-32",
+  "book": "CS1900",
+  "number": "32",
+  "title": "Who Is on the Lord's Side?",
+  "path": "data/CS1900/32.json",
+  "v": "686817697662dbde5fe6996ea432f966667dd6e7e80a087280705816268609e8"
+ },
+ {
+  "id": "CS1900-33",
+  "book": "CS1900",
+  "number": "33",
+  "title": "Mighty to Save",
+  "path": "data/CS1900/33.json",
+  "v": "40874fb9a5db3f2d53f5d6e2be89c6aff911345d989df6ff9eacba036be54421"
  },
  {
   "id": "CS1908-1",
@@ -3154,6 +3226,14 @@
   "v": "c1f5fc4e5407345a9d7c7fea9712388c308e578bae1e6214c0be9ed7f60f5aa9"
  },
  {
+  "id": "CS1908-128",
+  "book": "CS1908",
+  "number": "128",
+  "title": "He Is Calling",
+  "path": "data/CS1908/128.json",
+  "v": "c397b06a24a4322774db1b45f2d93ff635ea4100a42906106684facf29a02430"
+ },
+ {
   "id": "CS1908-129",
   "book": "CS1908",
   "number": "129",
@@ -3204,6 +3284,14 @@
   "v": "3cf9459a22ecd094f4665ae6da1d2f25ed0f94a1d4cd23b7c82ba22b14f7e2c6"
  },
  {
+  "id": "CS1908-134",
+  "book": "CS1908",
+  "number": "134",
+  "title": "Baptize Us Anew",
+  "path": "data/CS1908/134.json",
+  "v": "d921c4b3f5bce44ae9924b9fbfd170cc97d0d9855b6c120fffb3cfc8f8081555"
+ },
+ {
   "id": "CS1908-135",
   "book": "CS1908",
   "number": "135",
@@ -3212,6 +3300,14 @@
   "sung": true,
   "sv": "c30d64d80b4ea6b9d52cde018e0c2861cdca743b3b1cb9a1ea24f501d27677c3",
   "v": "77f7a784d79f747a3be3893407201c5f958c0fbc4304cff3572921237f856b35"
+ },
+ {
+  "id": "CS1908-136",
+  "book": "CS1908",
+  "number": "136",
+  "title": "The Last Call of Mercy",
+  "path": "data/CS1908/136.json",
+  "v": "16f634ccc343ac3d401e8ef6c4b49cd69f7df7825d5b500a69a3f528fd8e9cb6"
  },
  {
   "id": "CS1908-137",
@@ -3232,6 +3328,14 @@
   "sung": true,
   "sv": "b8c2143158e5a07ef2f28d9441ecacfde696ca7d9cc32929cd23752864b9d1b2",
   "v": "097d6014cca447905b2e69f990e78811c690a792173963e0d06aae329f4c6506"
+ },
+ {
+  "id": "CS1908-139",
+  "book": "CS1908",
+  "number": "139",
+  "title": "Chief of Sinners",
+  "path": "data/CS1908/139.json",
+  "v": "5f81fc18c340d44ba03ee7fe59d2caebbc9f0226c0d2236c5664cfb8d7d950d2"
  },
  {
   "id": "CS1908-140",
