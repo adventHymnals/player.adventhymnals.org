@@ -517,7 +517,11 @@ async function syncHymns(force = false) {
     if (g.ok) await c.put(SINGING_SAVED, g);
   } catch { /* next time */ }
   await c.put(SITE_INDEX, new Response(JSON.stringify(site), { headers: { "Content-Type": "application/json" } }));
+  const before = hymn && hymnList.find((x) => x.id === hymn.id);
+  const had = before && `${!!before.sung}${!!before.svc}`;
   if (overlaySite(site)) fillPicker();
+  // the hymn open now gained singers (recorded, or v2) in the site's newer list: they join it
+  if (before && had !== `${!!before.sung}${!!before.svc}`) loadManifest().then(() => prepareStems()).catch(() => {});
   try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ }
 }
 
