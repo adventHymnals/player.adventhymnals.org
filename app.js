@@ -208,7 +208,32 @@ const singingReady = (async () => {
     } catch { /* nothing saved */ }
   }
   return loadSinging([...new Set([...urls, `${DATA}data/singing.json`, "data/singing.json"])], location.href);
-})().then((c) => { singingCfg = c; offerLiveVoices(); });
+})().then((c) => { singingCfg = c; offerLiveVoices(); if (DATA) refreshSinging(); });
+/** The app: the saved list of singers opened the player at once; the site's is fetched straight after, on
+ *  every start (not only by the 6-hourly check), and when it differs it takes over at once and is saved.
+ *  (A changed list of live voices took up to 6 hours to reach a phone.) */
+async function refreshSinging() {
+  try {
+    const c = await caches.open("ah-hymns");
+    const r = await fetchWithin(`${DATA}data/singing.json`, 15000, { cache: "no-cache" });
+    if (!r.ok) return;
+    const text = await r.text();
+    const had = await c.match(SINGING_SAVED).then((x) => x?.text()).catch(() => null);
+    if (text === had) return;
+    await c.put(SINGING_SAVED, new Response(text, { headers: { "Content-Type": "application/json" } }));
+    const fresh = await loadSinging([URL.createObjectURL(new Blob([text], { type: "application/json" }))], location.href);
+    if (!fresh.voices.length && singingCfg.voices.length) return; // couldn't reach the models just now: keep what works
+    // the live voices offered before go; the new list's are offered (the first keeps its place as "warble")
+    document.querySelectorAll('#singDialog [data-engine^="warble-"]').forEach((b) => b.remove());
+    document.querySelectorAll('#singEngine option[value^="warble-"]').forEach((o) => o.remove());
+    for (const w of singingCfg.voices) if (!fresh.voices.some((f) => f.cfg?.sha256 === w.cfg?.sha256)) w.cancelAll?.();
+    singingCfg = fresh;
+    offerLiveVoices();
+    syncSungControls();
+    syncSingersBtn();
+    if (state.singEngine && isLive(state.singEngine) && !liveVoice(state.singEngine)) prepareStems(); // that voice went: the first sings
+  } catch { /* offline: the saved list stays */ }
+}
 const nativeEngineRaw = () => { try { return window.AHNative?.warble?.engine?.() ?? ""; } catch { return ""; } };
 const nativeEngine = () => { const e = nativeEngineRaw(); return isRecorded(e) || isLive(e) ? e : null; };
 // ?app where the app asks "Who sings?" at Play: nothing is loaded for either singer until it has answered
