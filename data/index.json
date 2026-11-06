@@ -2771,7 +2771,7 @@
   "number": "325",
   "title": "My God, Is Any Hour So Sweet?",
   "path": "data/CH1941/325.json",
-  "v": "0a557b876cee1f8ed5fd16346c186f47b87f97801ab9c6139afdc74d8584f487"
+  "v": "66a647b72fd96bb21ea928025e2b7780c6105d2b47cb73f9621fb5d6de5127ca"
  },
  {
   "id": "CH1941-326",
@@ -2779,7 +2779,7 @@
   "number": "326",
   "title": "Still, Still With Thee",
   "path": "data/CH1941/326.json",
-  "v": "0c496dea0b2d140c9918a00d2da48070e95a15312a382242abb1f0779de61d67"
+  "v": "17c4376826421a4d84ec66df11cdad166527d22cd65b8b3b48ae632830976e11"
  },
  {
   "id": "CH1941-327",
@@ -2787,7 +2787,7 @@
   "number": "327",
   "title": "In the Hour of Trial",
   "path": "data/CH1941/327.json",
-  "v": "013055e75edd002322ab4d22498b49d96f33e757ead06a8754d9fff01f322814"
+  "v": "814392bd16d65366873adbe3bf7e4084fe709859f1d83868d3971fda24babc03"
  },
  {
   "id": "CH1941-328",
@@ -2811,7 +2811,7 @@
   "number": "330",
   "title": "O Thou, to Whose All-Searching Sight",
   "path": "data/CH1941/330.json",
-  "v": "ac8b6754b15167069d8262799ed8709bebcb523fad3b2ea2ae97efbb500c6e1f"
+  "v": "1154a4bb1be5777e06418f7e69bab07b18c437ff63318aa1bd417c41405e24cd"
  },
  {
   "id": "CH1941-331",
@@ -2819,7 +2819,7 @@
   "number": "331",
   "title": "Father, Lead Me Day by Day",
   "path": "data/CH1941/331.json",
-  "v": "ded3f5f5d1b67502e423ef36fbb623172cc21b3488edf7f95e1f29e4a30a737f"
+  "v": "d7fc7e44e053a5829e9ed186d602232cbd9f0565f78ffadab18c7f394d0a4f4f"
  },
  {
   "id": "CH1941-332",
@@ -2875,7 +2875,15 @@
   "number": "339",
   "title": "Walk in the Light",
   "path": "data/CH1941/339.json",
-  "v": "5f815d8415b7acfae79aaad64c4d6d5bc4f53d498281b40d882c365c20d2d0fc"
+  "v": "a078750608a42e26e322b8ae584ab7cba3167ca88242f97c2406285893a0cfab"
+ },
+ {
+  "id": "CH1941-340",
+  "book": "CH1941",
+  "number": "340",
+  "title": "By Cool Siloam's Shady Rill",
+  "path": "data/CH1941/340.json",
+  "v": "39f050925dd69ef8659cfaf368d5be199e5e9cef92cf10fb68a437475068bc0c"
  },
  {
   "id": "CH1941-455",
@@ -5712,6 +5720,14 @@
   "sung": true,
   "sv": "42da3e0c82c6fe059ccd602b682a18d4209a3742f4e9b7cfb8c793b2173fa332",
   "v": "936c6b0089dfa4f759ef000c67c9e983388fb7314e1cb7557e0ba79d9ebdc96d"
+ },
+ {
+  "id": "CS1908-237",
+  "book": "CS1908",
+  "number": "237",
+  "title": "Beauty for Ashes",
+  "path": "data/CS1908/237.json",
+  "v": "8470845c0e5efd92c4512e1140be829f0b6d013a18315ab9b44bf9af87bdb0ce"
  },
  {
   "id": "CS1908-239",
