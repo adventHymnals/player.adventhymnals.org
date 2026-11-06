@@ -2102,6 +2102,14 @@
   "v": "c90998169a46b02cc1748682620a82e18f4c9855f16f203a0c61c4bcda22d5c1"
  },
  {
+  "id": "CH1941-240",
+  "book": "CH1941",
+  "number": "240",
+  "title": "Show Pity, Lord",
+  "path": "data/CH1941/240.json",
+  "v": "6946fcc961b5b131dacd320446c2bc83d30ee137ebbc853d2a12cad913930e46"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -4506,6 +4514,14 @@
   "title": "I Will Sing of Jesus' Love",
   "path": "data/CS1908/194.json",
   "v": "2e1b2d297b1d3bf77b7dc0239a5e64c9ad7ab7306df08faab24776d724a2e1e6"
+ },
+ {
+  "id": "CS1908-195",
+  "book": "CS1908",
+  "number": "195",
+  "title": "Pardon, Peace, and Power",
+  "path": "data/CS1908/195.json",
+  "v": "c872bffa3df975e0afaf1c77947f5251ea3b749d2e90ad6288018eabc4541605"
  },
  {
   "id": "CS1908-222",
