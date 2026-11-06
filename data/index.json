@@ -1710,6 +1710,54 @@
   "v": "af7e0876a41f1557b39b7dd64add2b57abb591017a76394e0d14867409d3d165"
  },
  {
+  "id": "CH1941-191",
+  "book": "CH1941",
+  "number": "191",
+  "title": "He's Coming Once Again",
+  "path": "data/CH1941/191.json",
+  "v": "015a23ac5589bed5e819df71b2ed8e7c08a8cac754321130fa748aa3e4a5cc5b"
+ },
+ {
+  "id": "CH1941-192",
+  "book": "CH1941",
+  "number": "192",
+  "title": "Hark! That Shout",
+  "path": "data/CH1941/192.json",
+  "v": "a8c079fb4333de2d55d92bd2a632289b467f786aba7245601d99c3a9f092de1b"
+ },
+ {
+  "id": "CH1941-193",
+  "book": "CH1941",
+  "number": "193",
+  "title": "Thy Kingdom Come",
+  "path": "data/CH1941/193.json",
+  "v": "457bf312058de83db8547a4a8551354607f2df627f1c0b2671e7def23f11850f"
+ },
+ {
+  "id": "CH1941-194",
+  "book": "CH1941",
+  "number": "194",
+  "title": "The King Shall Come",
+  "path": "data/CH1941/194.json",
+  "v": "1b6aef5f0f1257d304cc3663e472d4560a903ac40377934cefc7ebb73a01e2ff"
+ },
+ {
+  "id": "CH1941-195",
+  "book": "CH1941",
+  "number": "195",
+  "title": "Great God, What Do I See",
+  "path": "data/CH1941/195.json",
+  "v": "a71c266be7f40abc08eefd4f65f036da93ec346d38a50f85265be18b92ac3d78"
+ },
+ {
+  "id": "CH1941-196",
+  "book": "CH1941",
+  "number": "196",
+  "title": "Thou Art Coming, O My Saviour",
+  "path": "data/CH1941/196.json",
+  "v": "2ac80cc11bfef16da5c8875daaf996ad53c9168cae0c6854e62f595d696423e4"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2202,6 +2250,38 @@
   "title": "Will You Go?",
   "path": "data/CS1900/41.json",
   "v": "f85fb8700cb21d48b3a7be2e1ed0bd015e95243bb41f6a01b0546b43620a0249"
+ },
+ {
+  "id": "CS1900-42",
+  "book": "CS1900",
+  "number": "42",
+  "title": "Tarry by the Living Waters",
+  "path": "data/CS1900/42.json",
+  "v": "8b9a7e2c591765925229db55e1d90940b7d3f6260087463b2db7d6b4799d05dd"
+ },
+ {
+  "id": "CS1900-43",
+  "book": "CS1900",
+  "number": "43",
+  "title": "Let the Little Ones Come",
+  "path": "data/CS1900/43.json",
+  "v": "d7d1b087a4ab027cada4bacfe9ac0a64dcd0693a3faa2b04b566478091e1d14e"
+ },
+ {
+  "id": "CS1900-44",
+  "book": "CS1900",
+  "number": "44",
+  "title": "Calling",
+  "path": "data/CS1900/44.json",
+  "v": "383a09bb642800415cfc7bd4f845a58239e8dc83327efce3ef0e16ddc91f1db5"
+ },
+ {
+  "id": "CS1900-45",
+  "book": "CS1900",
+  "number": "45",
+  "title": "Only Two Ways",
+  "path": "data/CS1900/45.json",
+  "v": "40875fbdd32d7ca62a157d7ebd55adabbbbc3bcc8d18fddd74b829e6b245190b"
  },
  {
   "id": "CS1908-1",
@@ -3636,6 +3716,54 @@
   "title": "Depths of Mercy",
   "path": "data/CS1908/154.json",
   "v": "08a49ddaa4e162414d41af297992b33602bde20921be183afe82a22ed5f0f1a6"
+ },
+ {
+  "id": "CS1908-155",
+  "book": "CS1908",
+  "number": "155",
+  "title": "Come, My Soul",
+  "path": "data/CS1908/155.json",
+  "v": "1e35ef3649d1a477b6faa1e458ccc396f2298e4024bd004f97c1fe044621b265"
+ },
+ {
+  "id": "CS1908-156",
+  "book": "CS1908",
+  "number": "156",
+  "title": "For Other's Guilt",
+  "path": "data/CS1908/156.json",
+  "v": "4475680c2b8365a93f743673b7e57d9cb1fe57774931b1f31f73fe3121c13213"
+ },
+ {
+  "id": "CS1908-157",
+  "book": "CS1908",
+  "number": "157",
+  "title": "That Dreadful Day",
+  "path": "data/CS1908/157.json",
+  "v": "95f0b65c65ed72c8bc6651dea573786d618566d2548a2e4d83efd166a12a5c7a"
+ },
+ {
+  "id": "CS1908-158",
+  "book": "CS1908",
+  "number": "158",
+  "title": "Seals My Pardon",
+  "path": "data/CS1908/158.json",
+  "v": "255f4c3b55043b10fed3687ee7630933ee477ffe75ec808791426dcce0b6f989"
+ },
+ {
+  "id": "CS1908-159",
+  "book": "CS1908",
+  "number": "159",
+  "title": "Shall Our Cheeks Be Dry?",
+  "path": "data/CS1908/159.json",
+  "v": "7b24b77e43312a10b1cdff8a64a3ec92d568dc3f19f070989eee1f28b51d36dd"
+ },
+ {
+  "id": "CS1908-160",
+  "book": "CS1908",
+  "number": "160",
+  "title": "A Closer Walk",
+  "path": "data/CS1908/160.json",
+  "v": "44be9afd3cde3acb2fbaf3460ece3db8875e45f6a0130d94ba85db3407bcd54f"
  },
  {
   "id": "CS1908-174",
