@@ -3262,6 +3262,62 @@
   "v": "8c6a78b5a40f81072b6c0c6400538dd66d80f4d2215f476f401dd4a472dec388"
  },
  {
+  "id": "CH1941-391",
+  "book": "CH1941",
+  "number": "391",
+  "title": "Shepherd Divine",
+  "path": "data/CH1941/391.json",
+  "v": "23e8dd442a2f9aa489f9cf2348b16f618ff77d864dbdf85ae333186ef6310d01"
+ },
+ {
+  "id": "CH1941-392",
+  "book": "CH1941",
+  "number": "392",
+  "title": "Unshaken as the Sacred Hills",
+  "path": "data/CH1941/392.json",
+  "v": "1ce06887a0ebed594ba41ac68ee19ce115d2fb5c176c95cdabed5819e814a19e"
+ },
+ {
+  "id": "CH1941-393",
+  "book": "CH1941",
+  "number": "393",
+  "title": "He Leadeth Me",
+  "path": "data/CH1941/393.json",
+  "v": "3b55cee07e6a9a0ae14c1134f8c74cc1f15ac4f3c855ec92f761cab1cff2a18c"
+ },
+ {
+  "id": "CH1941-394",
+  "book": "CH1941",
+  "number": "394",
+  "title": "Saviour, Like a Shepherd",
+  "path": "data/CH1941/394.json",
+  "v": "b067a3770c156ef669cc124c2960cf636856bcaaf785aa11a815df0b71377ee6"
+ },
+ {
+  "id": "CH1941-395",
+  "book": "CH1941",
+  "number": "395",
+  "title": "O Let Me Walk With Thee",
+  "path": "data/CH1941/395.json",
+  "v": "37070952557d13c3532dc4121eb15d575a0b30d57cbea2c46430b6f46cc7f920"
+ },
+ {
+  "id": "CH1941-396",
+  "book": "CH1941",
+  "number": "396",
+  "title": "Thy Way, Not Mine",
+  "path": "data/CH1941/396.json",
+  "v": "49194815738fc6889f46dc3c30a209c036f282df8130b96becaa856d104a56c6"
+ },
+ {
+  "id": "CH1941-397",
+  "book": "CH1941",
+  "number": "397",
+  "title": "I Will Never Leave Thee",
+  "path": "data/CH1941/397.json",
+  "v": "9a78564e2f43c434c65d72837fae19931be65a59bb18baaf1967a62ad8615772"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6308,6 +6364,38 @@
   "title": "The Matchless Worth",
   "path": "data/CS1908/262.json",
   "v": "f6d6cf13069a05d2a88b8f89586393a6fab8be3e1eb6783731ab70baed64a85d"
+ },
+ {
+  "id": "CS1908-263",
+  "book": "CS1908",
+  "number": "263",
+  "title": "Crown Him",
+  "path": "data/CS1908/263.json",
+  "v": "00a375b7685a6a5e9b4ad4d1eb2bd1e0444731128ef31e33cbd488f217d81f56"
+ },
+ {
+  "id": "CS1908-264",
+  "book": "CS1908",
+  "number": "264",
+  "title": "Singing as We Journey",
+  "path": "data/CS1908/264.json",
+  "v": "8ed53c44cd2d7557065500ba5e6bd725edbcad9de6668d5b35ceec671d8f76c6"
+ },
+ {
+  "id": "CS1908-265",
+  "book": "CS1908",
+  "number": "265",
+  "title": "Crown Him, Crown Him",
+  "path": "data/CS1908/265.json",
+  "v": "2eab7e2d948dcc69aae3acd8776c96a98002079c07a64d16632119ecf0a43328"
+ },
+ {
+  "id": "CS1908-266",
+  "book": "CS1908",
+  "number": "266",
+  "title": "Come and Worship",
+  "path": "data/CS1908/266.json",
+  "v": "10297b432634d8d214649d4a39854275f0d8cee5353da883f1ab77b2e8d83279"
  },
  {
   "id": "CS1908-274",
