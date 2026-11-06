@@ -1,10 +1,11 @@
 {
+ "root": "8c7425332cbb63e605864b3d6472ed340848163b8f0446434f51828e6474b00f",
  "books": {
-  "CH1941": "c6df1bc70d",
-  "CS1900": "ab615d1caa",
-  "CS1908": "589ad59c1f",
-  "NZK": "e101acfaa7",
-  "SDAH": "30dc49b00f",
-  "WN": "90f19cbb4d"
+  "CH1941": "06c43bb21b6ef8f379c5eaea09001dd29ce88fcd53b9fbdbd7f6f1234c2e8429",
+  "CS1900": "45a47e0b9250fa52df64dacaaed57b4cbc5376aee60670a758b1eae5b715cb85",
+  "CS1908": "7ffa0ff003094c61fd12c41fd0d31fdf768fe6f12adca462050131ec748c4c05",
+  "NZK": "961bf3ffc9a13d03ee9d7e0e5b637b7aa33c1512a6cacf3a42bdad8a40a02546",
+  "SDAH": "301236a5f2ec2fb23c55524d3e9735ee6aa824be59791a1875da8a51a31c2215",
+  "WN": "1b5ff155e5e5bdf1f01d8b37b61cf1ff53528644965a7afddd52af2b8be17ab3"
  }
 }

@@ -8,12 +8,29 @@
  },
  "voices": [
   {
+   "id": "v3",
+   "label": "Live singers",
+   "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-8f166ec33243.onnx",
+   "sha256": "8f166ec33243a96db1ef513eb7c750f8e0f9e21865f3505ac5cff848e77c0865",
+   "version": "warble-v3-cs colab run-v3cs-m step 10000 (EMA; consistent-source head; fine-tuned on 100 converted SDAH hymns + GTSinger)",
+   "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
+   "speakers": {
+    "S": 4,
+    "A": 2,
+    "T": 3,
+    "B": 10
+   },
+   "requires": "cs",
+   "enabled": true
+  },
+  {
    "id": "v1",
    "label": "Live singers",
    "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-11cedb94ef25.onnx",
    "sha256": "11cedb94ef256461e1dd4b0b272062428933db45319629f90688790882236ae3",
    "version": "warble-m-src colab run-m-src step 15000",
-   "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0."
+   "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
+   "enabled": false
   },
   {
    "id": "v2",
@@ -27,7 +44,8 @@
     "A": 2,
     "T": 3,
     "B": 10
-   }
+   },
+   "enabled": false
   }
  ]
 }

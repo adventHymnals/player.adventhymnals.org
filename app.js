@@ -471,78 +471,100 @@ async function loadList() {
   if (DATA) setTimeout(() => syncHymns().catch(() => {}), 15000); // once the first hymn is up
 }
 
-/** Now and then (at most every 6 hours): the site's list, and only the hymns whose version changed,
- *  saved on the phone in the background. A weak connection only delays the next check. */
+/** Now and then (at most every 6 hours): what changed on the site, saved on the phone in the background.
+ *  Every version is the SHA-256 of the content (hymnversion.py), so nothing changed goes unnoticed:
+ *  - data/versions.json first (a few hundred bytes; nothing at all when unchanged, the store answers 304):
+ *    its "root" unchanged, the check stops there;
+ *  - else the list of hymns, looking only at the hymnals whose version changed;
+ *  - a hymn whose version differs is checked against the copy already here (the player's own, or saved)
+ *    before anything is downloaded; recordings lists likewise.
+ *  A weak connection only delays it: what didn't arrive is looked at again next time. */
 async function syncHymns(force = false) {
   const AT = "ah-hymn-sync-at";
   try { if (!force && Date.now() - Number(localStorage.getItem(AT) || 0) < 6 * 3600e3) return; } catch { /* no storage: check */ }
   const c = await hymnStore();
   if (!c) return;
+  const done = () => { try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ } };
   const singingSaved = async () => {
     try {
       const g = await fetchWithin(`${DATA}data/singing.json`, 15000, { cache: "no-cache" });
       if (g.ok) await c.put(SINGING_SAVED, g);
     } catch { /* next time */ }
   };
-  // first each hymnal's version (a few hundred bytes): a hymnal whose version is the one already here has
-  // nothing new, and when none has, the list of hymns isn't even downloaded
-  const BOOKS = "ah-hymn-books";
-  let books = null;
-  try { const v = await fetchWithin(`${DATA}data/versions.json`, 15000, { cache: "no-cache" }); if (v.ok) books = (await v.json()).books || null; } catch { /* the whole list, as before */ }
-  let known = {}; try { known = JSON.parse(localStorage.getItem(BOOKS) || "{}"); } catch { /* none */ }
-  const same = (x) => !!books && !!known[x.book] && known[x.book] === books[x.book];
-  if (books && Object.keys(books).length === Object.keys(known).length && Object.keys(books).every((b) => known[b] === books[b])) {
-    await singingSaved();
-    try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ }
-    return;
-  }
+  const VERSIONS = "ah-hymn-versions"; // the site's versions.json as last brought fully up to date here
+  let ver = null;
+  try { const v = await fetchWithin(`${DATA}data/versions.json`, 15000, { cache: "no-cache" }); if (v.ok) ver = await v.json(); } catch { /* the whole list */ }
+  let known = {}; try { known = JSON.parse(localStorage.getItem(VERSIONS) || "{}"); } catch { /* none */ }
+  if (ver?.root && ver.root === known.root) { await singingSaved(); done(); return; }
+  const same = (x) => !!ver?.books && !!known.books?.[x.book] && known.books[x.book] === ver.books[x.book];
   const r = await fetchWithin(`${DATA}data/index.json`, 15000, { cache: "no-cache" });
   if (!r.ok) return;
   const site = await r.json();
   const saved = savedV();
+  const own = ownMatches();
   const mine = new Map(hymnList.map((x) => [x.id, x]));
-  let missed = false; // something to try again next time: this check doesn't count its hymnals as done
-  for (const x of site) {
-    if (same(x)) continue;
-    const own = mine.get(x.id);
-    const onPhone = saved[x.id] || (own?.path ? own.v : null);
-    if (!x.v || x.v === onPhone || x.v === own?.v) continue;
+  let missed = false; // something didn't arrive: this check doesn't count as complete
+  const keep = () => { try { localStorage.setItem(SAVED_V, JSON.stringify(saved)); localStorage.setItem(OWN_V, JSON.stringify(own)); } catch { /* full */ } };
+  await inParallel(site.filter((x) => !same(x)), 6, async (x) => {
+    const mineX = mine.get(x.id);
+    if (!x.v || x.v === saved[x.id] || x.v === mineX?.v || x.v === own[x.id]) return;
+    const url = new URL(x.path, DATA).href;
     try {
-      const url = new URL(x.path, DATA).href;
+      // the copy already here may be this very version (the same content, only versioned differently before)
+      if (mineX?.path && (await sha256(await (await fetch(mineX.path)).arrayBuffer())) === x.v) { own[x.id] = x.v; return; }
+      const here = await c.match(url).catch(() => null);
+      if (here && (await sha256(await here.arrayBuffer())) === x.v) { saved[x.id] = x.v; return; }
       const h = await fetchWithin(url, 15000, { cache: "no-cache" });
-      if (!h.ok) { missed = true; continue; }
-      await c.put(url, h);
+      if (!h.ok) { missed = true; return; }
+      const body = await h.arrayBuffer();
+      const got = await sha256(body);
+      if (got && got !== x.v) { missed = true; return; } // not the version the list names (caught mid-publish): next time
+      await c.put(url, new Response(body, { headers: { "Content-Type": "application/json" } }));
       saved[x.id] = x.v;
-      try { localStorage.setItem(SAVED_V, JSON.stringify(saved)); } catch { /* full */ }
-    } catch { missed = true; /* this one next time */ }
+    } catch { missed = true; }
+  });
+  keep();
+  // the recorded singers' lists that changed, and the converted singers' ("Recorded singers v2"), so opening
+  // a hymn never asks the site
+  for (const [KEY, dir, field] of [["ah-singers-saved", "audio", "sv"], ["ah-svc-saved", "audio-svc", "svc"]]) {
+    let have = {}; try { have = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { /* none */ }
+    await inParallel(site.filter((x) => !same(x) && x[field] && have[x.id] !== x[field] && (field !== "sv" || x.sung)), 6, async (x) => {
+      const url = `${AUDIO}${dir}/${x.id}/manifest.json`;
+      try {
+        const here = await singers.saved(url) || await (await singers.lists())?.match(url);
+        if (here?.ok && (await sha256(await here.clone().arrayBuffer())) === x[field]) { have[x.id] = x[field]; return; }
+        if (await singers.refreshManifest(url)) have[x.id] = x[field]; else missed = true;
+      } catch { missed = true; }
+    });
+    try { localStorage.setItem(KEY, JSON.stringify(have)); } catch { /* full */ }
   }
-  // the recorded singers' lists that changed, so opening a hymn never asks the site
-  const SV = "ah-singers-saved";
-  let sv = {}; try { sv = JSON.parse(localStorage.getItem(SV) || "{}"); } catch { /* none */ }
-  for (const x of site) {
-    if (same(x) || !x.sung || !x.sv || sv[x.id] === x.sv) continue;
-    try { if (await singers.refreshManifest(`${AUDIO}audio/${x.id}/manifest.json`)) sv[x.id] = x.sv; else missed = true; } catch { missed = true; /* next time */ }
-  }
-  try { localStorage.setItem(SV, JSON.stringify(sv)); } catch { /* full */ }
-  // and the converted singers' ("Recorded singers v2")
-  const SVC = "ah-svc-saved";
-  let svc = {}; try { svc = JSON.parse(localStorage.getItem(SVC) || "{}"); } catch { /* none */ }
-  for (const x of site) {
-    if (same(x) || !x.svc || svc[x.id] === x.svc) continue;
-    try { if (await singers.refreshManifest(`${AUDIO}audio-svc/${x.id}/manifest.json`)) svc[x.id] = x.svc; else missed = true; } catch { missed = true; /* next time */ }
-  }
-  try { localStorage.setItem(SVC, JSON.stringify(svc)); } catch { /* full */ }
   await singingSaved();
-  // every hymnal is up to date now (unless something didn't arrive: then all are looked at next time)
-  if (books && !missed) try { localStorage.setItem(BOOKS, JSON.stringify(books)); } catch { /* full */ }
   await c.put(SITE_INDEX, new Response(JSON.stringify(site), { headers: { "Content-Type": "application/json" } }));
+  // every hymnal up to date now, unless something didn't arrive (then all of it is looked at next time)
+  if (ver?.root && !missed) try { localStorage.setItem(VERSIONS, JSON.stringify({ root: ver.root, books: ver.books, published: ver.published })); } catch { /* full */ }
   const before = hymn && hymnList.find((x) => x.id === hymn.id);
   const had = before && `${!!before.sung}${!!before.svc}`;
   if (overlaySite(site)) fillPicker();
   // the hymn open now gained singers (recorded, or v2) in the site's newer list: they join it
   if (before && had !== `${!!before.sung}${!!before.svc}`) loadManifest().then(() => prepareStems()).catch(() => {});
-  try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ }
+  done();
 }
+
+/** The SHA-256 of some bytes, in hex (as hymnversion.py writes the versions); null where the browser can't
+ *  (a page not served securely): then nothing is taken as matching, and downloads aren't checked. */
+async function sha256(buf) {
+  if (!globalThis.crypto?.subtle) return null;
+  const d = await crypto.subtle.digest("SHA-256", buf);
+  return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+/** [fn] over [items], [n] at a time. */
+async function inParallel(items, n, fn) {
+  let i = 0;
+  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => { while (i < items.length) await fn(items[i++]); }));
+}
+/** Hymns whose copy in the player itself is the site's version (checked by its SHA-256): { id: version }. */
+const OWN_V = "ah-hymn-own";
+const ownMatches = () => { try { return JSON.parse(localStorage.getItem(OWN_V) || "{}"); } catch { return {}; } };
 
 /** A hymn's score, from the phone: the copy saved from the site when it is the site's newest (or the
  *  player's own is older), else the player's own. Only a hymn new on the site and not yet saved waits
@@ -550,7 +572,8 @@ async function syncHymns(force = false) {
 async function hymnJson(entry) {
   const own = entry.path;
   if (!entry.remote) return (await fetch(own)).json();
-  const newest = entry.siteV && entry.v !== entry.siteV; // the player's own copy is out of date
+  // the player's own copy is out of date (unless the check found it is the site's version after all)
+  const newest = entry.siteV && entry.v !== entry.siteV && ownMatches()[entry.id] !== entry.siteV;
   if (newest || !own) {
     const c = await hymnStore();
     const saved = c && (await c.match(entry.remote).catch(() => null));
