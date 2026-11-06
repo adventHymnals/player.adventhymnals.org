@@ -3950,6 +3950,38 @@
   "v": "4c7db238cbcb753a06de83227546eb29454a35b9d0ab94e9bd346d6e1f530c4b"
  },
  {
+  "id": "CH1941-481",
+  "book": "CH1941",
+  "number": "481",
+  "title": "O Solemn Thought!",
+  "path": "data/CH1941/481.json",
+  "v": "e3986abe25a7f483115550a81266bf0468c5b502eba461f958c59c45a4501a70"
+ },
+ {
+  "id": "CH1941-482",
+  "book": "CH1941",
+  "number": "482",
+  "title": "The Judgment Has Set",
+  "path": "data/CH1941/482.json",
+  "v": "cd0d8924f5ce95d253ca1b5cdbec25cc7d37b15325c54e71b44048a5034191a5"
+ },
+ {
+  "id": "CH1941-483",
+  "book": "CH1941",
+  "number": "483",
+  "title": "All Things Are Thine",
+  "path": "data/CH1941/483.json",
+  "v": "c2a6fac6f0f2f680be82f2509f87a77d52b68e55404d7979fb568befd1e3e1ed"
+ },
+ {
+  "id": "CH1941-484",
+  "book": "CH1941",
+  "number": "484",
+  "title": "O Bow Thine Ear",
+  "path": "data/CH1941/484.json",
+  "v": "59af042a1b61b93bfd3e2e9f91fd52f8cf90cfeed076fef2cb589e5e279f5900"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7188,6 +7220,22 @@
   "v": "106f5562a172e5714fcc6711dc9d9768d57a100c710d9fc73d852149cf1adb51"
  },
  {
+  "id": "CS1908-303",
+  "book": "CS1908",
+  "number": "303",
+  "title": "Only Thee",
+  "path": "data/CS1908/303.json",
+  "v": "5cd713571fde52dae5da777fa3b090d69ca00c09158487521eb554d5885e2057"
+ },
+ {
+  "id": "CS1908-304",
+  "book": "CS1908",
+  "number": "304",
+  "title": "Wondrous Love",
+  "path": "data/CS1908/304.json",
+  "v": "a1bad998cbc4b4b045d23906adaa651f5eb0b86e83cb83288699a7e8e6853e78"
+ },
+ {
   "id": "CS1908-305",
   "book": "CS1908",
   "number": "305",
@@ -7196,6 +7244,14 @@
   "sung": true,
   "sv": "da9de79b1121cb45788b9b0aaa49b069910cd59bb248bd9db9b2f0400708c5bd",
   "v": "b8eca11d56c6877b8820b0616d3816b9feb50e0f76a638ae6305fdac87d8e844"
+ },
+ {
+  "id": "CS1908-306",
+  "book": "CS1908",
+  "number": "306",
+  "title": "Jesus Is Mine",
+  "path": "data/CS1908/306.json",
+  "v": "4bcf9f3c890c642d4bec6e2664e842b9d610816a82255f0135a985dffc8fb62c"
  },
  {
   "id": "CS1908-310",
