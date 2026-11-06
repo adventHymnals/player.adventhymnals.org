@@ -1606,6 +1606,38 @@
   "v": "74d3cce3fe5acd7d1a739904932f1b5af86e2449a9d829e8025cb09409dea6ba"
  },
  {
+  "id": "CH1941-178",
+  "book": "CH1941",
+  "number": "178",
+  "title": "In the Sun, and Moon, and Stars",
+  "path": "data/CH1941/178.json",
+  "v": "b0c398eb7e8c650d1d9ac1f3e4078dcfa58964973dbc9f87dbf5a41221ee2091"
+ },
+ {
+  "id": "CH1941-179",
+  "book": "CH1941",
+  "number": "179",
+  "title": "He Reigns! the Lord, the Saviour, Reigns",
+  "path": "data/CH1941/179.json",
+  "v": "e5377465ee7685590f3adeaec92002ec13280272020e54036dbd29c40c10e3aa"
+ },
+ {
+  "id": "CH1941-180",
+  "book": "CH1941",
+  "number": "180",
+  "title": "Watchman, Tell Me",
+  "path": "data/CH1941/180.json",
+  "v": "a64be4d860759c4abe25343e5836e6c5585096824dc739060bbaa1476d87310d"
+ },
+ {
+  "id": "CH1941-181",
+  "book": "CH1941",
+  "number": "181",
+  "title": "Ye Who Rose to Meet the Lord",
+  "path": "data/CH1941/181.json",
+  "v": "b4f995a9709509a732cd9d7b7337b38b87d5a10daeb13590d6b5e5c7acd55c92"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2034,6 +2066,22 @@
   "title": "Mighty to Save",
   "path": "data/CS1900/33.json",
   "v": "40874fb9a5db3f2d53f5d6e2be89c6aff911345d989df6ff9eacba036be54421"
+ },
+ {
+  "id": "CS1900-34",
+  "book": "CS1900",
+  "number": "34",
+  "title": "Never Be Afraid",
+  "path": "data/CS1900/34.json",
+  "v": "43e5c09e584b1036074fa0d22c10aff8624d3d2fb75ac75472fd24bc0e942776"
+ },
+ {
+  "id": "CS1900-35",
+  "book": "CS1900",
+  "number": "35",
+  "title": "Bravely Say No!",
+  "path": "data/CS1900/35.json",
+  "v": "9e9beec0ea372ad0c9d7efc29e2aaef85dec89eb86df19ac62a3bcd429007202"
  },
  {
   "id": "CS1908-1",
@@ -3386,6 +3434,22 @@
   "sung": true,
   "sv": "e4c91422e5260ed2d80030b9338f8e195d25061e6c59f2465b258f92c4b1c6e6",
   "v": "0535f251ef371e6a6368657f92af11c1e12cf232bc637e5b8b568f80c386e33c"
+ },
+ {
+  "id": "CS1908-145",
+  "book": "CS1908",
+  "number": "145",
+  "title": "Just As I Am",
+  "path": "data/CS1908/145.json",
+  "v": "f47779fbdbedf6b91dfc1b5ded4773cbc6deacbcf4b7eb1015cefdd23115b67b"
+ },
+ {
+  "id": "CS1908-146",
+  "book": "CS1908",
+  "number": "146",
+  "title": "There Is a Fountain",
+  "path": "data/CS1908/146.json",
+  "v": "c40e8c636dceb8b1117500c44c3743809e162e6e35cff45521c5e2da64fa4569"
  },
  {
   "id": "CS1908-148",
