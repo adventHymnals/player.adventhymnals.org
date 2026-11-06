@@ -1422,6 +1422,46 @@
   "v": "3b219d11018b6a43601a2c9f8cc632dfc5778787d114942644e6af6c5c9b33fb"
  },
  {
+  "id": "CH1941-155",
+  "book": "CH1941",
+  "number": "155",
+  "title": "O for a Thousand Tongues",
+  "path": "data/CH1941/155.json",
+  "v": "0064bc491bdd365aa5010cf16987191c670a5073c7cfc9132c4ad25c8a777aa3"
+ },
+ {
+  "id": "CH1941-156",
+  "book": "CH1941",
+  "number": "156",
+  "title": "All Hail the Power of Jesus' Name!",
+  "path": "data/CH1941/156.json",
+  "v": "11c80012a17a4626a38bc89571e52e8a209c1d3db1fcd81aca0221cfdbf6c682"
+ },
+ {
+  "id": "CH1941-157",
+  "book": "CH1941",
+  "number": "157",
+  "title": "All Hail the Power of Jesus' Name",
+  "path": "data/CH1941/157.json",
+  "v": "c26894145b2b21863bf592f73c4097351ca8832ea3338695a5b9929d921ee959"
+ },
+ {
+  "id": "CH1941-158",
+  "book": "CH1941",
+  "number": "158",
+  "title": "Jesus, the Very Thought of Thee",
+  "path": "data/CH1941/158.json",
+  "v": "67ddc6ceabf340d58e297fc3a5fe48bb20779999a26a809e264d2b55ec688b89"
+ },
+ {
+  "id": "CH1941-159",
+  "book": "CH1941",
+  "number": "159",
+  "title": "Majestic Sweetness Sits Enthroned",
+  "path": "data/CH1941/159.json",
+  "v": "b5285e711a18f20de1874dc6b8af8abdf10c5b9ebb8c0b590009f6fb08e89e31"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1649,7 +1689,7 @@
   "number": "8",
   "title": "Whiter Than Snow",
   "path": "data/CS1900/8.json",
-  "v": "72c8003f8a9544aab5c29cb21720e5c3b8e085914408ba03a91959a46d50a2a0"
+  "v": "1dd1bc7826e5aaed44d82ea0889c7d293e1b2d6b29833b54b0e35760aa6fc800"
  },
  {
   "id": "CS1900-9",
@@ -1786,6 +1826,14 @@
   "title": "Blessed Are They That Do",
   "path": "data/CS1900/25.json",
   "v": "9e2dc98477ea49c5559fa748d2b1ad44fc111a78dafccfb74d1bb45d7c159e65"
+ },
+ {
+  "id": "CS1900-26",
+  "book": "CS1900",
+  "number": "26",
+  "title": "Cover With His Life",
+  "path": "data/CS1900/26.json",
+  "v": "5f07b2c83df45b39926f9b2c78822c9cf5cd30e45207f67776bf49b64b32c8f9"
  },
  {
   "id": "CS1908-1",
@@ -2594,6 +2642,14 @@
   "v": "533dd52c59005d8c4f7879f105ff3bc2d3462098b0bae57dc3afb86279f5d25f"
  },
  {
+  "id": "CS1908-87",
+  "book": "CS1908",
+  "number": "87",
+  "title": "Pass Me Not",
+  "path": "data/CS1908/87.json",
+  "v": "f8fd4c9097f6739b638994ded4797221ba584264d64206e465a8d251e1508641"
+ },
+ {
   "id": "CS1908-88",
   "book": "CS1908",
   "number": "88",
@@ -2652,6 +2708,22 @@
   "sung": true,
   "sv": "bf4c4e100a72f8cc7859e40f75cf847899a95603c456d7fc0d67108698991a25",
   "v": "f8d7c0799b0216a52b2e7c5cb1ca059efba1f4590bed3354aadf58131a1ae44b"
+ },
+ {
+  "id": "CS1908-94",
+  "book": "CS1908",
+  "number": "94",
+  "title": "The Great Physician",
+  "path": "data/CS1908/94.json",
+  "v": "149d9c3418dd54bffeca22bc6fe163640f581b91b69a7c6083691b6d5edb998c"
+ },
+ {
+  "id": "CS1908-95",
+  "book": "CS1908",
+  "number": "95",
+  "title": "Only Trust Him",
+  "path": "data/CS1908/95.json",
+  "v": "7f80e9f00d95ca7751991b16f2b44b31b25d92514f4f65a2ba57bff4541229f9"
  },
  {
   "id": "CS1908-96",
@@ -3910,6 +3982,70 @@
   "title": "Blessed Bible, How I Love It",
   "path": "data/HT1876/57.json",
   "v": "34ac1a4376e8117abd5102e215af9273b61eeb0021beba72b2ee8cae6142d822"
+ },
+ {
+  "id": "HT1876-58",
+  "book": "HT1876",
+  "number": "58",
+  "title": "How Perfect is Thy Word",
+  "path": "data/HT1876/58.json",
+  "v": "0b868b0a51b4e084b44e29d39c3c1e74b814bda2bba8f3f957c60ddc07458fad"
+ },
+ {
+  "id": "HT1876-59",
+  "book": "HT1876",
+  "number": "59",
+  "title": "God's Holy Law, Transgressed",
+  "path": "data/HT1876/59.json",
+  "v": "019cc3086f61177c7e0a8ae8d52c5b553506016e68d4a1bd0085a48cf51e383e"
+ },
+ {
+  "id": "HT1876-60",
+  "book": "HT1876",
+  "number": "60",
+  "title": "Holy Bible! Book Divine",
+  "path": "data/HT1876/60.json",
+  "v": "9b2c54c97ad1b95299b4ceb2482e0812085605e15b8606a74031641e9755f7cc"
+ },
+ {
+  "id": "HT1876-61",
+  "book": "HT1876",
+  "number": "61",
+  "title": "Great God! with Wonder and with Praise",
+  "path": "data/HT1876/61.json",
+  "v": "f782f289c4deae054fae3ed9bc740f21b74982bf1731b6a99e2fe242d0ab54f4"
+ },
+ {
+  "id": "HT1876-62",
+  "book": "HT1876",
+  "number": "62",
+  "title": "Thy Precepts Often I Survey",
+  "path": "data/HT1876/62.json",
+  "v": "bfd8b5387e9b198bf0f1409106a27cdf47e2196f653dcc6825f737230a98fe5e"
+ },
+ {
+  "id": "HT1876-63",
+  "book": "HT1876",
+  "number": "63",
+  "title": "Thou Book of Life, in Thee Are Found",
+  "path": "data/HT1876/63.json",
+  "v": "1ae56061a6d7ad4b7838e39c8331e89b69856249158b0aa1958088c9f32a13fc"
+ },
+ {
+  "id": "HT1876-64",
+  "book": "HT1876",
+  "number": "64",
+  "title": "Come, Dearest Lord, and Feed Thy Sheep",
+  "path": "data/HT1876/64.json",
+  "v": "cd7e1cac3d8b20a31c6ebaef6a4a73ec026383ba88a15392cb67d51bed000db9"
+ },
+ {
+  "id": "HT1876-127",
+  "book": "HT1876",
+  "number": "127",
+  "title": "Sinners, Haste to Mercy's Gate",
+  "path": "data/HT1876/127.json",
+  "v": "8e966c5f5d099ad64f563b4f91f38e7c4171091e6cb022330e4c30240b6d9f85"
  },
  {
   "id": "NZK-1",
