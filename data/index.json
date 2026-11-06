@@ -1958,6 +1958,70 @@
   "v": "d34dc9f92c0b7332fc922ea2a8c6202d38148828f7d2508e0c2da1eed2a83571"
  },
  {
+  "id": "CH1941-222",
+  "book": "CH1941",
+  "number": "222",
+  "title": "Just as I Am",
+  "path": "data/CH1941/222.json",
+  "v": "e9b98b7d36439df5d015ed1b84b5ef16493999aa34ed5d6876a0cdeab175b206"
+ },
+ {
+  "id": "CH1941-223",
+  "book": "CH1941",
+  "number": "223",
+  "title": "Come, Ye Disconsolate",
+  "path": "data/CH1941/223.json",
+  "v": "774bde332a6c89e071591fbdea65f30805fd71d0a06c8d3c313c60ffe5434291"
+ },
+ {
+  "id": "CH1941-224",
+  "book": "CH1941",
+  "number": "224",
+  "title": "I Hear Thy Welcome Voice",
+  "path": "data/CH1941/224.json",
+  "v": "edd4c1e56e0d61c3b8e1e6c70991c4811441e460a982c54bf762914287c9cea8"
+ },
+ {
+  "id": "CH1941-225",
+  "book": "CH1941",
+  "number": "225",
+  "title": "I Heard the Voice of Jesus Say",
+  "path": "data/CH1941/225.json",
+  "v": "ab0a16aeca8e7cc895dce97d5a56689f15c9d20c89d6aab954db583da227fca4"
+ },
+ {
+  "id": "CH1941-226",
+  "book": "CH1941",
+  "number": "226",
+  "title": "I Heard the Voice of Jesus Say",
+  "path": "data/CH1941/226.json",
+  "v": "2e040092f05b2d3dad182aca1b2b4e32229fa087d9579bf8d6ba7df48a4b7da3"
+ },
+ {
+  "id": "CH1941-227",
+  "book": "CH1941",
+  "number": "227",
+  "title": "Behold the Saviour at the Door",
+  "path": "data/CH1941/227.json",
+  "v": "0dd2481c8be7d50ef020c4d53de37d976b78c9597de9c9218b555b0172a02697"
+ },
+ {
+  "id": "CH1941-228",
+  "book": "CH1941",
+  "number": "228",
+  "title": "Almost Persuaded",
+  "path": "data/CH1941/228.json",
+  "v": "1ad0acb8a9183a032dcf93f5ac5532d7fcb196736e453510ab4c0a3ae4b707cb"
+ },
+ {
+  "id": "CH1941-229",
+  "book": "CH1941",
+  "number": "229",
+  "title": "Lord, We Come With Hearts Aflame",
+  "path": "data/CH1941/229.json",
+  "v": "f1e34bba5c7db2cbae73e8cc0436a7cc046daa553ab453745684bb0c2132966b"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2562,6 +2626,14 @@
   "title": "Yield Not to Temptation",
   "path": "data/CS1900/55.json",
   "v": "16e626d8a18c50a66c0635e2de7c688ae24ab52d5b3591ec72949ab22287da62"
+ },
+ {
+  "id": "CS1900-56",
+  "book": "CS1900",
+  "number": "56",
+  "title": "Showers of Blessing",
+  "path": "data/CS1900/56.json",
+  "v": "0115a9f56da9f0d8e18c6f9def9973c930b048b3f2223bb0197ba31550d181b6"
  },
  {
   "id": "CS1908-1",
@@ -4250,6 +4322,46 @@
   "v": "114ecfa96c133f8a83a531cef6efd0eb1121cc694aadf928abd48a17b2a39955"
  },
  {
+  "id": "CS1908-186",
+  "book": "CS1908",
+  "number": "186",
+  "title": "I Do Believe",
+  "path": "data/CS1908/186.json",
+  "v": "212036f432b9539fe7e6c6d2bab18b04bab15bc1e3056cded53c2b5a7ef7115c"
+ },
+ {
+  "id": "CS1908-187",
+  "book": "CS1908",
+  "number": "187",
+  "title": "Conformed to Thee",
+  "path": "data/CS1908/187.json",
+  "v": "c664c19d7e08f0e411e5ad56269abd827ddd3852863b9aa3504b30529e7665a8"
+ },
+ {
+  "id": "CS1908-188",
+  "book": "CS1908",
+  "number": "188",
+  "title": "God Shall Be First",
+  "path": "data/CS1908/188.json",
+  "v": "8f80e313aa54e0df8b429fd8512c2277efec7e760d0cf068613a0c326dcecfd3"
+ },
+ {
+  "id": "CS1908-189",
+  "book": "CS1908",
+  "number": "189",
+  "title": "Something for Jesus",
+  "path": "data/CS1908/189.json",
+  "v": "92928f7b9d83a88453d6582041b02194582b08d755b8e1d83b577616901bb594"
+ },
+ {
+  "id": "CS1908-190",
+  "book": "CS1908",
+  "number": "190",
+  "title": "Hallelujahs to Jesus",
+  "path": "data/CS1908/190.json",
+  "v": "7816789232848f8865edadc14a18bf7a454c94a2c6aa922556ce23552739e62b"
+ },
+ {
   "id": "CS1908-192",
   "book": "CS1908",
   "number": "192",
@@ -5390,6 +5502,38 @@
   "title": "Thy Holy Sabbath, Lord",
   "path": "data/HT1876/90.json",
   "v": "9575ae3fc95b0adbd663283151afe7b6ae349cdc8c846b432b75a2195a598c69"
+ },
+ {
+  "id": "HT1876-91",
+  "book": "HT1876",
+  "number": "91",
+  "title": "Welcome, Sweet Day of Rest",
+  "path": "data/HT1876/91.json",
+  "v": "e13c2b06be510b46c70603b02a0d5637ea8fd40a4ad9f06ff13110bfe6c9615e"
+ },
+ {
+  "id": "HT1876-92",
+  "book": "HT1876",
+  "number": "92",
+  "title": "The Light of Sabbath Eve",
+  "path": "data/HT1876/92.json",
+  "v": "31714e811a822ef40d4cdf771ea3326ab88f04378eda9e6e852ed78c844c4982"
+ },
+ {
+  "id": "HT1876-93",
+  "book": "HT1876",
+  "number": "93",
+  "title": "Safely Through Another Week",
+  "path": "data/HT1876/93.json",
+  "v": "bb35f180a5a49a887f173300797184e0006d5e1a690291de9fe561017797946e"
+ },
+ {
+  "id": "HT1876-94",
+  "book": "HT1876",
+  "number": "94",
+  "title": "Hail, Thou Bright and Sacred Morn",
+  "path": "data/HT1876/94.json",
+  "v": "43dae3eca36d8c59f78155de40ebeeda5ec0c205a1a94570c7d7648670bb8bec"
  },
  {
   "id": "HT1876-127",
