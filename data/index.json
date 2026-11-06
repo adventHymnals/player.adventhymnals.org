@@ -2966,6 +2966,70 @@
   "v": "0c8140b0475a57e3f82b464361799888a3c02ace91529c646dffaf0dfb287603"
  },
  {
+  "id": "CH1941-351",
+  "book": "CH1941",
+  "number": "351",
+  "title": "Ye Servants of the Lord",
+  "path": "data/CH1941/351.json",
+  "v": "22f07e6beeccbaef6f1967b61154ed41de9ddaca24e534f4bbc1c34e78a7540e"
+ },
+ {
+  "id": "CH1941-352",
+  "book": "CH1941",
+  "number": "352",
+  "title": "One Sweetly Solemn Thought",
+  "path": "data/CH1941/352.json",
+  "v": "4b7b0cb325eeb47605a3dda340773c298b8898ab8a556aa29be70f639cddf1e3"
+ },
+ {
+  "id": "CH1941-353",
+  "book": "CH1941",
+  "number": "353",
+  "title": "Forward, Christian, Forward!",
+  "path": "data/CH1941/353.json",
+  "v": "660cac3ae38b8ab78b401491fa76a9e041309c81583d9e26ef8e82b3f41e58bd"
+ },
+ {
+  "id": "CH1941-354",
+  "book": "CH1941",
+  "number": "354",
+  "title": "Stand Up! Stand Up for Jesus!",
+  "path": "data/CH1941/354.json",
+  "v": "be538c285e7b9eeba8b3360be3780e9f1fc66c7cfe413283cf352eea8f6fb6fb"
+ },
+ {
+  "id": "CH1941-355",
+  "book": "CH1941",
+  "number": "355",
+  "title": "Awake, My Soul!",
+  "path": "data/CH1941/355.json",
+  "v": "836f74e78e640abab803f16dbba145f53483221a1e3315a538889a352dc95d87"
+ },
+ {
+  "id": "CH1941-356",
+  "book": "CH1941",
+  "number": "356",
+  "title": "Am I a Soldier of the Cross?",
+  "path": "data/CH1941/356.json",
+  "v": "992cdb995e8bdfd5e0372a36ca12655d2c800bf12cddfbab5b08a54b392ccc8a"
+ },
+ {
+  "id": "CH1941-357",
+  "book": "CH1941",
+  "number": "357",
+  "title": "Christian, Seek Not Repose",
+  "path": "data/CH1941/357.json",
+  "v": "fff117f72bcfbb23cd4de4bf43937832d29da468dc492cbad074451ce42037e8"
+ },
+ {
+  "id": "CH1941-358",
+  "book": "CH1941",
+  "number": "358",
+  "title": "My Soul, Be On Thy Guard",
+  "path": "data/CH1941/358.json",
+  "v": "a11366d38ffd31c9108ae4827a0885ddd5513496a2aebc2bc9b9bca5bca9b747"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5850,6 +5914,22 @@
   "title": "'Tis Shining Still",
   "path": "data/CS1908/242.json",
   "v": "ce3c3e0eaf84baafd6719a359da5839f1d2d93f96c5128bcb62dcad794e2cf44"
+ },
+ {
+  "id": "CS1908-243",
+  "book": "CS1908",
+  "number": "243",
+  "title": "Keep on the Sunny Side of Life",
+  "path": "data/CS1908/243.json",
+  "v": "7616ac79c8b84dae506f66d85cd789da955a4363e28098f4e1484c483376f2cd"
+ },
+ {
+  "id": "CS1908-244",
+  "book": "CS1908",
+  "number": "244",
+  "title": "Peace on Earth",
+  "path": "data/CS1908/244.json",
+  "v": "0f7a39b44d96a22ceeed520268015f4a4cbdc65f3f4abae37e45f69188250019"
  },
  {
   "id": "CS1908-245",
