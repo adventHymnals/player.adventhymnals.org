@@ -1462,6 +1462,78 @@
   "v": "b5285e711a18f20de1874dc6b8af8abdf10c5b9ebb8c0b590009f6fb08e89e31"
  },
  {
+  "id": "CH1941-160",
+  "book": "CH1941",
+  "number": "160",
+  "title": "O Thou in Whose Presence",
+  "path": "data/CH1941/160.json",
+  "v": "39e27a7d9bd1daec594d52e00cb426b320f79262b83ee77d76331514a8310935"
+ },
+ {
+  "id": "CH1941-161",
+  "book": "CH1941",
+  "number": "161",
+  "title": "O Could I Speak the Matchless Worth",
+  "path": "data/CH1941/161.json",
+  "v": "c2fb6c6e84c1afcc040397455d3bb52b49135823e3c15520cc6b82ffb6151535"
+ },
+ {
+  "id": "CH1941-162",
+  "book": "CH1941",
+  "number": "162",
+  "title": "Crown Him With Many Crowns",
+  "path": "data/CH1941/162.json",
+  "v": "698d61dc8146bb02b5141aae416844308959f12de53e6e01b68d4b31ee14e035"
+ },
+ {
+  "id": "CH1941-163",
+  "book": "CH1941",
+  "number": "163",
+  "title": "There Is a Fountain",
+  "path": "data/CH1941/163.json",
+  "v": "a3ed115a6c0f73f724694a75bb3b9d891ce19a476012b0f81b7ca4556ee64fac"
+ },
+ {
+  "id": "CH1941-164",
+  "book": "CH1941",
+  "number": "164",
+  "title": "O Saviour, Precious Saviour",
+  "path": "data/CH1941/164.json",
+  "v": "63e5e1ec818a3b7cb2a517d4f231e736e5c3243991468616bcd8a5def446ee87"
+ },
+ {
+  "id": "CH1941-165",
+  "book": "CH1941",
+  "number": "165",
+  "title": "Fairest Lord Jesus",
+  "path": "data/CH1941/165.json",
+  "v": "7e5acd124ae139becdc5da918b6b4ed19c2260c8637804a3244420099f86b9ae"
+ },
+ {
+  "id": "CH1941-166",
+  "book": "CH1941",
+  "number": "166",
+  "title": "Jesus, These Eyes Have Never Seen",
+  "path": "data/CH1941/166.json",
+  "v": "a5877bd23d0be43d0663f62f1032cf427afbdad5dd4597da9557645e1eb19917"
+ },
+ {
+  "id": "CH1941-167",
+  "book": "CH1941",
+  "number": "167",
+  "title": "Shepherd of Tender Youth",
+  "path": "data/CH1941/167.json",
+  "v": "10fe76faa808ff999d8cbf86e8ed2f809c13bd47a4c8e31e24071d7fc42ba9f2"
+ },
+ {
+  "id": "CH1941-168",
+  "book": "CH1941",
+  "number": "168",
+  "title": "Worthy, Worthy, Is the Lamb",
+  "path": "data/CH1941/168.json",
+  "v": "9c8e33a340e407f77b0c932191e86d41448362fef6b46a267331ec16c9d217f7"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1834,6 +1906,30 @@
   "title": "Cover With His Life",
   "path": "data/CS1900/26.json",
   "v": "5f07b2c83df45b39926f9b2c78822c9cf5cd30e45207f67776bf49b64b32c8f9"
+ },
+ {
+  "id": "CS1900-27",
+  "book": "CS1900",
+  "number": "27",
+  "title": "Whiter Than Snow",
+  "path": "data/CS1900/27.json",
+  "v": "a4a457a181988067f411c059e2a4d8a1f857d2f813d5121e9a00a34b2ee9834a"
+ },
+ {
+  "id": "CS1900-28",
+  "book": "CS1900",
+  "number": "28",
+  "title": "Christ Receiveth Sinful Men",
+  "path": "data/CS1900/28.json",
+  "v": "d804c50621efe0f898bcbb1240ec313670621a4f86c998987d9b037322068d12"
+ },
+ {
+  "id": "CS1900-29",
+  "book": "CS1900",
+  "number": "29",
+  "title": "I'm So Glad!",
+  "path": "data/CS1900/29.json",
+  "v": "7ca9412ff3c0b916749f2d60eda06382097a183476c0fb1e0991a4f6112b602d"
  },
  {
   "id": "CS1908-1",
@@ -2746,6 +2842,14 @@
   "v": "10236eb4c3e4792c71008926a60cbe40a9d4ba0a4bc6f4463fb9e45e964257ae"
  },
  {
+  "id": "CS1908-98",
+  "book": "CS1908",
+  "number": "98",
+  "title": "Where Is My Boy To-night?",
+  "path": "data/CS1908/98.json",
+  "v": "5ca61c758b0c9c72db4fe6283bb4520cbd829bebc0f40dddf47235eb2179f196"
+ },
+ {
   "id": "CS1908-99",
   "book": "CS1908",
   "number": "99",
@@ -2764,6 +2868,14 @@
   "sung": true,
   "sv": "7477b670ae1327da501b00585f3f6b17a8a5197e3b6f94517ed6df4770b5bc6b",
   "v": "7533a7325ec32846a6f3615d7d2b7d33ff49b5ddd4844570418ab5e1e7cb4dec"
+ },
+ {
+  "id": "CS1908-101",
+  "book": "CS1908",
+  "number": "101",
+  "title": "I Am Coming, Lord",
+  "path": "data/CS1908/101.json",
+  "v": "5c7926bdce8910cb495b7ccb23a0ec38a28ae99f76256faaee67376e43aedc41"
  },
  {
   "id": "CS1908-102",
@@ -2796,6 +2908,14 @@
   "v": "9f885f092a2ab7cf6cfa1ab24aa52da7c912a475e84737f69ee9a0885050aac2"
  },
  {
+  "id": "CS1908-105",
+  "book": "CS1908",
+  "number": "105",
+  "title": "Trusting Thee, Lord Jesus",
+  "path": "data/CS1908/105.json",
+  "v": "4f6759ac3b76934f9e3d87758b17c774bba6c2e762e5815fd9078b57bc116d77"
+ },
+ {
   "id": "CS1908-106",
   "book": "CS1908",
   "number": "106",
@@ -2804,6 +2924,38 @@
   "sung": true,
   "sv": "f47f4be4c8034a0313e01da9629bfb275cf2b42e1dc1d29f74e7bad317375bb0",
   "v": "98d677419fb9a9ccea88843bf4059d3e6dae37654694ba7be507141978e07103"
+ },
+ {
+  "id": "CS1908-107",
+  "book": "CS1908",
+  "number": "107",
+  "title": "Jesus Paid It All",
+  "path": "data/CS1908/107.json",
+  "v": "a5c441a9a0cbdd64a19b7a45448d3f5a23e005c67658de031fbe17e3f1dcffa9"
+ },
+ {
+  "id": "CS1908-108",
+  "book": "CS1908",
+  "number": "108",
+  "title": "My Faith Looks Up",
+  "path": "data/CS1908/108.json",
+  "v": "2efd7b59100fc71303892cb31e0d90d634b73de3e8adb9ab0b03cf0c8d1248dc"
+ },
+ {
+  "id": "CS1908-109",
+  "book": "CS1908",
+  "number": "109",
+  "title": "Coming to the Cross",
+  "path": "data/CS1908/109.json",
+  "v": "a6860cc7d31d234283d62be51089ce4a5d440af03ba5a05ad32b1add9abf01e4"
+ },
+ {
+  "id": "CS1908-110",
+  "book": "CS1908",
+  "number": "110",
+  "title": "The Cleansing Wave",
+  "path": "data/CS1908/110.json",
+  "v": "af38bafbe2a0cb7a6e1601756ccfa468745daf79edf53765c83b910d48b41f4a"
  },
  {
   "id": "CS1908-111",
