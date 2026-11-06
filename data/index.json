@@ -1550,6 +1550,14 @@
   "v": "95f9d2e1003d5b93e3f771371a951a620b6b74cf99c17e577545b7fabee46849"
  },
  {
+  "id": "CH1941-171",
+  "book": "CH1941",
+  "number": "171",
+  "title": "There Is a Name I Love",
+  "path": "data/CH1941/171.json",
+  "v": "46e2004b6fbd4d2837d6f79ff547c2a63c35c8a0ec12214025bcb65b975e5617"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1946,6 +1954,14 @@
   "title": "I'm So Glad!",
   "path": "data/CS1900/29.json",
   "v": "7ca9412ff3c0b916749f2d60eda06382097a183476c0fb1e0991a4f6112b602d"
+ },
+ {
+  "id": "CS1900-30",
+  "book": "CS1900",
+  "number": "30",
+  "title": "Something for Jesus",
+  "path": "data/CS1900/30.json",
+  "v": "7e5bfc35ef505620e4e7de75161b4f3c1c4ba648489e897262b998b00c64e27a"
  },
  {
   "id": "CS1908-1",
@@ -3042,6 +3058,14 @@
   "v": "1862f5b09af2908b7c8b0fbf1e209de57de13f1494ad22e5caf3419c81455958"
  },
  {
+  "id": "CS1908-118",
+  "book": "CS1908",
+  "number": "118",
+  "title": "Outside the Door",
+  "path": "data/CS1908/118.json",
+  "v": "a9fb89f200b7305a62621f16c18180caf35708ae6d5938f1874175233657fd89"
+ },
+ {
   "id": "CS1908-119",
   "book": "CS1908",
   "number": "119",
@@ -3090,6 +3114,14 @@
   "sung": true,
   "sv": "10b71ead84578987f93f316bdc9d93fbb204f303157e0c508f8487e48fefb2c1",
   "v": "7fd1994fea774d9d3da55d3ef03d84da5cb7b238d9653f80268fc62e209fdcc6"
+ },
+ {
+  "id": "CS1908-124",
+  "book": "CS1908",
+  "number": "124",
+  "title": "Come Ye Disconsolate",
+  "path": "data/CS1908/124.json",
+  "v": "d5a98b266c9a4bc1261e9952311d7297e83961ff2f0a8bccd34165ff7f6b5f87"
  },
  {
   "id": "CS1908-125",
