@@ -220,9 +220,10 @@ async function refreshSinging() {
     const text = await r.text();
     const had = await c.match(SINGING_SAVED).then((x) => x?.text()).catch(() => null);
     if (text === had) return;
-    await c.put(SINGING_SAVED, new Response(text, { headers: { "Content-Type": "application/json" } }));
     const fresh = await loadSinging([URL.createObjectURL(new Blob([text], { type: "application/json" }))], location.href);
     if (!fresh.voices.length && singingCfg.voices.length) return; // couldn't reach the models just now: keep what works
+    // saved only once it works, so a start offline never opens from a list it can't sing
+    await c.put(SINGING_SAVED, new Response(text, { headers: { "Content-Type": "application/json" } }));
     // the live voices offered before go; the new list's are offered (the first keeps its place as "warble")
     document.querySelectorAll('#singDialog [data-engine^="warble-"]').forEach((b) => b.remove());
     document.querySelectorAll('#singEngine option[value^="warble-"]').forEach((o) => o.remove());
