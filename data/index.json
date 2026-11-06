@@ -4928,6 +4928,110 @@
   "v": "a0dc2bc0765cddd7ae17c9044f2876f6cd72b7a075164268d9364fe0318b7eee"
  },
  {
+  "id": "CH1941-619",
+  "book": "CH1941",
+  "number": "619",
+  "title": "Watchman, Blow the Gospel Trumpet",
+  "path": "data/CH1941/619.json",
+  "v": "498f7c9f3163d11895977dff632bbae92dc1cce32236099aea61c5852fe9a71f"
+ },
+ {
+  "id": "CH1941-620",
+  "book": "CH1941",
+  "number": "620",
+  "title": "O Where Are the Reapers?",
+  "path": "data/CH1941/620.json",
+  "v": "4d19908e12fec94df06c48548003a6023507abffa3921ba028f98f3b147853fa"
+ },
+ {
+  "id": "CH1941-621",
+  "book": "CH1941",
+  "number": "621",
+  "title": "Sowing in the Morning",
+  "path": "data/CH1941/621.json",
+  "v": "4711836395c8129cff33a4fb4387302c817a572f1e1a20854ea0ed2595949ba8"
+ },
+ {
+  "id": "CH1941-622",
+  "book": "CH1941",
+  "number": "622",
+  "title": "One More Day's Work",
+  "path": "data/CH1941/622.json",
+  "v": "08889c1b1850383249bdddb72ca751d6e0af853708ca8cbecff712102259701a"
+ },
+ {
+  "id": "CH1941-623",
+  "book": "CH1941",
+  "number": "623",
+  "title": "Rescue the Perishing",
+  "path": "data/CH1941/623.json",
+  "v": "eac36259ff9d2503aaf6897d6a842042b6ef9efa2bf22c3d31bce81372ec86cc"
+ },
+ {
+  "id": "CH1941-625",
+  "book": "CH1941",
+  "number": "625",
+  "title": "Hark! 'Tis the Shepherd's Voice I Hear",
+  "path": "data/CH1941/625.json",
+  "v": "681714a9f180255716770fc4dfe7c091232be2b1d753d6a9d4384ca021e4b5e5"
+ },
+ {
+  "id": "CH1941-626",
+  "book": "CH1941",
+  "number": "626",
+  "title": "I Am Thinking Today of That Beautiful Land",
+  "path": "data/CH1941/626.json",
+  "v": "e14b9d72c4a519781a4982c7ad4650223937981accad8b3bb0548a2207d4083c"
+ },
+ {
+  "id": "CH1941-627",
+  "book": "CH1941",
+  "number": "627",
+  "title": "He That Goeth Forth",
+  "path": "data/CH1941/627.json",
+  "v": "961b28a1b535d464d68c8f9b6db594a23f487455ba8c7cac4dc705623a42cafe"
+ },
+ {
+  "id": "CH1941-628",
+  "book": "CH1941",
+  "number": "628",
+  "title": "Brightly Beams Our Father's Mercy",
+  "path": "data/CH1941/628.json",
+  "v": "6acb80a9d133a909e00566bf57a3990149d60bab3638f0004092ef6293693fb6"
+ },
+ {
+  "id": "CH1941-629",
+  "book": "CH1941",
+  "number": "629",
+  "title": "If Any Little Word of Mine",
+  "path": "data/CH1941/629.json",
+  "v": "720c0e5fafa9d8d39f78f4e53896f99e6cc7997baaa8ea97fb433b5f98dbc011"
+ },
+ {
+  "id": "CH1941-631",
+  "book": "CH1941",
+  "number": "631",
+  "title": "I'm Pressing on the Upward Way",
+  "path": "data/CH1941/631.json",
+  "v": "d65b3648aa015c9da483d2125164d6e548c2cab95b6d4d556bc5fcda98c84de4"
+ },
+ {
+  "id": "CH1941-632",
+  "book": "CH1941",
+  "number": "632",
+  "title": "Closer to Thee, My Father, Draw Me",
+  "path": "data/CH1941/632.json",
+  "v": "1281e258ad0ca35a554eb91d7a1f7e51fb17c8d654d6605ae81c92535c4df7ce"
+ },
+ {
+  "id": "CH1941-635",
+  "book": "CH1941",
+  "number": "635",
+  "title": "Redeemed! How I Love to Proclaim It!",
+  "path": "data/CH1941/635.json",
+  "v": "4b0d7b93722e1145e0d50bfaffb7597b91c49a6182fb606392e550676c123c13"
+ },
+ {
   "id": "CH1941-653",
   "book": "CH1941",
   "number": "653",
@@ -6915,7 +7019,7 @@
   "number": "149",
   "title": "Take All My Sin Away",
   "path": "data/CS1908/149.json",
-  "v": "4d865ab0bdacf59919b9cfcc8a529808cbbc695f4e6a1e2ac5acde69157eb36c"
+  "v": "7a0fe6a9cb689743f94deb30a4c48feb2cb95c9f7ce5406bedd331f7bb5d8bdb"
  },
  {
   "id": "CS1908-150",
@@ -6963,7 +7067,7 @@
   "number": "155",
   "title": "Come, My Soul",
   "path": "data/CS1908/155.json",
-  "v": "1e35ef3649d1a477b6faa1e458ccc396f2298e4024bd004f97c1fe044621b265"
+  "v": "1164738625c5511e110cf18647243f5c568c4f77b5cb84fae8c9db2fc31b4a3a"
  },
  {
   "id": "CS1908-156",
@@ -7027,7 +7131,7 @@
   "number": "163",
   "title": "Light Divine",
   "path": "data/CS1908/163.json",
-  "v": "228f08d3cf30009bbddfa1b375deac4e575d4e081963092cb4febd54754a9525"
+  "v": "88aba523622d2b570bc6f2ceacb435db58199dc3d1969af13144eb1681ee2249"
  },
  {
   "id": "CS1908-164",
@@ -7035,7 +7139,7 @@
   "number": "164",
   "title": "Come, Gracious Spirit",
   "path": "data/CS1908/164.json",
-  "v": "b91b2f353c0241422d267ccef54e09069e5dc3fb7db2a0bdd5c5c3d54aacd118"
+  "v": "29c9e585fd63fc160057a664495ac202ef992c12bc13db41f1879886ccc98e8d"
  },
  {
   "id": "CS1908-165",
@@ -7091,7 +7195,7 @@
   "number": "171",
   "title": "One Above All Others",
   "path": "data/CS1908/171.json",
-  "v": "86d5637b39e35d3e36f47e6caaaf43a1866d804fa2ae0f398703a00b1bf443c0"
+  "v": "b39db7d51f64e21574d4c82910b99f8382d2876bc116a4f7dfe5d6fef74ace16"
  },
  {
   "id": "CS1908-172",
@@ -7099,7 +7203,7 @@
   "number": "172",
   "title": "The Wondrous Cross",
   "path": "data/CS1908/172.json",
-  "v": "af165d6731b52d5b697bb61bd59ddd46356f55fd21170bb6fee4e418b8f3808a"
+  "v": "c205c74db42dfaf9b842812d429e408abe070797746ef8cd39df15042fa8b5d1"
  },
  {
   "id": "CS1908-173",
@@ -7141,7 +7245,7 @@
   "number": "177",
   "title": "Broad Is the Road",
   "path": "data/CS1908/177.json",
-  "v": "50e1a021368912facd55cf956410e1787b2534a50e52c638fb00a8d42a985160"
+  "v": "c10e962564fc9bffbd4d89a2edd3581b09ee94c9d360a2e4e9b5682ddd5aac20"
  },
  {
   "id": "CS1908-178",
@@ -7191,7 +7295,7 @@
   "number": "183",
   "title": "A Heart of Praise",
   "path": "data/CS1908/183.json",
-  "v": "2fdd9923c8fc924f3181411250d21b608e2eadb14828c88291f5d005cfb3f0ce"
+  "v": "37e681d0981248ecf9654b541ae50fcb8a52d1ca2379b6ff7bd243c85c11c05f"
  },
  {
   "id": "CS1908-184",
@@ -7215,7 +7319,7 @@
   "number": "186",
   "title": "I Do Believe",
   "path": "data/CS1908/186.json",
-  "v": "212036f432b9539fe7e6c6d2bab18b04bab15bc1e3056cded53c2b5a7ef7115c"
+  "v": "a08b1aebed17fa882449ee86cc81bf39648b78e1f4b7a438e80f702b047cc6de"
  },
  {
   "id": "CS1908-187",
@@ -7223,7 +7327,7 @@
   "number": "187",
   "title": "Conformed to Thee",
   "path": "data/CS1908/187.json",
-  "v": "c664c19d7e08f0e411e5ad56269abd827ddd3852863b9aa3504b30529e7665a8"
+  "v": "4da1e164191989775d1cb6de5632d2c06f8fe8a3e6e0fb81cce5e56c1e05ffd3"
  },
  {
   "id": "CS1908-188",
@@ -7231,7 +7335,7 @@
   "number": "188",
   "title": "God Shall Be First",
   "path": "data/CS1908/188.json",
-  "v": "8f80e313aa54e0df8b429fd8512c2277efec7e760d0cf068613a0c326dcecfd3"
+  "v": "61905561a319024d6da6dfed4f010cd5c829b5735b1fbad4cea3557c350ee624"
  },
  {
   "id": "CS1908-189",
@@ -7239,7 +7343,7 @@
   "number": "189",
   "title": "Something for Jesus",
   "path": "data/CS1908/189.json",
-  "v": "92928f7b9d83a88453d6582041b02194582b08d755b8e1d83b577616901bb594"
+  "v": "f9483b006e918cb494e82ad85554673f4135ecd4854f1329ee5ab62ef9466c08"
  },
  {
   "id": "CS1908-190",
@@ -7247,7 +7351,7 @@
   "number": "190",
   "title": "Hallelujahs to Jesus",
   "path": "data/CS1908/190.json",
-  "v": "7816789232848f8865edadc14a18bf7a454c94a2c6aa922556ce23552739e62b"
+  "v": "bf1b9f8479071b3ec231d25bc63139fc848a228ab8c465bfc967fc180324682c"
  },
  {
   "id": "CS1908-191",
@@ -7255,7 +7359,7 @@
   "number": "191",
   "title": "To God Be the Glory",
   "path": "data/CS1908/191.json",
-  "v": "c751d48bb646b6128eb920d007bbc11229a36549448ded5165578090c6152b43"
+  "v": "cb493f17683c66c70d2d1b6a81b5197e99783c4f69aecedcba29fecb3865fc5e"
  },
  {
   "id": "CS1908-192",
@@ -7265,7 +7369,7 @@
   "path": "data/CS1908/192.json",
   "sung": true,
   "sv": "0b5b43bb68f2d478cd806e48d3f1e6d17f9c7822cfcb567e8dc6a3ea7dc57375",
-  "v": "ebd0c2d199accdeefd13385db4de0f247eefe8cdc98de7c36f127d10ec8bbb23"
+  "v": "ab70ca844c9cda22bec925e3356733cc764a309e45f893a5e44687be83f2d138"
  },
  {
   "id": "CS1908-193",
@@ -7273,7 +7377,7 @@
   "number": "193",
   "title": "The Comforter Has Come",
   "path": "data/CS1908/193.json",
-  "v": "627b9a3c957b54ba4b59d7852d9e4610577e3b6341fcefcc6f097da77cdf127a"
+  "v": "de1625e33d29c1930e4f4107b4a56a96e6ae4ccc2c7e2479f8af0224bfd199e2"
  },
  {
   "id": "CS1908-194",
@@ -7281,7 +7385,7 @@
   "number": "194",
   "title": "I Will Sing of Jesus' Love",
   "path": "data/CS1908/194.json",
-  "v": "2e1b2d297b1d3bf77b7dc0239a5e64c9ad7ab7306df08faab24776d724a2e1e6"
+  "v": "b580a329d3da5e48ddeccea796aec54f20a1e0d22b0704e970d79c005cd3aa62"
  },
  {
   "id": "CS1908-195",
@@ -7289,7 +7393,7 @@
   "number": "195",
   "title": "Pardon, Peace, and Power",
   "path": "data/CS1908/195.json",
-  "v": "c872bffa3df975e0afaf1c77947f5251ea3b749d2e90ad6288018eabc4541605"
+  "v": "eb4e0e16dfb15e22f04436bd3a6e73f7ade11829145733589222e7890fd56720"
  },
  {
   "id": "CS1908-196",
@@ -7297,7 +7401,7 @@
   "number": "196",
   "title": "Tread Softly",
   "path": "data/CS1908/196.json",
-  "v": "c1cbedef8e032792165d917ebf3d565d3418e4d79760481ce8dc38bd6b063c13"
+  "v": "1bb774ee1ce4b543339d7376eabe4594322717d307913892d269884c7073ff0c"
  },
  {
   "id": "CS1908-197",
@@ -7305,7 +7409,7 @@
   "number": "197",
   "title": "Come Out in the Sunshine",
   "path": "data/CS1908/197.json",
-  "v": "0937f665570b3d306b26f0bbe305ec4f176754c7133e571a11a09f72102babef"
+  "v": "5e439385e4432f3bd07a76eeaab38f04c99bf05d878142f8798112e85b256b22"
  },
  {
   "id": "CS1908-198",
@@ -7313,7 +7417,7 @@
   "number": "198",
   "title": "Sunshine in the Soul",
   "path": "data/CS1908/198.json",
-  "v": "e06e2dc8ea736dec69e74e44e8d79bed721ba8d95319e22254015516195b9043"
+  "v": "7677830f9df48549be86fe9cc446c6183bf5f2f54299236b6ae1ce997fc019ec"
  },
  {
   "id": "CS1908-199",
@@ -7329,7 +7433,7 @@
   "number": "200",
   "title": "Follow All the Way",
   "path": "data/CS1908/200.json",
-  "v": "1922284ce6047a86cea936ed91ec73e6c7ce9f43a6e5d52a2cb7488a5ac8a9fd"
+  "v": "83a13304485adaec634c24273babb1e8ce690ee5f92bae3fe1632f5adffa738c"
  },
  {
   "id": "CS1908-201",
@@ -7337,7 +7441,7 @@
   "number": "201",
   "title": "My Sins Are All Taken Away",
   "path": "data/CS1908/201.json",
-  "v": "d8a0e2cae6050da5519be87b34460bef44be05d109a7c69acd82e3c0a3251da1"
+  "v": "fe8c8cf52aec43f6be4baf890356507c60928f64229c50c84d758dea1374664f"
  },
  {
   "id": "CS1908-202",
@@ -7345,7 +7449,7 @@
   "number": "202",
   "title": "Nearer, Still Nearer",
   "path": "data/CS1908/202.json",
-  "v": "6f126815fe8f5d36043e44cbe8585e869d75d57dda168444737fd22a8eb1db62"
+  "v": "7ea46eceecfa32b6626a58a9a370b8b78c469eeb835c5568e90a5fde81a416fa"
  },
  {
   "id": "CS1908-203",
@@ -7353,7 +7457,7 @@
   "number": "203",
   "title": "He's Everything to Me",
   "path": "data/CS1908/203.json",
-  "v": "dc724f593bf7b407577ee52e8fea22ea0d3a667e4265e7e1c7b097b24507dac1"
+  "v": "1445e6e29beb6e886f82d66f99a9ada9ef8f45fac45f638d6b94ce35d026a640"
  },
  {
   "id": "CS1908-204",
@@ -7385,7 +7489,7 @@
   "number": "207",
   "title": "There Shall Be Showers of Blessing",
   "path": "data/CS1908/207.json",
-  "v": "81968ba761536870a43c1609d6b5df69754be827ddd5fe1cde7d03221a799b4b"
+  "v": "92ca066acc6d64f6196dbac291d3e6da454fc4b464eb3a4547704c24969656f8"
  },
  {
   "id": "CS1908-208",
@@ -7393,7 +7497,7 @@
   "number": "208",
   "title": "Sweet Peace, the Gift of God's Love",
   "path": "data/CS1908/208.json",
-  "v": "397bb66e8768ca769585e7caf4729eb4ee5cc138adb9db5f86ebcd421437bb5a"
+  "v": "ed639156e8984122e7ad15d7d28fb2950ffb1e698d4a2acb34fcf608e9d95235"
  },
  {
   "id": "CS1908-209",
@@ -7401,7 +7505,7 @@
   "number": "209",
   "title": "The Dove of Peace",
   "path": "data/CS1908/209.json",
-  "v": "e0c1f0c6e2f3939b933b7f8f67708207e95fc5f2eee3b96daf643a833ccea85d"
+  "v": "570a787d2e25e36f28401cd7ee67935feccf50220e8fd26e3ac6355c29c6f836"
  },
  {
   "id": "CS1908-210",
@@ -7417,7 +7521,7 @@
   "number": "211",
   "title": "The Haven of Rest",
   "path": "data/CS1908/211.json",
-  "v": "2a2aba22a8847e2738499d5c8ca2c2dac9bfe0c23e54e51fbc85abe2bd42150c"
+  "v": "dd5d99b0252b838aaaac44516a7b8b8d5bfc84e1f16195af8657b21a5b45dd02"
  },
  {
   "id": "CS1908-212",
@@ -7425,7 +7529,7 @@
   "number": "212",
   "title": "At the Cross",
   "path": "data/CS1908/212.json",
-  "v": "220ee8b4ff9fc1fc895e3353d00971ce0ab43d9f752b5bb88ca28bf13cd390d5"
+  "v": "2d104b3375ea454c9eea466cddc4dcfcffd775642182b455b4378e329a02bb9b"
  },
  {
   "id": "CS1908-213",
@@ -7433,7 +7537,7 @@
   "number": "213",
   "title": "Hallelujah for the Cross!",
   "path": "data/CS1908/213.json",
-  "v": "f4ea7b019aaf6de45f51943ccb937b9c3b5b967c9d67039bda7c4b8c0d767e52"
+  "v": "be9a9f1f05e4ff93608c25a6697c000f7e7ea4bb9cd62e907a4b92faa3d84c82"
  },
  {
   "id": "CS1908-214",
@@ -7449,7 +7553,7 @@
   "number": "215",
   "title": "The Name of Jesus",
   "path": "data/CS1908/215.json",
-  "v": "fdb504506b904ba35c9d6b170e1f8453988199473350d284e6752bafb238300e"
+  "v": "b70d0921490d66c38c7eb8392902b3336245af36c76990a6f3da85ca8ba447b9"
  },
  {
   "id": "CS1908-216",
@@ -7457,7 +7561,7 @@
   "number": "216",
   "title": "Precious Name",
   "path": "data/CS1908/216.json",
-  "v": "aefd910a5eedac13d63932689bf286704b831fbeca798661bd3d5bc866dcf311"
+  "v": "28342023c68f747ee8996921e5b400c10227f47e1bb47abdaa508ab8921fe60f"
  },
  {
   "id": "CS1908-217",
@@ -7481,7 +7585,7 @@
   "number": "219",
   "title": "Standing on the Promises",
   "path": "data/CS1908/219.json",
-  "v": "99746145666e7aa44752b65b1ccadfa3c4f6aee70bd17bc7ee7ab516694cb8b9"
+  "v": "f3c68d9837cca115447fcadbb5ad8fabb828e9e81ab38fe59fb1722237fd8248"
  },
  {
   "id": "CS1908-220",
@@ -7497,7 +7601,7 @@
   "number": "221",
   "title": "Saved to the Uttermost",
   "path": "data/CS1908/221.json",
-  "v": "6075b5a14359937dac85534f7711f19a8423efd5cde854f7a54fb79eff1f7cdb"
+  "v": "c98c6a341bc8673616f148b0adf2484faf6e773eaefde89ad20eff9b3f232ce5"
  },
  {
   "id": "CS1908-222",
@@ -7507,7 +7611,7 @@
   "path": "data/CS1908/222.json",
   "sung": true,
   "sv": "bf153cea5c89d188b4b9587f74777c5f658de04a75cbdd0b399f54d7418e5d6b",
-  "v": "0c5d1564a07e84d6409a2a491cd4237fba16c5d91ca372bc308632248aac40ab"
+  "v": "4372d7f4dcab4b924f69ac0cfb9d34f3025e4aa7ad38b2c54f62050adb3e4941"
  },
  {
   "id": "CS1908-223",
@@ -7515,7 +7619,7 @@
   "number": "223",
   "title": "Nor Silver Nor Gold",
   "path": "data/CS1908/223.json",
-  "v": "311b66b3fb7f64313cdd0a91b2d617c8ec1abf62553938ef9157b8394c06d59b"
+  "v": "91338f806e758362bb29e4b11cac30fc90136cfcb244db31ec0ab415e426909b"
  },
  {
   "id": "CS1908-224",
@@ -7531,7 +7635,7 @@
   "number": "225",
   "title": "Washed White as Snow",
   "path": "data/CS1908/225.json",
-  "v": "98fc1945af71192a73feb4a95ef865a739ddbdaa6786fd2ee2d80b3c774102d5"
+  "v": "c76e298279ec502eeea8a53fd52e5d01bb1f6f8d162042c7051d9f2e65de4562"
  },
  {
   "id": "CS1908-226",
@@ -7539,7 +7643,7 @@
   "number": "226",
   "title": "Praise Him! Praise Him!",
   "path": "data/CS1908/226.json",
-  "v": "b0878040f2bbd69f531fe5c4ef825eef51d0605334aaa780651f712163a1f590"
+  "v": "259845d962c2ba96bc52a811f061f2270dc5e6f6df44cb4f27817c58af55349f"
  },
  {
   "id": "CS1908-227",
@@ -7547,7 +7651,7 @@
   "number": "227",
   "title": "Wake the Song of Joy and Gladness",
   "path": "data/CS1908/227.json",
-  "v": "b43cfde06eb2d936ba312a629a1a351283a74975d7a3e584a8672f8398fccd14"
+  "v": "0a222cb777bf14f2ae9e07fc1e3a6181e5e781ee5dcf0820980b2d203be388dc"
  },
  {
   "id": "CS1908-228",
@@ -7565,7 +7669,7 @@
   "path": "data/CS1908/229.json",
   "sung": true,
   "sv": "0b3ed675a0fcfc9d1037444fcb3b57812c1165f407857035a3bcd37b473b5377",
-  "v": "d363e1df176a124880b5650b5ab14b16bc369cd62012f9a4fd3b7bb752b93bbf"
+  "v": "674fe58ed5c5b047c0da784143defb86a2a545dc6a118ef320796886f81eb0a6"
  },
  {
   "id": "CS1908-230",
@@ -7581,7 +7685,7 @@
   "number": "231",
   "title": "Music in My Soul",
   "path": "data/CS1908/231.json",
-  "v": "ce0581bc6848bd089ae6f99eb5ea8bae2a6176a98f66e3a92aac9f2506140000"
+  "v": "2729fbf66306cc473a1c71c16b0ad28c7f13061c453564c3d9841bafad91c1d7"
  },
  {
   "id": "CS1908-232",
@@ -7589,7 +7693,7 @@
   "number": "232",
   "title": "Singing All the Time",
   "path": "data/CS1908/232.json",
-  "v": "66cd52c6ee9b5bb17cc04311ad790f9f42b740cbcfaa31f3e022a8bacc7d1c44"
+  "v": "87b6ff441a1ad213ea7611eeb706cc594d97f2867a9b68fc40603a73d9173986"
  },
  {
   "id": "CS1908-233",
@@ -7597,7 +7701,7 @@
   "number": "233",
   "title": "When Love Shines In",
   "path": "data/CS1908/233.json",
-  "v": "d68e0a53e1edea3f13091180763e9eefe52a7e37548d728f5f245e918321a73a"
+  "v": "45da0f92e557627b53539aeca47eb80a8fc53ed791076b68c21ca2deecf51dda"
  },
  {
   "id": "CS1908-234",
@@ -7623,7 +7727,7 @@
   "path": "data/CS1908/236.json",
   "sung": true,
   "sv": "42da3e0c82c6fe059ccd602b682a18d4209a3742f4e9b7cfb8c793b2173fa332",
-  "v": "936c6b0089dfa4f759ef000c67c9e983388fb7314e1cb7557e0ba79d9ebdc96d"
+  "v": "843324ec0901cdb7ba0dc2ff5464919ee0b48f87c77b507a4df9fe628f206d95"
  },
  {
   "id": "CS1908-237",
@@ -7631,7 +7735,7 @@
   "number": "237",
   "title": "Beauty for Ashes",
   "path": "data/CS1908/237.json",
-  "v": "8470845c0e5efd92c4512e1140be829f0b6d013a18315ab9b44bf9af87bdb0ce"
+  "v": "a72927b44ffb224645a391dcfbffd9d0c92476fac6173e580848edf1a87e9678"
  },
  {
   "id": "CS1908-238",
@@ -7649,7 +7753,7 @@
   "path": "data/CS1908/239.json",
   "sung": true,
   "sv": "e239a4bbc1431bdb36602fe77c4e31f67deb6307e88e5f83a0a0101f69508041",
-  "v": "9b583b47535a145781ee8399a0a6250aada0748a69f0e6344f0abcc781253517"
+  "v": "86a28c3deebe0e9c2f4db696d385fe7a54701f0b9167f56fe5109f139895ec72"
  },
  {
   "id": "CS1908-240",
@@ -7665,7 +7769,7 @@
   "number": "241",
   "title": "Holiness Unto the Lord",
   "path": "data/CS1908/241.json",
-  "v": "116bf1cb3f429a875f60ff70bdb4f2844e70470b1da9e848d6d21f8742c807fb"
+  "v": "05932168019a41be3da917e5dc2c3d41b3879f9a45cdb8a765479f9e5c2144e2"
  },
  {
   "id": "CS1908-242",
@@ -7673,7 +7777,7 @@
   "number": "242",
   "title": "'Tis Shining Still",
   "path": "data/CS1908/242.json",
-  "v": "ce3c3e0eaf84baafd6719a359da5839f1d2d93f96c5128bcb62dcad794e2cf44"
+  "v": "0c128024aae7c914f29ed0523fb88f602b887299ccbac0ce5d995029af722ec9"
  },
  {
   "id": "CS1908-243",
@@ -7689,7 +7793,7 @@
   "number": "244",
   "title": "Peace on Earth",
   "path": "data/CS1908/244.json",
-  "v": "0f7a39b44d96a22ceeed520268015f4a4cbdc65f3f4abae37e45f69188250019"
+  "v": "efbc8c35dc4ad70c087ff9514706728597286de81ed502f69a132eb86a6b510b"
  },
  {
   "id": "CS1908-245",
@@ -7707,7 +7811,7 @@
   "number": "246",
   "title": "The Lily of the Valley",
   "path": "data/CS1908/246.json",
-  "v": "865d7511c3435b399cb69cbd2093204f57cafb194421e8127d7a6a4d662d8707"
+  "v": "204d6e87195a77b2735e69c726082d4ef42e098aa6d5232ee65450869d3e7576"
  },
  {
   "id": "CS1908-247",
@@ -7723,7 +7827,7 @@
   "number": "248",
   "title": "Happy Songs",
   "path": "data/CS1908/248.json",
-  "v": "cfafef9813fae1e59ca93956bbfd9c590fd54ae8733e32f11bd048b0f9b43aa3"
+  "v": "816efdaf723f826323867783e3ee156bc5f4d74e83c1fddc65bafd37e94b8f50"
  },
  {
   "id": "CS1908-249",
@@ -7731,7 +7835,7 @@
   "number": "249",
   "title": "Our God Is a God of Love",
   "path": "data/CS1908/249.json",
-  "v": "c0fbb3552b0b90278f97eb5ba8c63ec045862b811bf44e433560a0028ff96a21"
+  "v": "14454fd41d2e6c6a67281c7fbe166d371378c35df42e3cb57ffa2f6821491ba2"
  },
  {
   "id": "CS1908-250",
@@ -7771,7 +7875,7 @@
   "number": "254",
   "title": "I Will Follow Thee",
   "path": "data/CS1908/254.json",
-  "v": "96b8ce166a7042d383cacdf76e102454b0f8fca78b42d66e4f6bad9376646c54"
+  "v": "fcccf26095c297c66d92ab29262a98e138ad45f759a5130436c083925b066c02"
  },
  {
   "id": "CS1908-255",
@@ -7795,7 +7899,7 @@
   "number": "257",
   "title": "Crown Him",
   "path": "data/CS1908/257.json",
-  "v": "80186105b64c15e1485d5a958e371d277ab601dc735f40c1c953e420b5ab726e"
+  "v": "f46301a6ebb21dfd0c894d1a41bab5efcb0b9bb3c3fd9d3d9433d7ad17882736"
  },
  {
   "id": "CS1908-258",
@@ -7803,7 +7907,7 @@
   "number": "258",
   "title": "Crown Him Lord of All",
   "path": "data/CS1908/258.json",
-  "v": "b480bc96969be4b817bc8e11b82b4f337d0b87864acc41fb2d358f2ae52f278c"
+  "v": "80a192dff5eb7b49fcc5558a79b8a78cb025c6ab5fbc7d8cc3f85ba730717d51"
  },
  {
   "id": "CS1908-259",
@@ -7811,7 +7915,7 @@
   "number": "259",
   "title": "The Power of Jesus' Name",
   "path": "data/CS1908/259.json",
-  "v": "8334fc5dcbe2b9e0ce18a420e4a6f8f684f536163d3cc435c9e57f74a9bd86b9"
+  "v": "a2f11d9516f87fd31f6e5d2a60a18f53f27d5699f0d06d37b972ef57ff39e55e"
  },
  {
   "id": "CS1908-260",
@@ -7827,7 +7931,7 @@
   "number": "261",
   "title": "Crown Him",
   "path": "data/CS1908/261.json",
-  "v": "2e541a6429401097f3948de18e4a65f00358c202ac35346e3c61e94557cbc69a"
+  "v": "94426f920e5dab81faf1c5cf0235adf240b759590e9878d023861e5c2977fb38"
  },
  {
   "id": "CS1908-262",
@@ -7859,7 +7963,7 @@
   "number": "265",
   "title": "Crown Him, Crown Him",
   "path": "data/CS1908/265.json",
-  "v": "2eab7e2d948dcc69aae3acd8776c96a98002079c07a64d16632119ecf0a43328"
+  "v": "8745f66c9022bf111ba52f0f61662992c4cf9fda7184a1b7407cc921b5db61b3"
  },
  {
   "id": "CS1908-266",
@@ -7867,7 +7971,7 @@
   "number": "266",
   "title": "Come and Worship",
   "path": "data/CS1908/266.json",
-  "v": "10297b432634d8d214649d4a39854275f0d8cee5353da883f1ab77b2e8d83279"
+  "v": "3d19a1ae191b744dcb080108a1b1e9973288159a2a7df3e7ce0e08d2b9c0bcb8"
  },
  {
   "id": "CS1908-267",
@@ -7891,7 +7995,7 @@
   "number": "269",
   "title": "Angel Voices, Ever Singing",
   "path": "data/CS1908/269.json",
-  "v": "339eddca0871d1530e1c1697cdef46a7021e2b55a43689fde825070e4ad5cca8"
+  "v": "2cd96347bc454ae6f15748a16db1024873f5cd14392b22486fbf6adb98ee1fe3"
  },
  {
   "id": "CS1908-270",
@@ -7899,7 +8003,7 @@
   "number": "270",
   "title": "Blessed Hour of Prayer",
   "path": "data/CS1908/270.json",
-  "v": "6f8637128957534526bb848669113a29bbcb1da98c797c9e206e3ee1dba8620f"
+  "v": "9beae41536c3e54c926a30bef6873dec6b7e9f1fc0428b7e5c8f282ac183ef94"
  },
  {
   "id": "CS1908-271",
@@ -7907,7 +8011,7 @@
   "number": "271",
   "title": "Peace: Perfect Peace!",
   "path": "data/CS1908/271.json",
-  "v": "d97eb49c16e7048cf4e6c8c2581bc3b3c50a341be7f5eb106c119c11240c3ede"
+  "v": "2cd0df5dd031869b5054e1e8388d5869b2b107f0d34ca029dc460b33ed8cf538"
  },
  {
   "id": "CS1908-272",
@@ -7915,7 +8019,7 @@
   "number": "272",
   "title": "On Time",
   "path": "data/CS1908/272.json",
-  "v": "0c8dc92e9adfa351a5ad8bc7c687633699632e329d64a6b86764c56e033410ce"
+  "v": "7d5a779897df35dcf57f77af5963e64b0adb1cc924a064a71e34f474052ad7b5"
  },
  {
   "id": "CS1908-273",
@@ -7923,7 +8027,7 @@
   "number": "273",
   "title": "Welcome Here",
   "path": "data/CS1908/273.json",
-  "v": "c8d9516b719973d755f0279993ce0712517ab5b2d13ea75f744e1bc5a48e536a"
+  "v": "aebe8d63feb2d65ec55794bb723cf4041c465754573e61428477a17d2a817b70"
  },
  {
   "id": "CS1908-274",
@@ -7939,7 +8043,7 @@
   "number": "275",
   "title": "Valley Lilies",
   "path": "data/CS1908/275.json",
-  "v": "ca3190c390bf3bfe934e0847cfff423d901d4bc577a42c1948f50390b2e5b4ba"
+  "v": "495c81c124aea285f93236df5ac2179d0c2b67caef852eb5695c471e147a986e"
  },
  {
   "id": "CS1908-276",
@@ -7947,7 +8051,7 @@
   "number": "276",
   "title": "Sunlight",
   "path": "data/CS1908/276.json",
-  "v": "6edd96a9d61e99b1edeef8d0e7edecec6c9d5f0e87315c5a9ddd25be11a7a4c5"
+  "v": "198dd4c507367fb3d7279f998114e2554dbbd75d38a7742d6bf0f100e3d672c6"
  },
  {
   "id": "CS1908-277",
@@ -7955,7 +8059,7 @@
   "number": "277",
   "title": "Brightest and Best",
   "path": "data/CS1908/277.json",
-  "v": "790de38be2adee64df723f730fec15e236dd41dacf164123f97aa3c479a8f13b"
+  "v": "f9dc553c3633a868131ac4d953a3c39c345ed26458afbbd9dfe2308c5df1bc18"
  },
  {
   "id": "CS1908-278",
@@ -7963,7 +8067,7 @@
   "number": "278",
   "title": "Jesus, Come and Bless Us",
   "path": "data/CS1908/278.json",
-  "v": "31997676501de8a6254dcef3451a590b7b872bb86197125c5035af51388f1a53"
+  "v": "34501f16055e2560cd5cb75058c271af0a615bee2951377e05ca1cf3bde0c72a"
  },
  {
   "id": "CS1908-279",
@@ -7979,7 +8083,7 @@
   "number": "280",
   "title": "Welcome Hymn",
   "path": "data/CS1908/280.json",
-  "v": "8a62e0cc26329e6e3abc0b728e2a3219ffad6a7ef76de6d1b6434556d2cbb43e"
+  "v": "f4757da68491f1627a5da85d57c22314dde806be35b09b6b5f047cecb795fc88"
  },
  {
   "id": "CS1908-281",
@@ -7995,7 +8099,7 @@
   "number": "282",
   "title": "Draw Me Nearer",
   "path": "data/CS1908/282.json",
-  "v": "b01764428663b12564c6a11487f36bb3be01d9f6e9ba6d671ba50a39a7191d03"
+  "v": "b122bf966ddba895c966433fa66c06cbca0e875fec3caef119601869a32a191d"
  },
  {
   "id": "CS1908-283",
@@ -8003,7 +8107,7 @@
   "number": "283",
   "title": "Jesus Loves Me",
   "path": "data/CS1908/283.json",
-  "v": "cd2a804854da4493afeab723946f55bc6f3a4d372df060c8c11a6416aff53f1c"
+  "v": "29e6d598ebf6e8fd2133ecbba826841d4b26e434c4cbc1a8ab428196c0291db0"
  },
  {
   "id": "CS1908-284",
@@ -8019,7 +8123,7 @@
   "number": "285",
   "title": "Alleluia! Alleluia!",
   "path": "data/CS1908/285.json",
-  "v": "2cb70123176de0f7101bc5f19417641c471f36623dd6d7c8b6c1fa59fa2edfdd"
+  "v": "67c618f64e556097df418413830f0e19eaec5412609a3173764c022b4dad0674"
  },
  {
   "id": "CS1908-286",
@@ -8029,7 +8133,7 @@
   "path": "data/CS1908/286.json",
   "sung": true,
   "sv": "007811510218849852617fa2c7063815475679b2e10a0c92bbd994db9ba21830",
-  "v": "fc5c32e8bf7e41f1a612183215e1c612068e688271aca32a45b994e253c77e82"
+  "v": "87ba1ad5bfacb439a00f653176543020be2a738bef091ee91df1eb72f96e573e"
  },
  {
   "id": "CS1908-287",
@@ -8055,7 +8159,7 @@
   "number": "289",
   "title": "Near the Cross",
   "path": "data/CS1908/289.json",
-  "v": "1c3ee572f501cf4db2f0ce18ef25c50e43a10629aaf6e6bbb6d50ca5414eb115"
+  "v": "5b29c334ed66e260a52fc7f4c9bd1f7801843e0ea35deb59938f184d76104075"
  },
  {
   "id": "CS1908-290",
@@ -8063,7 +8167,7 @@
   "number": "290",
   "title": "I Know Whom I Have Believed",
   "path": "data/CS1908/290.json",
-  "v": "72dbc07c3cd4845427ced70a79f3c4891e6ce794db4c5ac02ac91cf35162740d"
+  "v": "cf8e60720434af7c22f3dab4e944a12d5b377fce4c5579f19102049e80df5de8"
  },
  {
   "id": "CS1908-292",
@@ -8071,7 +8175,7 @@
   "number": "292",
   "title": "The Valley of Blessing",
   "path": "data/CS1908/292.json",
-  "v": "3e37a10df0d1623a7b688da25e81e9b32194d28b7ff485b3995d62c8f8d1250a"
+  "v": "961bd175c167951fa25716eddddde59f671b23e9a57edd3d0c6ff4796f799928"
  },
  {
   "id": "CS1908-293",
@@ -8087,7 +8191,7 @@
   "number": "294",
   "title": "The Solid Rock",
   "path": "data/CS1908/294.json",
-  "v": "dbdee64af656b7e33dafeb6bf7b8283a20e4ed0d7ce9f8cd92e1ab414d3647f2"
+  "v": "167811cb67b525f135a9767febc44a4723279439fa5b0394e5f3c2fe7a1bf9de"
  },
  {
   "id": "CS1908-295",
@@ -8095,7 +8199,7 @@
   "number": "295",
   "title": "Walking with God",
   "path": "data/CS1908/295.json",
-  "v": "237991955c4d938a99e36a14307988d4465fbb8af00a6b942514f06536a57dcf"
+  "v": "70c4472b41bf7e97bbed38aa9817c5802d2fbc2305453c7e5a6a65ac1406f7f8"
  },
  {
   "id": "CS1908-296",
@@ -8103,7 +8207,7 @@
   "number": "296",
   "title": "Walking with Thee",
   "path": "data/CS1908/296.json",
-  "v": "1542d79bd1242ecb145bfce04632003e7c4f51f2970020ba11f73577627005ef"
+  "v": "ac9c9e90d3f6ed7a32b98576552ef39de9daf9628e6d9751b3c0da5932c42e68"
  },
  {
   "id": "CS1908-297",
@@ -8153,7 +8257,7 @@
   "number": "302",
   "title": "No Other Name",
   "path": "data/CS1908/302.json",
-  "v": "106f5562a172e5714fcc6711dc9d9768d57a100c710d9fc73d852149cf1adb51"
+  "v": "c7b6e4d46cc963624aa02fa71a4e51d5a712257b5cb3cccb5458e00dfcf57b54"
  },
  {
   "id": "CS1908-303",
@@ -8169,7 +8273,7 @@
   "number": "304",
   "title": "Wondrous Love",
   "path": "data/CS1908/304.json",
-  "v": "a1bad998cbc4b4b045d23906adaa651f5eb0b86e83cb83288699a7e8e6853e78"
+  "v": "eca3f22abff168ec5cb0fe77cc34954450ad21cff738031fcadaf24ec431b5ad"
  },
  {
   "id": "CS1908-305",
@@ -8179,7 +8283,7 @@
   "path": "data/CS1908/305.json",
   "sung": true,
   "sv": "da9de79b1121cb45788b9b0aaa49b069910cd59bb248bd9db9b2f0400708c5bd",
-  "v": "b8eca11d56c6877b8820b0616d3816b9feb50e0f76a638ae6305fdac87d8e844"
+  "v": "bd846d053ace45e441a587770c6de7b16cc10b674f9b82beb08f1626c596bbdf"
  },
  {
   "id": "CS1908-306",
@@ -8195,7 +8299,7 @@
   "number": "307",
   "title": "Our Surest Stay",
   "path": "data/CS1908/307.json",
-  "v": "8fb1c813ece87e2faa6114aa08a58b5447a76ff27295d7f285dca89a18056c2b"
+  "v": "19a299408f70cc31d2091f6dc025dcd64b3334f95dc8acaacf0d3159105fae42"
  },
  {
   "id": "CS1908-308",
@@ -8229,7 +8333,7 @@
   "number": "311",
   "title": "Tell Me the Old, Old Story",
   "path": "data/CS1908/311.json",
-  "v": "59f31bae983c48dfbb12ff874be2355088cf28d9cb16395b9b39f3b34bc9a58b"
+  "v": "9f868602d5603492a0bc5d4f496e49f5baff57ec303fbd39a12672096d8cad84"
  },
  {
   "id": "CS1908-312",
@@ -8245,7 +8349,7 @@
   "number": "313",
   "title": "Jesus, the Light of the World",
   "path": "data/CS1908/313.json",
-  "v": "80cbf8775a2ff70fd9b64743033e32656ec9d33e5d0a6586129eaaaa1edd37e5"
+  "v": "025b7f15646800ccb2dd808f7b85632bf331f9544d72bf0c94b13b1d8ea4cee4"
  },
  {
   "id": "CS1908-314",
@@ -8261,7 +8365,7 @@
   "number": "315",
   "title": "Give Me Jesus",
   "path": "data/CS1908/315.json",
-  "v": "c3f5d45515e98acf48a43d5c27c3a88c74882f77cc968383ed61b2792ac952d9"
+  "v": "106bac0fa1b422b5d8cef39c9f0ebe0e87e35f5155003eae7518eeaf86af30dd"
  },
  {
   "id": "CS1908-316",
@@ -8277,7 +8381,7 @@
   "number": "317",
   "title": "I Lay My Sins on Jesus",
   "path": "data/CS1908/317.json",
-  "v": "9cfb2ea96852d36492dc28f4cd53a9a8bde181e2a9e87d624b36c3270d3bba7e"
+  "v": "775597f2fb7bc19f5f5a7e6d5de4e108f1cf22d81d98fc707ecc191aff9fc52e"
  },
  {
   "id": "CS1908-318",
@@ -8285,7 +8389,7 @@
   "number": "318",
   "title": "Thy Life Within Me",
   "path": "data/CS1908/318.json",
-  "v": "e46cc7d58687e4e5bb7734590bff291ac53dac0fda0aa7276a307a8776b3e6f7"
+  "v": "fb6a6b7192c8fa5c8067fa290eb6642705a6df2c74c3e5d0085dfb07150dbb07"
  },
  {
   "id": "CS1908-319",
@@ -8325,7 +8429,7 @@
   "number": "323",
   "title": "Children's Praises",
   "path": "data/CS1908/323.json",
-  "v": "748277ba1cfeb2a8fb949921475a639f8a6c3023656d25eca341fdf9e703001e"
+  "v": "99f04c1b661efe77ae9f6a976af58327693cbfb2a2a79c7ba4b857688ed9d036"
  },
  {
   "id": "CS1908-324",
@@ -8341,7 +8445,7 @@
   "number": "325",
   "title": "The Voice Within",
   "path": "data/CS1908/325.json",
-  "v": "bb3d0426840d8f39aa5aecaaf476bbdf8a56470b06bebf5b3ceee4ce92e7b38c"
+  "v": "6a99e8da389077335997aebcea042efb391a56859895cbe9927bf355a08b294f"
  },
  {
   "id": "CS1908-326",
@@ -8349,7 +8453,7 @@
   "number": "326",
   "title": "Saviour Mine",
   "path": "data/CS1908/326.json",
-  "v": "7d36bf5c3dcf064839f61be91684549bd9ba1bc3c6fcdc5c34d419612a8c5519"
+  "v": "417fe65d179ed492de882675fb691f1d60e9f29750ce890a5f9895c2e12a1139"
  },
  {
   "id": "CS1908-327",
@@ -8365,7 +8469,7 @@
   "number": "328",
   "title": "Worthy Is the Lamb",
   "path": "data/CS1908/328.json",
-  "v": "5e5be1a65a733a9e4d8a77897f88f51692b793aa21b6eef4296d15032d6df041"
+  "v": "875cfce6caa6857a69ad06913943fd9c11cd6b6a18a54cd3e83c0541da6b245c"
  },
  {
   "id": "CS1908-329",
@@ -8381,7 +8485,7 @@
   "number": "330",
   "title": "I Sing the Power of God",
   "path": "data/CS1908/330.json",
-  "v": "d33c9f4b5d34d1fedb0c8ad5061ed715c7b2fa2e8587ee0983aebb97814911a6"
+  "v": "7e9a19f3f3af83a452763c06e91af67cb9c2fbdf9845c06cbcecc17b5ddbde60"
  },
  {
   "id": "CS1908-331",
@@ -8389,7 +8493,7 @@
   "number": "331",
   "title": "How Can I Keep from Singing?",
   "path": "data/CS1908/331.json",
-  "v": "bfdfcbf7d91dc63de924533e5f5cde9511ca05af609df582d83eca644d64b603"
+  "v": "c06bd8e4ec6d9783e38514d9ec4ae81ade11fc8917091a50c39b4bbcd991b8cc"
  },
  {
   "id": "CS1908-332",
@@ -8397,7 +8501,7 @@
   "number": "332",
   "title": "I've Found a Friend",
   "path": "data/CS1908/332.json",
-  "v": "1ef4b0e8f1583d0b3dcd1bd644408b0c84e49f3608c271db4deac52ad728c80e"
+  "v": "76e5e3a81c987687c280aa143543c13d6c90ba082369a8372a14056925486bd0"
  },
  {
   "id": "CS1908-333",
@@ -8405,7 +8509,7 @@
   "number": "333",
   "title": "Lord of All Being",
   "path": "data/CS1908/333.json",
-  "v": "2dff905e4959acf8bbab81a63722f4c70ba2504b86ef26f971666347cc4e590e"
+  "v": "4c048159b0751786794e00b1665aeba9e8254d5ab42e90216e2c5bf48382f1f9"
  },
  {
   "id": "CS1908-334",
@@ -8413,7 +8517,7 @@
   "number": "334",
   "title": "For Us",
   "path": "data/CS1908/334.json",
-  "v": "730064b8749f27798f3cd384b8708adf4501084d5be6ce7f371af772fb691f46"
+  "v": "9d8b6975f9fe0d6306d4b2854d147c71ff7125e66cbb7e6557419a996cf74c3e"
  },
  {
   "id": "CS1908-335",
@@ -8429,7 +8533,7 @@
   "number": "336",
   "title": "My Salvation, My All",
   "path": "data/CS1908/336.json",
-  "v": "8f01f32aa462c40bb28bd70e98f4d293dc15edbd2a2640318a1fcef4339a9426"
+  "v": "0e9f058724cbcdbd5dd3086ec5b74ec0a7cbccbc6aecd0dbca7094bf42765070"
  },
  {
   "id": "CS1908-337",
@@ -8437,7 +8541,7 @@
   "number": "337",
   "title": "Psalm of Praise",
   "path": "data/CS1908/337.json",
-  "v": "fb353e22f615c5d57359824d6f7b36081529a7333c9facdb30bfde6a888bb561"
+  "v": "62504d89c561b71dab2663c47c004de90e24bfa1b81a53cce3a763aeee66c684"
  },
  {
   "id": "CS1908-338",
@@ -8453,7 +8557,7 @@
   "number": "339",
   "title": "Twilight",
   "path": "data/CS1908/339.json",
-  "v": "c2e6e370d1264eaec8387eaceabc837ac33cd1ecd723ca613ebe70946b0d381f"
+  "v": "3227cda22a246dafabbf1472ad11ffbe2e05913fce00ef15762a4ea75b550e24"
  },
  {
   "id": "CS1908-340",
@@ -8461,7 +8565,7 @@
   "number": "340",
   "title": "Saviour and Friend",
   "path": "data/CS1908/340.json",
-  "v": "658d534a6f83e508724fa738de9a2a4d4e1352145bffa406ec81c81f25506f37"
+  "v": "e7da906230af6459c4dbda98ad213fa1184f2c3bf8130bd209a011b267c99aa8"
  },
  {
   "id": "CS1908-341",
@@ -8517,7 +8621,7 @@
   "number": "347",
   "title": "Holy River",
   "path": "data/CS1908/347.json",
-  "v": "0da22a4958671fe44a47cdaf84895ce6774d866e36d0e92897eae20d09e54ea3"
+  "v": "95ee090cfddadfebd42eaa17fc0e0c777ef9649304028cd63a12f201cb5e7478"
  },
  {
   "id": "CS1908-348",
@@ -8525,7 +8629,7 @@
   "number": "348",
   "title": "Little Town of Bethlehem",
   "path": "data/CS1908/348.json",
-  "v": "90f39014bc451e3b9fe68fcc5d25be3bf568e2897039e55eb917af839cfcd911"
+  "v": "ee26e0a8a1b5032cb3ee31f35eb23cf1356af8b9d4df71d0d71be54e8b49b483"
  },
  {
   "id": "CS1908-349",
@@ -8533,7 +8637,7 @@
   "number": "349",
   "title": "The Lord in Zion Reigneth",
   "path": "data/CS1908/349.json",
-  "v": "a81aeff524d44913d437b758a75ca1d414ac7fd3c7630a4c9c4f8549953db3e8"
+  "v": "3da08a29e9bb06a346eaeaf4cb51680d68e136fbcae862af85b1279c055eebff"
  },
  {
   "id": "CS1908-350",
@@ -8541,7 +8645,7 @@
   "number": "350",
   "title": "Beneath the Cross",
   "path": "data/CS1908/350.json",
-  "v": "6b865aa9dcf9d7abfff7a88aaaf74c9dbb6846a7d755831d4145ef885deb4c60"
+  "v": "55641634376fe204a9496dac7eeaf0ca6fe0b9d1570b033faad077bae64379ad"
  },
  {
   "id": "CS1908-351",
@@ -8573,7 +8677,7 @@
   "number": "354",
   "title": "Songs of Praise",
   "path": "data/CS1908/354.json",
-  "v": "e83e08fee843de7cd4cf7ac6df3e18884c5962b134945ec72bb8d5df39519bf9"
+  "v": "2da4be59b9292a12fae542a43c7e4392be0e75836a8d9e49e0e989d0348a471b"
  },
  {
   "id": "CS1908-355",
@@ -8581,7 +8685,7 @@
   "number": "355",
   "title": "The Only Lord",
   "path": "data/CS1908/355.json",
-  "v": "82c5bef15acd16b84b2f5b97e322f65aa3f1eac7b8a0d3465adefd9bf6bed963"
+  "v": "a0ed44542a7f0afd4da7a6d43b3adad5b7575d106718eeee0739e8340f7ba0e6"
  },
  {
   "id": "CS1908-356",
@@ -8589,7 +8693,7 @@
   "number": "356",
   "title": "O Lord Divine",
   "path": "data/CS1908/356.json",
-  "v": "7927ee79220a0ace199f26922c6a33c5f223f68f0066673def1aae09434556b6"
+  "v": "838974fbd8f090992b3f231735a52692405722fc932e5d0de8ec5d23437483a6"
  },
  {
   "id": "CS1908-357",
@@ -8597,7 +8701,7 @@
   "number": "357",
   "title": "O Thou Who Art of All That Is",
   "path": "data/CS1908/357.json",
-  "v": "ad4b2d043c9feaeeb4772df1da822802f5a318beb1f315c7e9718e22386ab50e"
+  "v": "b990a1d2dc811632abb4a5618764cd0b015d098022868a86e1677decb70dd9f0"
  },
  {
   "id": "CS1908-358",
@@ -8605,7 +8709,7 @@
   "number": "358",
   "title": "I Heard a Voice",
   "path": "data/CS1908/358.json",
-  "v": "28a8880244d9f0c73d24f2aef242a4ad7ab170ea6b42455ca24e435c76f7d508"
+  "v": "92695f91afe5ea3892a162b9242aef406c45d64599e09e1a371a515e903f13d6"
  },
  {
   "id": "CS1908-359",
