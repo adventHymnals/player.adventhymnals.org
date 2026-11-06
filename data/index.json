@@ -2084,6 +2084,14 @@
   "v": "9e9beec0ea372ad0c9d7efc29e2aaef85dec89eb86df19ac62a3bcd429007202"
  },
  {
+  "id": "CS1900-36",
+  "book": "CS1900",
+  "number": "36",
+  "title": "How Shall We Stand in the Judgment?",
+  "path": "data/CS1900/36.json",
+  "v": "33e29a7594478f17a2951a0765883ce4fe59bbd26b5643f47f5b575e9f71e553"
+ },
+ {
   "id": "CS1908-1",
   "book": "CS1908",
   "number": "1",
@@ -3452,6 +3460,14 @@
   "v": "c40e8c636dceb8b1117500c44c3743809e162e6e35cff45521c5e2da64fa4569"
  },
  {
+  "id": "CS1908-147",
+  "book": "CS1908",
+  "number": "147",
+  "title": "Flee as a Bird",
+  "path": "data/CS1908/147.json",
+  "v": "e04d12d260f214b487183b2d2369d373d40cd1d40c697d694b3e100851250320"
+ },
+ {
   "id": "CS1908-148",
   "book": "CS1908",
   "number": "148",
@@ -4133,7 +4149,7 @@
   "number": "29",
   "title": "How Beauteous Are Their Feet",
   "path": "data/HT1876/29.json",
-  "v": "40de7d0b4d06efc14a07249b5361f46101e1afd1b68744c6f591f8b645490ba3"
+  "v": "63566954f6c00a8f3ee946a5e9e723226ceae4008258cfd11d966a42c8a925ea"
  },
  {
   "id": "HT1876-30",
@@ -4405,7 +4421,7 @@
   "number": "63",
   "title": "Thou Book of Life, in Thee Are Found",
   "path": "data/HT1876/63.json",
-  "v": "1ae56061a6d7ad4b7838e39c8331e89b69856249158b0aa1958088c9f32a13fc"
+  "v": "a19c795f902e783e4a117842d0f9f7b8fe63b1e13281dfd8dd467901c2d59d0c"
  },
  {
   "id": "HT1876-64",
@@ -4416,12 +4432,60 @@
   "v": "cd7e1cac3d8b20a31c6ebaef6a4a73ec026383ba88a15392cb67d51bed000db9"
  },
  {
+  "id": "HT1876-65",
+  "book": "HT1876",
+  "number": "65",
+  "title": "Lord of the Sabbath and Its Light",
+  "path": "data/HT1876/65.json",
+  "v": "c06b839ac08892111f65063435077eed55372ddc782e6574a2305e761092228f"
+ },
+ {
+  "id": "HT1876-66",
+  "book": "HT1876",
+  "number": "66",
+  "title": "We've Entered Now on Holy Time",
+  "path": "data/HT1876/66.json",
+  "v": "b0d7b938748592ec333de94330144239591a91df0ef644bf0afcab61e72df04b"
+ },
+ {
+  "id": "HT1876-67",
+  "book": "HT1876",
+  "number": "67",
+  "title": "Truth is the Gem for Which We Seek",
+  "path": "data/HT1876/67.json",
+  "v": "cf20e20b52ec981121902aa4345de90e180693a0cb1e35eb51f973b137abbdbe"
+ },
+ {
+  "id": "HT1876-68",
+  "book": "HT1876",
+  "number": "68",
+  "title": "Blest Hour, When Mortal Man Retires",
+  "path": "data/HT1876/68.json",
+  "v": "1a5177566d550e1e3435ae808e0f227dcbc1a57cf3b3a172ad7b80b7ac040c96"
+ },
+ {
+  "id": "HT1876-69",
+  "book": "HT1876",
+  "number": "69",
+  "title": "Delightful Day! First Gift of Heaven",
+  "path": "data/HT1876/69.json",
+  "v": "60bb4e7934a4f9353b88be0fb4c2b1908bb1e1be89e012f79905b125f446b89a"
+ },
+ {
+  "id": "HT1876-70",
+  "book": "HT1876",
+  "number": "70",
+  "title": "I Love Thine Earthly Sabbaths, Lord",
+  "path": "data/HT1876/70.json",
+  "v": "5f2598cafb11f83817c73d0c055679816f076686184a7a0aa8631eaa1e8319bb"
+ },
+ {
   "id": "HT1876-127",
   "book": "HT1876",
   "number": "127",
   "title": "Sinners, Haste to Mercy's Gate",
   "path": "data/HT1876/127.json",
-  "v": "8e966c5f5d099ad64f563b4f91f38e7c4171091e6cb022330e4c30240b6d9f85"
+  "v": "3ed4fc35ac5eeba393d3a077a23e6797ac295afb38f90a9e24607bb4832ee102"
  },
  {
   "id": "NZK-1",
