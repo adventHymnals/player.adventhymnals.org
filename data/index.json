@@ -2110,6 +2110,86 @@
   "v": "6946fcc961b5b131dacd320446c2bc83d30ee137ebbc853d2a12cad913930e46"
  },
  {
+  "id": "CH1941-241",
+  "book": "CH1941",
+  "number": "241",
+  "title": "From Every Stormy Wind",
+  "path": "data/CH1941/241.json",
+  "v": "e6ff05bd065674d8953db9032b924fb870d52e1d61f5f3e7cbc06fffb17125df"
+ },
+ {
+  "id": "CH1941-242",
+  "book": "CH1941",
+  "number": "242",
+  "title": "'Tis by the Faith of Joys",
+  "path": "data/CH1941/242.json",
+  "v": "7a942836ead4f36eb4a26d59cf62ecf2b47afc798f3f510829d1e37e92a49308"
+ },
+ {
+  "id": "CH1941-243",
+  "book": "CH1941",
+  "number": "243",
+  "title": "Come, O Thou Traveler",
+  "path": "data/CH1941/243.json",
+  "v": "d47b946d3f680b0e22b39aa5e528634a672a5626458f9d4da811df2d59102d95"
+ },
+ {
+  "id": "CH1941-244",
+  "book": "CH1941",
+  "number": "244",
+  "title": "O Could Our Thoughts",
+  "path": "data/CH1941/244.json",
+  "v": "5162213f46578bf96a850569cc2e0fcc9b9104f15d278229d3673874a2c53eb1"
+ },
+ {
+  "id": "CH1941-245",
+  "book": "CH1941",
+  "number": "245",
+  "title": "O for a Faith",
+  "path": "data/CH1941/245.json",
+  "v": "54ca6027e2730a2f1a726f23f9210aa73a6493abcb42b899a5d402c6564a6058"
+ },
+ {
+  "id": "CH1941-246",
+  "book": "CH1941",
+  "number": "246",
+  "title": "My Faith Looks Up to Thee",
+  "path": "data/CH1941/246.json",
+  "v": "f07e0d1ffb08f6150444399f6b4c217df2fd297cdfc61b889cc136229ac610de"
+ },
+ {
+  "id": "CH1941-247",
+  "book": "CH1941",
+  "number": "247",
+  "title": "Toil On a Little Longer",
+  "path": "data/CH1941/247.json",
+  "v": "dda0b3d6b4ed02c8723563b55a7ed38dfa1e143420c93a651ddee504922ae5a3"
+ },
+ {
+  "id": "CH1941-248",
+  "book": "CH1941",
+  "number": "248",
+  "title": "'Tis My Happiness Below",
+  "path": "data/CH1941/248.json",
+  "v": "cbb0d739ec8dc96cf253d12b0045448ea7f83df89bc0e4f8f3cf8f044cc5a37a"
+ },
+ {
+  "id": "CH1941-249",
+  "book": "CH1941",
+  "number": "249",
+  "title": "If Through Unruffled Seas",
+  "path": "data/CH1941/249.json",
+  "v": "befea8c9a539e17e7a9b5813ef262b4067653e5686a3683433efae7c014e75ab"
+ },
+ {
+  "id": "CH1941-250",
+  "book": "CH1941",
+  "number": "250",
+  "title": "When, My Saviour, Shall I Be",
+  "path": "data/CH1941/250.json",
+  "v": "079a33c396e0b2ffe90587cf605c1598ce659574e08c6010b8089d3c04b774d3"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2754,6 +2834,54 @@
   "title": "Calvary",
   "path": "data/CS1900/60.json",
   "v": "32f8ec0500dc4d2024f9645925a0c332162f42b232f5fa9d922597a0fbe95c03"
+ },
+ {
+  "id": "CS1900-61",
+  "book": "CS1900",
+  "number": "61",
+  "title": "The Passover",
+  "path": "data/CS1900/61.json",
+  "v": "2617be547355166520f8d7c3699b7f95952acda6327e661f344a62f13cd48af5"
+ },
+ {
+  "id": "CS1900-62",
+  "book": "CS1900",
+  "number": "62",
+  "title": "In the Silent Midnight Watches",
+  "path": "data/CS1900/62.json",
+  "v": "35031bb097801102dcf5d0612a4ef8b298edbab2755576d7145343fc56192606"
+ },
+ {
+  "id": "CS1900-63",
+  "book": "CS1900",
+  "number": "63",
+  "title": "The Handwriting on the Wall",
+  "path": "data/CS1900/63.json",
+  "v": "30322417b429535723b5fe1f809100da4d4b4bc08f5fcf329ce42d59d96cebc1"
+ },
+ {
+  "id": "CS1900-64",
+  "book": "CS1900",
+  "number": "64",
+  "title": "Weighed and Wanting",
+  "path": "data/CS1900/64.json",
+  "v": "51217724c3a5f9699dc5c242523df784ac7593762b9a9567e43fdfaf44947002"
+ },
+ {
+  "id": "CS1900-65",
+  "book": "CS1900",
+  "number": "65",
+  "title": "The Love of Jesus",
+  "path": "data/CS1900/65.json",
+  "v": "df731b3d98fca5df672bc3efee0181a234b6267bd4291c7d211d11d8ada5a8ac"
+ },
+ {
+  "id": "CS1900-66",
+  "book": "CS1900",
+  "number": "66",
+  "title": "Almost Persuaded",
+  "path": "data/CS1900/66.json",
+  "v": "90993698693ddeec1867cd3bd78a67f75e6151a05d8e7639942f1b0c766f65dd"
  },
  {
   "id": "CS1908-1",
@@ -4524,6 +4652,46 @@
   "v": "c872bffa3df975e0afaf1c77947f5251ea3b749d2e90ad6288018eabc4541605"
  },
  {
+  "id": "CS1908-196",
+  "book": "CS1908",
+  "number": "196",
+  "title": "Tread Softly",
+  "path": "data/CS1908/196.json",
+  "v": "c1cbedef8e032792165d917ebf3d565d3418e4d79760481ce8dc38bd6b063c13"
+ },
+ {
+  "id": "CS1908-197",
+  "book": "CS1908",
+  "number": "197",
+  "title": "Come Out in the Sunshine",
+  "path": "data/CS1908/197.json",
+  "v": "0937f665570b3d306b26f0bbe305ec4f176754c7133e571a11a09f72102babef"
+ },
+ {
+  "id": "CS1908-198",
+  "book": "CS1908",
+  "number": "198",
+  "title": "Sunshine in the Soul",
+  "path": "data/CS1908/198.json",
+  "v": "e06e2dc8ea736dec69e74e44e8d79bed721ba8d95319e22254015516195b9043"
+ },
+ {
+  "id": "CS1908-199",
+  "book": "CS1908",
+  "number": "199",
+  "title": "Redeemed",
+  "path": "data/CS1908/199.json",
+  "v": "8a4557bb95a0cd23268e626fcdcde0684219dcf7684a2ce9bba4ea063f89e1f4"
+ },
+ {
+  "id": "CS1908-200",
+  "book": "CS1908",
+  "number": "200",
+  "title": "Follow All the Way",
+  "path": "data/CS1908/200.json",
+  "v": "1922284ce6047a86cea936ed91ec73e6c7ce9f43a6e5d52a2cb7488a5ac8a9fd"
+ },
+ {
   "id": "CS1908-222",
   "book": "CS1908",
   "number": "222",
@@ -5710,6 +5878,14 @@
   "title": "Closing Sabbath! Ah, How Soon",
   "path": "data/HT1876/97.json",
   "v": "145e3ca416f12d1b13771344ab675078359b89f833861b5e7f1a13116280bd1c"
+ },
+ {
+  "id": "HT1876-99",
+  "book": "HT1876",
+  "number": "99",
+  "title": "In Thy House While Now We Sing",
+  "path": "data/HT1876/99.json",
+  "v": "3fa0c2bb75287e556a0abbf614f89e7734b01e9c26d2cca2072998f0011a162c"
  },
  {
   "id": "HT1876-127",
