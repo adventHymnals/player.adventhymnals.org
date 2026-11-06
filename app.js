@@ -216,7 +216,7 @@ const nativeEngine = () => { const e = nativeEngineRaw(); return isRecorded(e) |
 // The web page asks at Play too: until then nothing is loaded for either singer, so choosing live
 // singing never pays for the recordings (tens of MB) first.
 let appAnswered = false;
-const asksAtPlay = () => !!singingCfg.warble && !APP && !EMBED && !MAKE && state.singAsk !== false;
+const asksAtPlay = () => !!singingCfg.warble && !APP && !MAKE && state.singAsk !== false; // the embedded player asks too
 const awaitingApp = () => !appAnswered && (APP ? nativeEngineRaw() === "ask" : asksAtPlay());
 const whoSings = () => (state.instrumental ? "instrumental" : singEngine());
 const singEngine = () => {
