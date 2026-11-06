@@ -4662,6 +4662,38 @@
   "v": "0e80eb21afdc1c984fe859376507a0aa33afb78bad24d33fde43048904765c0c"
  },
  {
+  "id": "CH1941-581",
+  "book": "CH1941",
+  "number": "581",
+  "title": "My Hope Is Built on Nothing Less",
+  "path": "data/CH1941/581.json",
+  "v": "a5fb53ace5b1f602626183b9ec2d45a8ec8f84b211c4d6866b293d6b218fc4c2"
+ },
+ {
+  "id": "CH1941-582",
+  "book": "CH1941",
+  "number": "582",
+  "title": "When We Walk With the Lord",
+  "path": "data/CH1941/582.json",
+  "v": "f3c73730825f8a53d4430a526b68d9048e134f8e03827f69a8c09a41eb59c432"
+ },
+ {
+  "id": "CH1941-583",
+  "book": "CH1941",
+  "number": "583",
+  "title": "Dying With Jesus, by Death Reckoned Mine",
+  "path": "data/CH1941/583.json",
+  "v": "26998207e1515e038eaa87da43eeb7dad82780be72241961df845177a9248062"
+ },
+ {
+  "id": "CH1941-584",
+  "book": "CH1941",
+  "number": "584",
+  "title": "Will Your Anchor Hold?",
+  "path": "data/CH1941/584.json",
+  "v": "c79888ff43e79d905d9067a2d7350df31d474bc4591b87cd3fd7f1be49340ca3"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -8302,6 +8334,14 @@
   "title": "Freedom in Christ",
   "path": "data/CS1908/352.json",
   "v": "881a34e2bfa770ad38e2b9b6f49e8cc0e9d1bef562ea16031cf0ad285b362cc4"
+ },
+ {
+  "id": "CS1908-353",
+  "book": "CS1908",
+  "number": "353",
+  "title": "The Herald Angels Sing",
+  "path": "data/CS1908/353.json",
+  "v": "2da6e9da46fbbaf04f11afdea8135840c57a0a9e1ec7cc14888345b3fb6c72bc"
  },
  {
   "id": "CS1908-380",
