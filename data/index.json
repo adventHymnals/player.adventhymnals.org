@@ -4798,6 +4798,46 @@
   "v": "0500abb01cf19e6ac5c5d20c65c8b542e67c0073b7bb35551438a3f55d1d364f"
  },
  {
+  "id": "CH1941-599",
+  "book": "CH1941",
+  "number": "599",
+  "title": "Father, We Come to Thee",
+  "path": "data/CH1941/599.json",
+  "v": "b5929d28d154d3102fd864516571b3297ee35bdca96938bfb24aaa89eaee87cc"
+ },
+ {
+  "id": "CH1941-600",
+  "book": "CH1941",
+  "number": "600",
+  "title": "I Am Coming to the Cross",
+  "path": "data/CH1941/600.json",
+  "v": "c1d39649516ec463b1862417010badf3247bd8418d9a21acf40bc8e8f6703cdd"
+ },
+ {
+  "id": "CH1941-601",
+  "book": "CH1941",
+  "number": "601",
+  "title": "Be Silent, Be Silent",
+  "path": "data/CH1941/601.json",
+  "v": "8aaf52897d8e0be809501fb5fe9bf56242629ed4bc0f5862c13f31c92ce5c866"
+ },
+ {
+  "id": "CH1941-602",
+  "book": "CH1941",
+  "number": "602",
+  "title": "Jesus, Thou Hast Promised",
+  "path": "data/CH1941/602.json",
+  "v": "167961d6307ae298605d2355c14322c7af9f19917ee906db2c0ce5b14e37ac0d"
+ },
+ {
+  "id": "CH1941-603",
+  "book": "CH1941",
+  "number": "603",
+  "title": "Take Time to Be Holy",
+  "path": "data/CH1941/603.json",
+  "v": "c0b24c83500c533207346a01c17218fe2e266e65040dd5f9d35853f30f4e281c"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -4806,6 +4846,86 @@
   "sung": true,
   "sv": "c9e24da0ee39223124ea28268be71c80f9a3d5aa334ccdb18a69aa7ee4dc8e3e",
   "v": "437e80e761c8937c52cb2f31ffd6984b8528a10551e45f6d4c35c0b26ad04bcc"
+ },
+ {
+  "id": "CH1941-605",
+  "book": "CH1941",
+  "number": "605",
+  "title": "I Need Thee, Precious Jesus",
+  "path": "data/CH1941/605.json",
+  "v": "c30581d27f521119378682d8f32edf403c2aedbdfd06f4bd3b2aea5cf12674b6"
+ },
+ {
+  "id": "CH1941-607",
+  "book": "CH1941",
+  "number": "607",
+  "title": "There's Sunshine in My Soul Today",
+  "path": "data/CH1941/607.json",
+  "v": "c11d644a657882deaa2b0b023f1436388c621ef3eaebc2fc2d1fa10a65e28cf5"
+ },
+ {
+  "id": "CH1941-608",
+  "book": "CH1941",
+  "number": "608",
+  "title": "Blessed Assurance, Jesus Is Mine!",
+  "path": "data/CH1941/608.json",
+  "v": "1f1b593e6136d823a68a63c89599626373c8af78bda9641cb7e3325536e8a4a6"
+ },
+ {
+  "id": "CH1941-610",
+  "book": "CH1941",
+  "number": "610",
+  "title": "Far Away in the Depths of My Spirit",
+  "path": "data/CH1941/610.json",
+  "v": "94f0bba36ce151b984b64909768bfcc55ee19051728f9ed49a13a4ca3fabf1ba"
+ },
+ {
+  "id": "CH1941-611",
+  "book": "CH1941",
+  "number": "611",
+  "title": "What a Fellowship, What a Joy Divine",
+  "path": "data/CH1941/611.json",
+  "v": "0547938db2cf3c8955594a0f0403372e117892926bd8104519091735f3e4dcb7"
+ },
+ {
+  "id": "CH1941-612",
+  "book": "CH1941",
+  "number": "612",
+  "title": "There Is Sunlight on the Hilltop",
+  "path": "data/CH1941/612.json",
+  "v": "8dd5df83f3d36eba7b3ecd64b2a862e00bffbf6219bfe0948b4c148056ed69d9"
+ },
+ {
+  "id": "CH1941-613",
+  "book": "CH1941",
+  "number": "613",
+  "title": "O Jesus, My Redeemer",
+  "path": "data/CH1941/613.json",
+  "v": "3c29b4945d7223b575a85249886b5d93dd92d3aeda0acf07f0c76554d944f58b"
+ },
+ {
+  "id": "CH1941-615",
+  "book": "CH1941",
+  "number": "615",
+  "title": "Safe in the Arms of Jesus",
+  "path": "data/CH1941/615.json",
+  "v": "ff011411b856c12ff48082b99ffcf2035e5e4ff5faef59d35d9fa7e3c50c81da"
+ },
+ {
+  "id": "CH1941-617",
+  "book": "CH1941",
+  "number": "617",
+  "title": "Lord, I Care Not for Riches",
+  "path": "data/CH1941/617.json",
+  "v": "bf2e62e9057eff4340ce740dcd9863bf3fcacfdcaee5915ba5d79bcf6eb33121"
+ },
+ {
+  "id": "CH1941-618",
+  "book": "CH1941",
+  "number": "618",
+  "title": "Sitting at the Feet of Jesus",
+  "path": "data/CH1941/618.json",
+  "v": "a0dc2bc0765cddd7ae17c9044f2876f6cd72b7a075164268d9364fe0318b7eee"
  },
  {
   "id": "CH1941-653",
@@ -8486,6 +8606,14 @@
   "title": "I Heard a Voice",
   "path": "data/CS1908/358.json",
   "v": "28a8880244d9f0c73d24f2aef242a4ad7ab170ea6b42455ca24e435c76f7d508"
+ },
+ {
+  "id": "CS1908-359",
+  "book": "CS1908",
+  "number": "359",
+  "title": "The Voice of Jesus",
+  "path": "data/CS1908/359.json",
+  "v": "0c1294022bb8244cd6e0ae0bee22132c0aa18e16c8aebe2ae792b1a95b483a8f"
  },
  {
   "id": "CS1908-380",
