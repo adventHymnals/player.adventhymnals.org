@@ -1918,6 +1918,38 @@
   "v": "7bc1c963df33277cd93a1b72709b3270637b28b80556b472d7b3f2cb198e084a"
  },
  {
+  "id": "CH1941-217",
+  "book": "CH1941",
+  "number": "217",
+  "title": "O Word of God Incarnate",
+  "path": "data/CH1941/217.json",
+  "v": "9d6f0ff94eb086116628aa803fdbe9c5de68f5aa3c61020f382512a1201c205f"
+ },
+ {
+  "id": "CH1941-218",
+  "book": "CH1941",
+  "number": "218",
+  "title": "Break Thou the Bread of Life",
+  "path": "data/CH1941/218.json",
+  "v": "0268456738a761148644d9c9a94496bf529bd9ef2eb24bf09352439291d20b74"
+ },
+ {
+  "id": "CH1941-219",
+  "book": "CH1941",
+  "number": "219",
+  "title": "Holy Bible, Book Divine",
+  "path": "data/CH1941/219.json",
+  "v": "37caf412a118d19b798ba3262377b0ee631cee106179867db9daf2868cebbee0"
+ },
+ {
+  "id": "CH1941-220",
+  "book": "CH1941",
+  "number": "220",
+  "title": "I Love the Sacred Book",
+  "path": "data/CH1941/220.json",
+  "v": "d6ee04ebd79cb9a06bbe7a7691c98f8dc6df1535c850de9c1978046eadf65035"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2498,6 +2530,30 @@
   "title": "Pure Gold",
   "path": "data/CS1900/52.json",
   "v": "258a9d4e06e363698e3b2df892877a45678a3771626e1cb42bc31fe948ebc40c"
+ },
+ {
+  "id": "CS1900-53",
+  "book": "CS1900",
+  "number": "53",
+  "title": "Come Out in the Sunshine",
+  "path": "data/CS1900/53.json",
+  "v": "f5cc50888ad5d605e19d040367521c1b75c883f16062e2dc6ae7d71ed0003427"
+ },
+ {
+  "id": "CS1900-54",
+  "book": "CS1900",
+  "number": "54",
+  "title": "Dare to Do Right",
+  "path": "data/CS1900/54.json",
+  "v": "aaa5314556fe1d4ebb87719b17b79d424f0ab8f3d785ea46ed9e950e5ce19ed2"
+ },
+ {
+  "id": "CS1900-55",
+  "book": "CS1900",
+  "number": "55",
+  "title": "Yield Not to Temptation",
+  "path": "data/CS1900/55.json",
+  "v": "16e626d8a18c50a66c0635e2de7c688ae24ab52d5b3591ec72949ab22287da62"
  },
  {
   "id": "CS1908-1",
@@ -4120,6 +4176,14 @@
   "v": "50e1a021368912facd55cf956410e1787b2534a50e52c638fb00a8d42a985160"
  },
  {
+  "id": "CS1908-178",
+  "book": "CS1908",
+  "number": "178",
+  "title": "Come, Ye Sinners",
+  "path": "data/CS1908/178.json",
+  "v": "774557c64bcade5c05dfa2e842b145bdac02b1bbc6b16ef8f24b043493fabbd7"
+ },
+ {
   "id": "CS1908-179",
   "book": "CS1908",
   "number": "179",
@@ -4128,6 +4192,14 @@
   "sung": true,
   "sv": "6daaf877f3b4832857fe825141a01387990a3bb57de473a51bda08f8466546c9",
   "v": "955964329a21033a4c90beb5eae6d88fc1df8ab6f2b95c8fd96ca3be2f85adcf"
+ },
+ {
+  "id": "CS1908-180",
+  "book": "CS1908",
+  "number": "180",
+  "title": "Come to Me",
+  "path": "data/CS1908/180.json",
+  "v": "e447931f7a81857a12bbcf1118254358a3f887964b0aa0d0e1d4bd76aa807103"
  },
  {
   "id": "CS1908-192",
