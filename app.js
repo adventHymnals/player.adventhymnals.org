@@ -645,9 +645,10 @@ function fillPicker() {
 // short names for the hymnals; a hymnal not listed here shows its code
 const BOOK_NAMES = {
   SDAH: "Seventh-day Adventist Hymnal", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", CH1941: "Church Hymnal 1941",
-  CS1900: "Christ in Song 1900", CS1908: "Christ in Song 1908", AHC: "Advent Hymnals Collection", RECORDED: "Recorded",
+  CS1900: "Christ in Song 1900", CS1908: "Christ in Song 1908", HT1876: "Hymns and Tunes 1876", AHC: "Advent Hymnals Collection",
+  RECORDED: "Recorded",
 };
-const BOOK_ORDER = ["SDAH", "NZK", "WN", "CH1941", "CS1908", "CS1900", "AHC"]; // the hymnals in use first, then the older ones
+const BOOK_ORDER = ["SDAH", "NZK", "WN", "CH1941", "CS1908", "CS1900", "HT1876", "AHC"]; // the hymnals in use first, then the older ones
 const bookRank = (b) => (BOOK_ORDER.indexOf(b) + 1) || 99;
 const bookCodes = () => [...new Set(hymnList.map((x) => x.book))].sort((a, b) => bookRank(a) - bookRank(b) || a.localeCompare(b));
 const bookName = (b) => BOOK_NAMES[b] || b;
@@ -3548,7 +3549,7 @@ async function doImportAudio(file) {
 // this page only and never saved, so the same URL always makes the same videos. The spec is
 // social/SPEC-player.md.
 
-const HYMNAL_NAMES = { SDAH: "SDA Hymnal", CS1900: "Christ in Song", CS1908: "Christ in Song", CH1941: "Church Hymnal 1941", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", AHC: "Advent Hymnals Collection" };
+const HYMNAL_NAMES = { SDAH: "SDA Hymnal", CS1900: "Christ in Song", CS1908: "Christ in Song", HT1876: "Hymns and Tunes", CH1941: "Church Hymnal 1941", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", AHC: "Advent Hymnals Collection" };
 const hymnBadge = () => `${HYMNAL_NAMES[hymn.book] || hymn.book} ${hymn.number}`;
 const LOGO = "brand/logo.svg"; // the one place the logo comes from
 const END_VOICE = "audio/endcard/cta.wav"; // spoken: "Which hymn should we sing next? Tell us in the comments."

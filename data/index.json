@@ -2656,6 +2656,86 @@
   "v": "fbcc84e127ea2e754705ad06db5c659f2a52b49f43970e3088cd96c53e366b3d"
  },
  {
+  "id": "HT1876-1",
+  "book": "HT1876",
+  "number": "1",
+  "title": "What Shall I Render to My God",
+  "path": "data/HT1876/1.json",
+  "v": "2b29eaf982827327df81710f0a0fe193a9954cc5a0fd8e65e1bdceafd14ff914"
+ },
+ {
+  "id": "HT1876-2",
+  "book": "HT1876",
+  "number": "2",
+  "title": "Before Jehovah's Awful Throne",
+  "path": "data/HT1876/2.json",
+  "v": "c23f54fb206f7a6faca0b9bdb0265ee377f642f9ce43ce4554e9de807b6e3e78"
+ },
+ {
+  "id": "HT1876-3",
+  "book": "HT1876",
+  "number": "3",
+  "title": "Servants of God, in Joyful Lays",
+  "path": "data/HT1876/3.json",
+  "v": "4811ca16ddaad61e8555b99fab574c1775e975bd9f3d3c420c898d600cd8b813"
+ },
+ {
+  "id": "HT1876-4",
+  "book": "HT1876",
+  "number": "4",
+  "title": "Almighty Father, Bless the Word",
+  "path": "data/HT1876/4.json",
+  "v": "0ba5c4f6cfc8600612f9faaa559960029a32a522770ca010b24f19b7f8d70e15"
+ },
+ {
+  "id": "HT1876-5",
+  "book": "HT1876",
+  "number": "5",
+  "title": "High in the Heavens, Eternal God",
+  "path": "data/HT1876/5.json",
+  "v": "ae5721446dae12fba8ae480d62d8c54f53e09aff96825b35551ff80115f589b5"
+ },
+ {
+  "id": "HT1876-6",
+  "book": "HT1876",
+  "number": "6",
+  "title": "Lord, Grant Thy Blessing Here To-day",
+  "path": "data/HT1876/6.json",
+  "v": "1aa2c16b864c688e9b30fe07131f155ad210e3466ec68f9752dac5510e35c853"
+ },
+ {
+  "id": "HT1876-7",
+  "book": "HT1876",
+  "number": "7",
+  "title": "Go, Preach My Gospel, Saith the Lord",
+  "path": "data/HT1876/7.json",
+  "v": "29318b1045ca60d8ad3892039931aa47b3f8b65360c6f5d22488687aab2e2eb8"
+ },
+ {
+  "id": "HT1876-8",
+  "book": "HT1876",
+  "number": "8",
+  "title": "When I Survey the Wondrous Cross",
+  "path": "data/HT1876/8.json",
+  "v": "f09067951d8c8700b7af31420365a3a7f407b447f3e54a7830d66b9f06412b9b"
+ },
+ {
+  "id": "HT1876-9",
+  "book": "HT1876",
+  "number": "9",
+  "title": "Jesus, and Shall It Ever Be",
+  "path": "data/HT1876/9.json",
+  "v": "1a545c98056373b7cbb71a0ac8b10199ba33e4f1e255db5e6df431e5c9615c56"
+ },
+ {
+  "id": "HT1876-10",
+  "book": "HT1876",
+  "number": "10",
+  "title": "Not All the Nobles of the Earth",
+  "path": "data/HT1876/10.json",
+  "v": "688c6c3adf11a506600cc94ac289707ac82f07c41ecf7ad7307974c153ea5cad"
+ },
+ {
   "id": "NZK-1",
   "book": "NZK",
   "number": "1",
