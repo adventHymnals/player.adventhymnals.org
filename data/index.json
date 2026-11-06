@@ -1091,7 +1091,7 @@
   "number": "467",
   "title": "The Dawn of God's Dear Sabbath",
   "path": "data/CH1941/467.json",
-  "v": "99ddbb96854babffc6b8b4f082714d65b0db284088dd00dd0d3084e8698a71b7"
+  "v": "c9723e240d50e705cbdd4319803a52e7482fc887cdee55292626abda94a5648b"
  },
  {
   "id": "CH1941-468",
@@ -2294,6 +2294,22 @@
   "v": "03054d5414cd9829c3b01bd1095c5cd9c96917ecd1d2ad71d65540ff9238df55"
  },
  {
+  "id": "CS1908-250",
+  "book": "CS1908",
+  "number": "250",
+  "title": "Don't Forget the Sabbath",
+  "path": "data/CS1908/250.json",
+  "v": "78ecb419c100fdcf7625623977f6e3fb1c34924cf6b50299a71509f0edb7e7f7"
+ },
+ {
+  "id": "CS1908-274",
+  "book": "CS1908",
+  "number": "274",
+  "title": "My Sabbath Song",
+  "path": "data/CS1908/274.json",
+  "v": "d726930e097e7ae0169ad22c4067fa97b6a37be51f4df837b34c9e821713fbdb"
+ },
+ {
   "id": "CS1908-286",
   "book": "CS1908",
   "number": "286",
@@ -2342,6 +2358,46 @@
   "sung": true,
   "sv": "0d870ffb0a141b0991d675dd93236486062cc4af956fefd587a9be9cf75c7ba2",
   "v": "b35ff975b3f47fa8a9349c2ff059ac925f4721b4700d8a3324fe1de4599471c2"
+ },
+ {
+  "id": "CS1908-380",
+  "book": "CS1908",
+  "number": "380",
+  "title": "Again the Day Returns",
+  "path": "data/CS1908/380.json",
+  "v": "ce20cde4edff0ad02e462c949cd3852ce4745e4de3239c512ab3e3773bc36b40"
+ },
+ {
+  "id": "CS1908-385",
+  "book": "CS1908",
+  "number": "385",
+  "title": "Sabbath Dawn",
+  "path": "data/CS1908/385.json",
+  "v": "b6f66e999c513a14bc7f4be1875526585d4b2e8e898a505ffd3cab17ab39d4af"
+ },
+ {
+  "id": "CS1908-386",
+  "book": "CS1908",
+  "number": "386",
+  "title": "Day of Rest and Gladness!",
+  "path": "data/CS1908/386.json",
+  "v": "22629edb47ac9c06b3e72f95ea6ed7f0c3e21bfb2c668da69da3243c2da5f84d"
+ },
+ {
+  "id": "CS1908-387",
+  "book": "CS1908",
+  "number": "387",
+  "title": "Delightful Morn",
+  "path": "data/CS1908/387.json",
+  "v": "6c02ddf3ec8af8e137ac2e7c309940e52ec3da674192d62266876ad0bcc586f1"
+ },
+ {
+  "id": "CS1908-388",
+  "book": "CS1908",
+  "number": "388",
+  "title": "Safely Thro' Another Week",
+  "path": "data/CS1908/388.json",
+  "v": "078a83ab2821f824fa88a1e125bd0d185e1ccc6a32ee4eed826cc2e831fac482"
  },
  {
   "id": "CS1908-399",
@@ -2532,6 +2588,22 @@
   "sung": true,
   "sv": "f9e29cc666787f6be9539f3a0b05721085bc64ef82c8f1c190fddf429a6f5efb",
   "v": "6ba05d7b17a51191feee8cb0035c7535a1fb73f2c540b922b2847515dbda1765"
+ },
+ {
+  "id": "CS1908-778",
+  "book": "CS1908",
+  "number": "778",
+  "title": "Sabbath Eve",
+  "path": "data/CS1908/778.json",
+  "v": "021fa6878f7ef7214bcaa894d8a0cd371a91f4c55f38a1edf41e4151aa795534"
+ },
+ {
+  "id": "CS1908-800",
+  "book": "CS1908",
+  "number": "800",
+  "title": "Sabbath Twilight",
+  "path": "data/CS1908/800.json",
+  "v": "d18e94f3def9d331f0e3ac0bd8e30d04eea45c3de9a1f9eec739dd41458c4829"
  },
  {
   "id": "CS1908-811",
