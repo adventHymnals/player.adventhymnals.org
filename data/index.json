@@ -5,6 +5,8 @@
   "number": "1",
   "title": "Before Jehovah's Awful Throne",
   "path": "data/CH1941/1.json",
+  "sung": true,
+  "sv": "4f96e1d70d",
   "v": "5386963819"
  },
  {
@@ -13,6 +15,8 @@
   "number": "2",
   "title": "From All That Dwell Below the Skies",
   "path": "data/CH1941/2.json",
+  "sung": true,
+  "sv": "46df242dd0",
   "v": "75e7eab744"
  },
  {
@@ -29,6 +33,8 @@
   "number": "4",
   "title": "With Reverence Let the Saints Appear",
   "path": "data/CH1941/4.json",
+  "sung": true,
+  "sv": "d58641220b",
   "v": "21f48a9df2"
  },
  {
@@ -37,6 +43,8 @@
   "number": "5",
   "title": "God's Free Mercy Streameth",
   "path": "data/CH1941/5.json",
+  "sung": true,
+  "sv": "73cd3cb426",
   "v": "525d8fe086"
  },
  {
@@ -45,6 +53,8 @@
   "number": "6",
   "title": "O Worship the Lord",
   "path": "data/CH1941/6.json",
+  "sung": true,
+  "sv": "863959e5ea",
   "v": "0b18794675"
  },
  {
@@ -53,6 +63,8 @@
   "number": "7",
   "title": "The Lord in Zion Reigneth",
   "path": "data/CH1941/7.json",
+  "sung": true,
+  "sv": "2d917cf0aa",
   "v": "49d439251f"
  },
  {
@@ -61,6 +73,8 @@
   "number": "8",
   "title": "We Gather Together",
   "path": "data/CH1941/8.json",
+  "sung": true,
+  "sv": "83a92e515d",
   "v": "16e2db1bce"
  },
  {
@@ -77,6 +91,8 @@
   "number": "10",
   "title": "Praise, O Praise Our God and King!",
   "path": "data/CH1941/10.json",
+  "sung": true,
+  "sv": "3e5d92c20f",
   "v": "42d429b42b"
  },
  {
@@ -85,6 +101,8 @@
   "number": "11",
   "title": "The Lord Jehovah Reigns",
   "path": "data/CH1941/11.json",
+  "sung": true,
+  "sv": "fffbc16e42",
   "v": "4225d7f597"
  },
  {
@@ -93,6 +111,8 @@
   "number": "12",
   "title": "Praise to the Lord",
   "path": "data/CH1941/12.json",
+  "sung": true,
+  "sv": "ac5679cb30",
   "v": "608d23315e"
  },
  {
@@ -101,6 +121,8 @@
   "number": "13",
   "title": "All People That on Earth Do Dwell",
   "path": "data/CH1941/13.json",
+  "sung": true,
+  "sv": "00d5c1a933",
   "v": "aaa9999401"
  },
  {
@@ -109,6 +131,8 @@
   "number": "14",
   "title": "Praise Ye the Lord",
   "path": "data/CH1941/14.json",
+  "sung": true,
+  "sv": "1c823e1360",
   "v": "dc20a57299"
  },
  {
@@ -117,6 +141,8 @@
   "number": "15",
   "title": "All Glory, Laud, and Honor",
   "path": "data/CH1941/15.json",
+  "sung": true,
+  "sv": "4d426b44c0",
   "v": "b65408f9d4"
  },
  {
@@ -125,6 +151,8 @@
   "number": "16",
   "title": "Praise the Lord, His Glories Show",
   "path": "data/CH1941/16.json",
+  "sung": true,
+  "sv": "47971e0246",
   "v": "bc20f49864"
  },
  {
@@ -133,6 +161,8 @@
   "number": "17",
   "title": "Rejoice, Ye Pure in Heart",
   "path": "data/CH1941/17.json",
+  "sung": true,
+  "sv": "8c7f8f7542",
   "v": "fdcb785cab"
  },
  {
@@ -141,6 +171,8 @@
   "number": "18",
   "title": "O for a Heart to Praise My God!",
   "path": "data/CH1941/18.json",
+  "sung": true,
+  "sv": "4a14966e4f",
   "v": "a8497da6da"
  },
  {
@@ -149,6 +181,8 @@
   "number": "19",
   "title": "Angel Voices Ever Singing",
   "path": "data/CH1941/19.json",
+  "sung": true,
+  "sv": "220c4b71c7",
   "v": "5d8805013c"
  },
  {
@@ -157,6 +191,8 @@
   "number": "20",
   "title": "Lord of All Being, Throned Afar",
   "path": "data/CH1941/20.json",
+  "sung": true,
+  "sv": "4fefe30063",
   "v": "8e74e23fc9"
  },
  {
@@ -165,6 +201,8 @@
   "number": "21",
   "title": "My Gracious Lord, I Own Thy Right",
   "path": "data/CH1941/21.json",
+  "sung": true,
+  "sv": "833d1eba89",
   "v": "19e74e1ccf"
  },
  {
@@ -173,6 +211,8 @@
   "number": "22",
   "title": "For the Beauty of the Earth",
   "path": "data/CH1941/22.json",
+  "sung": true,
+  "sv": "8d942a9d6f",
   "v": "54ad21339c"
  },
  {
@@ -181,6 +221,8 @@
   "number": "23",
   "title": "Lord, With Glowing Heart I'd Praise Thee",
   "path": "data/CH1941/23.json",
+  "sung": true,
+  "sv": "609fbb6c5c",
   "v": "f8372700d0"
  },
  {
@@ -189,6 +231,8 @@
   "number": "24",
   "title": "How Pleasant, How Divinely Fair",
   "path": "data/CH1941/24.json",
+  "sung": true,
+  "sv": "89822905a7",
   "v": "ebda1124a1"
  },
  {
@@ -197,6 +241,8 @@
   "number": "25",
   "title": "Again Our Earthly Cares We Leave",
   "path": "data/CH1941/25.json",
+  "sung": true,
+  "sv": "0b39d3ace6",
   "v": "55b2bbf97c"
  },
  {
@@ -205,6 +251,8 @@
   "number": "26",
   "title": "Again We Meet",
   "path": "data/CH1941/26.json",
+  "sung": true,
+  "sv": "4bb2985312",
   "v": "d39a77507b"
  },
  {
@@ -213,6 +261,8 @@
   "number": "27",
   "title": "Blessed Jesus, at Thy Word",
   "path": "data/CH1941/27.json",
+  "sung": true,
+  "sv": "3aa4ed17f3",
   "v": "10fdca3c36"
  },
  {
@@ -221,6 +271,8 @@
   "number": "28",
   "title": "Blest Hour When Mortal Man Retires",
   "path": "data/CH1941/28.json",
+  "sung": true,
+  "sv": "9854594ac9",
   "v": "bb069f4b19"
  },
  {
@@ -229,6 +281,8 @@
   "number": "29",
   "title": "We Would See Jesus",
   "path": "data/CH1941/29.json",
+  "sung": true,
+  "sv": "dccc689c1d",
   "v": "cecf84905e"
  },
  {
@@ -237,6 +291,8 @@
   "number": "30",
   "title": "Lord, We Come Before Thee Now",
   "path": "data/CH1941/30.json",
+  "sung": true,
+  "sv": "82ea7095d9",
   "v": "da05bdf01f"
  },
  {
@@ -245,6 +301,8 @@
   "number": "31",
   "title": "Eternal Father, God of Love",
   "path": "data/CH1941/31.json",
+  "sung": true,
+  "sv": "ac9435e719",
   "v": "89ac218914"
  },
  {
@@ -253,6 +311,8 @@
   "number": "32",
   "title": "Lord, at This Closing Hour",
   "path": "data/CH1941/32.json",
+  "sung": true,
+  "sv": "304acd4c41",
   "v": "a4b6c9cc4b"
  },
  {
@@ -261,6 +321,8 @@
   "number": "33",
   "title": "Lord, Dismiss Us With Thy Blessing",
   "path": "data/CH1941/33.json",
+  "sung": true,
+  "sv": "4597ec8238",
   "v": "38a5483246"
  },
  {
@@ -269,6 +331,8 @@
   "number": "34",
   "title": "Saviour, Again to Thy Dear Name",
   "path": "data/CH1941/34.json",
+  "sung": true,
+  "sv": "f0b4e53bc2",
   "v": "a110584538"
  },
  {
@@ -277,6 +341,8 @@
   "number": "35",
   "title": "God Be With You",
   "path": "data/CH1941/35.json",
+  "sung": true,
+  "sv": "d71a1596c4",
   "v": "9f3d70efcf"
  },
  {
@@ -285,6 +351,8 @@
   "number": "36",
   "title": "Thy Voice Hath Spoken",
   "path": "data/CH1941/36.json",
+  "sung": true,
+  "sv": "318024b8c3",
   "v": "1ed588f43a"
  },
  {
@@ -293,6 +361,8 @@
   "number": "37",
   "title": "The Lord Be With Us",
   "path": "data/CH1941/37.json",
+  "sung": true,
+  "sv": "01f8473f02",
   "v": "61ac1f35a9"
  },
  {
@@ -301,6 +371,8 @@
   "number": "38",
   "title": "God Bless and Keep Thee",
   "path": "data/CH1941/38.json",
+  "sung": true,
+  "sv": "460201d31a",
   "v": "fcd383c18b"
  },
  {
@@ -309,6 +381,8 @@
   "number": "39",
   "title": "Lord, in the Morning",
   "path": "data/CH1941/39.json",
+  "sung": true,
+  "sv": "cb2707720e",
   "v": "253a3ce970"
  },
  {
@@ -317,6 +391,8 @@
   "number": "40",
   "title": "Sweetly the Holy Hymn",
   "path": "data/CH1941/40.json",
+  "sung": true,
+  "sv": "d44ca50c65",
   "v": "dae4ef97d0"
  },
  {
@@ -325,6 +401,8 @@
   "number": "41",
   "title": "O Christ, With Each Returning Morn",
   "path": "data/CH1941/41.json",
+  "sung": true,
+  "sv": "9ffd8c1fbb",
   "v": "699b6a8cec"
  },
  {
@@ -333,6 +411,8 @@
   "number": "42",
   "title": "New Every Morning",
   "path": "data/CH1941/42.json",
+  "sung": true,
+  "sv": "8d06ac660b",
   "v": "fd577b1f90"
  },
  {
@@ -341,6 +421,8 @@
   "number": "43",
   "title": "When Morning Gilds the Skies",
   "path": "data/CH1941/43.json",
+  "sung": true,
+  "sv": "d9f9549977",
   "v": "c9375bea19"
  },
  {
@@ -365,6 +447,8 @@
   "number": "46",
   "title": "Sweet Is the Work, My God",
   "path": "data/CH1941/46.json",
+  "sung": true,
+  "sv": "0078f19091",
   "v": "faf8845def"
  },
  {
@@ -373,6 +457,8 @@
   "number": "47",
   "title": "Forth in Thy Name",
   "path": "data/CH1941/47.json",
+  "sung": true,
+  "sv": "2fda3a7c05",
   "v": "91da391ccb"
  },
  {
@@ -381,6 +467,8 @@
   "number": "48",
   "title": "Softly Now the Light of Day",
   "path": "data/CH1941/48.json",
+  "sung": true,
+  "sv": "15b7f608d9",
   "v": "59495967ac"
  },
  {
@@ -389,6 +477,8 @@
   "number": "49",
   "title": "Saviour, Breathe an Evening Blessing",
   "path": "data/CH1941/49.json",
+  "sung": true,
+  "sv": "f7359c7ec9",
   "v": "55dc68bae1"
  },
  {
@@ -397,6 +487,8 @@
   "number": "50",
   "title": "Abide With Me",
   "path": "data/CH1941/50.json",
+  "sung": true,
+  "sv": "a37194f71c",
   "v": "7c9aeb1969"
  },
  {
@@ -405,6 +497,8 @@
   "number": "51",
   "title": "Day Is Dying in the West",
   "path": "data/CH1941/51.json",
+  "sung": true,
+  "sv": "80ed64bfd9",
   "v": "93507df24d"
  },
  {
@@ -413,6 +507,8 @@
   "number": "52",
   "title": "Now the Day Is Over",
   "path": "data/CH1941/52.json",
+  "sung": true,
+  "sv": "657153f7a5",
   "v": "dc2e6ffbfa"
  },
  {
@@ -429,6 +525,8 @@
   "number": "54",
   "title": "The Shadows of the Evening Hours",
   "path": "data/CH1941/54.json",
+  "sung": true,
+  "sv": "1dbf64e516",
   "v": "6a1215d170"
  },
  {
@@ -437,6 +535,8 @@
   "number": "55",
   "title": "Now God Be With Us",
   "path": "data/CH1941/55.json",
+  "sung": true,
+  "sv": "606909f66d",
   "v": "3f9b394ba9"
  },
  {
@@ -445,6 +545,8 @@
   "number": "56",
   "title": "Again as Evening's Shadow Falls",
   "path": "data/CH1941/56.json",
+  "sung": true,
+  "sv": "1fe9b7d587",
   "v": "0e7cdb57d1"
  },
  {
@@ -453,6 +555,8 @@
   "number": "57",
   "title": "The Day Thou Gavest",
   "path": "data/CH1941/57.json",
+  "sung": true,
+  "sv": "008058556a",
   "v": "dd7cc7a2b7"
  },
  {
@@ -461,6 +565,8 @@
   "number": "58",
   "title": "Our Day of Praise Is Done",
   "path": "data/CH1941/58.json",
+  "sung": true,
+  "sv": "2052f355e1",
   "v": "2e8b11aaf3"
  },
  {
@@ -469,6 +575,8 @@
   "number": "59",
   "title": "The Sun Rolls Down",
   "path": "data/CH1941/59.json",
+  "sung": true,
+  "sv": "25a77e88e7",
   "v": "0219f1d987"
  },
  {
@@ -477,6 +585,8 @@
   "number": "60",
   "title": "O Blessed Hour",
   "path": "data/CH1941/60.json",
+  "sung": true,
+  "sv": "4b94b91b3c",
   "v": "9803412ae2"
  },
  {
@@ -485,6 +595,8 @@
   "number": "61",
   "title": "The Sabbath Day Has Reached Its Close",
   "path": "data/CH1941/61.json",
+  "sung": true,
+  "sv": "8f684dffea",
   "v": "f4e54b4acf"
  },
  {
@@ -493,6 +605,8 @@
   "number": "62",
   "title": "Eternal Depth of Love Divine",
   "path": "data/CH1941/62.json",
+  "sung": true,
+  "sv": "4504a9f7f6",
   "v": "33d19ba764"
  },
  {
@@ -501,6 +615,8 @@
   "number": "63",
   "title": "Thy Mighty Love, O God",
   "path": "data/CH1941/63.json",
+  "sung": true,
+  "sv": "ea1aa78af6",
   "v": "1f22ecb34e"
  },
  {
@@ -509,6 +625,8 @@
   "number": "64",
   "title": "How Gentle God's Commands",
   "path": "data/CH1941/64.json",
+  "sung": true,
+  "sv": "b61ac60360",
   "v": "580c5d251c"
  },
  {
@@ -517,6 +635,8 @@
   "number": "65",
   "title": "There's a Wideness",
   "path": "data/CH1941/65.json",
+  "sung": true,
+  "sv": "ac66d2118f",
   "v": "87bab57ba3"
  },
  {
@@ -525,6 +645,8 @@
   "number": "66",
   "title": "Like as a Father",
   "path": "data/CH1941/66.json",
+  "sung": true,
+  "sv": "3cbf1ee47a",
   "v": "186670aa1b"
  },
  {
@@ -533,6 +655,8 @@
   "number": "67",
   "title": "O Love of God",
   "path": "data/CH1941/67.json",
+  "sung": true,
+  "sv": "4b508ecb5f",
   "v": "1cf57a0cce"
  },
  {
@@ -541,6 +665,8 @@
   "number": "68",
   "title": "Jesus, Lord, We Look to Thee",
   "path": "data/CH1941/68.json",
+  "sung": true,
+  "sv": "be376837a2",
   "v": "beb79b5a98"
  },
  {
@@ -549,6 +675,8 @@
   "number": "69",
   "title": "High in the Heavens",
   "path": "data/CH1941/69.json",
+  "sung": true,
+  "sv": "f575d61dbb",
   "v": "6d87e9795c"
  },
  {
@@ -557,6 +685,8 @@
   "number": "70",
   "title": "Holy, Righteous, Heavenly King",
   "path": "data/CH1941/70.json",
+  "sung": true,
+  "sv": "4650816860",
   "v": "a2efc3c8ed"
  },
  {
@@ -565,6 +695,8 @@
   "number": "71",
   "title": "My Maker and My King",
   "path": "data/CH1941/71.json",
+  "sung": true,
+  "sv": "a97379f3d1",
   "v": "06059db8e5"
  },
  {
@@ -573,6 +705,8 @@
   "number": "72",
   "title": "Early, My God, Without Delay",
   "path": "data/CH1941/72.json",
+  "sung": true,
+  "sv": "cb8dff14c3",
   "v": "19a03e524f"
  },
  {
@@ -581,6 +715,8 @@
   "number": "73",
   "title": "Holy, Holy, Holy",
   "path": "data/CH1941/73.json",
+  "sung": true,
+  "sv": "9f1737d0f3",
   "v": "94c6cafec6"
  },
  {
@@ -589,6 +725,8 @@
   "number": "74",
   "title": "Round the Lord in Glory Seated",
   "path": "data/CH1941/74.json",
+  "sung": true,
+  "sv": "e0aa1395e6",
   "v": "85c5627aa6"
  },
  {
@@ -597,6 +735,8 @@
   "number": "75",
   "title": "O Worship the King",
   "path": "data/CH1941/75.json",
+  "sung": true,
+  "sv": "5caaaf3ca9",
   "v": "a3258b6ddf"
  },
  {
@@ -621,6 +761,8 @@
   "number": "78",
   "title": "God the Omnipotent",
   "path": "data/CH1941/78.json",
+  "sung": true,
+  "sv": "0762170b37",
   "v": "d7bea0cc09"
  },
  {
@@ -629,6 +771,8 @@
   "number": "79",
   "title": "Ere Mountains Reared Their Forms Sublime",
   "path": "data/CH1941/79.json",
+  "sung": true,
+  "sv": "5ad0f0262f",
   "v": "317275cb27"
  },
  {
@@ -637,6 +781,8 @@
   "number": "80",
   "title": "Holy as Thou, O Lord",
   "path": "data/CH1941/80.json",
+  "sung": true,
+  "sv": "f72b47a2d9",
   "v": "e8f747167e"
  },
  {
@@ -645,6 +791,8 @@
   "number": "81",
   "title": "O God, Our Help",
   "path": "data/CH1941/81.json",
+  "sung": true,
+  "sv": "64132730de",
   "v": "dcb4ba1f8f"
  },
  {
@@ -653,6 +801,8 @@
   "number": "82",
   "title": "Beneath Thy Wing",
   "path": "data/CH1941/82.json",
+  "sung": true,
+  "sv": "561ee560db",
   "v": "f580819a43"
  },
  {
@@ -661,6 +811,8 @@
   "number": "83",
   "title": "God of My Life",
   "path": "data/CH1941/83.json",
+  "sung": true,
+  "sv": "d6b6d2f6fa",
   "v": "b4a2918725"
  },
  {
@@ -669,6 +821,8 @@
   "number": "84",
   "title": "God Moves in a Mysterious Way",
   "path": "data/CH1941/84.json",
+  "sung": true,
+  "sv": "93b9df1a23",
   "v": "4c4d922af7"
  },
  {
@@ -677,6 +831,8 @@
   "number": "85",
   "title": "Eternal Light",
   "path": "data/CH1941/85.json",
+  "sung": true,
+  "sv": "f8ae39277c",
   "v": "61d7dac453"
  },
  {
@@ -685,6 +841,8 @@
   "number": "86",
   "title": "The King of Love My Shepherd Is",
   "path": "data/CH1941/86.json",
+  "sung": true,
+  "sv": "97c801dc01",
   "v": "b71d32affe"
  },
  {
@@ -701,6 +859,8 @@
   "number": "88",
   "title": "O God of Bethel",
   "path": "data/CH1941/88.json",
+  "sung": true,
+  "sv": "ed57c70ffb",
   "v": "d7927aa5d4"
  },
  {
@@ -709,6 +869,8 @@
   "number": "89",
   "title": "God Is the Refuge",
   "path": "data/CH1941/89.json",
+  "sung": true,
+  "sv": "b28aa0fe68",
   "v": "8e0314a9fd"
  },
  {
@@ -725,6 +887,8 @@
   "number": "91",
   "title": "The Spacious Firmament",
   "path": "data/CH1941/91.json",
+  "sung": true,
+  "sv": "e5bdab4d82",
   "v": "128b363127"
  },
  {
@@ -733,6 +897,8 @@
   "number": "92",
   "title": "There Is a Book",
   "path": "data/CH1941/92.json",
+  "sung": true,
+  "sv": "814be20000",
   "v": "630e0f342d"
  },
  {
@@ -741,6 +907,8 @@
   "number": "93",
   "title": "I Sing the Mighty Power",
   "path": "data/CH1941/93.json",
+  "sung": true,
+  "sv": "eb61404e9a",
   "v": "3b94cf7377"
  },
  {
@@ -749,6 +917,8 @@
   "number": "94",
   "title": "All Beautiful the March of Days",
   "path": "data/CH1941/94.json",
+  "sung": true,
+  "sv": "ba5e28796a",
   "v": "95dcde3fe4"
  },
  {
@@ -757,6 +927,8 @@
   "number": "95",
   "title": "The Glory of the Spring",
   "path": "data/CH1941/95.json",
+  "sung": true,
+  "sv": "b487836f04",
   "v": "e1dc2a5144"
  },
  {
@@ -765,6 +937,8 @@
   "number": "96",
   "title": "Glorious Are the Lofty Mountains",
   "path": "data/CH1941/96.json",
+  "sung": true,
+  "sv": "7cc57faccc",
   "v": "1202b5bfe4"
  },
  {
@@ -773,6 +947,8 @@
   "number": "97",
   "title": "Lord of the Ocean",
   "path": "data/CH1941/97.json",
+  "sung": true,
+  "sv": "c83147505c",
   "v": "4fb82cabdb"
  },
  {
@@ -781,6 +957,8 @@
   "number": "98",
   "title": "On Hills and Vales of Heaven",
   "path": "data/CH1941/98.json",
+  "sung": true,
+  "sv": "7af6a7b667",
   "v": "a8922b43ca"
  },
  {
@@ -789,6 +967,8 @@
   "number": "99",
   "title": "It Came Upon the Midnight Clear",
   "path": "data/CH1941/99.json",
+  "sung": true,
+  "sv": "e5768126f9",
   "v": "b3002c1e5b"
  },
  {
@@ -797,6 +977,8 @@
   "number": "100",
   "title": "To Us a Child of Hope Is Born",
   "path": "data/CH1941/100.json",
+  "sung": true,
+  "sv": "48ebba120a",
   "v": "97b6c2cccd"
  },
  {
@@ -805,6 +987,8 @@
   "number": "604",
   "title": "Lord, for Tomorrow and Its Needs",
   "path": "data/CH1941/604.json",
+  "sung": true,
+  "sv": "06a4304f19",
   "v": "a7e8d13561"
  },
  {
@@ -813,6 +997,8 @@
   "number": "1",
   "title": "Lead Them to Thee",
   "path": "data/CS1900/1.json",
+  "sung": true,
+  "sv": "573e2056ef",
   "v": "3c8e538cb4"
  },
  {
@@ -821,6 +1007,8 @@
   "number": "2",
   "title": "Tell Me the Old, Old Story",
   "path": "data/CS1900/2.json",
+  "sung": true,
+  "sv": "320bdcc06e",
   "v": "36f224fc03"
  },
  {
@@ -829,6 +1017,8 @@
   "number": "3",
   "title": "Jesus Loves Me",
   "path": "data/CS1900/3.json",
+  "sung": true,
+  "sv": "f6639edefb",
   "v": "279da580ab"
  },
  {
@@ -837,6 +1027,8 @@
   "number": "4",
   "title": "At the Door",
   "path": "data/CS1900/4.json",
+  "sung": true,
+  "sv": "71b4de2544",
   "v": "37994f8cf2"
  },
  {
@@ -845,6 +1037,8 @@
   "number": "5",
   "title": "Shall I Let Him In?",
   "path": "data/CS1900/5.json",
+  "sung": true,
+  "sv": "b473f5e569",
   "v": "de383fb7a4"
  },
  {
@@ -853,6 +1047,8 @@
   "number": "6",
   "title": "Make Room for Jesus",
   "path": "data/CS1900/6.json",
+  "sung": true,
+  "sv": "121e910619",
   "v": "873c047cd2"
  },
  {
@@ -861,6 +1057,8 @@
   "number": "1",
   "title": "Christ or Barabbas?",
   "path": "data/CS1908/1.json",
+  "sung": true,
+  "sv": "ab09255ae0",
   "v": "9c4f319850"
  },
  {
@@ -869,6 +1067,8 @@
   "number": "2",
   "title": "White Leaves",
   "path": "data/CS1908/2.json",
+  "sung": true,
+  "sv": "93dc76c560",
   "v": "eb9d8f024f"
  },
  {
@@ -877,6 +1077,8 @@
   "number": "3",
   "title": "Welcome! Wanderer, Welcome!",
   "path": "data/CS1908/3.json",
+  "sung": true,
+  "sv": "3c4e2390fd",
   "v": "c96c9d8b04"
  },
  {
@@ -885,6 +1087,8 @@
   "number": "4",
   "title": "Drifting Away from the Saviour",
   "path": "data/CS1908/4.json",
+  "sung": true,
+  "sv": "68da020b3b",
   "v": "347ffe521f"
  },
  {
@@ -893,6 +1097,8 @@
   "number": "5",
   "title": "Shall You? Shall I?",
   "path": "data/CS1908/5.json",
+  "sung": true,
+  "sv": "53824aa35e",
   "v": "ea444e2459"
  },
  {
@@ -901,6 +1107,8 @@
   "number": "6",
   "title": "Nailed to the Cross",
   "path": "data/CS1908/6.json",
+  "sung": true,
+  "sv": "3b01e59353",
   "v": "08602682f6"
  },
  {
@@ -909,6 +1117,8 @@
   "number": "7",
   "title": "The Very Same Jesus",
   "path": "data/CS1908/7.json",
+  "sung": true,
+  "sv": "edb6bb40ed",
   "v": "8b3a0bfe4d"
  },
  {
@@ -917,6 +1127,8 @@
   "number": "8",
   "title": "Jesus Is Calling",
   "path": "data/CS1908/8.json",
+  "sung": true,
+  "sv": "2ffe2827be",
   "v": "8f411dbe4b"
  },
  {
@@ -925,6 +1137,8 @@
   "number": "9",
   "title": "Over the Line",
   "path": "data/CS1908/9.json",
+  "sung": true,
+  "sv": "4f86872e78",
   "v": "675ad38e22"
  },
  {
@@ -933,6 +1147,8 @@
   "number": "10",
   "title": "I Am the Way",
   "path": "data/CS1908/10.json",
+  "sung": true,
+  "sv": "91b63811a0",
   "v": "6f9f7af2f8"
  },
  {
@@ -941,6 +1157,8 @@
   "number": "12",
   "title": "Whosoever Will",
   "path": "data/CS1908/12.json",
+  "sung": true,
+  "sv": "8c5836ada7",
   "v": "ffa7579565"
  },
  {
@@ -949,6 +1167,8 @@
   "number": "13",
   "title": "Yet There Is Room",
   "path": "data/CS1908/13.json",
+  "sung": true,
+  "sv": "356cc0b63e",
   "v": "ad49532117"
  },
  {
@@ -957,6 +1177,8 @@
   "number": "14",
   "title": "Sound the Alarm!",
   "path": "data/CS1908/14.json",
+  "sung": true,
+  "sv": "9502125546",
   "v": "e79d738406"
  },
  {
@@ -965,6 +1187,8 @@
   "number": "15",
   "title": "Get Right With God",
   "path": "data/CS1908/15.json",
+  "sung": true,
+  "sv": "684b7e890f",
   "v": "4c2e406d7c"
  },
  {
@@ -973,6 +1197,8 @@
   "number": "20",
   "title": "Shall I Let Him In?",
   "path": "data/CS1908/20.json",
+  "sung": true,
+  "sv": "eb03572524",
   "v": "eeabda0f33"
  },
  {
@@ -981,6 +1207,8 @@
   "number": "21",
   "title": "Let Him In",
   "path": "data/CS1908/21.json",
+  "sung": true,
+  "sv": "0585b089d0",
   "v": "d523b846d7"
  },
  {
@@ -989,6 +1217,8 @@
   "number": "22",
   "title": "Would You Believe?",
   "path": "data/CS1908/22.json",
+  "sung": true,
+  "sv": "f304014036",
   "v": "9e0c836d19"
  },
  {
@@ -997,6 +1227,8 @@
   "number": "23",
   "title": "Repeating Calvary",
   "path": "data/CS1908/23.json",
+  "sung": true,
+  "sv": "6c2a727cf9",
   "v": "2bc4357242"
  },
  {
@@ -1005,6 +1237,8 @@
   "number": "24",
   "title": "Christ Receiveth Sinful Men",
   "path": "data/CS1908/24.json",
+  "sung": true,
+  "sv": "feb7946f4f",
   "v": "fe54d89fec"
  },
  {
@@ -1013,6 +1247,8 @@
   "number": "25",
   "title": "Let Jesus Come Into Your Heart",
   "path": "data/CS1908/25.json",
+  "sung": true,
+  "sv": "bbd53281cb",
   "v": "eec0230f78"
  },
  {
@@ -1021,6 +1257,8 @@
   "number": "26",
   "title": "Ye Must Be Born Again",
   "path": "data/CS1908/26.json",
+  "sung": true,
+  "sv": "3a103f2ec6",
   "v": "78517241ac"
  },
  {
@@ -1029,6 +1267,8 @@
   "number": "27",
   "title": "There Is Power in the Blood",
   "path": "data/CS1908/27.json",
+  "sung": true,
+  "sv": "b9ffe54086",
   "v": "547452e489"
  },
  {
@@ -1037,6 +1277,8 @@
   "number": "29",
   "title": "Ring the Bells of Heaven",
   "path": "data/CS1908/29.json",
+  "sung": true,
+  "sv": "1b36bf6a63",
   "v": "1f510c3a68"
  },
  {
@@ -1045,6 +1287,8 @@
   "number": "30",
   "title": "Able to Deliver",
   "path": "data/CS1908/30.json",
+  "sung": true,
+  "sv": "428ffd4286",
   "v": "ff9b1dacd9"
  },
  {
@@ -1053,6 +1297,8 @@
   "number": "31",
   "title": "Come, Great Deliverer, Come",
   "path": "data/CS1908/31.json",
+  "sung": true,
+  "sv": "a3dbdd79ba",
   "v": "432f956081"
  },
  {
@@ -1061,6 +1307,8 @@
   "number": "33",
   "title": "Building for Eternity",
   "path": "data/CS1908/33.json",
+  "sung": true,
+  "sv": "f7676ccf1b",
   "v": "6ef6ba4b6f"
  },
  {
@@ -1069,6 +1317,8 @@
   "number": "34",
   "title": "The Grand Old Story of Salvation",
   "path": "data/CS1908/34.json",
+  "sung": true,
+  "sv": "4a640bf71e",
   "v": "67032c0db9"
  },
  {
@@ -1077,6 +1327,8 @@
   "number": "36",
   "title": "My Name in Mother's Prayer",
   "path": "data/CS1908/36.json",
+  "sung": true,
+  "sv": "2850d80a0c",
   "v": "6b59b7f4fc"
  },
  {
@@ -1085,6 +1337,8 @@
   "number": "37",
   "title": "Eternity!—Where?",
   "path": "data/CS1908/37.json",
+  "sung": true,
+  "sv": "d5d44b951e",
   "v": "d19b483443"
  },
  {
@@ -1093,6 +1347,8 @@
   "number": "38",
   "title": "The Passover",
   "path": "data/CS1908/38.json",
+  "sung": true,
+  "sv": "8c581ebcb4",
   "v": "e9c8ee874e"
  },
  {
@@ -1101,6 +1357,8 @@
   "number": "39",
   "title": "In the Silent Midnight Watches",
   "path": "data/CS1908/39.json",
+  "sung": true,
+  "sv": "d3c1305097",
   "v": "c67f662679"
  },
  {
@@ -1109,6 +1367,8 @@
   "number": "41",
   "title": "Mighty to Save",
   "path": "data/CS1908/41.json",
+  "sung": true,
+  "sv": "42cc00d609",
   "v": "db040a73b6"
  },
  {
@@ -1117,6 +1377,8 @@
   "number": "42",
   "title": "How Shall We Stand in the Judgment",
   "path": "data/CS1908/42.json",
+  "sung": true,
+  "sv": "0949caa822",
   "v": "425fd7f6af"
  },
  {
@@ -1125,6 +1387,8 @@
   "number": "43",
   "title": "When the King Comes In",
   "path": "data/CS1908/43.json",
+  "sung": true,
+  "sv": "cebc2da4d7",
   "v": "fae92c32df"
  },
  {
@@ -1133,6 +1397,8 @@
   "number": "45",
   "title": "While Jesus Whispers",
   "path": "data/CS1908/45.json",
+  "sung": true,
+  "sv": "0b06f964a6",
   "v": "0b60d0bddb"
  },
  {
@@ -1141,6 +1407,8 @@
   "number": "46",
   "title": "Lovingly, Tenderly Calling",
   "path": "data/CS1908/46.json",
+  "sung": true,
+  "sv": "9960c8296e",
   "v": "241951d621"
  },
  {
@@ -1149,6 +1417,8 @@
   "number": "49",
   "title": "Weighed and Wanting",
   "path": "data/CS1908/49.json",
+  "sung": true,
+  "sv": "47dcebbc9c",
   "v": "9ca2e8fe60"
  },
  {
@@ -1157,6 +1427,8 @@
   "number": "52",
   "title": "Jesus of Nazareth Passeth By",
   "path": "data/CS1908/52.json",
+  "sung": true,
+  "sv": "e3c19eb048",
   "v": "71f27b9778"
  },
  {
@@ -1165,6 +1437,8 @@
   "number": "55",
   "title": "Blessed Are They That Do",
   "path": "data/CS1908/55.json",
+  "sung": true,
+  "sv": "f8e02840d2",
   "v": "6f76adef8e"
  },
  {
@@ -1173,6 +1447,8 @@
   "number": "57",
   "title": "No, Not One",
   "path": "data/CS1908/57.json",
+  "sung": true,
+  "sv": "bda48602f4",
   "v": "1f6fb1b002"
  },
  {
@@ -1181,6 +1457,8 @@
   "number": "58",
   "title": "His Way With Thee",
   "path": "data/CS1908/58.json",
+  "sung": true,
+  "sv": "2246420389",
   "v": "716edb5b1a"
  },
  {
@@ -1189,6 +1467,8 @@
   "number": "59",
   "title": "Who Is on the Lord's Side?",
   "path": "data/CS1908/59.json",
+  "sung": true,
+  "sv": "6b3ddf4766",
   "v": "2c444204e7"
  },
  {
@@ -1197,6 +1477,8 @@
   "number": "60",
   "title": "Only a Step",
   "path": "data/CS1908/60.json",
+  "sung": true,
+  "sv": "7194a7c777",
   "v": "fb4d7eef3e"
  },
  {
@@ -1205,6 +1487,8 @@
   "number": "61",
   "title": "The Ninety and Nine",
   "path": "data/CS1908/61.json",
+  "sung": true,
+  "sv": "0a41ef6933",
   "v": "1ce5a18096"
  },
  {
@@ -1213,6 +1497,8 @@
   "number": "62",
   "title": "What Will You Do With Jesus?",
   "path": "data/CS1908/62.json",
+  "sung": true,
+  "sv": "43f0b1ae03",
   "v": "60d288e3f3"
  },
  {
@@ -1221,6 +1507,8 @@
   "number": "65",
   "title": "Life in a Look",
   "path": "data/CS1908/65.json",
+  "sung": true,
+  "sv": "a816642598",
   "v": "3012455ac6"
  },
  {
@@ -1229,6 +1517,8 @@
   "number": "66",
   "title": "Yield Not to Temptation",
   "path": "data/CS1908/66.json",
+  "sung": true,
+  "sv": "1b1ef19359",
   "v": "f08aef1485"
  },
  {
@@ -1237,6 +1527,8 @@
   "number": "67",
   "title": "Dare to Do Right",
   "path": "data/CS1908/67.json",
+  "sung": true,
+  "sv": "395b2f34b5",
   "v": "674f224f2d"
  },
  {
@@ -1245,6 +1537,8 @@
   "number": "68",
   "title": "Let the Little Ones Come",
   "path": "data/CS1908/68.json",
+  "sung": true,
+  "sv": "d48369b987",
   "v": "70440bf7a8"
  },
  {
@@ -1253,6 +1547,8 @@
   "number": "69",
   "title": "Pure Gold",
   "path": "data/CS1908/69.json",
+  "sung": true,
+  "sv": "9cf6550f3c",
   "v": "428abe3d44"
  },
  {
@@ -1261,6 +1557,8 @@
   "number": "72",
   "title": "Who'll Be the Next?",
   "path": "data/CS1908/72.json",
+  "sung": true,
+  "sv": "77d76028e1",
   "v": "5faa9aa689"
  },
  {
@@ -1269,6 +1567,8 @@
   "number": "73",
   "title": "Just a Word for Jesus",
   "path": "data/CS1908/73.json",
+  "sung": true,
+  "sv": "8db0e6d661",
   "v": "c39bbe70e1"
  },
  {
@@ -1277,6 +1577,8 @@
   "number": "75",
   "title": "Seeking for Me",
   "path": "data/CS1908/75.json",
+  "sung": true,
+  "sv": "55314fee25",
   "v": "b56af94be3"
  },
  {
@@ -1285,6 +1587,8 @@
   "number": "77",
   "title": "Like as a Father",
   "path": "data/CS1908/77.json",
+  "sung": true,
+  "sv": "367e757f7a",
   "v": "c1b09f4b5a"
  },
  {
@@ -1293,6 +1597,8 @@
   "number": "81",
   "title": "Why Not Now?",
   "path": "data/CS1908/81.json",
+  "sung": true,
+  "sv": "aaf8459f63",
   "v": "5d364033be"
  },
  {
@@ -1301,6 +1607,8 @@
   "number": "83",
   "title": "Mercy's Free",
   "path": "data/CS1908/83.json",
+  "sung": true,
+  "sv": "dcdee9fc4a",
   "v": "0cc0c60839"
  },
  {
@@ -1309,6 +1617,8 @@
   "number": "84",
   "title": "At the Door",
   "path": "data/CS1908/84.json",
+  "sung": true,
+  "sv": "58b16efe3c",
   "v": "9c5068364c"
  },
  {
@@ -1317,6 +1627,8 @@
   "number": "85",
   "title": "The Love of Jesus",
   "path": "data/CS1908/85.json",
+  "sung": true,
+  "sv": "78509f9fe0",
   "v": "d84c1a81b6"
  },
  {
@@ -1325,6 +1637,8 @@
   "number": "86",
   "title": "There's a Great Day Coming",
   "path": "data/CS1908/86.json",
+  "sung": true,
+  "sv": "cd651c1f42",
   "v": "7d5b569f66"
  },
  {
@@ -1333,6 +1647,8 @@
   "number": "88",
   "title": "Are You Washed in the Blood?",
   "path": "data/CS1908/88.json",
+  "sung": true,
+  "sv": "9f35d9cc77",
   "v": "fce2b644b9"
  },
  {
@@ -1341,6 +1657,8 @@
   "number": "89",
   "title": "Almost Persuaded",
   "path": "data/CS1908/89.json",
+  "sung": true,
+  "sv": "d6a6ce6356",
   "v": "33d4af6e5e"
  },
  {
@@ -1349,6 +1667,8 @@
   "number": "90",
   "title": "I Stood Outside the Gate",
   "path": "data/CS1908/90.json",
+  "sung": true,
+  "sv": "1685223776",
   "v": "0d78352b54"
  },
  {
@@ -1357,6 +1677,8 @@
   "number": "91",
   "title": "The Gate Ajar for Me",
   "path": "data/CS1908/91.json",
+  "sung": true,
+  "sv": "af81472d04",
   "v": "4a9a0125c6"
  },
  {
@@ -1365,6 +1687,8 @@
   "number": "92",
   "title": "Weeping Will Not Save Me",
   "path": "data/CS1908/92.json",
+  "sung": true,
+  "sv": "e2333561ae",
   "v": "381c69ca45"
  },
  {
@@ -1373,6 +1697,8 @@
   "number": "93",
   "title": "Nothing But the Blood",
   "path": "data/CS1908/93.json",
+  "sung": true,
+  "sv": "91956b0c32",
   "v": "784b3e0679"
  },
  {
@@ -1381,6 +1707,8 @@
   "number": "96",
   "title": "What Hast Thou Done?",
   "path": "data/CS1908/96.json",
+  "sung": true,
+  "sv": "93cb10a2f5",
   "v": "5dfe2f044c"
  },
  {
@@ -1389,6 +1717,8 @@
   "number": "97",
   "title": "Not Try, but Trust",
   "path": "data/CS1908/97.json",
+  "sung": true,
+  "sv": "4a2bf8f391",
   "v": "efdc161b20"
  },
  {
@@ -1397,6 +1727,8 @@
   "number": "99",
   "title": "I Can, I Will",
   "path": "data/CS1908/99.json",
+  "sung": true,
+  "sv": "fe21f48957",
   "v": "f2f6ce5144"
  },
  {
@@ -1405,6 +1737,8 @@
   "number": "100",
   "title": "Nothing for Jesus",
   "path": "data/CS1908/100.json",
+  "sung": true,
+  "sv": "9007aaebf9",
   "v": "7e7c314032"
  },
  {
@@ -1413,6 +1747,8 @@
   "number": "102",
   "title": "A Sinner Like Me",
   "path": "data/CS1908/102.json",
+  "sung": true,
+  "sv": "8a6c21a2d9",
   "v": "19f49d7bfa"
  },
  {
@@ -1421,6 +1757,8 @@
   "number": "103",
   "title": "Take Me as I Am",
   "path": "data/CS1908/103.json",
+  "sung": true,
+  "sv": "f290634a28",
   "v": "2abb304d7b"
  },
  {
@@ -1429,6 +1767,8 @@
   "number": "104",
   "title": "Art Thou Weary?",
   "path": "data/CS1908/104.json",
+  "sung": true,
+  "sv": "bcca541eb1",
   "v": "9e275f5e4d"
  },
  {
@@ -1437,6 +1777,8 @@
   "number": "106",
   "title": "Believing and Receiving",
   "path": "data/CS1908/106.json",
+  "sung": true,
+  "sv": "4e7c644578",
   "v": "7a02a204fe"
  },
  {
@@ -1445,6 +1787,8 @@
   "number": "111",
   "title": "Ashamed of Jesus",
   "path": "data/CS1908/111.json",
+  "sung": true,
+  "sv": "ba5c4e8eef",
   "v": "bd60452ab6"
  },
  {
@@ -1453,6 +1797,8 @@
   "number": "112",
   "title": "At the Door",
   "path": "data/CS1908/112.json",
+  "sung": true,
+  "sv": "8c5592688d",
   "v": "424a7b2e3d"
  },
  {
@@ -1461,6 +1807,8 @@
   "number": "113",
   "title": "God Calling Yet",
   "path": "data/CS1908/113.json",
+  "sung": true,
+  "sv": "ae26eb1cfe",
   "v": "925b190a80"
  },
  {
@@ -1469,6 +1817,8 @@
   "number": "114",
   "title": "All Have Gone Astray",
   "path": "data/CS1908/114.json",
+  "sung": true,
+  "sv": "cda363059b",
   "v": "94d371626e"
  },
  {
@@ -1477,6 +1827,8 @@
   "number": "116",
   "title": "The Sprinkled Blood",
   "path": "data/CS1908/116.json",
+  "sung": true,
+  "sv": "29e25453e3",
   "v": "dd8afd936f"
  },
  {
@@ -1485,6 +1837,8 @@
   "number": "117",
   "title": "Comfort to the Dreary",
   "path": "data/CS1908/117.json",
+  "sung": true,
+  "sv": "0407f1f919",
   "v": "14007b507e"
  },
  {
@@ -1493,6 +1847,8 @@
   "number": "119",
   "title": "Forgive My Doubts",
   "path": "data/CS1908/119.json",
+  "sung": true,
+  "sv": "5e1c1d9d64",
   "v": "3dc123bbb6"
  },
  {
@@ -1501,6 +1857,8 @@
   "number": "120",
   "title": "He Speaks Within",
   "path": "data/CS1908/120.json",
+  "sung": true,
+  "sv": "acd79db2d1",
   "v": "8bc9d8d3c6"
  },
  {
@@ -1509,6 +1867,8 @@
   "number": "121",
   "title": "Weary of Earth",
   "path": "data/CS1908/121.json",
+  "sung": true,
+  "sv": "09126bd136",
   "v": "50f833f9fc"
  },
  {
@@ -1517,6 +1877,8 @@
   "number": "122",
   "title": "The Lord First Empties",
   "path": "data/CS1908/122.json",
+  "sung": true,
+  "sv": "6f62f3b16a",
   "v": "f327cb417a"
  },
  {
@@ -1525,6 +1887,8 @@
   "number": "123",
   "title": "Arise, My Soul, Arise!",
   "path": "data/CS1908/123.json",
+  "sung": true,
+  "sv": "e7af5451bd",
   "v": "bbec025133"
  },
  {
@@ -1533,6 +1897,8 @@
   "number": "125",
   "title": "Come Unto Me",
   "path": "data/CS1908/125.json",
+  "sung": true,
+  "sv": "420bfb9027",
   "v": "59fc0d6fe5"
  },
  {
@@ -1541,6 +1907,8 @@
   "number": "126",
   "title": "Penitence",
   "path": "data/CS1908/126.json",
+  "sung": true,
+  "sv": "df8c99337d",
   "v": "a1e048a7e3"
  },
  {
@@ -1549,6 +1917,8 @@
   "number": "127",
   "title": "Decisive Day",
   "path": "data/CS1908/127.json",
+  "sung": true,
+  "sv": "0eccdcd11e",
   "v": "f9303e89cc"
  },
  {
@@ -1557,6 +1927,8 @@
   "number": "129",
   "title": "God Is Love",
   "path": "data/CS1908/129.json",
+  "sung": true,
+  "sv": "708efe9252",
   "v": "c439857d7e"
  },
  {
@@ -1565,6 +1937,8 @@
   "number": "130",
   "title": "Sweet the Moments",
   "path": "data/CS1908/130.json",
+  "sung": true,
+  "sv": "b115c45d86",
   "v": "502c468183"
  },
  {
@@ -1573,6 +1947,8 @@
   "number": "131",
   "title": "Nothing but Leaves",
   "path": "data/CS1908/131.json",
+  "sung": true,
+  "sv": "4d28132c4e",
   "v": "230de13eac"
  },
  {
@@ -1581,6 +1957,8 @@
   "number": "132",
   "title": "Heaven Is Not Far Away",
   "path": "data/CS1908/132.json",
+  "sung": true,
+  "sv": "a476973224",
   "v": "14925f7149"
  },
  {
@@ -1589,6 +1967,8 @@
   "number": "133",
   "title": "Thou Art the Way",
   "path": "data/CS1908/133.json",
+  "sung": true,
+  "sv": "349af2aa65",
   "v": "1064f5e977"
  },
  {
@@ -1597,6 +1977,8 @@
   "number": "135",
   "title": "Write Thy Law",
   "path": "data/CS1908/135.json",
+  "sung": true,
+  "sv": "605048a9cd",
   "v": "9f2652c0b8"
  },
  {
@@ -1605,6 +1987,8 @@
   "number": "137",
   "title": "There Is a Line",
   "path": "data/CS1908/137.json",
+  "sung": true,
+  "sv": "6c67815191",
   "v": "27222d724e"
  },
  {
@@ -1613,6 +1997,8 @@
   "number": "138",
   "title": "The Wonders of Redeeming Love",
   "path": "data/CS1908/138.json",
+  "sung": true,
+  "sv": "66996378df",
   "v": "900da4a926"
  },
  {
@@ -1621,6 +2007,8 @@
   "number": "140",
   "title": "Go to Dark Gethsemane",
   "path": "data/CS1908/140.json",
+  "sung": true,
+  "sv": "b486bed4c2",
   "v": "4009bef883"
  },
  {
@@ -1629,6 +2017,8 @@
   "number": "141",
   "title": "Thy Work Alone",
   "path": "data/CS1908/141.json",
+  "sung": true,
+  "sv": "7c160c32f7",
   "v": "6829863489"
  },
  {
@@ -1637,6 +2027,8 @@
   "number": "142",
   "title": "Cleansed",
   "path": "data/CS1908/142.json",
+  "sung": true,
+  "sv": "af26ec2ced",
   "v": "c25dc9acdd"
  },
  {
@@ -1645,6 +2037,8 @@
   "number": "143",
   "title": "Born",
   "path": "data/CS1908/143.json",
+  "sung": true,
+  "sv": "fa56a1aa5d",
   "v": "c9e94a5a8c"
  },
  {
@@ -1653,6 +2047,8 @@
   "number": "144",
   "title": "Coming",
   "path": "data/CS1908/144.json",
+  "sung": true,
+  "sv": "3b2a321f0e",
   "v": "a9924619b0"
  },
  {
@@ -1661,6 +2057,8 @@
   "number": "148",
   "title": "I Bring My Sins to Thee",
   "path": "data/CS1908/148.json",
+  "sung": true,
+  "sv": "17e24e3f0a",
   "v": "059f1c805b"
  },
  {
@@ -1669,6 +2067,8 @@
   "number": "174",
   "title": "Even Me",
   "path": "data/CS1908/174.json",
+  "sung": true,
+  "sv": "5a07727567",
   "v": "1916e49756"
  },
  {
@@ -1677,6 +2077,8 @@
   "number": "179",
   "title": "Come to Jesus",
   "path": "data/CS1908/179.json",
+  "sung": true,
+  "sv": "1932a7b749",
   "v": "93d03de816"
  },
  {
@@ -1685,6 +2087,8 @@
   "number": "192",
   "title": "He Brought Me Out",
   "path": "data/CS1908/192.json",
+  "sung": true,
+  "sv": "d2103e61c9",
   "v": "21c1439cd3"
  },
  {
@@ -1693,6 +2097,8 @@
   "number": "222",
   "title": "Safe in the Arms of Jesus",
   "path": "data/CS1908/222.json",
+  "sung": true,
+  "sv": "493c09dda7",
   "v": "db4b032fef"
  },
  {
@@ -1701,6 +2107,8 @@
   "number": "229",
   "title": "Sunlight in the Heart",
   "path": "data/CS1908/229.json",
+  "sung": true,
+  "sv": "17fde226f7",
   "v": "5c7c59e02e"
  },
  {
@@ -1709,6 +2117,8 @@
   "number": "236",
   "title": "Since I Have Been Redeemed",
   "path": "data/CS1908/236.json",
+  "sung": true,
+  "sv": "97137e30cb",
   "v": "a1920a0303"
  },
  {
@@ -1717,6 +2127,8 @@
   "number": "239",
   "title": "Bring Ye All the Tithes",
   "path": "data/CS1908/239.json",
+  "sung": true,
+  "sv": "d4ff235599",
   "v": "8e994518f2"
  },
  {
@@ -1725,6 +2137,8 @@
   "number": "245",
   "title": "Wonderful Love of Jesus",
   "path": "data/CS1908/245.json",
+  "sung": true,
+  "sv": "137d5cdf50",
   "v": "d769fe2555"
  },
  {
@@ -1733,6 +2147,8 @@
   "number": "286",
   "title": "More Like Jesus",
   "path": "data/CS1908/286.json",
+  "sung": true,
+  "sv": "a987145e83",
   "v": "17a4cdd969"
  },
  {
@@ -1741,6 +2157,8 @@
   "number": "288",
   "title": "Blessed Be the Name",
   "path": "data/CS1908/288.json",
+  "sung": true,
+  "sv": "773ab87bd0",
   "v": "3426ad72f9"
  },
  {
@@ -1749,6 +2167,8 @@
   "number": "300",
   "title": "Glory to His Name",
   "path": "data/CS1908/300.json",
+  "sung": true,
+  "sv": "68727b1dba",
   "v": "196597143c"
  },
  {
@@ -1757,6 +2177,8 @@
   "number": "305",
   "title": "I Remember Calvary",
   "path": "data/CS1908/305.json",
+  "sung": true,
+  "sv": "692e6b15a5",
   "v": "7cacbe39c4"
  },
  {
@@ -1765,6 +2187,8 @@
   "number": "310",
   "title": "All for Jesus",
   "path": "data/CS1908/310.json",
+  "sung": true,
+  "sv": "08c90a884b",
   "v": "c9f0f09247"
  },
  {
@@ -1773,6 +2197,8 @@
   "number": "399",
   "title": "Happy Day",
   "path": "data/CS1908/399.json",
+  "sung": true,
+  "sv": "65a2d11c36",
   "v": "c47872cd50"
  },
  {
@@ -1781,6 +2207,8 @@
   "number": "430",
   "title": "Another Six Days' Work",
   "path": "data/CS1908/430.json",
+  "sung": true,
+  "sv": "2948c48d7d",
   "v": "39e3a5a1f9"
  },
  {
@@ -1789,6 +2217,8 @@
   "number": "509",
   "title": "Stand on the Rock",
   "path": "data/CS1908/509.json",
+  "sung": true,
+  "sv": "361636e6ab",
   "v": "2d19cb372b"
  },
  {
@@ -1797,6 +2227,8 @@
   "number": "515",
   "title": "Tell It to Jesus",
   "path": "data/CS1908/515.json",
+  "sung": true,
+  "sv": "06db7d6e4f",
   "v": "a4365f7712"
  },
  {
@@ -1805,6 +2237,8 @@
   "number": "527",
   "title": "Lead Me, Saviour",
   "path": "data/CS1908/527.json",
+  "sung": true,
+  "sv": "70eb605e39",
   "v": "d88b465f56"
  },
  {
@@ -1813,6 +2247,8 @@
   "number": "530",
   "title": "Forward",
   "path": "data/CS1908/530.json",
+  "sung": true,
+  "sv": "ee37ae22d3",
   "v": "ae426feb57"
  },
  {
@@ -1821,6 +2257,8 @@
   "number": "541",
   "title": "The Saviour With Me",
   "path": "data/CS1908/541.json",
+  "sung": true,
+  "sv": "bcdb8de2ea",
   "v": "7c0849dc11"
  },
  {
@@ -1829,6 +2267,8 @@
   "number": "552",
   "title": "Will There Be Any Stars?",
   "path": "data/CS1908/552.json",
+  "sung": true,
+  "sv": "0c6b6f5916",
   "v": "a94e51d68b"
  },
  {
@@ -1837,6 +2277,8 @@
   "number": "554",
   "title": "Speak to My Soul",
   "path": "data/CS1908/554.json",
+  "sung": true,
+  "sv": "780d803e33",
   "v": "98526462f9"
  },
  {
@@ -1845,6 +2287,8 @@
   "number": "555",
   "title": "Watch and Pray",
   "path": "data/CS1908/555.json",
+  "sung": true,
+  "sv": "9af686e2ad",
   "v": "92ad7f69a4"
  },
  {
@@ -1853,6 +2297,8 @@
   "number": "557",
   "title": "Never Alone",
   "path": "data/CS1908/557.json",
+  "sung": true,
+  "sv": "8db56628a3",
   "v": "6eac1cdd8c"
  },
  {
@@ -1861,6 +2307,8 @@
   "number": "573",
   "title": "Hear the Pennies Dropping",
   "path": "data/CS1908/573.json",
+  "sung": true,
+  "sv": "676f5a3a51",
   "v": "bba85feb1d"
  },
  {
@@ -1869,6 +2317,8 @@
   "number": "581",
   "title": "Angry Words! Oh, Let Them Never",
   "path": "data/CS1908/581.json",
+  "sung": true,
+  "sv": "315ae200fc",
   "v": "a701ff3abc"
  },
  {
@@ -1877,6 +2327,8 @@
   "number": "598",
   "title": "Kept for Jesus",
   "path": "data/CS1908/598.json",
+  "sung": true,
+  "sv": "128c9592e0",
   "v": "af44bd7978"
  },
  {
@@ -1885,6 +2337,8 @@
   "number": "608",
   "title": "My Sabbath Home",
   "path": "data/CS1908/608.json",
+  "sung": true,
+  "sv": "3b87f116d6",
   "v": "2ab9bdba16"
  },
  {
@@ -1893,6 +2347,8 @@
   "number": "631",
   "title": "Lead, Kindly Light",
   "path": "data/CS1908/631.json",
+  "sung": true,
+  "sv": "563d34554c",
   "v": "60843b0117"
  },
  {
@@ -1901,6 +2357,8 @@
   "number": "632",
   "title": "Holy Spirit, Faithful Guide",
   "path": "data/CS1908/632.json",
+  "sung": true,
+  "sv": "88fe02b042",
   "v": "c6f0146652"
  },
  {
@@ -1909,6 +2367,8 @@
   "number": "691",
   "title": "Beulah Land",
   "path": "data/CS1908/691.json",
+  "sung": true,
+  "sv": "17ecf9750c",
   "v": "8860ebd20c"
  },
  {
@@ -1917,6 +2377,8 @@
   "number": "716",
   "title": "How Long?",
   "path": "data/CS1908/716.json",
+  "sung": true,
+  "sv": "67a4f96802",
   "v": "d63b528c94"
  },
  {
@@ -1925,6 +2387,8 @@
   "number": "811",
   "title": "Walk in the Light",
   "path": "data/CS1908/811.json",
+  "sung": true,
+  "sv": "7459334f19",
   "v": "79dfc9fdee"
  },
  {
@@ -1933,6 +2397,8 @@
   "number": "846",
   "title": "Asleep in Jesus",
   "path": "data/CS1908/846.json",
+  "sung": true,
+  "sv": "e05f6f0029",
   "v": "b86c20c010"
  },
  {
@@ -1941,6 +2407,8 @@
   "number": "849",
   "title": "My Saviour First of All",
   "path": "data/CS1908/849.json",
+  "sung": true,
+  "sv": "0b259ef91a",
   "v": "d59110beb9"
  },
  {
@@ -1949,6 +2417,8 @@
   "number": "860",
   "title": "Is My Name Written There?",
   "path": "data/CS1908/860.json",
+  "sung": true,
+  "sv": "50650d90d9",
   "v": "fc22edfbce"
  },
  {
@@ -1957,6 +2427,8 @@
   "number": "882",
   "title": "One Sweetly Solemn Thought",
   "path": "data/CS1908/882.json",
+  "sung": true,
+  "sv": "07bf59fe32",
   "v": "ee5a0f0815"
  },
  {
@@ -1965,6 +2437,8 @@
   "number": "1",
   "title": "Mtakatifu, Mtakatifu, Mtakatifu",
   "path": "data/NZK/1.json",
+  "sung": true,
+  "sv": "769dff8191",
   "v": "f564f7038c",
   "english": "Holy, Holy, Holy"
  },
@@ -1974,6 +2448,8 @@
   "number": "3",
   "title": "Mungu Atukuzwe",
   "path": "data/NZK/3.json",
+  "sung": true,
+  "sv": "3bc95af069",
   "v": "b6058de6a8",
   "english": "To God Be the Glory"
  },
@@ -1983,6 +2459,8 @@
   "number": "4",
   "title": "Jina La Yesu Salamu",
   "path": "data/NZK/4.json",
+  "sung": true,
+  "sv": "ccf931a9fb",
   "v": "68b5745367",
   "english": "All Hail the Power of Jesus' Name"
  },
@@ -1992,6 +2470,8 @@
   "number": "5",
   "title": "Na Tumwabudu Mfalme Mtukufu",
   "path": "data/NZK/5.json",
+  "sung": true,
+  "sv": "4519f14fd6",
   "v": "61bdb79292",
   "english": "O Worship the King"
  },
@@ -2001,6 +2481,8 @@
   "number": "9",
   "title": "Mwumbaji, Mfalme",
   "path": "data/NZK/9.json",
+  "sung": true,
+  "sv": "1419d93609",
   "v": "32573d2021",
   "english": "My Maker and My King"
  },
@@ -2010,6 +2492,8 @@
   "number": "10",
   "title": "Kristo Wa Neema Zote",
   "path": "data/NZK/10.json",
+  "sung": true,
+  "sv": "62f2b953ac",
   "v": "669bddf430",
   "english": "Come, Thou Fount of Every Blessing"
  },
@@ -2019,6 +2503,8 @@
   "number": "11",
   "title": "Jina La Bwana Li Heri",
   "path": "data/NZK/11.json",
+  "sung": true,
+  "sv": "13caf25f77",
   "v": "3704404dd9",
   "english": "Blessed Be the Name"
  },
@@ -2037,6 +2523,8 @@
   "number": "18",
   "title": "Mwokozi, Kama Mchunga",
   "path": "data/NZK/18.json",
+  "sung": true,
+  "sv": "f27f3968a6",
   "v": "f28a8602fa",
   "english": "Savior, Like a Shepherd Lead Us"
  },
@@ -2046,6 +2534,8 @@
   "number": "19",
   "title": "Msalabani Pa Mwokozi",
   "path": "data/NZK/19.json",
+  "sung": true,
+  "sv": "7569e13dd3",
   "v": "2e8c1ee701",
   "english": "Glory to His Name"
  },
@@ -2055,6 +2545,8 @@
   "number": "20",
   "title": "Mungu Wetu Yeye Mwamba",
   "path": "data/NZK/20.json",
+  "sung": true,
+  "sv": "bbbb255220",
   "v": "1d78924605",
   "english": "A Shelter in the Time of Storm"
  },
@@ -2064,6 +2556,8 @@
   "number": "22",
   "title": "Usinipite Mwokozi",
   "path": "data/NZK/22.json",
+  "sung": true,
+  "sv": "4bf5f99916",
   "v": "0211a3495d",
   "english": "Pass Me Not, O Gentle Savior"
  },
@@ -2073,6 +2567,8 @@
   "number": "23",
   "title": "Yesu Furaha Ya Moyo",
   "path": "data/NZK/23.json",
+  "sung": true,
+  "sv": "924eeaf02d",
   "v": "c833375f90",
   "english": "Jesus, Thou Joy of Loving Hearts"
  },
@@ -2082,6 +2578,8 @@
   "number": "24",
   "title": "Jina Lake Yesu Tamu",
   "path": "data/NZK/24.json",
+  "sung": true,
+  "sv": "01e771d9e1",
   "v": "79b5a0592d",
   "english": "How Sweet the Name of Jesus Sounds"
  },
@@ -2091,6 +2589,8 @@
   "number": "25",
   "title": "Taji Mvikeni",
   "path": "data/NZK/25.json",
+  "sung": true,
+  "sv": "5f439f5391",
   "v": "1d0123ce00",
   "english": "Crown Him With Many Crowns"
  },
@@ -2100,6 +2600,8 @@
   "number": "26",
   "title": "Tupe Amani",
   "path": "data/NZK/26.json",
+  "sung": true,
+  "sv": "595530426b",
   "v": "75dde44e95",
   "english": "God the Omnipotent"
  },
@@ -2109,6 +2611,8 @@
   "number": "27",
   "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
   "path": "data/NZK/27.json",
+  "sung": true,
+  "sv": "fd971bdbd7",
   "v": "979edb0553",
   "english": "Savior, Again to Thy Dear Name"
  },
@@ -2118,6 +2622,8 @@
   "number": "29",
   "title": "Yesu, Nakupenda",
   "path": "data/NZK/29.json",
+  "sung": true,
+  "sv": "9e9e252dfc",
   "v": "8cd4b4997a",
   "english": "My Jesus, I Love Thee"
  },
@@ -2127,6 +2633,8 @@
   "number": "30",
   "title": "Yesu Unipendaye",
   "path": "data/NZK/30.json",
+  "sung": true,
+  "sv": "76ada263b9",
   "v": "c95d153d07",
   "english": "Jesus, Lover of My Soul"
  },
@@ -2136,6 +2644,8 @@
   "number": "31",
   "title": "Niimbe Pendo Lake",
   "path": "data/NZK/31.json",
+  "sung": true,
+  "sv": "7d1de396b4",
   "v": "c79adbb95f",
   "english": "I Will Sing of Jesus' Love"
  },
@@ -2145,6 +2655,8 @@
   "number": "34",
   "title": "Nipe Habari za Yesu",
   "path": "data/NZK/34.json",
+  "sung": true,
+  "sv": "a1ed75b189",
   "v": "5b21f2de55",
   "english": "Tell Me the Story of Jesus"
  },
@@ -2154,6 +2666,8 @@
   "number": "35",
   "title": "Nimekombolewa Na Yesu",
   "path": "data/NZK/35.json",
+  "sung": true,
+  "sv": "fcd2a25f1d",
   "v": "59f46d5b18",
   "english": "Redeemed! How I Love to Proclaim It"
  },
@@ -2163,6 +2677,8 @@
   "number": "36",
   "title": "Siku Kuu",
   "path": "data/NZK/36.json",
+  "sung": true,
+  "sv": "33ed09d831",
   "v": "1b3c7d97a0",
   "english": "O Happy Day"
  },
@@ -2172,6 +2688,8 @@
   "number": "37",
   "title": "Pendo Lako, Ee Mwokozi",
   "path": "data/NZK/37.json",
+  "sung": true,
+  "sv": "8476eac986",
   "v": "015db01766",
   "english": "Love Divine, All Loves Excelling"
  },
@@ -2181,6 +2699,8 @@
   "number": "38",
   "title": "Nasifu Shani ya Mungu",
   "path": "data/NZK/38.json",
+  "sung": true,
+  "sv": "93928e7754",
   "v": "4b80fdf27d",
   "english": "I Sing the Mighty Power of God"
  },
@@ -2190,6 +2710,8 @@
   "number": "40",
   "title": "Nijaze Sasa",
   "path": "data/NZK/40.json",
+  "sung": true,
+  "sv": "72d099702f",
   "v": "6fa26a1ed8",
   "english": "Fill Me Now"
  },
@@ -2199,6 +2721,8 @@
   "number": "41",
   "title": "Roho Mtakatifu",
   "path": "data/NZK/41.json",
+  "sung": true,
+  "sv": "f3aff7a626",
   "v": "8d963d94bb",
   "english": "Holy Spirit, Faithful Guide"
  },
@@ -2208,6 +2732,8 @@
   "number": "43",
   "title": "Furaha Gani!",
   "path": "data/NZK/43.json",
+  "sung": true,
+  "sv": "c5da61a0fd",
   "v": "47101f3d44",
   "english": "Leaning on the Everlasting Arms"
  },
@@ -2217,6 +2743,8 @@
   "number": "44",
   "title": "Urafiki Wa Yesu",
   "path": "data/NZK/44.json",
+  "sung": true,
+  "sv": "88ed39c151",
   "v": "c8ccc92fa9",
   "english": "No, Not One"
  },
@@ -2226,6 +2754,8 @@
   "number": "45",
   "title": "Mwanga Umo Moyoni",
   "path": "data/NZK/45.json",
+  "sung": true,
+  "sv": "63638ce4ea",
   "v": "2ef2ec5ee1",
   "english": "Sunlight in the Heart"
  },
@@ -2235,6 +2765,8 @@
   "number": "46",
   "title": "Miguuni Pake Yesu",
   "path": "data/NZK/46.json",
+  "sung": true,
+  "sv": "c76aa3f88c",
   "v": "7bc2adf439",
   "english": "Sitting at the Feet of Jesus"
  },
@@ -2244,6 +2776,8 @@
   "number": "47",
   "title": "Ni Heri Kifungo",
   "path": "data/NZK/47.json",
+  "sung": true,
+  "sv": "8808a728ca",
   "v": "82f3d215f6",
   "english": "Blest Be the Tie That Binds"
  },
@@ -2253,6 +2787,8 @@
   "number": "49",
   "title": "Ninaye Rafiki",
   "path": "data/NZK/49.json",
+  "sung": true,
+  "sv": "613b3f9e15",
   "v": "1d2bef42e3",
   "english": "I've Found a Friend"
  },
@@ -2262,6 +2798,8 @@
   "number": "50",
   "title": "Mungu Nawe Nanyi Daima",
   "path": "data/NZK/50.json",
+  "sung": true,
+  "sv": "dd06d68093",
   "v": "c0c81e1a5c",
   "english": "God Be With You"
  },
@@ -2271,6 +2809,8 @@
   "number": "51",
   "title": "Kuwa Na Yesu Mwokozi",
   "path": "data/NZK/51.json",
+  "sung": true,
+  "sv": "a7ccea4db1",
   "v": "29fb7797e3",
   "english": "Blessed Assurance"
  },
@@ -2280,6 +2820,8 @@
   "number": "52",
   "title": "Nipe Biblia",
   "path": "data/NZK/52.json",
+  "sung": true,
+  "sv": "2fc0f17760",
   "v": "036b6543f6",
   "english": "Give Me the Bible"
  },
@@ -2289,6 +2831,8 @@
   "number": "53",
   "title": "Napenda Kuhubiri",
   "path": "data/NZK/53.json",
+  "sung": true,
+  "sv": "748525ba4d",
   "v": "bae7510fb1",
   "english": "I Love to Tell the Story"
  },
@@ -2298,6 +2842,8 @@
   "number": "54",
   "title": "Nataka Nimjue Yesu",
   "path": "data/NZK/54.json",
+  "sung": true,
+  "sv": "49ccd09c9d",
   "v": "99c9d4d670",
   "english": "More About Jesus"
  },
@@ -2307,6 +2853,8 @@
   "number": "55",
   "title": "Twapanda Mapema",
   "path": "data/NZK/55.json",
+  "sung": true,
+  "sv": "22ed56636f",
   "v": "2b8ce3f343",
   "english": "Bringing in the Sheaves"
  },
@@ -2316,6 +2864,8 @@
   "number": "56",
   "title": "Waponye Watu",
   "path": "data/NZK/56.json",
+  "sung": true,
+  "sv": "307cca9fae",
   "v": "537d3acc63",
   "english": "Rescue the Perishing"
  },
@@ -2325,6 +2875,8 @@
   "number": "58",
   "title": "Zitakuwa Nyota Tajini",
   "path": "data/NZK/58.json",
+  "sung": true,
+  "sv": "61dd142e20",
   "v": "9ae8dbb3b3",
   "english": "Will There Be Any Stars in My Crown?"
  },
@@ -2334,6 +2886,8 @@
   "number": "61",
   "title": "Bwana Nami",
   "path": "data/NZK/61.json",
+  "sung": true,
+  "sv": "5efe7d60a6",
   "v": "d08243cc62",
   "english": "My Lord and I"
  },
@@ -2343,6 +2897,8 @@
   "number": "64",
   "title": "Piga Panda Ya Injili",
   "path": "data/NZK/64.json",
+  "sung": true,
+  "sv": "1ab91bee4d",
   "v": "791960c40d",
   "english": "Watchman, Blow the Gospel Trumpet"
  },
@@ -2352,6 +2908,8 @@
   "number": "65",
   "title": "Twendeni Askari",
   "path": "data/NZK/65.json",
+  "sung": true,
+  "sv": "e4e1402f70",
   "v": "46e4b0b754",
   "english": "Onward, Christian Soldiers"
  },
@@ -2361,6 +2919,8 @@
   "number": "66",
   "title": "Roho Yangu Amka Sasa",
   "path": "data/NZK/66.json",
+  "sung": true,
+  "sv": "f7daf2fc8d",
   "v": "7602bada21",
   "english": "Awake, My Soul"
  },
@@ -2370,6 +2930,8 @@
   "number": "67",
   "title": "Kesha Roho Yangu",
   "path": "data/NZK/67.json",
+  "sung": true,
+  "sv": "6c22b4a690",
   "v": "b76dc714a0",
   "english": "My Soul, Be on Thy Guard"
  },
@@ -2379,6 +2941,8 @@
   "number": "69",
   "title": "Cha Kutumaini Sina",
   "path": "data/NZK/69.json",
+  "sung": true,
+  "sv": "eb3914d152",
   "v": "c71ff91a66",
   "english": "My Hope Is Built on Nothing Less"
  },
@@ -2388,6 +2952,8 @@
   "number": "70",
   "title": "Wapenzi Wa Bwana",
   "path": "data/NZK/70.json",
+  "sung": true,
+  "sv": "8a0c06bdc9",
   "v": "8645ab9cdd",
   "english": "Marching to Zion"
  },
@@ -2397,6 +2963,8 @@
   "number": "73",
   "title": "Bwana, Uniongoze Juu",
   "path": "data/NZK/73.json",
+  "sung": true,
+  "sv": "eb70dc5b49",
   "v": "0d85799ceb",
   "english": "Higher Ground"
  },
@@ -2406,6 +2974,8 @@
   "number": "76",
   "title": "Mrithi Ufalme",
   "path": "data/NZK/76.json",
+  "sung": true,
+  "sv": "cc252c04ed",
   "v": "80bbb27d10",
   "english": "Heir of the Kingdom"
  },
@@ -2415,6 +2985,8 @@
   "number": "78",
   "title": "Mpaka Lini Bwana",
   "path": "data/NZK/78.json",
+  "sung": true,
+  "sv": "da35faab5d",
   "v": "b93dc13187",
   "english": "How Long, O Lord Our Savior"
  },
@@ -2424,6 +2996,8 @@
   "number": "80",
   "title": "Tupe Moto Wa Injili",
   "path": "data/NZK/80.json",
+  "sung": true,
+  "sv": "09d8e1b654",
   "v": "cefe9b9251",
   "english": "O for That Flame of Living Fire"
  },
@@ -2433,6 +3007,8 @@
   "number": "81",
   "title": "Siku Sita Zimepita",
   "path": "data/NZK/81.json",
+  "sung": true,
+  "sv": "d77c2a655a",
   "v": "c160c3b7ca",
   "english": "Another Six Days' Work Is Done"
  },
@@ -2442,6 +3018,8 @@
   "number": "82",
   "title": "Ni Siku Ya Furaha",
   "path": "data/NZK/82.json",
+  "sung": true,
+  "sv": "da031f0f9e",
   "v": "40b15bca01",
   "english": "O Day of Rest and Gladness"
  },
@@ -2451,6 +3029,8 @@
   "number": "84",
   "title": "Ikumbuke Sabato",
   "path": "data/NZK/84.json",
+  "sung": true,
+  "sv": "183b91fb41",
   "v": "99c7e67b82",
   "english": "Don't Forget the Sabbath"
  },
@@ -2460,6 +3040,8 @@
   "number": "85",
   "title": "Salama Tumepita",
   "path": "data/NZK/85.json",
+  "sung": true,
+  "sv": "03a9ba4c0e",
   "v": "b1b705cd38",
   "english": "Safely Through Another Week"
  },
@@ -2469,6 +3051,8 @@
   "number": "86",
   "title": "Ukaribie Tena",
   "path": "data/NZK/86.json",
+  "sung": true,
+  "sv": "883d7bff21",
   "v": "ee4cfb972e",
   "english": "Welcome, Day of Sweet Repose / Welcome, Welcome, Day of Rest"
  },
@@ -2478,6 +3062,8 @@
   "number": "89",
   "title": "Asubuhi",
   "path": "data/NZK/89.json",
+  "sung": true,
+  "sv": "bb4c510de9",
   "v": "ee49727746",
   "english": "Lord, in the Morning"
  },
@@ -2487,6 +3073,8 @@
   "number": "91",
   "title": "Kaa Nami",
   "path": "data/NZK/91.json",
+  "sung": true,
+  "sv": "18786f419a",
   "v": "f4b0d683cc",
   "english": "Abide With Me"
  },
@@ -2496,6 +3084,8 @@
   "number": "92",
   "title": "Magharibi Jua",
   "path": "data/NZK/92.json",
+  "sung": true,
+  "sv": "e3515b69b6",
   "v": "fb694a99bc",
   "english": "Day Is Dying in the West"
  },
@@ -2505,6 +3095,8 @@
   "number": "93",
   "title": "Jua La Rohoni Mwangu",
   "path": "data/NZK/93.json",
+  "sung": true,
+  "sv": "3a6d54e356",
   "v": "92a7f90089",
   "english": "Sun of My Soul"
  },
@@ -2514,6 +3106,8 @@
   "number": "94",
   "title": "Po Pote Mashamba Yajaa",
   "path": "data/NZK/94.json",
+  "sung": true,
+  "sv": "e9ee021147",
   "v": "e1f09b6f59",
   "english": "Far and Near the Fields Are Teeming"
  },
@@ -2523,6 +3117,8 @@
   "number": "95",
   "title": "Zileteni Zaka Kwa Hazina",
   "path": "data/NZK/95.json",
+  "sung": true,
+  "sv": "16a217a46a",
   "v": "fd6acadcd4",
   "english": "Bring Ye All the Tithes Into the Storehouse"
  },
@@ -2532,6 +3128,8 @@
   "number": "98",
   "title": "Nilikupa Wewe",
   "path": "data/NZK/98.json",
+  "sung": true,
+  "sv": "a5b9c20662",
   "v": "02a3b12ab7",
   "english": "I Gave My Life for Thee"
  },
@@ -2541,6 +3139,8 @@
   "number": "101",
   "title": "Yesu Akwita",
   "path": "data/NZK/101.json",
+  "sung": true,
+  "sv": "f28515925e",
   "v": "6a74ac6bb5",
   "english": "Jesus Is Calling"
  },
@@ -2550,6 +3150,8 @@
   "number": "103",
   "title": "Njoni Kwangu",
   "path": "data/NZK/103.json",
+  "sung": true,
+  "sv": "538610d81d",
   "v": "0e5d7cec59",
   "english": "Softly and Tenderly"
  },
@@ -2559,6 +3161,8 @@
   "number": "104",
   "title": "Yesu Aliniita, Njoo",
   "path": "data/NZK/104.json",
+  "sung": true,
+  "sv": "8b1c092bce",
   "v": "e31e82d3a9",
   "english": "I Heard the Voice of Jesus Say"
  },
@@ -2568,6 +3172,8 @@
   "number": "107",
   "title": "Sauti Ni Yake Bwana",
   "path": "data/NZK/107.json",
+  "sung": true,
+  "sv": "0dcadcab28",
   "v": "185d7316bc",
   "english": "Hark! the Voice of Jesus Calling"
  },
@@ -2577,6 +3183,8 @@
   "number": "108",
   "title": "Tumesikia Mbiu",
   "path": "data/NZK/108.json",
+  "sung": true,
+  "sv": "5cd6ea0095",
   "v": "4b2af7973b",
   "english": "Jesus Saves"
  },
@@ -2586,6 +3194,8 @@
   "number": "109",
   "title": "Anisikiaye",
   "path": "data/NZK/109.json",
+  "sung": true,
+  "sv": "0c5e8247e6",
   "v": "3d33292d82",
   "english": "Whosoever Will"
  },
@@ -2595,6 +3205,8 @@
   "number": "111",
   "title": "Tabibu Mkuu",
   "path": "data/NZK/111.json",
+  "sung": true,
+  "sv": "35a0676ac1",
   "v": "7387a40c95",
   "english": "The Great Physician"
  },
@@ -2604,6 +3216,8 @@
   "number": "112",
   "title": "Wewe Umechoka Sana",
   "path": "data/NZK/112.json",
+  "sung": true,
+  "sv": "afc0ea7694",
   "v": "af092eb26d",
   "english": "Art Thou Weary, Art Thou Languid?"
  },
@@ -2613,6 +3227,8 @@
   "number": "113",
   "title": "Bubujiko",
   "path": "data/NZK/113.json",
+  "sung": true,
+  "sv": "871dea1245",
   "v": "4f74dd2412",
   "english": "There Is a Fountain"
  },
@@ -2622,6 +3238,8 @@
   "number": "114",
   "title": "Yesu Nataka Kutakaswa Sana",
   "path": "data/NZK/114.json",
+  "sung": true,
+  "sv": "624de8459b",
   "v": "504c198dca",
   "english": "Whiter Than Snow"
  },
@@ -2631,6 +3249,8 @@
   "number": "115",
   "title": "Naendea Msalaba",
   "path": "data/NZK/115.json",
+  "sung": true,
+  "sv": "70ac0ae2bb",
   "v": "8413142f47",
   "english": "I Am Coming to the Cross"
  },
@@ -2640,6 +3260,8 @@
   "number": "118",
   "title": "Nilipotoka Kabisa",
   "path": "data/NZK/118.json",
+  "sung": true,
+  "sv": "e6d3208f09",
   "v": "a23915383f",
   "english": "Lord, I'm Coming Home"
  },
@@ -2649,6 +3271,8 @@
   "number": "119",
   "title": "Alilipa Bei",
   "path": "data/NZK/119.json",
+  "sung": true,
+  "sv": "ebf4540659",
   "v": "3e1c5cc5b9",
   "english": "Jesus Paid It All"
  },
@@ -2658,6 +3282,8 @@
   "number": "120",
   "title": "Msalaba Wa Yesu",
   "path": "data/NZK/120.json",
+  "sung": true,
+  "sv": "7af3b55cbe",
   "v": "7b88493b76",
   "english": "Near the Cross"
  },
@@ -2667,6 +3293,8 @@
   "number": "121",
   "title": "Katika Wenye Dhambi",
   "path": "data/NZK/121.json",
+  "sung": true,
+  "sv": "c3878e5b78",
   "v": "46aaec3b2f",
   "english": "Chief of Sinners Though I Be"
  },
@@ -2676,6 +3304,8 @@
   "number": "122",
   "title": "Yote Namtolea Yesu",
   "path": "data/NZK/122.json",
+  "sung": true,
+  "sv": "a9c04548e1",
   "v": "203e14c5c5",
   "english": "I Surrender All"
  },
@@ -2685,6 +3315,8 @@
   "number": "123",
   "title": "Yesu Kwa Imani",
   "path": "data/NZK/123.json",
+  "sung": true,
+  "sv": "806c856609",
   "v": "4a802f83e4",
   "english": "My Faith Looks Up to Thee"
  },
@@ -2694,6 +3326,8 @@
   "number": "124",
   "title": "Umechoka, Je Umesumbuka",
   "path": "data/NZK/124.json",
+  "sung": true,
+  "sv": "5dd0287ca7",
   "v": "ace772da42",
   "english": "Tell It to Jesus"
  },
@@ -2703,6 +3337,8 @@
   "number": "126",
   "title": "Nina Haja Nawe",
   "path": "data/NZK/126.json",
+  "sung": true,
+  "sv": "2935b76a02",
   "v": "95e501de3d",
   "english": "I Need Thee Every Hour"
  },
@@ -2712,6 +3348,8 @@
   "number": "127",
   "title": "Ni Salama Rohoni Mwangu",
   "path": "data/NZK/127.json",
+  "sung": true,
+  "sv": "54429a7a93",
   "v": "f3f2fad381",
   "english": "It Is Well With My Soul"
  },
@@ -2721,6 +3359,8 @@
   "number": "129",
   "title": "Kumtegemea Mwokozi",
   "path": "data/NZK/129.json",
+  "sung": true,
+  "sv": "dcd7cf0992",
   "v": "a33a037d5f",
   "english": "'Tis So Sweet to Trust in Jesus"
  },
@@ -2730,6 +3370,8 @@
   "number": "130",
   "title": "Yesu Kwetu Ni Rafiki",
   "path": "data/NZK/130.json",
+  "sung": true,
+  "sv": "b07139ea67",
   "v": "271c685976",
   "english": "What a Friend We Have in Jesus"
  },
@@ -2739,6 +3381,8 @@
   "number": "131",
   "title": "Kwa Mahitaji Ya Kesho",
   "path": "data/NZK/131.json",
+  "sung": true,
+  "sv": "ab1cd895dd",
   "v": "5cb8dead57",
   "english": "Lord, for Tomorrow and Its Needs"
  },
@@ -2748,6 +3392,8 @@
   "number": "133",
   "title": "Popote Na Yesu",
   "path": "data/NZK/133.json",
+  "sung": true,
+  "sv": "9727713676",
   "v": "91c8a65ffb",
   "english": "Anywhere With Jesus"
  },
@@ -2757,6 +3403,8 @@
   "number": "134",
   "title": "Tafuta Daima Utakatifu",
   "path": "data/NZK/134.json",
+  "sung": true,
+  "sv": "be23e9e8f9",
   "v": "6082c17dd1",
   "english": "Take Time to Be Holy"
  },
@@ -2766,6 +3414,8 @@
   "number": "135",
   "title": "Kwa Maombi Nachangamka",
   "path": "data/NZK/135.json",
+  "sung": true,
+  "sv": "44adb42235",
   "v": "faa60ccd28",
   "english": "Sweet Hour of Prayer"
  },
@@ -2775,6 +3425,8 @@
   "number": "136",
   "title": "Niwe Kama Yesu",
   "path": "data/NZK/136.json",
+  "sung": true,
+  "sv": "1623d0e837",
   "v": "1e41519f41",
   "english": "Like Jesus"
  },
@@ -2784,6 +3436,8 @@
   "number": "137",
   "title": "Saa Heri Ya Sala",
   "path": "data/NZK/137.json",
+  "sung": true,
+  "sv": "36de4ae8c0",
   "v": "11b755db40",
   "english": "'Tis the Blessed Hour of Prayer"
  },
@@ -2793,6 +3447,8 @@
   "number": "138",
   "title": "Nitakuandama Kote",
   "path": "data/NZK/138.json",
+  "sung": true,
+  "sv": "70a2209acc",
   "v": "8c171037f4",
   "english": "I Will Follow Thee"
  },
@@ -2802,6 +3458,8 @@
   "number": "139",
   "title": "Uniimbie Tena",
   "path": "data/NZK/139.json",
+  "sung": true,
+  "sv": "c39f05d45d",
   "v": "b851da9a2f",
   "english": "Wonderful Words of Life"
  },
@@ -2811,6 +3469,8 @@
   "number": "141",
   "title": "Chini Ya Msalaba",
   "path": "data/NZK/141.json",
+  "sung": true,
+  "sv": "4d0d77ea01",
   "v": "afce33e391",
   "english": "Beneath the Cross of Jesus"
  },
@@ -2820,6 +3480,8 @@
   "number": "142",
   "title": "Nasikia Sauti Yako",
   "path": "data/NZK/142.json",
+  "sung": true,
+  "sv": "3642bf092a",
   "v": "212288ccc4",
   "english": "I Hear Thy Welcome Voice"
  },
@@ -2829,6 +3491,8 @@
   "number": "143",
   "title": "Naamini",
   "path": "data/NZK/143.json",
+  "sung": true,
+  "sv": "1463e325f1",
   "v": "6e46734796",
   "english": "I Do Believe"
  },
@@ -2838,6 +3502,8 @@
   "number": "144",
   "title": "Ni Wako Bwana",
   "path": "data/NZK/144.json",
+  "sung": true,
+  "sv": "9870b1962f",
   "v": "b3395d8ab7",
   "english": "Draw Me Nearer"
  },
@@ -2847,6 +3513,8 @@
   "number": "145",
   "title": "Namtaka Bwana Yesu",
   "path": "data/NZK/145.json",
+  "sung": true,
+  "sv": "24f919d047",
   "v": "9ee54d1dd2",
   "english": "Take the World, but Give Me Jesus"
  },
@@ -2856,6 +3524,8 @@
   "number": "146",
   "title": "Twae Wangu Uzima",
   "path": "data/NZK/146.json",
+  "sung": true,
+  "sv": "8e53131b19",
   "v": "9a348e8acf",
   "english": "Take My Life and Let It Be"
  },
@@ -2865,6 +3535,8 @@
   "number": "147",
   "title": "Uishi Ndani Yangu",
   "path": "data/NZK/147.json",
+  "sung": true,
+  "sv": "f761d45725",
   "v": "5a201815ec",
   "english": "Live Out Thy Life Within Me"
  },
@@ -2874,6 +3546,8 @@
   "number": "150",
   "title": "Hacha, Maneno Mabaya",
   "path": "data/NZK/150.json",
+  "sung": true,
+  "sv": "130961ed85",
   "v": "b30d3363a8",
   "english": "Angry Words! Oh, Let Them Never"
  },
@@ -2883,6 +3557,8 @@
   "number": "151",
   "title": "Huniongoza Mwokozi",
   "path": "data/NZK/151.json",
+  "sung": true,
+  "sv": "15c4c52766",
   "v": "854a890ba1",
   "english": "He Leadeth Me"
  },
@@ -2892,6 +3568,8 @@
   "number": "152",
   "title": "Karibu Na Wewe, Mungu Wangu",
   "path": "data/NZK/152.json",
+  "sung": true,
+  "sv": "66af206078",
   "v": "2e4eb3ac94",
   "english": "Nearer, My God, to Thee"
  },
@@ -2901,6 +3579,8 @@
   "number": "153",
   "title": "Fikira Moja Tu",
   "path": "data/NZK/153.json",
+  "sung": true,
+  "sv": "413d3ae2c7",
   "v": "d198ca2141",
   "english": "One Sweetly Solemn Thought"
  },
@@ -2910,6 +3590,8 @@
   "number": "155",
   "title": "Njiani Huniongoza",
   "path": "data/NZK/155.json",
+  "sung": true,
+  "sv": "c8dd8c42a3",
   "v": "d88ba81e1b",
   "english": "All the Way My Savior Leads Me"
  },
@@ -2919,6 +3601,8 @@
   "number": "156",
   "title": "Uniongoze Jehova",
   "path": "data/NZK/156.json",
+  "sung": true,
+  "sv": "1b0364fdc1",
   "v": "af7754e97d",
   "english": "Guide Me, O Thou Great Jehovah"
  },
@@ -2928,6 +3612,8 @@
   "number": "158",
   "title": "U Mwendo Gani Nyumbani?",
   "path": "data/NZK/158.json",
+  "sung": true,
+  "sv": "caac49fe63",
   "v": "03c3fe63fa",
   "english": "How Far From Home?"
  },
@@ -2937,6 +3623,8 @@
   "number": "159",
   "title": "Anakuja Upesi",
   "path": "data/NZK/159.json",
+  "sung": true,
+  "sv": "90000ead69",
   "v": "3c522e2e62",
   "english": "How Sweet Are the Tidings"
  },
@@ -2946,6 +3634,8 @@
   "number": "160",
   "title": "Watakatifu Kesheni",
   "path": "data/NZK/160.json",
+  "sung": true,
+  "sv": "95ee9beae7",
   "v": "b691a28cb8",
   "english": "Watch, Ye Saints"
  },
@@ -2955,6 +3645,8 @@
   "number": "161",
   "title": "Piga Panda",
   "path": "data/NZK/161.json",
+  "sung": true,
+  "sv": "c41fa6eb6b",
   "v": "872c8ec1db",
   "english": "Jesus Is Coming Again"
  },
@@ -2964,6 +3656,8 @@
   "number": "163",
   "title": "Anakuja Bwana Yesu",
   "path": "data/NZK/163.json",
+  "sung": true,
+  "sv": "98cf09374f",
   "v": "ad24dbc7c0",
   "english": "It May Be at Morn"
  },
@@ -2973,6 +3667,8 @@
   "number": "164",
   "title": "Mishale Ya Nuru",
   "path": "data/NZK/164.json",
+  "sung": true,
+  "sv": "0dbe2065fb",
   "v": "09735037d8",
   "english": "Gleams of the Golden Morning"
  },
@@ -2982,6 +3678,8 @@
   "number": "167",
   "title": "Yu Hai, Yu Hai",
   "path": "data/NZK/167.json",
+  "sung": true,
+  "sv": "6e59fd0f5a",
   "v": "1de5039c04",
   "english": "He Lives"
  },
@@ -2991,6 +3689,8 @@
   "number": "170",
   "title": "Jina Langu Limeandikwa Je",
   "path": "data/NZK/170.json",
+  "sung": true,
+  "sv": "9238a596a2",
   "v": "5506040b42",
   "english": "Is My Name Written There?"
  },
@@ -3000,6 +3700,8 @@
   "number": "171",
   "title": "Hukumu",
   "path": "data/NZK/171.json",
+  "sung": true,
+  "sv": "738836c5ec",
   "v": "09e5b1aba5",
   "english": "The Judgment Has Set"
  },
@@ -3009,6 +3711,8 @@
   "number": "173",
   "title": "Hatujui Saa",
   "path": "data/NZK/173.json",
+  "sung": true,
+  "sv": "3069d076d0",
   "v": "8d2fb7badb",
   "english": "We Know Not the Hour"
  },
@@ -3018,6 +3722,8 @@
   "number": "175",
   "title": "Uso Kwa Uso",
   "path": "data/NZK/175.json",
+  "sung": true,
+  "sv": "a80d3295ca",
   "v": "c03a81f74d",
   "english": "Face to Face"
  },
@@ -3027,6 +3733,8 @@
   "number": "176",
   "title": "Ati Tuonane Mtoni",
   "path": "data/NZK/176.json",
+  "sung": true,
+  "sv": "11cc79897c",
   "v": "6c68ae7bab",
   "english": "Shall We Gather at the River"
  },
@@ -3036,6 +3744,8 @@
   "number": "179",
   "title": "Watafurahi",
   "path": "data/NZK/179.json",
+  "sung": true,
+  "sv": "ffe1d9c39b",
   "v": "1ac406b406",
   "english": "Joy By and By"
  },
@@ -3045,6 +3755,8 @@
   "number": "184",
   "title": "Panapo Pendo",
   "path": "data/NZK/184.json",
+  "sung": true,
+  "sv": "74b0aa12db",
   "v": "d67ff4f03b",
   "english": "Love at Home"
  },
@@ -3054,6 +3766,8 @@
   "number": "185",
   "title": "Mungu, Mapenzi Makamilifu",
   "path": "data/NZK/185.json",
+  "sung": true,
+  "sv": "1d442c89d5",
   "v": "88baf7d531",
   "english": "O Perfect Love"
  },
@@ -3063,6 +3777,8 @@
   "number": "188",
   "title": "Wimbi Litakasalo",
   "path": "data/NZK/188.json",
+  "sung": true,
+  "sv": "e07507cc22",
   "v": "0d3dda63d2",
   "english": "The Cleansing Wave"
  },
@@ -3072,6 +3788,8 @@
   "number": "189",
   "title": "Tubatize Upya",
   "path": "data/NZK/189.json",
+  "sung": true,
+  "sv": "6a9030a778",
   "v": "e78862a274",
   "english": "Baptize Us Anew"
  },
@@ -3081,6 +3799,8 @@
   "number": "191",
   "title": "Mkate Wa Mbingu",
   "path": "data/NZK/191.json",
+  "sung": true,
+  "sv": "e2c2523a6c",
   "v": "0a09f04215",
   "english": "Break Thou the Bread of Life"
  },
@@ -3090,6 +3810,8 @@
   "number": "192",
   "title": "Mwamba Wenye Imara",
   "path": "data/NZK/192.json",
+  "sung": true,
+  "sv": "90b1617239",
   "v": "0ff73d6d2c",
   "english": "Rock of Ages"
  },
@@ -3099,6 +3821,8 @@
   "number": "193",
   "title": "Sauti Yake Mchungaji",
   "path": "data/NZK/193.json",
+  "sung": true,
+  "sv": "027820c843",
   "v": "413e0a0cfc",
   "english": "Hark! 'Tis the Shepherd's Voice I Hear"
  },
@@ -3108,6 +3832,8 @@
   "number": "195",
   "title": "Msingi Wa Kanisa",
   "path": "data/NZK/195.json",
+  "sung": true,
+  "sv": "0bb00c3675",
   "v": "7277f1a8b7",
   "english": "The Church Has One Foundation"
  },
@@ -3117,6 +3843,8 @@
   "number": "196",
   "title": "Vito Vya Thamani",
   "path": "data/NZK/196.json",
+  "sung": true,
+  "sv": "25dd3a1765",
   "v": "579d4c2996",
   "english": "When He Cometh"
  },
@@ -3126,6 +3854,8 @@
   "number": "197",
   "title": "Anipenda Ni Kweli",
   "path": "data/NZK/197.json",
+  "sung": true,
+  "sv": "e6f687813a",
   "v": "522d6bc362",
   "english": "Jesus Loves Me"
  },
@@ -3135,6 +3865,8 @@
   "number": "199",
   "title": "Upendo Ni Furaha",
   "path": "data/NZK/199.json",
+  "sung": true,
+  "sv": "837e4a91c0",
   "v": "edc8f77e0a",
   "english": "'Tis Love That Makes Us Happy"
  },
@@ -3144,6 +3876,8 @@
   "number": "202",
   "title": "Sikia Mlio",
   "path": "data/NZK/202.json",
+  "sung": true,
+  "sv": "339b4f25b5",
   "v": "f5cbb7c07e",
   "english": "Hear the Pennies Dropping"
  },
@@ -3153,6 +3887,8 @@
   "number": "212",
   "title": "Mtazame Mwokozi",
   "path": "data/NZK/212.json",
+  "sung": true,
+  "sv": "72dc150305",
   "v": "6e42f658ef",
   "english": "Turn Your Eyes Upon Jesus"
  },
@@ -3162,6 +3898,9 @@
   "number": "1",
   "title": "Praise to the Lord",
   "path": "data/SDAH/1.json",
+  "sung": true,
+  "sv": "779f34de32",
+  "svc": "5252fcc033",
   "v": "0ee921997a"
  },
  {
@@ -3170,6 +3909,9 @@
   "number": "2",
   "title": "All Creatures of Our God and King",
   "path": "data/SDAH/2.json",
+  "sung": true,
+  "sv": "438583ccb7",
+  "svc": "64b62020eb",
   "v": "cca6ed7724"
  },
  {
@@ -3178,6 +3920,9 @@
   "number": "3",
   "title": "God Himself Is With Us",
   "path": "data/SDAH/3.json",
+  "sung": true,
+  "sv": "545dbd434f",
+  "svc": "4b5581f116",
   "v": "a2563f8750"
  },
  {
@@ -3186,6 +3931,9 @@
   "number": "4",
   "title": "Praise, My Soul, the King of Heaven",
   "path": "data/SDAH/4.json",
+  "sung": true,
+  "sv": "4f5df1834a",
+  "svc": "ec499aeffd",
   "v": "9da4adecfd"
  },
  {
@@ -3194,6 +3942,9 @@
   "number": "5",
   "title": "All My Hope on God Is Founded",
   "path": "data/SDAH/5.json",
+  "sung": true,
+  "sv": "0c5567e90e",
+  "svc": "3ad6a06252",
   "v": "178e1bd9e3"
  },
  {
@@ -3202,6 +3953,8 @@
   "number": "6",
   "title": "O Worship the Lord",
   "path": "data/SDAH/6.json",
+  "sung": true,
+  "sv": "67d948d8cc",
   "v": "aabc0e72f2"
  },
  {
@@ -3210,6 +3963,8 @@
   "number": "7",
   "title": "The Lord in Zion Reigneth",
   "path": "data/SDAH/7.json",
+  "sung": true,
+  "sv": "a501fb4aa9",
   "v": "899ae0c90c"
  },
  {
@@ -3218,6 +3973,8 @@
   "number": "8",
   "title": "We Gather Together",
   "path": "data/SDAH/8.json",
+  "sung": true,
+  "sv": "81ee93c5e1",
   "v": "7edcb59ae8"
  },
  {
@@ -3226,6 +3983,8 @@
   "number": "9",
   "title": "Let All the World in Every Corner Sing",
   "path": "data/SDAH/9.json",
+  "sung": true,
+  "sv": "86309e0f8d",
   "v": "9b691f1ba4"
  },
  {
@@ -3234,6 +3993,8 @@
   "number": "10",
   "title": "Come, Christians, Join to Sing",
   "path": "data/SDAH/10.json",
+  "sung": true,
+  "sv": "ccf740acc8",
   "v": "3c31580903"
  },
  {
@@ -3250,6 +4011,8 @@
   "number": "12",
   "title": "Joyful, Joyful, We Adore Thee",
   "path": "data/SDAH/12.json",
+  "sung": true,
+  "sv": "60250cb37c",
   "v": "b2cb23391c"
  },
  {
@@ -3266,6 +4029,9 @@
   "number": "14",
   "title": "Let Us Praise the Name of the Lord",
   "path": "data/SDAH/14.json",
+  "sung": true,
+  "sv": "2a220774a2",
+  "svc": "805b6bf5cb",
   "v": "9264c04991"
  },
  {
@@ -3274,6 +4040,8 @@
   "number": "15",
   "title": "My Maker and My King",
   "path": "data/SDAH/15.json",
+  "sung": true,
+  "sv": "e6b822c579",
   "v": "c2091f3608"
  },
  {
@@ -3282,6 +4050,8 @@
   "number": "16",
   "title": "All People That on Earth Do Dwell",
   "path": "data/SDAH/16.json",
+  "sung": true,
+  "sv": "86ec4ee527",
   "v": "51cbb85251"
  },
  {
@@ -3290,6 +4060,8 @@
   "number": "17",
   "title": "Lord of All Being, Throned Afar",
   "path": "data/SDAH/17.json",
+  "sung": true,
+  "sv": "e7fcdfce66",
   "v": "8fafa6f4b5"
  },
  {
@@ -3298,6 +4070,9 @@
   "number": "18",
   "title": "O Morning Star, How Fair and Bright",
   "path": "data/SDAH/18.json",
+  "sung": true,
+  "sv": "734fbb47a9",
+  "svc": "c5fd33c268",
   "v": "925b6eb1fc"
  },
  {
@@ -3306,6 +4081,8 @@
   "number": "19",
   "title": "O Sing a New Song to the Lord",
   "path": "data/SDAH/19.json",
+  "sung": true,
+  "sv": "1e2986c2b6",
   "v": "0c323675b3"
  },
  {
@@ -3314,6 +4091,8 @@
   "number": "20",
   "title": "O Praise Ye the Lord",
   "path": "data/SDAH/20.json",
+  "sung": true,
+  "sv": "c66c738b5c",
   "v": "769b06389f"
  },
  {
@@ -3322,6 +4101,8 @@
   "number": "21",
   "title": "Immortal, Invisible, God Only Wise",
   "path": "data/SDAH/21.json",
+  "sung": true,
+  "sv": "7952a4f29e",
   "v": "c4d900e8cf"
  },
  {
@@ -3338,6 +4119,8 @@
   "number": "23",
   "title": "Now the Joyful Bells A-Ringing",
   "path": "data/SDAH/23.json",
+  "sung": true,
+  "sv": "b6a94e8310",
   "v": "94ed16fe9b"
  },
  {
@@ -3346,6 +4129,8 @@
   "number": "24",
   "title": "Every Star Shall Sing a Carol",
   "path": "data/SDAH/24.json",
+  "sung": true,
+  "sv": "4cfffd5a9c",
   "v": "1e4731a534"
  },
  {
@@ -3354,6 +4139,8 @@
   "number": "25",
   "title": "Praise the Lord, His Glories Show",
   "path": "data/SDAH/25.json",
+  "sung": true,
+  "sv": "636a4d7730",
   "v": "6ef513daf8"
  },
  {
@@ -3362,6 +4149,8 @@
   "number": "26",
   "title": "Praise the Lord! You Heavens Adore Him",
   "path": "data/SDAH/26.json",
+  "sung": true,
+  "sv": "53f30d882b",
   "v": "5e629fc348"
  },
  {
@@ -3378,6 +4167,8 @@
   "number": "28",
   "title": "Praise We the Lord",
   "path": "data/SDAH/28.json",
+  "sung": true,
+  "sv": "6733efe5d0",
   "v": "ecd8f55ef9"
  },
  {
@@ -3386,6 +4177,8 @@
   "number": "29",
   "title": "Sing Praise to God",
   "path": "data/SDAH/29.json",
+  "sung": true,
+  "sv": "a9da7a61cc",
   "v": "0d3f507f48"
  },
  {
@@ -3402,6 +4195,8 @@
   "number": "31",
   "title": "Tell Out, My Soul",
   "path": "data/SDAH/31.json",
+  "sung": true,
+  "sv": "9b1a8cf2c1",
   "v": "fa7c5498ef"
  },
  {
@@ -3410,6 +4205,9 @@
   "number": "32",
   "title": "When in Our Music God Is Glorified",
   "path": "data/SDAH/32.json",
+  "sung": true,
+  "sv": "d900f2497d",
+  "svc": "9a19c54053",
   "v": "4e0cc34a7b"
  },
  {
@@ -3418,6 +4216,9 @@
   "number": "33",
   "title": "Sing a New Song to the Lord",
   "path": "data/SDAH/33.json",
+  "sung": true,
+  "sv": "13e6d6145d",
+  "svc": "96751f94e8",
   "v": "794d20d872"
  },
  {
@@ -3434,6 +4235,8 @@
   "number": "35",
   "title": "With Songs and Honors",
   "path": "data/SDAH/35.json",
+  "sung": true,
+  "sv": "86a8d86884",
   "v": "814fc8e29f"
  },
  {
@@ -3442,6 +4245,8 @@
   "number": "36",
   "title": "O Thou in Whose Presence",
   "path": "data/SDAH/36.json",
+  "sung": true,
+  "sv": "1a637f8a1f",
   "v": "9a2d3df03a"
  },
  {
@@ -3450,6 +4255,8 @@
   "number": "37",
   "title": "O Sing, My Soul, Your Maker's Praise",
   "path": "data/SDAH/37.json",
+  "sung": true,
+  "sv": "5add69e4b2",
   "v": "f10f91ffc2"
  },
  {
@@ -3458,6 +4265,9 @@
   "number": "38",
   "title": "Arise, My Soul, Arise!",
   "path": "data/SDAH/38.json",
+  "sung": true,
+  "sv": "6fe8a99704",
+  "svc": "3e88f89aa6",
   "v": "48d1c6f0fc"
  },
  {
@@ -3466,6 +4276,9 @@
   "number": "39",
   "title": "Lord, in the Morning",
   "path": "data/SDAH/39.json",
+  "sung": true,
+  "sv": "47d01966ba",
+  "svc": "cb21f0a320",
   "v": "5670eac7ae"
  },
  {
@@ -3474,6 +4287,8 @@
   "number": "40",
   "title": "The Dawn of God's Dear Sabbath",
   "path": "data/SDAH/40.json",
+  "sung": true,
+  "sv": "38276d777c",
   "v": "1747b88a89"
  },
  {
@@ -3498,6 +4313,8 @@
   "number": "43",
   "title": "When Morning Gilds the Skies",
   "path": "data/SDAH/43.json",
+  "sung": true,
+  "sv": "9279d63438",
   "v": "b4186073ee"
  },
  {
@@ -3506,6 +4323,8 @@
   "number": "44",
   "title": "Morning Has Broken",
   "path": "data/SDAH/44.json",
+  "sung": true,
+  "sv": "b2ff6a8b22",
   "v": "f2efc305bd"
  },
  {
@@ -3514,6 +4333,8 @@
   "number": "45",
   "title": "Open Now Thy Gates of Beauty",
   "path": "data/SDAH/45.json",
+  "sung": true,
+  "sv": "48ed077962",
   "v": "e8b8476030"
  },
  {
@@ -3522,6 +4343,8 @@
   "number": "46",
   "title": "Abide With Me, 'Tis Eventide",
   "path": "data/SDAH/46.json",
+  "sung": true,
+  "sv": "07775e3d68",
   "v": "c19e5f2ebc"
  },
  {
@@ -3538,6 +4361,8 @@
   "number": "48",
   "title": "Softly Now the Light of Day",
   "path": "data/SDAH/48.json",
+  "sung": true,
+  "sv": "1c3ecba67f",
   "v": "9936e4b25c"
  },
  {
@@ -3546,6 +4371,8 @@
   "number": "49",
   "title": "Savior, Breathe an Evening Blessing",
   "path": "data/SDAH/49.json",
+  "sung": true,
+  "sv": "8c330c1ece",
   "v": "a102c4610f"
  },
  {
@@ -3554,6 +4381,8 @@
   "number": "50",
   "title": "Abide With Me",
   "path": "data/SDAH/50.json",
+  "sung": true,
+  "sv": "57f81b6087",
   "v": "e2607e1f25"
  },
  {
@@ -3562,6 +4391,8 @@
   "number": "51",
   "title": "Day Is Dying in the West",
   "path": "data/SDAH/51.json",
+  "sung": true,
+  "sv": "b28dea22c6",
   "v": "c16259c49d"
  },
  {
@@ -3570,6 +4401,8 @@
   "number": "52",
   "title": "Now the Day Is Over",
   "path": "data/SDAH/52.json",
+  "sung": true,
+  "sv": "b5166d140e",
   "v": "0814ab78e2"
  },
  {
@@ -3594,6 +4427,8 @@
   "number": "55",
   "title": "Jesus, Tender Shepherd, Hear Me",
   "path": "data/SDAH/55.json",
+  "sung": true,
+  "sv": "52f6431958",
   "v": "41091fe128"
  },
  {
@@ -3602,6 +4437,8 @@
   "number": "56",
   "title": "The Day Thou Gavest",
   "path": "data/SDAH/56.json",
+  "sung": true,
+  "sv": "47a0e2ed29",
   "v": "775c8317ef"
  },
  {
@@ -3610,6 +4447,8 @@
   "number": "57",
   "title": "Now All the Woods Are Sleeping",
   "path": "data/SDAH/57.json",
+  "sung": true,
+  "sv": "da3920ea48",
   "v": "b3e89cd48a"
  },
  {
@@ -3618,6 +4457,8 @@
   "number": "58",
   "title": "Hark, the Vesper Hymn Is Stealing",
   "path": "data/SDAH/58.json",
+  "sung": true,
+  "sv": "32f47298af",
   "v": "e64912343c"
  },
  {
@@ -3634,6 +4475,8 @@
   "number": "60",
   "title": "Blessed Jesus, at Thy Word",
   "path": "data/SDAH/60.json",
+  "sung": true,
+  "sv": "e783bf01a8",
   "v": "58ab6fe12d"
  },
  {
@@ -3650,6 +4493,8 @@
   "number": "62",
   "title": "How Lovely Is Thy Dwelling Place",
   "path": "data/SDAH/62.json",
+  "sung": true,
+  "sv": "3a0039825a",
   "v": "63c1e75c9f"
  },
  {
@@ -3658,6 +4503,8 @@
   "number": "63",
   "title": "O Come, Let Us Sing to the Lord",
   "path": "data/SDAH/63.json",
+  "sung": true,
+  "sv": "f0b9d1609b",
   "v": "ed04fcced2"
  },
  {
@@ -3666,6 +4513,8 @@
   "number": "64",
   "title": "Lord, Dismiss Us With Thy Blessing",
   "path": "data/SDAH/64.json",
+  "sung": true,
+  "sv": "e5cbd0c51b",
   "v": "144716de61"
  },
  {
@@ -3674,6 +4523,8 @@
   "number": "65",
   "title": "God Be With You",
   "path": "data/SDAH/65.json",
+  "sung": true,
+  "sv": "90fb8cf840",
   "v": "2fc2ae53ee"
  },
  {
@@ -3682,6 +4533,8 @@
   "number": "66",
   "title": "God Be With You",
   "path": "data/SDAH/66.json",
+  "sung": true,
+  "sv": "e67c7e5766",
   "v": "80e6e9f9bd"
  },
  {
@@ -3690,6 +4543,8 @@
   "number": "67",
   "title": "O Lord, Now Let Your Servant",
   "path": "data/SDAH/67.json",
+  "sung": true,
+  "sv": "582a40f9de",
   "v": "7b191f6b26"
  },
  {
@@ -3706,6 +4561,8 @@
   "number": "69",
   "title": "Lord, Make Us More Holy",
   "path": "data/SDAH/69.json",
+  "sung": true,
+  "sv": "30c99bbccd",
   "v": "bf56a98329"
  },
  {
@@ -3746,6 +4603,8 @@
   "number": "74",
   "title": "Like a River Glorious",
   "path": "data/SDAH/74.json",
+  "sung": true,
+  "sv": "4658c6a53f",
   "v": "1bc16c2279"
  },
  {
@@ -3754,6 +4613,8 @@
   "number": "75",
   "title": "The Wonder of It All",
   "path": "data/SDAH/75.json",
+  "sung": true,
+  "sv": "227e528f72",
   "v": "653920c404"
  },
  {
@@ -3762,6 +4623,8 @@
   "number": "76",
   "title": "O Love That Wilt Not Let Me Go",
   "path": "data/SDAH/76.json",
+  "sung": true,
+  "sv": "914f8d37e2",
   "v": "428d56f845"
  },
  {
@@ -3770,6 +4633,9 @@
   "number": "77",
   "title": "O Love of God Most Full",
   "path": "data/SDAH/77.json",
+  "sung": true,
+  "sv": "af74bdf556",
+  "svc": "9ca76c61d3",
   "v": "80b45b61f8"
  },
  {
@@ -3778,6 +4644,8 @@
   "number": "78",
   "title": "For God So Loved Us",
   "path": "data/SDAH/78.json",
+  "sung": true,
+  "sv": "536cff4d28",
   "v": "a071a6ec9a"
  },
  {
@@ -3786,6 +4654,8 @@
   "number": "79",
   "title": "O Love of God, How Strong and True!",
   "path": "data/SDAH/79.json",
+  "sung": true,
+  "sv": "3e7686f816",
   "v": "1ac00a5be1"
  },
  {
@@ -3794,6 +4664,9 @@
   "number": "80",
   "title": "O World of God",
   "path": "data/SDAH/80.json",
+  "sung": true,
+  "sv": "5a49ec0e7f",
+  "svc": "b7264e77f3",
   "v": "a43f9e8e5e"
  },
  {
@@ -3802,6 +4675,8 @@
   "number": "81",
   "title": "Though I Speak With Tongues",
   "path": "data/SDAH/81.json",
+  "sung": true,
+  "sv": "24c63d6b0c",
   "v": "d6065e5346"
  },
  {
@@ -3810,6 +4685,8 @@
   "number": "82",
   "title": "Before Jehovah's Awful Throne",
   "path": "data/SDAH/82.json",
+  "sung": true,
+  "sv": "01683354ae",
   "v": "b7f513adbc"
  },
  {
@@ -3818,6 +4695,8 @@
   "number": "83",
   "title": "O Worship the King",
   "path": "data/SDAH/83.json",
+  "sung": true,
+  "sv": "6291dc4a72",
   "v": "7103dc55b8"
  },
  {
@@ -3826,6 +4705,8 @@
   "number": "84",
   "title": "God the Omnipotent",
   "path": "data/SDAH/84.json",
+  "sung": true,
+  "sv": "d42a6e0066",
   "v": "bf346fe436"
  },
  {
@@ -3842,6 +4723,8 @@
   "number": "86",
   "title": "How Great Thou Art",
   "path": "data/SDAH/86.json",
+  "sung": true,
+  "sv": "0fbf6666ff",
   "v": "02eced3fcb"
  },
  {
@@ -3850,6 +4733,8 @@
   "number": "87",
   "title": "God Who Spoke in the Beginning",
   "path": "data/SDAH/87.json",
+  "sung": true,
+  "sv": "16563b4ada",
   "v": "2636598e0d"
  },
  {
@@ -3858,6 +4743,9 @@
   "number": "88",
   "title": "I Sing the Mighty Power of God",
   "path": "data/SDAH/88.json",
+  "sung": true,
+  "sv": "b432008afd",
+  "svc": "81037b62c9",
   "v": "37de1e447e"
  },
  {
@@ -3866,6 +4754,8 @@
   "number": "89",
   "title": "Let All on Earth Their Voices Raise",
   "path": "data/SDAH/89.json",
+  "sung": true,
+  "sv": "f07436f720",
   "v": "0b268590a4"
  },
  {
@@ -3874,6 +4764,9 @@
   "number": "90",
   "title": "Eternal God, Whose Power Upholds",
   "path": "data/SDAH/90.json",
+  "sung": true,
+  "sv": "af88473b65",
+  "svc": "901d8cd2f0",
   "v": "ed5268a95b"
  },
  {
@@ -3890,6 +4783,9 @@
   "number": "92",
   "title": "This Is My Father's World",
   "path": "data/SDAH/92.json",
+  "sung": true,
+  "sv": "64926c95a9",
+  "svc": "17b9893c8c",
   "v": "3e30abbeca"
  },
  {
@@ -3898,6 +4794,9 @@
   "number": "93",
   "title": "All Things Bright and Beautiful",
   "path": "data/SDAH/93.json",
+  "sung": true,
+  "sv": "cc5fb43131",
+  "svc": "b86d9c6e9a",
   "v": "4f675c321b"
  },
  {
@@ -3906,6 +4805,8 @@
   "number": "94",
   "title": "Nature With Open Volume Stands",
   "path": "data/SDAH/94.json",
+  "sung": true,
+  "sv": "31e5dc87e3",
   "v": "d2202e7126"
  },
  {
@@ -3914,6 +4815,8 @@
   "number": "95",
   "title": "Spring Has Now Unwrapped the Flowers",
   "path": "data/SDAH/95.json",
+  "sung": true,
+  "sv": "703fa3d7ee",
   "v": "30b16252d2"
  },
  {
@@ -3922,6 +4825,9 @@
   "number": "96",
   "title": "The Spacious Firmament",
   "path": "data/SDAH/96.json",
+  "sung": true,
+  "sv": "5c187b27c6",
+  "svc": "cf8feac9ff",
   "v": "1426f8067d"
  },
  {
@@ -3930,6 +4836,8 @@
   "number": "97",
   "title": "Lord of the Boundless Curves of Space",
   "path": "data/SDAH/97.json",
+  "sung": true,
+  "sv": "2c82ec36cf",
   "v": "5a65144cb5"
  },
  {
@@ -3938,6 +4846,8 @@
   "number": "98",
   "title": "Can You Count the Stars?",
   "path": "data/SDAH/98.json",
+  "sung": true,
+  "sv": "3e1ab0120c",
   "v": "6038b4f171"
  },
  {
@@ -3946,6 +4856,8 @@
   "number": "99",
   "title": "God Will Take Care of You",
   "path": "data/SDAH/99.json",
+  "sung": true,
+  "sv": "1372975f05",
   "v": "63144f20dd"
  },
  {
@@ -3954,6 +4866,8 @@
   "number": "100",
   "title": "Great Is Thy Faithfulness",
   "path": "data/SDAH/100.json",
+  "sung": true,
+  "sv": "806e6b9adb",
   "v": "4257fe5442"
  },
  {
@@ -3962,6 +4876,8 @@
   "number": "101",
   "title": "Children of the Heavenly Father",
   "path": "data/SDAH/101.json",
+  "sung": true,
+  "sv": "c1f2b5a306",
   "v": "a7a9a23e58"
  },
  {
@@ -3970,6 +4886,8 @@
   "number": "102",
   "title": "Unto the Hills",
   "path": "data/SDAH/102.json",
+  "sung": true,
+  "sv": "ddb59fb9d9",
   "v": "85b39708aa"
  },
  {
@@ -3978,6 +4896,8 @@
   "number": "103",
   "title": "O God, Our Help",
   "path": "data/SDAH/103.json",
+  "sung": true,
+  "sv": "09a2caaef4",
   "v": "4af9f44492"
  },
  {
@@ -3986,6 +4906,8 @@
   "number": "104",
   "title": "My Shepherd Will Supply My Need",
   "path": "data/SDAH/104.json",
+  "sung": true,
+  "sv": "4806c66773",
   "v": "0c04ee71bb"
  },
  {
@@ -3994,6 +4916,9 @@
   "number": "105",
   "title": "Sing to the Great Jehovah's Praise",
   "path": "data/SDAH/105.json",
+  "sung": true,
+  "sv": "0199b821b4",
+  "svc": "ce804193be",
   "v": "4772b9ccc6"
  },
  {
@@ -4002,6 +4927,9 @@
   "number": "106",
   "title": "Give to Our God Immortal Praise",
   "path": "data/SDAH/106.json",
+  "sung": true,
+  "sv": "2d78fb22dd",
+  "svc": "cd831ef543",
   "v": "175706f543"
  },
  {
@@ -4010,6 +4938,9 @@
   "number": "107",
   "title": "God Moves in a Mysterious Way",
   "path": "data/SDAH/107.json",
+  "sung": true,
+  "sv": "a528904d81",
+  "svc": "f9a9544f96",
   "v": "469626531b"
  },
  {
@@ -4018,6 +4949,9 @@
   "number": "108",
   "title": "Amazing Grace",
   "path": "data/SDAH/108.json",
+  "sung": true,
+  "sv": "9d597380f9",
+  "svc": "396d56dc52",
   "v": "afbdcc05dc"
  },
  {
@@ -4026,6 +4960,8 @@
   "number": "109",
   "title": "Marvelous Grace",
   "path": "data/SDAH/109.json",
+  "sung": true,
+  "sv": "aed6acd487",
   "v": "7f363933bc"
  },
  {
@@ -4042,6 +4978,8 @@
   "number": "111",
   "title": "It Took a Miracle",
   "path": "data/SDAH/111.json",
+  "sung": true,
+  "sv": "745a1482d3",
   "v": "c942c15dfd"
  },
  {
@@ -4050,6 +4988,8 @@
   "number": "112",
   "title": "Let Us With a Gladsome Mind",
   "path": "data/SDAH/112.json",
+  "sung": true,
+  "sv": "e85ce40ffd",
   "v": "5abaca2a51"
  },
  {
@@ -4066,6 +5006,8 @@
   "number": "114",
   "title": "There's a Wideness",
   "path": "data/SDAH/114.json",
+  "sung": true,
+  "sv": "7703a99d0a",
   "v": "2f9f38b2ea"
  },
  {
@@ -4074,6 +5016,8 @@
   "number": "115",
   "title": "O Come, O Come, Immanuel",
   "path": "data/SDAH/115.json",
+  "sung": true,
+  "sv": "0a64e7bfdd",
   "v": "67169682c2"
  },
  {
@@ -4082,6 +5026,9 @@
   "number": "116",
   "title": "Of the Father's Love Begotten",
   "path": "data/SDAH/116.json",
+  "sung": true,
+  "sv": "b162539f9e",
+  "svc": "9ed8093b31",
   "v": "7ff86c2139"
  },
  {
@@ -4098,6 +5045,8 @@
   "number": "118",
   "title": "The First Noel",
   "path": "data/SDAH/118.json",
+  "sung": true,
+  "sv": "8f5e4c8e13",
   "v": "86330c9330"
  },
  {
@@ -4106,6 +5055,8 @@
   "number": "119",
   "title": "Angels From the Realms of Glory",
   "path": "data/SDAH/119.json",
+  "sung": true,
+  "sv": "61121ac374",
   "v": "4f56f10c11"
  },
  {
@@ -4114,6 +5065,8 @@
   "number": "120",
   "title": "There's a Song in the Air",
   "path": "data/SDAH/120.json",
+  "sung": true,
+  "sv": "dc7cbda524",
   "v": "69d24b524d"
  },
  {
@@ -4122,6 +5075,8 @@
   "number": "121",
   "title": "Go, Tell It on the Mountain",
   "path": "data/SDAH/121.json",
+  "sung": true,
+  "sv": "45e31c3ba2",
   "v": "94a972b4a7"
  },
  {
@@ -4130,6 +5085,8 @@
   "number": "122",
   "title": "Hark! the Herald Angels Sing",
   "path": "data/SDAH/122.json",
+  "sung": true,
+  "sv": "0583b44285",
   "v": "2847937300"
  },
  {
@@ -4138,6 +5095,8 @@
   "number": "123",
   "title": "As With Gladness Men of Old",
   "path": "data/SDAH/123.json",
+  "sung": true,
+  "sv": "3e5f102fe4",
   "v": "447bdc3065"
  },
  {
@@ -4146,6 +5105,9 @@
   "number": "124",
   "title": "Away in a Manger",
   "path": "data/SDAH/124.json",
+  "sung": true,
+  "sv": "ef3d8452d4",
+  "svc": "fb693e2f13",
   "v": "1a30005635"
  },
  {
@@ -4154,6 +5116,9 @@
   "number": "125",
   "title": "Joy to the World",
   "path": "data/SDAH/125.json",
+  "sung": true,
+  "sv": "9c48b044d0",
+  "svc": "85c33c8070",
   "v": "455e97c565"
  },
  {
@@ -4162,6 +5127,8 @@
   "number": "126",
   "title": "In the Bleak Midwinter",
   "path": "data/SDAH/126.json",
+  "sung": true,
+  "sv": "eb4ed16a58",
   "v": "9890345011"
  },
  {
@@ -4170,6 +5137,8 @@
   "number": "127",
   "title": "Infant Holy, Infant Lowly",
   "path": "data/SDAH/127.json",
+  "sung": true,
+  "sv": "3f91cd4ee9",
   "v": "f8c64d45b3"
  },
  {
@@ -4178,6 +5147,9 @@
   "number": "128",
   "title": "Break Forth, O Beauteous Heavenly Light",
   "path": "data/SDAH/128.json",
+  "sung": true,
+  "sv": "48408c724e",
+  "svc": "ced1f322cf",
   "v": "ae09b96ed2"
  },
  {
@@ -4186,6 +5158,8 @@
   "number": "129",
   "title": "As It Fell Upon a Night",
   "path": "data/SDAH/129.json",
+  "sung": true,
+  "sv": "f14b7c86e5",
   "v": "c947ba06eb"
  },
  {
@@ -4194,6 +5168,8 @@
   "number": "130",
   "title": "It Came Upon the Midnight Clear",
   "path": "data/SDAH/130.json",
+  "sung": true,
+  "sv": "23618e137a",
   "v": "cb19806b06"
  },
  {
@@ -4202,6 +5178,8 @@
   "number": "131",
   "title": "Lo, How a Rose E'er Blooming",
   "path": "data/SDAH/131.json",
+  "sung": true,
+  "sv": "8b9dcfc5dc",
   "v": "5303375dfb"
  },
  {
@@ -4210,6 +5188,8 @@
   "number": "132",
   "title": "O Come, All Ye Faithful",
   "path": "data/SDAH/132.json",
+  "sung": true,
+  "sv": "da005e1e50",
   "v": "1269a3a026"
  },
  {
@@ -4218,6 +5198,9 @@
   "number": "133",
   "title": "Now Is Born the Divine Christ Child",
   "path": "data/SDAH/133.json",
+  "sung": true,
+  "sv": "bb5a51a48a",
+  "svc": "a02f6cdbfc",
   "v": "2b5f82843a"
  },
  {
@@ -4226,6 +5209,8 @@
   "number": "134",
   "title": "O Jesus Sweet",
   "path": "data/SDAH/134.json",
+  "sung": true,
+  "sv": "8345e73dd0",
   "v": "4c8a57030b"
  },
  {
@@ -4234,6 +5219,8 @@
   "number": "135",
   "title": "O Little Town of Bethlehem",
   "path": "data/SDAH/135.json",
+  "sung": true,
+  "sv": "ae75ea202b",
   "v": "0b1a282c8c"
  },
  {
@@ -4242,6 +5229,8 @@
   "number": "136",
   "title": "Good Christians, Now Rejoice",
   "path": "data/SDAH/136.json",
+  "sung": true,
+  "sv": "4d7d6b071d",
   "v": "44902968d0"
  },
  {
@@ -4250,6 +5239,8 @@
   "number": "137",
   "title": "We Three Kings",
   "path": "data/SDAH/137.json",
+  "sung": true,
+  "sv": "ce23dc0a79",
   "v": "01d795c500"
  },
  {
@@ -4258,6 +5249,9 @@
   "number": "138",
   "title": "Rise Up, Shepherd, and Follow",
   "path": "data/SDAH/138.json",
+  "sung": true,
+  "sv": "144e3fd506",
+  "svc": "2aab50e69e",
   "v": "2268b8b675"
  },
  {
@@ -4266,6 +5260,9 @@
   "number": "139",
   "title": "While Shepherds Watched Their Flocks",
   "path": "data/SDAH/139.json",
+  "sung": true,
+  "sv": "a899817f0e",
+  "svc": "cf9d0e49cb",
   "v": "7659e67ee4"
  },
  {
@@ -4274,6 +5271,9 @@
   "number": "140",
   "title": "Thou Didst Leave Thy Throne",
   "path": "data/SDAH/140.json",
+  "sung": true,
+  "sv": "01a0eee22e",
+  "svc": "60b40da196",
   "v": "72089c9d6f"
  },
  {
@@ -4282,6 +5282,8 @@
   "number": "141",
   "title": "What Child Is This?",
   "path": "data/SDAH/141.json",
+  "sung": true,
+  "sv": "f6c88af83d",
   "v": "da9c1ea7ca"
  },
  {
@@ -4290,6 +5292,8 @@
   "number": "142",
   "title": "Angels We Have Heard on High",
   "path": "data/SDAH/142.json",
+  "sung": true,
+  "sv": "9e96184917",
   "v": "4afe555bb3"
  },
  {
@@ -4298,6 +5302,8 @@
   "number": "143",
   "title": "Silent Night, Holy Night",
   "path": "data/SDAH/143.json",
+  "sung": true,
+  "sv": "9ea1973259",
   "v": "255ede6a5a"
  },
  {
@@ -4306,6 +5312,8 @@
   "number": "144",
   "title": "O Sing a Song of Bethlehem",
   "path": "data/SDAH/144.json",
+  "sung": true,
+  "sv": "0fc1535e98",
   "v": "54f9600e93"
  },
  {
@@ -4314,6 +5322,8 @@
   "number": "145",
   "title": "Songs of Thankfulness and Praise",
   "path": "data/SDAH/145.json",
+  "sung": true,
+  "sv": "897844a7fe",
   "v": "36cf8107fc"
  },
  {
@@ -4322,6 +5332,8 @@
   "number": "146",
   "title": "I Think When I Read That Sweet Story",
   "path": "data/SDAH/146.json",
+  "sung": true,
+  "sv": "07f60cdd8c",
   "v": "5add137218"
  },
  {
@@ -4330,6 +5342,8 @@
   "number": "147",
   "title": "Christ Upon the Mountain Peak",
   "path": "data/SDAH/147.json",
+  "sung": true,
+  "sv": "9bcc8ad901",
   "v": "3b0135ca35"
  },
  {
@@ -4346,6 +5360,8 @@
   "number": "149",
   "title": "Once in Royal David's City",
   "path": "data/SDAH/149.json",
+  "sung": true,
+  "sv": "4a8d17c073",
   "v": "5d53ae93e7"
  },
  {
@@ -4354,6 +5370,8 @@
   "number": "150",
   "title": "Who Is He in Yonder Stall?",
   "path": "data/SDAH/150.json",
+  "sung": true,
+  "sv": "1692ee4f4c",
   "v": "463b5b1ef6"
  },
  {
@@ -4362,6 +5380,8 @@
   "number": "151",
   "title": "Jesus Walked This Lonesome Valley",
   "path": "data/SDAH/151.json",
+  "sung": true,
+  "sv": "01f066903f",
   "v": "76e67f885d"
  },
  {
@@ -4370,6 +5390,8 @@
   "number": "152",
   "title": "Tell Me the Story of Jesus",
   "path": "data/SDAH/152.json",
+  "sung": true,
+  "sv": "2d7a1defec",
   "v": "22df4a5264"
  },
  {
@@ -4378,6 +5400,8 @@
   "number": "153",
   "title": "Prince of Peace, Control My Will",
   "path": "data/SDAH/153.json",
+  "sung": true,
+  "sv": "f80df35846",
   "v": "505dab19f0"
  },
  {
@@ -4386,6 +5410,8 @@
   "number": "154",
   "title": "When I Survey the Wondrous Cross",
   "path": "data/SDAH/154.json",
+  "sung": true,
+  "sv": "3c89240aea",
   "v": "f5ab1d56c5"
  },
  {
@@ -4394,6 +5420,8 @@
   "number": "155",
   "title": "When I Survey the Wondrous Cross",
   "path": "data/SDAH/155.json",
+  "sung": true,
+  "sv": "560561200a",
   "v": "f9629621c8"
  },
  {
@@ -4402,6 +5430,9 @@
   "number": "156",
   "title": "O Sacred Head Now Wounded",
   "path": "data/SDAH/156.json",
+  "sung": true,
+  "sv": "f1a1567d4e",
+  "svc": "a4474d0619",
   "v": "a420c2c095"
  },
  {
@@ -4410,6 +5441,8 @@
   "number": "157",
   "title": "Go to Dark Gethsemane",
   "path": "data/SDAH/157.json",
+  "sung": true,
+  "sv": "3cd22941f0",
   "v": "51f8ea7f5c"
  },
  {
@@ -4418,6 +5451,8 @@
   "number": "158",
   "title": "Were You There?",
   "path": "data/SDAH/158.json",
+  "sung": true,
+  "sv": "cbdeecab9f",
   "v": "f75d731dc2"
  },
  {
@@ -4426,6 +5461,8 @@
   "number": "159",
   "title": "The Old Rugged Cross",
   "path": "data/SDAH/159.json",
+  "sung": true,
+  "sv": "08b1155220",
   "v": "cd97f2aaba"
  },
  {
@@ -4434,6 +5471,8 @@
   "number": "160",
   "title": "Ride On in Majesty",
   "path": "data/SDAH/160.json",
+  "sung": true,
+  "sv": "084d714c69",
   "v": "20283eed37"
  },
  {
@@ -4442,6 +5481,8 @@
   "number": "161",
   "title": "Throned Upon the Awful Tree",
   "path": "data/SDAH/161.json",
+  "sung": true,
+  "sv": "06ec51b106",
   "v": "0a0ed81735"
  },
  {
@@ -4450,6 +5491,8 @@
   "number": "162",
   "title": "Wondrous Love",
   "path": "data/SDAH/162.json",
+  "sung": true,
+  "sv": "42b1606e77",
   "v": "82f623333d"
  },
  {
@@ -4458,6 +5501,8 @@
   "number": "163",
   "title": "At the Cross",
   "path": "data/SDAH/163.json",
+  "sung": true,
+  "sv": "1fec79b7b7",
   "v": "6a7fcf7382"
  },
  {
@@ -4466,6 +5511,8 @@
   "number": "164",
   "title": "There Is a Green Hill Far Away",
   "path": "data/SDAH/164.json",
+  "sung": true,
+  "sv": "bad39bd56d",
   "v": "88ee2dbb25"
  },
  {
@@ -4474,6 +5521,8 @@
   "number": "165",
   "title": "Look, You Saints! the Sight Is Glorious",
   "path": "data/SDAH/165.json",
+  "sung": true,
+  "sv": "767d6dca99",
   "v": "86a29681eb"
  },
  {
@@ -4482,6 +5531,8 @@
   "number": "166",
   "title": "Christ the Lord Is Risen Today",
   "path": "data/SDAH/166.json",
+  "sung": true,
+  "sv": "7e6962c3cf",
   "v": "aeb42f4636"
  },
  {
@@ -4490,6 +5541,8 @@
   "number": "167",
   "title": "Alleluia! Sing to Jesus!",
   "path": "data/SDAH/167.json",
+  "sung": true,
+  "sv": "6a3ceb2151",
   "v": "9ffc47a4d4"
  },
  {
@@ -4498,6 +5551,8 @@
   "number": "168",
   "title": "And Have the Bright Immensities",
   "path": "data/SDAH/168.json",
+  "sung": true,
+  "sv": "407e4006e0",
   "v": "2169c5d853"
  },
  {
@@ -4522,6 +5577,8 @@
   "number": "171",
   "title": "Thine Is the Glory",
   "path": "data/SDAH/171.json",
+  "sung": true,
+  "sv": "87d7224bb9",
   "v": "42fdadd1b0"
  },
  {
@@ -4530,6 +5587,8 @@
   "number": "172",
   "title": "The Strife Is O'er",
   "path": "data/SDAH/172.json",
+  "sung": true,
+  "sv": "a9cf99575d",
   "v": "a80e23caa3"
  },
  {
@@ -4538,6 +5597,8 @@
   "number": "173",
   "title": "Good Christian Friends, Rejoice!",
   "path": "data/SDAH/173.json",
+  "sung": true,
+  "sv": "2f76d81993",
   "v": "f88d4bd8e7"
  },
  {
@@ -4546,6 +5607,9 @@
   "number": "174",
   "title": "Star of Our Hope",
   "path": "data/SDAH/174.json",
+  "sung": true,
+  "sv": "312d7a03a6",
+  "svc": "1a7f90c426",
   "v": "f190f5672b"
  },
  {
@@ -4554,6 +5618,8 @@
   "number": "175",
   "title": "Now the Green Blade Rises",
   "path": "data/SDAH/175.json",
+  "sung": true,
+  "sv": "d82de43ff7",
   "v": "c045eb4596"
  },
  {
@@ -4562,6 +5628,8 @@
   "number": "176",
   "title": "Hail the Day That Sees Him Rise",
   "path": "data/SDAH/176.json",
+  "sung": true,
+  "sv": "67a2538b6e",
   "v": "f0300db1f7"
  },
  {
@@ -4570,6 +5638,8 @@
   "number": "177",
   "title": "Jesus, Your Blood and Righteousness",
   "path": "data/SDAH/177.json",
+  "sung": true,
+  "sv": "20dc19c0e1",
   "v": "101e9d38ce"
  },
  {
@@ -4578,6 +5648,8 @@
   "number": "178",
   "title": "The Unveiled Christ",
   "path": "data/SDAH/178.json",
+  "sung": true,
+  "sv": "73104faf69",
   "v": "3799a73fe7"
  },
  {
@@ -4586,6 +5658,8 @@
   "number": "179",
   "title": "The Wonders of Redeeming Love",
   "path": "data/SDAH/179.json",
+  "sung": true,
+  "sv": "6ac3db8dcd",
   "v": "3b6aaa4aa6"
  },
  {
@@ -4602,6 +5676,8 @@
   "number": "181",
   "title": "Does Jesus Care?",
   "path": "data/SDAH/181.json",
+  "sung": true,
+  "sv": "a84155ca3e",
   "v": "0a91539a7f"
  },
  {
@@ -4610,6 +5686,8 @@
   "number": "182",
   "title": "Christ Is Alive",
   "path": "data/SDAH/182.json",
+  "sung": true,
+  "sv": "9593ef7774",
   "v": "f4ddfef919"
  },
  {
@@ -4618,6 +5696,8 @@
   "number": "183",
   "title": "I Will Sing of Jesus' Love",
   "path": "data/SDAH/183.json",
+  "sung": true,
+  "sv": "a852548c7d",
   "v": "74d7144892"
  },
  {
@@ -4626,6 +5706,8 @@
   "number": "184",
   "title": "Jesus Paid It All",
   "path": "data/SDAH/184.json",
+  "sung": true,
+  "sv": "b58119a6c2",
   "v": "2ee1d4c46b"
  },
  {
@@ -4634,6 +5716,8 @@
   "number": "185",
   "title": "Jesus Is All the World to Me",
   "path": "data/SDAH/185.json",
+  "sung": true,
+  "sv": "b94a0070fa",
   "v": "8164945461"
  },
  {
@@ -4642,6 +5726,8 @@
   "number": "186",
   "title": "I've Found a Friend",
   "path": "data/SDAH/186.json",
+  "sung": true,
+  "sv": "18e42af94e",
   "v": "9cf851af48"
  },
  {
@@ -4650,6 +5736,8 @@
   "number": "187",
   "title": "Jesus, What a Friend for Sinners",
   "path": "data/SDAH/187.json",
+  "sung": true,
+  "sv": "ec351e5254",
   "v": "183f20f297"
  },
  {
@@ -4658,6 +5746,8 @@
   "number": "188",
   "title": "My Song Is Love Unknown",
   "path": "data/SDAH/188.json",
+  "sung": true,
+  "sv": "380934ed06",
   "v": "067349f892"
  },
  {
@@ -4666,6 +5756,8 @@
   "number": "189",
   "title": "All That Thrills My Soul",
   "path": "data/SDAH/189.json",
+  "sung": true,
+  "sv": "9795f4ed68",
   "v": "bb07353cb8"
  },
  {
@@ -4674,6 +5766,8 @@
   "number": "190",
   "title": "Jesus Loves Me",
   "path": "data/SDAH/190.json",
+  "sung": true,
+  "sv": "fc4c0b3968",
   "v": "6320d7eabd"
  },
  {
@@ -4682,6 +5776,8 @@
   "number": "191",
   "title": "Love Divine",
   "path": "data/SDAH/191.json",
+  "sung": true,
+  "sv": "1a9af97a30",
   "v": "ab58db93ed"
  },
  {
@@ -4690,6 +5786,8 @@
   "number": "192",
   "title": "O Shepherd Divine",
   "path": "data/SDAH/192.json",
+  "sung": true,
+  "sv": "68668f1cef",
   "v": "cb7c4b00b2"
  },
  {
@@ -4698,6 +5796,8 @@
   "number": "193",
   "title": "Savior, Teach Me",
   "path": "data/SDAH/193.json",
+  "sung": true,
+  "sv": "d063975678",
   "v": "c9f3db83da"
  },
  {
@@ -4706,6 +5806,8 @@
   "number": "194",
   "title": "Sing We of the Modern City",
   "path": "data/SDAH/194.json",
+  "sung": true,
+  "sv": "8cc435610c",
   "v": "f245c5226c"
  },
  {
@@ -4714,6 +5816,8 @@
   "number": "195",
   "title": "Showers of Blessing",
   "path": "data/SDAH/195.json",
+  "sung": true,
+  "sv": "7b8122b878",
   "v": "2e18eafa4b"
  },
  {
@@ -4722,6 +5826,9 @@
   "number": "196",
   "title": "Tell Me the Old, Old Story",
   "path": "data/SDAH/196.json",
+  "sung": true,
+  "sv": "753c668a2b",
+  "svc": "01bb6bae28",
   "v": "bf737a6e60"
  },
  {
@@ -4730,6 +5837,8 @@
   "number": "197",
   "title": "The King of Love My Shepherd Is",
   "path": "data/SDAH/197.json",
+  "sung": true,
+  "sv": "ac82b358d1",
   "v": "7598ac8df1"
  },
  {
@@ -4738,6 +5847,8 @@
   "number": "198",
   "title": "And Can It Be?",
   "path": "data/SDAH/198.json",
+  "sung": true,
+  "sv": "0852749ef0",
   "v": "c49937f0d5"
  },
  {
@@ -4746,6 +5857,8 @@
   "number": "199",
   "title": "The Head That Once Was Crowned",
   "path": "data/SDAH/199.json",
+  "sung": true,
+  "sv": "1698a02123",
   "v": "ed40ba556a"
  },
  {
@@ -4754,6 +5867,9 @@
   "number": "200",
   "title": "The Lord Is Coming",
   "path": "data/SDAH/200.json",
+  "sung": true,
+  "sv": "acf37b7b6a",
+  "svc": "9ef9d01cf1",
   "v": "736ed07669"
  },
  {
@@ -4762,6 +5878,8 @@
   "number": "201",
   "title": "Christ Is Coming",
   "path": "data/SDAH/201.json",
+  "sung": true,
+  "sv": "279dc986e0",
   "v": "4820403ac2"
  },
  {
@@ -4770,6 +5888,8 @@
   "number": "202",
   "title": "Hail Him the King of Glory",
   "path": "data/SDAH/202.json",
+  "sung": true,
+  "sv": "1d3a7b80a6",
   "v": "849a18e7da"
  },
  {
@@ -4778,6 +5898,8 @@
   "number": "203",
   "title": "This Is the Threefold Truth",
   "path": "data/SDAH/203.json",
+  "sung": true,
+  "sv": "84eeaae570",
   "v": "fccfb3317c"
  },
  {
@@ -4786,6 +5908,8 @@
   "number": "204",
   "title": "Come, Thou Long Expected Jesus",
   "path": "data/SDAH/204.json",
+  "sung": true,
+  "sv": "674c4f02fa",
   "v": "d723a70056"
  },
  {
@@ -4794,6 +5918,8 @@
   "number": "205",
   "title": "Gleams of the Golden Morning",
   "path": "data/SDAH/205.json",
+  "sung": true,
+  "sv": "8853787684",
   "v": "fd0ba5ee35"
  },
  {
@@ -4802,6 +5928,9 @@
   "number": "206",
   "title": "Face to Face",
   "path": "data/SDAH/206.json",
+  "sung": true,
+  "sv": "a3faa3fdb8",
+  "svc": "e5d8feca52",
   "v": "1e49f699ae"
  },
  {
@@ -4810,6 +5939,8 @@
   "number": "207",
   "title": "It May Be at Morn",
   "path": "data/SDAH/207.json",
+  "sung": true,
+  "sv": "e286ddb16e",
   "v": "dd2108d198"
  },
  {
@@ -4818,6 +5949,8 @@
   "number": "208",
   "title": "There'll Be No Dark Valley",
   "path": "data/SDAH/208.json",
+  "sung": true,
+  "sv": "ba3ae4ef41",
   "v": "0df479efa7"
  },
  {
@@ -4826,6 +5959,8 @@
   "number": "209",
   "title": "That Glorious Day Is Coming",
   "path": "data/SDAH/209.json",
+  "sung": true,
+  "sv": "94012498d3",
   "v": "35707d53be"
  },
  {
@@ -4834,6 +5969,8 @@
   "number": "210",
   "title": "Wake, Awake, for Night Is Flying",
   "path": "data/SDAH/210.json",
+  "sung": true,
+  "sv": "9ef0c85744",
   "v": "68912d2357"
  },
  {
@@ -4842,6 +5979,8 @@
   "number": "211",
   "title": "Lo! He Comes",
   "path": "data/SDAH/211.json",
+  "sung": true,
+  "sv": "a8773dffec",
   "v": "942ae121d1"
  },
  {
@@ -4850,6 +5989,8 @@
   "number": "212",
   "title": "'Tis Almost Time for the Lord to Come",
   "path": "data/SDAH/212.json",
+  "sung": true,
+  "sv": "8f6814beb1",
   "v": "dcea86ed4f"
  },
  {
@@ -4858,6 +5999,8 @@
   "number": "213",
   "title": "Jesus Is Coming Again",
   "path": "data/SDAH/213.json",
+  "sung": true,
+  "sv": "630f791b5e",
   "v": "85bf97e686"
  },
  {
@@ -4866,6 +6009,8 @@
   "number": "214",
   "title": "We Have This Hope",
   "path": "data/SDAH/214.json",
+  "sung": true,
+  "sv": "2e9ff031e4",
   "v": "d4ede54ef7"
  },
  {
@@ -4874,6 +6019,8 @@
   "number": "215",
   "title": "The King Shall Come",
   "path": "data/SDAH/215.json",
+  "sung": true,
+  "sv": "8210076307",
   "v": "1824d19783"
  },
  {
@@ -4882,6 +6029,8 @@
   "number": "216",
   "title": "When the Roll Is Called Up Yonder",
   "path": "data/SDAH/216.json",
+  "sung": true,
+  "sv": "60cc74fd48",
   "v": "331de680fe"
  },
  {
@@ -4890,6 +6039,8 @@
   "number": "217",
   "title": "The Church Has Waited Long",
   "path": "data/SDAH/217.json",
+  "sung": true,
+  "sv": "0805e2f1da",
   "v": "4b7da4cd10"
  },
  {
@@ -4898,6 +6049,8 @@
   "number": "218",
   "title": "When He Cometh",
   "path": "data/SDAH/218.json",
+  "sung": true,
+  "sv": "a68268b543",
   "v": "4200f6ab12"
  },
  {
@@ -4906,6 +6059,8 @@
   "number": "219",
   "title": "When Jesus Comes in Glory",
   "path": "data/SDAH/219.json",
+  "sung": true,
+  "sv": "26c7dd706d",
   "v": "cba9465218"
  },
  {
@@ -4914,6 +6069,8 @@
   "number": "220",
   "title": "When He Comes",
   "path": "data/SDAH/220.json",
+  "sung": true,
+  "sv": "2a49b685b0",
   "v": "db1b242ce9"
  },
  {
@@ -4922,6 +6079,8 @@
   "number": "221",
   "title": "Rejoice, the Lord Is King",
   "path": "data/SDAH/221.json",
+  "sung": true,
+  "sv": "36124e77f1",
   "v": "f0dff25d49"
  },
  {
@@ -4930,6 +6089,8 @@
   "number": "222",
   "title": "Hark! Ten Thousand Harps and Voices",
   "path": "data/SDAH/222.json",
+  "sung": true,
+  "sv": "3a88a26fe9",
   "v": "1f6c654e97"
  },
  {
@@ -4938,6 +6099,8 @@
   "number": "223",
   "title": "Crown Him With Many Crowns",
   "path": "data/SDAH/223.json",
+  "sung": true,
+  "sv": "89559f29f7",
   "v": "0dd00889c5"
  },
  {
@@ -4946,6 +6109,8 @@
   "number": "224",
   "title": "Seek Ye First the Kingdom",
   "path": "data/SDAH/224.json",
+  "sung": true,
+  "sv": "89205eb46d",
   "v": "c49cba4c49"
  },
  {
@@ -4954,6 +6119,8 @@
   "number": "225",
   "title": "God Is Working His Purpose Out",
   "path": "data/SDAH/225.json",
+  "sung": true,
+  "sv": "45283ed148",
   "v": "eaa910186e"
  },
  {
@@ -4962,6 +6129,8 @@
   "number": "226",
   "title": "Lift Up Your Heads",
   "path": "data/SDAH/226.json",
+  "sung": true,
+  "sv": "05951ab160",
   "v": "41c20b4415"
  },
  {
@@ -4970,6 +6139,8 @@
   "number": "227",
   "title": "Jesus Shall Reign",
   "path": "data/SDAH/227.json",
+  "sung": true,
+  "sv": "ad52e41fcb",
   "v": "2a184549bd"
  },
  {
@@ -4986,6 +6157,9 @@
   "number": "229",
   "title": "All Hail the Power of Jesus' Name",
   "path": "data/SDAH/229.json",
+  "sung": true,
+  "sv": "6984a6187c",
+  "svc": "13b56c6567",
   "v": "099be433ef"
  },
  {
@@ -4994,6 +6168,8 @@
   "number": "230",
   "title": "All Glory, Laud, and Honor",
   "path": "data/SDAH/230.json",
+  "sung": true,
+  "sv": "4182593399",
   "v": "b27bf5d4c7"
  },
  {
@@ -5002,6 +6178,8 @@
   "number": "231",
   "title": "Blest Be the King",
   "path": "data/SDAH/231.json",
+  "sung": true,
+  "sv": "1b377acd3f",
   "v": "cb15e99814"
  },
  {
@@ -5010,6 +6188,9 @@
   "number": "232",
   "title": "At the Name of Jesus",
   "path": "data/SDAH/232.json",
+  "sung": true,
+  "sv": "fa1ba4f726",
+  "svc": "cdd0f54edb",
   "v": "2afec8c63e"
  },
  {
@@ -5018,6 +6199,8 @@
   "number": "233",
   "title": "Christ, Whose Glory Fills the Skies",
   "path": "data/SDAH/233.json",
+  "sung": true,
+  "sv": "f326e92f6a",
   "v": "0cffd520f0"
  },
  {
@@ -5042,6 +6225,9 @@
   "number": "236",
   "title": "I Love Thee",
   "path": "data/SDAH/236.json",
+  "sung": true,
+  "sv": "7ce10fffd0",
+  "svc": "160dc836fe",
   "v": "a8b273c92a"
  },
  {
@@ -5050,6 +6236,9 @@
   "number": "237",
   "title": "In the Cross of Christ I Glory",
   "path": "data/SDAH/237.json",
+  "sung": true,
+  "sv": "f935211b74",
+  "svc": "2353b4a2c8",
   "v": "9c5d256cab"
  },
  {
@@ -5058,6 +6247,8 @@
   "number": "238",
   "title": "How Sweet the Name!",
   "path": "data/SDAH/238.json",
+  "sung": true,
+  "sv": "e20cda8967",
   "v": "e3a294fdfb"
  },
  {
@@ -5066,6 +6257,8 @@
   "number": "239",
   "title": "Jesus, Priceless Treasure",
   "path": "data/SDAH/239.json",
+  "sung": true,
+  "sv": "02e5624b9b",
   "v": "980ea985fd"
  },
  {
@@ -5074,6 +6267,8 @@
   "number": "240",
   "title": "Fairest Lord Jesus",
   "path": "data/SDAH/240.json",
+  "sung": true,
+  "sv": "f1192ab2a4",
   "v": "5b322fd1f8"
  },
  {
@@ -5082,6 +6277,8 @@
   "number": "241",
   "title": "Jesus, the Very Thought of Thee",
   "path": "data/SDAH/241.json",
+  "sung": true,
+  "sv": "bc1a0ff8b2",
   "v": "3f91c95984"
  },
  {
@@ -5090,6 +6287,8 @@
   "number": "242",
   "title": "Jesus, Thou Joy of Loving Hearts",
   "path": "data/SDAH/242.json",
+  "sung": true,
+  "sv": "b9b142b278",
   "v": "b5af0be4c5"
  },
  {
@@ -5098,6 +6297,8 @@
   "number": "243",
   "title": "King of Glory, King of Peace",
   "path": "data/SDAH/243.json",
+  "sung": true,
+  "sv": "db003097a8",
   "v": "a87c4fd084"
  },
  {
@@ -5106,6 +6307,8 @@
   "number": "244",
   "title": "My Song Shall Be of Jesus",
   "path": "data/SDAH/244.json",
+  "sung": true,
+  "sv": "d36e426bfb",
   "v": "55ba5c5a74"
  },
  {
@@ -5114,6 +6317,8 @@
   "number": "245",
   "title": "More About Jesus",
   "path": "data/SDAH/245.json",
+  "sung": true,
+  "sv": "b203160082",
   "v": "e7c75bea6e"
  },
  {
@@ -5122,6 +6327,9 @@
   "number": "246",
   "title": "Worthy, Worthy Is the Lamb",
   "path": "data/SDAH/246.json",
+  "sung": true,
+  "sv": "8a76d6111a",
+  "svc": "def98d8e45",
   "v": "f2b04a15d2"
  },
  {
@@ -5130,6 +6338,8 @@
   "number": "247",
   "title": "Come, My Way",
   "path": "data/SDAH/247.json",
+  "sung": true,
+  "sv": "edd33998f5",
   "v": "6233ecbd96"
  },
  {
@@ -5138,6 +6348,9 @@
   "number": "248",
   "title": "O, How I Love Jesus",
   "path": "data/SDAH/248.json",
+  "sung": true,
+  "sv": "4c5a278d73",
+  "svc": "7536356ed5",
   "v": "b53e2b1fc9"
  },
  {
@@ -5146,6 +6359,8 @@
   "number": "249",
   "title": "Praise Him! Praise Him!",
   "path": "data/SDAH/249.json",
+  "sung": true,
+  "sv": "c792e18355",
   "v": "771b62e6b2"
  },
  {
@@ -5154,6 +6369,8 @@
   "number": "250",
   "title": "O for a Thousand Tongues to Sing",
   "path": "data/SDAH/250.json",
+  "sung": true,
+  "sv": "1ec1d98ac8",
   "v": "d87e08d0ca"
  },
  {
@@ -5162,6 +6379,8 @@
   "number": "251",
   "title": "He Lives",
   "path": "data/SDAH/251.json",
+  "sung": true,
+  "sv": "7935dea031",
   "v": "40b365c900"
  },
  {
@@ -5170,6 +6389,8 @@
   "number": "252",
   "title": "Come, Let Us Sing",
   "path": "data/SDAH/252.json",
+  "sung": true,
+  "sv": "6553d64ae2",
   "v": "8fb2abf01e"
  },
  {
@@ -5178,6 +6399,8 @@
   "number": "253",
   "title": "There's No Other Name Like Jesus",
   "path": "data/SDAH/253.json",
+  "sung": true,
+  "sv": "16397519a6",
   "v": "ad3b08919a"
  },
  {
@@ -5186,6 +6409,8 @@
   "number": "254",
   "title": "The Great Physician Now Is Near",
   "path": "data/SDAH/254.json",
+  "sung": true,
+  "sv": "d44eef7042",
   "v": "feffcaf339"
  },
  {
@@ -5202,6 +6427,9 @@
   "number": "256",
   "title": "Ye Servants of God",
   "path": "data/SDAH/256.json",
+  "sung": true,
+  "sv": "340c113496",
+  "svc": "777f68850d",
   "v": "961044f39c"
  },
  {
@@ -5210,6 +6438,8 @@
   "number": "257",
   "title": "Come Down, O Love Divine",
   "path": "data/SDAH/257.json",
+  "sung": true,
+  "sv": "60a02f93e3",
   "v": "cf8e5e7603"
  },
  {
@@ -5218,6 +6448,8 @@
   "number": "258",
   "title": "Baptize Us Anew",
   "path": "data/SDAH/258.json",
+  "sung": true,
+  "sv": "a58ccefe15",
   "v": "9d82cf79da"
  },
  {
@@ -5226,6 +6458,8 @@
   "number": "259",
   "title": "Draw Us in the Spirit's Tether",
   "path": "data/SDAH/259.json",
+  "sung": true,
+  "sv": "9bf095f99c",
   "v": "599dc38069"
  },
  {
@@ -5234,6 +6468,8 @@
   "number": "260",
   "title": "Hover O'er Me, Holy Spirit",
   "path": "data/SDAH/260.json",
+  "sung": true,
+  "sv": "398313f99a",
   "v": "f70f46856a"
  },
  {
@@ -5242,6 +6478,8 @@
   "number": "261",
   "title": "The Spirit of the Lord Revealed",
   "path": "data/SDAH/261.json",
+  "sung": true,
+  "sv": "328f463e03",
   "v": "cc6987c00b"
  },
  {
@@ -5250,6 +6488,8 @@
   "number": "262",
   "title": "Sweet, Sweet Spirit",
   "path": "data/SDAH/262.json",
+  "sung": true,
+  "sv": "654a25fe57",
   "v": "4a5c899285"
  },
  {
@@ -5258,6 +6498,8 @@
   "number": "263",
   "title": "Fire of God, Thou Sacred Flame",
   "path": "data/SDAH/263.json",
+  "sung": true,
+  "sv": "bb71e04927",
   "v": "6cbce8b338"
  },
  {
@@ -5266,6 +6508,8 @@
   "number": "264",
   "title": "O for That Flame of Living Fire",
   "path": "data/SDAH/264.json",
+  "sung": true,
+  "sv": "b8e967b23a",
   "v": "d1207f6089"
  },
  {
@@ -5274,6 +6518,8 @@
   "number": "265",
   "title": "Breathe on Me, Breath of God",
   "path": "data/SDAH/265.json",
+  "sung": true,
+  "sv": "83f0dfe37e",
   "v": "eb4c08030a"
  },
  {
@@ -5282,6 +6528,8 @@
   "number": "266",
   "title": "Spirit of God",
   "path": "data/SDAH/266.json",
+  "sung": true,
+  "sv": "cd80a917f3",
   "v": "4e3e39227d"
  },
  {
@@ -5290,6 +6538,8 @@
   "number": "267",
   "title": "Spirit Divine",
   "path": "data/SDAH/267.json",
+  "sung": true,
+  "sv": "0dda3ca478",
   "v": "7d24f62b67"
  },
  {
@@ -5298,6 +6548,8 @@
   "number": "268",
   "title": "Holy Spirit, Light Divine",
   "path": "data/SDAH/268.json",
+  "sung": true,
+  "sv": "835bcab45a",
   "v": "c24b6eb2aa"
  },
  {
@@ -5306,6 +6558,9 @@
   "number": "269",
   "title": "Come, Holy Spirit",
   "path": "data/SDAH/269.json",
+  "sung": true,
+  "sv": "1dd4154547",
+  "svc": "9f7910ff09",
   "v": "dd0f63e756"
  },
  {
@@ -5314,6 +6569,8 @@
   "number": "270",
   "title": "O Holy Dove of God Descending",
   "path": "data/SDAH/270.json",
+  "sung": true,
+  "sv": "bacbb754f9",
   "v": "8e603a5a4b"
  },
  {
@@ -5322,6 +6579,8 @@
   "number": "271",
   "title": "Break Thou the Bread of Life",
   "path": "data/SDAH/271.json",
+  "sung": true,
+  "sv": "a224804a57",
   "v": "039a1e831c"
  },
  {
@@ -5330,6 +6589,8 @@
   "number": "272",
   "title": "Give Me the Bible",
   "path": "data/SDAH/272.json",
+  "sung": true,
+  "sv": "b02a39e60e",
   "v": "842f5aee1a"
  },
  {
@@ -5338,6 +6599,9 @@
   "number": "273",
   "title": "Lord, I Have Made Thy Word My Choice",
   "path": "data/SDAH/273.json",
+  "sung": true,
+  "sv": "67a57b0606",
+  "svc": "fdd327ddd5",
   "v": "4502a68392"
  },
  {
@@ -5346,6 +6610,9 @@
   "number": "274",
   "title": "O Word of God Incarnate",
   "path": "data/SDAH/274.json",
+  "sung": true,
+  "sv": "14791d15d0",
+  "svc": "74d6585d97",
   "v": "84192ad635"
  },
  {
@@ -5354,6 +6621,8 @@
   "number": "275",
   "title": "O God of Light",
   "path": "data/SDAH/275.json",
+  "sung": true,
+  "sv": "98d1c67bbd",
   "v": "a2ab5e71c2"
  },
  {
@@ -5362,6 +6631,9 @@
   "number": "276",
   "title": "Thanks to God",
   "path": "data/SDAH/276.json",
+  "sung": true,
+  "sv": "2e2c5ee2b7",
+  "svc": "482b10cc72",
   "v": "84a56262cc"
  },
  {
@@ -5370,6 +6642,8 @@
   "number": "277",
   "title": "For Your Holy Book We Thank You",
   "path": "data/SDAH/277.json",
+  "sung": true,
+  "sv": "8d7517e43e",
   "v": "7c2c53f97a"
  },
  {
@@ -5378,6 +6652,8 @@
   "number": "278",
   "title": "Lord Jesus, Once You Spoke to Men",
   "path": "data/SDAH/278.json",
+  "sung": true,
+  "sv": "090b29d0f8",
   "v": "d70ebe3f2e"
  },
  {
@@ -5386,6 +6662,8 @@
   "number": "279",
   "title": "Only Trust Him",
   "path": "data/SDAH/279.json",
+  "sung": true,
+  "sv": "cd7608b1cf",
   "v": "f19da0dc56"
  },
  {
@@ -5394,6 +6672,8 @@
   "number": "280",
   "title": "Come, Ye Sinners",
   "path": "data/SDAH/280.json",
+  "sung": true,
+  "sv": "04e14cff7a",
   "v": "99727c0dda"
  },
  {
@@ -5402,6 +6682,8 @@
   "number": "281",
   "title": "I Gave My Life for Thee",
   "path": "data/SDAH/281.json",
+  "sung": true,
+  "sv": "cccee45a13",
   "v": "8935312c0d"
  },
  {
@@ -5410,6 +6692,8 @@
   "number": "282",
   "title": "I Hear Thy Welcome Voice",
   "path": "data/SDAH/282.json",
+  "sung": true,
+  "sv": "74138896b1",
   "v": "15a3318b30"
  },
  {
@@ -5418,6 +6702,8 @@
   "number": "283",
   "title": "O Jesus, Thou Art Standing",
   "path": "data/SDAH/283.json",
+  "sung": true,
+  "sv": "6818890f1e",
   "v": "a5f91e11ba"
  },
  {
@@ -5426,6 +6712,8 @@
   "number": "284",
   "title": "For You I Am Praying",
   "path": "data/SDAH/284.json",
+  "sung": true,
+  "sv": "7b6282105c",
   "v": "7a6694071b"
  },
  {
@@ -5434,6 +6722,8 @@
   "number": "285",
   "title": "Jesus Calls Us",
   "path": "data/SDAH/285.json",
+  "sung": true,
+  "sv": "80c4b82dff",
   "v": "4dfcd68212"
  },
  {
@@ -5442,6 +6732,8 @@
   "number": "286",
   "title": "Wonderful Words of Life",
   "path": "data/SDAH/286.json",
+  "sung": true,
+  "sv": "de96a42f4f",
   "v": "1f39f2926c"
  },
  {
@@ -5450,6 +6742,8 @@
   "number": "287",
   "title": "Softly and Tenderly",
   "path": "data/SDAH/287.json",
+  "sung": true,
+  "sv": "8396f44f8d",
   "v": "3a529d6fed"
  },
  {
@@ -5458,6 +6752,8 @@
   "number": "288",
   "title": "I Am Going to Calvary",
   "path": "data/SDAH/288.json",
+  "sung": true,
+  "sv": "ae75e1d669",
   "v": "938e589d0b"
  },
  {
@@ -5466,6 +6762,8 @@
   "number": "289",
   "title": "The Savior Is Waiting",
   "path": "data/SDAH/289.json",
+  "sung": true,
+  "sv": "cea288b220",
   "v": "ecc88d4e1a"
  },
  {
@@ -5474,6 +6772,8 @@
   "number": "290",
   "title": "Turn Your Eyes Upon Jesus",
   "path": "data/SDAH/290.json",
+  "sung": true,
+  "sv": "dfef37040f",
   "v": "1ecbadca8f"
  },
  {
@@ -5482,6 +6782,8 @@
   "number": "291",
   "title": "We Have Not Known Thee",
   "path": "data/SDAH/291.json",
+  "sung": true,
+  "sv": "01f26bc8ad",
   "v": "9b9a19a6c4"
  },
  {
@@ -5490,6 +6792,8 @@
   "number": "292",
   "title": "Jesus, I Come",
   "path": "data/SDAH/292.json",
+  "sung": true,
+  "sv": "fb28716703",
   "v": "8f293e56ab"
  },
  {
@@ -5498,6 +6802,8 @@
   "number": "293",
   "title": "Heavenly Father, Bless Us Now",
   "path": "data/SDAH/293.json",
+  "sung": true,
+  "sv": "56052a562d",
   "v": "19b1347a0d"
  },
  {
@@ -5506,6 +6812,8 @@
   "number": "294",
   "title": "Power in the Blood",
   "path": "data/SDAH/294.json",
+  "sung": true,
+  "sv": "02d645bc6d",
   "v": "6c0fa02884"
  },
  {
@@ -5514,6 +6822,8 @@
   "number": "295",
   "title": "Chief of Sinners",
   "path": "data/SDAH/295.json",
+  "sung": true,
+  "sv": "1921adb837",
   "v": "39c0ce5775"
  },
  {
@@ -5522,6 +6832,8 @@
   "number": "296",
   "title": "Lord, I'm Coming Home",
   "path": "data/SDAH/296.json",
+  "sung": true,
+  "sv": "aca427e598",
   "v": "004bf8057b"
  },
  {
@@ -5530,6 +6842,8 @@
   "number": "297",
   "title": "God Be Merciful to Me",
   "path": "data/SDAH/297.json",
+  "sung": true,
+  "sv": "85c2068754",
   "v": "92f17e2780"
  },
  {
@@ -5538,6 +6852,9 @@
   "number": "298",
   "title": "I Lay My Sins on Jesus",
   "path": "data/SDAH/298.json",
+  "sung": true,
+  "sv": "6005ce130d",
+  "svc": "38fcfbc8a1",
   "v": "105d69ab4c"
  },
  {
@@ -5546,6 +6863,8 @@
   "number": "299",
   "title": "Forgive Our Sins as We Forgive",
   "path": "data/SDAH/299.json",
+  "sung": true,
+  "sv": "c05fd40216",
   "v": "284e5394d0"
  },
  {
@@ -5554,6 +6873,8 @@
   "number": "300",
   "title": "Rock of Ages",
   "path": "data/SDAH/300.json",
+  "sung": true,
+  "sv": "d4c8d9e8b3",
   "v": "b8aa2f15bc"
  },
  {
@@ -5562,6 +6883,8 @@
   "number": "301",
   "title": "Nearer, Still Nearer",
   "path": "data/SDAH/301.json",
+  "sung": true,
+  "sv": "0a766b043e",
   "v": "d1e023fc7b"
  },
  {
@@ -5570,6 +6893,8 @@
   "number": "302",
   "title": "Deeper Yet",
   "path": "data/SDAH/302.json",
+  "sung": true,
+  "sv": "046656bddc",
   "v": "1e77026015"
  },
  {
@@ -5578,6 +6903,8 @@
   "number": "303",
   "title": "Beneath the Cross of Jesus",
   "path": "data/SDAH/303.json",
+  "sung": true,
+  "sv": "d6c44a4869",
   "v": "87f12e2bd2"
  },
  {
@@ -5586,6 +6913,8 @@
   "number": "304",
   "title": "Faith of Our Fathers",
   "path": "data/SDAH/304.json",
+  "sung": true,
+  "sv": "def1046b56",
   "v": "39423f7056"
  },
  {
@@ -5594,6 +6923,9 @@
   "number": "305",
   "title": "Give Me Jesus",
   "path": "data/SDAH/305.json",
+  "sung": true,
+  "sv": "85e8a987d9",
+  "svc": "1d7a764d09",
   "v": "d68bb2cc72"
  },
  {
@@ -5602,6 +6934,8 @@
   "number": "306",
   "title": "Draw Me Nearer",
   "path": "data/SDAH/306.json",
+  "sung": true,
+  "sv": "118482c920",
   "v": "286182b364"
  },
  {
@@ -5610,6 +6944,8 @@
   "number": "307",
   "title": "I Am Coming to the Cross",
   "path": "data/SDAH/307.json",
+  "sung": true,
+  "sv": "0660644a18",
   "v": "06249ecc21"
  },
  {
@@ -5618,6 +6954,9 @@
   "number": "308",
   "title": "Wholly Thine",
   "path": "data/SDAH/308.json",
+  "sung": true,
+  "sv": "45d120b84a",
+  "svc": "e85df49ca7",
   "v": "0ca2a6f4fe"
  },
  {
@@ -5626,6 +6965,8 @@
   "number": "309",
   "title": "I Surrender All",
   "path": "data/SDAH/309.json",
+  "sung": true,
+  "sv": "621dd45199",
   "v": "c86da71545"
  },
  {
@@ -5634,6 +6975,8 @@
   "number": "310",
   "title": "I'd Rather Have Jesus",
   "path": "data/SDAH/310.json",
+  "sung": true,
+  "sv": "9e6b44e166",
   "v": "fb9d1c449f"
  },
  {
@@ -5642,6 +6985,8 @@
   "number": "311",
   "title": "I Would Be Like Jesus",
   "path": "data/SDAH/311.json",
+  "sung": true,
+  "sv": "4b915cda7d",
   "v": "d96776cf37"
  },
  {
@@ -5650,6 +6995,8 @@
   "number": "312",
   "title": "Near the Cross",
   "path": "data/SDAH/312.json",
+  "sung": true,
+  "sv": "de295f36cd",
   "v": "34252e5f1a"
  },
  {
@@ -5658,6 +7005,8 @@
   "number": "313",
   "title": "Just as I Am",
   "path": "data/SDAH/313.json",
+  "sung": true,
+  "sv": "549c7a9a89",
   "v": "b425355f77"
  },
  {
@@ -5666,6 +7015,8 @@
   "number": "314",
   "title": "Just as I Am",
   "path": "data/SDAH/314.json",
+  "sung": true,
+  "sv": "c90881628b",
   "v": "97f75fb65d"
  },
  {
@@ -5674,6 +7025,8 @@
   "number": "315",
   "title": "O for a Closer Walk!",
   "path": "data/SDAH/315.json",
+  "sung": true,
+  "sv": "97bbf808da",
   "v": "46499e9413"
  },
  {
@@ -5682,6 +7035,8 @@
   "number": "316",
   "title": "Live Out Thy Life Within Me",
   "path": "data/SDAH/316.json",
+  "sung": true,
+  "sv": "1846d43fd4",
   "v": "391493daf3"
  },
  {
@@ -5690,6 +7045,8 @@
   "number": "317",
   "title": "Lead Me to Calvary",
   "path": "data/SDAH/317.json",
+  "sung": true,
+  "sv": "fda811271a",
   "v": "678093a8a7"
  },
  {
@@ -5698,6 +7055,8 @@
   "number": "318",
   "title": "Whiter Than Snow",
   "path": "data/SDAH/318.json",
+  "sung": true,
+  "sv": "f492e685d6",
   "v": "f496c15045"
  },
  {
@@ -5706,6 +7065,8 @@
   "number": "319",
   "title": "Lord, I Want to Be a Christian",
   "path": "data/SDAH/319.json",
+  "sung": true,
+  "sv": "82b8485f59",
   "v": "19c6baa0cf"
  },
  {
@@ -5714,6 +7075,8 @@
   "number": "320",
   "title": "Lord of Creation",
   "path": "data/SDAH/320.json",
+  "sung": true,
+  "sv": "5ccb3321b2",
   "v": "c7b153d280"
  },
  {
@@ -5722,6 +7085,8 @@
   "number": "321",
   "title": "My Jesus, I Love Thee",
   "path": "data/SDAH/321.json",
+  "sung": true,
+  "sv": "ea98fa9794",
   "v": "29e3b6641f"
  },
  {
@@ -5730,6 +7095,8 @@
   "number": "322",
   "title": "Nothing Between",
   "path": "data/SDAH/322.json",
+  "sung": true,
+  "sv": "b7d4d5f683",
   "v": "ba1a0f461e"
  },
  {
@@ -5738,6 +7105,8 @@
   "number": "323",
   "title": "O for a Heart to Praise My God!",
   "path": "data/SDAH/323.json",
+  "sung": true,
+  "sv": "f68c969120",
   "v": "bdacbc07e4"
  },
  {
@@ -5746,6 +7115,8 @@
   "number": "324",
   "title": "Just as I Am, Thine Own to Be",
   "path": "data/SDAH/324.json",
+  "sung": true,
+  "sv": "4895c97329",
   "v": "e6a34f84bf"
  },
  {
@@ -5754,6 +7125,8 @@
   "number": "325",
   "title": "Jesus, I My Cross Have Taken",
   "path": "data/SDAH/325.json",
+  "sung": true,
+  "sv": "91d336db1d",
   "v": "607a507fb8"
  },
  {
@@ -5762,6 +7135,9 @@
   "number": "326",
   "title": "Open My Eyes That I May See",
   "path": "data/SDAH/326.json",
+  "sung": true,
+  "sv": "610e4cf6a4",
+  "svc": "604260f88b",
   "v": "9ad638b52d"
  },
  {
@@ -5770,6 +7146,8 @@
   "number": "327",
   "title": "I'd Rather Have Jesus",
   "path": "data/SDAH/327.json",
+  "sung": true,
+  "sv": "66dadee145",
   "v": "ea6396bcec"
  },
  {
@@ -5778,6 +7156,8 @@
   "number": "328",
   "title": "Must Jesus Bear the Cross Alone",
   "path": "data/SDAH/328.json",
+  "sung": true,
+  "sv": "5aee905c90",
   "v": "1918813a88"
  },
  {
@@ -5786,6 +7166,8 @@
   "number": "329",
   "title": "Take the World, but Give Me Jesus",
   "path": "data/SDAH/329.json",
+  "sung": true,
+  "sv": "4cfaebc508",
   "v": "f74d7cf484"
  },
  {
@@ -5794,6 +7176,8 @@
   "number": "330",
   "title": "Take My Life and Let It Be",
   "path": "data/SDAH/330.json",
+  "sung": true,
+  "sv": "dd9df391fa",
   "v": "aceafa2253"
  },
  {
@@ -5802,6 +7186,8 @@
   "number": "331",
   "title": "O Jesus, I Have Promised",
   "path": "data/SDAH/331.json",
+  "sung": true,
+  "sv": "4ab072d3a1",
   "v": "7102fbcf15"
  },
  {
@@ -5810,6 +7196,8 @@
   "number": "332",
   "title": "The Cleansing Wave",
   "path": "data/SDAH/332.json",
+  "sung": true,
+  "sv": "bd389d4d23",
   "v": "7fe5958dfc"
  },
  {
@@ -5818,6 +7206,8 @@
   "number": "333",
   "title": "On Jordan's Banks the Baptist's Cry",
   "path": "data/SDAH/333.json",
+  "sung": true,
+  "sv": "a80cd542e5",
   "v": "20268c3170"
  },
  {
@@ -5826,6 +7216,8 @@
   "number": "334",
   "title": "Come, Thou Fount of Every Blessing",
   "path": "data/SDAH/334.json",
+  "sung": true,
+  "sv": "e69c9473ee",
   "v": "b60116170b"
  },
  {
@@ -5834,6 +7226,8 @@
   "number": "335",
   "title": "What a Wonderful Savior",
   "path": "data/SDAH/335.json",
+  "sung": true,
+  "sv": "6ef344e7ec",
   "v": "2506b38beb"
  },
  {
@@ -5842,6 +7236,8 @@
   "number": "336",
   "title": "There Is a Fountain",
   "path": "data/SDAH/336.json",
+  "sung": true,
+  "sv": "1f2e75b924",
   "v": "abb88b5899"
  },
  {
@@ -5850,6 +7246,8 @@
   "number": "337",
   "title": "Redeemed!",
   "path": "data/SDAH/337.json",
+  "sung": true,
+  "sv": "5a769cf192",
   "v": "6d750b2511"
  },
  {
@@ -5858,6 +7256,8 @@
   "number": "338",
   "title": "Redeemed!",
   "path": "data/SDAH/338.json",
+  "sung": true,
+  "sv": "70278071fd",
   "v": "7777543cad"
  },
  {
@@ -5866,6 +7266,8 @@
   "number": "339",
   "title": "God Is My Strong Salvation",
   "path": "data/SDAH/339.json",
+  "sung": true,
+  "sv": "02160556d3",
   "v": "ce68329740"
  },
  {
@@ -5874,6 +7276,8 @@
   "number": "340",
   "title": "Jesus Saves",
   "path": "data/SDAH/340.json",
+  "sung": true,
+  "sv": "19d52df7fa",
   "v": "cf3223683b"
  },
  {
@@ -5882,6 +7286,8 @@
   "number": "341",
   "title": "To God Be the Glory",
   "path": "data/SDAH/341.json",
+  "sung": true,
+  "sv": "ec4902f5ea",
   "v": "62e2927799"
  },
  {
@@ -5898,6 +7304,8 @@
   "number": "343",
   "title": "I Will Sing of My Redeemer",
   "path": "data/SDAH/343.json",
+  "sung": true,
+  "sv": "fbb8bda1d9",
   "v": "0feedd97a4"
  },
  {
@@ -5906,6 +7314,8 @@
   "number": "344",
   "title": "I Love Your Kingdom, Lord",
   "path": "data/SDAH/344.json",
+  "sung": true,
+  "sv": "3515ca60e6",
   "v": "5b4f5c223b"
  },
  {
@@ -5914,6 +7324,9 @@
   "number": "345",
   "title": "Christ Is the World's True Light",
   "path": "data/SDAH/345.json",
+  "sung": true,
+  "sv": "73899fa945",
+  "svc": "07dc5669c5",
   "v": "cccb65fa4b"
  },
  {
@@ -5930,6 +7343,9 @@
   "number": "347",
   "title": "Built on the Rock",
   "path": "data/SDAH/347.json",
+  "sung": true,
+  "sv": "96e24cd595",
+  "svc": "ead97729d5",
   "v": "033df34ad9"
  },
  {
@@ -5938,6 +7354,8 @@
   "number": "348",
   "title": "The Church Has One Foundation",
   "path": "data/SDAH/348.json",
+  "sung": true,
+  "sv": "d7862e34e6",
   "v": "0d6906cfec"
  },
  {
@@ -5946,6 +7364,8 @@
   "number": "349",
   "title": "God Is Love",
   "path": "data/SDAH/349.json",
+  "sung": true,
+  "sv": "6a1698b177",
   "v": "bd4b8b0a6f"
  },
  {
@@ -5954,6 +7374,8 @@
   "number": "350",
   "title": "Blest Be the Tie That Binds",
   "path": "data/SDAH/350.json",
+  "sung": true,
+  "sv": "59d59e92ad",
   "v": "4123e29095"
  },
  {
@@ -5962,6 +7384,9 @@
   "number": "351",
   "title": "Thy Hand, O God, Has Guided",
   "path": "data/SDAH/351.json",
+  "sung": true,
+  "sv": "1c7c2dd13a",
+  "svc": "610130f93c",
   "v": "7c19b28be5"
  },
  {
@@ -5970,6 +7395,8 @@
   "number": "352",
   "title": "This Is My Will",
   "path": "data/SDAH/352.json",
+  "sung": true,
+  "sv": "15d1ca8650",
   "v": "f9f0f81131"
  },
  {
@@ -5978,6 +7405,8 @@
   "number": "353",
   "title": "Father, Help Your People",
   "path": "data/SDAH/353.json",
+  "sung": true,
+  "sv": "f765bbd563",
   "v": "78dfa384a9"
  },
  {
@@ -5994,6 +7423,8 @@
   "number": "355",
   "title": "Where Cross the Crowded Ways of Life",
   "path": "data/SDAH/355.json",
+  "sung": true,
+  "sv": "c355d82b44",
   "v": "d42fd0b509"
  },
  {
@@ -6002,6 +7433,8 @@
   "number": "356",
   "title": "All Who Love and Serve Your City",
   "path": "data/SDAH/356.json",
+  "sung": true,
+  "sv": "ce058f7555",
   "v": "cf78e2ab1c"
  },
  {
@@ -6010,6 +7443,8 @@
   "number": "357",
   "title": "Come, Labor On",
   "path": "data/SDAH/357.json",
+  "sung": true,
+  "sv": "58ba45c8ee",
   "v": "f290f77b77"
  },
  {
@@ -6018,6 +7453,8 @@
   "number": "358",
   "title": "Far and Near the Fields Are Teeming",
   "path": "data/SDAH/358.json",
+  "sung": true,
+  "sv": "b6b5ad6f30",
   "v": "e1ec420ea0"
  },
  {
@@ -6026,6 +7463,9 @@
   "number": "359",
   "title": "Hark! the Voice of Jesus Calling",
   "path": "data/SDAH/359.json",
+  "sung": true,
+  "sv": "963e9c32c2",
+  "svc": "de326e0449",
   "v": "8c107f2a5b"
  },
  {
@@ -6034,6 +7474,8 @@
   "number": "360",
   "title": "From the Eastern Mountains",
   "path": "data/SDAH/360.json",
+  "sung": true,
+  "sv": "14ef66edf0",
   "v": "bb35dbce7f"
  },
  {
@@ -6042,6 +7484,9 @@
   "number": "361",
   "title": "Hark! 'Tis the Shepherd's Voice I Hear",
   "path": "data/SDAH/361.json",
+  "sung": true,
+  "sv": "b0647128a2",
+  "svc": "137cfbd333",
   "v": "bcb5fb920c"
  },
  {
@@ -6050,6 +7495,9 @@
   "number": "362",
   "title": "Lift High the Cross",
   "path": "data/SDAH/362.json",
+  "sung": true,
+  "sv": "c1624c5aba",
+  "svc": "e3e1dda9f5",
   "v": "0bfb41b30f"
  },
  {
@@ -6058,6 +7506,8 @@
   "number": "363",
   "title": "Lord, Whose Love in Humble Service",
   "path": "data/SDAH/363.json",
+  "sung": true,
+  "sv": "ad819232d2",
   "v": "797fc60f0a"
  },
  {
@@ -6066,6 +7516,8 @@
   "number": "364",
   "title": "O Jesus Christ, to You",
   "path": "data/SDAH/364.json",
+  "sung": true,
+  "sv": "db979be386",
   "v": "4e265c019d"
  },
  {
@@ -6074,6 +7526,8 @@
   "number": "365",
   "title": "O Zion, Haste",
   "path": "data/SDAH/365.json",
+  "sung": true,
+  "sv": "351a2b2b99",
   "v": "bb80d9b493"
  },
  {
@@ -6082,6 +7536,8 @@
   "number": "366",
   "title": "O Where Are the Reapers?",
   "path": "data/SDAH/366.json",
+  "sung": true,
+  "sv": "ae380864c8",
   "v": "f3bb8877e1"
  },
  {
@@ -6090,6 +7546,8 @@
   "number": "367",
   "title": "Rescue the Perishing",
   "path": "data/SDAH/367.json",
+  "sung": true,
+  "sv": "878929a29b",
   "v": "8f912d5ef6"
  },
  {
@@ -6098,6 +7556,8 @@
   "number": "368",
   "title": "Watchman, Blow the Gospel Trumpet",
   "path": "data/SDAH/368.json",
+  "sung": true,
+  "sv": "f1eb441218",
   "v": "2a76e133ba"
  },
  {
@@ -6106,6 +7566,9 @@
   "number": "369",
   "title": "Bringing in the Sheaves",
   "path": "data/SDAH/369.json",
+  "sung": true,
+  "sv": "c01e8c0de0",
+  "svc": "e001e05a5f",
   "v": "855d64b55e"
  },
  {
@@ -6114,6 +7577,8 @@
   "number": "370",
   "title": "Christ for the World",
   "path": "data/SDAH/370.json",
+  "sung": true,
+  "sv": "b92b79c1fd",
   "v": "5df98fbcfd"
  },
  {
@@ -6122,6 +7587,8 @@
   "number": "371",
   "title": "Lift Him Up",
   "path": "data/SDAH/371.json",
+  "sung": true,
+  "sv": "814deb4e36",
   "v": "2716730745"
  },
  {
@@ -6130,6 +7597,9 @@
   "number": "372",
   "title": "How Beauteous Are Their Feet",
   "path": "data/SDAH/372.json",
+  "sung": true,
+  "sv": "7b4760868f",
+  "svc": "ad73ab357a",
   "v": "1f8fcac816"
  },
  {
@@ -6138,6 +7608,8 @@
   "number": "373",
   "title": "Seeking the Lost",
   "path": "data/SDAH/373.json",
+  "sung": true,
+  "sv": "283b09f29a",
   "v": "ad0959d40b"
  },
  {
@@ -6146,6 +7618,8 @@
   "number": "374",
   "title": "Jesus, With Thy Church Abide",
   "path": "data/SDAH/374.json",
+  "sung": true,
+  "sv": "295dc49836",
   "v": "e98c879617"
  },
  {
@@ -6154,6 +7628,8 @@
   "number": "375",
   "title": "Work, for the Night Is Coming",
   "path": "data/SDAH/375.json",
+  "sung": true,
+  "sv": "b60a660621",
   "v": "c90653ecb3"
  },
  {
@@ -6162,6 +7638,8 @@
   "number": "376",
   "title": "All Things Are Thine",
   "path": "data/SDAH/376.json",
+  "sung": true,
+  "sv": "1600d3f566",
   "v": "2991ff9b72"
  },
  {
@@ -6170,6 +7648,8 @@
   "number": "377",
   "title": "Go Forth, Go Forth With Christ",
   "path": "data/SDAH/377.json",
+  "sung": true,
+  "sv": "64df1e7d84",
   "v": "412b8b096f"
  },
  {
@@ -6178,6 +7658,8 @@
   "number": "378",
   "title": "Go, Preach My Gospel",
   "path": "data/SDAH/378.json",
+  "sung": true,
+  "sv": "26b6e12404",
   "v": "06d29c8ce2"
  },
  {
@@ -6186,6 +7668,8 @@
   "number": "379",
   "title": "We Give This Child to You",
   "path": "data/SDAH/379.json",
+  "sung": true,
+  "sv": "7cab75350c",
   "v": "427c4e3f98"
  },
  {
@@ -6194,6 +7678,8 @@
   "number": "380",
   "title": "Welcome, Day of Sweet Repose",
   "path": "data/SDAH/380.json",
+  "sung": true,
+  "sv": "af63389da5",
   "v": "da8a94268b"
  },
  {
@@ -6202,6 +7688,8 @@
   "number": "381",
   "title": "Holy Sabbath Day of Rest",
   "path": "data/SDAH/381.json",
+  "sung": true,
+  "sv": "2a16ac2529",
   "v": "732d7e7499"
  },
  {
@@ -6210,6 +7698,8 @@
   "number": "382",
   "title": "O Day of Rest and Gladness",
   "path": "data/SDAH/382.json",
+  "sung": true,
+  "sv": "61018859db",
   "v": "f41792f1b7"
  },
  {
@@ -6218,6 +7708,8 @@
   "number": "383",
   "title": "O Day of Rest and Gladness",
   "path": "data/SDAH/383.json",
+  "sung": true,
+  "sv": "78d1a29ab5",
   "v": "5093da88d4"
  },
  {
@@ -6226,6 +7718,8 @@
   "number": "384",
   "title": "Safely Through Another Week",
   "path": "data/SDAH/384.json",
+  "sung": true,
+  "sv": "48aa49d024",
   "v": "743b71a66b"
  },
  {
@@ -6234,6 +7728,9 @@
   "number": "385",
   "title": "Crowning Jewel of Creation",
   "path": "data/SDAH/385.json",
+  "sung": true,
+  "sv": "3d2194d45e",
+  "svc": "91bccc2cc1",
   "v": "74171c3721"
  },
  {
@@ -6242,6 +7739,8 @@
   "number": "386",
   "title": "The Sacred Anthem",
   "path": "data/SDAH/386.json",
+  "sung": true,
+  "sv": "9b44121bed",
   "v": "95079aba34"
  },
  {
@@ -6250,6 +7749,8 @@
   "number": "387",
   "title": "Come, O Sabbath Day",
   "path": "data/SDAH/387.json",
+  "sung": true,
+  "sv": "160a943606",
   "v": "3934c28cc3"
  },
  {
@@ -6258,6 +7759,8 @@
   "number": "388",
   "title": "Don't Forget the Sabbath",
   "path": "data/SDAH/388.json",
+  "sung": true,
+  "sv": "451920ffa8",
   "v": "5ba5fdbf13"
  },
  {
@@ -6266,6 +7769,8 @@
   "number": "389",
   "title": "Light of Light, Enlighten Me",
   "path": "data/SDAH/389.json",
+  "sung": true,
+  "sv": "0fd1819596",
   "v": "4fad1ccab7"
  },
  {
@@ -6274,6 +7779,8 @@
   "number": "390",
   "title": "We Love Thy Sabbath, Lord",
   "path": "data/SDAH/390.json",
+  "sung": true,
+  "sv": "ab0510d645",
   "v": "1b0c2f7a55"
  },
  {
@@ -6282,6 +7789,8 @@
   "number": "391",
   "title": "Welcome, Welcome, Day of Rest",
   "path": "data/SDAH/391.json",
+  "sung": true,
+  "sv": "4eea1ce957",
   "v": "5c0ad3f604"
  },
  {
@@ -6290,6 +7799,9 @@
   "number": "392",
   "title": "Dear Lord, We Come at Set of Sun",
   "path": "data/SDAH/392.json",
+  "sung": true,
+  "sv": "1b8db75298",
+  "svc": "d246851a8f",
   "v": "c1d554befd"
  },
  {
@@ -6298,6 +7810,8 @@
   "number": "393",
   "title": "Lord of the Sabbath",
   "path": "data/SDAH/393.json",
+  "sung": true,
+  "sv": "c403f898a6",
   "v": "6d00a2fefe"
  },
  {
@@ -6322,6 +7836,8 @@
   "number": "396",
   "title": "Lord God, Your Love Has Called Us Here",
   "path": "data/SDAH/396.json",
+  "sung": true,
+  "sv": "34311270e2",
   "v": "4544762680"
  },
  {
@@ -6330,6 +7846,8 @@
   "number": "397",
   "title": "An Upper Room",
   "path": "data/SDAH/397.json",
+  "sung": true,
+  "sv": "1a22f9cd96",
   "v": "7af160c719"
  },
  {
@@ -6338,6 +7856,8 @@
   "number": "398",
   "title": "Bread of the World",
   "path": "data/SDAH/398.json",
+  "sung": true,
+  "sv": "45ec6b616d",
   "v": "1291b15d93"
  },
  {
@@ -6346,6 +7866,8 @@
   "number": "399",
   "title": "Beneath the Forms of Outward Rite",
   "path": "data/SDAH/399.json",
+  "sung": true,
+  "sv": "751a5b5fbb",
   "v": "c2d4d2af55"
  },
  {
@@ -6354,6 +7876,8 @@
   "number": "400",
   "title": "I Come With Joy",
   "path": "data/SDAH/400.json",
+  "sung": true,
+  "sv": "45e7fadc03",
   "v": "ba2678da01"
  },
  {
@@ -6362,6 +7886,8 @@
   "number": "401",
   "title": "In Imitation, Lord of Thee",
   "path": "data/SDAH/401.json",
+  "sung": true,
+  "sv": "3a939c281e",
   "v": "0d021da841"
  },
  {
@@ -6370,6 +7896,8 @@
   "number": "402",
   "title": "By Christ Redeemed",
   "path": "data/SDAH/402.json",
+  "sung": true,
+  "sv": "cdb8087d31",
   "v": "912b503f6e"
  },
  {
@@ -6378,6 +7906,8 @@
   "number": "403",
   "title": "Let Us Break Bread Together",
   "path": "data/SDAH/403.json",
+  "sung": true,
+  "sv": "c6a40ce83e",
   "v": "bf54a3c189"
  },
  {
@@ -6394,6 +7924,9 @@
   "number": "405",
   "title": "O God, Unseen, Yet Ever Near",
   "path": "data/SDAH/405.json",
+  "sung": true,
+  "sv": "71d22a87a9",
+  "svc": "a91001016b",
   "v": "45b68e833a"
  },
  {
@@ -6410,6 +7943,8 @@
   "number": "407",
   "title": "Sent Forth by God's Blessing",
   "path": "data/SDAH/407.json",
+  "sung": true,
+  "sv": "91a51d5588",
   "v": "2bfea3eea6"
  },
  {
@@ -6418,6 +7953,8 @@
   "number": "408",
   "title": "Lord, Enthroned in Heavenly Splendor",
   "path": "data/SDAH/408.json",
+  "sung": true,
+  "sv": "bda989cf97",
   "v": "cad28ea230"
  },
  {
@@ -6426,6 +7963,9 @@
   "number": "409",
   "title": "Jesus Invites His Saints",
   "path": "data/SDAH/409.json",
+  "sung": true,
+  "sv": "3efbab94bc",
+  "svc": "2d82d45800",
   "v": "1f2a5b979f"
  },
  {
@@ -6434,6 +7974,8 @@
   "number": "410",
   "title": "Thy Broken Body, Gracious Lord",
   "path": "data/SDAH/410.json",
+  "sung": true,
+  "sv": "f592770103",
   "v": "16e94e84ba"
  },
  {
@@ -6442,6 +7984,8 @@
   "number": "411",
   "title": "The Son of God Proclaim",
   "path": "data/SDAH/411.json",
+  "sung": true,
+  "sv": "f6635dad2d",
   "v": "ee55847c41"
  },
  {
@@ -6450,6 +7994,8 @@
   "number": "412",
   "title": "Cover With His Life",
   "path": "data/SDAH/412.json",
+  "sung": true,
+  "sv": "6da7cc8936",
   "v": "fd11d1ec6e"
  },
  {
@@ -6466,6 +8012,8 @@
   "number": "414",
   "title": "Fruitful Trees, the Spirit's Sowing",
   "path": "data/SDAH/414.json",
+  "sung": true,
+  "sv": "32d8d95d41",
   "v": "4f72afd76a"
  },
  {
@@ -6474,6 +8022,8 @@
   "number": "415",
   "title": "Christ the Lord, All Power Possessing",
   "path": "data/SDAH/415.json",
+  "sung": true,
+  "sv": "71ff55cdef",
   "v": "e578a59c49"
  },
  {
@@ -6482,6 +8032,9 @@
   "number": "416",
   "title": "The Judgment Has Set",
   "path": "data/SDAH/416.json",
+  "sung": true,
+  "sv": "48e3982ef7",
+  "svc": "65def8169d",
   "v": "41c6b161bb"
  },
  {
@@ -6490,6 +8043,8 @@
   "number": "417",
   "title": "O Solemn Thought",
   "path": "data/SDAH/417.json",
+  "sung": true,
+  "sv": "2b53aef4a9",
   "v": "67ec1736e8"
  },
  {
@@ -6498,6 +8053,9 @@
   "number": "418",
   "title": "Day of Judgment, Day of Wonders!",
   "path": "data/SDAH/418.json",
+  "sung": true,
+  "sv": "1436977ce6",
+  "svc": "584f60d0ac",
   "v": "23e5bb3332"
  },
  {
@@ -6506,6 +8064,9 @@
   "number": "419",
   "title": "Soon Shall the Trump of God",
   "path": "data/SDAH/419.json",
+  "sung": true,
+  "sv": "fc952a7a28",
+  "svc": "1315103263",
   "v": "a591d75f12"
  },
  {
@@ -6514,6 +8075,8 @@
   "number": "420",
   "title": "Jerusalem, My Happy Home",
   "path": "data/SDAH/420.json",
+  "sung": true,
+  "sv": "776d8f2387",
   "v": "91dd8cf3e8"
  },
  {
@@ -6530,6 +8093,8 @@
   "number": "422",
   "title": "Marching to Zion",
   "path": "data/SDAH/422.json",
+  "sung": true,
+  "sv": "8a1b7c26b8",
   "v": "33aaa81409"
  },
  {
@@ -6538,6 +8103,8 @@
   "number": "423",
   "title": "Glorious Things of Thee Are Spoken",
   "path": "data/SDAH/423.json",
+  "sung": true,
+  "sv": "aabae20663",
   "v": "31efa457f4"
  },
  {
@@ -6554,6 +8121,8 @@
   "number": "425",
   "title": "Holy, Holy, Is What the Angels Sing",
   "path": "data/SDAH/425.json",
+  "sung": true,
+  "sv": "71c6ecde4f",
   "v": "636f584b53"
  },
  {
@@ -6562,6 +8131,9 @@
   "number": "426",
   "title": "I Shall See the King",
   "path": "data/SDAH/426.json",
+  "sung": true,
+  "sv": "1f06e654ca",
+  "svc": "c4827c81fd",
   "v": "279c75da52"
  },
  {
@@ -6570,6 +8142,9 @@
   "number": "427",
   "title": "No Night There",
   "path": "data/SDAH/427.json",
+  "sung": true,
+  "sv": "016192d395",
+  "svc": "cdc59a471a",
   "v": "52002dccd7"
  },
  {
@@ -6578,6 +8153,8 @@
   "number": "428",
   "title": "Sweet By and By",
   "path": "data/SDAH/428.json",
+  "sung": true,
+  "sv": "dba6d34b3b",
   "v": "ba9598248f"
  },
  {
@@ -6594,6 +8171,9 @@
   "number": "430",
   "title": "Joy By and By",
   "path": "data/SDAH/430.json",
+  "sung": true,
+  "sv": "7355f25b47",
+  "svc": "c42817f333",
   "v": "3d392c2109"
  },
  {
@@ -6602,6 +8182,9 @@
   "number": "431",
   "title": "Over Yonder",
   "path": "data/SDAH/431.json",
+  "sung": true,
+  "sv": "e61a47bede",
+  "svc": "750e1766b6",
   "v": "3279239a8d"
  },
  {
@@ -6610,6 +8193,9 @@
   "number": "432",
   "title": "Shall We Gather at the River",
   "path": "data/SDAH/432.json",
+  "sung": true,
+  "sv": "df9c26f7e2",
+  "svc": "23e553fefb",
   "v": "28a7472a6a"
  },
  {
@@ -6618,6 +8204,9 @@
   "number": "433",
   "title": "Ten Thousand Times Ten Thousand",
   "path": "data/SDAH/433.json",
+  "sung": true,
+  "sv": "f74108a52e",
+  "svc": "c208c21d79",
   "v": "64fd0da9cc"
  },
  {
@@ -6626,6 +8215,8 @@
   "number": "434",
   "title": "We Speak of the Realms",
   "path": "data/SDAH/434.json",
+  "sung": true,
+  "sv": "7357647e1d",
   "v": "d160d988fd"
  },
  {
@@ -6634,6 +8225,9 @@
   "number": "435",
   "title": "The Glory Song",
   "path": "data/SDAH/435.json",
+  "sung": true,
+  "sv": "0f06fa08cf",
+  "svc": "4621cd1d2c",
   "v": "06ea3b3901"
  },
  {
@@ -6642,6 +8236,8 @@
   "number": "436",
   "title": "The Homeland",
   "path": "data/SDAH/436.json",
+  "sung": true,
+  "sv": "dfce69f157",
   "v": "cb02bfabf1"
  },
  {
@@ -6650,6 +8246,8 @@
   "number": "437",
   "title": "I'm Going Home",
   "path": "data/SDAH/437.json",
+  "sung": true,
+  "sv": "2d408aebf7",
   "v": "e20bd6909f"
  },
  {
@@ -6658,6 +8256,8 @@
   "number": "438",
   "title": "You Will See Your Lord A-Coming",
   "path": "data/SDAH/438.json",
+  "sung": true,
+  "sv": "2e317d6903",
   "v": "fdcb17af07"
  },
  {
@@ -6666,6 +8266,9 @@
   "number": "439",
   "title": "How Far From Home?",
   "path": "data/SDAH/439.json",
+  "sung": true,
+  "sv": "8172bc20ae",
+  "svc": "3be5314aa1",
   "v": "ce8132ab63"
  },
  {
@@ -6674,6 +8277,8 @@
   "number": "440",
   "title": "How Cheering Is the Christian's Hope",
   "path": "data/SDAH/440.json",
+  "sung": true,
+  "sv": "a6e0d0386c",
   "v": "ebeeab77ac"
  },
  {
@@ -6682,6 +8287,8 @@
   "number": "441",
   "title": "I Saw One Weary",
   "path": "data/SDAH/441.json",
+  "sung": true,
+  "sv": "2c9bde8521",
   "v": "fb867cd588"
  },
  {
@@ -6690,6 +8297,8 @@
   "number": "442",
   "title": "How Sweet Are the Tidings",
   "path": "data/SDAH/442.json",
+  "sung": true,
+  "sv": "a7583cac27",
   "v": "ea6201b5a6"
  },
  {
@@ -6698,6 +8307,8 @@
   "number": "443",
   "title": "There'll Be No Sorrow There",
   "path": "data/SDAH/443.json",
+  "sung": true,
+  "sv": "0c1a286cd6",
   "v": "ebbae2302c"
  },
  {
@@ -6706,6 +8317,9 @@
   "number": "444",
   "title": "I'm a Pilgrim",
   "path": "data/SDAH/444.json",
+  "sung": true,
+  "sv": "089131702e",
+  "svc": "aeda135ef9",
   "v": "4017c0d764"
  },
  {
@@ -6714,6 +8328,8 @@
   "number": "445",
   "title": "I'm But a Stranger Here",
   "path": "data/SDAH/445.json",
+  "sung": true,
+  "sv": "95ad66a0c4",
   "v": "92b809bd55"
  },
  {
@@ -6722,6 +8338,9 @@
   "number": "446",
   "title": "Lo, What a Glorious Sight Appears",
   "path": "data/SDAH/446.json",
+  "sung": true,
+  "sv": "f18af9a757",
+  "svc": "e24bafc12f",
   "v": "f5a74b0299"
  },
  {
@@ -6730,6 +8349,8 @@
   "number": "447",
   "title": "Long Upon the Mountains",
   "path": "data/SDAH/447.json",
+  "sung": true,
+  "sv": "10be8746eb",
   "v": "cc30ab72ed"
  },
  {
@@ -6738,6 +8359,8 @@
   "number": "448",
   "title": "O, When Shall I See Jesus",
   "path": "data/SDAH/448.json",
+  "sung": true,
+  "sv": "d4ea92399c",
   "v": "87cf68c75e"
  },
  {
@@ -6746,6 +8369,8 @@
   "number": "449",
   "title": "Never Part Again",
   "path": "data/SDAH/449.json",
+  "sung": true,
+  "sv": "e5c82e509f",
   "v": "56d18f7bf1"
  },
  {
@@ -6754,6 +8379,9 @@
   "number": "450",
   "title": "Beautiful Zion",
   "path": "data/SDAH/450.json",
+  "sung": true,
+  "sv": "c3dc8f8f85",
+  "svc": "2ef0ca121d",
   "v": "c138e5173b"
  },
  {
@@ -6762,6 +8390,8 @@
   "number": "451",
   "title": "Together Let Us Sweetly Live",
   "path": "data/SDAH/451.json",
+  "sung": true,
+  "sv": "6e19cbe7e9",
   "v": "e8bc44058e"
  },
  {
@@ -6770,6 +8400,8 @@
   "number": "452",
   "title": "What Heavenly Music",
   "path": "data/SDAH/452.json",
+  "sung": true,
+  "sv": "db1ed2ff09",
   "v": "a013cf0b47"
  },
  {
@@ -6778,6 +8410,8 @@
   "number": "453",
   "title": "We Have Heard",
   "path": "data/SDAH/453.json",
+  "sung": true,
+  "sv": "fa17582d89",
   "v": "3a080db24d"
  },
  {
@@ -6786,6 +8420,8 @@
   "number": "454",
   "title": "Don't You See My Jesus Coming?",
   "path": "data/SDAH/454.json",
+  "sung": true,
+  "sv": "2e1bc31d6c",
   "v": "f9ac098f9d"
  },
  {
@@ -6794,6 +8430,8 @@
   "number": "455",
   "title": "Immortal Love, Forever Full",
   "path": "data/SDAH/455.json",
+  "sung": true,
+  "sv": "33d7fa947f",
   "v": "99ff6484ec"
  },
  {
@@ -6802,6 +8440,8 @@
   "number": "456",
   "title": "My Lord and I",
   "path": "data/SDAH/456.json",
+  "sung": true,
+  "sv": "82d94ebc29",
   "v": "30e78fefab"
  },
  {
@@ -6810,6 +8450,8 @@
   "number": "457",
   "title": "I Love to Tell the Story",
   "path": "data/SDAH/457.json",
+  "sung": true,
+  "sv": "cdcba907f1",
   "v": "56380628fa"
  },
  {
@@ -6818,6 +8460,8 @@
   "number": "458",
   "title": "More Love to Thee",
   "path": "data/SDAH/458.json",
+  "sung": true,
+  "sv": "1cd71e1635",
   "v": "8cb388ffde"
  },
  {
@@ -6826,6 +8470,8 @@
   "number": "459",
   "title": "As the Bridegroom to His Chosen",
   "path": "data/SDAH/459.json",
+  "sung": true,
+  "sv": "5c5a6a61ed",
   "v": "2a422a0049"
  },
  {
@@ -6834,6 +8480,8 @@
   "number": "460",
   "title": "As Water to the Thirsty",
   "path": "data/SDAH/460.json",
+  "sung": true,
+  "sv": "850e7f24a4",
   "v": "7693ef664a"
  },
  {
@@ -6842,6 +8490,9 @@
   "number": "461",
   "title": "Be Still, My Soul",
   "path": "data/SDAH/461.json",
+  "sung": true,
+  "sv": "9669020f33",
+  "svc": "49349454ca",
   "v": "34a96ced9d"
  },
  {
@@ -6850,6 +8501,8 @@
   "number": "462",
   "title": "Blessed Assurance, Jesus Is Mine!",
   "path": "data/SDAH/462.json",
+  "sung": true,
+  "sv": "adf30fcc50",
   "v": "9e83690c3d"
  },
  {
@@ -6858,6 +8511,8 @@
   "number": "463",
   "title": "Peace, Perfect Peace",
   "path": "data/SDAH/463.json",
+  "sung": true,
+  "sv": "86e84e6276",
   "v": "2c6f3a19b3"
  },
  {
@@ -6866,6 +8521,9 @@
   "number": "464",
   "title": "When I Can Read My Title Clear",
   "path": "data/SDAH/464.json",
+  "sung": true,
+  "sv": "22258a3cdb",
+  "svc": "59d2bf712e",
   "v": "18a275789d"
  },
  {
@@ -6874,6 +8532,8 @@
   "number": "465",
   "title": "I Heard the Voice of Jesus",
   "path": "data/SDAH/465.json",
+  "sung": true,
+  "sv": "68be37ffaa",
   "v": "da40d712ac"
  },
  {
@@ -6882,6 +8542,8 @@
   "number": "466",
   "title": "Wonderful Peace",
   "path": "data/SDAH/466.json",
+  "sung": true,
+  "sv": "f374bf403a",
   "v": "ee6738c9cc"
  },
  {
@@ -6890,6 +8552,8 @@
   "number": "467",
   "title": "Life Is Great! So Sing About It",
   "path": "data/SDAH/467.json",
+  "sung": true,
+  "sv": "508270c1f8",
   "v": "f6cec53ae8"
  },
  {
@@ -6898,6 +8562,8 @@
   "number": "468",
   "title": "A Child of the King",
   "path": "data/SDAH/468.json",
+  "sung": true,
+  "sv": "acabcba49e",
   "v": "24f1f1c234"
  },
  {
@@ -6906,6 +8572,8 @@
   "number": "469",
   "title": "Leaning on the Everlasting Arms",
   "path": "data/SDAH/469.json",
+  "sung": true,
+  "sv": "56cfb65058",
   "v": "dce6b47125"
  },
  {
@@ -6922,6 +8590,7 @@
   "number": "471",
   "title": "Grant Us Your Peace",
   "path": "data/SDAH/471.json",
+  "svc": "daa1b980ba",
   "v": "ff47584a39"
  },
  {
@@ -6970,6 +8639,7 @@
   "number": "477",
   "title": "Come, Ye Disconsolate",
   "path": "data/SDAH/477.json",
+  "svc": "891f96a2af",
   "v": "e601e9dd05"
  },
  {
@@ -6978,6 +8648,7 @@
   "number": "478",
   "title": "Sweet Hour of Prayer",
   "path": "data/SDAH/478.json",
+  "svc": "a2f1c45cf9",
   "v": "166add5849"
  },
  {
@@ -6986,6 +8657,7 @@
   "number": "479",
   "title": "Tread Softly",
   "path": "data/SDAH/479.json",
+  "svc": "49a4730a3b",
   "v": "fa7cd56f95"
  },
  {
@@ -7018,6 +8690,7 @@
   "number": "483",
   "title": "I Need Thee Every Hour",
   "path": "data/SDAH/483.json",
+  "svc": "beff4fe2ac",
   "v": "e878f0fb47"
  },
  {
@@ -7050,6 +8723,7 @@
   "number": "487",
   "title": "In the Garden",
   "path": "data/SDAH/487.json",
+  "svc": "a0e51bebad",
   "v": "ed9e42f04b"
  },
  {
@@ -7098,6 +8772,7 @@
   "number": "493",
   "title": "Fill My Cup, Lord",
   "path": "data/SDAH/493.json",
+  "svc": "bdaca6751c",
   "v": "022db42660"
  },
  {
@@ -7106,6 +8781,7 @@
   "number": "494",
   "title": "We Would See Jesus",
   "path": "data/SDAH/494.json",
+  "svc": "76ee028709",
   "v": "85c5c9f595"
  },
  {
@@ -7154,6 +8830,8 @@
   "number": "500",
   "title": "Take Time to Be Holy",
   "path": "data/SDAH/500.json",
+  "sung": true,
+  "sv": "578b15bf92",
   "v": "9871b2fcd9"
  },
  {
@@ -7162,6 +8840,8 @@
   "number": "501",
   "title": "'Tis the Blessed Hour of Prayer",
   "path": "data/SDAH/501.json",
+  "sung": true,
+  "sv": "ee7e044e95",
   "v": "749eb4177d"
  },
  {
@@ -7170,6 +8850,8 @@
   "number": "502",
   "title": "Sun of My Soul",
   "path": "data/SDAH/502.json",
+  "sung": true,
+  "sv": "50fa8ede57",
   "v": "099c4436e7"
  },
  {
@@ -7194,6 +8876,7 @@
   "number": "505",
   "title": "I Need the Prayers",
   "path": "data/SDAH/505.json",
+  "svc": "813c3ce45b",
   "v": "157e850444"
  },
  {
@@ -7202,6 +8885,7 @@
   "number": "506",
   "title": "A Mighty Fortress",
   "path": "data/SDAH/506.json",
+  "svc": "34775ae035",
   "v": "4bc74e93c6"
  },
  {
@@ -7210,6 +8894,7 @@
   "number": "507",
   "title": "Moment by Moment",
   "path": "data/SDAH/507.json",
+  "svc": "0776aa1e08",
   "v": "c9b82d32e1"
  },
  {
@@ -7274,6 +8959,7 @@
   "number": "515",
   "title": "The Lord Is My Light",
   "path": "data/SDAH/515.json",
+  "svc": "badcadeff0",
   "v": "088af00b28"
  },
  {
@@ -7306,6 +8992,7 @@
   "number": "519",
   "title": "Give to the Winds Your Fears",
   "path": "data/SDAH/519.json",
+  "svc": "215f6c360d",
   "v": "a299969093"
  },
  {
@@ -7314,6 +9001,7 @@
   "number": "520",
   "title": "He Hideth My Soul",
   "path": "data/SDAH/520.json",
+  "svc": "cf0e7edc9c",
   "v": "6e04c41f31"
  },
  {
@@ -7370,6 +9058,7 @@
   "number": "527",
   "title": "From Every Stormy Wind",
   "path": "data/SDAH/527.json",
+  "svc": "e8f16accfb",
   "v": "25872d81e9"
  },
  {
@@ -7378,6 +9067,7 @@
   "number": "528",
   "title": "A Shelter in the Time of Storm",
   "path": "data/SDAH/528.json",
+  "svc": "a5f0c048a2",
   "v": "5103b30e9c"
  },
  {
@@ -7450,6 +9140,7 @@
   "number": "537",
   "title": "He Leadeth Me",
   "path": "data/SDAH/537.json",
+  "svc": "7e1fa77ca9",
   "v": "af69a91b52"
  },
  {
@@ -7498,6 +9189,7 @@
   "number": "543",
   "title": "Jesus, Friend of Little Children",
   "path": "data/SDAH/543.json",
+  "svc": "a769db2b46",
   "v": "82cd7a7435"
  },
  {
@@ -7514,6 +9206,7 @@
   "number": "545",
   "title": "Savior, Like a Shepherd",
   "path": "data/SDAH/545.json",
+  "svc": "7856f4fb7d",
   "v": "758dac6068"
  },
  {
@@ -7530,6 +9223,7 @@
   "number": "547",
   "title": "Be Thou My Vision",
   "path": "data/SDAH/547.json",
+  "svc": "d5c5754010",
   "v": "edc6e8a77f"
  },
  {
@@ -7578,6 +9272,7 @@
   "number": "553",
   "title": "Jesus, Guide Our Way",
   "path": "data/SDAH/553.json",
+  "svc": "4074a4608f",
   "v": "8f93f95816"
  },
  {
@@ -7754,6 +9449,7 @@
   "number": "575",
   "title": "Let Your Heart Be Broken",
   "path": "data/SDAH/575.json",
+  "svc": "efe0d9b8f4",
   "v": "153163c7c5"
  },
  {
@@ -7770,6 +9466,7 @@
   "number": "577",
   "title": "In the Heart of Jesus",
   "path": "data/SDAH/577.json",
+  "svc": "a82302531a",
   "v": "0ac6e4737c"
  },
  {
@@ -7890,6 +9587,9 @@
   "number": "592",
   "title": "Watchman, Tell Us of the Night",
   "path": "data/SDAH/592.json",
+  "sung": true,
+  "sv": "41addd68aa",
+  "svc": "4766a6e58b",
   "v": "f857c592f4"
  },
  {
@@ -7898,6 +9598,8 @@
   "number": "593",
   "title": "In Times Like These",
   "path": "data/SDAH/593.json",
+  "sung": true,
+  "sv": "6f459a3f52",
   "v": "96502eda22"
  },
  {
@@ -7906,6 +9608,8 @@
   "number": "594",
   "title": "Heir of the Kingdom",
   "path": "data/SDAH/594.json",
+  "sung": true,
+  "sv": "ff55c6118c",
   "v": "92cb4b441c"
  },
  {
@@ -7914,6 +9618,8 @@
   "number": "595",
   "title": "Let Every Lamp Be Burning",
   "path": "data/SDAH/595.json",
+  "sung": true,
+  "sv": "9f86cde2b9",
   "v": "4d57b84567"
  },
  {
@@ -7922,6 +9628,9 @@
   "number": "596",
   "title": "Look for the Waymarks",
   "path": "data/SDAH/596.json",
+  "sung": true,
+  "sv": "5937038259",
+  "svc": "58570392a0",
   "v": "d415326abd"
  },
  {
@@ -7930,6 +9639,8 @@
   "number": "597",
   "title": "Ye Servants of the Lord",
   "path": "data/SDAH/597.json",
+  "sung": true,
+  "sv": "8d6cfd54fc",
   "v": "e7a192d02d"
  },
  {
@@ -7938,6 +9649,9 @@
   "number": "598",
   "title": "Watch, Ye Saints",
   "path": "data/SDAH/598.json",
+  "sung": true,
+  "sv": "1f6f4cf715",
+  "svc": "3f30908e1b",
   "v": "a52419e24c"
  },
  {
@@ -7946,6 +9660,8 @@
   "number": "599",
   "title": "Rejoice, Rejoice, Believers",
   "path": "data/SDAH/599.json",
+  "sung": true,
+  "sv": "163ce1aa5d",
   "v": "1fc00b8759"
  },
  {
@@ -7954,6 +9670,8 @@
   "number": "600",
   "title": "Hold Fast Till I Come",
   "path": "data/SDAH/600.json",
+  "sung": true,
+  "sv": "46f3874f45",
   "v": "7376678b0f"
  },
  {
@@ -7962,6 +9680,8 @@
   "number": "601",
   "title": "Watchmen, on the Walls of Zion",
   "path": "data/SDAH/601.json",
+  "sung": true,
+  "sv": "2ebdc0a598",
   "v": "f8be581d31"
  },
  {
@@ -7970,6 +9690,8 @@
   "number": "602",
   "title": "O Brother, Be Faithful",
   "path": "data/SDAH/602.json",
+  "sung": true,
+  "sv": "432a70bc2f",
   "v": "60cca9df87"
  },
  {
@@ -7978,6 +9700,8 @@
   "number": "603",
   "title": "Christian, Seek Not Repose",
   "path": "data/SDAH/603.json",
+  "sung": true,
+  "sv": "b5eedae6f1",
   "v": "08b39dc703"
  },
  {
@@ -7986,6 +9710,8 @@
   "number": "604",
   "title": "We Know Not the Hour",
   "path": "data/SDAH/604.json",
+  "sung": true,
+  "sv": "d6dbf9089c",
   "v": "298167575d"
  },
  {
@@ -7994,6 +9720,8 @@
   "number": "605",
   "title": "My Soul, Be on Thy Guard",
   "path": "data/SDAH/605.json",
+  "sung": true,
+  "sv": "afdad4f3d2",
   "v": "9d99b0649c"
  },
  {
@@ -8002,6 +9730,8 @@
   "number": "606",
   "title": "Once to Every Man and Nation",
   "path": "data/SDAH/606.json",
+  "sung": true,
+  "sv": "819e35a263",
   "v": "fe6c95dd5a"
  },
  {
@@ -8010,6 +9740,8 @@
   "number": "607",
   "title": "God of Grace and God of Glory",
   "path": "data/SDAH/607.json",
+  "sung": true,
+  "sv": "f13b82e4ca",
   "v": "13484e61c3"
  },
  {
@@ -8018,6 +9750,8 @@
   "number": "608",
   "title": "Faith Is the Victory",
   "path": "data/SDAH/608.json",
+  "sung": true,
+  "sv": "aeb5b382a1",
   "v": "3257f7979d"
  },
  {
@@ -8026,6 +9760,8 @@
   "number": "609",
   "title": "Am I a Soldier of the Cross?",
   "path": "data/SDAH/609.json",
+  "sung": true,
+  "sv": "6a9eadc7e6",
   "v": "82b6dcd3b6"
  },
  {
@@ -8034,6 +9770,8 @@
   "number": "610",
   "title": "Stand Like the Brave",
   "path": "data/SDAH/610.json",
+  "sung": true,
+  "sv": "35a95997f5",
   "v": "7d38d4da94"
  },
  {
@@ -8042,6 +9780,8 @@
   "number": "611",
   "title": "Awake, My Soul!",
   "path": "data/SDAH/611.json",
+  "sung": true,
+  "sv": "cb2e423129",
   "v": "9b29f80137"
  },
  {
@@ -8050,6 +9790,8 @@
   "number": "612",
   "title": "Onward, Christian Soldiers!",
   "path": "data/SDAH/612.json",
+  "sung": true,
+  "sv": "5f9c93cba1",
   "v": "7a4c89e82b"
  },
  {
@@ -8058,6 +9800,8 @@
   "number": "613",
   "title": "Fight the Good Fight",
   "path": "data/SDAH/613.json",
+  "sung": true,
+  "sv": "47fd493e99",
   "v": "08dd339fac"
  },
  {
@@ -8066,6 +9810,8 @@
   "number": "614",
   "title": "Sound the Battle Cry",
   "path": "data/SDAH/614.json",
+  "sung": true,
+  "sv": "1fe8379ccf",
   "v": "d65631a31a"
  },
  {
@@ -8074,6 +9820,8 @@
   "number": "615",
   "title": "Rise Up, O Church of God",
   "path": "data/SDAH/615.json",
+  "sung": true,
+  "sv": "98d30b89bc",
   "v": "b6109746ac"
  },
  {
@@ -8082,6 +9830,8 @@
   "number": "616",
   "title": "Soldiers of Christ, Arise",
   "path": "data/SDAH/616.json",
+  "sung": true,
+  "sv": "4e7841b767",
   "v": "d9b8564ed2"
  },
  {
@@ -8090,6 +9840,8 @@
   "number": "617",
   "title": "We Are Living, We Are Dwelling",
   "path": "data/SDAH/617.json",
+  "sung": true,
+  "sv": "379185f4dc",
   "v": "ae5369e8e5"
  },
  {
@@ -8098,6 +9850,8 @@
   "number": "618",
   "title": "Stand Up! Stand Up for Jesus!",
   "path": "data/SDAH/618.json",
+  "sung": true,
+  "sv": "d241459bb4",
   "v": "bb44bb0c0c"
  },
  {
@@ -8106,6 +9860,8 @@
   "number": "619",
   "title": "Lead On, O King Eternal",
   "path": "data/SDAH/619.json",
+  "sung": true,
+  "sv": "1529a0c730",
   "v": "4defe50c15"
  },
  {
@@ -8114,6 +9870,8 @@
   "number": "620",
   "title": "On Jordan's Stormy Banks",
   "path": "data/SDAH/620.json",
+  "sung": true,
+  "sv": "880bdbe675",
   "v": "9a4b311f8e"
  },
  {
@@ -8122,6 +9880,8 @@
   "number": "621",
   "title": "Gracious Father, Guard Thy Children",
   "path": "data/SDAH/621.json",
+  "sung": true,
+  "sv": "6130cb9c56",
   "v": "e95bcf5d54"
  },
  {
@@ -8130,6 +9890,8 @@
   "number": "622",
   "title": "Come, Come, Ye Saints",
   "path": "data/SDAH/622.json",
+  "sung": true,
+  "sv": "482a5a1b35",
   "v": "38235a7d8b"
  },
  {
@@ -8138,6 +9900,8 @@
   "number": "623",
   "title": "I Will Follow Thee",
   "path": "data/SDAH/623.json",
+  "sung": true,
+  "sv": "e05006f40b",
   "v": "34f16ccc3f"
  },
  {
@@ -8146,6 +9910,8 @@
   "number": "624",
   "title": "I Want Jesus to Walk With Me",
   "path": "data/SDAH/624.json",
+  "sung": true,
+  "sv": "81d90a5d88",
   "v": "e15a49c4da"
  },
  {
@@ -8154,6 +9920,8 @@
   "number": "625",
   "title": "Higher Ground",
   "path": "data/SDAH/625.json",
+  "sung": true,
+  "sv": "af5382f754",
   "v": "021045eda9"
  },
  {
@@ -8162,6 +9930,8 @@
   "number": "626",
   "title": "In a Little While We're Going Home",
   "path": "data/SDAH/626.json",
+  "sung": true,
+  "sv": "0c9a9ec1f5",
   "v": "b3766dd590"
  },
  {
@@ -8170,6 +9940,8 @@
   "number": "627",
   "title": "Jacob's Ladder",
   "path": "data/SDAH/627.json",
+  "sung": true,
+  "sv": "869ea6c8c5",
   "v": "2c424e983f"
  },
  {
@@ -8178,6 +9950,8 @@
   "number": "628",
   "title": "As Jacob With Travel Was Weary",
   "path": "data/SDAH/628.json",
+  "sung": true,
+  "sv": "e852dc8266",
   "v": "0ebdc2a911"
  },
  {
@@ -8186,6 +9960,8 @@
   "number": "629",
   "title": "O Happy Band of Pilgrims",
   "path": "data/SDAH/629.json",
+  "sung": true,
+  "sv": "7588fe9e93",
   "v": "72a0b45614"
  },
  {
@@ -8194,6 +9970,8 @@
   "number": "630",
   "title": "Rise, My Soul, and Stretch Thy Wings",
   "path": "data/SDAH/630.json",
+  "sung": true,
+  "sv": "680bfb4b67",
   "v": "ac74d2dc28"
  },
  {
@@ -8202,6 +9980,8 @@
   "number": "631",
   "title": "When on Life a Darkness Falls",
   "path": "data/SDAH/631.json",
+  "sung": true,
+  "sv": "45ef0928ec",
   "v": "bc7e9d9664"
  },
  {
@@ -8210,6 +9990,8 @@
   "number": "632",
   "title": "Until Then",
   "path": "data/SDAH/632.json",
+  "sung": true,
+  "sv": "07f61f7e36",
   "v": "5ddf4b0c60"
  },
  {
@@ -8218,6 +10000,8 @@
   "number": "633",
   "title": "When We All Get to Heaven",
   "path": "data/SDAH/633.json",
+  "sung": true,
+  "sv": "3ed295cedc",
   "v": "14ccbc6c92"
  },
  {
@@ -8226,6 +10010,8 @@
   "number": "634",
   "title": "Come, All Christians, Be Committed",
   "path": "data/SDAH/634.json",
+  "sung": true,
+  "sv": "6dc33fa6cf",
   "v": "6533a9246d"
  },
  {
@@ -8234,6 +10020,8 @@
   "number": "635",
   "title": "Lord of All Good",
   "path": "data/SDAH/635.json",
+  "sung": true,
+  "sv": "beb5c666c9",
   "v": "db4ec9a76d"
  },
  {
@@ -8242,6 +10030,8 @@
   "number": "636",
   "title": "God, Whose Giving Knows No Ending",
   "path": "data/SDAH/636.json",
+  "sung": true,
+  "sv": "37afbc7dd3",
   "v": "4656cd4d2e"
  },
  {
@@ -8250,6 +10040,8 @@
   "number": "637",
   "title": "Son of God, Eternal Savior",
   "path": "data/SDAH/637.json",
+  "sung": true,
+  "sv": "133ee4e020",
   "v": "eb510a9fac"
  },
  {
@@ -8258,6 +10050,8 @@
   "number": "638",
   "title": "The Wise May Bring Their Learning",
   "path": "data/SDAH/638.json",
+  "sung": true,
+  "sv": "1902df9c99",
   "v": "7abf9a0269"
  },
  {
@@ -8266,6 +10060,8 @@
   "number": "639",
   "title": "A Diligent and Grateful Heart",
   "path": "data/SDAH/639.json",
+  "sung": true,
+  "sv": "15bda96776",
   "v": "3e2d00bd3e"
  },
  {
@@ -8274,6 +10070,8 @@
   "number": "640",
   "title": "For Beauty of Meadows",
   "path": "data/SDAH/640.json",
+  "sung": true,
+  "sv": "ae462df175",
   "v": "cb5175d6bb"
  },
  {
@@ -8282,6 +10080,8 @@
   "number": "641",
   "title": "God in His Love for Us",
   "path": "data/SDAH/641.json",
+  "sung": true,
+  "sv": "efd4387400",
   "v": "22caf117c5"
  },
  {
@@ -8290,6 +10090,8 @@
   "number": "642",
   "title": "We Praise Thee With Our Minds",
   "path": "data/SDAH/642.json",
+  "sung": true,
+  "sv": "a207936ede",
   "v": "96664b3307"
  },
  {
@@ -8298,6 +10100,8 @@
   "number": "643",
   "title": "Father, Who on Us Do Shower",
   "path": "data/SDAH/643.json",
+  "sung": true,
+  "sv": "4a3bd0e379",
   "v": "74e179a0e3"
  },
  {
@@ -8306,6 +10110,8 @@
   "number": "644",
   "title": "O God, Whose Will Is Life and Good",
   "path": "data/SDAH/644.json",
+  "sung": true,
+  "sv": "fc68d6987c",
   "v": "1379e65d08"
  },
  {
@@ -8314,6 +10120,8 @@
   "number": "645",
   "title": "God of Our Fathers",
   "path": "data/SDAH/645.json",
+  "sung": true,
+  "sv": "20a64d3b46",
   "v": "4bbe3a7f53"
  },
  {
@@ -8322,6 +10130,8 @@
   "number": "646",
   "title": "To the Name That Brings Salvation",
   "path": "data/SDAH/646.json",
+  "sung": true,
+  "sv": "665efc9c0a",
   "v": "c705bc2e03"
  },
  {
@@ -8330,6 +10140,8 @@
   "number": "647",
   "title": "Mine Eyes Have Seen the Glory",
   "path": "data/SDAH/647.json",
+  "sung": true,
+  "sv": "c6702e6386",
   "v": "b853298dda"
  },
  {
@@ -8338,6 +10150,8 @@
   "number": "648",
   "title": "I Vow to Thee, My Country",
   "path": "data/SDAH/648.json",
+  "sung": true,
+  "sv": "23293f68a9",
   "v": "4ad6e18eb5"
  },
  {
@@ -8346,6 +10160,8 @@
   "number": "649",
   "title": "Lord, While for All Mankind",
   "path": "data/SDAH/649.json",
+  "sung": true,
+  "sv": "2dfc63ce96",
   "v": "c89b2375af"
  },
  {
@@ -8354,6 +10170,8 @@
   "number": "650",
   "title": "Our Father, by Whose Name",
   "path": "data/SDAH/650.json",
+  "sung": true,
+  "sv": "e274380cc4",
   "v": "6c67bbc995"
  },
  {
@@ -8362,6 +10180,8 @@
   "number": "651",
   "title": "Happy the Home That Welcomes You",
   "path": "data/SDAH/651.json",
+  "sung": true,
+  "sv": "98384e2604",
   "v": "749b51c577"
  },
  {
@@ -8370,6 +10190,8 @@
   "number": "652",
   "title": "Love at Home",
   "path": "data/SDAH/652.json",
+  "sung": true,
+  "sv": "720227668b",
   "v": "7c9cdafa85"
  },
  {
@@ -8378,6 +10200,8 @@
   "number": "653",
   "title": "Lead Them, My God, to Thee",
   "path": "data/SDAH/653.json",
+  "sung": true,
+  "sv": "9092483769",
   "v": "874fe69c5d"
  },
  {
@@ -8386,6 +10210,8 @@
   "number": "654",
   "title": "Lord, Bless Our Homes",
   "path": "data/SDAH/654.json",
+  "sung": true,
+  "sv": "82f6c9711a",
   "v": "424d10e229"
  },
  {
@@ -8394,6 +10220,8 @@
   "number": "655",
   "title": "Happy the Home",
   "path": "data/SDAH/655.json",
+  "sung": true,
+  "sv": "4f48bdb350",
   "v": "a10cbf46cf"
  },
  {
@@ -8402,6 +10230,8 @@
   "number": "656",
   "title": "O Perfect Love",
   "path": "data/SDAH/656.json",
+  "sung": true,
+  "sv": "f175b82b56",
   "v": "c161d652ab"
  },
  {
@@ -8410,6 +10240,8 @@
   "number": "657",
   "title": "O God, From Whom Mankind",
   "path": "data/SDAH/657.json",
+  "sung": true,
+  "sv": "ccbb1f1d37",
   "v": "9f5c59fc47"
  },
  {
@@ -8418,6 +10250,8 @@
   "number": "658",
   "title": "Heavenly Father, Hear Our Prayer",
   "path": "data/SDAH/658.json",
+  "sung": true,
+  "sv": "f3614e4556",
   "v": "f2a34c9069"
  },
  {
@@ -8426,6 +10260,8 @@
   "number": "659",
   "title": "May the Grace of Christ Our Savior",
   "path": "data/SDAH/659.json",
+  "sung": true,
+  "sv": "d632e5f4bf",
   "v": "655405eee0"
  },
  {
@@ -8434,6 +10270,8 @@
   "number": "660",
   "title": "Glory Be to the Father",
   "path": "data/SDAH/660.json",
+  "sung": true,
+  "sv": "1a701ac628",
   "v": "1b676fb3a7"
  },
  {
@@ -8442,6 +10280,8 @@
   "number": "661",
   "title": "Holy, Holy, Holy",
   "path": "data/SDAH/661.json",
+  "sung": true,
+  "sv": "611d2c223e",
   "v": "7a8017cb73"
  },
  {
@@ -8450,6 +10290,8 @@
   "number": "662",
   "title": "Let All Mortal Flesh Keep Silence",
   "path": "data/SDAH/662.json",
+  "sung": true,
+  "sv": "d780781a41",
   "v": "9bd7a94d1b"
  },
  {
@@ -8458,6 +10300,8 @@
   "number": "663",
   "title": "Amens",
   "path": "data/SDAH/663.json",
+  "sung": true,
+  "sv": "b0bd450e1b",
   "v": "258a77aa93"
  },
  {
@@ -8466,6 +10310,8 @@
   "number": "664",
   "title": "Sevenfold Amen",
   "path": "data/SDAH/664.json",
+  "sung": true,
+  "sv": "c0987fbd9e",
   "v": "29e9f04674"
  },
  {
@@ -8474,6 +10320,8 @@
   "number": "665",
   "title": "All Things Come of Thee",
   "path": "data/SDAH/665.json",
+  "sung": true,
+  "sv": "d0f270e0c9",
   "v": "f755d76d69"
  },
  {
@@ -8482,6 +10330,8 @@
   "number": "666",
   "title": "Cast Thy Burden Upon the Lord",
   "path": "data/SDAH/666.json",
+  "sung": true,
+  "sv": "f1d0d4cd4e",
   "v": "815fd40490"
  },
  {
@@ -8490,6 +10340,8 @@
   "number": "667",
   "title": "Lord, Bless Thy Word to Every Heart",
   "path": "data/SDAH/667.json",
+  "sung": true,
+  "sv": "ec96a4d4d3",
   "v": "a84dc51b69"
  },
  {
@@ -8498,6 +10350,8 @@
   "number": "668",
   "title": "O Thou Who Hearest",
   "path": "data/SDAH/668.json",
+  "sung": true,
+  "sv": "963c8f14df",
   "v": "410b11432c"
  },
  {
@@ -8506,6 +10360,8 @@
   "number": "669",
   "title": "The Lord Bless You and Keep You",
   "path": "data/SDAH/669.json",
+  "sung": true,
+  "sv": "3c64b163de",
   "v": "d7f46ad253"
  },
  {
@@ -8514,6 +10370,8 @@
   "number": "670",
   "title": "We Give Thee But Thine Own",
   "path": "data/SDAH/670.json",
+  "sung": true,
+  "sv": "bf07fe3567",
   "v": "6962000150"
  },
  {
@@ -8522,6 +10380,8 @@
   "number": "671",
   "title": "As We Come to You in Prayer",
   "path": "data/SDAH/671.json",
+  "sung": true,
+  "sv": "981aecb023",
   "v": "fa535b213c"
  },
  {
@@ -8530,6 +10390,8 @@
   "number": "672",
   "title": "Spirit of the Living God",
   "path": "data/SDAH/672.json",
+  "sung": true,
+  "sv": "aafa399920",
   "v": "e94fbd7105"
  },
  {
@@ -8538,6 +10400,8 @@
   "number": "673",
   "title": "May God Be With You",
   "path": "data/SDAH/673.json",
+  "sung": true,
+  "sv": "409bc50575",
   "v": "6d6188d6d6"
  },
  {
@@ -8546,6 +10410,8 @@
   "number": "674",
   "title": "Shalom",
   "path": "data/SDAH/674.json",
+  "sung": true,
+  "sv": "2191a95cb6",
   "v": "00b614106c"
  },
  {
@@ -8554,6 +10420,8 @@
   "number": "675",
   "title": "May the Lord Bless and Keep You",
   "path": "data/SDAH/675.json",
+  "sung": true,
+  "sv": "e4b5e301b9",
   "v": "91ae969ad9"
  },
  {
@@ -8562,6 +10430,8 @@
   "number": "676",
   "title": "Thy Word Is a Lantern",
   "path": "data/SDAH/676.json",
+  "sung": true,
+  "sv": "a82554f109",
   "v": "3380d9e1d9"
  },
  {
@@ -8570,6 +10440,8 @@
   "number": "677",
   "title": "Heavenly Father, to Thee We Pray",
   "path": "data/SDAH/677.json",
+  "sung": true,
+  "sv": "6319fb1a42",
   "v": "2426ebba45"
  },
  {
@@ -8578,6 +10450,8 @@
   "number": "678",
   "title": "God Be in My Head",
   "path": "data/SDAH/678.json",
+  "sung": true,
+  "sv": "604d3787bf",
   "v": "78fddb6609"
  },
  {
@@ -8586,6 +10460,8 @@
   "number": "679",
   "title": "God Be in My Head",
   "path": "data/SDAH/679.json",
+  "sung": true,
+  "sv": "7d2bb26b0c",
   "v": "7d4befe455"
  },
  {
@@ -8594,6 +10470,8 @@
   "number": "680",
   "title": "Holy Spirit, Hear Us",
   "path": "data/SDAH/680.json",
+  "sung": true,
+  "sv": "196ce44e06",
   "v": "ed118afd83"
  },
  {
@@ -8602,6 +10480,8 @@
   "number": "681",
   "title": "This Is the Day the Lord Hath Made",
   "path": "data/SDAH/681.json",
+  "sung": true,
+  "sv": "51287a2e17",
   "v": "46562f16db"
  },
  {
@@ -8610,6 +10490,8 @@
   "number": "682",
   "title": "As You Have Promised, Lord",
   "path": "data/SDAH/682.json",
+  "sung": true,
+  "sv": "15248522d7",
   "v": "2b82ffc281"
  },
  {
@@ -8618,6 +10500,8 @@
   "number": "683",
   "title": "Jesus, Stand Among Us",
   "path": "data/SDAH/683.json",
+  "sung": true,
+  "sv": "d70d8b821c",
   "v": "81f57fb781"
  },
  {
@@ -8626,6 +10510,8 @@
   "number": "684",
   "title": "Hear Our Prayer, O Lord",
   "path": "data/SDAH/684.json",
+  "sung": true,
+  "sv": "211a202c34",
   "v": "51c9a900ce"
  },
  {
@@ -8634,6 +10520,9 @@
   "number": "685",
   "title": "Cause Me to Hear",
   "path": "data/SDAH/685.json",
+  "sung": true,
+  "sv": "4601c60dfe",
+  "svc": "6eb39bfcc4",
   "v": "e7ddfad333"
  },
  {
@@ -8642,6 +10531,8 @@
   "number": "686",
   "title": "Bless Thou the Gifts",
   "path": "data/SDAH/686.json",
+  "sung": true,
+  "sv": "1d33bb4433",
   "v": "674a554d3e"
  },
  {
@@ -8650,6 +10541,8 @@
   "number": "687",
   "title": "The Lord Is in His Holy Temple",
   "path": "data/SDAH/687.json",
+  "sung": true,
+  "sv": "272c7354f3",
   "v": "8ffba4015c"
  },
  {
@@ -8658,6 +10551,8 @@
   "number": "688",
   "title": "Surely, Surely",
   "path": "data/SDAH/688.json",
+  "sung": true,
+  "sv": "0c2494fb21",
   "v": "145ebeb1bd"
  },
  {
@@ -8666,6 +10561,8 @@
   "number": "689",
   "title": "Day by Day, Dear Lord",
   "path": "data/SDAH/689.json",
+  "sung": true,
+  "sv": "a782934a92",
   "v": "0b9e3d5761"
  },
  {
@@ -8674,6 +10571,8 @@
   "number": "690",
   "title": "Dismiss Us, Lord, With Blessing",
   "path": "data/SDAH/690.json",
+  "sung": true,
+  "sv": "01de07a8f2",
   "v": "2ca84db94e"
  },
  {
@@ -8682,6 +10581,8 @@
   "number": "691",
   "title": "Lead Me, Lord",
   "path": "data/SDAH/691.json",
+  "sung": true,
+  "sv": "71b7e24304",
   "v": "22b01e475c"
  },
  {
@@ -8690,6 +10591,8 @@
   "number": "692",
   "title": "The Lord Is in His Holy Temple",
   "path": "data/SDAH/692.json",
+  "sung": true,
+  "sv": "abd6d70c73",
   "v": "5b57759b03"
  },
  {
@@ -8698,6 +10601,8 @@
   "number": "693",
   "title": "Almighty Father",
   "path": "data/SDAH/693.json",
+  "sung": true,
+  "sv": "4183e35b73",
   "v": "d73e2cd829"
  },
  {
@@ -8722,6 +10627,8 @@
   "number": "1",
   "title": "Nyasachwa Man Malo",
   "path": "data/WN/1.json",
+  "sung": true,
+  "sv": "6e7b129409",
   "v": "7dc7c21904"
  },
  {
@@ -8730,6 +10637,8 @@
   "number": "3",
   "title": "Duong' Obed Ni Wuonwa",
   "path": "data/WN/3.json",
+  "sung": true,
+  "sv": "570d369b29",
   "v": "82d690555d",
   "english": "To God Be the Glory"
  },
@@ -8739,6 +10648,8 @@
   "number": "4",
   "title": "Nying Yesu Mondo Yudi Pak",
   "path": "data/WN/4.json",
+  "sung": true,
+  "sv": "469dc72449",
   "v": "868a813e68",
   "english": "All Hail the Power of Jesus' Name"
  },
@@ -8748,6 +10659,8 @@
   "number": "5",
   "title": "To Pakuru Ruoth",
   "path": "data/WN/5.json",
+  "sung": true,
+  "sv": "c6efc44bcc",
   "v": "0a3a799029",
   "english": "O Worship the King"
  },
@@ -8757,6 +10670,8 @@
   "number": "9",
   "title": "Jachwechna gi Ruodha",
   "path": "data/WN/9.json",
+  "sung": true,
+  "sv": "caf156e78c",
   "v": "6318677ef8",
   "english": "My Maker and My King"
  },
@@ -8766,6 +10681,8 @@
   "number": "10",
   "title": "Kristo In Wuon Ng'wono Duto",
   "path": "data/WN/10.json",
+  "sung": true,
+  "sv": "ccf0df8db1",
   "v": "a9ef580915",
   "english": "Come, Thou Fount of Every Blessing"
  },
@@ -8775,6 +10692,8 @@
   "number": "12",
   "title": "Ji Duto Mondo Wer Wendni",
   "path": "data/WN/12.json",
+  "sung": true,
+  "sv": "0578ca3950",
   "v": "cbbfef3f2c",
   "english": "Blessed Be the Name"
  },
@@ -8784,6 +10703,8 @@
   "number": "15",
   "title": "Wuo Gi Chunya",
   "path": "data/WN/15.json",
+  "sung": true,
+  "sv": "8932a6db65",
   "v": "7edfe0f106",
   "english": "Speak to My Soul, Dear Jesus"
  },
@@ -8793,6 +10714,8 @@
   "number": "19",
   "title": "Kama Yesu Chon Notho E Yath",
   "path": "data/WN/19.json",
+  "sung": true,
+  "sv": "81096a1dd2",
   "v": "13b3ba2d9e",
   "english": "Glory to His Name"
  },
@@ -8802,6 +10725,8 @@
   "number": "21",
   "title": "Adwaro Ket Kod Yesu",
   "path": "data/WN/21.json",
+  "sung": true,
+  "sv": "7b471ca978",
   "v": "dfea29efea"
  },
  {
@@ -8810,6 +10735,8 @@
   "number": "23",
   "title": "Aheri, Aheri",
   "path": "data/WN/23.json",
+  "sung": true,
+  "sv": "a4c427a666",
   "v": "7c774c3d43",
   "english": "I Love Thee"
  },
@@ -8819,6 +10746,8 @@
   "number": "26",
   "title": "Ji Duto Te Mondo Giwer",
   "path": "data/WN/26.json",
+  "sung": true,
+  "sv": "c6dfbc7d98",
   "v": "7a273fd4bd",
   "english": "O for a Thousand Tongues to Sing"
  },
@@ -8828,6 +10757,8 @@
   "number": "29",
   "title": "Yesu Jakwath Moheroa",
   "path": "data/WN/29.json",
+  "sung": true,
+  "sv": "62bce233bc",
   "v": "8df6919f6b"
  },
  {
@@ -8836,6 +10767,8 @@
   "number": "33",
   "title": "Wuonwa, Gonywa Gi Gweth Mari",
   "path": "data/WN/33.json",
+  "sung": true,
+  "sv": "1e8eba851c",
   "v": "a52279dfdb",
   "english": "Lord, Dismiss Us With Thy Blessing"
  },
@@ -8845,6 +10778,8 @@
   "number": "36",
   "title": "Ruoth Yesu, Nithona",
   "path": "data/WN/36.json",
+  "sung": true,
+  "sv": "2f0d1cd552",
   "v": "92dcd6e1bd",
   "english": "My Jesus, I Love Thee"
  },
@@ -8854,6 +10789,8 @@
   "number": "38",
   "title": "Anawer Hera Yesu",
   "path": "data/WN/38.json",
+  "sung": true,
+  "sv": "95315ec250",
   "v": "476ef8e216",
   "english": "I Will Sing of Jesus' Love"
  },
@@ -8863,6 +10800,8 @@
   "number": "39",
   "title": "Nitie Wer Mamit E Dhoga",
   "path": "data/WN/39.json",
+  "sung": true,
+  "sv": "3abaa21a91",
   "v": "b512356308",
   "english": "Since I Have Been Redeemed"
  },
@@ -8872,6 +10811,8 @@
   "number": "43",
   "title": "Adwaro Ng'eyo Wach Yesu",
   "path": "data/WN/43.json",
+  "sung": true,
+  "sv": "821b454805",
   "v": "128ca759de",
   "english": "Tell Me the Story of Jesus"
  },
@@ -8881,6 +10822,8 @@
   "number": "44",
   "title": "Ang'eyo Yesu Osewara",
   "path": "data/WN/44.json",
+  "sung": true,
+  "sv": "a9c1b425fd",
   "v": "b0fe0b0abe",
   "english": "Redeemed! How I Love to Proclaim It"
  },
@@ -8890,6 +10833,8 @@
   "number": "48",
   "title": "Yesu Kristo Oberna Ngang'",
   "path": "data/WN/48.json",
+  "sung": true,
+  "sv": "8fd2e0e6ed",
   "v": "2799543e19",
   "english": "Jesus Is All the World to Me"
  },
@@ -8899,6 +10844,8 @@
   "number": "50",
   "title": "Kristo Obed Misango Mar Golo Richo",
   "path": "data/WN/50.json",
+  "sung": true,
+  "sv": "659608a244",
   "v": "4439b5e1f0",
   "english": "What a Wonderful Savior!"
  },
@@ -8908,6 +10855,8 @@
   "number": "55",
   "title": "Awero Teko mar Nyasaye",
   "path": "data/WN/55.json",
+  "sung": true,
+  "sv": "dd3150e8b0",
   "v": "5592d321a2",
   "english": "I Sing the Mighty Power of God"
  },
@@ -8917,6 +10866,8 @@
   "number": "56",
   "title": "Ruoth Awinjo Wach Mar Gwethni",
   "path": "data/WN/56.json",
+  "sung": true,
+  "sv": "e80135d6e3",
   "v": "c544a04781",
   "english": "Even Me"
  },
@@ -8926,6 +10877,8 @@
   "number": "57",
   "title": "Roho Mar Nyasaye Ibina",
   "path": "data/WN/57.json",
+  "sung": true,
+  "sv": "a3eb55590c",
   "v": "2dcecd2146",
   "english": "Fill Me Now"
  },
@@ -8935,6 +10888,8 @@
   "number": "58",
   "title": "Muya Maler Jatendwa",
   "path": "data/WN/58.json",
+  "sung": true,
+  "sv": "97f00b4e3f",
   "v": "b629e0d778",
   "english": "Holy Spirit, Faithful Guide"
  },
@@ -8944,6 +10899,8 @@
   "number": "61",
   "title": "Osiep Manade En Mor Manade",
   "path": "data/WN/61.json",
+  "sung": true,
+  "sv": "3c25a45907",
   "v": "f3f6671524",
   "english": "Leaning on the Everlasting Arms"
  },
@@ -8953,6 +10910,8 @@
   "number": "62",
   "title": "Onge Osiep Moro Kaka Yesu",
   "path": "data/WN/62.json",
+  "sung": true,
+  "sv": "c49d22ba26",
   "v": "1136af59c8",
   "english": "No, Not One"
  },
@@ -8962,6 +10921,8 @@
   "number": "64",
   "title": "Kabedo E Tiend Ruoth Yesu",
   "path": "data/WN/64.json",
+  "sung": true,
+  "sv": "d6d9f6e564",
   "v": "624b919736",
   "english": "Sitting at the Feet of Jesus"
  },
@@ -8971,6 +10932,8 @@
   "number": "66",
   "title": "Aseyudo Osiep Maber",
   "path": "data/WN/66.json",
+  "sung": true,
+  "sv": "862b0ca7b5",
   "v": "61b8ecf83f",
   "english": "I've Found a Friend"
  },
@@ -8980,6 +10943,8 @@
   "number": "67",
   "title": "Nyasachwa Mondo Obed Kodu",
   "path": "data/WN/67.json",
+  "sung": true,
+  "sv": "b39c3132ff",
   "v": "f26c7d1044",
   "english": "God Be With You"
  },
@@ -8989,6 +10954,8 @@
   "number": "69",
   "title": "Puonja Injili Lilo",
   "path": "data/WN/69.json",
+  "sung": true,
+  "sv": "c93a801236",
   "v": "053db1374f",
   "english": "Tell Me the Old, Old Story"
  },
@@ -8998,6 +10965,8 @@
   "number": "70",
   "title": "Nyasaye Wachokore",
   "path": "data/WN/70.json",
+  "sung": true,
+  "sv": "1dd08195c9",
   "v": "ddaf12b1f1",
   "english": "Blest Be the Tie That Binds"
  },
@@ -9007,6 +10976,8 @@
   "number": "71",
   "title": "Puonja Wach Biblos",
   "path": "data/WN/71.json",
+  "sung": true,
+  "sv": "669f0752ea",
   "v": "89d8256e58",
   "english": "Give Me the Bible"
  },
@@ -9016,6 +10987,8 @@
   "number": "73",
   "title": "Ahero Nyiso Weche",
   "path": "data/WN/73.json",
+  "sung": true,
+  "sv": "5da4ccea00",
   "v": "abf8e8a518",
   "english": "I Love to Tell the Story"
  },
@@ -9025,6 +10998,8 @@
   "number": "75",
   "title": "Adwaro Ngeyo Wach Yesu",
   "path": "data/WN/75.json",
+  "sung": true,
+  "sv": "5587c9bff7",
   "v": "95aaf6fa79",
   "english": "More About Jesus"
  },
@@ -9034,6 +11009,8 @@
   "number": "76",
   "title": "Chwoyo Ndalo Duto",
   "path": "data/WN/76.json",
+  "sung": true,
+  "sv": "601e43bf19",
   "v": "ed25652672",
   "english": "Bringing in the Sheaves"
  },
@@ -9043,6 +11020,8 @@
   "number": "77",
   "title": "Kony Jo Madwaro Tho",
   "path": "data/WN/77.json",
+  "sung": true,
+  "sv": "62fe9955b2",
   "v": "c55fc98de6",
   "english": "Rescue the Perishing"
  },
@@ -9052,6 +11031,8 @@
   "number": "78",
   "title": "Aparo Tinende",
   "path": "data/WN/78.json",
+  "sung": true,
+  "sv": "d314eebf88",
   "v": "41bd72a136",
   "english": "Will There Be Any Stars in My Crown?"
  },
@@ -9061,6 +11042,8 @@
   "number": "83",
   "title": "Yesu Osiep Malongo",
   "path": "data/WN/83.json",
+  "sung": true,
+  "sv": "23fbd6bc78",
   "v": "847d28d3ea",
   "english": "My Lord and I"
  },
@@ -9070,6 +11053,8 @@
   "number": "87",
   "title": "Jokeyo Ni Kanye",
   "path": "data/WN/87.json",
+  "sung": true,
+  "sv": "6f680fef95",
   "v": "0fda392549",
   "english": "O Where Are the Reapers?"
  },
@@ -9079,6 +11064,8 @@
   "number": "95",
   "title": "Jarit Go Tung' Mar Injili",
   "path": "data/WN/95.json",
+  "sung": true,
+  "sv": "4c59c6de51",
   "v": "cdfcb81663",
   "english": "Watchman, Blow the Gospel Trumpet"
  },
@@ -9088,6 +11075,8 @@
   "number": "101",
   "title": "Chunguru Matek",
   "path": "data/WN/101.json",
+  "sung": true,
+  "sv": "b0062461fd",
   "v": "8ba079bbaf"
  },
  {
@@ -9096,6 +11085,8 @@
   "number": "102",
   "title": "Rituru, Lemuru",
   "path": "data/WN/102.json",
+  "sung": true,
+  "sv": "88493ffce4",
   "v": "26702e2ab8"
  },
  {
@@ -9104,6 +11095,8 @@
   "number": "110",
   "title": "Kristo En Jatelowa",
   "path": "data/WN/110.json",
+  "sung": true,
+  "sv": "7a53798fbb",
   "v": "5bc3ed02e9"
  },
  {
@@ -9112,6 +11105,8 @@
   "number": "111",
   "title": "Wakwayi, Ruoth, Kuom Tekoni",
   "path": "data/WN/111.json",
+  "sung": true,
+  "sv": "fbe580f2e8",
   "v": "60bfc4c7a3",
   "english": "O for That Flame of Living Fire"
  },
@@ -9121,6 +11116,8 @@
   "number": "112",
   "title": "Keduru Jo Ka Yesu",
   "path": "data/WN/112.json",
+  "sung": true,
+  "sv": "2e2b6ad9ad",
   "v": "fa78eb8bc7",
   "english": "Soldiers of Christ, Arise"
  },
@@ -9130,6 +11127,8 @@
   "number": "116",
   "title": "Biuru, Jo Nyasaye",
   "path": "data/WN/116.json",
+  "sung": true,
+  "sv": "78c58bac04",
   "v": "3633a0b88e",
   "english": "Marching to Zion"
  },
@@ -9139,6 +11138,8 @@
   "number": "119",
   "title": "Sabato Mari, Ruoth",
   "path": "data/WN/119.json",
+  "sung": true,
+  "sv": "5dc2c24e97",
   "v": "5e86e34ba1",
   "english": "We Love Thy Sabbath, Lord"
  },
@@ -9148,6 +11149,8 @@
   "number": "123",
   "title": "In Skul Marwa Mar Sabato",
   "path": "data/WN/123.json",
+  "sung": true,
+  "sv": "4d37738afc",
   "v": "47f65f85b7"
  },
  {
@@ -9156,6 +11159,8 @@
   "number": "133",
   "title": "Bedi Kod An",
   "path": "data/WN/133.json",
+  "sung": true,
+  "sv": "b0e12540d7",
   "v": "f419576351",
   "english": "Abide With Me"
  },
@@ -9165,6 +11170,8 @@
   "number": "134",
   "title": "Wang' Chieng Koro Podhonwa",
   "path": "data/WN/134.json",
+  "sung": true,
+  "sv": "83ab191a7f",
   "v": "144f274158",
   "english": "Day Is Dying in the West"
  },
@@ -9174,6 +11181,8 @@
   "number": "136",
   "title": "Puothe Chiek E Pinje Duto",
   "path": "data/WN/136.json",
+  "sung": true,
+  "sv": "22f2d8661f",
   "v": "ec7198d6fa",
   "english": "Far and Near the Fields Are Teeming"
  },
@@ -9183,6 +11192,8 @@
   "number": "137",
   "title": "Winji Weche Ma Nondiki",
   "path": "data/WN/137.json",
+  "sung": true,
+  "sv": "a0fa67b981",
   "v": "d5e7f2e098",
   "english": "Bring Ye All the Tithes Into the Storehouse"
  },
@@ -9192,6 +11203,8 @@
   "number": "139",
   "title": "Ringra Namiyo In",
   "path": "data/WN/139.json",
+  "sung": true,
+  "sv": "4a1c2069ca",
   "v": "fed63c93b0",
   "english": "I Gave My Life for Thee"
  },
@@ -9201,6 +11214,8 @@
   "number": "143",
   "title": "Yesu Oluongowa Koro",
   "path": "data/WN/143.json",
+  "sung": true,
+  "sv": "d2f3e0a716",
   "v": "c40683d307",
   "english": "Softly and Tenderly"
  },
@@ -9210,6 +11225,8 @@
   "number": "144",
   "title": "Nawinjo Yesu Kowacho",
   "path": "data/WN/144.json",
+  "sung": true,
+  "sv": "a2280c7b1d",
   "v": "fe47fe19c1",
   "english": "I Heard the Voice of Jesus Say"
  },
@@ -9219,6 +11236,8 @@
   "number": "146",
   "title": "Winji Dwond Yesu Kawuono",
   "path": "data/WN/146.json",
+  "sung": true,
+  "sv": "e35ee974a8",
   "v": "daec1e37a8",
   "english": "Hark! the Voice of Jesus Calling"
  },
@@ -9228,6 +11247,8 @@
   "number": "147",
   "title": "Wasewinjo Wach Maber",
   "path": "data/WN/147.json",
+  "sung": true,
+  "sv": "b809bdce35",
   "v": "910c23681a",
   "english": "Jesus Saves"
  },
@@ -9237,6 +11258,8 @@
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
   "path": "data/WN/150.json",
+  "sung": true,
+  "sv": "27f5890673",
   "v": "f0ce04f760",
   "english": "The Great Physician"
  },
@@ -9246,6 +11269,8 @@
   "number": "156",
   "title": "Bi Ka Yesu",
   "path": "data/WN/156.json",
+  "sung": true,
+  "sv": "4286b87a61",
   "v": "20043cb094",
   "english": "Come to Jesus"
  },
@@ -9255,6 +11280,8 @@
   "number": "160",
   "title": "Nitie Remo Ma Nochwer",
   "path": "data/WN/160.json",
+  "sung": true,
+  "sv": "e35d28648e",
   "v": "e4eeb95e1d",
   "english": "There Is a Fountain"
  },
@@ -9264,6 +11291,8 @@
   "number": "161",
   "title": "Ruoth Yesu, Agombo Bedo Nga'ti",
   "path": "data/WN/161.json",
+  "sung": true,
+  "sv": "6fd88afda9",
   "v": "50162e5f77",
   "english": "Whiter Than Snow"
  },
@@ -9273,6 +11302,8 @@
   "number": "162",
   "title": "Abiro Ni Msalaba",
   "path": "data/WN/162.json",
+  "sung": true,
+  "sv": "09e5829a69",
   "v": "dd774628b3",
   "english": "I Am Coming to the Cross"
  },
@@ -9282,6 +11313,8 @@
   "number": "165",
   "title": "Asebayo Mabor Kod Ruoth",
   "path": "data/WN/165.json",
+  "sung": true,
+  "sv": "8ac5b9c765",
   "v": "4c1d8c2e81",
   "english": "Lord, I'm Coming Home"
  },
@@ -9291,6 +11324,8 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json",
+  "sung": true,
+  "sv": "3693bc8f94",
   "v": "6deb9e38f7",
   "english": "Jesus Paid It All"
  },
@@ -9300,6 +11335,8 @@
   "number": "167",
   "title": "Yesu, Kar Msalabani",
   "path": "data/WN/167.json",
+  "sung": true,
+  "sv": "996e892765",
   "v": "8b8bc68fc8",
   "english": "Near the Cross"
  },
@@ -9309,6 +11346,8 @@
   "number": "168",
   "title": "Duto Amiyo Ruoth Yesu",
   "path": "data/WN/168.json",
+  "sung": true,
+  "sv": "51adc5e773",
   "v": "f6c3e16a8e",
   "english": "I Surrender All"
  },
@@ -9318,6 +11357,8 @@
   "number": "169",
   "title": "Yesu Luongi, We Ting'ni Mar Richo",
   "path": "data/WN/169.json",
+  "sung": true,
+  "sv": "108a6bdf84",
   "v": "1499cf34ea",
   "english": "There Is Power in the Blood"
  },
@@ -9327,6 +11368,8 @@
   "number": "170",
   "title": "Richona Osegur",
   "path": "data/WN/170.json",
+  "sung": true,
+  "sv": "0951d84a1d",
   "v": "3caaf3243a"
  },
  {
@@ -9335,6 +11378,8 @@
   "number": "171",
   "title": "In Kiol Nikech Chandruok",
   "path": "data/WN/171.json",
+  "sung": true,
+  "sv": "4ed51f039b",
   "v": "be8994e1b8",
   "english": "Tell It to Jesus"
  },
@@ -9344,6 +11389,8 @@
   "number": "175",
   "title": "Geno Kristo Kelonwa Mor",
   "path": "data/WN/175.json",
+  "sung": true,
+  "sv": "819f04cb35",
   "v": "52016b93b9"
  },
  {
@@ -9352,6 +11399,8 @@
   "number": "176",
   "title": "Nyasaye Noolnwa Gweth Polo",
   "path": "data/WN/176.json",
+  "sung": true,
+  "sv": "0cb6cb61c1",
   "v": "7d45417ea9",
   "english": "Showers of Blessing"
  },
@@ -9361,6 +11410,8 @@
   "number": "182",
   "title": "Koro Wagenoi",
   "path": "data/WN/182.json",
+  "sung": true,
+  "sv": "4125a035ba",
   "v": "eff5cc06fe",
   "english": "My Faith Looks Up to Thee"
  },
@@ -9370,6 +11421,8 @@
   "number": "184",
   "title": "Kat' Abed Jaketh Maduong'",
   "path": "data/WN/184.json",
+  "sung": true,
+  "sv": "cc30c75500",
   "v": "f20935291f",
   "english": "Chief of Sinners Though I Be"
  },
@@ -9379,6 +11432,8 @@
   "number": "189",
   "title": "Yesu Kristo En Osiepwa",
   "path": "data/WN/189.json",
+  "sung": true,
+  "sv": "4f1b62eaca",
   "v": "110c863426",
   "english": "What a Friend We Have in Jesus"
  },
@@ -9388,6 +11443,8 @@
   "number": "192",
   "title": "Tim Kinda Mar Lemo",
   "path": "data/WN/192.json",
+  "sung": true,
+  "sv": "c041e14b1e",
   "v": "11e7f79f89",
   "english": "Take Time to Be Holy"
  },
@@ -9397,6 +11454,8 @@
   "number": "195",
   "title": "Ka Yesu Ni Koda",
   "path": "data/WN/195.json",
+  "sung": true,
+  "sv": "e16a51ea5f",
   "v": "f522bad8b9",
   "english": "Anywhere With Jesus"
  },
@@ -9406,6 +11465,8 @@
   "number": "201",
   "title": "Analu Bang'i Jakonya",
   "path": "data/WN/201.json",
+  "sung": true,
+  "sv": "c99950aef5",
   "v": "101c1f08d8",
   "english": "I Will Follow Thee"
  },
@@ -9415,6 +11476,8 @@
   "number": "205",
   "title": "An Ni Mari Ruoth",
   "path": "data/WN/205.json",
+  "sung": true,
+  "sv": "19b7983fb8",
   "v": "775e0e5376",
   "english": "Draw Me Nearer"
  },
@@ -9424,6 +11487,8 @@
   "number": "206",
   "title": "Kaw Piny Duto Miya Yesu",
   "path": "data/WN/206.json",
+  "sung": true,
+  "sv": "249d69f1e2",
   "v": "1dfabb3b31",
   "english": "Take the World, but Give Me Jesus"
  },
@@ -9433,6 +11498,8 @@
   "number": "208",
   "title": "Bedi Mangima Kuoma",
   "path": "data/WN/208.json",
+  "sung": true,
+  "sv": "0f294e0f45",
   "v": "68b0871aba",
   "english": "Live Out Thy Life Within Me"
  },
@@ -9442,6 +11509,8 @@
   "number": "210",
   "title": "Diyie Dak Kod Yesu",
   "path": "data/WN/210.json",
+  "sung": true,
+  "sv": "44c6434f8c",
   "v": "46641fa116"
  },
  {
@@ -9450,6 +11519,8 @@
   "number": "211",
   "title": "Aseweyo Tich Maricho",
   "path": "data/WN/211.json",
+  "sung": true,
+  "sv": "fc8041308b",
   "v": "2f4af35acc",
   "english": "Jesus, I My Cross Have Taken"
  },
@@ -9459,6 +11530,8 @@
   "number": "212",
   "title": "Adwaro Bedo Nyathi Yesu",
   "path": "data/WN/212.json",
+  "sung": true,
+  "sv": "9021cdad45",
   "v": "4831e954b3",
   "english": "Wholly Thine"
  },
@@ -9468,6 +11541,8 @@
   "number": "213",
   "title": "Teko Nyasaye Orita",
   "path": "data/WN/213.json",
+  "sung": true,
+  "sv": "3e6dd181f6",
   "v": "31fe0fee7c"
  },
  {
@@ -9476,6 +11551,8 @@
   "number": "218",
   "title": "Yesu An Adwaro",
   "path": "data/WN/218.json",
+  "sung": true,
+  "sv": "6e35afc3f0",
   "v": "eb2b4bee1f",
   "english": "O Jesus, I Have Promised"
  },
@@ -9485,6 +11562,8 @@
   "number": "219",
   "title": "Weche Mag Mirima",
   "path": "data/WN/219.json",
+  "sung": true,
+  "sv": "afa9547a27",
   "v": "3cf407a1c3",
   "english": "Angry Words! Oh, Let Them Never"
  },
@@ -9494,6 +11573,8 @@
   "number": "220",
   "title": "Otelona",
   "path": "data/WN/220.json",
+  "sung": true,
+  "sv": "9b2513bf0e",
   "v": "1ec8a82bbc",
   "english": "He Leadeth Me"
  },
@@ -9503,6 +11584,8 @@
   "number": "222",
   "title": "Paro Achiel Mamit",
   "path": "data/WN/222.json",
+  "sung": true,
+  "sv": "0727baaee8",
   "v": "9ded168890",
   "english": "One Sweetly Solemn Thought"
  },
@@ -9512,6 +11595,8 @@
   "number": "223",
   "title": "Onego Abed Gi Yesu",
   "path": "data/WN/223.json",
+  "sung": true,
+  "sv": "3f32b690c4",
   "v": "60bc1d538e",
   "english": "I Must Have the Savior With Me"
  },
@@ -9521,6 +11606,8 @@
   "number": "226",
   "title": "Yesu Kotaya Pile",
   "path": "data/WN/226.json",
+  "sung": true,
+  "sv": "0355a246f9",
   "v": "7836982cc4",
   "english": "Safe in the Arms of Jesus"
  },
@@ -9530,6 +11617,8 @@
   "number": "227",
   "title": "Be Yesu Ling",
   "path": "data/WN/227.json",
+  "sung": true,
+  "sv": "cff904377f",
   "v": "a993ef0f98",
   "english": "Does Jesus Care?"
  },
@@ -9539,6 +11628,8 @@
   "number": "231",
   "title": "Kwonde Duto Motelona",
   "path": "data/WN/231.json",
+  "sung": true,
+  "sv": "f034bff2d3",
   "v": "cf4181f092",
   "english": "Where He Leads Me"
  },
@@ -9548,6 +11639,8 @@
   "number": "235",
   "title": "Wuoth Pod Odong' Marom Nade?",
   "path": "data/WN/235.json",
+  "sung": true,
+  "sv": "0095b685ff",
   "v": "db1e0d4b7e",
   "english": "How Far From Home?"
  },
@@ -9557,6 +11650,8 @@
   "number": "236",
   "title": "Gin Weche Mamit",
   "path": "data/WN/236.json",
+  "sung": true,
+  "sv": "da2863ab2c",
   "v": "01afb6e8db",
   "english": "How Sweet Are the Tidings"
  },
@@ -9566,6 +11661,8 @@
   "number": "238",
   "title": "Gouru Bu, Goyeuru Matek",
   "path": "data/WN/238.json",
+  "sung": true,
+  "sv": "d452aab285",
   "v": "b8394ef01b",
   "english": "Jesus Is Coming Again"
  },
@@ -9575,6 +11672,8 @@
   "number": "249",
   "title": "Ruodha Ok Agomb Moko",
   "path": "data/WN/249.json",
+  "sung": true,
+  "sv": "a14f6001bf",
   "v": "115c2796a4",
   "english": "Is My Name Written There?"
  },
@@ -9584,6 +11683,8 @@
   "number": "251",
   "title": "Ka Jabura Nong'ad Buchwa",
   "path": "data/WN/251.json",
+  "sung": true,
+  "sv": "a54e14c26e",
   "v": "5dc1703fe1",
   "english": "Weighed and Wanting"
  },
@@ -9593,6 +11694,8 @@
   "number": "253",
   "title": "Koro Kawuono Ruodhwa Man E Polo",
   "path": "data/WN/253.json",
+  "sung": true,
+  "sv": "5a78241ec7",
   "v": "e00b30f854",
   "english": "The Judgment Has Set"
  },
@@ -9602,6 +11705,8 @@
   "number": "258",
   "title": "Anane Wang' Yesu Kristo",
   "path": "data/WN/258.json",
+  "sung": true,
+  "sv": "fdbd438d6a",
   "v": "6ffa07d4ec"
  },
  {
@@ -9610,6 +11715,8 @@
   "number": "259",
   "title": "Wanachokre E Aora",
   "path": "data/WN/259.json",
+  "sung": true,
+  "sv": "507c26ee29",
   "v": "6db5423694",
   "english": "Shall We Gather at the River"
  },
@@ -9619,6 +11726,8 @@
   "number": "263",
   "title": "Ji Noyud Mor Ka Tich Orumo",
   "path": "data/WN/263.json",
+  "sung": true,
+  "sv": "9952a337fc",
   "v": "a88c7cd614",
   "english": "Joy By and By"
  },
@@ -9628,6 +11737,8 @@
   "number": "267",
   "title": "Ka Tichna Rumo",
   "path": "data/WN/267.json",
+  "sung": true,
+  "sv": "b2ffb0bca8",
   "v": "df47741841",
   "english": "The Glory Song"
  },
@@ -9637,6 +11748,8 @@
   "number": "268",
   "title": "Wawinjo Mar Dala Maler",
   "path": "data/WN/268.json",
+  "sung": true,
+  "sv": "7bfd807f38",
   "v": "d7b07f7631",
   "english": "We Speak of the Realms"
  },
@@ -9646,6 +11759,8 @@
   "number": "281",
   "title": "Nindo Kuom Yesu",
   "path": "data/WN/281.json",
+  "sung": true,
+  "sv": "50fdecddc4",
   "v": "b770b9fe6c",
   "english": "Asleep in Jesus"
  },
@@ -9655,6 +11770,8 @@
   "number": "283",
   "title": "Yesu Wabiro Iri",
   "path": "data/WN/283.json",
+  "sung": true,
+  "sv": "6de9e49450",
   "v": "12126fed65",
   "english": "Baptize Us Anew"
  },
@@ -9664,6 +11781,8 @@
   "number": "284",
   "title": "Ruodha Dak Ipogna Kuon Mar Ngima",
   "path": "data/WN/284.json",
+  "sung": true,
+  "sv": "26c024c4f7",
   "v": "ca2e85ce45",
   "english": "Break Thou the Bread of Life"
  },
@@ -9673,6 +11792,8 @@
   "number": "285",
   "title": "Yesu Ruoth Nisethona",
   "path": "data/WN/285.json",
+  "sung": true,
+  "sv": "3b9caeb137",
   "v": "992a9713ea",
   "english": "Rock of Ages"
  },
@@ -9682,6 +11803,8 @@
   "number": "286",
   "title": "Winjuru Tinde Dwond Jakwath",
   "path": "data/WN/286.json",
+  "sung": true,
+  "sv": "63b9b61040",
   "v": "d088d9c706",
   "english": "Hark! 'Tis the Shepherd's Voice I Hear"
  },
@@ -9691,6 +11814,8 @@
   "number": "291",
   "title": "An Ayie Ruoth Yesu Koro",
   "path": "data/WN/291.json",
+  "sung": true,
+  "sv": "c23703a424",
   "v": "9b88270142"
  },
  {
@@ -9699,6 +11824,8 @@
   "number": "301",
   "title": "Yesu 'Hera Ang'eyo",
   "path": "data/WN/301.json",
+  "sung": true,
+  "sv": "e4d549e4ea",
   "v": "8ed62cf06c",
   "english": "Jesus Loves Me"
  },
@@ -9708,6 +11835,8 @@
   "number": "302",
   "title": "Yesu 'Biro",
   "path": "data/WN/302.json",
+  "sung": true,
+  "sv": "6a5688c54d",
   "v": "1d4a77a67c",
   "english": "When He Cometh"
  },
@@ -9717,6 +11846,8 @@
   "number": "308",
   "title": "Nogola E Bugo",
   "path": "data/WN/308.json",
+  "sung": true,
+  "sv": "eae4c14348",
   "v": "1d2d55bd3b",
   "english": "He Brought Me Out"
  },
@@ -9726,6 +11857,8 @@
   "number": "311",
   "title": "Ruoth Nyasacha",
   "path": "data/WN/311.json",
+  "sung": true,
+  "sv": "3f3447ac99",
   "v": "5c59cef15a",
   "english": "How Great Thou Art"
  },
@@ -9735,6 +11868,8 @@
   "number": "315",
   "title": "In Koso An?",
   "path": "data/WN/315.json",
+  "sung": true,
+  "sv": "4d0626f5ab",
   "v": "8e34fa6101"
  },
  {
@@ -9743,6 +11878,8 @@
   "number": "316",
   "title": "Yesu Kristo Osechier",
   "path": "data/WN/316.json",
+  "sung": true,
+  "sv": "035a8596f3",
   "v": "83a40f3ddd",
   "english": "Christ the Lord Is Risen Today"
  },
@@ -9752,6 +11889,8 @@
   "number": "317",
   "title": "Kik Chunyi a Ka'e Chandruok",
   "path": "data/WN/317.json",
+  "sung": true,
+  "sv": "3b2d3b7aa1",
   "v": "a488062bcb",
   "english": "God Will Take Care of You"
  },
@@ -9761,6 +11900,8 @@
   "number": "318",
   "title": "Yie Mar Kwerewa",
   "path": "data/WN/318.json",
+  "sung": true,
+  "sv": "3a15c7b21a",
   "v": "473f532eae",
   "english": "Faith of Our Fathers"
  }
