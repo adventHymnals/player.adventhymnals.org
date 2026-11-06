@@ -4430,6 +4430,78 @@
   "v": "fc9d1db45eb58bc0390aab6a70fe7a20db721b0207a6998c10b58a69d1d93675"
  },
  {
+  "id": "CH1941-551",
+  "book": "CH1941",
+  "number": "551",
+  "title": "There's a Land That Is Fairer Than Day",
+  "path": "data/CH1941/551.json",
+  "v": "4098115f812f987665bc69374595589eb340e3d4054847ac6782e99b6d376a80"
+ },
+ {
+  "id": "CH1941-553",
+  "book": "CH1941",
+  "number": "553",
+  "title": "On Jordan's Stormy Banks",
+  "path": "data/CH1941/553.json",
+  "v": "b89c022ae84fb0f01d98aa79f7737bfa8e8554acafdec6d0626f9b645eefc50e"
+ },
+ {
+  "id": "CH1941-554",
+  "book": "CH1941",
+  "number": "554",
+  "title": "There Is a Land of Corn and Wine",
+  "path": "data/CH1941/554.json",
+  "v": "922d86c84615aa471d57cb2bd38739b5099565bd906054849c5de3d589831d6c"
+ },
+ {
+  "id": "CH1941-555",
+  "book": "CH1941",
+  "number": "555",
+  "title": "Shall We Gather at the River?",
+  "path": "data/CH1941/555.json",
+  "v": "bc8762abcb6241514b47766488f1cea5a20e12fcaad36526b6610827d923c674"
+ },
+ {
+  "id": "CH1941-556",
+  "book": "CH1941",
+  "number": "556",
+  "title": "Angel Voices Sweetly Singing",
+  "path": "data/CH1941/556.json",
+  "v": "0d82da947a85897e4b945af6650311ebaf2fd0f5529c6f171b0b0261c55cbf0f"
+ },
+ {
+  "id": "CH1941-557",
+  "book": "CH1941",
+  "number": "557",
+  "title": "Shall We Meet Beyond the River?",
+  "path": "data/CH1941/557.json",
+  "v": "f785f78a7d342ee943cffd0b124dd93375101db1d54c2fcbcdc002333824d4e1"
+ },
+ {
+  "id": "CH1941-558",
+  "book": "CH1941",
+  "number": "558",
+  "title": "No Night There",
+  "path": "data/CH1941/558.json",
+  "v": "a93ddb3780e23a098cc8a3d9611a9bf88c57cf41bbc3ff3bc926e5845d2c63b4"
+ },
+ {
+  "id": "CH1941-559",
+  "book": "CH1941",
+  "number": "559",
+  "title": "Pass Me Not, O Gentle Saviour",
+  "path": "data/CH1941/559.json",
+  "v": "7c29fab90e1f157898dd58edbfba79b69ab699b97390290ec7f27d46a00c20f6"
+ },
+ {
+  "id": "CH1941-560",
+  "book": "CH1941",
+  "number": "560",
+  "title": "I've Wandered Far Away From God",
+  "path": "data/CH1941/560.json",
+  "v": "c81611f4b0d25f60c1af4fd16e4d2a426a308f420c9fb419c596e481bd5b61db"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7958,6 +8030,38 @@
   "title": "Purer Yet and Purer",
   "path": "data/CS1908/338.json",
   "v": "8b91b35c070addeb7665a40475db349cfb68233a44ce7663f7f4136f1ecc80e6"
+ },
+ {
+  "id": "CS1908-339",
+  "book": "CS1908",
+  "number": "339",
+  "title": "Twilight",
+  "path": "data/CS1908/339.json",
+  "v": "c2e6e370d1264eaec8387eaceabc837ac33cd1ecd723ca613ebe70946b0d381f"
+ },
+ {
+  "id": "CS1908-340",
+  "book": "CS1908",
+  "number": "340",
+  "title": "Saviour and Friend",
+  "path": "data/CS1908/340.json",
+  "v": "658d534a6f83e508724fa738de9a2a4d4e1352145bffa406ec81c81f25506f37"
+ },
+ {
+  "id": "CS1908-341",
+  "book": "CS1908",
+  "number": "341",
+  "title": "Thy Glory Fills the Heavens",
+  "path": "data/CS1908/341.json",
+  "v": "7124ed8219f5aa1b7ce61c936f1db1af0daa2743b0bbcf29a56932f28de4b40b"
+ },
+ {
+  "id": "CS1908-342",
+  "book": "CS1908",
+  "number": "342",
+  "title": "Ten Thousand Harps",
+  "path": "data/CS1908/342.json",
+  "v": "c9f666d8bec6c4e5e984eba13f837f323400a99d75afcf4fbbba12e4febd7934"
  },
  {
   "id": "CS1908-380",
