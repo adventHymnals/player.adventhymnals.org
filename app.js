@@ -1216,7 +1216,7 @@ function offerLiveVoices() {
  *  Nothing is downloaded for either singer before the answer. Resolves false when cancelled. */
 function chooseSingers(from, always = false) {
   const d = $("singDialog");
-  if (!d || !singingCfg.warble || APP || EMBED || MAKE) return Promise.resolve(true);
+  if (!d || !singingCfg.warble || APP || MAKE) return Promise.resolve(true);
   if (!always && (appAnswered || !asksAtPlay())) return Promise.resolve(true);
   pickManifest();
   const recorded = !!manifests.stems?.stems?.length;
@@ -1722,7 +1722,7 @@ function buildHeaders() {
   fold.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${state.headsCollapsed ? "M9 6l6 6-6 6" : "M15 6l-6 6 6 6"}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   fold.onclick = () => { state.headsCollapsed = !state.headsCollapsed; save("headsCollapsed"); renderAll(); };
   headersEl.append(fold);
-  if (singingCfg.warble && !APP && !EMBED && !MAKE) { // who sings now; one click to change
+  if (singingCfg.warble && !APP && !MAKE) { // who sings now; one click to change (the embedded player too)
     const who = document.createElement("button");
     who.className = "singers-btn";
     who.onclick = () => chooseSingers(0, true);
