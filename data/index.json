@@ -2430,6 +2430,94 @@
   "v": "6d4f0658fa38ebc6c6ff527260033c48e401976591d80c1b2198a3af8b3c57d5"
  },
  {
+  "id": "CH1941-281",
+  "book": "CH1941",
+  "number": "281",
+  "title": "There Lives a Voice Within Me",
+  "path": "data/CH1941/281.json",
+  "v": "edd25a6503483a8de8580d6648035fd0678604ef79ce6b0c8788e6a9a556b1db"
+ },
+ {
+  "id": "CH1941-282",
+  "book": "CH1941",
+  "number": "282",
+  "title": "Thine Forever",
+  "path": "data/CH1941/282.json",
+  "v": "72d048438b2638fb4e46f03abe8012fa0308b774b94c62e24899fcdb456548ff"
+ },
+ {
+  "id": "CH1941-283",
+  "book": "CH1941",
+  "number": "283",
+  "title": "Saviour! Thy Dying Love",
+  "path": "data/CH1941/283.json",
+  "v": "443f4a80b1f2f902c8e51857fc00281cc3956a95e41ddf3e1aad2b392dc841e9"
+ },
+ {
+  "id": "CH1941-284",
+  "book": "CH1941",
+  "number": "284",
+  "title": "Make Me a Captive, Lord",
+  "path": "data/CH1941/284.json",
+  "v": "f86d64d897b8259c5b2f3b0972b208d21ccb3181136d4c15a3bb29973b92ddac"
+ },
+ {
+  "id": "CH1941-285",
+  "book": "CH1941",
+  "number": "285",
+  "title": "I Give My Heart to Thee",
+  "path": "data/CH1941/285.json",
+  "v": "dacc57706833ffe413f40f0df5bd891a66072d57d2b9fe99b4fe62e6a8a357c6"
+ },
+ {
+  "id": "CH1941-286",
+  "book": "CH1941",
+  "number": "286",
+  "title": "I Come to Thee, O Father",
+  "path": "data/CH1941/286.json",
+  "v": "7e9a9c5118980380a0fffacbaf8ae54f75727b04b25442062cc8761c49d7816c"
+ },
+ {
+  "id": "CH1941-287",
+  "book": "CH1941",
+  "number": "287",
+  "title": "Saviour, Blessed Saviour",
+  "path": "data/CH1941/287.json",
+  "v": "82d957ba35a60b0ac0d62b3d563466312d0232f0d305d8b1484223be8f3562fe"
+ },
+ {
+  "id": "CH1941-288",
+  "book": "CH1941",
+  "number": "288",
+  "title": "O Jesus, I Have Promised",
+  "path": "data/CH1941/288.json",
+  "v": "280daf656382159a2be6214c7bd211d5bb9c5f22724a607aa7285ba533d7c62f"
+ },
+ {
+  "id": "CH1941-289",
+  "book": "CH1941",
+  "number": "289",
+  "title": "Weary of Earth",
+  "path": "data/CH1941/289.json",
+  "v": "63bdbaaa4c4482864f32b1e5e967d391c02afadc2f543aa5b7e329b76d3110b5"
+ },
+ {
+  "id": "CH1941-290",
+  "book": "CH1941",
+  "number": "290",
+  "title": "O Lamb of God! Still Keep Me",
+  "path": "data/CH1941/290.json",
+  "v": "a54e57863c4171e965dcbf0767f93b1a094e6465346deca7cc03f44209da290b"
+ },
+ {
+  "id": "CH1941-291",
+  "book": "CH1941",
+  "number": "291",
+  "title": "Come, Thou Fount of Every Blessing",
+  "path": "data/CH1941/291.json",
+  "v": "f0875f11b6d0728e86faf0f4ff638db0499d8a5e961950afb8d4f325c22e08d1"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5066,6 +5154,30 @@
   "title": "At the Cross",
   "path": "data/CS1908/212.json",
   "v": "220ee8b4ff9fc1fc895e3353d00971ce0ab43d9f752b5bb88ca28bf13cd390d5"
+ },
+ {
+  "id": "CS1908-213",
+  "book": "CS1908",
+  "number": "213",
+  "title": "Hallelujah for the Cross!",
+  "path": "data/CS1908/213.json",
+  "v": "f4ea7b019aaf6de45f51943ccb937b9c3b5b967c9d67039bda7c4b8c0d767e52"
+ },
+ {
+  "id": "CS1908-214",
+  "book": "CS1908",
+  "number": "214",
+  "title": "Awake My Soul",
+  "path": "data/CS1908/214.json",
+  "v": "4a31d8ef3502b75de63a0ebd4ece4374ecb56548a5bdf9ba710c18a8ef619abb"
+ },
+ {
+  "id": "CS1908-215",
+  "book": "CS1908",
+  "number": "215",
+  "title": "The Name of Jesus",
+  "path": "data/CS1908/215.json",
+  "v": "fdb504506b904ba35c9d6b170e1f8453988199473350d284e6752bafb238300e"
  },
  {
   "id": "CS1908-222",
