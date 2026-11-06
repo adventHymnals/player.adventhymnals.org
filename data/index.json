@@ -1142,6 +1142,14 @@
   "v": "ce59e0146b591d0b6a957c722d4dafac22601a87ca23c87a58809d8e27fe8e6d"
  },
  {
+  "id": "CH1941-120",
+  "book": "CH1941",
+  "number": "120",
+  "title": "When I Survey the Wondrous Cross",
+  "path": "data/CH1941/120.json",
+  "v": "1f871f502aa27ce9775d67db951ef4d68944b6648187a7915e1ab3af0cb66981"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1394,6 +1402,14 @@
   "title": "Urge Them to Come",
   "path": "data/CS1900/11.json",
   "v": "e076320d0e7253704549190eca7b13d1f05d8177b11a7423050774efb8e5ef54"
+ },
+ {
+  "id": "CS1900-12",
+  "book": "CS1900",
+  "number": "12",
+  "title": "Come unto Me",
+  "path": "data/CS1900/12.json",
+  "v": "c19098300c8e3171a5913a793826ab4544bc84754ccedee2f9009fce48a01c6e"
  },
  {
   "id": "CS1908-1",
