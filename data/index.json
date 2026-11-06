@@ -2590,6 +2590,30 @@
   "v": "c75564dda7898efbe7ae47f63ae9dff8a1af1254d26462ee17e7bc5b17471bbc"
  },
  {
+  "id": "CH1941-301",
+  "book": "CH1941",
+  "number": "301",
+  "title": "There Is a Happy Land",
+  "path": "data/CH1941/301.json",
+  "v": "360fe092ef45f20b195ca8c702222907b5054f0e3ab5f2b3cbc5490e3f3f63a7"
+ },
+ {
+  "id": "CH1941-302",
+  "book": "CH1941",
+  "number": "302",
+  "title": "Hail to the Brightness",
+  "path": "data/CH1941/302.json",
+  "v": "89c08eaf2febd163b14086bebf5559faa8a26f65258f21aa69c0e918efcfe5a1"
+ },
+ {
+  "id": "CH1941-303",
+  "book": "CH1941",
+  "number": "303",
+  "title": "Daughter of Zion",
+  "path": "data/CH1941/303.json",
+  "v": "0bce64742b52e1fa43b16a57b1bd39138dc67e8b400b0b1e5bcb5beda65de536"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5274,6 +5298,22 @@
   "title": "None of Self and All of Thee",
   "path": "data/CS1908/218.json",
   "v": "170324549207938e26547fad6691a70c6ed5ac1b18a28161fe79a2bb63d0e3c0"
+ },
+ {
+  "id": "CS1908-219",
+  "book": "CS1908",
+  "number": "219",
+  "title": "Standing on the Promises",
+  "path": "data/CS1908/219.json",
+  "v": "99746145666e7aa44752b65b1ccadfa3c4f6aee70bd17bc7ee7ab516694cb8b9"
+ },
+ {
+  "id": "CS1908-220",
+  "book": "CS1908",
+  "number": "220",
+  "title": "In the Beauty of Holiness",
+  "path": "data/CS1908/220.json",
+  "v": "c57e6cb7e61f358de1f19904260690668b2520a21bdf048cf224cdfe09cd9109"
  },
  {
   "id": "CS1908-222",
