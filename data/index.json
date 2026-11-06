@@ -3558,6 +3558,70 @@
   "v": "815a6693531e64a27c9deb8395a5a88f4c4f726832909f11a6885fbe477aca3b"
  },
  {
+  "id": "CH1941-431",
+  "book": "CH1941",
+  "number": "431",
+  "title": "How Sweet, How Heavenly",
+  "path": "data/CH1941/431.json",
+  "v": "7f81c07aac2f65e16b97b5135c24dfd782fd7e16c741e5ee1de1078af5120d56"
+ },
+ {
+  "id": "CH1941-432",
+  "book": "CH1941",
+  "number": "432",
+  "title": "Blest Be the Tie",
+  "path": "data/CH1941/432.json",
+  "v": "9c20438491f59ee37699555b75e681cf11d0f92b5cc2e96b1c0812fa05699cc1"
+ },
+ {
+  "id": "CH1941-433",
+  "book": "CH1941",
+  "number": "433",
+  "title": "The Church Has One Foundation",
+  "path": "data/CH1941/433.json",
+  "v": "ec41a027c2becb13ecd33e987081940b0d5f54132cdb820495f8cb0928ef8149"
+ },
+ {
+  "id": "CH1941-434",
+  "book": "CH1941",
+  "number": "434",
+  "title": "O Golden Day",
+  "path": "data/CH1941/434.json",
+  "v": "24d2554d752d6e8c8e75d88e5c91241be35d124bc9b955293f4a9827882caee0"
+ },
+ {
+  "id": "CH1941-435",
+  "book": "CH1941",
+  "number": "435",
+  "title": "O Where Are Kings",
+  "path": "data/CH1941/435.json",
+  "v": "2a63a151377d820410b2b9c47def94c79409653ee8407e59ab197de73e40be96"
+ },
+ {
+  "id": "CH1941-436",
+  "book": "CH1941",
+  "number": "436",
+  "title": "In Christ There Is No East nor West",
+  "path": "data/CH1941/436.json",
+  "v": "a4f9cfb811d066801e4833f373f72599362e64e2270a0751187f795358bca222"
+ },
+ {
+  "id": "CH1941-437",
+  "book": "CH1941",
+  "number": "437",
+  "title": "Lord, Her Watch Thy Church Is Keeping",
+  "path": "data/CH1941/437.json",
+  "v": "1f770eacffb04842d87daba1fb40bb140aad6e8f3baaacfd8ffb4095e3effada"
+ },
+ {
+  "id": "CH1941-438",
+  "book": "CH1941",
+  "number": "438",
+  "title": "Buried Beneath the Yielding Wave",
+  "path": "data/CH1941/438.json",
+  "v": "14175f238dba0e3a5de29cb1e3692f473ae0473bc8d818e38cc1f881bca5f73a"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6766,6 +6830,30 @@
   "v": "b01764428663b12564c6a11487f36bb3be01d9f6e9ba6d671ba50a39a7191d03"
  },
  {
+  "id": "CS1908-283",
+  "book": "CS1908",
+  "number": "283",
+  "title": "Jesus Loves Me",
+  "path": "data/CS1908/283.json",
+  "v": "cd2a804854da4493afeab723946f55bc6f3a4d372df060c8c11a6416aff53f1c"
+ },
+ {
+  "id": "CS1908-284",
+  "book": "CS1908",
+  "number": "284",
+  "title": "Always Cheerful",
+  "path": "data/CS1908/284.json",
+  "v": "ff4b2463d8609ea3f17bd2f056f3cdf57e57b12ff5dbd4438ff89505a8b7699c"
+ },
+ {
+  "id": "CS1908-285",
+  "book": "CS1908",
+  "number": "285",
+  "title": "Alleluia! Alleluia!",
+  "path": "data/CS1908/285.json",
+  "v": "2cb70123176de0f7101bc5f19417641c471f36623dd6d7c8b6c1fa59fa2edfdd"
+ },
+ {
   "id": "CS1908-286",
   "book": "CS1908",
   "number": "286",
@@ -6774,6 +6862,14 @@
   "sung": true,
   "sv": "007811510218849852617fa2c7063815475679b2e10a0c92bbd994db9ba21830",
   "v": "fc5c32e8bf7e41f1a612183215e1c612068e688271aca32a45b994e253c77e82"
+ },
+ {
+  "id": "CS1908-287",
+  "book": "CS1908",
+  "number": "287",
+  "title": "Pure in Heart",
+  "path": "data/CS1908/287.json",
+  "v": "ad42bfa2bc5095d2fb164b5eb09df3bbe3ce962a08c388e352c78f30ab078b54"
  },
  {
   "id": "CS1908-288",
