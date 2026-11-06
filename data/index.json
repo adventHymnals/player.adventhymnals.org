@@ -2814,6 +2814,70 @@
   "v": "ac8b6754b15167069d8262799ed8709bebcb523fad3b2ea2ae97efbb500c6e1f"
  },
  {
+  "id": "CH1941-331",
+  "book": "CH1941",
+  "number": "331",
+  "title": "Father, Lead Me Day by Day",
+  "path": "data/CH1941/331.json",
+  "v": "ded3f5f5d1b67502e423ef36fbb623172cc21b3488edf7f95e1f29e4a30a737f"
+ },
+ {
+  "id": "CH1941-332",
+  "book": "CH1941",
+  "number": "332",
+  "title": "My Heart Is Resting",
+  "path": "data/CH1941/332.json",
+  "v": "e8b9e42d111a3c4595b2c75adebf41f66e9cca500453c1ba26ebb04d43a6d295"
+ },
+ {
+  "id": "CH1941-333",
+  "book": "CH1941",
+  "number": "333",
+  "title": "Father, Whate'er of Earthly Bliss",
+  "path": "data/CH1941/333.json",
+  "v": "4d7425c5e138c63e5047efc6b36a04cba1c18f80682c6327befcc9b60880b99d"
+ },
+ {
+  "id": "CH1941-334",
+  "book": "CH1941",
+  "number": "334",
+  "title": "Calm Me, My God",
+  "path": "data/CH1941/334.json",
+  "v": "92840b59f71bbd3e5abcbaa919c2ba9278efe5534135cc06b422dadb8c80425d"
+ },
+ {
+  "id": "CH1941-335",
+  "book": "CH1941",
+  "number": "335",
+  "title": "Alone With Thee",
+  "path": "data/CH1941/335.json",
+  "v": "fa126ff4009bb2bad03afd6cc0002cab731b909ba7ac9109151883bba808c87f"
+ },
+ {
+  "id": "CH1941-336",
+  "book": "CH1941",
+  "number": "336",
+  "title": "Come In, O Come!",
+  "path": "data/CH1941/336.json",
+  "v": "475334d1e765c4a9ae173e6b28e4461bb1358dcb4bdf8e26634fafd1f6d5fb73"
+ },
+ {
+  "id": "CH1941-338",
+  "book": "CH1941",
+  "number": "338",
+  "title": "One Precious Boon, O Lord, I Seek",
+  "path": "data/CH1941/338.json",
+  "v": "c226480fe3d1637f00afccf7f7ace77c9c421f12ead547c2d1fdf765344b5755"
+ },
+ {
+  "id": "CH1941-339",
+  "book": "CH1941",
+  "number": "339",
+  "title": "Walk in the Light",
+  "path": "data/CH1941/339.json",
+  "v": "5f815d8415b7acfae79aaad64c4d6d5bc4f53d498281b40d882c365c20d2d0fc"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5630,6 +5694,14 @@
   "title": "My Song",
   "path": "data/CS1908/234.json",
   "v": "286cae6766da970f8144abe013ddbd45123dc2020077e81f59082d3e9ce93b6b"
+ },
+ {
+  "id": "CS1908-235",
+  "book": "CS1908",
+  "number": "235",
+  "title": "A New Song",
+  "path": "data/CS1908/235.json",
+  "v": "238b1cd2d0469a4e2a52ded446ea90e822f96019297694ee1b31e57c5453207d"
  },
  {
   "id": "CS1908-236",
