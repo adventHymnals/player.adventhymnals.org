@@ -30,7 +30,7 @@ async function handle(m) {
   if (m.type !== "render") return;
   if (cancelled.has(m.id)) { cancelled.delete(m.id); return; }
   const t0 = performance.now();
-  const job = synth.start({ T: m.T, voices: [{ speaker: m.speaker, ph: m.ph, prog: m.prog, f0: m.f0 }] }, { chunk: m.chunk || 344 });
+  const job = synth.start({ T: m.T, voices: [{ speaker: m.speaker, ph: m.ph, prog: m.prog, f0: m.f0, part: m.part }] }, { chunk: m.chunk || 344 });
   while (await job.next()) {
     if (cancelled.has(m.id)) { cancelled.delete(m.id); self.postMessage({ type: "cancelled", id: m.id }); return; }
     self.postMessage({ type: "progress", id: m.id, frames: job.c0 });

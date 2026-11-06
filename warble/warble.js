@@ -7,6 +7,21 @@ import { writeBin } from "./bin.js";
 
 const IDB = "ah-warble", STORE = "models";
 const VOICE_GAIN = 0.5; // the reference mix: 2 / 4 voices
+// what this page's own synthesis (synth.js) can sing; a singing.json voice with "requires" is offered
+// only where the engine that will sing it has that ("cs": consistent-source models, RUNTIME.md 4b)
+const WEB_CAN = new Set(["cs"]);
+
+/** Can the engine that sings here (the app's native one if any, else synth.js) sing voice config c? */
+export function canSing(c) {
+  const need = [].concat(c?.requires || []);
+  if (!need.length) return true;
+  let caps = WEB_CAN;
+  try {
+    const n = Warble.native();
+    if (n) { const a = JSON.parse(n.available() || "null") || {}; caps = new Set(Object.keys(a).filter((k) => a[k] === true)); }
+  } catch { return false; }
+  return need.every((r) => caps.has(r));
+}
 
 // ---- model cache: IndexedDB, keyed by sha256 (one model kept)
 function idb() {
@@ -206,7 +221,7 @@ export class Warble {
   render(T, v, gen, onFrames) {
     return new Promise((resolve, reject) => {
       const id = this.nextId++;
-      const job = { id, gen, msg: { type: "render", id, T, speaker: v.speaker, ph: v.ph, prog: v.prog, f0: v.f0, chunk: 344 }, resolve, reject, onFrames, t0: 0 };
+      const job = { id, gen, msg: { type: "render", id, T, speaker: v.speaker, part: "SATB".indexOf(v.voice), ph: v.ph, prog: v.prog, f0: v.f0, chunk: 344 }, resolve, reject, onFrames, t0: 0 };
       this.jobs.set(id, job);
       this.queue.push(job);
       this.pump();
@@ -258,7 +273,7 @@ export async function loadSinging(urls, page = location.href) {
       if (!r.ok) continue;
       const cfg = await r.json();
       const base = new URL(url.startsWith("blob:") ? page : url, location.href);
-      const list = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model);
+      const list = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model && canSing(c));
       Warble.keep = new Set(list.map((c) => (c.sha256 || "").toLowerCase()).filter(Boolean));
       const voices = [];
       for (const [i, c] of list.entries()) {

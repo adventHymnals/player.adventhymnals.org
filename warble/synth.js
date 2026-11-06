@@ -54,6 +54,19 @@ export function pulseTrain(f0, T) {
   return pulse;
 }
 
+/** RUNTIME.md 4b: the noise of part 0..3 (S/A/T/B) for a consistent-source model: T*HOP samples of
+ * unit-variance uniform noise from a counter-based mulberry32 hash (model_cs.part_noise, bit for bit). */
+export function partNoise(T, part) {
+  const NS = T * HOP, out = new Float32Array(NS), base = Math.imul(part + 1, 0x9e3779b9) >>> 0, s3 = Math.sqrt(3);
+  for (let n = 0; n < NS; n++) {
+    let t = (base + Math.imul(n + 1, 0x6d2b79f5)) >>> 0;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    out[n] = (2 * (((t ^ (t >>> 14)) >>> 0) / 4294967296) - 1) * s3;
+  }
+  return out;
+}
+
 /**
  * Sings one pass, one voice at a time or all together, chunk by chunk.
  * session: an ort.InferenceSession of warble*.onnx; ort: the onnxruntime module.
@@ -64,11 +77,16 @@ export class Synth {
     this.session = session;
     this.re = new Float64Array(NFFT);
     this.im = new Float64Array(NFFT);
+    // consistent-source models (RUNTIME.md 4b) name their output "ycs": [1, 2*BINS, W] log-magnitudes
+    this.cs = Synth.isCS(session);
+    if (this.cs) for (const k of ["nr", "ni", "hr", "hi"]) this[k] = new Float64Array(BINS);
   }
 
-  /** K (2 plain, 4 harmonic-source) from the output's static dim 1; else from the first run. */
+  static isCS(session) { return (session.outputNames || []).includes("ycs"); }
+
+  /** K (2 plain or consistent-source, 4 harmonic-source) from the output's static dim 1; else from the first run. */
   static kOf(session) {
-    const meta = session.outputMetadata?.[0] ?? session.outputMetadata?.y;
+    const meta = session.outputMetadata?.[0] ?? session.outputMetadata?.y ?? session.outputMetadata?.ycs;
     const d = meta?.shape?.[1];
     return typeof d === "number" ? d / BINS : null;
   }
@@ -89,7 +107,8 @@ export class Synth {
     };
     for (const v of vs) {
       v.ph64 = BigInt64Array.from(v.ph, (x) => BigInt(x));
-      v.pulse = null; v.ere = null; v.eim = null; v.edone = 0;
+      v.pulse = null; v.ere = null; v.eim = null; v.edone = 0; v.noise = null;
+      v.part = v.part ?? ("SATB".includes(v.voice) && v.voice ? "SATB".indexOf(v.voice) : v.i); // noise seed (4b)
     }
     // the window's squared sum, once per frame position: the same for every voice
     for (let t = 0; t < T; t++) {
@@ -108,8 +127,8 @@ export class Synth {
           spk: new this.ort.Tensor("int64", BigInt64Array.of(BigInt(v.speaker)), [1]),
         };
         const res = await this.session.run(feeds);
-        const y = (res.y ?? Object.values(res)[0]);
-        pending.push([v, y.data, y.dims[1] / BINS]);
+        const y = this.cs ? res.ycs : (res.y ?? Object.values(res)[0]);
+        pending.push([v, y.data, this.cs ? "cs" : y.dims[1] / BINS]);
         for (const t of Object.values(feeds)) t.dispose?.();
       }
       for (const [v, y, K] of pending) this.dsp(job, v, y, K, a, W, c0, c1, NS);
@@ -123,23 +142,8 @@ export class Synth {
 
   dsp(job, v, y, K, a, W, c0, c1, NS) {
     const { re, im } = this, T = job.T;
-    if (K === 4 && !v.pulse) {
-      v.pulse = pulseTrain(v.f0, T);
-      v.ere = new Float32Array(T * BINS); v.eim = new Float32Array(T * BINS);
-    }
-    if (K === 4) {
-      for (; v.edone < c1; v.edone++) { // STFT of the pulse train: center=True, reflect padding
-        const t = v.edone;
-        for (let i = 0; i < NFFT; i++) {
-          let s = t * HOP - NFFT / 2 + i;
-          if (s < 0) s = -s; if (s >= NS) s = 2 * (NS - 1) - s;
-          re[i] = v.pulse[s] * WIN[i]; im[i] = 0;
-        }
-        fft(re, im);
-        const o = t * BINS;
-        for (let k = 0; k < BINS; k++) { v.ere[o + k] = re[k]; v.eim[o + k] = im[k]; }
-      }
-    }
+    if (K === "cs") return this.dspCS(job, v, y, a, W, c0, c1, NS);
+    if (K === 4) this.excite(v, c1, T, NS);
     const out = job.out[v.i];
     for (let t = c0; t < c1; t++) {
       const col = t - a;
@@ -164,6 +168,73 @@ export class Synth {
         if (s >= 0 && s < NS) out[s] += (re[i] / NFFT) * WIN[i];
       }
     }
+    this.finish(job, v, c1, NS);
+  }
+
+  /** The pulse train's STFT frames up to c1 (center=True, reflect padding), cached per voice. */
+  excite(v, c1, T, NS) {
+    const { re, im } = this;
+    if (!v.pulse) { v.pulse = pulseTrain(v.f0, T); v.ere = new Float32Array(T * BINS); v.eim = new Float32Array(T * BINS); }
+    for (; v.edone < c1; v.edone++) {
+      const t = v.edone;
+      for (let i = 0; i < NFFT; i++) {
+        let s = t * HOP - NFFT / 2 + i;
+        if (s < 0) s = -s; if (s >= NS) s = 2 * (NS - 1) - s;
+        re[i] = v.pulse[s] * WIN[i]; im[i] = 0;
+      }
+      fft(re, im);
+      const o = t * BINS;
+      for (let k = 0; k < BINS; k++) { v.ere[o + k] = re[k]; v.eim[o + k] = im[k]; }
+    }
+  }
+
+  /**
+   * RUNTIME.md 4b, consistent source: y = [noise log-mag; harmonic log-mag] per frame.
+   * S = exp(min(ln,8)) x STFT(noise)/sqrt(NFFT/2) + minphase(min(lh,8)) x E.
+   */
+  dspCS(job, v, y, a, W, c0, c1, NS) {
+    const { re, im, nr, ni, hr, hi } = this, T = job.T;
+    this.excite(v, c1, T, NS);
+    if (!v.noise) v.noise = partNoise(T, v.part);
+    const ns = 1 / Math.sqrt(NFFT / 2), out = job.out[v.i];
+    for (let t = c0; t < c1; t++) {
+      const col = t - a;
+      for (let i = 0; i < NFFT; i++) { // the noise frame (center=True, reflect padding)
+        let s = t * HOP - NFFT / 2 + i;
+        if (s < 0) s = -s; if (s >= NS) s = 2 * (NS - 1) - s;
+        re[i] = v.noise[s] * WIN[i]; im[i] = 0;
+      }
+      fft(re, im);
+      for (let k = 0; k < BINS; k++) { nr[k] = re[k] * ns; ni[k] = im[k] * ns; }
+      // minimum phase from the harmonic log-magnitude: real cepstrum, fold, back, exp
+      for (let k = 0; k < BINS; k++) { const l = y[(BINS + k) * W + col]; re[k] = l < 8 ? l : 8; im[k] = 0; }
+      for (let k = 1; k < NFFT / 2; k++) { re[NFFT - k] = re[k]; im[NFFT - k] = 0; }
+      fft(re, im); // real and even in, so this is NFFT x the cepstrum
+      re[0] /= NFFT; re[NFFT / 2] /= NFFT; im[0] = 0; im[NFFT / 2] = 0;
+      for (let n = 1; n < NFFT / 2; n++) { re[n] *= 2 / NFFT; im[n] = 0; }
+      for (let n = NFFT / 2 + 1; n < NFFT; n++) { re[n] = 0; im[n] = 0; }
+      fft(re, im);
+      for (let k = 0; k < BINS; k++) { const m = Math.exp(re[k]); hr[k] = m * Math.cos(im[k]); hi[k] = m * Math.sin(im[k]); }
+      const o = t * BINS;
+      for (let k = 0; k < BINS; k++) {
+        const l0 = y[k * W + col], m = Math.exp(l0 < 8 ? l0 : 8);
+        const er = v.ere[o + k], ei = v.eim[o + k];
+        const r = m * nr[k] + hr[k] * er - hi[k] * ei, i = m * ni[k] + hr[k] * ei + hi[k] * er;
+        re[k] = r; im[k] = -i;
+        if (k > 0 && k < NFFT / 2) { re[NFFT - k] = r; im[NFFT - k] = i; }
+      }
+      fft(re, im);
+      const pos = t * HOP - NFFT / 2;
+      for (let i = 0; i < NFFT; i++) {
+        const s = pos + i;
+        if (s >= 0 && s < NS) out[s] += (re[i] / NFFT) * WIN[i];
+      }
+    }
+    this.finish(job, v, c1, NS);
+  }
+
+  finish(job, v, c1, NS) {
+    const out = job.out[v.i], T = job.T;
     // normalise what is final now (no later frame reaches it)
     const ready = c1 >= T ? NS : c1 * HOP - NFFT / 2;
     const from = v.normed ?? 0;
