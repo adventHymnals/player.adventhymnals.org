@@ -1638,6 +1638,22 @@
   "v": "b4f995a9709509a732cd9d7b7337b38b87d5a10daeb13590d6b5e5c7acd55c92"
  },
  {
+  "id": "CH1941-182",
+  "book": "CH1941",
+  "number": "182",
+  "title": "'Tis Almost Time for the Lord to Come",
+  "path": "data/CH1941/182.json",
+  "v": "c0aa4d57bf2dba21e3e2f4b94dd2caab99dc752cac9101304633603f7e76ab85"
+ },
+ {
+  "id": "CH1941-183",
+  "book": "CH1941",
+  "number": "183",
+  "title": "Let Every Lamp Be Burning",
+  "path": "data/CH1941/183.json",
+  "v": "e6c50f6259caa146a80eadf7e4f47a10587a045f892f54be5b9dd8eaf70926f5"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2090,6 +2106,38 @@
   "title": "How Shall We Stand in the Judgment?",
   "path": "data/CS1900/36.json",
   "v": "33e29a7594478f17a2951a0765883ce4fe59bbd26b5643f47f5b575e9f71e553"
+ },
+ {
+  "id": "CS1900-37",
+  "book": "CS1900",
+  "number": "37",
+  "title": "When the King Comes In",
+  "path": "data/CS1900/37.json",
+  "v": "06abce9bea3f143f82235c3d0fd83665cc6751683fa95fba2bb18c5c199b5f85"
+ },
+ {
+  "id": "CS1900-38",
+  "book": "CS1900",
+  "number": "38",
+  "title": "What Shall the Harvest Be?",
+  "path": "data/CS1900/38.json",
+  "v": "80b6ab67fa490c2e70ab0d62cdc594e6699b3ade985dfba231be727d32763abb"
+ },
+ {
+  "id": "CS1900-39",
+  "book": "CS1900",
+  "number": "39",
+  "title": "What Hast Thou Done for Me?",
+  "path": "data/CS1900/39.json",
+  "v": "4e2af9c6a04f9137774d13a84341dbfc26b272cfcdab9fe86a10281095d84e3e"
+ },
+ {
+  "id": "CS1900-40",
+  "book": "CS1900",
+  "number": "40",
+  "title": "Keep Tenting Toward the Highlands",
+  "path": "data/CS1900/40.json",
+  "v": "e19ff99904cb11898fdf6e3a1aea7ee7cdcf873c457431361dd16db0fcfed5e3"
  },
  {
   "id": "CS1908-1",
@@ -3476,6 +3524,14 @@
   "sung": true,
   "sv": "dbf9a3a7040fbcfef995079ff4d1508f7e8b08e5ce2fdef022ec59d15286e006",
   "v": "183c6b4d8859bb51f70d089ed5c935c118a43fcd8fe436df7ff56d528f14dbe3"
+ },
+ {
+  "id": "CS1908-149",
+  "book": "CS1908",
+  "number": "149",
+  "title": "Take All My Sin Away",
+  "path": "data/CS1908/149.json",
+  "v": "4d865ab0bdacf59919b9cfcc8a529808cbbc695f4e6a1e2ac5acde69157eb36c"
  },
  {
   "id": "CS1908-174",
