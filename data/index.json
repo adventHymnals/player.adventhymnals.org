@@ -4342,6 +4342,30 @@
   "v": "3201657ddcfd2e3b8eca11af9dd7521c6452ce13d5388ff0a2a8a80cf6787278"
  },
  {
+  "id": "CH1941-538",
+  "book": "CH1941",
+  "number": "538",
+  "title": "When Jesus Shall Gather the Nations",
+  "path": "data/CH1941/538.json",
+  "v": "7f04f13ecd8ad3c7ed3327f2d0750a8276bf93735a7190802bd7ff18ab0ea9be"
+ },
+ {
+  "id": "CH1941-539",
+  "book": "CH1941",
+  "number": "539",
+  "title": "In the Glad Time of the Harvest",
+  "path": "data/CH1941/539.json",
+  "v": "5658ee218049bc22d6342244c97e42e435b6ea402f6339713dee06219ba7a966"
+ },
+ {
+  "id": "CH1941-540",
+  "book": "CH1941",
+  "number": "540",
+  "title": "We Know Not the Hour",
+  "path": "data/CH1941/540.json",
+  "v": "e2b56b2e2490ba363f87e3a71f1f4800b85b279ac31655689f363f7185db12fb"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7822,6 +7846,22 @@
   "title": "I've Found a Friend",
   "path": "data/CS1908/332.json",
   "v": "1ef4b0e8f1583d0b3dcd1bd644408b0c84e49f3608c271db4deac52ad728c80e"
+ },
+ {
+  "id": "CS1908-333",
+  "book": "CS1908",
+  "number": "333",
+  "title": "Lord of All Being",
+  "path": "data/CS1908/333.json",
+  "v": "2dff905e4959acf8bbab81a63722f4c70ba2504b86ef26f971666347cc4e590e"
+ },
+ {
+  "id": "CS1908-334",
+  "book": "CS1908",
+  "number": "334",
+  "title": "For Us",
+  "path": "data/CS1908/334.json",
+  "v": "730064b8749f27798f3cd384b8708adf4501084d5be6ce7f371af772fb691f46"
  },
  {
   "id": "CS1908-380",
