@@ -448,8 +448,13 @@ const savedV = () => { try { return JSON.parse(localStorage.getItem(SAVED_V) || 
 let listFresh = Promise.resolve();
 /** Lay the site's list over the player's own: where each hymn's newest copy is, which have singers, new hymns. */
 function overlaySite(site) {
+  // a number the site no longer has, in a hymnal the site lists, goes (hymnals it doesn't publish stay)
+  const onSite = new Set(site.map((x) => x.id));
+  const siteBooks = new Set(site.map((x) => x.book));
+  const kept = hymnList.filter((x) => !siteBooks.has(x.book) || onSite.has(x.id));
+  let added = kept.length !== hymnList.length;
+  if (added) hymnList = kept;
   const have = new Map(hymnList.map((x) => [x.id, x]));
-  let added = false;
   for (const x of site) {
     const remote = new URL(x.path, DATA).href;
     const mine = have.get(x.id);
