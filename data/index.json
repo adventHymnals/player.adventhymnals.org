@@ -4782,6 +4782,22 @@
   "v": "a6e0f55cae781d72df7b0960e93a75d6cccd9aa69f49ff19a6f6d3972c978387"
  },
  {
+  "id": "CH1941-597",
+  "book": "CH1941",
+  "number": "597",
+  "title": "I Would Be, Dear Saviour, Wholly Thine",
+  "path": "data/CH1941/597.json",
+  "v": "9f211692c362451c06265ec3eb1edfab1430cab043c3b22e5b566df423f1f853"
+ },
+ {
+  "id": "CH1941-598",
+  "book": "CH1941",
+  "number": "598",
+  "title": "O Now I See the Crimson Wave",
+  "path": "data/CH1941/598.json",
+  "v": "0500abb01cf19e6ac5c5d20c65c8b542e67c0073b7bb35551438a3f55d1d364f"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -8462,6 +8478,14 @@
   "title": "O Thou Who Art of All That Is",
   "path": "data/CS1908/357.json",
   "v": "ad4b2d043c9feaeeb4772df1da822802f5a318beb1f315c7e9718e22386ab50e"
+ },
+ {
+  "id": "CS1908-358",
+  "book": "CS1908",
+  "number": "358",
+  "title": "I Heard a Voice",
+  "path": "data/CS1908/358.json",
+  "v": "28a8880244d9f0c73d24f2aef242a4ad7ab170ea6b42455ca24e435c76f7d508"
  },
  {
   "id": "CS1908-380",
