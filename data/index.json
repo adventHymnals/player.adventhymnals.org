@@ -2222,6 +2222,54 @@
   "v": "9997c32e5320e2a6b856b1b31e7ec88fcfb0323bb1cd244000694f6bada536a1"
  },
  {
+  "id": "CH1941-255",
+  "book": "CH1941",
+  "number": "255",
+  "title": "How Firm a Foundation",
+  "path": "data/CH1941/255.json",
+  "v": "38c538a7f013a48cb99590b675527e254fa616483bd6d27a14f44ed7bcee5fb4"
+ },
+ {
+  "id": "CH1941-256",
+  "book": "CH1941",
+  "number": "256",
+  "title": "I Am Trusting Thee",
+  "path": "data/CH1941/256.json",
+  "v": "651884819bee4db45570d930c7577ca56c92ac10dcce61de2f063f1792ae4cde"
+ },
+ {
+  "id": "CH1941-257",
+  "book": "CH1941",
+  "number": "257",
+  "title": "Call Jehovah Thy Salvation",
+  "path": "data/CH1941/257.json",
+  "v": "2ea600c7ef05ca4c667e71e2ce5884b3d55f46ddd2fee69d735f348cd6b12ed3"
+ },
+ {
+  "id": "CH1941-258",
+  "book": "CH1941",
+  "number": "258",
+  "title": "I Need Thee Every Hour",
+  "path": "data/CH1941/258.json",
+  "v": "1e65c4d031375b271d13fb2ee0d264c18553968a2b116deef344b46d58e2d3d7"
+ },
+ {
+  "id": "CH1941-259",
+  "book": "CH1941",
+  "number": "259",
+  "title": "All the Way",
+  "path": "data/CH1941/259.json",
+  "v": "509605296a6a818842b20fae89e259ba890301b1f30b5b07778bc618d55a3607"
+ },
+ {
+  "id": "CH1941-260",
+  "book": "CH1941",
+  "number": "260",
+  "title": "The Lord's My Shepherd",
+  "path": "data/CH1941/260.json",
+  "v": "f34e5d58d1049fd63e0e4ba3480f0be8199d422b4f53ebc05265b7f25b49fbe3"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -4780,6 +4828,38 @@
   "v": "6f126815fe8f5d36043e44cbe8585e869d75d57dda168444737fd22a8eb1db62"
  },
  {
+  "id": "CS1908-203",
+  "book": "CS1908",
+  "number": "203",
+  "title": "He's Everything to Me",
+  "path": "data/CS1908/203.json",
+  "v": "dc724f593bf7b407577ee52e8fea22ea0d3a667e4265e7e1c7b097b24507dac1"
+ },
+ {
+  "id": "CS1908-204",
+  "book": "CS1908",
+  "number": "204",
+  "title": "What a Wonderful Saviour!",
+  "path": "data/CS1908/204.json",
+  "v": "804a41a44a3902fbd81091d9faa488cbe58dd6ac2c8554663094dfb7c23b8904"
+ },
+ {
+  "id": "CS1908-205",
+  "book": "CS1908",
+  "number": "205",
+  "title": "Blessed Assurance",
+  "path": "data/CS1908/205.json",
+  "v": "fd3babf78420bcbc85b0b02a19c3bdb13ad755b914a77b37881f8a85df349adf"
+ },
+ {
+  "id": "CS1908-206",
+  "book": "CS1908",
+  "number": "206",
+  "title": "Tarry by the Living Waters",
+  "path": "data/CS1908/206.json",
+  "v": "991d569b6ec942ebe945045699f388ac7f1248b37367a9084467294134ecd73f"
+ },
+ {
   "id": "CS1908-222",
   "book": "CS1908",
   "number": "222",
@@ -5990,6 +6070,38 @@
   "title": "Hail, Happy Day! Thou Day of Holy Rest—",
   "path": "data/HT1876/103.json",
   "v": "35e4374e79754215584b5dfc47db3e5fe28dc583ee83550fb163e3dd91f9e83d"
+ },
+ {
+  "id": "HT1876-107",
+  "book": "HT1876",
+  "number": "107",
+  "title": "Awaked from Sin's Delusive Sleep",
+  "path": "data/HT1876/107.json",
+  "v": "25c9b3cac8e4f985643ab54391ec3ed33d4fff0f38bfadf1466bfc552518df98"
+ },
+ {
+  "id": "HT1876-108",
+  "book": "HT1876",
+  "number": "108",
+  "title": "Broad is the Road That Leads to Death",
+  "path": "data/HT1876/108.json",
+  "v": "e1b053de0c8f5bcae24b1f763792c07997030680f755f5d8335c10ec006b9ca5"
+ },
+ {
+  "id": "HT1876-109",
+  "book": "HT1876",
+  "number": "109",
+  "title": "Show Pity, Lord; o Lord, Forgive",
+  "path": "data/HT1876/109.json",
+  "v": "27fcb94a79e897e99db87e4ebeb2c5f02217f49ff2f7b0e4bedf463a2c0f4310"
+ },
+ {
+  "id": "HT1876-110",
+  "book": "HT1876",
+  "number": "110",
+  "title": "Come Hither, All Ye Weary Souls",
+  "path": "data/HT1876/110.json",
+  "v": "fec0814d351a64f0e0837e7942593cdf75c6af2f493ed1a2105fd3be6fe52cf8"
  },
  {
   "id": "HT1876-127",
