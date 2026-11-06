@@ -5032,6 +5032,46 @@
   "v": "4b0d7b93722e1145e0d50bfaffb7597b91c49a6182fb606392e550676c123c13"
  },
  {
+  "id": "CH1941-636",
+  "book": "CH1941",
+  "number": "636",
+  "title": "O Who Is This That Cometh?",
+  "path": "data/CH1941/636.json",
+  "v": "996382f61d91390f303753ab9ff5278157014dde03b189aaa11f2e69f5fbd2d0"
+ },
+ {
+  "id": "CH1941-637",
+  "book": "CH1941",
+  "number": "637",
+  "title": "We Have Heard a Joyful Sound",
+  "path": "data/CH1941/637.json",
+  "v": "52475b4c00b46ffd0ce253f424698d9c66d18fd18843791d6fdde00058a50b1c"
+ },
+ {
+  "id": "CH1941-638",
+  "book": "CH1941",
+  "number": "638",
+  "title": "I Have a Song I Love to Sing",
+  "path": "data/CH1941/638.json",
+  "v": "ebe817a05bb071fe14bbc061c754b33588b4722cb06ae7662a1e821c5f55ea77"
+ },
+ {
+  "id": "CH1941-639",
+  "book": "CH1941",
+  "number": "639",
+  "title": "The Homeland!",
+  "path": "data/CH1941/639.json",
+  "v": "5d413f865e43bb62b0cc94dca00edfc445b838275691e316591fa9dc0dca7f90"
+ },
+ {
+  "id": "CH1941-640",
+  "book": "CH1941",
+  "number": "640",
+  "title": "Come, We That Love the Lord",
+  "path": "data/CH1941/640.json",
+  "v": "29a3f6d214d1b13d4a7f674443c1071bc0c0bfb818a3b079f34b1a3812d0991e"
+ },
+ {
   "id": "CH1941-653",
   "book": "CH1941",
   "number": "653",
