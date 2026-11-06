@@ -3374,6 +3374,38 @@
   "v": "7f8b37c262bc6260d732e169cfb3e788a116b5a8d86ce70c88d15f5e84eea2e8"
  },
  {
+  "id": "CH1941-407",
+  "book": "CH1941",
+  "number": "407",
+  "title": "Lord, Speak to Me",
+  "path": "data/CH1941/407.json",
+  "v": "1290ae6bcc7395ef07521a0523ab374d80255848fc6f076e6f91809c893a4faf"
+ },
+ {
+  "id": "CH1941-408",
+  "book": "CH1941",
+  "number": "408",
+  "title": "Lord, Thy Children Guide",
+  "path": "data/CH1941/408.json",
+  "v": "e64266875916f06d67773a2ae0adff7493c0f3579305f2ef029f74bc48c131d9"
+ },
+ {
+  "id": "CH1941-409",
+  "book": "CH1941",
+  "number": "409",
+  "title": "Guide Me, O Thou Great Jehovah",
+  "path": "data/CH1941/409.json",
+  "v": "bd8ffdf2202ea3150dc8c219dce5f74bf337b487d03290b049c8e75cfa2b5579"
+ },
+ {
+  "id": "CH1941-410",
+  "book": "CH1941",
+  "number": "410",
+  "title": "Lead Them, My God, to Thee",
+  "path": "data/CH1941/410.json",
+  "v": "b274a4fde1bda63fd043114a18328c78ec1ae1df892b0de46d2406270e53f50c"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6492,6 +6524,22 @@
   "title": "Peace: Perfect Peace!",
   "path": "data/CS1908/271.json",
   "v": "d97eb49c16e7048cf4e6c8c2581bc3b3c50a341be7f5eb106c119c11240c3ede"
+ },
+ {
+  "id": "CS1908-272",
+  "book": "CS1908",
+  "number": "272",
+  "title": "On Time",
+  "path": "data/CS1908/272.json",
+  "v": "0c8dc92e9adfa351a5ad8bc7c687633699632e329d64a6b86764c56e033410ce"
+ },
+ {
+  "id": "CS1908-273",
+  "book": "CS1908",
+  "number": "273",
+  "title": "Welcome Here",
+  "path": "data/CS1908/273.json",
+  "v": "c8d9516b719973d755f0279993ce0712517ab5b2d13ea75f744e1bc5a48e536a"
  },
  {
   "id": "CS1908-274",
