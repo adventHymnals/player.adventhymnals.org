@@ -2518,6 +2518,78 @@
   "v": "f0875f11b6d0728e86faf0f4ff638db0499d8a5e961950afb8d4f325c22e08d1"
  },
  {
+  "id": "CH1941-292",
+  "book": "CH1941",
+  "number": "292",
+  "title": "O How Happy Are They",
+  "path": "data/CH1941/292.json",
+  "v": "b76c3746dfc8faa24e5c55371fec875c21bc40354364a8878e7c3b76f83d2889"
+ },
+ {
+  "id": "CH1941-293",
+  "book": "CH1941",
+  "number": "293",
+  "title": "Awake! Jerusalem, Awake!",
+  "path": "data/CH1941/293.json",
+  "v": "1968b14ef859cec238f510656f697f0dd9648123ce95ddc31e8883267c69b17c"
+ },
+ {
+  "id": "CH1941-294",
+  "book": "CH1941",
+  "number": "294",
+  "title": "Lift Up Your Heads",
+  "path": "data/CH1941/294.json",
+  "v": "792f9beb18109503dcbf7b5098db02a51a703d8a1deb252672cdd4bdd6076ebf"
+ },
+ {
+  "id": "CH1941-295",
+  "book": "CH1941",
+  "number": "295",
+  "title": "Amazing Grace",
+  "path": "data/CH1941/295.json",
+  "v": "2b7133ce4d06af57e7f89015dfbcae67caea942cfd8e4c7b35b7cb34978674ff"
+ },
+ {
+  "id": "CH1941-296",
+  "book": "CH1941",
+  "number": "296",
+  "title": "We Sing the Praise",
+  "path": "data/CH1941/296.json",
+  "v": "68b9b4c9687136dfd18530b67be3ee7e57e57f38d90439a43f1dfe01651a0b69"
+ },
+ {
+  "id": "CH1941-297",
+  "book": "CH1941",
+  "number": "297",
+  "title": "Let Heaven Highest Praises Bring",
+  "path": "data/CH1941/297.json",
+  "v": "93a04a29063a2e2b2ec117cbb816b1aa6e3c47069388c42017d503489241af3a"
+ },
+ {
+  "id": "CH1941-298",
+  "book": "CH1941",
+  "number": "298",
+  "title": "Hark, My Soul! It Is the Lord",
+  "path": "data/CH1941/298.json",
+  "v": "58217f16103c11d56a501943c41f064ac32d1eb50edd432b35954ed16f974588"
+ },
+ {
+  "id": "CH1941-299",
+  "book": "CH1941",
+  "number": "299",
+  "title": "There Is a Land of Pure Delight",
+  "path": "data/CH1941/299.json",
+  "v": "94ee3839ce79027432d859f9c8922cd74862be8d5f8b2b517a9fb7af22bfbc63"
+ },
+ {
+  "id": "CH1941-300",
+  "book": "CH1941",
+  "number": "300",
+  "title": "Jerusalem the Golden",
+  "path": "data/CH1941/300.json",
+  "v": "c75564dda7898efbe7ae47f63ae9dff8a1af1254d26462ee17e7bc5b17471bbc"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5178,6 +5250,30 @@
   "title": "The Name of Jesus",
   "path": "data/CS1908/215.json",
   "v": "fdb504506b904ba35c9d6b170e1f8453988199473350d284e6752bafb238300e"
+ },
+ {
+  "id": "CS1908-216",
+  "book": "CS1908",
+  "number": "216",
+  "title": "Precious Name",
+  "path": "data/CS1908/216.json",
+  "v": "aefd910a5eedac13d63932689bf286704b831fbeca798661bd3d5bc866dcf311"
+ },
+ {
+  "id": "CS1908-217",
+  "book": "CS1908",
+  "number": "217",
+  "title": "The Holiest Name",
+  "path": "data/CS1908/217.json",
+  "v": "941dd56557d19c0ef80727c6a27286977fa4431ebd63f3cf3fb7be7d88ab1032"
+ },
+ {
+  "id": "CS1908-218",
+  "book": "CS1908",
+  "number": "218",
+  "title": "None of Self and All of Thee",
+  "path": "data/CS1908/218.json",
+  "v": "170324549207938e26547fad6691a70c6ed5ac1b18a28161fe79a2bb63d0e3c0"
  },
  {
   "id": "CS1908-222",
