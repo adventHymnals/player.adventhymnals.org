@@ -3934,6 +3934,22 @@
   "v": "52bc21c34e9b6dbee5e95f21a6bb25f8640463c63f2f4c6dd0f190c858d0a38c"
  },
  {
+  "id": "CH1941-479",
+  "book": "CH1941",
+  "number": "479",
+  "title": "Would You Win a Saviour's Blessing?",
+  "path": "data/CH1941/479.json",
+  "v": "d8be41463e59a3a637ceeb8de25846c6b4612f8100dcdcb7a4e5cd47cd136691"
+ },
+ {
+  "id": "CH1941-480",
+  "book": "CH1941",
+  "number": "480",
+  "title": "A Year of Precious Blessings",
+  "path": "data/CH1941/480.json",
+  "v": "4c7db238cbcb753a06de83227546eb29454a35b9d0ab94e9bd346d6e1f530c4b"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7154,6 +7170,22 @@
   "sung": true,
   "sv": "0aca0600d9d6ade81f7ca72657a39a30d7651846909c124772bceda2268984ef",
   "v": "f42c541f07e2426a64aaf79f203980aa5494885bf7d4bf1ab56fb3dd0e2ecd9f"
+ },
+ {
+  "id": "CS1908-301",
+  "book": "CS1908",
+  "number": "301",
+  "title": "I Love Thee Better, Lord",
+  "path": "data/CS1908/301.json",
+  "v": "9d2e220871f3fe79134e9484b19b41566fdcf6fb9116c7188f638ec14401fa26"
+ },
+ {
+  "id": "CS1908-302",
+  "book": "CS1908",
+  "number": "302",
+  "title": "No Other Name",
+  "path": "data/CS1908/302.json",
+  "v": "106f5562a172e5714fcc6711dc9d9768d57a100c710d9fc73d852149cf1adb51"
  },
  {
   "id": "CS1908-305",
