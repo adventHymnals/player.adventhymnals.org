@@ -3046,6 +3046,38 @@
   "v": "ed00aaa2a22ae0fc627a8b31b8327930d0f3664f405de94067d73431cba0a7ae"
  },
  {
+  "id": "CH1941-361",
+  "book": "CH1941",
+  "number": "361",
+  "title": "The Son of God Goes Forth to War",
+  "path": "data/CH1941/361.json",
+  "v": "cb779c43873c0d9477f1828b63c1272d9442c18c823b5267d3c31d8ab194b255"
+ },
+ {
+  "id": "CH1941-362",
+  "book": "CH1941",
+  "number": "362",
+  "title": "Lead On, O King Eternal",
+  "path": "data/CH1941/362.json",
+  "v": "90b7ab2d67e50144abf2054f454c9be2a928c3b476cb495f26c5ea2d46b40fc6"
+ },
+ {
+  "id": "CH1941-363",
+  "book": "CH1941",
+  "number": "363",
+  "title": "O Master! When Thou Callest",
+  "path": "data/CH1941/363.json",
+  "v": "d47827dfae2e1466fc9df31163561efc9bc23ca1d0d547dfff12d258c528a03f"
+ },
+ {
+  "id": "CH1941-365",
+  "book": "CH1941",
+  "number": "365",
+  "title": "For All the Saints",
+  "path": "data/CH1941/365.json",
+  "v": "cf09d26fd2a167c7bc28ed00cdc12277c6ccebacd4385563952ea3f5a35350b2"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5972,6 +6004,22 @@
   "title": "Memories of Galilee",
   "path": "data/CS1908/247.json",
   "v": "10556589de95f4afd3e391689374253fad8ea2e377f6e6a33cc87fe7c2ba4f83"
+ },
+ {
+  "id": "CS1908-248",
+  "book": "CS1908",
+  "number": "248",
+  "title": "Happy Songs",
+  "path": "data/CS1908/248.json",
+  "v": "cfafef9813fae1e59ca93956bbfd9c590fd54ae8733e32f11bd048b0f9b43aa3"
+ },
+ {
+  "id": "CS1908-249",
+  "book": "CS1908",
+  "number": "249",
+  "title": "Our God Is a God of Love",
+  "path": "data/CS1908/249.json",
+  "v": "c0fbb3552b0b90278f97eb5ba8c63ec045862b811bf44e433560a0028ff96a21"
  },
  {
   "id": "CS1908-250",
