@@ -1766,6 +1766,54 @@
   "v": "d543a4638f6347274ecc1c6a7ac3b1a5172c0b9d2751d060883ec8ac90b96293"
  },
  {
+  "id": "CH1941-198",
+  "book": "CH1941",
+  "number": "198",
+  "title": "O Lord of Life",
+  "path": "data/CH1941/198.json",
+  "v": "e06d93029dfc1326d665efe43af14b54032ef4b3c233ac2339c31fd55c0d0f92"
+ },
+ {
+  "id": "CH1941-199",
+  "book": "CH1941",
+  "number": "199",
+  "title": "We Speak of the Realms",
+  "path": "data/CH1941/199.json",
+  "v": "c33ae604ea344194eb34125e31e71fde8a186a34b7b37b91eb54eb65d8290e96"
+ },
+ {
+  "id": "CH1941-200",
+  "book": "CH1941",
+  "number": "200",
+  "title": "I Long to Behold Him",
+  "path": "data/CH1941/200.json",
+  "v": "0f2b1abfdf17a58d6eab138866b2ed32ea4092be66d836521617f5c85a8c609e"
+ },
+ {
+  "id": "CH1941-201",
+  "book": "CH1941",
+  "number": "201",
+  "title": "Soon May the Last Glad Song Arise",
+  "path": "data/CH1941/201.json",
+  "v": "b1c5b10bc3c34a9abf5448567a5e2d43a48e82806504e9d04ae298c1a6c143cb"
+ },
+ {
+  "id": "CH1941-202",
+  "book": "CH1941",
+  "number": "202",
+  "title": "O What Their Joy Must Be",
+  "path": "data/CH1941/202.json",
+  "v": "670d6b3d21cc8676ec581009c8cf2dfa6649c61160022caf50504fec417c1fd2"
+ },
+ {
+  "id": "CH1941-203",
+  "book": "CH1941",
+  "number": "203",
+  "title": "The Word Can Make Me Whole",
+  "path": "data/CH1941/203.json",
+  "v": "08939d0a74537d4c6d29c316835d6da2bc4ef2db06142e7cf95dfc896029c616"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2290,6 +2338,46 @@
   "title": "Only Two Ways",
   "path": "data/CS1900/45.json",
   "v": "40875fbdd32d7ca62a157d7ebd55adabbbbc3bcc8d18fddd74b829e6b245190b"
+ },
+ {
+  "id": "CS1900-46",
+  "book": "CS1900",
+  "number": "46",
+  "title": "Jesus Saves",
+  "path": "data/CS1900/46.json",
+  "v": "3d55f900fe85642646c0cc3ef76b0afde10064c41293cc128b04ffc709b5bc91"
+ },
+ {
+  "id": "CS1900-47",
+  "book": "CS1900",
+  "number": "47",
+  "title": "Your Saviour, Too",
+  "path": "data/CS1900/47.json",
+  "v": "f8527d096ea6a977a0634a55ac605edfa7dfdd531ddf40059a8bd69106a33530"
+ },
+ {
+  "id": "CS1900-48",
+  "book": "CS1900",
+  "number": "48",
+  "title": "Jesus of Nazareth Passeth By",
+  "path": "data/CS1900/48.json",
+  "v": "85b06de3451ae373a07005e48ff50afb50bd07f98745ac1fab714163c641e2e7"
+ },
+ {
+  "id": "CS1900-49",
+  "book": "CS1900",
+  "number": "49",
+  "title": "Take Me as I Am",
+  "path": "data/CS1900/49.json",
+  "v": "fd0bb98270f42a113034ec10656d2bf0b8a4e61a43e3204d8c751061223c9b04"
+ },
+ {
+  "id": "CS1900-50",
+  "book": "CS1900",
+  "number": "50",
+  "title": "There's Room for You to Anchor",
+  "path": "data/CS1900/50.json",
+  "v": "aba4c2d8f83aca59fcf1b27a768e597fd26fb833181d53481d82cf9bd32edec6"
  },
  {
   "id": "CS1908-1",
@@ -3790,6 +3878,38 @@
   "v": "6fffe60e00a52733f5c423fddd519d7fdc761690376c1ebb470bb5822ca072f8"
  },
  {
+  "id": "CS1908-163",
+  "book": "CS1908",
+  "number": "163",
+  "title": "Light Divine",
+  "path": "data/CS1908/163.json",
+  "v": "228f08d3cf30009bbddfa1b375deac4e575d4e081963092cb4febd54754a9525"
+ },
+ {
+  "id": "CS1908-164",
+  "book": "CS1908",
+  "number": "164",
+  "title": "Come, Gracious Spirit",
+  "path": "data/CS1908/164.json",
+  "v": "b91b2f353c0241422d267ccef54e09069e5dc3fb7db2a0bdd5c5c3d54aacd118"
+ },
+ {
+  "id": "CS1908-165",
+  "book": "CS1908",
+  "number": "165",
+  "title": "Come to the Living Waters",
+  "path": "data/CS1908/165.json",
+  "v": "741145f5a30c73f747e0530cb3ea4cf550cde6e07e9a52db018e31b719385796"
+ },
+ {
+  "id": "CS1908-166",
+  "book": "CS1908",
+  "number": "166",
+  "title": "O for That Flame!",
+  "path": "data/CS1908/166.json",
+  "v": "62a95e9e5780f3d44134b9b6a311563678a0c726031e82c69ef4e5da1f5249a9"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
@@ -4838,6 +4958,38 @@
   "title": "Six Days of Toil and Care",
   "path": "data/HT1876/76.json",
   "v": "16310ce099bc1a8967a3b066c0c45cdc5a23d25237230fce9771cd9658baccb0"
+ },
+ {
+  "id": "HT1876-77",
+  "book": "HT1876",
+  "number": "77",
+  "title": "Lord of the Sabbath, Hear Us Pray",
+  "path": "data/HT1876/77.json",
+  "v": "afee3c6e29e4a17395a799e466c69d95ce4be483faf22779f8f91a66e52789ec"
+ },
+ {
+  "id": "HT1876-78",
+  "book": "HT1876",
+  "number": "78",
+  "title": "Thus Far We're Spared Again to Meet",
+  "path": "data/HT1876/78.json",
+  "v": "15a87af5a74353fce00cb82487f6feef8bf3a77c4199c3d60d984ca77303df32"
+ },
+ {
+  "id": "HT1876-79",
+  "book": "HT1876",
+  "number": "79",
+  "title": "This Day the Lord Has Called His Own",
+  "path": "data/HT1876/79.json",
+  "v": "dae6023ea11999dca408b833a80c6843abef18ffa2588f1d88324c5940f1c9cf"
+ },
+ {
+  "id": "HT1876-80",
+  "book": "HT1876",
+  "number": "80",
+  "title": "Oh! That the Lord Would Guide My Ways",
+  "path": "data/HT1876/80.json",
+  "v": "ba64055c8ee70f81c1b1d7f07fb3deaa6c0d1a0e3e45d692f12b38673304abfb"
  },
  {
   "id": "HT1876-127",
