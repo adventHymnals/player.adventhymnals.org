@@ -2886,6 +2886,22 @@
   "v": "39f050925dd69ef8659cfaf368d5be199e5e9cef92cf10fb68a437475068bc0c"
  },
  {
+  "id": "CH1941-341",
+  "book": "CH1941",
+  "number": "341",
+  "title": "Art Thou Weary?",
+  "path": "data/CH1941/341.json",
+  "v": "e5753afa41fb7f71b00d144c738e49e105fbc7ce2600b2518b28a993eda2afa7"
+ },
+ {
+  "id": "CH1941-342",
+  "book": "CH1941",
+  "number": "342",
+  "title": "Ye Servants of God",
+  "path": "data/CH1941/342.json",
+  "v": "2df881fc4e00235a79209a96cbdc5819f6acb272de2087e84bf64c9a917c354b"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5730,6 +5746,14 @@
   "v": "8470845c0e5efd92c4512e1140be829f0b6d013a18315ab9b44bf9af87bdb0ce"
  },
  {
+  "id": "CS1908-238",
+  "book": "CS1908",
+  "number": "238",
+  "title": "O How He Loves",
+  "path": "data/CS1908/238.json",
+  "v": "775c016d2b6cb16f6926bffe75523efd2451db9a00a3e72af26f2320af4714a0"
+ },
+ {
   "id": "CS1908-239",
   "book": "CS1908",
   "number": "239",
@@ -5738,6 +5762,14 @@
   "sung": true,
   "sv": "e239a4bbc1431bdb36602fe77c4e31f67deb6307e88e5f83a0a0101f69508041",
   "v": "9b583b47535a145781ee8399a0a6250aada0748a69f0e6344f0abcc781253517"
+ },
+ {
+  "id": "CS1908-240",
+  "book": "CS1908",
+  "number": "240",
+  "title": "Sing of His Mighty Love",
+  "path": "data/CS1908/240.json",
+  "v": "cca498d8068e0d9491a9887eeca133cb765e827e100c5689f872f5eba1d08c31"
  },
  {
   "id": "CS1908-245",
