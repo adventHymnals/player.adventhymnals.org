@@ -3334,6 +3334,46 @@
   "v": "c06532c56a17dbb1cf16bc290cdbe83e3a63c1c5145db58efc7a02ee5f4d8afd"
  },
  {
+  "id": "CH1941-401",
+  "book": "CH1941",
+  "number": "401",
+  "title": "Jesus, Lover of My Soul",
+  "path": "data/CH1941/401.json",
+  "v": "78e8aa5c7649fb82b9e9d1e77465ad238725f864cae1689d1c9dc90cc42c3bd6"
+ },
+ {
+  "id": "CH1941-402",
+  "book": "CH1941",
+  "number": "402",
+  "title": "Jesus, Lover of My Soul",
+  "path": "data/CH1941/402.json",
+  "v": "068a52a9615b72c276f038a6176427110b60a9eab378062906232cb6f687864b"
+ },
+ {
+  "id": "CH1941-403",
+  "book": "CH1941",
+  "number": "403",
+  "title": "Lead Kindly Light",
+  "path": "data/CH1941/403.json",
+  "v": "8357a3c8828153033c69e07779c37bbbdff125d71833aa0a6d821bffa951aa96"
+ },
+ {
+  "id": "CH1941-404",
+  "book": "CH1941",
+  "number": "404",
+  "title": "My Jesus, as Thou Wilt",
+  "path": "data/CH1941/404.json",
+  "v": "9b4f49689645fa4a39548d1754f3d8bce69e874cb49503e13481888280ea3f35"
+ },
+ {
+  "id": "CH1941-406",
+  "book": "CH1941",
+  "number": "406",
+  "title": "Lead Thou Me On",
+  "path": "data/CH1941/406.json",
+  "v": "7f8b37c262bc6260d732e169cfb3e788a116b5a8d86ce70c88d15f5e84eea2e8"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6436,6 +6476,22 @@
   "title": "Angel Voices, Ever Singing",
   "path": "data/CS1908/269.json",
   "v": "339eddca0871d1530e1c1697cdef46a7021e2b55a43689fde825070e4ad5cca8"
+ },
+ {
+  "id": "CS1908-270",
+  "book": "CS1908",
+  "number": "270",
+  "title": "Blessed Hour of Prayer",
+  "path": "data/CS1908/270.json",
+  "v": "6f8637128957534526bb848669113a29bbcb1da98c797c9e206e3ee1dba8620f"
+ },
+ {
+  "id": "CS1908-271",
+  "book": "CS1908",
+  "number": "271",
+  "title": "Peace: Perfect Peace!",
+  "path": "data/CS1908/271.json",
+  "v": "d97eb49c16e7048cf4e6c8c2581bc3b3c50a341be7f5eb106c119c11240c3ede"
  },
  {
   "id": "CS1908-274",
