@@ -3190,6 +3190,78 @@
   "v": "5407158262593ef7ab2cd054dde8d786f133748e2520c8b2997a951b139825a2"
  },
  {
+  "id": "CH1941-381",
+  "book": "CH1941",
+  "number": "381",
+  "title": "O Who, in Such a World",
+  "path": "data/CH1941/381.json",
+  "v": "cf23f94abf2dd6226f9266ce4082b78f25deddf78aced2c584a6fb0a901d458b"
+ },
+ {
+  "id": "CH1941-382",
+  "book": "CH1941",
+  "number": "382",
+  "title": "Nearer, My God, to Thee",
+  "path": "data/CH1941/382.json",
+  "v": "4666a04201f2cbd888f5cb3f34863c0865daaaa79d840187e660e3245d4ce1b7"
+ },
+ {
+  "id": "CH1941-383",
+  "book": "CH1941",
+  "number": "383",
+  "title": "O, for a Closer Walk!",
+  "path": "data/CH1941/383.json",
+  "v": "446c8e1b6cde75963a6ebe3ac7c1740d7e326e4c3570bb1416ee646f5a92e2f6"
+ },
+ {
+  "id": "CH1941-384",
+  "book": "CH1941",
+  "number": "384",
+  "title": "O God, Mine Inmost Soul Convert",
+  "path": "data/CH1941/384.json",
+  "v": "82092157ba6e835271320ff03ee07159d32cd739f96afba47447e98b46f8db6c"
+ },
+ {
+  "id": "CH1941-385",
+  "book": "CH1941",
+  "number": "385",
+  "title": "More Love to Thee",
+  "path": "data/CH1941/385.json",
+  "v": "574ce556913df48f0215c409c1bbb6ec83019a1bdf625b6b4ac598be8a7a365c"
+ },
+ {
+  "id": "CH1941-386",
+  "book": "CH1941",
+  "number": "386",
+  "title": "Lord, in the Fullness",
+  "path": "data/CH1941/386.json",
+  "v": "eb3138df31ce84a1a7c9c43207ba1fb835fb4d071749f5036f05d12bf81da748"
+ },
+ {
+  "id": "CH1941-388",
+  "book": "CH1941",
+  "number": "388",
+  "title": "Purer Yet and Purer",
+  "path": "data/CH1941/388.json",
+  "v": "192dfe146b2e9028974451c980394bcc8e5f993282b3c326c305d44549ca606e"
+ },
+ {
+  "id": "CH1941-389",
+  "book": "CH1941",
+  "number": "389",
+  "title": "Thou Art, O Christ, the Light and Life",
+  "path": "data/CH1941/389.json",
+  "v": "671e48197653bc10710e5ece6f541b9462cc53b63552241fa24070e5ca17d59c"
+ },
+ {
+  "id": "CH1941-390",
+  "book": "CH1941",
+  "number": "390",
+  "title": "Nearer, Still Nearer",
+  "path": "data/CH1941/390.json",
+  "v": "8c6a78b5a40f81072b6c0c6400538dd66d80f4d2215f476f401dd4a472dec388"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6204,6 +6276,38 @@
   "title": "Crown Him Lord of All",
   "path": "data/CS1908/258.json",
   "v": "b480bc96969be4b817bc8e11b82b4f337d0b87864acc41fb2d358f2ae52f278c"
+ },
+ {
+  "id": "CS1908-259",
+  "book": "CS1908",
+  "number": "259",
+  "title": "The Power of Jesus' Name",
+  "path": "data/CS1908/259.json",
+  "v": "8334fc5dcbe2b9e0ce18a420e4a6f8f684f536163d3cc435c9e57f74a9bd86b9"
+ },
+ {
+  "id": "CS1908-260",
+  "book": "CS1908",
+  "number": "260",
+  "title": "Praise Ye Jehovah's Name",
+  "path": "data/CS1908/260.json",
+  "v": "714e2261cfa3840179af9561eff2536daa211cb82dcc377fecacb7cdc42353b3"
+ },
+ {
+  "id": "CS1908-261",
+  "book": "CS1908",
+  "number": "261",
+  "title": "Crown Him",
+  "path": "data/CS1908/261.json",
+  "v": "2e541a6429401097f3948de18e4a65f00358c202ac35346e3c61e94557cbc69a"
+ },
+ {
+  "id": "CS1908-262",
+  "book": "CS1908",
+  "number": "262",
+  "title": "The Matchless Worth",
+  "path": "data/CS1908/262.json",
+  "v": "f6d6cf13069a05d2a88b8f89586393a6fab8be3e1eb6783731ab70baed64a85d"
  },
  {
   "id": "CS1908-274",
