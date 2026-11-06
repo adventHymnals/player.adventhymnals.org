@@ -2022,6 +2022,86 @@
   "v": "f1e34bba5c7db2cbae73e8cc0436a7cc046daa553ab453745684bb0c2132966b"
  },
  {
+  "id": "CH1941-230",
+  "book": "CH1941",
+  "number": "230",
+  "title": "I Gave My Life for Thee",
+  "path": "data/CH1941/230.json",
+  "v": "5ab0a7da76a9ac48155ef22e0a49180b2f70dfcec95d1c08155a1d479886c2b3"
+ },
+ {
+  "id": "CH1941-231",
+  "book": "CH1941",
+  "number": "231",
+  "title": "O Jesus, Thou Art Standing",
+  "path": "data/CH1941/231.json",
+  "v": "e79fb3cce8b63506df435fd9d8b495f6adec6ccb1f7c99af5cc83c074e11ed31"
+ },
+ {
+  "id": "CH1941-232",
+  "book": "CH1941",
+  "number": "232",
+  "title": "Flee as a Bird",
+  "path": "data/CH1941/232.json",
+  "v": "3f9ea02dabd9f1777b8afc1fb1b76653cbb22b9e997f0477a9cca26ffe7b316c"
+ },
+ {
+  "id": "CH1941-233",
+  "book": "CH1941",
+  "number": "233",
+  "title": "Jesus, to Thee I Now Can Fly",
+  "path": "data/CH1941/233.json",
+  "v": "55aa10abd51e3d1bfc3fb622f733a3124af539b7d9ccb81b09c758106cdbc178"
+ },
+ {
+  "id": "CH1941-234",
+  "book": "CH1941",
+  "number": "234",
+  "title": "Depth of Mercy!",
+  "path": "data/CH1941/234.json",
+  "v": "7ac1d0a3e4af42626cd7fa663f4376dcc44114d53e3c16140ba0863a9810e9e9"
+ },
+ {
+  "id": "CH1941-235",
+  "book": "CH1941",
+  "number": "235",
+  "title": "We Stand in Deep Repentance",
+  "path": "data/CH1941/235.json",
+  "v": "a75a14fe3e7985186acf4bb3d634834e37a77fbd2266efdff6aba3221174f8f6"
+ },
+ {
+  "id": "CH1941-236",
+  "book": "CH1941",
+  "number": "236",
+  "title": "Lord, at Thy Feet",
+  "path": "data/CH1941/236.json",
+  "v": "2f23b67db6d1c5d73342f89df92e47806b8e786172051b1fb44d57b67525bab3"
+ },
+ {
+  "id": "CH1941-237",
+  "book": "CH1941",
+  "number": "237",
+  "title": "Jesus, Full of All Compassion",
+  "path": "data/CH1941/237.json",
+  "v": "3a5c3d18fc2358ea352193894a1514af19337b4b4503e1ffce2afa136370167b"
+ },
+ {
+  "id": "CH1941-238",
+  "book": "CH1941",
+  "number": "238",
+  "title": "Chief of Sinners",
+  "path": "data/CH1941/238.json",
+  "v": "0061988cfe144b7e9c32d35d9db112ca43b12498aa0a287eb09eaf82fac62083"
+ },
+ {
+  "id": "CH1941-239",
+  "book": "CH1941",
+  "number": "239",
+  "title": "Low at Thy Pierced Feet",
+  "path": "data/CH1941/239.json",
+  "v": "c90998169a46b02cc1748682620a82e18f4c9855f16f203a0c61c4bcda22d5c1"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2634,6 +2714,38 @@
   "title": "Showers of Blessing",
   "path": "data/CS1900/56.json",
   "v": "0115a9f56da9f0d8e18c6f9def9973c930b048b3f2223bb0197ba31550d181b6"
+ },
+ {
+  "id": "CS1900-57",
+  "book": "CS1900",
+  "number": "57",
+  "title": "The Lost Sheep",
+  "path": "data/CS1900/57.json",
+  "v": "6abd8f275887b8642c5f10507bb7dd1e1189e79af353d95b033d362dc53e0e97"
+ },
+ {
+  "id": "CS1900-58",
+  "book": "CS1900",
+  "number": "58",
+  "title": "Memories of Galilee",
+  "path": "data/CS1900/58.json",
+  "v": "d15a8ce12bfcb30b1284aa158e4d3e2d84839dfda5b5d18e9ddff19df0596f91"
+ },
+ {
+  "id": "CS1900-59",
+  "book": "CS1900",
+  "number": "59",
+  "title": "Gethsemane",
+  "path": "data/CS1900/59.json",
+  "v": "4fe353ea3c3f0c14d3be75d81a5a45388b2b8d3ec987c98376f803a1648d5a29"
+ },
+ {
+  "id": "CS1900-60",
+  "book": "CS1900",
+  "number": "60",
+  "title": "Calvary",
+  "path": "data/CS1900/60.json",
+  "v": "32f8ec0500dc4d2024f9645925a0c332162f42b232f5fa9d922597a0fbe95c03"
  },
  {
   "id": "CS1908-1",
@@ -4362,6 +4474,14 @@
   "v": "7816789232848f8865edadc14a18bf7a454c94a2c6aa922556ce23552739e62b"
  },
  {
+  "id": "CS1908-191",
+  "book": "CS1908",
+  "number": "191",
+  "title": "To God Be the Glory",
+  "path": "data/CS1908/191.json",
+  "v": "c751d48bb646b6128eb920d007bbc11229a36549448ded5165578090c6152b43"
+ },
+ {
   "id": "CS1908-192",
   "book": "CS1908",
   "number": "192",
@@ -4370,6 +4490,22 @@
   "sung": true,
   "sv": "0b5b43bb68f2d478cd806e48d3f1e6d17f9c7822cfcb567e8dc6a3ea7dc57375",
   "v": "ebd0c2d199accdeefd13385db4de0f247eefe8cdc98de7c36f127d10ec8bbb23"
+ },
+ {
+  "id": "CS1908-193",
+  "book": "CS1908",
+  "number": "193",
+  "title": "The Comforter Has Come",
+  "path": "data/CS1908/193.json",
+  "v": "627b9a3c957b54ba4b59d7852d9e4610577e3b6341fcefcc6f097da77cdf127a"
+ },
+ {
+  "id": "CS1908-194",
+  "book": "CS1908",
+  "number": "194",
+  "title": "I Will Sing of Jesus' Love",
+  "path": "data/CS1908/194.json",
+  "v": "2e1b2d297b1d3bf77b7dc0239a5e64c9ad7ab7306df08faab24776d724a2e1e6"
  },
  {
   "id": "CS1908-222",
@@ -5534,6 +5670,30 @@
   "title": "Hail, Thou Bright and Sacred Morn",
   "path": "data/HT1876/94.json",
   "v": "43dae3eca36d8c59f78155de40ebeeda5ec0c205a1a94570c7d7648670bb8bec"
+ },
+ {
+  "id": "HT1876-95",
+  "book": "HT1876",
+  "number": "95",
+  "title": "O Day of Rest and Gladness",
+  "path": "data/HT1876/95.json",
+  "v": "c23d2f3bddd19c5f0d8c140105143c848242ac1cac16bd56737e6cc75985dbe3"
+ },
+ {
+  "id": "HT1876-96",
+  "book": "HT1876",
+  "number": "96",
+  "title": "Thine Holy Day's Returning",
+  "path": "data/HT1876/96.json",
+  "v": "b8b12a67d8e07ccaa4ea0bd4fbefaa2d71202ef175affecc51c261c3f9ae1e9e"
+ },
+ {
+  "id": "HT1876-97",
+  "book": "HT1876",
+  "number": "97",
+  "title": "Closing Sabbath! Ah, How Soon",
+  "path": "data/HT1876/97.json",
+  "v": "145e3ca416f12d1b13771344ab675078359b89f833861b5e7f1a13116280bd1c"
  },
  {
   "id": "HT1876-127",
