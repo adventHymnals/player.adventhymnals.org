@@ -1758,6 +1758,14 @@
   "v": "2ac80cc11bfef16da5c8875daaf996ad53c9168cae0c6854e62f595d696423e4"
  },
  {
+  "id": "CH1941-197",
+  "book": "CH1941",
+  "number": "197",
+  "title": "Wake, Awake, for the Night Is Flying",
+  "path": "data/CH1941/197.json",
+  "v": "d543a4638f6347274ecc1c6a7ac3b1a5172c0b9d2751d060883ec8ac90b96293"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -3764,6 +3772,22 @@
   "title": "A Closer Walk",
   "path": "data/CS1908/160.json",
   "v": "44be9afd3cde3acb2fbaf3460ece3db8875e45f6a0130d94ba85db3407bcd54f"
+ },
+ {
+  "id": "CS1908-161",
+  "book": "CS1908",
+  "number": "161",
+  "title": "Come, Holy Spirit",
+  "path": "data/CS1908/161.json",
+  "v": "e34f1ee08a629a3b51d0e662bd03ca032ab333ae932426bc3c53f054ed091144"
+ },
+ {
+  "id": "CS1908-162",
+  "book": "CS1908",
+  "number": "162",
+  "title": "From Day to Day",
+  "path": "data/CS1908/162.json",
+  "v": "6fffe60e00a52733f5c423fddd519d7fdc761690376c1ebb470bb5822ca072f8"
  },
  {
   "id": "CS1908-174",
