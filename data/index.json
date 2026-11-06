@@ -3078,6 +3078,38 @@
   "v": "cf09d26fd2a167c7bc28ed00cdc12277c6ccebacd4385563952ea3f5a35350b2"
  },
  {
+  "id": "CH1941-366",
+  "book": "CH1941",
+  "number": "366",
+  "title": "Soldiers of Christ, Arise",
+  "path": "data/CH1941/366.json",
+  "v": "5d328d464034952ce076a840815d684dabc99cc031e7fce6435b52e500a58573"
+ },
+ {
+  "id": "CH1941-367",
+  "book": "CH1941",
+  "number": "367",
+  "title": "Christian, Dost Thou See?",
+  "path": "data/CH1941/367.json",
+  "v": "c6fa8b960cdd3fcd210a64e1a31c559f9460e946b9f946f840c7ca444bd917d8"
+ },
+ {
+  "id": "CH1941-368",
+  "book": "CH1941",
+  "number": "368",
+  "title": "We're Bound for the Land of the Pure",
+  "path": "data/CH1941/368.json",
+  "v": "a70ab08d014d06ff2656805d9f19561471ee2e98c3d4dd8a0392305134491a48"
+ },
+ {
+  "id": "CH1941-370",
+  "book": "CH1941",
+  "number": "370",
+  "title": "Day Is Done, Gone the Sun",
+  "path": "data/CH1941/370.json",
+  "v": "b7005b5cc440f614e1ba95faa3c0290dfe6e91f5ab1cf9c411f0216fff357cff"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6028,6 +6060,38 @@
   "title": "Don't Forget the Sabbath",
   "path": "data/CS1908/250.json",
   "v": "78ecb419c100fdcf7625623977f6e3fb1c34924cf6b50299a71509f0edb7e7f7"
+ },
+ {
+  "id": "CS1908-251",
+  "book": "CS1908",
+  "number": "251",
+  "title": "Two Little Hands",
+  "path": "data/CS1908/251.json",
+  "v": "d9e378c40fbe8e6e4efe84be2ba8f780fea9068ba6445e674c91a206abfcdcd5"
+ },
+ {
+  "id": "CS1908-252",
+  "book": "CS1908",
+  "number": "252",
+  "title": "He Loves Me, Too",
+  "path": "data/CS1908/252.json",
+  "v": "540954b7a7bdb6627e3e17fbdb3e539da8318b5488b28176049ba2762389d8c8"
+ },
+ {
+  "id": "CS1908-253",
+  "book": "CS1908",
+  "number": "253",
+  "title": "How I Wish I Knew",
+  "path": "data/CS1908/253.json",
+  "v": "d18c0920b2078f7f7cfc435ef1dd7e24fb60d1575c8815e26705732bd7a5290d"
+ },
+ {
+  "id": "CS1908-254",
+  "book": "CS1908",
+  "number": "254",
+  "title": "I Will Follow Thee",
+  "path": "data/CS1908/254.json",
+  "v": "96b8ce166a7042d383cacdf76e102454b0f8fca78b42d66e4f6bad9376646c54"
  },
  {
   "id": "CS1908-274",
