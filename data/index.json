@@ -4086,6 +4086,70 @@
   "v": "4e83d5174b3331ea4dafae57136bfae5dd68ed9ca1f7dc7248bf0d8234c8e7e9"
  },
  {
+  "id": "CH1941-502",
+  "book": "CH1941",
+  "number": "502",
+  "title": "Mourn for the Thousands Slain",
+  "path": "data/CH1941/502.json",
+  "v": "0e2a62ee3b467bccdc14397515c8f3f62e14d46fc029230df14d104d19fc0ace"
+ },
+ {
+  "id": "CH1941-503",
+  "book": "CH1941",
+  "number": "503",
+  "title": "O Beautiful for Spacious Skies",
+  "path": "data/CH1941/503.json",
+  "v": "b937b2e09f7bf622ccb9d0e29f415d0083ca206b8ba02767673522a7fcd28038"
+ },
+ {
+  "id": "CH1941-504",
+  "book": "CH1941",
+  "number": "504",
+  "title": "God of Our Fathers Whose Almighty Hand",
+  "path": "data/CH1941/504.json",
+  "v": "a1269797e57f77b639acbc820780789bb47e8d854a85f0dd0a1ddc8ccae84a27"
+ },
+ {
+  "id": "CH1941-505",
+  "book": "CH1941",
+  "number": "505",
+  "title": "God of Our Fathers, Known of Old",
+  "path": "data/CH1941/505.json",
+  "v": "46ae95a23671f4555b910b5258f221eec01e8acbb5640229194d9ee80588b437"
+ },
+ {
+  "id": "CH1941-506",
+  "book": "CH1941",
+  "number": "506",
+  "title": "God Save Our Gracious King",
+  "path": "data/CH1941/506.json",
+  "v": "2387a2085879f500c12af7265d82d6a5635ee4d5f4fef467b06df15be04fc174"
+ },
+ {
+  "id": "CH1941-507",
+  "book": "CH1941",
+  "number": "507",
+  "title": "O God, Beneath Thy Guiding Hand",
+  "path": "data/CH1941/507.json",
+  "v": "66c1a05e4e9458bdd1a481ca43d23887e02e46902a38c8cddf2201e246608378"
+ },
+ {
+  "id": "CH1941-509",
+  "book": "CH1941",
+  "number": "509",
+  "title": "Lord, While for All Mankind We Pray",
+  "path": "data/CH1941/509.json",
+  "v": "c7e7edd617dcfac8c23641fabeafd73c7abfc78f28b89368f5f88f4f186154f0"
+ },
+ {
+  "id": "CH1941-510",
+  "book": "CH1941",
+  "number": "510",
+  "title": "My Country, 'Tis of Thee",
+  "path": "data/CH1941/510.json",
+  "v": "e44be4cea1dbc9087e723c5177d94a9f7d9e068761b4efda43009829c8a8a757"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7430,6 +7494,30 @@
   "title": "Give Me Jesus",
   "path": "data/CS1908/315.json",
   "v": "c3f5d45515e98acf48a43d5c27c3a88c74882f77cc968383ed61b2792ac952d9"
+ },
+ {
+  "id": "CS1908-316",
+  "book": "CS1908",
+  "number": "316",
+  "title": "Entire Consecration",
+  "path": "data/CS1908/316.json",
+  "v": "fc3e45a187a264fb483e9cb0b2cf043f897bf8e62a319ed19484d21fe5414b7f"
+ },
+ {
+  "id": "CS1908-317",
+  "book": "CS1908",
+  "number": "317",
+  "title": "I Lay My Sins on Jesus",
+  "path": "data/CS1908/317.json",
+  "v": "9cfb2ea96852d36492dc28f4cd53a9a8bde181e2a9e87d624b36c3270d3bba7e"
+ },
+ {
+  "id": "CS1908-318",
+  "book": "CS1908",
+  "number": "318",
+  "title": "Thy Life Within Me",
+  "path": "data/CS1908/318.json",
+  "v": "e46cc7d58687e4e5bb7734590bff291ac53dac0fda0aa7276a307a8776b3e6f7"
  },
  {
   "id": "CS1908-380",
