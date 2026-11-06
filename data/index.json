@@ -1374,6 +1374,54 @@
   "v": "512411ed1c350b46f0c42c5fa350eae3b2e12cb8c4dfb7602ccb301f0a12bc27"
  },
  {
+  "id": "CH1941-149",
+  "book": "CH1941",
+  "number": "149",
+  "title": "O Gift of God, We Praise Thee",
+  "path": "data/CH1941/149.json",
+  "v": "0764af091aacf0abf72ae589c7b4071b25c32fbc72412dc541408ed16a4d678c"
+ },
+ {
+  "id": "CH1941-150",
+  "book": "CH1941",
+  "number": "150",
+  "title": "How Sweet the Name!",
+  "path": "data/CH1941/150.json",
+  "v": "e0d058ef53704898f75e3220a308d74b3a3cbed0aa293ab0e066ca73d5d3910c"
+ },
+ {
+  "id": "CH1941-151",
+  "book": "CH1941",
+  "number": "151",
+  "title": "O Love Divine, What Hast Thou Done!",
+  "path": "data/CH1941/151.json",
+  "v": "940ad62af8a827ca1ee31f23c304c862c40c31ba863a44529d63aba77a5152b8"
+ },
+ {
+  "id": "CH1941-152",
+  "book": "CH1941",
+  "number": "152",
+  "title": "Jesus, and Shall It Ever Be",
+  "path": "data/CH1941/152.json",
+  "v": "f35a79d1e2564d82a0459fbcab50f414843862fe21efaf4ef71fad94307a7104"
+ },
+ {
+  "id": "CH1941-153",
+  "book": "CH1941",
+  "number": "153",
+  "title": "Come, Let Us Sing",
+  "path": "data/CH1941/153.json",
+  "v": "aa59faa3201923cac2a65c07aafd70219efce5aff8d24c7e2161bc0a552ebf59"
+ },
+ {
+  "id": "CH1941-154",
+  "book": "CH1941",
+  "number": "154",
+  "title": "Jesus, Thou Joy of Loving Hearts",
+  "path": "data/CH1941/154.json",
+  "v": "3b219d11018b6a43601a2c9f8cc632dfc5778787d114942644e6af6c5c9b33fb"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1706,6 +1754,38 @@
   "title": "Mercy's Gate Is Open",
   "path": "data/CS1900/21.json",
   "v": "3b87a557c7345767295f19b4b2f839dda265308ed3340882e2f894622edf24ad"
+ },
+ {
+  "id": "CS1900-22",
+  "book": "CS1900",
+  "number": "22",
+  "title": "The Comforter Has Come",
+  "path": "data/CS1900/22.json",
+  "v": "c8ee25b6457f6920ff76c58fab5bcf9d9c1e27c2efc33f92dab21f77a376dfa8"
+ },
+ {
+  "id": "CS1900-23",
+  "book": "CS1900",
+  "number": "23",
+  "title": "Able to Save and Keep",
+  "path": "data/CS1900/23.json",
+  "v": "24fc80a3f9f8660f62d58b566b914fff0fd0f6928eced4a2202380a649943ae5"
+ },
+ {
+  "id": "CS1900-24",
+  "book": "CS1900",
+  "number": "24",
+  "title": "Build on the Rock",
+  "path": "data/CS1900/24.json",
+  "v": "1966aac19bba0b3fa07ee87648b5cf1c578b8f51eb36365076f149d38b06d74e"
+ },
+ {
+  "id": "CS1900-25",
+  "book": "CS1900",
+  "number": "25",
+  "title": "Blessed Are They That Do",
+  "path": "data/CS1900/25.json",
+  "v": "9e2dc98477ea49c5559fa748d2b1ad44fc111a78dafccfb74d1bb45d7c159e65"
  },
  {
   "id": "CS1908-1",
@@ -2440,6 +2520,22 @@
   "v": "a7a8830017f20ff76f3b2f4189fbaca975aa47096c2aec4b57fd8d92e26e00cc"
  },
  {
+  "id": "CS1908-79",
+  "book": "CS1908",
+  "number": "79",
+  "title": "Tho' Your Sins Be as Scarlet",
+  "path": "data/CS1908/79.json",
+  "v": "63862c6e2fd8fa103bb4aff1c95cfce1729ea8e4b9683c698149ce754ccc8180"
+ },
+ {
+  "id": "CS1908-80",
+  "book": "CS1908",
+  "number": "80",
+  "title": "Cover With His Life",
+  "path": "data/CS1908/80.json",
+  "v": "e3d2bfdafcfe9c686d4eb8fd3bcde827c1bf7a1101c05c81f8008e7833dae3d2"
+ },
+ {
   "id": "CS1908-81",
   "book": "CS1908",
   "number": "81",
@@ -2448,6 +2544,14 @@
   "sung": true,
   "sv": "c3a84f21027d75122a9b0986165f234ad24114239ca08d1c4b90ac569563e652",
   "v": "15ee31f93855ee0030276efa96ac6109f5e96aa88f33d3a4c95e952186a53abe"
+ },
+ {
+  "id": "CS1908-82",
+  "book": "CS1908",
+  "number": "82",
+  "title": "On the Cross",
+  "path": "data/CS1908/82.json",
+  "v": "c633573a9daf0c356f6274001d5e15af9b95cb451f5cdb870d3b7236524f69b8"
  },
  {
   "id": "CS1908-83",
