@@ -1814,6 +1814,62 @@
   "v": "08939d0a74537d4c6d29c316835d6da2bc4ef2db06142e7cf95dfc896029c616"
  },
  {
+  "id": "CH1941-204",
+  "book": "CH1941",
+  "number": "204",
+  "title": "Come, Gracious Spirit",
+  "path": "data/CH1941/204.json",
+  "v": "b6d8df07b17f62372b2f9af9e6eb1ea9d64a3c7c55342bb424d8ffa11f840561"
+ },
+ {
+  "id": "CH1941-205",
+  "book": "CH1941",
+  "number": "205",
+  "title": "Come, Holy Spirit, Come",
+  "path": "data/CH1941/205.json",
+  "v": "b7d487aad19a465d90651ea93fbdfebda3b038ddc270753a3696e384d775bb85"
+ },
+ {
+  "id": "CH1941-206",
+  "book": "CH1941",
+  "number": "206",
+  "title": "Holy Spirit, Light Divine",
+  "path": "data/CH1941/206.json",
+  "v": "b1e4ba5653ddab9d9e9814dddd7cb0bbca869858a5b5441eecfa70bf45d66724"
+ },
+ {
+  "id": "CH1941-207",
+  "book": "CH1941",
+  "number": "207",
+  "title": "Let Thy Spirit, Blessed Saviour",
+  "path": "data/CH1941/207.json",
+  "v": "ab6800f59b0c8b7f4b5feb1edfef3a97447702af4732fd5a9d0f368795f8d660"
+ },
+ {
+  "id": "CH1941-208",
+  "book": "CH1941",
+  "number": "208",
+  "title": "Lord, I Hear of Showers of Blessing",
+  "path": "data/CH1941/208.json",
+  "v": "a79be8b92a7ee761aa5a7872d94fc00f4fdddfd0643774e86fafea3bcdb250cf"
+ },
+ {
+  "id": "CH1941-209",
+  "book": "CH1941",
+  "number": "209",
+  "title": "Come, Holy Spirit",
+  "path": "data/CH1941/209.json",
+  "v": "1513f3f5e9571ce7f555ea17bf908588b56d11ac3f6e9ad0d42b684ec17eab92"
+ },
+ {
+  "id": "CH1941-210",
+  "book": "CH1941",
+  "number": "210",
+  "title": "O for That Flame of Living Fire",
+  "path": "data/CH1941/210.json",
+  "v": "6c6a55653ed3d935f09c71d8e6f3e412ebdb51ff7939ad8fc153a246e33371d8"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -3910,6 +3966,62 @@
   "v": "62a95e9e5780f3d44134b9b6a311563678a0c726031e82c69ef4e5da1f5249a9"
  },
  {
+  "id": "CS1908-167",
+  "book": "CS1908",
+  "number": "167",
+  "title": "Return, O Wanderer!",
+  "path": "data/CS1908/167.json",
+  "v": "d5854c360cc4fb286dda1b1073828c187b0818f8fab3ed92d6e2b3d46e96355e"
+ },
+ {
+  "id": "CS1908-168",
+  "book": "CS1908",
+  "number": "168",
+  "title": "Jesus Calls Us",
+  "path": "data/CS1908/168.json",
+  "v": "26907877a15cef40e13bf32046407d52221cdcc1f7260304ecd9447137b1d0ef"
+ },
+ {
+  "id": "CS1908-169",
+  "book": "CS1908",
+  "number": "169",
+  "title": "Parting with Self",
+  "path": "data/CS1908/169.json",
+  "v": "1602e0519024705d9d4d5d75ec02a9f3f2ea81b01bb52fb9c6f3b3365bbdd384"
+ },
+ {
+  "id": "CS1908-170",
+  "book": "CS1908",
+  "number": "170",
+  "title": "Take My Heart",
+  "path": "data/CS1908/170.json",
+  "v": "b2c318cdd4fad4097a86657b2367c8ecf96a1ce4f99e644f05333a4ded7f3bf4"
+ },
+ {
+  "id": "CS1908-171",
+  "book": "CS1908",
+  "number": "171",
+  "title": "One Above All Others",
+  "path": "data/CS1908/171.json",
+  "v": "86d5637b39e35d3e36f47e6caaaf43a1866d804fa2ae0f398703a00b1bf443c0"
+ },
+ {
+  "id": "CS1908-172",
+  "book": "CS1908",
+  "number": "172",
+  "title": "The Wondrous Cross",
+  "path": "data/CS1908/172.json",
+  "v": "af165d6731b52d5b697bb61bd59ddd46356f55fd21170bb6fee4e418b8f3808a"
+ },
+ {
+  "id": "CS1908-173",
+  "book": "CS1908",
+  "number": "173",
+  "title": "To-day the Saviour Calls",
+  "path": "data/CS1908/173.json",
+  "v": "bac434da6eb27cca13561b5d3e801bfef464dcf4c3e11e885fd4780793f73881"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
@@ -4990,6 +5102,54 @@
   "title": "Oh! That the Lord Would Guide My Ways",
   "path": "data/HT1876/80.json",
   "v": "ba64055c8ee70f81c1b1d7f07fb3deaa6c0d1a0e3e45d692f12b38673304abfb"
+ },
+ {
+  "id": "HT1876-81",
+  "book": "HT1876",
+  "number": "81",
+  "title": "Again Our Earthly Cares We Leave",
+  "path": "data/HT1876/81.json",
+  "v": "a3a0dcb5c81d36204dde5b210f1283f63eae6e8aef009e357e7dcd1ad29626d4"
+ },
+ {
+  "id": "HT1876-82",
+  "book": "HT1876",
+  "number": "82",
+  "title": "The Sun Rolls Down the Distant West",
+  "path": "data/HT1876/82.json",
+  "v": "70ebb21710f8939d9f3fcc50fab1e371309905c41bfbaf545d997c0966c7bfa3"
+ },
+ {
+  "id": "HT1876-83",
+  "book": "HT1876",
+  "number": "83",
+  "title": "How Sweet Upon This Sacred Day",
+  "path": "data/HT1876/83.json",
+  "v": "04d2a70bbe188a1a82e20380bbc2256d5614c6eebfe3ca50f3b6e053bfc0f4e8"
+ },
+ {
+  "id": "HT1876-84",
+  "book": "HT1876",
+  "number": "84",
+  "title": "Oh! That Thy Statutes Every Hour",
+  "path": "data/HT1876/84.json",
+  "v": "7b219d6a19510f9615df75df2c54c21e229b2eefcc2f247197d3399b7377e4c6"
+ },
+ {
+  "id": "HT1876-85",
+  "book": "HT1876",
+  "number": "85",
+  "title": "Thy Law is Perfect, Lord of Light",
+  "path": "data/HT1876/85.json",
+  "v": "514356a5b3e8a5ee808cb7896c97a06de49bba1195a79bf7aab23c3ac4428e44"
+ },
+ {
+  "id": "HT1876-86",
+  "book": "HT1876",
+  "number": "86",
+  "title": "Blest Are the Undefiled in Heart",
+  "path": "data/HT1876/86.json",
+  "v": "58e46d2143043837f590b8a8c6e553debfcbdff7ce912846f37b1f90f4e408ba"
  },
  {
   "id": "HT1876-127",
