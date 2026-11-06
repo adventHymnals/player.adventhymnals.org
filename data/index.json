@@ -4150,6 +4150,46 @@
   "v": "e44be4cea1dbc9087e723c5177d94a9f7d9e068761b4efda43009829c8a8a757"
  },
  {
+  "id": "CH1941-511",
+  "book": "CH1941",
+  "number": "511",
+  "title": "Gentle Peace, From Heaven Descended",
+  "path": "data/CH1941/511.json",
+  "v": "3954ae5690648ab4fdda537081757f798d37d880435040509f4dea25e26bc393"
+ },
+ {
+  "id": "CH1941-512",
+  "book": "CH1941",
+  "number": "512",
+  "title": "God Bless Our Native Land!",
+  "path": "data/CH1941/512.json",
+  "v": "d0f511be2e7dfde8f7d75fd841f0c9172299e826079fb0dc96e33752229526c9"
+ },
+ {
+  "id": "CH1941-513",
+  "book": "CH1941",
+  "number": "513",
+  "title": "Once to Every Man and Nation",
+  "path": "data/CH1941/513.json",
+  "v": "db9814f7c3f98e4b217b306484ff653163a297b3c33efbec86050ca947079ffc"
+ },
+ {
+  "id": "CH1941-515",
+  "book": "CH1941",
+  "number": "515",
+  "title": "Jesus, Where'er Thy People Meet",
+  "path": "data/CH1941/515.json",
+  "v": "f737b0077a3620a020a2a8dedece0510d7f24a47cbeb0c8b5dc725e759017f14"
+ },
+ {
+  "id": "CH1941-516",
+  "book": "CH1941",
+  "number": "516",
+  "title": "Sweet the Time",
+  "path": "data/CH1941/516.json",
+  "v": "f8e6bc27a8ac77ac1297a76c4d6fe6a0e35964f1828abc957b04042bf1bd6601"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7526,6 +7566,22 @@
   "title": "I Have Promised",
   "path": "data/CS1908/319.json",
   "v": "82c8f678097b991b839a4dcdc3434f2b8a4f28db110439da7c0d90f1ffe6a113"
+ },
+ {
+  "id": "CS1908-320",
+  "book": "CS1908",
+  "number": "320",
+  "title": "God Loves Us",
+  "path": "data/CS1908/320.json",
+  "v": "9dfaa90b9f8607a540c24b6ee56a0511c4bda032ea06934c89ee5b8aee7b82ac"
+ },
+ {
+  "id": "CS1908-321",
+  "book": "CS1908",
+  "number": "321",
+  "title": "We Worship Thee",
+  "path": "data/CS1908/321.json",
+  "v": "3d768ebc7f0523d376fc795e0c0b98f8b14ed8cea601a7b070b54ec8fd98053a"
  },
  {
   "id": "CS1908-380",
