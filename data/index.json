@@ -3622,6 +3622,22 @@
   "v": "14175f238dba0e3a5de29cb1e3692f473ae0473bc8d818e38cc1f881bca5f73a"
  },
  {
+  "id": "CH1941-439",
+  "book": "CH1941",
+  "number": "439",
+  "title": "With Willing Hearts We Tread",
+  "path": "data/CH1941/439.json",
+  "v": "74bdb72ce6024dbf5ece07b10219ffe34679a5bab0cbe4fccc0a9f2328366495"
+ },
+ {
+  "id": "CH1941-440",
+  "book": "CH1941",
+  "number": "440",
+  "title": "Go, Preach My Gospel",
+  "path": "data/CH1941/440.json",
+  "v": "2ecdad1db432471bb96d951c485de71c8eab7b9e10e13459c163597be29c16de"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6880,6 +6896,14 @@
   "sung": true,
   "sv": "917cff4111a5f1db4f396fcec7461c72299c8473de511bed488b1b54a7ff7be6",
   "v": "26a2ae1e8913a78a2b3f6d079cd073032679cbe74cd6a23b06c2db1436e0a276"
+ },
+ {
+  "id": "CS1908-289",
+  "book": "CS1908",
+  "number": "289",
+  "title": "Near the Cross",
+  "path": "data/CS1908/289.json",
+  "v": "1c3ee572f501cf4db2f0ce18ef25c50e43a10629aaf6e6bbb6d50ca5414eb115"
  },
  {
   "id": "CS1908-300",
