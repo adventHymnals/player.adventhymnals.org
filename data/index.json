@@ -1070,6 +1070,78 @@
   "v": "599040ee610d77febb7de72cbf7c00a76ff5473f93cc9f90d06ba07d9f1f654a"
  },
  {
+  "id": "CH1941-111",
+  "book": "CH1941",
+  "number": "111",
+  "title": "Hark! the Herald Angels Sing",
+  "path": "data/CH1941/111.json",
+  "v": "adcbbd57657649d14fc678493e84032fc8d2d5fd5a9681c18f596dd9451582d7"
+ },
+ {
+  "id": "CH1941-112",
+  "book": "CH1941",
+  "number": "112",
+  "title": "As With Gladness Men of Old",
+  "path": "data/CH1941/112.json",
+  "v": "fba33c4936db9f5d3c0cdf6b77a8e9f4431d10adce258f122452244a100281e4"
+ },
+ {
+  "id": "CH1941-113",
+  "book": "CH1941",
+  "number": "113",
+  "title": "Angels From the Realms of Glory",
+  "path": "data/CH1941/113.json",
+  "v": "cd7dc3086af92d147e65b2b9ea33add5d4bcbc170c834daa0b18edde750296cd"
+ },
+ {
+  "id": "CH1941-114",
+  "book": "CH1941",
+  "number": "114",
+  "title": "The Hidden Years at Nazareth",
+  "path": "data/CH1941/114.json",
+  "v": "9b4f6e9ca03fcadd905b9d85a00787aad33ca7011a94a892c1eba1bad5103fa0"
+ },
+ {
+  "id": "CH1941-115",
+  "book": "CH1941",
+  "number": "115",
+  "title": "When the Lord of Love Was Here",
+  "path": "data/CH1941/115.json",
+  "v": "372cc063f7e66c095bbddee8e220b949af88946de88661bd363c81649f871f1d"
+ },
+ {
+  "id": "CH1941-116",
+  "book": "CH1941",
+  "number": "116",
+  "title": "Dear Lord and Father",
+  "path": "data/CH1941/116.json",
+  "v": "d34ecc8e0f2245dd138e4c1499f37f5d4bff69f88b1960196ce762dfe95ef622"
+ },
+ {
+  "id": "CH1941-117",
+  "book": "CH1941",
+  "number": "117",
+  "title": "Prince of Peace, Control My Will",
+  "path": "data/CH1941/117.json",
+  "v": "d51d67672a0c70df4be74cfd59bd902739f1fd929680a011dedbf588873aa873"
+ },
+ {
+  "id": "CH1941-118",
+  "book": "CH1941",
+  "number": "118",
+  "title": "When I Survey the Wondrous Cross",
+  "path": "data/CH1941/118.json",
+  "v": "e88ac9bc1f42be64a8424a0120e1be15c9d7e4790eef51cb4842422ae2336ecf"
+ },
+ {
+  "id": "CH1941-119",
+  "book": "CH1941",
+  "number": "119",
+  "title": "When I Survey the Wondrous Cross",
+  "path": "data/CH1941/119.json",
+  "v": "ce59e0146b591d0b6a957c722d4dafac22601a87ca23c87a58809d8e27fe8e6d"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1290,6 +1362,38 @@
   "title": "Let Him In",
   "path": "data/CS1900/7.json",
   "v": "8c545e20004a1e3e5f63b95f8051aa44afbfc6864583ad98b53e28f72bac74e8"
+ },
+ {
+  "id": "CS1900-8",
+  "book": "CS1900",
+  "number": "8",
+  "title": "Whiter Than Snow",
+  "path": "data/CS1900/8.json",
+  "v": "72c8003f8a9544aab5c29cb21720e5c3b8e085914408ba03a91959a46d50a2a0"
+ },
+ {
+  "id": "CS1900-9",
+  "book": "CS1900",
+  "number": "9",
+  "title": "Like as a Father",
+  "path": "data/CS1900/9.json",
+  "v": "6bfbaf47d87b40ea67a345821a56844a507f896d5b6acea4e9430cbea3293061"
+ },
+ {
+  "id": "CS1900-10",
+  "book": "CS1900",
+  "number": "10",
+  "title": "Only One Step",
+  "path": "data/CS1900/10.json",
+  "v": "14fedcd7ab6a042473db0ca47f0620f170643bc3e6a82554cc4d5eb0c1a7f200"
+ },
+ {
+  "id": "CS1900-11",
+  "book": "CS1900",
+  "number": "11",
+  "title": "Urge Them to Come",
+  "path": "data/CS1900/11.json",
+  "v": "e076320d0e7253704549190eca7b13d1f05d8177b11a7423050774efb8e5ef54"
  },
  {
   "id": "CS1908-1",
@@ -1552,6 +1656,14 @@
   "v": "a063f116e4aaf47359c9385a4e86bbbf7c21a20e6b21f20d431fe872825e523b"
  },
  {
+  "id": "CS1908-28",
+  "book": "CS1908",
+  "number": "28",
+  "title": "Whiter Than Snow",
+  "path": "data/CS1908/28.json",
+  "v": "7443ce2fdf8e71e784fcc5a5afeb12df3ada906bacef68698428e20fb168f600"
+ },
+ {
   "id": "CS1908-29",
   "book": "CS1908",
   "number": "29",
@@ -1582,6 +1694,14 @@
   "v": "32a5387942160ccf6f23405b49ad9f36eb9ade6ab499211a5cd8b29d2195d7ba"
  },
  {
+  "id": "CS1908-32",
+  "book": "CS1908",
+  "number": "32",
+  "title": "Build on the Rock",
+  "path": "data/CS1908/32.json",
+  "v": "5c44e5ece714413e239a88ba2dfe4f2a5cdfd74186ffe6bab7d20b06c29230ba"
+ },
+ {
   "id": "CS1908-33",
   "book": "CS1908",
   "number": "33",
@@ -1600,6 +1720,14 @@
   "sung": true,
   "sv": "33c03ec7f6673ca142490627da640e00687dfb6a2a68a1bb3b8831c534634cdc",
   "v": "c8f42b034d9ba52bf04777840efc36829a85f26b9b05176fa985224935a5e004"
+ },
+ {
+  "id": "CS1908-35",
+  "book": "CS1908",
+  "number": "35",
+  "title": "Knocking, Knocking",
+  "path": "data/CS1908/35.json",
+  "v": "1fa0401ec2b55198b0030fe5169314463ee2d17b70b0df04b3a3fe3f52ec7a0d"
  },
  {
   "id": "CS1908-36",
@@ -1642,6 +1770,14 @@
   "v": "c2107b3056d35891b52a11de726119a005a6ae346878cfa479bc0d2cb13aef92"
  },
  {
+  "id": "CS1908-40",
+  "book": "CS1908",
+  "number": "40",
+  "title": "Tell Me the Story of Jesus",
+  "path": "data/CS1908/40.json",
+  "v": "0b4a633bfe54dea582d15c28bbc2903e8554cea76f2712be34b8c0f8b0d1ed0b"
+ },
+ {
   "id": "CS1908-41",
   "book": "CS1908",
   "number": "41",
@@ -1672,6 +1808,14 @@
   "v": "ee802ac21d3a78bad9b868d9fd69ed01a290920f7e59f347f304e8660c7c55c3"
  },
  {
+  "id": "CS1908-44",
+  "book": "CS1908",
+  "number": "44",
+  "title": "There's Room for You to Anchor",
+  "path": "data/CS1908/44.json",
+  "v": "bf4e2192973a2f7362f12bf656096bed8836408db8b43ce64b31c04d7c2a167d"
+ },
+ {
   "id": "CS1908-45",
   "book": "CS1908",
   "number": "45",
@@ -1690,6 +1834,14 @@
   "sung": true,
   "sv": "954ea67a8a389a26e659f4146dadbd06a28de6ad12efab083148261bf7b9ccd6",
   "v": "d0c9d7fce7bc11aeb7e1a84d927c83a58f04640333358dad90872417abd93220"
+ },
+ {
+  "id": "CS1908-47",
+  "book": "CS1908",
+  "number": "47",
+  "title": "Not in the Hour of Death",
+  "path": "data/CS1908/47.json",
+  "v": "10b112bc00705507b01166ac371fa4f115f65d9818663e87d1b5d7515ade43fb"
  },
  {
   "id": "CS1908-49",
@@ -3022,6 +3174,54 @@
   "title": "Lord, at This Closing Hour",
   "path": "data/HT1876/30.json",
   "v": "c8b8dd24cc88651219aab5bc2df3501e83762e5fae56e4dc20fdf533488fee05"
+ },
+ {
+  "id": "HT1876-31",
+  "book": "HT1876",
+  "number": "31",
+  "title": "Praise to Him by Whose Kind Favor",
+  "path": "data/HT1876/31.json",
+  "v": "1a7b4f75bba6d0465555d3d64103ba2a173a0931dec36e3de87ec692835edc4f"
+ },
+ {
+  "id": "HT1876-32",
+  "book": "HT1876",
+  "number": "32",
+  "title": "Holy Spirit, Source of Gladness",
+  "path": "data/HT1876/32.json",
+  "v": "bffbdcefb792c27e5eae9decc117f52bb928fa389aa4d343208623ee61842813"
+ },
+ {
+  "id": "HT1876-33",
+  "book": "HT1876",
+  "number": "33",
+  "title": "Praise to Thee, Thou Great Creator",
+  "path": "data/HT1876/33.json",
+  "v": "35c94cbf80623e5f8d3f4a0b3598f0af38ee4b084e4e609e75d2a27860745528"
+ },
+ {
+  "id": "HT1876-34",
+  "book": "HT1876",
+  "number": "34",
+  "title": "Glory to God on High",
+  "path": "data/HT1876/34.json",
+  "v": "a2fc85fd25904b7baa740f47978fb2ef1b8f387bb042aa54a613659ed6ebd265"
+ },
+ {
+  "id": "HT1876-35",
+  "book": "HT1876",
+  "number": "35",
+  "title": "Come, All Ye Saints of God",
+  "path": "data/HT1876/35.json",
+  "v": "1458c24bb9e01fac2850a316dd57527789091331e909aa6d08839ca3603e68dd"
+ },
+ {
+  "id": "HT1876-36",
+  "book": "HT1876",
+  "number": "36",
+  "title": "A Few More Years Shall Roll",
+  "path": "data/HT1876/36.json",
+  "v": "ee16e367a653e8ed9bbb2dd60a930636fdda5bd0bb9bb449aaf146ab17e97b27"
  },
  {
   "id": "NZK-1",
