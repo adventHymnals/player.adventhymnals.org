@@ -2350,6 +2350,86 @@
   "v": "f9b4b8c0d26ba73f7be517036576d83cda5d011c45daaa9ff2963c8c92988f04"
  },
  {
+  "id": "CH1941-271",
+  "book": "CH1941",
+  "number": "271",
+  "title": "Not I, but Christ",
+  "path": "data/CH1941/271.json",
+  "v": "f9bfe00d931732b635a8d71b8c366df7174a5e4c32c9e516e97f1bf4d3389df2"
+ },
+ {
+  "id": "CH1941-272",
+  "book": "CH1941",
+  "number": "272",
+  "title": "Have Thine Own Way, Lord",
+  "path": "data/CH1941/272.json",
+  "v": "228f99b6bd8878d426f4f10bc82e362ab610703ed5ba34a0957aaf6cdc10e656"
+ },
+ {
+  "id": "CH1941-273",
+  "book": "CH1941",
+  "number": "273",
+  "title": "Take My Life and Let It Be",
+  "path": "data/CH1941/273.json",
+  "v": "7ac21f16c29ff030643c60608d270fd90816b84b2fd79939598f26303f77ff6f"
+ },
+ {
+  "id": "CH1941-274",
+  "book": "CH1941",
+  "number": "274",
+  "title": "Must Jesus Bear the Cross Alone?",
+  "path": "data/CH1941/274.json",
+  "v": "882560cc1a60cfe148de0ffafdb5010269d11594e41cf33da1b0c83f792a5acf"
+ },
+ {
+  "id": "CH1941-275",
+  "book": "CH1941",
+  "number": "275",
+  "title": "Deeper Yet",
+  "path": "data/CH1941/275.json",
+  "v": "dcec5d7760722d293d0fb9b90df757a7b452e4e72d65b7c1fa9a753628386203"
+ },
+ {
+  "id": "CH1941-276",
+  "book": "CH1941",
+  "number": "276",
+  "title": "My Jesus, I Love Thee",
+  "path": "data/CH1941/276.json",
+  "v": "205ca735c7255487f64121120b6bae8a7453a91c3b6a5190da6fbc3ba7c30187"
+ },
+ {
+  "id": "CH1941-277",
+  "book": "CH1941",
+  "number": "277",
+  "title": "Fade, Fade Each Earthly Joy",
+  "path": "data/CH1941/277.json",
+  "v": "79c87722ce4b54cead3027e739796eb1f86fcf6c8c6968e991b809d8e3e00bc6"
+ },
+ {
+  "id": "CH1941-278",
+  "book": "CH1941",
+  "number": "278",
+  "title": "I Lay My Sins on Jesus",
+  "path": "data/CH1941/278.json",
+  "v": "3762cba4c02fcce1a7054bf6cf4bafad667181c006bee188eebc3da745dbdd9a"
+ },
+ {
+  "id": "CH1941-279",
+  "book": "CH1941",
+  "number": "279",
+  "title": "Live Out Thy Life Within Me",
+  "path": "data/CH1941/279.json",
+  "v": "c36f45d0d02c61ea246b36114e85d47820ba470d50bda22c3727a25005a0e4e2"
+ },
+ {
+  "id": "CH1941-280",
+  "book": "CH1941",
+  "number": "280",
+  "title": "Beneath the Cross of Jesus",
+  "path": "data/CH1941/280.json",
+  "v": "6d4f0658fa38ebc6c6ff527260033c48e401976591d80c1b2198a3af8b3c57d5"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -4970,6 +5050,22 @@
   "title": "Wonderful Peace",
   "path": "data/CS1908/210.json",
   "v": "318c58b95fe42b3082d7a68e88e2a6c7a60b468889e8392a218881c3e8c7e06a"
+ },
+ {
+  "id": "CS1908-211",
+  "book": "CS1908",
+  "number": "211",
+  "title": "The Haven of Rest",
+  "path": "data/CS1908/211.json",
+  "v": "2a2aba22a8847e2738499d5c8ca2c2dac9bfe0c23e54e51fbc85abe2bd42150c"
+ },
+ {
+  "id": "CS1908-212",
+  "book": "CS1908",
+  "number": "212",
+  "title": "At the Cross",
+  "path": "data/CS1908/212.json",
+  "v": "220ee8b4ff9fc1fc895e3353d00971ce0ab43d9f752b5bb88ca28bf13cd390d5"
  },
  {
   "id": "CS1908-222",
