@@ -3486,6 +3486,78 @@
   "v": "0d5a5e52db14814f8238e23423c8ac2282fd3e81f84dbd062e84ce6dbe5e1d29"
  },
  {
+  "id": "CH1941-421",
+  "book": "CH1941",
+  "number": "421",
+  "title": "All Things Bright and Beautiful",
+  "path": "data/CH1941/421.json",
+  "v": "740c2f8fbd0187a1c0e958124e261b9483713070f022895db3931963a7f30c9d"
+ },
+ {
+  "id": "CH1941-423",
+  "book": "CH1941",
+  "number": "423",
+  "title": "I Am So Glad That Our Father",
+  "path": "data/CH1941/423.json",
+  "v": "3e991406c010e7d29a6a72dd3725dea4cf1e65a96c9b74c8f42989dc19decb35"
+ },
+ {
+  "id": "CH1941-424",
+  "book": "CH1941",
+  "number": "424",
+  "title": "Once in Royal David's City",
+  "path": "data/CH1941/424.json",
+  "v": "93b61b44811edf079eec872bb7431cb0d728d034059107ba645b60cfc2b4d5b0"
+ },
+ {
+  "id": "CH1941-425",
+  "book": "CH1941",
+  "number": "425",
+  "title": "I Would Be True",
+  "path": "data/CH1941/425.json",
+  "v": "53f957f8402704b2495c912e18927f0790cc4f9bfa53193127153e2680defecb"
+ },
+ {
+  "id": "CH1941-426",
+  "book": "CH1941",
+  "number": "426",
+  "title": "O Holy Lord, Content to Fill",
+  "path": "data/CH1941/426.json",
+  "v": "f93d802a0eeb751d673d4db522b2196a40d2f7fec0bfe64c0dde785394cb7049"
+ },
+ {
+  "id": "CH1941-427",
+  "book": "CH1941",
+  "number": "427",
+  "title": "Saviour, While My Heart Is Tender",
+  "path": "data/CH1941/427.json",
+  "v": "4f7ccd124fe0a53e77a32e2da798c6e3664f4753c78d15d3601b1fa58cd56639"
+ },
+ {
+  "id": "CH1941-428",
+  "book": "CH1941",
+  "number": "428",
+  "title": "Hushed Was the Evening Hymn",
+  "path": "data/CH1941/428.json",
+  "v": "aa11273e5ed1f13f963816bbcb53e750b64f8611cb55f57b1617271574cd72a4"
+ },
+ {
+  "id": "CH1941-429",
+  "book": "CH1941",
+  "number": "429",
+  "title": "Jesus, I Will Follow Thee",
+  "path": "data/CH1941/429.json",
+  "v": "72587d0a252e28b29dc64d869199407b5b1950eb893393d064fd336abdd778f9"
+ },
+ {
+  "id": "CH1941-430",
+  "book": "CH1941",
+  "number": "430",
+  "title": "Jesus, Tender Shepherd, Hear Me",
+  "path": "data/CH1941/430.json",
+  "v": "815a6693531e64a27c9deb8395a5a88f4c4f726832909f11a6885fbe477aca3b"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6660,6 +6732,38 @@
   "title": "Jesus, Come and Bless Us",
   "path": "data/CS1908/278.json",
   "v": "31997676501de8a6254dcef3451a590b7b872bb86197125c5035af51388f1a53"
+ },
+ {
+  "id": "CS1908-279",
+  "book": "CS1908",
+  "number": "279",
+  "title": "God of Life and Light",
+  "path": "data/CS1908/279.json",
+  "v": "e450bed094d71a4c2349d5b72d07b9c1c5aefed890172ed513ed9776932a922a"
+ },
+ {
+  "id": "CS1908-280",
+  "book": "CS1908",
+  "number": "280",
+  "title": "Welcome Hymn",
+  "path": "data/CS1908/280.json",
+  "v": "8a62e0cc26329e6e3abc0b728e2a3219ffad6a7ef76de6d1b6434556d2cbb43e"
+ },
+ {
+  "id": "CS1908-281",
+  "book": "CS1908",
+  "number": "281",
+  "title": "May Jesus Christ Be Praised",
+  "path": "data/CS1908/281.json",
+  "v": "436633da62a6067cdc81c8b0a2addd0af4404f22a60242fb449e7950dbaee54e"
+ },
+ {
+  "id": "CS1908-282",
+  "book": "CS1908",
+  "number": "282",
+  "title": "Draw Me Nearer",
+  "path": "data/CS1908/282.json",
+  "v": "b01764428663b12564c6a11487f36bb3be01d9f6e9ba6d671ba50a39a7191d03"
  },
  {
   "id": "CS1908-286",
