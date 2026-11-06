@@ -3030,6 +3030,22 @@
   "v": "a11366d38ffd31c9108ae4827a0885ddd5513496a2aebc2bc9b9bca5bca9b747"
  },
  {
+  "id": "CH1941-359",
+  "book": "CH1941",
+  "number": "359",
+  "title": "We Are Living, We Are Dwelling",
+  "path": "data/CH1941/359.json",
+  "v": "5baae9d95d4fd037ba74cf4a9002e96a74409ca2f0a22f0827903065989e9e13"
+ },
+ {
+  "id": "CH1941-360",
+  "book": "CH1941",
+  "number": "360",
+  "title": "Onward, Christian Soldiers!",
+  "path": "data/CH1941/360.json",
+  "v": "ed00aaa2a22ae0fc627a8b31b8327930d0f3664f405de94067d73431cba0a7ae"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5940,6 +5956,22 @@
   "sung": true,
   "sv": "94d7172cc0cd05e1d87416bd861fb919801195cc97ff93dfe38b6d6adba753d0",
   "v": "03054d5414cd9829c3b01bd1095c5cd9c96917ecd1d2ad71d65540ff9238df55"
+ },
+ {
+  "id": "CS1908-246",
+  "book": "CS1908",
+  "number": "246",
+  "title": "The Lily of the Valley",
+  "path": "data/CS1908/246.json",
+  "v": "865d7511c3435b399cb69cbd2093204f57cafb194421e8127d7a6a4d662d8707"
+ },
+ {
+  "id": "CS1908-247",
+  "book": "CS1908",
+  "number": "247",
+  "title": "Memories of Galilee",
+  "path": "data/CS1908/247.json",
+  "v": "10556589de95f4afd3e391689374253fad8ea2e377f6e6a33cc87fe7c2ba4f83"
  },
  {
   "id": "CS1908-250",
