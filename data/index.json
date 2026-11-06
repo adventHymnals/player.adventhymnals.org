@@ -4502,6 +4502,70 @@
   "v": "c81611f4b0d25f60c1af4fd16e4d2a426a308f420c9fb419c596e481bd5b61db"
  },
  {
+  "id": "CH1941-561",
+  "book": "CH1941",
+  "number": "561",
+  "title": "There Is a Gate That Stands Ajar",
+  "path": "data/CH1941/561.json",
+  "v": "4bf744889f2a5322d850ed234b69d86d4338ceb9e17778c7f5d9512393c1099e"
+ },
+ {
+  "id": "CH1941-562",
+  "book": "CH1941",
+  "number": "562",
+  "title": "O Weary Soul, the Gate Is Near",
+  "path": "data/CH1941/562.json",
+  "v": "5b5972518b8b4c40092a49971645456a2b7e58421d84f2a7fc4b4c97ab3e4c35"
+ },
+ {
+  "id": "CH1941-563",
+  "book": "CH1941",
+  "number": "563",
+  "title": "Softly and Tenderly",
+  "path": "data/CH1941/563.json",
+  "v": "13cbd324411ae3bb44a172e44f186f40c310b401d5a229cbd3eb84d159aa31d1"
+ },
+ {
+  "id": "CH1941-564",
+  "book": "CH1941",
+  "number": "564",
+  "title": "While Jesus Whispers to You",
+  "path": "data/CH1941/564.json",
+  "v": "f559a0e9394e7ace18eaa4cb9b5938cbd2a501fc072837bd684067e469ec6c50"
+ },
+ {
+  "id": "CH1941-565",
+  "book": "CH1941",
+  "number": "565",
+  "title": "Christ Is Knocking at My Sad Heart",
+  "path": "data/CH1941/565.json",
+  "v": "398cc63d1ceb5506b1962baf908f96856c3ab338495cfe71cb021d3215190357"
+ },
+ {
+  "id": "CH1941-566",
+  "book": "CH1941",
+  "number": "566",
+  "title": "There's a Stranger at the Door",
+  "path": "data/CH1941/566.json",
+  "v": "b0887ca076d0b5d919c2ac84c48a584f9b4249ca9f5c1d06f4ddef5c7430ad34"
+ },
+ {
+  "id": "CH1941-567",
+  "book": "CH1941",
+  "number": "567",
+  "title": "Come, Every Soul by Sin Oppressed",
+  "path": "data/CH1941/567.json",
+  "v": "425b106080c63325457dcd905c5caad2a41c9413948733480b0ba84f0eca1c3c"
+ },
+ {
+  "id": "CH1941-568",
+  "book": "CH1941",
+  "number": "568",
+  "title": "Someone Will Enter the Pearly Gate",
+  "path": "data/CH1941/568.json",
+  "v": "bf2cb7991aa2d2f2d679ae39989f6d35a5fa98f1bbf8e0916d0b62577f282593"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -8062,6 +8126,38 @@
   "title": "Ten Thousand Harps",
   "path": "data/CS1908/342.json",
   "v": "c9f666d8bec6c4e5e984eba13f837f323400a99d75afcf4fbbba12e4febd7934"
+ },
+ {
+  "id": "CS1908-343",
+  "book": "CS1908",
+  "number": "343",
+  "title": "I My Cross Have Taken",
+  "path": "data/CS1908/343.json",
+  "v": "37157947ec8590dff40f4fd7d16f179c75510bc68ba8ad9aa1c5f4d77291bd1c"
+ },
+ {
+  "id": "CS1908-344",
+  "book": "CS1908",
+  "number": "344",
+  "title": "Happy in Him",
+  "path": "data/CS1908/344.json",
+  "v": "0144e978d91598a0d3bf45899ab5fa646628eecedf5aaaf4a64043473efb9fe2"
+ },
+ {
+  "id": "CS1908-345",
+  "book": "CS1908",
+  "number": "345",
+  "title": "Love Divine",
+  "path": "data/CS1908/345.json",
+  "v": "d0d8ca2defbdff727dc7236c17c45a0cd75c0877720652e980e910832ab9747e"
+ },
+ {
+  "id": "CS1908-346",
+  "book": "CS1908",
+  "number": "346",
+  "title": "Prayer for the Children",
+  "path": "data/CS1908/346.json",
+  "v": "a159b7ee0a393f6d675e42dbbad9f39ece1f99de686bb8d54b5aba7911dfda7a"
  },
  {
   "id": "CS1908-380",
