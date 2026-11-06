@@ -1950,6 +1950,14 @@
   "v": "d6ee04ebd79cb9a06bbe7a7691c98f8dc6df1535c850de9c1978046eadf65035"
  },
  {
+  "id": "CH1941-221",
+  "book": "CH1941",
+  "number": "221",
+  "title": "Return, O Wanderer",
+  "path": "data/CH1941/221.json",
+  "v": "d34dc9f92c0b7332fc922ea2a8c6202d38148828f7d2508e0c2da1eed2a83571"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -4202,6 +4210,46 @@
   "v": "e447931f7a81857a12bbcf1118254358a3f887964b0aa0d0e1d4bd76aa807103"
  },
  {
+  "id": "CS1908-181",
+  "book": "CS1908",
+  "number": "181",
+  "title": "Give Thy Youth to God",
+  "path": "data/CS1908/181.json",
+  "v": "3d17f9006823e983a9d574dc71f1cdaa3e4380367b08dafbf09d52a9ae8e9ff0"
+ },
+ {
+  "id": "CS1908-182",
+  "book": "CS1908",
+  "number": "182",
+  "title": "He Calls the Lambs",
+  "path": "data/CS1908/182.json",
+  "v": "769a1a870692b4510218d63265db13b6c67c99cdf01f0825fef11da2ac28cb25"
+ },
+ {
+  "id": "CS1908-183",
+  "book": "CS1908",
+  "number": "183",
+  "title": "A Heart of Praise",
+  "path": "data/CS1908/183.json",
+  "v": "2fdd9923c8fc924f3181411250d21b608e2eadb14828c88291f5d005cfb3f0ce"
+ },
+ {
+  "id": "CS1908-184",
+  "book": "CS1908",
+  "number": "184",
+  "title": "On Trifling Cares",
+  "path": "data/CS1908/184.json",
+  "v": "ebf35f3073d3aa4e898eb31aa0d69c53267c2191b4a21bd701707bb52d7c26b6"
+ },
+ {
+  "id": "CS1908-185",
+  "book": "CS1908",
+  "number": "185",
+  "title": "Cross and Crown",
+  "path": "data/CS1908/185.json",
+  "v": "114ecfa96c133f8a83a531cef6efd0eb1121cc694aadf928abd48a17b2a39955"
+ },
+ {
   "id": "CS1908-192",
   "book": "CS1908",
   "number": "192",
@@ -5310,6 +5358,38 @@
   "title": "Blest Are the Undefiled in Heart",
   "path": "data/HT1876/86.json",
   "v": "58e46d2143043837f590b8a8c6e553debfcbdff7ce912846f37b1f90f4e408ba"
+ },
+ {
+  "id": "HT1876-87",
+  "book": "HT1876",
+  "number": "87",
+  "title": "With Joy We Hail the Sacred Day",
+  "path": "data/HT1876/87.json",
+  "v": "9af11bbaa78eb5553fc8f72e823b3743ea5a5d159c9c667cbbacaf2c799bc5ba"
+ },
+ {
+  "id": "HT1876-88",
+  "book": "HT1876",
+  "number": "88",
+  "title": "Dear Lord, We Would Thy Praises Sing",
+  "path": "data/HT1876/88.json",
+  "v": "88bbd8d1f767a1473df69e68385e035285c44d7e02e2ae03c1bb6a17c3cca6de"
+ },
+ {
+  "id": "HT1876-89",
+  "book": "HT1876",
+  "number": "89",
+  "title": "When the Worn Spirit Wants Repose",
+  "path": "data/HT1876/89.json",
+  "v": "62d80b850f83bf2c465e4a7ea7f1900f672d0dd272c06381a5bc356c5eb47724"
+ },
+ {
+  "id": "HT1876-90",
+  "book": "HT1876",
+  "number": "90",
+  "title": "Thy Holy Sabbath, Lord",
+  "path": "data/HT1876/90.json",
+  "v": "9575ae3fc95b0adbd663283151afe7b6ae349cdc8c846b432b75a2195a598c69"
  },
  {
   "id": "HT1876-127",
