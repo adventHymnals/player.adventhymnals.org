@@ -1534,6 +1534,22 @@
   "v": "9c8e33a340e407f77b0c932191e86d41448362fef6b46a267331ec16c9d217f7"
  },
  {
+  "id": "CH1941-169",
+  "book": "CH1941",
+  "number": "169",
+  "title": "Thou Hidden Source",
+  "path": "data/CH1941/169.json",
+  "v": "5143853e7f3338818f94dffdd3dd22ec4584fe0b1749b376df2f93494d4c5dbb"
+ },
+ {
+  "id": "CH1941-170",
+  "book": "CH1941",
+  "number": "170",
+  "title": "Beyond the Starry Skies",
+  "path": "data/CH1941/170.json",
+  "v": "95f9d2e1003d5b93e3f771371a951a620b6b74cf99c17e577545b7fabee46849"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2996,6 +3012,14 @@
   "sung": true,
   "sv": "1c109efec77a0b1b80a6a434b45a549974dfe0e23deb3c678aa2d6baf5bece1e",
   "v": "50654622a161b5ad607121a68debaace4b3d79add8f616ecd7d032d3a8f03c8e"
+ },
+ {
+  "id": "CS1908-115",
+  "book": "CS1908",
+  "number": "115",
+  "title": "The Gospel Trump Is Sounding",
+  "path": "data/CS1908/115.json",
+  "v": "c6818110a4e84e875b3e76aee1ad9f2620785bcc9e4785aa5d999da9dd416d3b"
  },
  {
   "id": "CS1908-116",
