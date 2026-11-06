@@ -4566,6 +4566,22 @@
   "v": "bf2cb7991aa2d2f2d679ae39989f6d35a5fa98f1bbf8e0916d0b62577f282593"
  },
  {
+  "id": "CH1941-569",
+  "book": "CH1941",
+  "number": "569",
+  "title": "Jesus Is Tenderly Calling",
+  "path": "data/CH1941/569.json",
+  "v": "03a4d728c8cf98eab560c59fbb6f506f3d19b446c4029c287cb4ea580d24286d"
+ },
+ {
+  "id": "CH1941-570",
+  "book": "CH1941",
+  "number": "570",
+  "title": "O Tender and Sweet Was the Father's Voice",
+  "path": "data/CH1941/570.json",
+  "v": "ec2933453fc22139f6ff38b65c3fca105824007fcb242b01edbff101c6151aa6"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
