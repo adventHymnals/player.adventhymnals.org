@@ -4366,6 +4366,38 @@
   "v": "e2b56b2e2490ba363f87e3a71f1f4800b85b279ac31655689f363f7185db12fb"
  },
  {
+  "id": "CH1941-541",
+  "book": "CH1941",
+  "number": "541",
+  "title": "Lift Up the Trumpet",
+  "path": "data/CH1941/541.json",
+  "v": "bfb2eb888404c5c0fbd53b914694cac143d2fa059313144dbf1dfef731440356"
+ },
+ {
+  "id": "CH1941-542",
+  "book": "CH1941",
+  "number": "542",
+  "title": "We Know Not the Time When He Cometh",
+  "path": "data/CH1941/542.json",
+  "v": "75efa8d8f89c1fd6d1c89d45eea839635d5dcacdab249824b5f170db86d53b11"
+ },
+ {
+  "id": "CH1941-543",
+  "book": "CH1941",
+  "number": "543",
+  "title": "Tell It to Every Kindred and Nation",
+  "path": "data/CH1941/543.json",
+  "v": "23ad7516050bc31dc62a991c834d864941f622cc863158f09d103a44c2a369de"
+ },
+ {
+  "id": "CH1941-544",
+  "book": "CH1941",
+  "number": "544",
+  "title": "O'er All the Land",
+  "path": "data/CH1941/544.json",
+  "v": "d4dea7baa9fa0a0d53b8b6bf9373dcbe5735f4e77b59f93db1f1024f9e1dce7c"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7862,6 +7894,22 @@
   "title": "For Us",
   "path": "data/CS1908/334.json",
   "v": "730064b8749f27798f3cd384b8708adf4501084d5be6ce7f371af772fb691f46"
+ },
+ {
+  "id": "CS1908-335",
+  "book": "CS1908",
+  "number": "335",
+  "title": "O Worship the King!",
+  "path": "data/CS1908/335.json",
+  "v": "e98aabe5272ab3e9f7d9985c91a4d1115926abd483e456cf17b98ef97a6b3f92"
+ },
+ {
+  "id": "CS1908-336",
+  "book": "CS1908",
+  "number": "336",
+  "title": "My Salvation, My All",
+  "path": "data/CS1908/336.json",
+  "v": "8f01f32aa462c40bb28bd70e98f4d293dc15edbd2a2640318a1fcef4339a9426"
  },
  {
   "id": "CS1908-380",
