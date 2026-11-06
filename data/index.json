@@ -3318,6 +3318,22 @@
   "v": "9a78564e2f43c434c65d72837fae19931be65a59bb18baaf1967a62ad8615772"
  },
  {
+  "id": "CH1941-398",
+  "book": "CH1941",
+  "number": "398",
+  "title": "Jesus, Saviour, Pilot Me",
+  "path": "data/CH1941/398.json",
+  "v": "c86c9416e8c4e8a607f80044d07d37ff944d9e92435c15d90ac36befa80a2aee"
+ },
+ {
+  "id": "CH1941-399",
+  "book": "CH1941",
+  "number": "399",
+  "title": "There Is a Safe and Secret Place",
+  "path": "data/CH1941/399.json",
+  "v": "c06532c56a17dbb1cf16bc290cdbe83e3a63c1c5145db58efc7a02ee5f4d8afd"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6396,6 +6412,30 @@
   "title": "Come and Worship",
   "path": "data/CS1908/266.json",
   "v": "10297b432634d8d214649d4a39854275f0d8cee5353da883f1ab77b2e8d83279"
+ },
+ {
+  "id": "CS1908-267",
+  "book": "CS1908",
+  "number": "267",
+  "title": "So May We",
+  "path": "data/CS1908/267.json",
+  "v": "d1be1b3985c49c077c9d4ed728b2dc3c4a6bbb1cd770ffed28d8b2abfdfc853c"
+ },
+ {
+  "id": "CS1908-268",
+  "book": "CS1908",
+  "number": "268",
+  "title": "Praise the King of Heaven",
+  "path": "data/CS1908/268.json",
+  "v": "810a0d9a2baf574321174fdd775e6aafb151cc13ce9b06be466601c02bc3fb96"
+ },
+ {
+  "id": "CS1908-269",
+  "book": "CS1908",
+  "number": "269",
+  "title": "Angel Voices, Ever Singing",
+  "path": "data/CS1908/269.json",
+  "v": "339eddca0871d1530e1c1697cdef46a7021e2b55a43689fde825070e4ad5cca8"
  },
  {
   "id": "CS1908-274",
