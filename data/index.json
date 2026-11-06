@@ -2614,6 +2614,54 @@
   "v": "0bce64742b52e1fa43b16a57b1bd39138dc67e8b400b0b1e5bcb5beda65de536"
  },
  {
+  "id": "CH1941-304",
+  "book": "CH1941",
+  "number": "304",
+  "title": "Glorious Things of Thee Are Spoken",
+  "path": "data/CH1941/304.json",
+  "v": "501e8ef8d94facc446f7c4a909f93aff5e14968dea61e0111fcd740b157affe9"
+ },
+ {
+  "id": "CH1941-306",
+  "book": "CH1941",
+  "number": "306",
+  "title": "Ten Thousand Times Ten Thousand",
+  "path": "data/CH1941/306.json",
+  "v": "bb618848af61607d1535371b4fe6883881604c0276b5b327dfc78ee40926b8dc"
+ },
+ {
+  "id": "CH1941-307",
+  "book": "CH1941",
+  "number": "307",
+  "title": "The Time Is Near",
+  "path": "data/CH1941/307.json",
+  "v": "e1871de20962380a79e6165feb8e291867b18356e456c324c78668a93a327e2b"
+ },
+ {
+  "id": "CH1941-308",
+  "book": "CH1941",
+  "number": "308",
+  "title": "We've No Abiding City Here",
+  "path": "data/CH1941/308.json",
+  "v": "c0d8cf4d85f8147545a5bccaf3f80804d0f45ecba546111ece2799375db14f9d"
+ },
+ {
+  "id": "CH1941-309",
+  "book": "CH1941",
+  "number": "309",
+  "title": "Jerusalem, My Happy Home",
+  "path": "data/CH1941/309.json",
+  "v": "89bc27bb6d42c563ff3ae92a02237de1d3ef368560fcb463d38efb7433e09a7d"
+ },
+ {
+  "id": "CH1941-310",
+  "book": "CH1941",
+  "number": "310",
+  "title": "O Happy Day! That Fixed My Choice",
+  "path": "data/CH1941/310.json",
+  "v": "3ead171413cc081f1f7440d1f58996a5ef4813d0d80973b4f259c1d3932a7119"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5316,6 +5364,14 @@
   "v": "c57e6cb7e61f358de1f19904260690668b2520a21bdf048cf224cdfe09cd9109"
  },
  {
+  "id": "CS1908-221",
+  "book": "CS1908",
+  "number": "221",
+  "title": "Saved to the Uttermost",
+  "path": "data/CS1908/221.json",
+  "v": "6075b5a14359937dac85534f7711f19a8423efd5cde854f7a54fb79eff1f7cdb"
+ },
+ {
   "id": "CS1908-222",
   "book": "CS1908",
   "number": "222",
@@ -5324,6 +5380,22 @@
   "sung": true,
   "sv": "bf153cea5c89d188b4b9587f74777c5f658de04a75cbdd0b399f54d7418e5d6b",
   "v": "0c5d1564a07e84d6409a2a491cd4237fba16c5d91ca372bc308632248aac40ab"
+ },
+ {
+  "id": "CS1908-223",
+  "book": "CS1908",
+  "number": "223",
+  "title": "Nor Silver Nor Gold",
+  "path": "data/CS1908/223.json",
+  "v": "311b66b3fb7f64313cdd0a91b2d617c8ec1abf62553938ef9157b8394c06d59b"
+ },
+ {
+  "id": "CS1908-224",
+  "book": "CS1908",
+  "number": "224",
+  "title": "Where Jesus Is, 'Tis Heaven",
+  "path": "data/CS1908/224.json",
+  "v": "745e97c33c4b9f09676e54a69416f05925388447504fb96968dada83c1da012c"
  },
  {
   "id": "CS1908-229",
