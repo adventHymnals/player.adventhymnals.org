@@ -1030,6 +1030,46 @@
   "v": "725425ba3a00ba9164c2bf6763db96d5a673b6313acf9fb00e2bd499d7f1da72"
  },
  {
+  "id": "CH1941-106",
+  "book": "CH1941",
+  "number": "106",
+  "title": "There's a Song in the Air",
+  "path": "data/CH1941/106.json",
+  "v": "a9893a9044e8040f5b7199f5925d0c59569951ab752c888a14b898c2415e6867"
+ },
+ {
+  "id": "CH1941-107",
+  "book": "CH1941",
+  "number": "107",
+  "title": "We Three Kings of Orient",
+  "path": "data/CH1941/107.json",
+  "v": "8fe39010e6b9c567b517b6c09129e63e71994b53d88e35a278dc2aadac034532"
+ },
+ {
+  "id": "CH1941-108",
+  "book": "CH1941",
+  "number": "108",
+  "title": "The First Noel",
+  "path": "data/CH1941/108.json",
+  "v": "816fe8a309d9e4a22e6a405b9cf619bd0fc1bb5a42ec53f4c3725dfe15b6ffa2"
+ },
+ {
+  "id": "CH1941-109",
+  "book": "CH1941",
+  "number": "109",
+  "title": "O Come, O Come, Immanuel",
+  "path": "data/CH1941/109.json",
+  "v": "83a93ab4bb9e2fde68e5ecc912a44dbac4352ba326b80a37578e831e65737a8c"
+ },
+ {
+  "id": "CH1941-110",
+  "book": "CH1941",
+  "number": "110",
+  "title": "All My Heart This Night Rejoices",
+  "path": "data/CH1941/110.json",
+  "v": "599040ee610d77febb7de72cbf7c00a76ff5473f93cc9f90d06ba07d9f1f654a"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1422,6 +1462,14 @@
   "title": "Just One Touch",
   "path": "data/CS1908/18.json",
   "v": "2885d061b023cc26dcfeedb991240353c97e51307c2b79fa677c1c1bbee9c0a7"
+ },
+ {
+  "id": "CS1908-19",
+  "book": "CS1908",
+  "number": "19",
+  "title": "A Clean Heart",
+  "path": "data/CS1908/19.json",
+  "v": "ca55648effef1db642412a7437d4e2768435679dc55eb0440b94a3ec5775beca"
  },
  {
   "id": "CS1908-20",
