@@ -3638,6 +3638,86 @@
   "v": "2ecdad1db432471bb96d951c485de71c8eab7b9e10e13459c163597be29c16de"
  },
  {
+  "id": "CH1941-441",
+  "book": "CH1941",
+  "number": "441",
+  "title": "Go, Labor On",
+  "path": "data/CH1941/441.json",
+  "v": "8abc3f5977f60c790b521ab638e121ed3c669799d72d3441402e58981edc1f14"
+ },
+ {
+  "id": "CH1941-442",
+  "book": "CH1941",
+  "number": "442",
+  "title": "How Beauteous Are Their Feet",
+  "path": "data/CH1941/442.json",
+  "v": "e8392fc177b69ee20e2bcb072dcf0e8616ae30881680bc6851c41883545c1e55"
+ },
+ {
+  "id": "CH1941-443",
+  "book": "CH1941",
+  "number": "443",
+  "title": "Workman of God",
+  "path": "data/CH1941/443.json",
+  "v": "4bef7745070cd1f410219db43a91a8e4e17e78f0a627b10abe1cf988f52e1f58"
+ },
+ {
+  "id": "CH1941-444",
+  "book": "CH1941",
+  "number": "444",
+  "title": "Ho! Reapers of Life's Harvest",
+  "path": "data/CH1941/444.json",
+  "v": "d2b8da69b85e15e3aaf04cc4b34196e9591d130cca558014db646c558322a720"
+ },
+ {
+  "id": "CH1941-445",
+  "book": "CH1941",
+  "number": "445",
+  "title": "From Greenland's Icy Mountains",
+  "path": "data/CH1941/445.json",
+  "v": "2634c9795d8a48f87de0b36af382d5b6dfdd366b810eda30e002604149f8184f"
+ },
+ {
+  "id": "CH1941-446",
+  "book": "CH1941",
+  "number": "446",
+  "title": "Work, for the Night Is Coming",
+  "path": "data/CH1941/446.json",
+  "v": "322c46144b9093e4509c9f9afd016621cb9c60725bb147e720dc319361fb5fdb"
+ },
+ {
+  "id": "CH1941-447",
+  "book": "CH1941",
+  "number": "447",
+  "title": "Hark! the Voice of Jesus Calling",
+  "path": "data/CH1941/447.json",
+  "v": "0f104d0cd11412283646ce850c3443d3b8149564f1e938ab2b693978512d7092"
+ },
+ {
+  "id": "CH1941-448",
+  "book": "CH1941",
+  "number": "448",
+  "title": "Far and Near the Fields Are Teeming",
+  "path": "data/CH1941/448.json",
+  "v": "4d07f2e2a51a8b7274d1b210404e6a94b9a3e747f635e6b131a4544d8fe52db0"
+ },
+ {
+  "id": "CH1941-449",
+  "book": "CH1941",
+  "number": "449",
+  "title": "O Zion, Haste",
+  "path": "data/CH1941/449.json",
+  "v": "20cd3d0409ba7c7e77b57082ef8d212471dedb97426793b4369c3d4fbdef2158"
+ },
+ {
+  "id": "CH1941-450",
+  "book": "CH1941",
+  "number": "450",
+  "title": "Fling Out the Banner!",
+  "path": "data/CH1941/450.json",
+  "v": "c192f28c4b71d6a44ab736f66807e31e2c4cbb1f0b372f882e2aee1b2502bb9b"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6904,6 +6984,38 @@
   "title": "Near the Cross",
   "path": "data/CS1908/289.json",
   "v": "1c3ee572f501cf4db2f0ce18ef25c50e43a10629aaf6e6bbb6d50ca5414eb115"
+ },
+ {
+  "id": "CS1908-290",
+  "book": "CS1908",
+  "number": "290",
+  "title": "I Know Whom I Have Believed",
+  "path": "data/CS1908/290.json",
+  "v": "72dbc07c3cd4845427ced70a79f3c4891e6ce794db4c5ac02ac91cf35162740d"
+ },
+ {
+  "id": "CS1908-292",
+  "book": "CS1908",
+  "number": "292",
+  "title": "The Valley of Blessing",
+  "path": "data/CS1908/292.json",
+  "v": "3e37a10df0d1623a7b688da25e81e9b32194d28b7ff485b3995d62c8f8d1250a"
+ },
+ {
+  "id": "CS1908-293",
+  "book": "CS1908",
+  "number": "293",
+  "title": "Deeper Yet",
+  "path": "data/CS1908/293.json",
+  "v": "8b3fb124e2158488a864084d1d5a7d6528d665c41b51491e7c9e1cf635584e05"
+ },
+ {
+  "id": "CS1908-294",
+  "book": "CS1908",
+  "number": "294",
+  "title": "The Solid Rock",
+  "path": "data/CS1908/294.json",
+  "v": "dbdee64af656b7e33dafeb6bf7b8283a20e4ed0d7ce9f8cd92e1ab414d3647f2"
  },
  {
   "id": "CS1908-300",
