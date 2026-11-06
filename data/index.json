@@ -2750,6 +2750,70 @@
   "v": "1b2c59201cfc48f84817c467594c087425fbc3905297942b29eb5ec06539ced7"
  },
  {
+  "id": "CH1941-323",
+  "book": "CH1941",
+  "number": "323",
+  "title": "Come Unto Me When Shadows Darkly Gather",
+  "path": "data/CH1941/323.json",
+  "v": "db797ea97c701627dc83acc95cc6a9c3c5f9394652d52ed7a4e9958b7ebf1753"
+ },
+ {
+  "id": "CH1941-324",
+  "book": "CH1941",
+  "number": "324",
+  "title": "'Tis the Blessed Hour of Prayer",
+  "path": "data/CH1941/324.json",
+  "v": "b96643987d010d6396cf7c58dcc875642f55e2ad27a7eea161fe443fc1e304e0"
+ },
+ {
+  "id": "CH1941-325",
+  "book": "CH1941",
+  "number": "325",
+  "title": "My God, Is Any Hour So Sweet?",
+  "path": "data/CH1941/325.json",
+  "v": "0a557b876cee1f8ed5fd16346c186f47b87f97801ab9c6139afdc74d8584f487"
+ },
+ {
+  "id": "CH1941-326",
+  "book": "CH1941",
+  "number": "326",
+  "title": "Still, Still With Thee",
+  "path": "data/CH1941/326.json",
+  "v": "0c496dea0b2d140c9918a00d2da48070e95a15312a382242abb1f0779de61d67"
+ },
+ {
+  "id": "CH1941-327",
+  "book": "CH1941",
+  "number": "327",
+  "title": "In the Hour of Trial",
+  "path": "data/CH1941/327.json",
+  "v": "013055e75edd002322ab4d22498b49d96f33e757ead06a8754d9fff01f322814"
+ },
+ {
+  "id": "CH1941-328",
+  "book": "CH1941",
+  "number": "328",
+  "title": "At First I Prayed for Light",
+  "path": "data/CH1941/328.json",
+  "v": "783ffb942eac4dc2d68391574e9ba6e1cc0068774c278a5a5acb63954eeb75f6"
+ },
+ {
+  "id": "CH1941-329",
+  "book": "CH1941",
+  "number": "329",
+  "title": "Speak, Lord, in the Stillness",
+  "path": "data/CH1941/329.json",
+  "v": "9f7aae503cb199958c8a5e5be4eb28d8451b585e38c315e01bfec4eefcb3e14f"
+ },
+ {
+  "id": "CH1941-330",
+  "book": "CH1941",
+  "number": "330",
+  "title": "O Thou, to Whose All-Searching Sight",
+  "path": "data/CH1941/330.json",
+  "v": "ac8b6754b15167069d8262799ed8709bebcb523fad3b2ea2ae97efbb500c6e1f"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5534,6 +5598,38 @@
   "title": "Not I, but Christ",
   "path": "data/CS1908/230.json",
   "v": "b6cdceabb672371a5c27984cd9b93f8569f8459197419529dcb0898e26b71cdd"
+ },
+ {
+  "id": "CS1908-231",
+  "book": "CS1908",
+  "number": "231",
+  "title": "Music in My Soul",
+  "path": "data/CS1908/231.json",
+  "v": "ce0581bc6848bd089ae6f99eb5ea8bae2a6176a98f66e3a92aac9f2506140000"
+ },
+ {
+  "id": "CS1908-232",
+  "book": "CS1908",
+  "number": "232",
+  "title": "Singing All the Time",
+  "path": "data/CS1908/232.json",
+  "v": "66cd52c6ee9b5bb17cc04311ad790f9f42b740cbcfaa31f3e022a8bacc7d1c44"
+ },
+ {
+  "id": "CS1908-233",
+  "book": "CS1908",
+  "number": "233",
+  "title": "When Love Shines In",
+  "path": "data/CS1908/233.json",
+  "v": "d68e0a53e1edea3f13091180763e9eefe52a7e37548d728f5f245e918321a73a"
+ },
+ {
+  "id": "CS1908-234",
+  "book": "CS1908",
+  "number": "234",
+  "title": "My Song",
+  "path": "data/CS1908/234.json",
+  "v": "286cae6766da970f8144abe013ddbd45123dc2020077e81f59082d3e9ce93b6b"
  },
  {
   "id": "CS1908-236",
