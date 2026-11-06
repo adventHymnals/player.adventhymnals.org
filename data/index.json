@@ -1006,6 +1006,30 @@
   "v": "41ef569784724bce0d8b82fe402d7786ec99217e5a491189e451496c29a4dae7"
  },
  {
+  "id": "CH1941-103",
+  "book": "CH1941",
+  "number": "103",
+  "title": "Thou Didst Leave Thy Throne",
+  "path": "data/CH1941/103.json",
+  "v": "8d712c3b2a7de69d1eecce3f4d6bd70adf1876982b23af40b502bb53b86822cf"
+ },
+ {
+  "id": "CH1941-104",
+  "book": "CH1941",
+  "number": "104",
+  "title": "O Little Town of Bethlehem",
+  "path": "data/CH1941/104.json",
+  "v": "4fe2c1782a8c6bfb4e344f3735eda4c6ef77b71ae0db2ef1be29ee046709ff50"
+ },
+ {
+  "id": "CH1941-105",
+  "book": "CH1941",
+  "number": "105",
+  "title": "O Come, All Ye Faithful",
+  "path": "data/CH1941/105.json",
+  "v": "725425ba3a00ba9164c2bf6763db96d5a673b6313acf9fb00e2bd499d7f1da72"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1374,6 +1398,30 @@
   "sung": true,
   "sv": "489df6fd4ad70084cf8ed42ebe934af402d902794e7798be33c5611139d91673",
   "v": "d05d6f92a213e29c963e4e2fe3ea3db944f7d70d6dd5e147bf5b6cbb8d350e68"
+ },
+ {
+  "id": "CS1908-16",
+  "book": "CS1908",
+  "number": "16",
+  "title": "Come unto Me",
+  "path": "data/CS1908/16.json",
+  "v": "a8ccc7ae9d3dd78fd095cca5f430ba96c5ba30b8fdc2544fe93179934ec4b065"
+ },
+ {
+  "id": "CS1908-17",
+  "book": "CS1908",
+  "number": "17",
+  "title": "Lord, I'm Coming Home",
+  "path": "data/CS1908/17.json",
+  "v": "83e4b855e29b0ac615d475c2b4886710041fcf0bcdc4117dd0f01f4c07435daf"
+ },
+ {
+  "id": "CS1908-18",
+  "book": "CS1908",
+  "number": "18",
+  "title": "Just One Touch",
+  "path": "data/CS1908/18.json",
+  "v": "2885d061b023cc26dcfeedb991240353c97e51307c2b79fa677c1c1bbee9c0a7"
  },
  {
   "id": "CS1908-20",
