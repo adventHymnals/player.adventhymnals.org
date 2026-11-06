@@ -3110,6 +3110,86 @@
   "v": "b7005b5cc440f614e1ba95faa3c0290dfe6e91f5ab1cf9c411f0216fff357cff"
  },
  {
+  "id": "CH1941-371",
+  "book": "CH1941",
+  "number": "371",
+  "title": "I Saw One Weary",
+  "path": "data/CH1941/371.json",
+  "v": "a0719f9f184a9917b2008d4b2178a052e44829b23ca15ac2329df7b382a5e036"
+ },
+ {
+  "id": "CH1941-372",
+  "book": "CH1941",
+  "number": "372",
+  "title": "A Few More Years Shall Roll",
+  "path": "data/CH1941/372.json",
+  "v": "8c1cb3e2af587667553868283958148ab04c41ff8757d44449cc99a34f902a66"
+ },
+ {
+  "id": "CH1941-373",
+  "book": "CH1941",
+  "number": "373",
+  "title": "Pilgrims On, the Day Is Dawning",
+  "path": "data/CH1941/373.json",
+  "v": "6ceac411cf00d24646ea0a8046c9adef546e60228a1e608c8254f3acf7a8a632"
+ },
+ {
+  "id": "CH1941-374",
+  "book": "CH1941",
+  "number": "374",
+  "title": "There Is a Road",
+  "path": "data/CH1941/374.json",
+  "v": "509dc87dbe9d94e57322428adc13746b5ce9e0911c80decf48b4085c844cade5"
+ },
+ {
+  "id": "CH1941-375",
+  "book": "CH1941",
+  "number": "375",
+  "title": "Hark! Hark, My Soul!",
+  "path": "data/CH1941/375.json",
+  "v": "375fe6dcd8d341910e80e35ba9e9a8c440520723a34fad992a9d740425ddd09a"
+ },
+ {
+  "id": "CH1941-376",
+  "book": "CH1941",
+  "number": "376",
+  "title": "Hark! Hark, My Soul!",
+  "path": "data/CH1941/376.json",
+  "v": "16f8db774270099bc022a31559eef8e33543d316e34f8060395e4da98a3e9a66"
+ },
+ {
+  "id": "CH1941-377",
+  "book": "CH1941",
+  "number": "377",
+  "title": "O Happy Band of Pilgrims",
+  "path": "data/CH1941/377.json",
+  "v": "3ece7a3e4d4cbd53190847f31b4b2f0000ff8074edd1536e0e8898f492fb1d4c"
+ },
+ {
+  "id": "CH1941-378",
+  "book": "CH1941",
+  "number": "378",
+  "title": "Whence Came the Armies?",
+  "path": "data/CH1941/378.json",
+  "v": "1127fd76c99180962157d19bf21388c82ef8d175ae209dad9263327081e3eedd"
+ },
+ {
+  "id": "CH1941-379",
+  "book": "CH1941",
+  "number": "379",
+  "title": "There Is a Blessed Hope",
+  "path": "data/CH1941/379.json",
+  "v": "ba93bf200791732b37ccf1fb2a84e1e5dff8bcff2ab2cb2916ea61edce8c4e1c"
+ },
+ {
+  "id": "CH1941-380",
+  "book": "CH1941",
+  "number": "380",
+  "title": "There Is Sweet Rest",
+  "path": "data/CH1941/380.json",
+  "v": "5407158262593ef7ab2cd054dde8d786f133748e2520c8b2997a951b139825a2"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6092,6 +6172,38 @@
   "title": "I Will Follow Thee",
   "path": "data/CS1908/254.json",
   "v": "96b8ce166a7042d383cacdf76e102454b0f8fca78b42d66e4f6bad9376646c54"
+ },
+ {
+  "id": "CS1908-255",
+  "book": "CS1908",
+  "number": "255",
+  "title": "Sweetly Sing",
+  "path": "data/CS1908/255.json",
+  "v": "1556eb2e38b4abd17699748ee81694a064a2b85bd3bd280db119a443ffad379a"
+ },
+ {
+  "id": "CS1908-256",
+  "book": "CS1908",
+  "number": "256",
+  "title": "Our King",
+  "path": "data/CS1908/256.json",
+  "v": "4ae3961b04dec545ca6839f65aa72ca6b74f438698ebc99731ce232eb8b0164c"
+ },
+ {
+  "id": "CS1908-257",
+  "book": "CS1908",
+  "number": "257",
+  "title": "Crown Him",
+  "path": "data/CS1908/257.json",
+  "v": "80186105b64c15e1485d5a958e371d277ab601dc735f40c1c953e420b5ab726e"
+ },
+ {
+  "id": "CS1908-258",
+  "book": "CS1908",
+  "number": "258",
+  "title": "Crown Him Lord of All",
+  "path": "data/CS1908/258.json",
+  "v": "b480bc96969be4b817bc8e11b82b4f337d0b87864acc41fb2d358f2ae52f278c"
  },
  {
   "id": "CS1908-274",
