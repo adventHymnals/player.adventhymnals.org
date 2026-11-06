@@ -2190,6 +2190,38 @@
   "v": "079a33c396e0b2ffe90587cf605c1598ce659574e08c6010b8089d3c04b774d3"
  },
  {
+  "id": "CH1941-251",
+  "book": "CH1941",
+  "number": "251",
+  "title": "I Ask Not, Lord, for Less",
+  "path": "data/CH1941/251.json",
+  "v": "bf0c10178f2f9e77b91610b4230e0deb7553e105f2cc6d5f3c55da82dd9a8f42"
+ },
+ {
+  "id": "CH1941-252",
+  "book": "CH1941",
+  "number": "252",
+  "title": "My Spirit on Thy Care",
+  "path": "data/CH1941/252.json",
+  "v": "97bc81866451dbd13f27ff63ec33b6c3ea3f7e72ad49504f791cce1083a9756e"
+ },
+ {
+  "id": "CH1941-253",
+  "book": "CH1941",
+  "number": "253",
+  "title": "The Tempter to My Soul",
+  "path": "data/CH1941/253.json",
+  "v": "bf32d798006e77d71304aa7bdc91871d7a909569c324b14cb12dc7cfda06d3fa"
+ },
+ {
+  "id": "CH1941-254",
+  "book": "CH1941",
+  "number": "254",
+  "title": "Sometimes a Light Surprises",
+  "path": "data/CH1941/254.json",
+  "v": "9997c32e5320e2a6b856b1b31e7ec88fcfb0323bb1cd244000694f6bada536a1"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2882,6 +2914,46 @@
   "title": "Almost Persuaded",
   "path": "data/CS1900/66.json",
   "v": "90993698693ddeec1867cd3bd78a67f75e6151a05d8e7639942f1b0c766f65dd"
+ },
+ {
+  "id": "CS1900-67",
+  "book": "CS1900",
+  "number": "67",
+  "title": "I Will Early Seek the Saviour",
+  "path": "data/CS1900/67.json",
+  "v": "38c01b6e6fca00b3605d8a214c3609ea46cdca11119326dd8c8e8e36d487176f"
+ },
+ {
+  "id": "CS1900-68",
+  "book": "CS1900",
+  "number": "68",
+  "title": "Coming to the Cross",
+  "path": "data/CS1900/68.json",
+  "v": "dc3ec95ffa84238a9670a086a172228dd55c43a8e629dad823d690bbf7137c33"
+ },
+ {
+  "id": "CS1900-69",
+  "book": "CS1900",
+  "number": "69",
+  "title": "The Cleansing Wave",
+  "path": "data/CS1900/69.json",
+  "v": "16b9c735072cdf82b81c3606952f3040ca84f03a3da2d7032f1068a1c364047f"
+ },
+ {
+  "id": "CS1900-70",
+  "book": "CS1900",
+  "number": "70",
+  "title": "Jesus Paid It All",
+  "path": "data/CS1900/70.json",
+  "v": "ab98e500054efd46baa7e7c9f57d4aac0547f1563ef5f63a450f9a9401c39731"
+ },
+ {
+  "id": "CS1900-71",
+  "book": "CS1900",
+  "number": "71",
+  "title": "My Faith Looks Up",
+  "path": "data/CS1900/71.json",
+  "v": "12d2d8429f1b1e46d807b5c537999c575fa0df1a685b0a01b7a0535d87f6170d"
  },
  {
   "id": "CS1908-1",
@@ -4692,6 +4764,22 @@
   "v": "1922284ce6047a86cea936ed91ec73e6c7ce9f43a6e5d52a2cb7488a5ac8a9fd"
  },
  {
+  "id": "CS1908-201",
+  "book": "CS1908",
+  "number": "201",
+  "title": "My Sins Are All Taken Away",
+  "path": "data/CS1908/201.json",
+  "v": "d8a0e2cae6050da5519be87b34460bef44be05d109a7c69acd82e3c0a3251da1"
+ },
+ {
+  "id": "CS1908-202",
+  "book": "CS1908",
+  "number": "202",
+  "title": "Nearer, Still Nearer",
+  "path": "data/CS1908/202.json",
+  "v": "6f126815fe8f5d36043e44cbe8585e869d75d57dda168444737fd22a8eb1db62"
+ },
+ {
   "id": "CS1908-222",
   "book": "CS1908",
   "number": "222",
@@ -5886,6 +5974,22 @@
   "title": "In Thy House While Now We Sing",
   "path": "data/HT1876/99.json",
   "v": "3fa0c2bb75287e556a0abbf614f89e7734b01e9c26d2cca2072998f0011a162c"
+ },
+ {
+  "id": "HT1876-102",
+  "book": "HT1876",
+  "number": "102",
+  "title": "Again the Day Returns of Holy Rest",
+  "path": "data/HT1876/102.json",
+  "v": "ab332ff9315a523831a52922221e6aaa179654f19bc0c6eb619e46e7e7f6dd10"
+ },
+ {
+  "id": "HT1876-103",
+  "book": "HT1876",
+  "number": "103",
+  "title": "Hail, Happy Day! Thou Day of Holy Rest—",
+  "path": "data/HT1876/103.json",
+  "v": "35e4374e79754215584b5dfc47db3e5fe28dc583ee83550fb163e3dd91f9e83d"
  },
  {
   "id": "HT1876-127",
