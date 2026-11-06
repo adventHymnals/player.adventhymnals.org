@@ -1214,6 +1214,22 @@
   "v": "7215300e315b9936dd1aa94f4c1c040b34f04df383655a6f46220498b0eac015"
  },
  {
+  "id": "CH1941-129",
+  "book": "CH1941",
+  "number": "129",
+  "title": "Behold the Lamb of God",
+  "path": "data/CH1941/129.json",
+  "v": "1ca80537700db27994a66c7eb1d623de581318c379bf115c949d2d6f2400ff79"
+ },
+ {
+  "id": "CH1941-130",
+  "book": "CH1941",
+  "number": "130",
+  "title": "O Sacred Head Now Wounded",
+  "path": "data/CH1941/130.json",
+  "v": "57b8762a3f01f6cbd8f7e67983a7d3c526e991dbcf7d66f95a10e433cd52a018"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1998,6 +2014,22 @@
   "sung": true,
   "sv": "dad5839fcc8767650de4ee5fc945436ce81e120bc01044d29db319e09a66e71b",
   "v": "70af262e937d203f21993556433f77e65843a07ae7e40ca7a9edc7a6378f0403"
+ },
+ {
+  "id": "CS1908-53",
+  "book": "CS1908",
+  "number": "53",
+  "title": "Your Saviour, Too",
+  "path": "data/CS1908/53.json",
+  "v": "3a242f04cf4bde794ec23b7a48ca13e9c0ee346bdec7ce62d9c6722299cd6481"
+ },
+ {
+  "id": "CS1908-54",
+  "book": "CS1908",
+  "number": "54",
+  "title": "Keep Tenting Toward the Highlands",
+  "path": "data/CS1908/54.json",
+  "v": "74365212623073ec23781e5c8f3146a4cc0103807e5676102225c1d188415235"
  },
  {
   "id": "CS1908-55",
