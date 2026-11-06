@@ -4294,6 +4294,54 @@
   "v": "f1bd70cddb779fc4fcba979e66cacd8ed7957164307b68aacb63fc5c00a84817"
  },
  {
+  "id": "CH1941-531",
+  "book": "CH1941",
+  "number": "531",
+  "title": "I've Found a Friend",
+  "path": "data/CH1941/531.json",
+  "v": "f148f181563e8ac27a0a99463807cf41b6688570015bbc6b8e65ac922f57e724"
+ },
+ {
+  "id": "CH1941-532",
+  "book": "CH1941",
+  "number": "532",
+  "title": "I Have a Friend So Precious",
+  "path": "data/CH1941/532.json",
+  "v": "b7b567e0ca2887c10929b8e69797b0a0ef1881307c535db2d615178739c25fa2"
+ },
+ {
+  "id": "CH1941-534",
+  "book": "CH1941",
+  "number": "534",
+  "title": "Tell Me the Story of Jesus",
+  "path": "data/CH1941/534.json",
+  "v": "affbdcd56be882dd82497ff5eebc051bd0d00bf49d0f7a137b5baf5db9501fba"
+ },
+ {
+  "id": "CH1941-535",
+  "book": "CH1941",
+  "number": "535",
+  "title": "'Tis Finished!",
+  "path": "data/CH1941/535.json",
+  "v": "e5fc849ca1869044fd49581184a3d88f02cce2ac429f91ee8e3cfe8ebd5979f7"
+ },
+ {
+  "id": "CH1941-536",
+  "book": "CH1941",
+  "number": "536",
+  "title": "It May Be at Morn",
+  "path": "data/CH1941/536.json",
+  "v": "f65c031cd2d56ad9eb724cdc8a8a97e1e798bc178a1f89cfc07e4ee911637b3b"
+ },
+ {
+  "id": "CH1941-537",
+  "book": "CH1941",
+  "number": "537",
+  "title": "Called to the Feast",
+  "path": "data/CH1941/537.json",
+  "v": "3201657ddcfd2e3b8eca11af9dd7521c6452ce13d5388ff0a2a8a80cf6787278"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7750,6 +7798,30 @@
   "title": "The Hand That Made Us",
   "path": "data/CS1908/329.json",
   "v": "68c370b372b37b7e26dd38f52f7dd44eec6a55834e50bc931541b2f81fac9073"
+ },
+ {
+  "id": "CS1908-330",
+  "book": "CS1908",
+  "number": "330",
+  "title": "I Sing the Power of God",
+  "path": "data/CS1908/330.json",
+  "v": "d33c9f4b5d34d1fedb0c8ad5061ed715c7b2fa2e8587ee0983aebb97814911a6"
+ },
+ {
+  "id": "CS1908-331",
+  "book": "CS1908",
+  "number": "331",
+  "title": "How Can I Keep from Singing?",
+  "path": "data/CS1908/331.json",
+  "v": "bfdfcbf7d91dc63de924533e5f5cde9511ca05af609df582d83eca644d64b603"
+ },
+ {
+  "id": "CS1908-332",
+  "book": "CS1908",
+  "number": "332",
+  "title": "I've Found a Friend",
+  "path": "data/CS1908/332.json",
+  "v": "1ef4b0e8f1583d0b3dcd1bd644408b0c84e49f3608c271db4deac52ad728c80e"
  },
  {
   "id": "CS1908-380",
