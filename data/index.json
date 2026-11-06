@@ -4742,6 +4742,46 @@
   "v": "0d54f5be48d72aad15f37eacc3fa7cda4600164a992ea507868169e50eb9026c"
  },
  {
+  "id": "CH1941-592",
+  "book": "CH1941",
+  "number": "592",
+  "title": "Lord Jesus, I Long to Be Perfectly Whole",
+  "path": "data/CH1941/592.json",
+  "v": "6d736bbaa88689d9a434f808c72911ee11420db84aeac3e09ae0b3594e58d427"
+ },
+ {
+  "id": "CH1941-593",
+  "book": "CH1941",
+  "number": "593",
+  "title": "Look Upon Jesus, Sinless Is He",
+  "path": "data/CH1941/593.json",
+  "v": "fc1889ed6e0372dca01f2c7fa26bc298bf07f1be43b169ccdf0c65db66a22d1a"
+ },
+ {
+  "id": "CH1941-594",
+  "book": "CH1941",
+  "number": "594",
+  "title": "I Am Thine, O Lord",
+  "path": "data/CH1941/594.json",
+  "v": "72144a41f27fc5c8ddc89e3100ce353fb7be517a90045325fc5243b4492cd17b"
+ },
+ {
+  "id": "CH1941-595",
+  "book": "CH1941",
+  "number": "595",
+  "title": "Jesus, Keep Me Near the Cross",
+  "path": "data/CH1941/595.json",
+  "v": "600401f4bc5e8c6043df20733d0f3c1e653c44179dfd0e4231ded3b800b2e8a3"
+ },
+ {
+  "id": "CH1941-596",
+  "book": "CH1941",
+  "number": "596",
+  "title": "Take the World, but Give Me Jesus",
+  "path": "data/CH1941/596.json",
+  "v": "a6e0f55cae781d72df7b0960e93a75d6cccd9aa69f49ff19a6f6d3972c978387"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -8406,6 +8446,22 @@
   "title": "The Only Lord",
   "path": "data/CS1908/355.json",
   "v": "82c5bef15acd16b84b2f5b97e322f65aa3f1eac7b8a0d3465adefd9bf6bed963"
+ },
+ {
+  "id": "CS1908-356",
+  "book": "CS1908",
+  "number": "356",
+  "title": "O Lord Divine",
+  "path": "data/CS1908/356.json",
+  "v": "7927ee79220a0ace199f26922c6a33c5f223f68f0066673def1aae09434556b6"
+ },
+ {
+  "id": "CS1908-357",
+  "book": "CS1908",
+  "number": "357",
+  "title": "O Thou Who Art of All That Is",
+  "path": "data/CS1908/357.json",
+  "v": "ad4b2d043c9feaeeb4772df1da822802f5a318beb1f315c7e9718e22386ab50e"
  },
  {
   "id": "CS1908-380",
