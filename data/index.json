@@ -990,6 +990,134 @@
   "v": "71171fb1f36c29f678923c0c4a076c947708acd715e49b5f10c26e5b64b05e9e"
  },
  {
+  "id": "CH1941-455",
+  "book": "CH1941",
+  "number": "455",
+  "title": "Lord of the Sabbath",
+  "path": "data/CH1941/455.json",
+  "v": "e308e8e0cef81e7732ebfec91d33c95eaf8abb03a655e3853cf25d3ccb0d952c"
+ },
+ {
+  "id": "CH1941-456",
+  "book": "CH1941",
+  "number": "456",
+  "title": "Another Six Days' Work Is Done",
+  "path": "data/CH1941/456.json",
+  "v": "5cbaaebd433889238fe78eef7c10eeadf9f9f6b9ec63a9d69ac4a3e1e3a4a7d1"
+ },
+ {
+  "id": "CH1941-457",
+  "book": "CH1941",
+  "number": "457",
+  "title": "Hail, Peaceful Day!",
+  "path": "data/CH1941/457.json",
+  "v": "29a05789664b59f94bd9310054f851bf66b2069c17f28d259e5a26118fa0682a"
+ },
+ {
+  "id": "CH1941-458",
+  "book": "CH1941",
+  "number": "458",
+  "title": "How Sweet Upon This Sacred Day",
+  "path": "data/CH1941/458.json",
+  "v": "78ce273d133f2b47d2102a45663d23b88a1adab80feece0abcbfa386733f5362"
+ },
+ {
+  "id": "CH1941-459",
+  "book": "CH1941",
+  "number": "459",
+  "title": "Welcome, Welcome, Day of Rest",
+  "path": "data/CH1941/459.json",
+  "v": "1a1330b7c2a013ef75949e24563cd45f28192c6cd0b2dd739b5194d3f250f4e1"
+ },
+ {
+  "id": "CH1941-460",
+  "book": "CH1941",
+  "number": "460",
+  "title": "How Sweet the Light",
+  "path": "data/CH1941/460.json",
+  "v": "92d39d05fee3257d16ae966bdd8784063243e7585f849e96de32b412b11098a9"
+ },
+ {
+  "id": "CH1941-461",
+  "book": "CH1941",
+  "number": "461",
+  "title": "This Is the Day of Rest",
+  "path": "data/CH1941/461.json",
+  "v": "d7871256edbf29930923fee7ba2af5f4a637245a4018e2ab08df562a59e8cac9"
+ },
+ {
+  "id": "CH1941-462",
+  "book": "CH1941",
+  "number": "462",
+  "title": "Safely Through Another Week",
+  "path": "data/CH1941/462.json",
+  "v": "1f35d1f371a4604fbf4887740b2d4534a24ca620f9a840b4d23d197e7efca7e7"
+ },
+ {
+  "id": "CH1941-463",
+  "book": "CH1941",
+  "number": "463",
+  "title": "O Day of Rest and Gladness",
+  "path": "data/CH1941/463.json",
+  "v": "85e2f59e72217ca56065e004887df0c2813d6d24c3274ae7e49873616f82e0eb"
+ },
+ {
+  "id": "CH1941-464",
+  "book": "CH1941",
+  "number": "464",
+  "title": "Hail, Happy Day!",
+  "path": "data/CH1941/464.json",
+  "v": "794d80b679099523e456331203e240031d84ebc7cc0a4a2792905c8345f94872"
+ },
+ {
+  "id": "CH1941-465",
+  "book": "CH1941",
+  "number": "465",
+  "title": "Welcome, Delightful Morn",
+  "path": "data/CH1941/465.json",
+  "v": "09b52bf514130093b067df944953c5f0ffe2260d45489cee62982febc49b0e1e"
+ },
+ {
+  "id": "CH1941-466",
+  "book": "CH1941",
+  "number": "466",
+  "title": "Again the Day Returns",
+  "path": "data/CH1941/466.json",
+  "v": "0c40db3e6553bbf0dab237e9077ede7e475d77b51a6dd0cd596d5cc7b44c53c0"
+ },
+ {
+  "id": "CH1941-467",
+  "book": "CH1941",
+  "number": "467",
+  "title": "The Dawn of God's Dear Sabbath",
+  "path": "data/CH1941/467.json",
+  "v": "99ddbb96854babffc6b8b4f082714d65b0db284088dd00dd0d3084e8698a71b7"
+ },
+ {
+  "id": "CH1941-468",
+  "book": "CH1941",
+  "number": "468",
+  "title": "Far From All Care",
+  "path": "data/CH1941/468.json",
+  "v": "8748ad39025908617cd476f7d9847a0208558828ea3582fd25fd774a9b0cc5cf"
+ },
+ {
+  "id": "CH1941-469",
+  "book": "CH1941",
+  "number": "469",
+  "title": "Welcome, Day of Sweet Repose!",
+  "path": "data/CH1941/469.json",
+  "v": "1371aa585c67c50262d53b535cf00a6387aa3bb9d4786dd8464cd0b84f7021cd"
+ },
+ {
+  "id": "CH1941-470",
+  "book": "CH1941",
+  "number": "470",
+  "title": "Thy Holy Sabbath, Lord",
+  "path": "data/CH1941/470.json",
+  "v": "b7e3cf35c8e39784501cd6137262172bb7d4ff995b4cdbe6730397da2a664339"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -998,6 +1126,22 @@
   "sung": true,
   "sv": "c9e24da0ee39223124ea28268be71c80f9a3d5aa334ccdb18a69aa7ee4dc8e3e",
   "v": "437e80e761c8937c52cb2f31ffd6984b8528a10551e45f6d4c35c0b26ad04bcc"
+ },
+ {
+  "id": "CH1941-653",
+  "book": "CH1941",
+  "number": "653",
+  "title": "Don't Forget the Sabbath",
+  "path": "data/CH1941/653.json",
+  "v": "69ae24c9e5e27107eb0376ed4fd7cfc43f9a0db6c6051d57e6f306070d06d975"
+ },
+ {
+  "id": "CH1941-654",
+  "book": "CH1941",
+  "number": "654",
+  "title": "Holy Day, Jehovah's Rest",
+  "path": "data/CH1941/654.json",
+  "v": "d9fb1a81cf660c6ffd3fbf73bd218b33faeb46f6debf792a24f0ffa1eff31c0d"
  },
  {
   "id": "CS1900-1",
