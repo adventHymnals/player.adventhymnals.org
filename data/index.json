@@ -4222,6 +4222,38 @@
   "v": "f9b4817854868a17057e6e6ad3c69bd209664928f5e485c2934be86252041b6a"
  },
  {
+  "id": "CH1941-521",
+  "book": "CH1941",
+  "number": "521",
+  "title": "Jesus Calls Us",
+  "path": "data/CH1941/521.json",
+  "v": "2c8a0fb92e80f70b79bdf257505f3b1972762c77cf8a6c04efdd8d4cf78dae3b"
+ },
+ {
+  "id": "CH1941-522",
+  "book": "CH1941",
+  "number": "522",
+  "title": "Now Just a Word for Jesus",
+  "path": "data/CH1941/522.json",
+  "v": "4a5b588e6b499363c6fe2cc9aa46734db12a145c1be28a6400bc40370134b28f"
+ },
+ {
+  "id": "CH1941-523",
+  "book": "CH1941",
+  "number": "523",
+  "title": "Take the Name of Jesus With You",
+  "path": "data/CH1941/523.json",
+  "v": "3e1c6b9ce5f4e7fbf273c90d27ba9c38353b3f2ff0e6849c6e064432704ed8d1"
+ },
+ {
+  "id": "CH1941-524",
+  "book": "CH1941",
+  "number": "524",
+  "title": "Tell Me the Old, Old Story",
+  "path": "data/CH1941/524.json",
+  "v": "c43fd87c2335864aeee259e52c21c1231d91d24b941376b1ce8cce21f461f8e6"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7638,6 +7670,22 @@
   "title": "Praise to Jesus",
   "path": "data/CS1908/324.json",
   "v": "16ec1b64e14bdf3ba02ed6c8b2f9cab4dff4489c085d4ffbc21c636e2b1ef92a"
+ },
+ {
+  "id": "CS1908-325",
+  "book": "CS1908",
+  "number": "325",
+  "title": "The Voice Within",
+  "path": "data/CS1908/325.json",
+  "v": "bb3d0426840d8f39aa5aecaaf476bbdf8a56470b06bebf5b3ceee4ce92e7b38c"
+ },
+ {
+  "id": "CS1908-326",
+  "book": "CS1908",
+  "number": "326",
+  "title": "Saviour Mine",
+  "path": "data/CS1908/326.json",
+  "v": "7d36bf5c3dcf064839f61be91684549bd9ba1bc3c6fcdc5c34d419612a8c5519"
  },
  {
   "id": "CS1908-380",
