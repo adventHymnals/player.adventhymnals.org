@@ -2270,6 +2270,62 @@
   "v": "f34e5d58d1049fd63e0e4ba3480f0be8199d422b4f53ebc05265b7f25b49fbe3"
  },
  {
+  "id": "CH1941-261",
+  "book": "CH1941",
+  "number": "261",
+  "title": "A Mighty Fortress",
+  "path": "data/CH1941/261.json",
+  "v": "4c0d5378510931f505e6fb7242e3ea7dd6129391bda951821c39fd4b1c76260f"
+ },
+ {
+  "id": "CH1941-262",
+  "book": "CH1941",
+  "number": "262",
+  "title": "Lord of Our Life",
+  "path": "data/CH1941/262.json",
+  "v": "acad5c369c6439afe047250aa0a46da18186bcce0223eab9c23f0e6226a20599"
+ },
+ {
+  "id": "CH1941-263",
+  "book": "CH1941",
+  "number": "263",
+  "title": "Courage, Brother",
+  "path": "data/CH1941/263.json",
+  "v": "c0370e27ff51fdeaac31f08f09fe3b00c8f8c5d1e0538daa6ad924d89ce4ca2b"
+ },
+ {
+  "id": "CH1941-264",
+  "book": "CH1941",
+  "number": "264",
+  "title": "To Thee, O Dear Saviour",
+  "path": "data/CH1941/264.json",
+  "v": "dedc796d7da4bd5148d0a8ce097a5bbb5d0201f666e334f87dadc300db948b16"
+ },
+ {
+  "id": "CH1941-265",
+  "book": "CH1941",
+  "number": "265",
+  "title": "My Life Flows On",
+  "path": "data/CH1941/265.json",
+  "v": "5ad948f3fabe58f04fae04c75b06ef48bcd19e7b6f944b745d0f11e342cab035"
+ },
+ {
+  "id": "CH1941-266",
+  "book": "CH1941",
+  "number": "266",
+  "title": "I Will Follow Thee",
+  "path": "data/CH1941/266.json",
+  "v": "b257850ecc7e499e9047df26f51f4fb0930b399734dabfc6b28fa011a4dcdd4e"
+ },
+ {
+  "id": "CH1941-267",
+  "book": "CH1941",
+  "number": "267",
+  "title": "Jesus, I My Cross Have Taken",
+  "path": "data/CH1941/267.json",
+  "v": "fa13ad5694f28ec87b99e4d40aacb4ba8c6231289d4f7aeed5bae986a3355404"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -4860,6 +4916,30 @@
   "v": "991d569b6ec942ebe945045699f388ac7f1248b37367a9084467294134ecd73f"
  },
  {
+  "id": "CS1908-207",
+  "book": "CS1908",
+  "number": "207",
+  "title": "There Shall Be Showers of Blessing",
+  "path": "data/CS1908/207.json",
+  "v": "81968ba761536870a43c1609d6b5df69754be827ddd5fe1cde7d03221a799b4b"
+ },
+ {
+  "id": "CS1908-208",
+  "book": "CS1908",
+  "number": "208",
+  "title": "Sweet Peace, the Gift of God's Love",
+  "path": "data/CS1908/208.json",
+  "v": "397bb66e8768ca769585e7caf4729eb4ee5cc138adb9db5f86ebcd421437bb5a"
+ },
+ {
+  "id": "CS1908-209",
+  "book": "CS1908",
+  "number": "209",
+  "title": "The Dove of Peace",
+  "path": "data/CS1908/209.json",
+  "v": "e0c1f0c6e2f3939b933b7f8f67708207e95fc5f2eee3b96daf643a833ccea85d"
+ },
+ {
   "id": "CS1908-222",
   "book": "CS1908",
   "number": "222",
@@ -6102,6 +6182,30 @@
   "title": "Come Hither, All Ye Weary Souls",
   "path": "data/HT1876/110.json",
   "v": "fec0814d351a64f0e0837e7942593cdf75c6af2f493ed1a2105fd3be6fe52cf8"
+ },
+ {
+  "id": "HT1876-111",
+  "book": "HT1876",
+  "number": "111",
+  "title": "Just as I Am— Without One Plea",
+  "path": "data/HT1876/111.json",
+  "v": "a56e1b208661d7dfacd1af3acf8e20a94929c92e871282b2c32b4c6311ab8c93"
+ },
+ {
+  "id": "HT1876-112",
+  "book": "HT1876",
+  "number": "112",
+  "title": "With Broken Heart and Contrite Sigh",
+  "path": "data/HT1876/112.json",
+  "v": "3b1a9ad854dc6d47561d58eea51127eaa030acce1d3352b7c3b0298175bd177b"
+ },
+ {
+  "id": "HT1876-113",
+  "book": "HT1876",
+  "number": "113",
+  "title": "Come, Weary Souls, with Sin Distressed",
+  "path": "data/HT1876/113.json",
+  "v": "7f049cb5f51fa13aef0660eae7319b0ee74a0ece3e2d0ea5ea9a6fc384135d25"
  },
  {
   "id": "HT1876-127",
