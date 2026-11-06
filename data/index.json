@@ -1302,6 +1302,78 @@
   "v": "efafa67f60e1d6fb9d1f81f38887b3197a4e5f767cd52bc2d82c45dba141edcd"
  },
  {
+  "id": "CH1941-140",
+  "book": "CH1941",
+  "number": "140",
+  "title": "My Blest Redeemer",
+  "path": "data/CH1941/140.json",
+  "v": "123ab28481a57975ef762abf3f435f16e5a8a5d00b3795f0c69bdd7a086b0121"
+ },
+ {
+  "id": "CH1941-141",
+  "book": "CH1941",
+  "number": "141",
+  "title": "We May Not Climb",
+  "path": "data/CH1941/141.json",
+  "v": "68d54e99894c0e35500903237dbca95d8d7a5fd39913b8285a39f92f1ff5469b"
+ },
+ {
+  "id": "CH1941-142",
+  "book": "CH1941",
+  "number": "142",
+  "title": "Love Divine",
+  "path": "data/CH1941/142.json",
+  "v": "ec22d90bee4f37343d30d28a5d4262e44ea03180ff5e898644e834f63004fc3f"
+ },
+ {
+  "id": "CH1941-143",
+  "book": "CH1941",
+  "number": "143",
+  "title": "The Wonders of Redeeming Love",
+  "path": "data/CH1941/143.json",
+  "v": "661cb8dcff1a7832aedba4a427e7bb0fb8b0e174f9c96572a0c837d4320a30f7"
+ },
+ {
+  "id": "CH1941-144",
+  "book": "CH1941",
+  "number": "144",
+  "title": "O Love Divine, That Stooped to Share",
+  "path": "data/CH1941/144.json",
+  "v": "248750830fd2af11f22c5f4b7f7d0a199067180ef3b30f641f7144ea6007f286"
+ },
+ {
+  "id": "CH1941-145",
+  "book": "CH1941",
+  "number": "145",
+  "title": "O Love That Wilt Not Let Me Go",
+  "path": "data/CH1941/145.json",
+  "v": "1ff70b83eec126ead944278ee3a203e7fb3548f3692cbb59b13c83368b8eb8fc"
+ },
+ {
+  "id": "CH1941-146",
+  "book": "CH1941",
+  "number": "146",
+  "title": "Jesus, Thy Boundless Love to Me",
+  "path": "data/CH1941/146.json",
+  "v": "b01b17a56152bd288dcf4cb01a3104edd8703acf7c5fb7e0e2ecaed90bd345e7"
+ },
+ {
+  "id": "CH1941-147",
+  "book": "CH1941",
+  "number": "147",
+  "title": "Dear Saviour, We Would Know",
+  "path": "data/CH1941/147.json",
+  "v": "40cf9ed75033974718602520d7b62580dbcf81805475f0d8891374dd624bfa64"
+ },
+ {
+  "id": "CH1941-148",
+  "book": "CH1941",
+  "number": "148",
+  "title": "O Love Divine, How Sweet Thou Art!",
+  "path": "data/CH1941/148.json",
+  "v": "512411ed1c350b46f0c42c5fa350eae3b2e12cb8c4dfb7602ccb301f0a12bc27"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1626,6 +1698,14 @@
   "title": "Over the Line",
   "path": "data/CS1900/20.json",
   "v": "ba884550c62f176d539e6afc16c90b50953d78a54d85fc894c0dc543768eba06"
+ },
+ {
+  "id": "CS1900-21",
+  "book": "CS1900",
+  "number": "21",
+  "title": "Mercy's Gate Is Open",
+  "path": "data/CS1900/21.json",
+  "v": "3b87a557c7345767295f19b4b2f839dda265308ed3340882e2f894622edf24ad"
  },
  {
   "id": "CS1908-1",
@@ -2222,6 +2302,14 @@
   "v": "5a960ea6a4b38d590c78490c7ae44c679fa770d76957a306c141f75828494184"
  },
  {
+  "id": "CS1908-64",
+  "book": "CS1908",
+  "number": "64",
+  "title": "Whiter Than Snow",
+  "path": "data/CS1908/64.json",
+  "v": "13792daf9d03990c0aaf1b1a19d870d9e454cac707a327dabc265f61423deb15"
+ },
+ {
   "id": "CS1908-65",
   "book": "CS1908",
   "number": "65",
@@ -2272,6 +2360,22 @@
   "v": "019ffd83d0fe80538a2dc8d6a17385a2aa936d2412fcb8c2983c175f47e32c6c"
  },
  {
+  "id": "CS1908-70",
+  "book": "CS1908",
+  "number": "70",
+  "title": "Lead Them to Thee",
+  "path": "data/CS1908/70.json",
+  "v": "f121d7aa6537b6861fc4056aa180ed3f654e0a38fd939efad0f31098f7f628ec"
+ },
+ {
+  "id": "CS1908-71",
+  "book": "CS1908",
+  "number": "71",
+  "title": "I Will Early Seek the Saviour",
+  "path": "data/CS1908/71.json",
+  "v": "eeeb2447385d879d13dbe2cc23426200245f9dd721857bb8ba9c10d83e2d3dd9"
+ },
+ {
   "id": "CS1908-72",
   "book": "CS1908",
   "number": "72",
@@ -2292,6 +2396,14 @@
   "v": "b6dbeb4f8071db0d0415bb71c26adb3476eb09ec458362571daa3228309bcbd7"
  },
  {
+  "id": "CS1908-74",
+  "book": "CS1908",
+  "number": "74",
+  "title": "Wonderful Words of Life",
+  "path": "data/CS1908/74.json",
+  "v": "b48ff1426b74db8608946eba25d9b248abcd2c57fff08e6191e47b0c1a48e3bf"
+ },
+ {
   "id": "CS1908-75",
   "book": "CS1908",
   "number": "75",
@@ -2302,6 +2414,14 @@
   "v": "5076235055c590a37ef07036ea5b04fa38d59e439f70c9a7b96895228c9ff967"
  },
  {
+  "id": "CS1908-76",
+  "book": "CS1908",
+  "number": "76",
+  "title": "Calling",
+  "path": "data/CS1908/76.json",
+  "v": "dbdea064f8cee3fd77970d6feec0814a0f3e79339e98cec31b8d2c0a75f36753"
+ },
+ {
   "id": "CS1908-77",
   "book": "CS1908",
   "number": "77",
@@ -2310,6 +2430,14 @@
   "sung": true,
   "sv": "f22a0c0ded80f2121232a126c87677aa1c74c38fc342442c977da646730bfb57",
   "v": "d2acaaed0dc4e9bf94ea240b067819a004a64a269553dea0e71e20ea7fffbeed"
+ },
+ {
+  "id": "CS1908-78",
+  "book": "CS1908",
+  "number": "78",
+  "title": "Jesus Saves",
+  "path": "data/CS1908/78.json",
+  "v": "a7a8830017f20ff76f3b2f4189fbaca975aa47096c2aec4b57fd8d92e26e00cc"
  },
  {
   "id": "CS1908-81",
@@ -3622,6 +3750,62 @@
   "title": "God, in the Gospel of His Son",
   "path": "data/HT1876/50.json",
   "v": "ba8cfcd80217b108df39434928d8b2da3d51d053a9db077150ea5e0698cbc5fb"
+ },
+ {
+  "id": "HT1876-51",
+  "book": "HT1876",
+  "number": "51",
+  "title": "Oh! Could I Find, from Day to Day",
+  "path": "data/HT1876/51.json",
+  "v": "04d425a0089ee97f6a456771446cdcdb25eda3de458ef50b6880157c7a27d532"
+ },
+ {
+  "id": "HT1876-52",
+  "book": "HT1876",
+  "number": "52",
+  "title": "Father of Mercies, in Thy Word",
+  "path": "data/HT1876/52.json",
+  "v": "80cbde5194ea2b3f2407ce928eb8a8bf48723214b74b5f6119943102dc0fe21d"
+ },
+ {
+  "id": "HT1876-53",
+  "book": "HT1876",
+  "number": "53",
+  "title": "With My Whole Heart I've Sought Thy Face",
+  "path": "data/HT1876/53.json",
+  "v": "a9c858e9450bf6713631ccc2749d5d108e80259a2a10378ab32cfb4deacb758a"
+ },
+ {
+  "id": "HT1876-54",
+  "book": "HT1876",
+  "number": "54",
+  "title": "A Glory in the Word We Find",
+  "path": "data/HT1876/54.json",
+  "v": "f21075d448a6dd568a77eecfbe2944516869c91654ee614f902d92bd25390b18"
+ },
+ {
+  "id": "HT1876-55",
+  "book": "HT1876",
+  "number": "55",
+  "title": "Let Others Boast of Wealth or Power",
+  "path": "data/HT1876/55.json",
+  "v": "2dab909bbc4b211a7d24596f17e4488d81b32e061b8be695c1307f8338fc850c"
+ },
+ {
+  "id": "HT1876-56",
+  "book": "HT1876",
+  "number": "56",
+  "title": "How Shall the Young Secure Their Hearts",
+  "path": "data/HT1876/56.json",
+  "v": "9ea0eb50366829cd99649a9a2b93655f2f5a4543b417dfb6ccccadb693613221"
+ },
+ {
+  "id": "HT1876-57",
+  "book": "HT1876",
+  "number": "57",
+  "title": "Blessed Bible, How I Love It",
+  "path": "data/HT1876/57.json",
+  "v": "34ac1a4376e8117abd5102e215af9273b61eeb0021beba72b2ee8cae6142d822"
  },
  {
   "id": "NZK-1",
