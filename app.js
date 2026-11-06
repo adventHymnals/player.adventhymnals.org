@@ -176,7 +176,18 @@ let lastFollowEl = null;
 let lastLineKey = "";
 let recording = null;
 let colors = null;
-let manifest = null; // sung stems for this hymn, if rendered
+let manifest = null; // sung stems for this hymn, if rendered: the chosen recorded singers' list (below)
+// the recorded singers: "stems" (LUNAI's voices, audio/) and "stems-v2" (the same converted to real singers'
+// voices, audio-svc/: "Recorded singers v2"); each hymn's lists as loaded, by engine
+const RECORDED = [
+  { engine: "stems", label: "Recorded singers", dir: "audio", has: (x) => x?.sung },
+  { engine: "stems-v2", label: "Recorded singers v2", dir: "audio-svc", has: (x) => x?.svc },
+];
+const isRecorded = (v) => RECORDED.some((r) => r.engine === v);
+let manifests = {};
+/** The list the chosen recorded singers sing from (v2 where the hymn has it, else the first). */
+const pickManifest = () => { manifest = (singEngine() === "stems-v2" && manifests["stems-v2"]) || manifests.stems || null; };
+const recordedChoices = () => RECORDED.filter((r) => r.engine === "stems" || manifests[r.engine]);
 let stemInfo = new Map(); // "S:1:0" (voice:verse:transpose) -> { offsetSec, duration } usable at the current tempo
 // the two singing engines: recorded singers (stems, per hymn/tempo/key) and live singing (Warble, any hymn);
 // data/singing.json says which is the default, the listener may choose per device
@@ -199,7 +210,7 @@ const singingReady = (async () => {
   return loadSinging([...new Set([...urls, `${DATA}data/singing.json`, "data/singing.json"])], location.href);
 })().then((c) => { singingCfg = c; offerLiveVoices(); });
 const nativeEngineRaw = () => { try { return window.AHNative?.warble?.engine?.() ?? ""; } catch { return ""; } };
-const nativeEngine = () => { const e = nativeEngineRaw(); return e === "stems" || isLive(e) ? e : null; };
+const nativeEngine = () => { const e = nativeEngineRaw(); return isRecorded(e) || isLive(e) ? e : null; };
 // ?app where the app asks "Who sings?" at Play: nothing is loaded for either singer until it has answered
 // (AHStudio.set("singEngine", …)) for the hymn that is open
 // The web page asks at Play too: until then nothing is loaded for either singer, so choosing live
@@ -209,8 +220,9 @@ const asksAtPlay = () => !!singingCfg.warble && !APP && !EMBED && !MAKE && state
 const awaitingApp = () => !appAnswered && (APP ? nativeEngineRaw() === "ask" : asksAtPlay());
 const whoSings = () => (state.instrumental ? "instrumental" : singEngine());
 const singEngine = () => {
-  if (!singingCfg.warble) return "stems";
   const e = state.singEngine || nativeEngine() || singingCfg.default;
+  if (!singingCfg.warble && !isRecorded(e)) return "stems";
+  if (e === "stems-v2" && !manifests["stems-v2"]) return "stems"; // this hymn has no converted singers
   return isLive(e) && !liveVoice(e) ? "warble" : e; // a live voice no longer offered: the first
 };
 const useWarble = () => isLive(singEngine()) && !!singingCfg.warble;
@@ -441,7 +453,7 @@ function overlaySite(site) {
   for (const x of site) {
     const remote = new URL(x.path, DATA).href;
     const mine = have.get(x.id);
-    if (mine) Object.assign(mine, { remote, siteV: x.v, sung: x.sung, sv: x.sv, title: x.title });
+    if (mine) Object.assign(mine, { remote, siteV: x.v, sung: x.sung, sv: x.sv, svc: x.svc, title: x.title });
     else { hymnList.push({ ...x, path: null, remote, siteV: x.v }); added = true; }
   }
   return added;
@@ -492,6 +504,14 @@ async function syncHymns(force = false) {
     try { if (await singers.refreshManifest(`${AUDIO}audio/${x.id}/manifest.json`)) sv[x.id] = x.sv; } catch { /* next time */ }
   }
   try { localStorage.setItem(SV, JSON.stringify(sv)); } catch { /* full */ }
+  // and the converted singers' ("Recorded singers v2")
+  const SVC = "ah-svc-saved";
+  let svc = {}; try { svc = JSON.parse(localStorage.getItem(SVC) || "{}"); } catch { /* none */ }
+  for (const x of site) {
+    if (!x.svc || svc[x.id] === x.svc) continue;
+    try { if (await singers.refreshManifest(`${AUDIO}audio-svc/${x.id}/manifest.json`)) svc[x.id] = x.svc; } catch { /* next time */ }
+  }
+  try { localStorage.setItem(SVC, JSON.stringify(svc)); } catch { /* full */ }
   try {
     const g = await fetchWithin(`${DATA}data/singing.json`, 15000, { cache: "no-cache" });
     if (g.ok) await c.put(SINGING_SAVED, g);
@@ -1129,31 +1149,37 @@ async function loadManifest() {
   // which singers to use (data/singing.json); never held up for good by a slow download
   await Promise.race([singingReady, new Promise((r) => setTimeout(r, 10000))]);
   manifest = null;
+  manifests = {};
   stemInfo = new Map();
   if (hymn.tune) { syncSungControls(); return; } // recorded singers sing the printed tune only
-  // the app knows from its list which hymns have recorded singers: the others never ask the site
-  if (DATA && !hymnList.find((x) => x.id === hymn.id)?.sung) { syncSungControls(); return; }
   const id = hymn.id;
-  const url = `${AUDIO}audio/${id}/manifest.json`;
-  const take = (m) => {
+  const entry = hymnList.find((x) => x.id === id);
+  const take = (r, m) => {
     // recordings live in the audio store, whichever copy of the player this is
     if (m && AUDIO) m.stems.forEach((st) => { st.url = new URL(st.url, AUDIO).href; });
-    manifest = m;
+    if (m?.stems?.length) manifests[r.engine] = m;
   };
-  try {
-    // the list saved on the phone at once; a list never saved comes in the background (the hymn opens
-    // without waiting, and its singers join when the list arrives)
-    const saved = await singers.saved(url);
-    if (saved) { if (saved.ok) take(await saved.json()); }
-    else {
-      singers.manifest(url).then(async (r) => {
-        if (!r.ok || hymn?.id !== id) return;
-        const m = await r.json();
-        if (hymn?.id !== id || manifest) return;
-        take(m); syncSungControls();
-      }).catch(() => { /* no singers for this hymn */ });
-    }
-  } catch { /* no sung stems for this hymn */ }
+  await Promise.all(RECORDED.map(async (r) => {
+    // the list says which hymns have recorded (and converted) singers: the others never ask the site
+    if ((DATA || r.engine !== "stems") && !r.has(entry)) return;
+    const url = `${AUDIO}${r.dir}/${id}/manifest.json`;
+    try {
+      // the list saved on the phone at once; a list never saved comes in the background (the hymn opens
+      // without waiting, and its singers join when the list arrives)
+      const saved = await singers.saved(url);
+      if (saved) { if (saved.ok) take(r, await saved.json()); }
+      else {
+        singers.manifest(url).then(async (res) => {
+          if (!res.ok || hymn?.id !== id) return;
+          const m = await res.json();
+          if (hymn?.id !== id || manifests[r.engine]) return;
+          const had = manifest;
+          take(r, m); syncSungControls(); syncSingersBtn();
+          if (manifest !== had && had) prepareStems(); // the chosen singers' own list arrived
+        }).catch(() => { /* no singers for this hymn */ });
+      }
+    } catch { /* no sung stems for this hymn */ }
+  }));
   syncSungControls();
 }
 
@@ -1188,7 +1214,9 @@ function chooseSingers(from, always = false) {
   const d = $("singDialog");
   if (!d || !singingCfg.warble || APP || EMBED || MAKE) return Promise.resolve(true);
   if (!always && (appAnswered || !asksAtPlay())) return Promise.resolve(true);
-  const recorded = !!manifest?.stems?.length;
+  pickManifest();
+  const recorded = !!manifests.stems?.stems?.length;
+  offerRecordedV2();
   const stemsNote = $("singStemsNote");
   stemsNote.textContent = recorded ? "Real voices · downloads the singers of this hymn" : "Not recorded for this hymn yet";
   d.querySelector('[data-engine="stems"]').classList.toggle("unavailable", !recorded);
@@ -1218,7 +1246,25 @@ function chooseSingers(from, always = false) {
   });
 }
 
-/** Live singers ("warble"), recorded singers ("stems") or instruments only ("instrumental"). */
+/** "Recorded singers v2" in "Who sings?" and the settings, for hymns that have converted singers. */
+function offerRecordedV2() {
+  const has = !!manifests["stems-v2"];
+  const first = document.querySelector('#singDialog [data-engine="stems"]');
+  let b = document.querySelector('#singDialog [data-engine="stems-v2"]');
+  if (first && !b && has) {
+    b = first.cloneNode(true);
+    b.dataset.engine = "stems-v2";
+    b.querySelector("strong").textContent = "Recorded singers v2";
+    const n = b.querySelector("small"); n.removeAttribute("id");
+    n.textContent = "The recorded singers in real singers' voices · downloads the singers of this hymn";
+    first.after(b);
+  }
+  if (b) b.hidden = !has;
+  const opt = document.querySelector('#singEngine option[value="stems"]');
+  if (opt && !document.querySelector('#singEngine option[value="stems-v2"]')) opt.after(new Option("Recorded singers v2 (where there are)", "stems-v2"));
+}
+
+/** Live singers ("warble"), recorded singers ("stems", "stems-v2") or instruments only ("instrumental"). */
 function chooseWhoSings(v) {
   appAnswered = true;
   if (v === "instrumental") { window.AHStudio.set("instrumental", true); syncSingersBtn(); return; }
@@ -1237,8 +1283,8 @@ function syncSingersBtn() {
   const b = headersEl.querySelector(".singers-btn");
   if (!b) return;
   const v = whoSings();
-  const label = isLive(v) ? liveVoice(v)?.label || "Live singers" : { stems: "Recorded singers", instrumental: "Instruments only" }[v] || "Singers";
-  if (!SINGER_ICONS[v]) SINGER_ICONS[v] = document.querySelector(`#singDialog [data-engine="${v}"] .sing-ico`)?.innerHTML || "";
+  const label = isLive(v) ? liveVoice(v)?.label || "Live singers" : RECORDED.find((r) => r.engine === v)?.label || { instrumental: "Instruments only" }[v] || "Singers";
+  if (!SINGER_ICONS[v]) SINGER_ICONS[v] = document.querySelector(`#singDialog [data-engine="${v === "stems-v2" ? "stems" : v}"] .sing-ico`)?.innerHTML || "";
   b.innerHTML = `${SINGER_ICONS[v]}<span>${label}</span>`;
   b.title = `${label}: click to choose who sings`;
 }
@@ -1246,9 +1292,11 @@ function syncSingersBtn() {
 const stemTempos = () => [...new Set((manifest?.stems || []).map((s) => s.tempo))].sort((a, b) => a - b);
 
 function syncSungControls() {
+  pickManifest();
+  offerRecordedV2();
   const live = useWarble();
   $("sungRow").hidden = !manifest && !anySung() && !singingCfg.warble;
-  $("singEngineRow").hidden = !singingCfg.warble;
+  $("singEngineRow").hidden = !singingCfg.warble && !manifests["stems-v2"];
   $("singEngine").value = APP || state.singAsk !== false ? (APP ? singEngine() : "ask") : whoSings();
   $("renderSingers").hidden = live;
   const tempos = stemTempos();
@@ -1286,6 +1334,7 @@ async function prepareStems() {
   if (APP && nativeEngineRaw() === "instrumental" && !state.instrumental) { window.AHStudio.set("instrumental", true); return; } // the app chose instruments only
   if (awaitingApp()) { warbleGen++; stemInfo = new Map(); engine.setStemBuffers(new Map()); rebuild(); return; }
   if (useWarble()) return prepareWarble();
+  pickManifest();
   warbleGen++;
   stemInfo = new Map();
   $("credit").textContent = "";
@@ -1477,6 +1526,7 @@ let stemsCostGen = 0;
 async function updateStemsCost() {
   const gen = ++stemsCostGen;
   stemsCost = { bytes: 0, saved: false };
+  pickManifest();
   if (!manifest?.stems?.length || !hymn) return;
   const tempos = stemTempos();
   const recTempo = tempos.reduce((a, b) => (Math.abs(b - state.tempo) < Math.abs(a - state.tempo) ? b : a), tempos[0]);
@@ -4055,7 +4105,7 @@ window.AHStudio = {
     } else if (name === "fit") {
       if (state.view === "solfa") { state.solfaZoom = APP_ZOOM; save("solfaZoom"); } else { state.zoom = APP_ZOOM; save("zoom"); }
       renderAll();
-    } else if (name === "singEngine" && (value === "stems" || isLive(value) || value === null || value === "")) {
+    } else if (name === "singEngine" && (isRecorded(value) || isLive(value) || value === null || value === "")) {
       appAnswered = true;
       if ((value || null) === state.singEngine) { voicesSing(); syncSungControls(); prepareStems(); } else setSingEngine(value || null);
     } else if (name === "solfaSweep") {
@@ -4165,7 +4215,7 @@ window.AHStudio = {
       playing: !!engine?.playing, tempo: state.tempo, key: $("keyLabel")?.textContent ?? "", voices,
       stemsBytes: stemsCost.bytes, stemsSaved: stemsCost.saved,
       ends: playEnds, repeating: !!state.loop.on, repeatLabel: state.loop.on ? (state.loop.from === state.loop.to ? `bar ${state.loop.from}` : `bars ${state.loop.from}–${state.loop.to}`) : "",
-      singEngine: singEngine(), singEngines: singingCfg.warble ? [{ value: "stems", label: "Recorded singers" }, ...singingCfg.voices.map((w) => ({ value: w.engine, label: w.label }))] : [],
+      singEngine: singEngine(), singEngines: (() => { const l = [...recordedChoices().map((r) => ({ value: r.engine, label: r.label })), ...(singingCfg.warble ? singingCfg.voices.map((w) => ({ value: w.engine, label: w.label })) : [])]; return l.length > 1 ? l : []; })(),
       credits: useWarble() ? liveW().credits() : "",
     });
   },

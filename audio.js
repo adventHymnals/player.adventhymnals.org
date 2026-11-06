@@ -514,7 +514,7 @@ export class Engine {
 // small compressed files, so a hymn sung before plays again offline and without downloading. The
 // app lists them by hymn, with their size, and clears all or chosen hymns. Elsewhere this is off.
 const SINGERS = "ah-singers";
-const hymnOf = (url) => decodeURIComponent((new URL(url).pathname.match(/\/audio\/([^/]+)\//) || [])[1] || "");
+const hymnOf = (url) => decodeURIComponent((new URL(url).pathname.match(/\/audio(?:-svc)?\/([^/]+)\//) || [])[1] || "");
 export const singers = {
   on: false,
   /** The app: the saved lists are kept up to date by its occasional check (the site always asks). */
