@@ -2326,6 +2326,30 @@
   "v": "fa13ad5694f28ec87b99e4d40aacb4ba8c6231289d4f7aeed5bae986a3355404"
  },
  {
+  "id": "CH1941-268",
+  "book": "CH1941",
+  "number": "268",
+  "title": "Blessed Jesus, Meek and Lowly",
+  "path": "data/CH1941/268.json",
+  "v": "9d7836120f2a7820b585032435e462a78476e197ceadec8bcfd07bfe7ef4a143"
+ },
+ {
+  "id": "CH1941-269",
+  "book": "CH1941",
+  "number": "269",
+  "title": "Take My Heart, O Father",
+  "path": "data/CH1941/269.json",
+  "v": "e1a6d309855bd6105a78bf89dd66ac0e22d2c3ad6763e3eaacd5da8b6823ec05"
+ },
+ {
+  "id": "CH1941-270",
+  "book": "CH1941",
+  "number": "270",
+  "title": "Give Thy Youth to God",
+  "path": "data/CH1941/270.json",
+  "v": "f9b4b8c0d26ba73f7be517036576d83cda5d011c45daaa9ff2963c8c92988f04"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -4938,6 +4962,14 @@
   "title": "The Dove of Peace",
   "path": "data/CS1908/209.json",
   "v": "e0c1f0c6e2f3939b933b7f8f67708207e95fc5f2eee3b96daf643a833ccea85d"
+ },
+ {
+  "id": "CS1908-210",
+  "book": "CS1908",
+  "number": "210",
+  "title": "Wonderful Peace",
+  "path": "data/CS1908/210.json",
+  "v": "318c58b95fe42b3082d7a68e88e2a6c7a60b468889e8392a218881c3e8c7e06a"
  },
  {
   "id": "CS1908-222",
