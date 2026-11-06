@@ -2662,6 +2662,94 @@
   "v": "3ead171413cc081f1f7440d1f58996a5ef4813d0d80973b4f259c1d3932a7119"
  },
  {
+  "id": "CH1941-311",
+  "book": "CH1941",
+  "number": "311",
+  "title": "Peace, Perfect Peace",
+  "path": "data/CH1941/311.json",
+  "v": "5914c623ee1938fe1f7bc306160d0cd7071c597b49068c2cd8811c9ceb5a6359"
+ },
+ {
+  "id": "CH1941-312",
+  "book": "CH1941",
+  "number": "312",
+  "title": "Weeping Endures But for a Night",
+  "path": "data/CH1941/312.json",
+  "v": "d687dcfd96148c8f55766975e90c7adabcdd72d98099519628810925638ea9cc"
+ },
+ {
+  "id": "CH1941-313",
+  "book": "CH1941",
+  "number": "313",
+  "title": "When Peace, Like a River",
+  "path": "data/CH1941/313.json",
+  "v": "4e679013d8bf22996dc380be3e83d87a19f49b8b3d2d956fbe7aa61c41855b4c"
+ },
+ {
+  "id": "CH1941-314",
+  "book": "CH1941",
+  "number": "314",
+  "title": "When Darkness Gathers",
+  "path": "data/CH1941/314.json",
+  "v": "7097654e1369d88a82023e26092f15ce3002a4a94f8caa10ed36d228653662b1"
+ },
+ {
+  "id": "CH1941-315",
+  "book": "CH1941",
+  "number": "315",
+  "title": "Still With Thee",
+  "path": "data/CH1941/315.json",
+  "v": "c61c5e51dace0453cce601ecb512a9340a642ffcfe4dc1423b98a284522cd6f7"
+ },
+ {
+  "id": "CH1941-316",
+  "book": "CH1941",
+  "number": "316",
+  "title": "Sweet Hour of Prayer",
+  "path": "data/CH1941/316.json",
+  "v": "c362f3404c6f9728c71cceddc8a1db7aa0b32ff798cb8b3273ba884056ff52e7"
+ },
+ {
+  "id": "CH1941-317",
+  "book": "CH1941",
+  "number": "317",
+  "title": "I Love to Steal Awhile Away",
+  "path": "data/CH1941/317.json",
+  "v": "0c05db7096e341f1bab8248f49d83f3ec0f0c9a5c8f51112994aadc48d4d4855"
+ },
+ {
+  "id": "CH1941-318",
+  "book": "CH1941",
+  "number": "318",
+  "title": "Come, My Soul",
+  "path": "data/CH1941/318.json",
+  "v": "d657bc8d55597b702a32e87cb77e55d218ae3dd1b9809678f6022605276c7b85"
+ },
+ {
+  "id": "CH1941-320",
+  "book": "CH1941",
+  "number": "320",
+  "title": "What a Friend We Have in Jesus",
+  "path": "data/CH1941/320.json",
+  "v": "12d89c930444924077e9c010e43960d28641a696f8699839c9368976f0e5f7f7"
+ },
+ {
+  "id": "CH1941-321",
+  "book": "CH1941",
+  "number": "321",
+  "title": "Sun of My Soul",
+  "path": "data/CH1941/321.json",
+  "v": "48ea0d01f496cd2ea5790f461758aa195baa47ccf056cad45a5d90f22c9cb168"
+ },
+ {
+  "id": "CH1941-322",
+  "book": "CH1941",
+  "number": "322",
+  "title": "O, Could I Find From Day to Day",
+  "path": "data/CH1941/322.json",
+  "v": "1b2c59201cfc48f84817c467594c087425fbc3905297942b29eb5ec06539ced7"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5398,6 +5486,38 @@
   "v": "745e97c33c4b9f09676e54a69416f05925388447504fb96968dada83c1da012c"
  },
  {
+  "id": "CS1908-225",
+  "book": "CS1908",
+  "number": "225",
+  "title": "Washed White as Snow",
+  "path": "data/CS1908/225.json",
+  "v": "98fc1945af71192a73feb4a95ef865a739ddbdaa6786fd2ee2d80b3c774102d5"
+ },
+ {
+  "id": "CS1908-226",
+  "book": "CS1908",
+  "number": "226",
+  "title": "Praise Him! Praise Him!",
+  "path": "data/CS1908/226.json",
+  "v": "b0878040f2bbd69f531fe5c4ef825eef51d0605334aaa780651f712163a1f590"
+ },
+ {
+  "id": "CS1908-227",
+  "book": "CS1908",
+  "number": "227",
+  "title": "Wake the Song of Joy and Gladness",
+  "path": "data/CS1908/227.json",
+  "v": "b43cfde06eb2d936ba312a629a1a351283a74975d7a3e584a8672f8398fccd14"
+ },
+ {
+  "id": "CS1908-228",
+  "book": "CS1908",
+  "number": "228",
+  "title": "O Come, Let Us Sing!",
+  "path": "data/CS1908/228.json",
+  "v": "b0ec98e7827b9903ef4a9b6adb920ffb15cf9d917aa6983041681be40ad5f6ca"
+ },
+ {
   "id": "CS1908-229",
   "book": "CS1908",
   "number": "229",
@@ -5406,6 +5526,14 @@
   "sung": true,
   "sv": "0b3ed675a0fcfc9d1037444fcb3b57812c1165f407857035a3bcd37b473b5377",
   "v": "d363e1df176a124880b5650b5ab14b16bc369cd62012f9a4fd3b7bb752b93bbf"
+ },
+ {
+  "id": "CS1908-230",
+  "book": "CS1908",
+  "number": "230",
+  "title": "Not I, but Christ",
+  "path": "data/CS1908/230.json",
+  "v": "b6cdceabb672371a5c27984cd9b93f8569f8459197419529dcb0898e26b71cdd"
  },
  {
   "id": "CS1908-236",
