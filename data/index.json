@@ -1174,6 +1174,46 @@
   "v": "72d9951ca991271019e82bff7d394b4438be48404f2b1f4905bda6e1e28c810d"
  },
  {
+  "id": "CH1941-124",
+  "book": "CH1941",
+  "number": "124",
+  "title": "Alas! and Did My Saviour Bleed?",
+  "path": "data/CH1941/124.json",
+  "v": "17daeb5a4a62cb94e29755791ee3b527bc1dd0810c85949523cb05e12ee6fc6f"
+ },
+ {
+  "id": "CH1941-125",
+  "book": "CH1941",
+  "number": "125",
+  "title": "In the Cross of Christ I Glory",
+  "path": "data/CH1941/125.json",
+  "v": "4c7fa44e4bc3010487f27759187baabddac6c264a587af6b70744d8784b04ff7"
+ },
+ {
+  "id": "CH1941-126",
+  "book": "CH1941",
+  "number": "126",
+  "title": "There Is a Green Hill Far Away",
+  "path": "data/CH1941/126.json",
+  "v": "0cf7b30d5e6faec6c68830608be7e0867cde72646f656e126f77dc6eecbc3022"
+ },
+ {
+  "id": "CH1941-127",
+  "book": "CH1941",
+  "number": "127",
+  "title": "Ride On in Majesty",
+  "path": "data/CH1941/127.json",
+  "v": "db9dfdadb643dd7c23d5a6bbe4b3530506e522343a4938ba35b82c337806e6a1"
+ },
+ {
+  "id": "CH1941-128",
+  "book": "CH1941",
+  "number": "128",
+  "title": "Into the Woods My Master Went",
+  "path": "data/CH1941/128.json",
+  "v": "7215300e315b9936dd1aa94f4c1c040b34f04df383655a6f46220498b0eac015"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1442,6 +1482,30 @@
   "title": "Pass Me Not",
   "path": "data/CS1900/13.json",
   "v": "66a14b88169278ec6098ea695796353e63b4e51eb796764caf517a5c9cd975ec"
+ },
+ {
+  "id": "CS1900-14",
+  "book": "CS1900",
+  "number": "14",
+  "title": "Life in a Look",
+  "path": "data/CS1900/14.json",
+  "v": "bb0ce9886434563f105d43f418c07ce69a513c174c88fc159db91818e1e92a3e"
+ },
+ {
+  "id": "CS1900-15",
+  "book": "CS1900",
+  "number": "15",
+  "title": "Able to Deliver",
+  "path": "data/CS1900/15.json",
+  "v": "be87ad477923e3538bc6c3098cb83fed001620669772306fb6a71ab2aa13471f"
+ },
+ {
+  "id": "CS1900-16",
+  "book": "CS1900",
+  "number": "16",
+  "title": "Linger No Longer",
+  "path": "data/CS1900/16.json",
+  "v": "f1eb8b94e6a2052d6ebdfca808957c2db38565dd67bd0586c776a98cdac88f70"
  },
  {
   "id": "CS1908-1",
@@ -1908,6 +1972,22 @@
   "sung": true,
   "sv": "cc43f66aac1c042ca0cabbc43e38785092077462f6dd089cdf8d123f8a301ae0",
   "v": "2f56bfb95255bc6401c2b155f5404c26c064395081f51a30348fd34074d4830b"
+ },
+ {
+  "id": "CS1908-50",
+  "book": "CS1908",
+  "number": "50",
+  "title": "The Best Friend Is Jesus",
+  "path": "data/CS1908/50.json",
+  "v": "050e0c7d13dc060770b3155220e441006d341feee3cdd2872bcab60b919cb8c2"
+ },
+ {
+  "id": "CS1908-51",
+  "book": "CS1908",
+  "number": "51",
+  "title": "I Surrender All",
+  "path": "data/CS1908/51.json",
+  "v": "45597c92e0e33d2fe3afd1dbd413ac114264e46ab9689cdb876833d5728caac2"
  },
  {
   "id": "CS1908-52",
