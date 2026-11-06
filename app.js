@@ -489,6 +489,23 @@ function overlaySite(site) {
   }
   return added;
 }
+/** The site's hymn list now (a hymn asked for that this copy doesn't know yet): saved and laid over the list,
+ *  then the full check runs in the background. At most once a minute; false when the site can't be reached. */
+let siteAskedAt = 0;
+async function siteListNow() {
+  if (!DATA || Date.now() - siteAskedAt < 60e3) return false;
+  siteAskedAt = Date.now();
+  try {
+    const r = await fetchWithin(`${DATA}data/index.json`, 10000, { cache: "no-cache" });
+    if (!r.ok) return false;
+    const site = await r.json();
+    const c = await hymnStore();
+    if (c) await c.put(SITE_INDEX, new Response(JSON.stringify(site), { headers: { "Content-Type": "application/json" } }));
+    if (overlaySite(site)) fillPicker();
+    syncHymns(true).catch(() => {});
+    return true;
+  } catch { return false; }
+}
 async function loadList() {
   // only what is on the phone: opening the player never waits for the internet
   const local = () => fetch("data/index.json", { cache: "no-cache" }).catch(() => fetch("data/index.json", { cache: "force-cache" }));
@@ -4114,6 +4131,8 @@ window.AHStudio = {
     if (appWant.id !== id) return false;
     let entry = hymnList.find((x) => x.id === id);
     if (!entry) { await listFresh; if (appWant.id !== id) return false; entry = hymnList.find((x) => x.id === id); } // new on the site since this copy
+    // not in the list saved here: the site's list may be newer than the last check (at most every 6 hours), so ask it now
+    if (!entry && (await siteListNow())) { if (appWant.id !== id) return false; entry = hymnList.find((x) => x.id === id); }
     if (!entry) { appWant.missing = true; if (engine.playing) stopPlayback(); return false; }
     if (hymn?.id !== id) {
       appWant.loading = true;
