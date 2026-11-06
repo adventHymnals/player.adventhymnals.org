@@ -4582,6 +4582,22 @@
   "v": "ec2933453fc22139f6ff38b65c3fca105824007fcb242b01edbff101c6151aa6"
  },
  {
+  "id": "CH1941-571",
+  "book": "CH1941",
+  "number": "571",
+  "title": "Whosoever Heareth",
+  "path": "data/CH1941/571.json",
+  "v": "aa31d9fa93374bf7c3e6593d4fc9ee5237ba29f629843c0da8d8b8e1a81d25c6"
+ },
+ {
+  "id": "CH1941-572",
+  "book": "CH1941",
+  "number": "572",
+  "title": "Jesus, the Loving Shepherd",
+  "path": "data/CH1941/572.json",
+  "v": "33e634b79a355295b60c563014fc781a35bae928418aab64a1e8307a4fb70e22"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -8174,6 +8190,30 @@
   "title": "Prayer for the Children",
   "path": "data/CS1908/346.json",
   "v": "a159b7ee0a393f6d675e42dbbad9f39ece1f99de686bb8d54b5aba7911dfda7a"
+ },
+ {
+  "id": "CS1908-347",
+  "book": "CS1908",
+  "number": "347",
+  "title": "Holy River",
+  "path": "data/CS1908/347.json",
+  "v": "0da22a4958671fe44a47cdaf84895ce6774d866e36d0e92897eae20d09e54ea3"
+ },
+ {
+  "id": "CS1908-348",
+  "book": "CS1908",
+  "number": "348",
+  "title": "Little Town of Bethlehem",
+  "path": "data/CS1908/348.json",
+  "v": "90f39014bc451e3b9fe68fcc5d25be3bf568e2897039e55eb917af839cfcd911"
+ },
+ {
+  "id": "CS1908-349",
+  "book": "CS1908",
+  "number": "349",
+  "title": "The Lord in Zion Reigneth",
+  "path": "data/CS1908/349.json",
+  "v": "a81aeff524d44913d437b758a75ca1d414ac7fd3c7630a4c9c4f8549953db3e8"
  },
  {
   "id": "CS1908-380",
