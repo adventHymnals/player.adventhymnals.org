@@ -1654,6 +1654,62 @@
   "v": "e6c50f6259caa146a80eadf7e4f47a10587a045f892f54be5b9dd8eaf70926f5"
  },
  {
+  "id": "CH1941-184",
+  "book": "CH1941",
+  "number": "184",
+  "title": "Watchmen, on the Walls of Zion",
+  "path": "data/CH1941/184.json",
+  "v": "74338a6a54a08ca917655e7f74f9c3d3e093965b3725b5f38eff1b39c5b4a5e7"
+ },
+ {
+  "id": "CH1941-185",
+  "book": "CH1941",
+  "number": "185",
+  "title": "Heir of the Kingdom",
+  "path": "data/CH1941/185.json",
+  "v": "a4f933cd56a5c583efbf17e05fbe86d8953f4f5a57a897ef8d823435136bf3c9"
+ },
+ {
+  "id": "CH1941-186",
+  "book": "CH1941",
+  "number": "186",
+  "title": "Long for My Saviour I've Been Waiting",
+  "path": "data/CH1941/186.json",
+  "v": "e3a7c308ce77d74018634ffdc34d4fd9b3be80ab289a2b1f97e082d40550dff1"
+ },
+ {
+  "id": "CH1941-187",
+  "book": "CH1941",
+  "number": "187",
+  "title": "The Lord Is Coming",
+  "path": "data/CH1941/187.json",
+  "v": "cdf6629907763a178469d5eb155f4e07f149c8e1e554156cb53e143029028c56"
+ },
+ {
+  "id": "CH1941-188",
+  "book": "CH1941",
+  "number": "188",
+  "title": "Star of Our Hope",
+  "path": "data/CH1941/188.json",
+  "v": "b268b817e62e2d27a59605b04eff35080dc8be7067b1e855ad1d4a072b58872e"
+ },
+ {
+  "id": "CH1941-189",
+  "book": "CH1941",
+  "number": "189",
+  "title": "Joy to the World",
+  "path": "data/CH1941/189.json",
+  "v": "7a9f690f0189726d54ab72c6b8828e33601c36269ab080359eadc7198db15f81"
+ },
+ {
+  "id": "CH1941-190",
+  "book": "CH1941",
+  "number": "190",
+  "title": "When Thou, My Righteous Judge",
+  "path": "data/CH1941/190.json",
+  "v": "af7e0876a41f1557b39b7dd64add2b57abb591017a76394e0d14867409d3d165"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2138,6 +2194,14 @@
   "title": "Keep Tenting Toward the Highlands",
   "path": "data/CS1900/40.json",
   "v": "e19ff99904cb11898fdf6e3a1aea7ee7cdcf873c457431361dd16db0fcfed5e3"
+ },
+ {
+  "id": "CS1900-41",
+  "book": "CS1900",
+  "number": "41",
+  "title": "Will You Go?",
+  "path": "data/CS1900/41.json",
+  "v": "f85fb8700cb21d48b3a7be2e1ed0bd015e95243bb41f6a01b0546b43620a0249"
  },
  {
   "id": "CS1908-1",
@@ -3534,6 +3598,46 @@
   "v": "4d865ab0bdacf59919b9cfcc8a529808cbbc695f4e6a1e2ac5acde69157eb36c"
  },
  {
+  "id": "CS1908-150",
+  "book": "CS1908",
+  "number": "150",
+  "title": "Remember Me",
+  "path": "data/CS1908/150.json",
+  "v": "09f78e5db16f735b094c6271d50a539558024e6fb14df064294b5ba24b7959f6"
+ },
+ {
+  "id": "CS1908-151",
+  "book": "CS1908",
+  "number": "151",
+  "title": "The Waters Are Troubled",
+  "path": "data/CS1908/151.json",
+  "v": "58219a6469e9aa838a7a46ed33cdff1918481fc8bc650a0321d6b3d740bb278b"
+ },
+ {
+  "id": "CS1908-152",
+  "book": "CS1908",
+  "number": "152",
+  "title": "Not Blood of Beasts",
+  "path": "data/CS1908/152.json",
+  "v": "fd42904edd63b3062f9df28f85ddd10faa0574d570d0f41d8152ec00d15a525b"
+ },
+ {
+  "id": "CS1908-153",
+  "book": "CS1908",
+  "number": "153",
+  "title": "Rest Found",
+  "path": "data/CS1908/153.json",
+  "v": "f18e0d3001a5529802e1ed571410ae0e9c5a8a4334f860bb1ad175b2025dfd72"
+ },
+ {
+  "id": "CS1908-154",
+  "book": "CS1908",
+  "number": "154",
+  "title": "Depths of Mercy",
+  "path": "data/CS1908/154.json",
+  "v": "08a49ddaa4e162414d41af297992b33602bde20921be183afe82a22ed5f0f1a6"
+ },
+ {
   "id": "CS1908-174",
   "book": "CS1908",
   "number": "174",
@@ -4534,6 +4638,54 @@
   "title": "I Love Thine Earthly Sabbaths, Lord",
   "path": "data/HT1876/70.json",
   "v": "5f2598cafb11f83817c73d0c055679816f076686184a7a0aa8631eaa1e8319bb"
+ },
+ {
+  "id": "HT1876-71",
+  "book": "HT1876",
+  "number": "71",
+  "title": "Sweet is the Work, My God, My King",
+  "path": "data/HT1876/71.json",
+  "v": "b0707a339992866f12ca91ba65e8b0baa011a95b9fdc3dcd045ad592a99fa066"
+ },
+ {
+  "id": "HT1876-72",
+  "book": "HT1876",
+  "number": "72",
+  "title": "This is the Day of Sacred Rest",
+  "path": "data/HT1876/72.json",
+  "v": "5055501c1f7211e2416338d6957611ad0aa86a443af913b6c777beab83652997"
+ },
+ {
+  "id": "HT1876-73",
+  "book": "HT1876",
+  "number": "73",
+  "title": "Awake, My Heart! My Soul Arise",
+  "path": "data/HT1876/73.json",
+  "v": "3091ba09bdafdb9c80fc06667caa1b68f0dcbe2a9fe0b9a16b444002b04689fd"
+ },
+ {
+  "id": "HT1876-74",
+  "book": "HT1876",
+  "number": "74",
+  "title": "Ere to the World Again We Go",
+  "path": "data/HT1876/74.json",
+  "v": "f0e3bd35a361a26e54fdf68877e54aaf032a8af9267604a0fa30162f9a5096e1"
+ },
+ {
+  "id": "HT1876-75",
+  "book": "HT1876",
+  "number": "75",
+  "title": "Another Six Days' Work is Done",
+  "path": "data/HT1876/75.json",
+  "v": "1d59aeecccce726c41c6954787e85c9165841994d2f3a6e8b29fe3c6e27d4987"
+ },
+ {
+  "id": "HT1876-76",
+  "book": "HT1876",
+  "number": "76",
+  "title": "Six Days of Toil and Care",
+  "path": "data/HT1876/76.json",
+  "v": "16310ce099bc1a8967a3b066c0c45cdc5a23d25237230fce9771cd9658baccb0"
  },
  {
   "id": "HT1876-127",
