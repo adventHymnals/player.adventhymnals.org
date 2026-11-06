@@ -4694,6 +4694,54 @@
   "v": "c79888ff43e79d905d9067a2d7350df31d474bc4591b87cd3fd7f1be49340ca3"
  },
  {
+  "id": "CH1941-585",
+  "book": "CH1941",
+  "number": "585",
+  "title": "The Lord's Our Rock",
+  "path": "data/CH1941/585.json",
+  "v": "611f71190fee2bd61ebbb9e2e36460e49faa6b1013bd49866ec82d5c5b1f11a6"
+ },
+ {
+  "id": "CH1941-586",
+  "book": "CH1941",
+  "number": "586",
+  "title": "O Safe to the Rock",
+  "path": "data/CH1941/586.json",
+  "v": "6678358f17affbd66c4145e6344d1b887a6b97fed4bcfa1efa7c85674ec00b9c"
+ },
+ {
+  "id": "CH1941-587",
+  "book": "CH1941",
+  "number": "587",
+  "title": "Under His Wings",
+  "path": "data/CH1941/587.json",
+  "v": "e2c5c8fe95114652f8ee21d709f4d4916821c96b5150842df809308ae1a8567f"
+ },
+ {
+  "id": "CH1941-588",
+  "book": "CH1941",
+  "number": "588",
+  "title": "'Tis So Sweet to Trust in Jesus",
+  "path": "data/CH1941/588.json",
+  "v": "3f1ffe76418cd34ef308de2f344e3f320b50ed582292dbfee271e74bd86f224a"
+ },
+ {
+  "id": "CH1941-589",
+  "book": "CH1941",
+  "number": "589",
+  "title": "Anywhere With Jesus",
+  "path": "data/CH1941/589.json",
+  "v": "41db753bdb73cc332463e23d4d41499248fe3a51c7cae153004f07466f425402"
+ },
+ {
+  "id": "CH1941-590",
+  "book": "CH1941",
+  "number": "590",
+  "title": "Just When I Need Him",
+  "path": "data/CH1941/590.json",
+  "v": "0d54f5be48d72aad15f37eacc3fa7cda4600164a992ea507868169e50eb9026c"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -8342,6 +8390,22 @@
   "title": "The Herald Angels Sing",
   "path": "data/CS1908/353.json",
   "v": "2da6e9da46fbbaf04f11afdea8135840c57a0a9e1ec7cc14888345b3fb6c72bc"
+ },
+ {
+  "id": "CS1908-354",
+  "book": "CS1908",
+  "number": "354",
+  "title": "Songs of Praise",
+  "path": "data/CS1908/354.json",
+  "v": "e83e08fee843de7cd4cf7ac6df3e18884c5962b134945ec72bb8d5df39519bf9"
+ },
+ {
+  "id": "CS1908-355",
+  "book": "CS1908",
+  "number": "355",
+  "title": "The Only Lord",
+  "path": "data/CS1908/355.json",
+  "v": "82c5bef15acd16b84b2f5b97e322f65aa3f1eac7b8a0d3465adefd9bf6bed963"
  },
  {
   "id": "CS1908-380",
