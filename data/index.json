@@ -4254,6 +4254,46 @@
   "v": "c43fd87c2335864aeee259e52c21c1231d91d24b941376b1ce8cce21f461f8e6"
  },
  {
+  "id": "CH1941-525",
+  "book": "CH1941",
+  "number": "525",
+  "title": "Baptize Us Anew",
+  "path": "data/CH1941/525.json",
+  "v": "da7ec165c786f9d35a2a3057ba7e2dbdd5f9050f6c33f925650581e12f063eac"
+ },
+ {
+  "id": "CH1941-526",
+  "book": "CH1941",
+  "number": "526",
+  "title": "O, Spread the Tidings Round",
+  "path": "data/CH1941/526.json",
+  "v": "1ae2bd2efddd27eaab9455135a5809535536b9143692ea62b6696c2f30df4ec8"
+ },
+ {
+  "id": "CH1941-527",
+  "book": "CH1941",
+  "number": "527",
+  "title": "I Hear the Saviour Say",
+  "path": "data/CH1941/527.json",
+  "v": "a98a4c3b60b4945836a66e40b0ad1b4a26c2ec84e45d4f57cc6fb0bf9fe7f870"
+ },
+ {
+  "id": "CH1941-529",
+  "book": "CH1941",
+  "number": "529",
+  "title": "I Will Sing of Jesus' Love",
+  "path": "data/CH1941/529.json",
+  "v": "9594580995af5c009e3e9e102b264b613c017dd5107c612fbdfa5f09d94d0e7f"
+ },
+ {
+  "id": "CH1941-530",
+  "book": "CH1941",
+  "number": "530",
+  "title": "The Great Physician Now Is Near",
+  "path": "data/CH1941/530.json",
+  "v": "f1bd70cddb779fc4fcba979e66cacd8ed7957164307b68aacb63fc5c00a84817"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7686,6 +7726,30 @@
   "title": "Saviour Mine",
   "path": "data/CS1908/326.json",
   "v": "7d36bf5c3dcf064839f61be91684549bd9ba1bc3c6fcdc5c34d419612a8c5519"
+ },
+ {
+  "id": "CS1908-327",
+  "book": "CS1908",
+  "number": "327",
+  "title": "Holy, Holy",
+  "path": "data/CS1908/327.json",
+  "v": "eeedf05603520ef08e066718acf15f2c413543661bc8929b17ec6bd58e3dcea3"
+ },
+ {
+  "id": "CS1908-328",
+  "book": "CS1908",
+  "number": "328",
+  "title": "Worthy Is the Lamb",
+  "path": "data/CS1908/328.json",
+  "v": "5e5be1a65a733a9e4d8a77897f88f51692b793aa21b6eef4296d15032d6df041"
+ },
+ {
+  "id": "CS1908-329",
+  "book": "CS1908",
+  "number": "329",
+  "title": "The Hand That Made Us",
+  "path": "data/CS1908/329.json",
+  "v": "68c370b372b37b7e26dd38f52f7dd44eec6a55834e50bc931541b2f81fac9073"
  },
  {
   "id": "CS1908-380",
