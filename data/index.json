@@ -4030,6 +4030,62 @@
   "v": "50620aa87f012149c2c34f2e0bd4709d69c2ee07ad2ffa82dee6c97c15289920"
  },
  {
+  "id": "CH1941-491",
+  "book": "CH1941",
+  "number": "491",
+  "title": "See the Leaves Around Us Falling",
+  "path": "data/CH1941/491.json",
+  "v": "fbe0dc9d6b6fdd525d36d22bc24c2233a28befa70c6ea6d820491aad0f95b2b9"
+ },
+ {
+  "id": "CH1941-492",
+  "book": "CH1941",
+  "number": "492",
+  "title": "Dark Is the Hour",
+  "path": "data/CH1941/492.json",
+  "v": "89e1f8b8b3e5ee7bff7a063090145e825ff13ff27f54f34c58c3109c133e1395"
+ },
+ {
+  "id": "CH1941-494",
+  "book": "CH1941",
+  "number": "494",
+  "title": "He Sleeps in Jesus",
+  "path": "data/CH1941/494.json",
+  "v": "bd1457672239f04c212f23198f1ab733cc0fc38a5b3a9f41d5c8177dea5c9727"
+ },
+ {
+  "id": "CH1941-496",
+  "book": "CH1941",
+  "number": "496",
+  "title": "Come, Ye Thankful People",
+  "path": "data/CH1941/496.json",
+  "v": "00a4e58aa7098756d1c7323c407abc75a0bc863e57a2fb62f3fa760ef7612f1f"
+ },
+ {
+  "id": "CH1941-497",
+  "book": "CH1941",
+  "number": "497",
+  "title": "Standing by a Purpose True",
+  "path": "data/CH1941/497.json",
+  "v": "a51271fbe335280e9db6b4782cd7a88e0ef51d914a847265845326ad6f686798"
+ },
+ {
+  "id": "CH1941-498",
+  "book": "CH1941",
+  "number": "498",
+  "title": "Yield Not to Temptation",
+  "path": "data/CH1941/498.json",
+  "v": "4e2cc406a792064ed0e63001624d7448f46c336a5d3ec9ff786877a5b7f773e3"
+ },
+ {
+  "id": "CH1941-499",
+  "book": "CH1941",
+  "number": "499",
+  "title": "Sound the Battle Cry",
+  "path": "data/CH1941/499.json",
+  "v": "4e83d5174b3331ea4dafae57136bfae5dd68ed9ca1f7dc7248bf0d8234c8e7e9"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7342,6 +7398,38 @@
   "title": "Tell Me the Old, Old Story",
   "path": "data/CS1908/311.json",
   "v": "59f31bae983c48dfbb12ff874be2355088cf28d9cb16395b9b39f3b34bc9a58b"
+ },
+ {
+  "id": "CS1908-312",
+  "book": "CS1908",
+  "number": "312",
+  "title": "Fairest Lord Jesus",
+  "path": "data/CS1908/312.json",
+  "v": "1040f7197dac383b4b0642ce790eb3296e09752eb19da928394dad6aa886bbbe"
+ },
+ {
+  "id": "CS1908-313",
+  "book": "CS1908",
+  "number": "313",
+  "title": "Jesus, the Light of the World",
+  "path": "data/CS1908/313.json",
+  "v": "80cbf8775a2ff70fd9b64743033e32656ec9d33e5d0a6586129eaaaa1edd37e5"
+ },
+ {
+  "id": "CS1908-314",
+  "book": "CS1908",
+  "number": "314",
+  "title": "Room in My Heart",
+  "path": "data/CS1908/314.json",
+  "v": "75df9a182bbdb6bd9f68f0c80610a899dc93055557a02ae96aa04e1a22c3fce8"
+ },
+ {
+  "id": "CS1908-315",
+  "book": "CS1908",
+  "number": "315",
+  "title": "Give Me Jesus",
+  "path": "data/CS1908/315.json",
+  "v": "c3f5d45515e98acf48a43d5c27c3a88c74882f77cc968383ed61b2792ac952d9"
  },
  {
   "id": "CS1908-380",
