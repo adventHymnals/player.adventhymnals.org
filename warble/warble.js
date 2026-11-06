@@ -273,7 +273,11 @@ export async function loadSinging(urls, page = location.href) {
       if (!r.ok) continue;
       const cfg = await r.json();
       const base = new URL(url.startsWith("blob:") ? page : url, location.href);
-      const list = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model && canSing(c));
+      const all = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model && canSing(c));
+      // "enabled": false keeps a voice listed but not offered; a player or app that can sing none of the enabled
+      // voices (an older engine) still gets the first voice it can sing, so it never loses live singing
+      let list = all.filter((c) => c.enabled !== false);
+      if (!list.length && all.length) list = [all[0]];
       Warble.keep = new Set(list.map((c) => (c.sha256 || "").toLowerCase()).filter(Boolean));
       const voices = [];
       for (const [i, c] of list.entries()) {
