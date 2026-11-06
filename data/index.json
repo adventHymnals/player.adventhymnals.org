@@ -3718,6 +3718,38 @@
   "v": "c192f28c4b71d6a44ab736f66807e31e2c4cbb1f0b372f882e2aee1b2502bb9b"
  },
  {
+  "id": "CH1941-451",
+  "book": "CH1941",
+  "number": "451",
+  "title": "Thou Whose Almighty Word",
+  "path": "data/CH1941/451.json",
+  "v": "275db58e9d4e42e1c715228b32e0f100c27c9591daad0e036f987a7397ee6cc2"
+ },
+ {
+  "id": "CH1941-452",
+  "book": "CH1941",
+  "number": "452",
+  "title": "Christ for the World",
+  "path": "data/CH1941/452.json",
+  "v": "5455717a5e21f40d65aa4973589ccab8842ab5dd83d5bed50728dee73bc8c14e"
+ },
+ {
+  "id": "CH1941-453",
+  "book": "CH1941",
+  "number": "453",
+  "title": "They Come From the East and West",
+  "path": "data/CH1941/453.json",
+  "v": "af2a08f07f5779a61800ca9e9a6a89d89eb7cb6b6c1fd5e47cf8ff3c1223c786"
+ },
+ {
+  "id": "CH1941-454",
+  "book": "CH1941",
+  "number": "454",
+  "title": "The Morning Light",
+  "path": "data/CH1941/454.json",
+  "v": "fddfb5c8198df7f7d06440b56cdc32e85796fe0594495f8c0fdd6e0fe8d471b8"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -3844,6 +3876,38 @@
   "title": "Thy Holy Sabbath, Lord",
   "path": "data/CH1941/470.json",
   "v": "b7e3cf35c8e39784501cd6137262172bb7d4ff995b4cdbe6730397da2a664339"
+ },
+ {
+  "id": "CH1941-471",
+  "book": "CH1941",
+  "number": "471",
+  "title": "Thy Broken Body, Gracious Lord",
+  "path": "data/CH1941/471.json",
+  "v": "2dfc59049421e05ab40bb0f8e5ff42a9a9bdd430dbccab964ac90ae32c5490a8"
+ },
+ {
+  "id": "CH1941-472",
+  "book": "CH1941",
+  "number": "472",
+  "title": "Jesus Invites His Saints",
+  "path": "data/CH1941/472.json",
+  "v": "85b401d574136d80dbbc6b7e461f875241d5f8d47bf617454e0109ed9b003620"
+ },
+ {
+  "id": "CH1941-473",
+  "book": "CH1941",
+  "number": "473",
+  "title": "Once in Jerusalem",
+  "path": "data/CH1941/473.json",
+  "v": "bbca49a293daae69d893e0e19e8a3008b9ab2581aa28217703817cc3e7461397"
+ },
+ {
+  "id": "CH1941-474",
+  "book": "CH1941",
+  "number": "474",
+  "title": "Rock of Ages",
+  "path": "data/CH1941/474.json",
+  "v": "2e6f6ce4153c1d4fc4ffbed5c1899d0ec437d24abed6f6ae20ca46870e3de3c7"
  },
  {
   "id": "CH1941-604",
@@ -7016,6 +7080,38 @@
   "title": "The Solid Rock",
   "path": "data/CS1908/294.json",
   "v": "dbdee64af656b7e33dafeb6bf7b8283a20e4ed0d7ce9f8cd92e1ab414d3647f2"
+ },
+ {
+  "id": "CS1908-295",
+  "book": "CS1908",
+  "number": "295",
+  "title": "Walking with God",
+  "path": "data/CS1908/295.json",
+  "v": "237991955c4d938a99e36a14307988d4465fbb8af00a6b942514f06536a57dcf"
+ },
+ {
+  "id": "CS1908-296",
+  "book": "CS1908",
+  "number": "296",
+  "title": "Walking with Thee",
+  "path": "data/CS1908/296.json",
+  "v": "1542d79bd1242ecb145bfce04632003e7c4f51f2970020ba11f73577627005ef"
+ },
+ {
+  "id": "CS1908-297",
+  "book": "CS1908",
+  "number": "297",
+  "title": "More Love to Thee",
+  "path": "data/CS1908/297.json",
+  "v": "e6225f868cb5539f2f94ee041c038f61b628ed8a290a0d293f625291c0d97ac0"
+ },
+ {
+  "id": "CS1908-298",
+  "book": "CS1908",
+  "number": "298",
+  "title": "Bliss of the Pure",
+  "path": "data/CS1908/298.json",
+  "v": "c8d76917cacda6c8ea554c8b606341f45e234f415df6f167ef7a832da99badce"
  },
  {
   "id": "CS1908-300",
