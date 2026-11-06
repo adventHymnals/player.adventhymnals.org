@@ -4398,6 +4398,38 @@
   "v": "d4dea7baa9fa0a0d53b8b6bf9373dcbe5735f4e77b59f93db1f1024f9e1dce7c"
  },
  {
+  "id": "CH1941-545",
+  "book": "CH1941",
+  "number": "545",
+  "title": "Face to Face With Christ My Saviour",
+  "path": "data/CH1941/545.json",
+  "v": "4993127ce97ac133d20cdd3b4badb6433f0dcafb9b43b8294a35636d508bf9fd"
+ },
+ {
+  "id": "CH1941-547",
+  "book": "CH1941",
+  "number": "547",
+  "title": "The Golden Morning Is Fast Approaching",
+  "path": "data/CH1941/547.json",
+  "v": "3e51df2cd7f78f91f05552c8bdb91c76477d8f6b58dbf8ea4956fd8889590c4a"
+ },
+ {
+  "id": "CH1941-548",
+  "book": "CH1941",
+  "number": "548",
+  "title": "Sweet Promise Is Given",
+  "path": "data/CH1941/548.json",
+  "v": "ce4f41a4392b3c1a1755a7af1a889b7c30a6a2646eaae4cc61fd9081d1ca3722"
+ },
+ {
+  "id": "CH1941-549",
+  "book": "CH1941",
+  "number": "549",
+  "title": "Watch, Ye Saints",
+  "path": "data/CH1941/549.json",
+  "v": "fc9d1db45eb58bc0390aab6a70fe7a20db721b0207a6998c10b58a69d1d93675"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7910,6 +7942,22 @@
   "title": "My Salvation, My All",
   "path": "data/CS1908/336.json",
   "v": "8f01f32aa462c40bb28bd70e98f4d293dc15edbd2a2640318a1fcef4339a9426"
+ },
+ {
+  "id": "CS1908-337",
+  "book": "CS1908",
+  "number": "337",
+  "title": "Psalm of Praise",
+  "path": "data/CS1908/337.json",
+  "v": "fb353e22f615c5d57359824d6f7b36081529a7333c9facdb30bfde6a888bb561"
+ },
+ {
+  "id": "CS1908-338",
+  "book": "CS1908",
+  "number": "338",
+  "title": "Purer Yet and Purer",
+  "path": "data/CS1908/338.json",
+  "v": "8b91b35c070addeb7665a40475db349cfb68233a44ce7663f7f4136f1ecc80e6"
  },
  {
   "id": "CS1908-380",
