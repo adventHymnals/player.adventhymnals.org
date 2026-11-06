@@ -4595,7 +4595,71 @@
   "number": "572",
   "title": "Jesus, the Loving Shepherd",
   "path": "data/CH1941/572.json",
-  "v": "33e634b79a355295b60c563014fc781a35bae928418aab64a1e8307a4fb70e22"
+  "v": "8fba9ce40203539d091c040238add5985735d43d07def549349c97d7e6b27109"
+ },
+ {
+  "id": "CH1941-573",
+  "book": "CH1941",
+  "number": "573",
+  "title": "All to Jesus I Surrender",
+  "path": "data/CH1941/573.json",
+  "v": "b9ded0349f19be7ec459209f1f5772f73191dd6426850491945db60322024c63"
+ },
+ {
+  "id": "CH1941-574",
+  "book": "CH1941",
+  "number": "574",
+  "title": "Sing Them Over Again to Me",
+  "path": "data/CH1941/574.json",
+  "v": "8c1e4a992d23434e44697082bb7551fa46253aeb8318aa3b0bbb1db8e97a7778"
+ },
+ {
+  "id": "CH1941-575",
+  "book": "CH1941",
+  "number": "575",
+  "title": "I Have a Saviour",
+  "path": "data/CH1941/575.json",
+  "v": "036e27b0ded3cf52c20bf3c92d070c41b78ba9d73300c89c645d88804be8cca9"
+ },
+ {
+  "id": "CH1941-576",
+  "book": "CH1941",
+  "number": "576",
+  "title": "O Christian, Awake!",
+  "path": "data/CH1941/576.json",
+  "v": "afcdccdd6f754b38971f807442be5ef00fe2cd7d1ea60f46b6c7e6c27c121118"
+ },
+ {
+  "id": "CH1941-577",
+  "book": "CH1941",
+  "number": "577",
+  "title": "The Lord Is My Light",
+  "path": "data/CH1941/577.json",
+  "v": "93e44ec1c1b907a0cd9c994bf7fbf3df5a4cb407ccd5e0915c92b5155bdfdf53"
+ },
+ {
+  "id": "CH1941-578",
+  "book": "CH1941",
+  "number": "578",
+  "title": "Blessed Lord, How Much I Need Thee!",
+  "path": "data/CH1941/578.json",
+  "v": "de4a7de72b6d44775a49a38a757ac751c9e2c0a2dd1704250ebe0c4fa7880763"
+ },
+ {
+  "id": "CH1941-579",
+  "book": "CH1941",
+  "number": "579",
+  "title": "We'll Build on the Rock",
+  "path": "data/CH1941/579.json",
+  "v": "60ab74ed0fb31dec7b51ceb0b4cbb7a6af0ead709e2a74432ea3697903c3091e"
+ },
+ {
+  "id": "CH1941-580",
+  "book": "CH1941",
+  "number": "580",
+  "title": "Have I Need of Aught, O Saviour!",
+  "path": "data/CH1941/580.json",
+  "v": "0e80eb21afdc1c984fe859376507a0aa33afb78bad24d33fde43048904765c0c"
  },
  {
   "id": "CH1941-604",
@@ -8214,6 +8278,30 @@
   "title": "The Lord in Zion Reigneth",
   "path": "data/CS1908/349.json",
   "v": "a81aeff524d44913d437b758a75ca1d414ac7fd3c7630a4c9c4f8549953db3e8"
+ },
+ {
+  "id": "CS1908-350",
+  "book": "CS1908",
+  "number": "350",
+  "title": "Beneath the Cross",
+  "path": "data/CS1908/350.json",
+  "v": "6b865aa9dcf9d7abfff7a88aaaf74c9dbb6846a7d755831d4145ef885deb4c60"
+ },
+ {
+  "id": "CS1908-351",
+  "book": "CS1908",
+  "number": "351",
+  "title": "Praise the Lord",
+  "path": "data/CS1908/351.json",
+  "v": "e299fa16f330d86388592c4a11685b96257191e693fff19ab1b8f8eb1fd4e5e4"
+ },
+ {
+  "id": "CS1908-352",
+  "book": "CS1908",
+  "number": "352",
+  "title": "Freedom in Christ",
+  "path": "data/CS1908/352.json",
+  "v": "881a34e2bfa770ad38e2b9b6f49e8cc0e9d1bef562ea16031cf0ad285b362cc4"
  },
  {
   "id": "CS1908-380",
