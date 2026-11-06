@@ -1230,6 +1230,54 @@
   "v": "57b8762a3f01f6cbd8f7e67983a7d3c526e991dbcf7d66f95a10e433cd52a018"
  },
  {
+  "id": "CH1941-131",
+  "book": "CH1941",
+  "number": "131",
+  "title": "Hail the Day That Sees Him Rise",
+  "path": "data/CH1941/131.json",
+  "v": "cad51c506f2b379a8c04d966d3e128a725f9759b244aba8ac9bf263ea7a6087f"
+ },
+ {
+  "id": "CH1941-132",
+  "book": "CH1941",
+  "number": "132",
+  "title": "Our Lord Is Risen",
+  "path": "data/CH1941/132.json",
+  "v": "eeb8019ef9285b4ee1dc6ca7be9b667a3e600a2f57b137a13b349da2293c34cb"
+ },
+ {
+  "id": "CH1941-133",
+  "book": "CH1941",
+  "number": "133",
+  "title": "On Wings of Living Light",
+  "path": "data/CH1941/133.json",
+  "v": "fd81245bdb8fc4a279a9e7886b9ecbbcebcfe27963e66a154bcdc03cecfb8990"
+ },
+ {
+  "id": "CH1941-134",
+  "book": "CH1941",
+  "number": "134",
+  "title": "Christ the Lord Is Risen Today",
+  "path": "data/CH1941/134.json",
+  "v": "1fe68b8fd95771f764907b93b5de8a67c82f4439924afa6cd0901ee76566996b"
+ },
+ {
+  "id": "CH1941-135",
+  "book": "CH1941",
+  "number": "135",
+  "title": "The Day of Resurrection",
+  "path": "data/CH1941/135.json",
+  "v": "d157afd00cc1a281f36d25e48037363c67b9f706686a9d524f1061b0902f4720"
+ },
+ {
+  "id": "CH1941-136",
+  "book": "CH1941",
+  "number": "136",
+  "title": "Come, Ye Faithful",
+  "path": "data/CH1941/136.json",
+  "v": "95c1ecbcec1d644dd340387686df64aaf5ede0190bc374b319f4808f307f94f5"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1522,6 +1570,30 @@
   "title": "Linger No Longer",
   "path": "data/CS1900/16.json",
   "v": "f1eb8b94e6a2052d6ebdfca808957c2db38565dd67bd0586c776a98cdac88f70"
+ },
+ {
+  "id": "CS1900-17",
+  "book": "CS1900",
+  "number": "17",
+  "title": "Though Your Sins Be as Scarlet",
+  "path": "data/CS1900/17.json",
+  "v": "d3a92bcd2de43949ed8014fbc20eb2668a416969b1a2c9a04639f23cd1328226"
+ },
+ {
+  "id": "CS1900-18",
+  "book": "CS1900",
+  "number": "18",
+  "title": "Lovingly, Tenderly Calling",
+  "path": "data/CS1900/18.json",
+  "v": "2e1b75f30beda84a53faab83d65eaf8ec79a2f4b8ea7497d884c2ffd18a57fff"
+ },
+ {
+  "id": "CS1900-19",
+  "book": "CS1900",
+  "number": "19",
+  "title": "Not in the Hour of Death",
+  "path": "data/CS1900/19.json",
+  "v": "277a7d3763061a5b66f5060de5d788faef1d617d334ae735bea8eaad18fac1e9"
  },
  {
   "id": "CS1908-1",
@@ -2040,6 +2112,14 @@
   "sung": true,
   "sv": "f00229c76cddad066ca43a1ebfdff5901e8f798920842d71f8ff3cbd2814b4b8",
   "v": "4030b8e9cfab3f36349eda435ebb080420f9ff16835c0ee8b5132480f6940eb6"
+ },
+ {
+  "id": "CS1908-56",
+  "book": "CS1908",
+  "number": "56",
+  "title": "What Shall the Harvest Be?",
+  "path": "data/CS1908/56.json",
+  "v": "714b68d7cc3c6958be282dbead3f0b8d9025b4955c8079cc97c03904e3f54994"
  },
  {
   "id": "CS1908-57",
@@ -3430,6 +3510,78 @@
   "title": "O Thou, to Whom, in Ancient Time",
   "path": "data/HT1876/41.json",
   "v": "d1a9dc2b41e9f93bb90a34e90dbfcf5f22b08cd1955e1424329863a0d9b4026f"
+ },
+ {
+  "id": "HT1876-42",
+  "book": "HT1876",
+  "number": "42",
+  "title": "O Bow Thine Ear, Eternal One",
+  "path": "data/HT1876/42.json",
+  "v": "32c32a16c04b26f366624174990cb4f940f54a0e251befc3014aeac4a993a123"
+ },
+ {
+  "id": "HT1876-43",
+  "book": "HT1876",
+  "number": "43",
+  "title": "Here, in Thy Name, Eternal God",
+  "path": "data/HT1876/43.json",
+  "v": "e6005784775b8ecfac02b631d2dc4ae8845bb82632beadae1f14495949086fbb"
+ },
+ {
+  "id": "HT1876-44",
+  "book": "HT1876",
+  "number": "44",
+  "title": "God is the Refuge of His Saints",
+  "path": "data/HT1876/44.json",
+  "v": "adaf56483c94523385c2732f7d3df0ef2e97e1949519bd916843d1134c3df5de"
+ },
+ {
+  "id": "HT1876-45",
+  "book": "HT1876",
+  "number": "45",
+  "title": "To Thee This Temple We Devote",
+  "path": "data/HT1876/45.json",
+  "v": "4c6e1a9381faf5dba243e4dafc02d0966c47051487c486bb994afd51935dead8"
+ },
+ {
+  "id": "HT1876-46",
+  "book": "HT1876",
+  "number": "46",
+  "title": "Praise the Lord! Ye Heavens Adore Him",
+  "path": "data/HT1876/46.json",
+  "v": "314b8933b354c9faa39b1b535ace7e2d2208ee7a24936f1551568e214bd40171"
+ },
+ {
+  "id": "HT1876-47",
+  "book": "HT1876",
+  "number": "47",
+  "title": "'twas by an Order from the Lord",
+  "path": "data/HT1876/47.json",
+  "v": "a490884f91cbaa496961e8aa0481aa703dc9d3a88d25a264574f7a11fe58cdfd"
+ },
+ {
+  "id": "HT1876-48",
+  "book": "HT1876",
+  "number": "48",
+  "title": "I Love the Sacred Book of God",
+  "path": "data/HT1876/48.json",
+  "v": "ca03ded491674a6ec4ab84818695cdec9ed0b2b09728eddadbc2aec6e0b3719b"
+ },
+ {
+  "id": "HT1876-49",
+  "book": "HT1876",
+  "number": "49",
+  "title": "Let Everlasting Glories Crown",
+  "path": "data/HT1876/49.json",
+  "v": "b9514842837d0658495c2e8740135d6833ce78c6d7b4cd17719c3c1aa1a0b7fd"
+ },
+ {
+  "id": "HT1876-50",
+  "book": "HT1876",
+  "number": "50",
+  "title": "God, in the Gospel of His Son",
+  "path": "data/HT1876/50.json",
+  "v": "ba8cfcd80217b108df39434928d8b2da3d51d053a9db077150ea5e0698cbc5fb"
  },
  {
   "id": "NZK-1",
