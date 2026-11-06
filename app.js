@@ -478,44 +478,63 @@ async function syncHymns(force = false) {
   try { if (!force && Date.now() - Number(localStorage.getItem(AT) || 0) < 6 * 3600e3) return; } catch { /* no storage: check */ }
   const c = await hymnStore();
   if (!c) return;
+  const singingSaved = async () => {
+    try {
+      const g = await fetchWithin(`${DATA}data/singing.json`, 15000, { cache: "no-cache" });
+      if (g.ok) await c.put(SINGING_SAVED, g);
+    } catch { /* next time */ }
+  };
+  // first each hymnal's version (a few hundred bytes): a hymnal whose version is the one already here has
+  // nothing new, and when none has, the list of hymns isn't even downloaded
+  const BOOKS = "ah-hymn-books";
+  let books = null;
+  try { const v = await fetchWithin(`${DATA}data/versions.json`, 15000, { cache: "no-cache" }); if (v.ok) books = (await v.json()).books || null; } catch { /* the whole list, as before */ }
+  let known = {}; try { known = JSON.parse(localStorage.getItem(BOOKS) || "{}"); } catch { /* none */ }
+  const same = (x) => !!books && !!known[x.book] && known[x.book] === books[x.book];
+  if (books && Object.keys(books).length === Object.keys(known).length && Object.keys(books).every((b) => known[b] === books[b])) {
+    await singingSaved();
+    try { localStorage.setItem(AT, String(Date.now())); } catch { /* full */ }
+    return;
+  }
   const r = await fetchWithin(`${DATA}data/index.json`, 15000, { cache: "no-cache" });
   if (!r.ok) return;
   const site = await r.json();
   const saved = savedV();
   const mine = new Map(hymnList.map((x) => [x.id, x]));
+  let missed = false; // something to try again next time: this check doesn't count its hymnals as done
   for (const x of site) {
+    if (same(x)) continue;
     const own = mine.get(x.id);
     const onPhone = saved[x.id] || (own?.path ? own.v : null);
     if (!x.v || x.v === onPhone || x.v === own?.v) continue;
     try {
       const url = new URL(x.path, DATA).href;
       const h = await fetchWithin(url, 15000, { cache: "no-cache" });
-      if (!h.ok) continue;
+      if (!h.ok) { missed = true; continue; }
       await c.put(url, h);
       saved[x.id] = x.v;
       try { localStorage.setItem(SAVED_V, JSON.stringify(saved)); } catch { /* full */ }
-    } catch { /* this one next time */ }
+    } catch { missed = true; /* this one next time */ }
   }
   // the recorded singers' lists that changed, so opening a hymn never asks the site
   const SV = "ah-singers-saved";
   let sv = {}; try { sv = JSON.parse(localStorage.getItem(SV) || "{}"); } catch { /* none */ }
   for (const x of site) {
-    if (!x.sung || !x.sv || sv[x.id] === x.sv) continue;
-    try { if (await singers.refreshManifest(`${AUDIO}audio/${x.id}/manifest.json`)) sv[x.id] = x.sv; } catch { /* next time */ }
+    if (same(x) || !x.sung || !x.sv || sv[x.id] === x.sv) continue;
+    try { if (await singers.refreshManifest(`${AUDIO}audio/${x.id}/manifest.json`)) sv[x.id] = x.sv; else missed = true; } catch { missed = true; /* next time */ }
   }
   try { localStorage.setItem(SV, JSON.stringify(sv)); } catch { /* full */ }
   // and the converted singers' ("Recorded singers v2")
   const SVC = "ah-svc-saved";
   let svc = {}; try { svc = JSON.parse(localStorage.getItem(SVC) || "{}"); } catch { /* none */ }
   for (const x of site) {
-    if (!x.svc || svc[x.id] === x.svc) continue;
-    try { if (await singers.refreshManifest(`${AUDIO}audio-svc/${x.id}/manifest.json`)) svc[x.id] = x.svc; } catch { /* next time */ }
+    if (same(x) || !x.svc || svc[x.id] === x.svc) continue;
+    try { if (await singers.refreshManifest(`${AUDIO}audio-svc/${x.id}/manifest.json`)) svc[x.id] = x.svc; else missed = true; } catch { missed = true; /* next time */ }
   }
   try { localStorage.setItem(SVC, JSON.stringify(svc)); } catch { /* full */ }
-  try {
-    const g = await fetchWithin(`${DATA}data/singing.json`, 15000, { cache: "no-cache" });
-    if (g.ok) await c.put(SINGING_SAVED, g);
-  } catch { /* next time */ }
+  await singingSaved();
+  // every hymnal is up to date now (unless something didn't arrive: then all are looked at next time)
+  if (books && !missed) try { localStorage.setItem(BOOKS, JSON.stringify(books)); } catch { /* full */ }
   await c.put(SITE_INDEX, new Response(JSON.stringify(site), { headers: { "Content-Type": "application/json" } }));
   const before = hymn && hymnList.find((x) => x.id === hymn.id);
   const had = before && `${!!before.sung}${!!before.svc}`;
