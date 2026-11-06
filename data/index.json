@@ -1,5 +1,13 @@
 [
  {
+  "id": "AHC-1",
+  "book": "AHC",
+  "number": "1",
+  "title": "The 2300-Day Prophecy",
+  "path": "data/AHC/1.json",
+  "v": "bf6f5b8544e6c69b2eb5b53708dcfec973baf3480b5230723807c66ee7562b85"
+ },
+ {
   "id": "CH1941-1",
   "book": "CH1941",
   "number": "1",
@@ -4021,6 +4029,8 @@
   "number": "13",
   "title": "New Songs of Celebration Render",
   "path": "data/SDAH/13.json",
+  "sung": true,
+  "sv": "c37e3448b59714d259168e4a8042912d12188acbf9edcc4494432b158f258fb0",
   "v": "b28da5c6fb8a3eefabab698007ed3ca9322ac1c676912ee34241c9ae2f381ffd"
  },
  {
@@ -4111,6 +4121,8 @@
   "number": "22",
   "title": "God Is Our Song",
   "path": "data/SDAH/22.json",
+  "sung": true,
+  "sv": "9c71ae14cd151477e14ebf4943aff99ec77bba7aac98851efdffd1152c28ded5",
   "v": "d5a6ea2e2d4a1a957c71abb41dbe12a4fd43f6335eb27b082a5ae92085fdf566"
  },
  {
@@ -4485,6 +4497,8 @@
   "number": "61",
   "title": "God Is Here!",
   "path": "data/SDAH/61.json",
+  "sung": true,
+  "sv": "f49a4b213f8d553410cd3805d7714293e43dec2501c3730fe92b4421797bc4b1",
   "v": "7858eee19a97ad82ca5f041fe8b2ef1e3bfadb5ff42e07988dba61bee1414bf6"
  },
  {
@@ -4970,6 +4984,8 @@
   "number": "110",
   "title": "God's Free Mercy Streameth",
   "path": "data/SDAH/110.json",
+  "sung": true,
+  "sv": "487b646947eb2bd502e3e57d0ef567ef4f9bdabd500b13efc4d97693f017564e",
   "v": "313eba28a0f472e4b85f6e4d32941e4bc3a5ce9b16279a2b939dcb37a55418ad"
  },
  {
@@ -6419,6 +6435,8 @@
   "number": "255",
   "title": "I Cannot Tell Why",
   "path": "data/SDAH/255.json",
+  "sung": true,
+  "sv": "a9654bf68ffe5fcbea11a03a487f09095f977cc1ddb454e742c8b6f8456e5dbe",
   "v": "956123d0d6149b437815e964e4f8df140f6e8764013f10f4ae97b7fcbbc288ab"
  },
  {
@@ -7296,6 +7314,8 @@
   "number": "342",
   "title": "Is This a Day of New Beginnings?",
   "path": "data/SDAH/342.json",
+  "sung": true,
+  "sv": "ecd4448be1e4aac9f2833b1b5e0be096d52ddda48a8b47a8f97c6c7ddd705699",
   "v": "b4ac4dd4e6b61dd4286280a8996096f174a4d79eff71df8c5e3bef2b55f4125f"
  },
  {
@@ -7415,6 +7435,8 @@
   "number": "354",
   "title": "Thy Love, O God",
   "path": "data/SDAH/354.json",
+  "sung": true,
+  "sv": "5c0adec44e2be2a9ee1fbf1a3450cb2a23489eb447f1ddd1597e17c948195c83",
   "v": "b3ea10f3b332f2dcbce2cef724feda2b5d22f6732dc9126ee3cacfe7bb8b7dab"
  },
  {
@@ -7820,6 +7842,8 @@
   "number": "394",
   "title": "Far From All Care",
   "path": "data/SDAH/394.json",
+  "sung": true,
+  "sv": "a1317d8e9dc829230d6ea4661db671dd7c3863891c5e9f43b21da85c34d31bab",
   "v": "0fd6d50dfef3a61ed7d7a2343cf434b421c53c699e20cb5ad3c91b930e835468"
  },
  {
@@ -7828,6 +7852,8 @@
   "number": "395",
   "title": "As Birds Unto the Genial Homeland",
   "path": "data/SDAH/395.json",
+  "sung": true,
+  "sv": "505a4dee9f2c43a97e40ef20ccfa7e280531176e28ef1e1be8123033c407f3ba",
   "v": "60bb8a5ed8462813a9baf6f0cf885c47fc929a7474a692ee3de7305f3e6387c9"
  },
  {
@@ -7916,6 +7942,8 @@
   "number": "404",
   "title": "Now Let Us From This Table Rise",
   "path": "data/SDAH/404.json",
+  "sung": true,
+  "sv": "5ab0785accc88b6fc25515ef30f6d8958435f4f81edadbd800f5575c3f52f8bb",
   "v": "743816050885093050fd5557f33e5d9ad6c17a9d8f3584e8d19aa7078ff7d863"
  },
  {
@@ -7935,6 +7963,8 @@
   "number": "406",
   "title": "Love Consecrates the Humblest Act",
   "path": "data/SDAH/406.json",
+  "sung": true,
+  "sv": "ad0e7323982cc558e3aa9a4a1984bde4205d788f3620d6c9bd70db517442555e",
   "v": "d5e3ea316f28045c216adf7b417945ae5bf168d011eb8d8ecb00d249bdc79eef"
  },
  {
@@ -8004,6 +8034,8 @@
   "number": "413",
   "title": "God Has Spoken by His Prophets",
   "path": "data/SDAH/413.json",
+  "sung": true,
+  "sv": "0cf5e6a65bb8d74c2c8ca3b4a70e6f2555d8591ce32b8f4e85fe655a7e37629f",
   "v": "90eb7b7bb5178b57c2491891c88604b90eca4b7522ff8cd958b5b98dc41e81de"
  },
  {
@@ -8582,6 +8614,8 @@
   "number": "470",
   "title": "There's Sunshine in My Soul Today",
   "path": "data/SDAH/470.json",
+  "sung": true,
+  "sv": "2d06428665ea466b014b3eba31dcf036e96f2d6e96489d905dee279eedfdbc91",
   "v": "f10461830f4ad431139a2119f6a0f4a120c59a63257eaf68d1ba940c5e6b5168"
  },
  {
@@ -8590,6 +8624,8 @@
   "number": "471",
   "title": "Grant Us Your Peace",
   "path": "data/SDAH/471.json",
+  "sung": true,
+  "sv": "9aca7b69ea414ca4cc63c59c861067109ea875f32fe2768f77d21e032bd42612",
   "svc": "0ec24cc811cfbb14296914aebbe16f95b9f824adbd75f974d46977cb5f9a8fbf",
   "v": "7dd517cbb945c2575bde70cf34103e6ebd25e11677e7a278184535216faafa4c"
  },
@@ -8599,6 +8635,8 @@
   "number": "472",
   "title": "A Song of Heaven and Homeland",
   "path": "data/SDAH/472.json",
+  "sung": true,
+  "sv": "3eee6515f4385387552c7a97060bad00d3cf8083bc97220a2483cfd425862b77",
   "v": "a255f0a557b0bac82394de83591adc2319dc7d0766f2736e9c33f68a0258a180"
  },
  {
@@ -8607,6 +8645,8 @@
   "number": "473",
   "title": "Nearer My God, to Thee",
   "path": "data/SDAH/473.json",
+  "sung": true,
+  "sv": "006b9e82d5b890bb6e8221566c0538a02b53c64ecdadbaf36c63223bf63deaef",
   "v": "dabaf056cd23e3c09c8645766c68805207adaa144592eb1068f53c3974c36cae"
  },
  {
@@ -8615,6 +8655,8 @@
   "number": "474",
   "title": "Take the Name of Jesus With You",
   "path": "data/SDAH/474.json",
+  "sung": true,
+  "sv": "4a81f36fbfad65a5042f3dbccfa336d8832ec13d7393bdd8af63226a50c95505",
   "v": "3639ca1cb95224309f273556ba8927a7326d80ff3344d292db227fbd6b567683"
  },
  {
@@ -8623,6 +8665,8 @@
   "number": "475",
   "title": "Balm in Gilead",
   "path": "data/SDAH/475.json",
+  "sung": true,
+  "sv": "bf8d6704e8959ae05df7a7d34459ea031aefe6162e91d2e8aed6e00495ca7201",
   "v": "d57906614e7f1f67188abbc27df889ec9b04d85fc28083d57098e32e6c8a0812"
  },
  {
@@ -8631,6 +8675,8 @@
   "number": "476",
   "title": "Burdens Are Lifted at Calvary",
   "path": "data/SDAH/476.json",
+  "sung": true,
+  "sv": "43bb1cd0c56adf48504b810c3a0ec91242ead0ca6dc3a749571938bb725a22d7",
   "v": "28608f0fc15e031a8f400d11f4adf6c09beb9070f3e72b5b5c2c0deda30502b3"
  },
  {
@@ -8639,6 +8685,8 @@
   "number": "477",
   "title": "Come, Ye Disconsolate",
   "path": "data/SDAH/477.json",
+  "sung": true,
+  "sv": "4565ab64f42fe6648855de35672adf3a3df2b23890fc33110c00fcc7879dcfd8",
   "svc": "ca705a4a7e5fa073f6d20924ce7ede292b61256a52d96bd5cf8501ebbf7ed52a",
   "v": "229f2eae21866fd3e16dff9ece570f791734ef3c65b9b0359ad902f815426e13"
  },
@@ -8648,6 +8696,8 @@
   "number": "478",
   "title": "Sweet Hour of Prayer",
   "path": "data/SDAH/478.json",
+  "sung": true,
+  "sv": "605b152220023c3cb15b5a6cdcd9fa278011eae7bfce20c357fc2f4c6191119e",
   "svc": "974b710b0f9c7643e5102a2d8726f9f61b1681d9ad1b6d811cfe8a373a7c1f85",
   "v": "c60fef825c01bdbeaa3e4191a076b7b27f33180f6dd2c01b1733fc89e99dbd63"
  },
@@ -8657,6 +8707,8 @@
   "number": "479",
   "title": "Tread Softly",
   "path": "data/SDAH/479.json",
+  "sung": true,
+  "sv": "69fe2cd6e6c8221d56062164d17b388bd4b1efa11435844a034da0a7a916d785",
   "svc": "c87eb675d8ae1a08dd711af182a1b07939ccba0c27795bc4ec31a9d8341e91cb",
   "v": "c4d8dd6b687b89775ab44a1db27f7ae0e5364b1456f2662869c5f77057b3c363"
  },
@@ -8666,6 +8718,8 @@
   "number": "480",
   "title": "Dear Lord and Father",
   "path": "data/SDAH/480.json",
+  "sung": true,
+  "sv": "978ae47d75702b5fa3686707c67740850c4eedfa32a2906b67784f2c2cadac21",
   "v": "ccc5ebd9c389bb9d2d3c80cd085f4ff9606699a04427a708fe2e67e4a10ea30e"
  },
  {
@@ -8674,6 +8728,8 @@
   "number": "481",
   "title": "Dear Lord and Father",
   "path": "data/SDAH/481.json",
+  "sung": true,
+  "sv": "f09767ff29310e885aa1f6826b04cc6ef3288e634783c6869a58b4e4f1874ee5",
   "v": "0367e89d5cc2e7d6f6224cc548316bebb6805fb66566751af3319d3d7f657f8a"
  },
  {
@@ -8682,6 +8738,8 @@
   "number": "482",
   "title": "Father, Lead Me Day by Day",
   "path": "data/SDAH/482.json",
+  "sung": true,
+  "sv": "c81a072242c17be30f0680abd439c509ba9a5870d31726b057ca40c35158129a",
   "v": "88b8725af1a1b5146da8ffe2b466e0e5e373c150aa446e5ee2c0b3ac2eeecfe8"
  },
  {
@@ -8690,6 +8748,8 @@
   "number": "483",
   "title": "I Need Thee Every Hour",
   "path": "data/SDAH/483.json",
+  "sung": true,
+  "sv": "36ebf562989b89ca4c30c500dd37cebc7d5e57c3d478b5e227f06b8ab608715c",
   "svc": "e8a5a7fbf2c4ee1f224e340923e397e3cff6c2cd57b915bea172d39b5fc39269",
   "v": "eb15d90d251e140435146319046f89fe142c5bc12db10fc7c166cb067ecd74f2"
  },
@@ -8699,6 +8759,8 @@
   "number": "484",
   "title": "I Need Thee, Precious Jesus",
   "path": "data/SDAH/484.json",
+  "sung": true,
+  "sv": "4e99b897cee74fecb01886d1a783e390da2d79cae1e73b738ba890a1988d5927",
   "v": "0a5574955506941d26854b5ca67faab7fd0e3c2d0a1bcdc4bca44974b1265e7f"
  },
  {
@@ -8707,6 +8769,8 @@
   "number": "485",
   "title": "I Must Tell Jesus",
   "path": "data/SDAH/485.json",
+  "sung": true,
+  "sv": "46bd91b1dccabf22d8f24be823506a218324d9ad0d7935e8f2508f44dc5468c2",
   "v": "2c6fa4ffcf28ef216de6a618cdf1c8fe9652f4fc5182732bad12f35ea95a7a1d"
  },
  {
@@ -8715,6 +8779,8 @@
   "number": "486",
   "title": "I Do Believe",
   "path": "data/SDAH/486.json",
+  "sung": true,
+  "sv": "93b403faf4d87c9688ff041895d57964c21f7949290ec4e255b72936820711ec",
   "v": "168b97e77821c890d06b8c80b9234d8f163c0d0439a057cb4ce223d5454d34dc"
  },
  {
@@ -8723,6 +8789,8 @@
   "number": "487",
   "title": "In the Garden",
   "path": "data/SDAH/487.json",
+  "sung": true,
+  "sv": "5caf1f53fa63a85e4dc349d013c9472a70b0c3645b6182ebb406495b3f292deb",
   "svc": "6015a9306e7c9622732026d0f5760fdc6ab6a5979c499a466e3bfc235e61013d",
   "v": "27bab631a42cd455bb24a5924a5e612dda62f4fe679d11a673d742b77145fdb0"
  },
@@ -8732,6 +8800,8 @@
   "number": "488",
   "title": "At First I Prayed for Light",
   "path": "data/SDAH/488.json",
+  "sung": true,
+  "sv": "90e6aaefd5acfb04423194edd00b3e933e153d716723971b2018ac4045e360e9",
   "v": "8b8f85236562eb69c7765affd11992ea772b302b645efa3bfd661a085ed69217"
  },
  {
@@ -8740,6 +8810,8 @@
   "number": "489",
   "title": "Jesus, Lover of My Soul",
   "path": "data/SDAH/489.json",
+  "sung": true,
+  "sv": "63b18d052e55abe24095dc5b57713c7c8f88968da587d763ad5bb4e52073ca6d",
   "v": "7df2c56eb520ada4076de6389ebaa991a22b06bf244483f11f077aecdbecf11b"
  },
  {
@@ -8748,6 +8820,8 @@
   "number": "490",
   "title": "Jesus, Lover of My Soul",
   "path": "data/SDAH/490.json",
+  "sung": true,
+  "sv": "ca917eadcd1ee5ee0534a13d154701779872c8693e313f243572f43057aa5320",
   "v": "56e11fa5557567849559b200c091d3a8742dd975e445a8bc1c0db9e9434989c2"
  },
  {
@@ -8756,6 +8830,8 @@
   "number": "491",
   "title": "In the Hour of Trial",
   "path": "data/SDAH/491.json",
+  "sung": true,
+  "sv": "6f82e2faeeab8566a98968c71f43a5360cd22da33c7b119d87b4f0e19c64e9cc",
   "v": "2b16eb3dc68075c1aa3aa19d1e489919a6b566f268e0325e363f23f3924954ff"
  },
  {
@@ -8764,6 +8840,8 @@
   "number": "492",
   "title": "Like Jesus",
   "path": "data/SDAH/492.json",
+  "sung": true,
+  "sv": "00df0afa4fcb19fec2c0faea73032d95126b9af26eceb74c966133809bf69b65",
   "v": "ec2f87031fbd956e23e5e717944903835dd9b9cb0b7ff09c8b758f5531e4bc01"
  },
  {
@@ -8772,6 +8850,8 @@
   "number": "493",
   "title": "Fill My Cup, Lord",
   "path": "data/SDAH/493.json",
+  "sung": true,
+  "sv": "d630eef4064b142b15f0639f4f890163eac1511cfcf01ba3992ceff7fbb324f4",
   "svc": "c8ee02623ed943eb284bf53455fda36cf1e9f500a07571aac3b3f7299cfb43e5",
   "v": "03ab6ead34e47e4b61339e0568c33f7e8a2649a641159479d16e515fe305283b"
  },
@@ -8781,6 +8861,8 @@
   "number": "494",
   "title": "We Would See Jesus",
   "path": "data/SDAH/494.json",
+  "sung": true,
+  "sv": "748be41e068cfd5272aaff8be8e939ae978320dfb5e4c2a8b7d7aca2fd9b0452",
   "svc": "3e12f4255c9aed607161d3417d0e0766b77f15f6f004ab09689dd57924fea87f",
   "v": "713d54b9c6ec3ca4cddcc745be18f7fb83d7c43a4cc80b598ac6453a69614101"
  },
@@ -8790,6 +8872,8 @@
   "number": "495",
   "title": "Near to the Heart of God",
   "path": "data/SDAH/495.json",
+  "sung": true,
+  "sv": "30783176b82b113a158eb0d8f1aa2f02f09af406b0ac437d16f80e2cee5e79a6",
   "v": "f6a277df92687cce0c173038a6ba5f9f3490d17b7bc4ffb69ada8ec9dbc7b466"
  },
  {
@@ -8798,6 +8882,8 @@
   "number": "496",
   "title": "Eternal Love, We Have No Good",
   "path": "data/SDAH/496.json",
+  "sung": true,
+  "sv": "b54007e467464806f553a63a4be607f51c61592a53f518b63546ec19d1a85f44",
   "v": "67cb32d5f2d3f4015759a891846c060fb9f849adf55ae4b09313aadb3f66222e"
  },
  {
@@ -8806,6 +8892,8 @@
   "number": "497",
   "title": "O Gracious Father of Mankind",
   "path": "data/SDAH/497.json",
+  "sung": true,
+  "sv": "92d1c3ddffd3a08b660cefb2f67f20b0a0d9756db25a96fbf0bce26052c62361",
   "v": "51d967f2d285e0d42643295c433d58f00cb6c40f34c079398f388ff3f020a417"
  },
  {
@@ -8814,6 +8902,8 @@
   "number": "498",
   "title": "Still, Still With Thee",
   "path": "data/SDAH/498.json",
+  "sung": true,
+  "sv": "4be7a0074e806eb1c8d10c52036ec636bd5c0112028c8e083221fa011320fc3d",
   "v": "a0f854959a2ea4ad001a516eb32c6f8aae4ffe9eaf2d40cd0635b7387577b79f"
  },
  {
@@ -8822,6 +8912,8 @@
   "number": "499",
   "title": "What a Friend We Have in Jesus",
   "path": "data/SDAH/499.json",
+  "sung": true,
+  "sv": "19d682b2194b8b4f9be556b28156b26390ebd3aef43a646e106989c0f6f8fabd",
   "v": "57e52445edab106c77c4e3b49b76a4341579a742f6c1549bd9eee7f4b84a2d0a"
  },
  {
@@ -8860,6 +8952,8 @@
   "number": "503",
   "title": "A Quiet Place",
   "path": "data/SDAH/503.json",
+  "sung": true,
+  "sv": "362dae92a879f8ab19366da754fef6db08a5a5f91ac2810dc05396c551e634f7",
   "v": "9dff15d9ed113a593d9e66eeee500290269614550e9d41739066461b7fe3433a"
  },
  {
@@ -8876,6 +8970,8 @@
   "number": "505",
   "title": "I Need the Prayers",
   "path": "data/SDAH/505.json",
+  "sung": true,
+  "sv": "8f7858c8e9c2a3529ce171bc54d497efb9c41ab10a08f3ad8e66f78fc63752fb",
   "svc": "9db4421559c8fd8b2eb0d04f73c642928d259f47245344e750ce4641cf593763",
   "v": "06fd08a2422c4a4b0b3356ff2cd4e92497e40d133b039e360a55955ce8c54bdd"
  },
@@ -8885,6 +8981,8 @@
   "number": "506",
   "title": "A Mighty Fortress",
   "path": "data/SDAH/506.json",
+  "sung": true,
+  "sv": "9026a8f20c014b6120e1ea948e84f6f57bb65a9004691f607f2b51150053575d",
   "svc": "f082d437da0d5a62c2212a69ae6254d085c1ad0a07fb4d2f23d00c1966ea0548",
   "v": "71bf7031168bafafa4a033c9bad916194a8642263830b985736e9c750e0ec3eb"
  },
@@ -8894,6 +8992,8 @@
   "number": "507",
   "title": "Moment by Moment",
   "path": "data/SDAH/507.json",
+  "sung": true,
+  "sv": "d2eeb8d169765f91a8775816a9b1abfa388517238b2053ec896d9efcef69722d",
   "svc": "bdf944a5d3e2b1b170457b8e1df360ddfa9965afcc5e1559bb0d0c17655eb8b8",
   "v": "beb89d2b4da9fee4e8dadb0c5468ae9461b4586f1a45c8bd0a1c9252e08dc48c"
  },
@@ -8903,6 +9003,8 @@
   "number": "508",
   "title": "Anywhere With Jesus",
   "path": "data/SDAH/508.json",
+  "sung": true,
+  "sv": "0465459410d56ab30c5a358b3d702de6df662046c9ac396273ae1f2749fa41be",
   "v": "5abc8d29df0932b866417fc01f9789ad0bcd7869bc0eb8b03aa3f85d0372f3d2"
  },
  {
@@ -8911,6 +9013,8 @@
   "number": "509",
   "title": "How Firm a Foundation",
   "path": "data/SDAH/509.json",
+  "sung": true,
+  "sv": "acd7d09f096590c1367d9e898c53f2b0231c01c96b553d7044dd047227976072",
   "v": "d6c733668913ec85acdc44d094fb25438d2382dbc7aba2e2740f69963b71d524"
  },
  {
@@ -8919,6 +9023,8 @@
   "number": "510",
   "title": "If You But Trust in God to Guide You",
   "path": "data/SDAH/510.json",
+  "sung": true,
+  "sv": "8675120136050b533ec32378833456e0785266bee6325ecd09820d3d3edf08de",
   "v": "1ce8685cca3b1792f31a335b6cd66845f86cdf6692980b2e9b1e2197f3d95e9a"
  },
  {
@@ -8927,6 +9033,8 @@
   "number": "511",
   "title": "I Know Whom I Have Believed",
   "path": "data/SDAH/511.json",
+  "sung": true,
+  "sv": "384809eddf6fa77ef340f9c32a8e8b74d133ded8cdc15a8673e609e415e2d7d7",
   "v": "39b7df0c09a793597139dd5de327efe93bd2f936025d859881793e61558d3bab"
  },
  {
@@ -8935,6 +9043,8 @@
   "number": "512",
   "title": "Just When I Need Him Most",
   "path": "data/SDAH/512.json",
+  "sung": true,
+  "sv": "1e14721f9544a8e4dd4b4f934976f1166e84363d67d37c80c688edceba081722",
   "v": "eb3ea0e37528f8b3721837fdd2a96ca318add4ec82cd94b05caa23b1d39c712d"
  },
  {
@@ -8943,6 +9053,8 @@
   "number": "513",
   "title": "In Heavenly Love Abiding",
   "path": "data/SDAH/513.json",
+  "sung": true,
+  "sv": "5fc87fe93d3cafb872262f0e68b6be6c7d81c914beb0e2117ec63e5086727bc3",
   "v": "4e72ba402773c74c956773772a77eec1ec9150e90ee477ce69dd5f3c2dfea940"
  },
  {
@@ -8951,6 +9063,8 @@
   "number": "514",
   "title": "Lord of Our Life",
   "path": "data/SDAH/514.json",
+  "sung": true,
+  "sv": "fcf8f2d660093936909e8576ed8dd048cd8291a119bbe9891f2b35747f3b3dfa",
   "v": "57bb851b416cfa92d2c3e0ffafb2eee6e97f2e0967ba375212af403adbca185f"
  },
  {
@@ -8959,6 +9073,8 @@
   "number": "515",
   "title": "The Lord Is My Light",
   "path": "data/SDAH/515.json",
+  "sung": true,
+  "sv": "f5a7cbdbbcc4f30d1278800ce278cae557a79b5379eaa6b2b163e852efc80379",
   "svc": "88286d6c323a541bd75f62b57867536784ad5df02dbb8f67bbdb0f6b0fe20e30",
   "v": "cb531a9a193f7a39e4c55891cb95bb46c0e33e79e2358ec295294698c4f71583"
  },
@@ -8968,6 +9084,8 @@
   "number": "516",
   "title": "All the Way",
   "path": "data/SDAH/516.json",
+  "sung": true,
+  "sv": "d33fa017c351afcf7667538d6f02875da512abaa5151407063654ca960882ff8",
   "v": "c9e1d1aa4285692742b71073cc37d02c074e6afd0f8f857966eafc9f87f0b4a8"
  },
  {
@@ -8976,6 +9094,8 @@
   "number": "517",
   "title": "My Faith Looks Up to Thee",
   "path": "data/SDAH/517.json",
+  "sung": true,
+  "sv": "1eab33cfea029e0e4b52a1079d1153b2ec7c2faf42cb916d99ccd5b863f85ffb",
   "v": "f7c4f0f703e8388f531bdf6e338c05a5c43be0e00d4267890455af6ce77f0ce9"
  },
  {
@@ -8984,6 +9104,8 @@
   "number": "518",
   "title": "Standing on the Promises",
   "path": "data/SDAH/518.json",
+  "sung": true,
+  "sv": "575dc2415fe782b6e9226fefd72eb641b51016a4073a05fbf174878fc164014c",
   "v": "3bcec2dfe158a0c26291877b664d3102a540e99665f996f3595ec4a47363f22d"
  },
  {
@@ -8992,6 +9114,8 @@
   "number": "519",
   "title": "Give to the Winds Your Fears",
   "path": "data/SDAH/519.json",
+  "sung": true,
+  "sv": "848fc5ba96f2a658eb87577e2be8a7710556c9ae69a4b3850207ac18e3a47146",
   "svc": "fc17c390fc103d2582cdee5bcccb681eaa5c4391274a5a5bb5624ee81a2e3059",
   "v": "be779f3ea5ae697383716cedfe5c388ffaf0a72aba5ca561c6b52e9a4fb2bee7"
  },
@@ -9001,6 +9125,8 @@
   "number": "520",
   "title": "He Hideth My Soul",
   "path": "data/SDAH/520.json",
+  "sung": true,
+  "sv": "ef3683b52c12f544ac1a3bcb84a84b9a6edfeab0ee6aec87c5ed5e0527020cd9",
   "svc": "fb137786536c01173759a9fde9ff2e6fbb3cfc95036d2b6ae8e7b4a5a77806c8",
   "v": "5d2e53b03640ee1d73765e91ebda0a8194bd06b22affeae7bbdd7327648ca06c"
  },
@@ -9010,6 +9136,8 @@
   "number": "521",
   "title": "Depth of Mercy",
   "path": "data/SDAH/521.json",
+  "sung": true,
+  "sv": "219c572eb9a86ed30d02fadc48a04e1168d09352437b769bb023ae86f173ef74",
   "v": "170c7109c9d6d1e1b499cd0be6dfcba08fe772223fc6c749f7bb964f9fc239f7"
  },
  {
@@ -9018,6 +9146,8 @@
   "number": "522",
   "title": "My Hope Is Built on Nothing Less",
   "path": "data/SDAH/522.json",
+  "sung": true,
+  "sv": "ccc654cb7765dd010dff4b243c6d73ae3c04bfee7302837be1ebb49d82dd19de",
   "v": "e62e96bd7ed0ca58e15b19a426bb8a2b25799dbbbc9745fc89a058cbf1c7ae46"
  },
  {
@@ -9026,6 +9156,8 @@
   "number": "523",
   "title": "My Faith Has Found a Resting Place",
   "path": "data/SDAH/523.json",
+  "sung": true,
+  "sv": "7d57c93c96ac32cd371d95a44e57374c56cb3745c5ba85a815d63bc867b85b22",
   "v": "869b5ae76d98a36f54fc13a655a1fffd677571145b4ffeefee52dd067e969a25"
  },
  {
@@ -9034,6 +9166,8 @@
   "number": "524",
   "title": "'Tis So Sweet to Trust in Jesus",
   "path": "data/SDAH/524.json",
+  "sung": true,
+  "sv": "24d37adff1a014564fbc0f7858222f3605af28eb6f218e0a476a07c85fce4bc2",
   "v": "2d423804ac5f708b2b61b957103ea5d1c047ed651a8eeee75052ca6dfa0746cb"
  },
  {
@@ -9042,6 +9176,8 @@
   "number": "525",
   "title": "Hiding in Thee",
   "path": "data/SDAH/525.json",
+  "sung": true,
+  "sv": "318d908f79ff00737355044fc45098ec87671b1e64d192734a6579b4cbd11b63",
   "v": "127201e136793159905788957d53af874b8223886a727a5e5da82aec2b9fccd2"
  },
  {
@@ -9050,6 +9186,8 @@
   "number": "526",
   "title": "Because He Lives",
   "path": "data/SDAH/526.json",
+  "sung": true,
+  "sv": "8b425b0cfebb3d52293f64112749bd915da96111c46cad5e195d208fc41dc5fb",
   "v": "249e838bb31d14781f55eaff5bc0f034f5207e3c4d118618fd648a2135de9529"
  },
  {
@@ -9058,6 +9196,8 @@
   "number": "527",
   "title": "From Every Stormy Wind",
   "path": "data/SDAH/527.json",
+  "sung": true,
+  "sv": "24487b9abd2d1b15495da954a64a329392615bcf816e277dae4f70df7608e368",
   "svc": "f1e1d2fdabe701fca856fdf1d12c7d617de2694298c1242c2619d0dc69d19eaa",
   "v": "020d4f232f52125e1923237314c8a96aea4886c78800018b82f3ea7431632845"
  },
@@ -9067,6 +9207,8 @@
   "number": "528",
   "title": "A Shelter in the Time of Storm",
   "path": "data/SDAH/528.json",
+  "sung": true,
+  "sv": "6a60069d01f8d769eac120921cae7dbca9b116157576104579cbc47d67bd64ca",
   "svc": "c955efc11dd5b9cb6d92a7fe5713daf8ab2f582132e3203d106d3c426b4e5a60",
   "v": "ec6ef2fe94c5b04844f984e127d22971fa82fea04bb3921360c445b671562be8"
  },
@@ -9076,6 +9218,8 @@
   "number": "529",
   "title": "Under His Wings",
   "path": "data/SDAH/529.json",
+  "sung": true,
+  "sv": "2ce64f7d765509b51eaeb9518a6b8519c939e0d65b73485d7ee89e80044dc8c8",
   "v": "e7142fca521d650fb9e38a655bf5e945969e92c277ea199805dad2794d47b647"
  },
  {
@@ -9084,6 +9228,8 @@
   "number": "530",
   "title": "It Is Well With My Soul",
   "path": "data/SDAH/530.json",
+  "sung": true,
+  "sv": "bd99382f38ff190a2c076fb8f951f856bd3555b5f231d012590e995962615148",
   "v": "ec279f1920dc02d19a11c297103403a9d7bb53c382b36b57a56500493d2c23be"
  },
  {
@@ -9092,6 +9238,8 @@
   "number": "531",
   "title": "We'll Build on the Rock",
   "path": "data/SDAH/531.json",
+  "sung": true,
+  "sv": "d3c7828b133b280e670ea47c2640acb7ffe070aa0f6f15ed2abaaf4530a602b5",
   "v": "42b6b33d5274d8ea8429b5388778d37624222a978b58c18a4f87b8146eeb5fb4"
  },
  {
@@ -9100,6 +9248,8 @@
   "number": "532",
   "title": "Day by Day",
   "path": "data/SDAH/532.json",
+  "sung": true,
+  "sv": "9c0d65d8d115462688369c3a61170be855718a3fa0163038869f71d6e52d9a5d",
   "v": "fe106616dc4735520a6f536a57c1ca7d7e7e3081bd4dd979b71cab7ffcc82212"
  },
  {
@@ -9108,6 +9258,8 @@
   "number": "533",
   "title": "O for a Faith",
   "path": "data/SDAH/533.json",
+  "sung": true,
+  "sv": "a5c940a024dc2f03b3c6b67320ffb67f4bc3a6a472ee2d7d660bf65428ead280",
   "v": "923bd59c77a83a6d5265efa2db6d5ef3e54d04e8b28477f70729ef13a942e5a6"
  },
  {
@@ -9116,6 +9268,8 @@
   "number": "534",
   "title": "Will Your Anchor Hold?",
   "path": "data/SDAH/534.json",
+  "sung": true,
+  "sv": "ad3b55da992f7b79852a15c45f6e0ca2d7e8ac57f44e26ccf76c25577607550b",
   "v": "bef76c9990b021472342fc7d175601169c171f80fcdfaca5f2521505d0dd1f94"
  },
  {
@@ -9124,6 +9278,8 @@
   "number": "535",
   "title": "I Am Trusting Thee, Lord Jesus",
   "path": "data/SDAH/535.json",
+  "sung": true,
+  "sv": "02a362d2cfdb9bef149cd220bf23d031d8d5468bdf0d2b9e777ff4d2aa4081fe",
   "v": "7db30c9197b845845b08ba670156b381a7c212394b80e992d786a28ac9c68a70"
  },
  {
@@ -9132,6 +9288,8 @@
   "number": "536",
   "title": "God, Who Stretched the Spangled Heavens",
   "path": "data/SDAH/536.json",
+  "sung": true,
+  "sv": "9743b1e33cf1d3a653f792cfd08b4632c4ad821a1bc36a5e0f2db69bade89547",
   "v": "e60babdc1478c2e69e330ea94f9904452e95f874272dda18fe4c81b264bf7cfb"
  },
  {
@@ -9140,6 +9298,8 @@
   "number": "537",
   "title": "He Leadeth Me",
   "path": "data/SDAH/537.json",
+  "sung": true,
+  "sv": "15659d898943de231401def34f85980f8e53926fa6d0c91575b613cc404393ad",
   "svc": "5fed0a4cff3f0f8b07feba04c2a5070ecf0bb04be5b4a0fa3c7c3babc1a2cbf2",
   "v": "0937c94eb03b0a19aed6f5c7c0c205dd6c7af96852033154792cd7dedc2498be"
  },
@@ -9149,6 +9309,8 @@
   "number": "538",
   "title": "Guide Me, O Thou Great Jehovah",
   "path": "data/SDAH/538.json",
+  "sung": true,
+  "sv": "04c5167d71b6acdc63d15f6e9f24a6f5f934ff4dc78ade36c305b33b0d47a5ae",
   "v": "b606691cf9046781aeb780af2ebc6d97147d7c4568dd23a0f3e4124b10c59971"
  },
  {
@@ -9157,6 +9319,8 @@
   "number": "539",
   "title": "I Will Early Seek the Savior",
   "path": "data/SDAH/539.json",
+  "sung": true,
+  "sv": "341de86c99dd7ec55507d5c667f17c571873addb8ae2fd6dc61ff60279d2c5c8",
   "v": "c0bd563f6fda29b680e534945322e72c5dba02dc7c6b1a982f3192627592970d"
  },
  {
@@ -9165,6 +9329,8 @@
   "number": "540",
   "title": "Gentle Jesus, Meek and Mild",
   "path": "data/SDAH/540.json",
+  "sung": true,
+  "sv": "50edebc5a61b56456e69d106796996a598b7d6e488592eb4515405b2f95d4370",
   "v": "79199bf19f6399e724a94b5bb01be599cb599de2da39e14e005430a6d0e97d08"
  },
  {
@@ -9173,6 +9339,8 @@
   "number": "541",
   "title": "Lord, Speak to Me",
   "path": "data/SDAH/541.json",
+  "sung": true,
+  "sv": "46123bc8d9a1ec8e456b1e2d320f6ca05366227b01f7327dfd041ed338bf33b9",
   "v": "8a327c7e1bb023f4c8ac05f3b227d27a766ff99b32464c959d1f42a70e2504db"
  },
  {
@@ -9181,6 +9349,8 @@
   "number": "542",
   "title": "Jesus, Friend So Kind",
   "path": "data/SDAH/542.json",
+  "sung": true,
+  "sv": "659176acb6351228de201306066b9613f437a4267518835a6e8d5b9e22033313",
   "v": "9246bc41f23f7dce080ad636d605912c5f27bb53faf96db68479d74c4cf918c0"
  },
  {
@@ -9189,6 +9359,8 @@
   "number": "543",
   "title": "Jesus, Friend of Little Children",
   "path": "data/SDAH/543.json",
+  "sung": true,
+  "sv": "01fc9fe86eca0e359b82c80cd31ecb1962333f413f42132642c661d3e0ca9da0",
   "svc": "12b076409f4ac90d4db56cafdd8e69483ec74cd89e578b2b05fed72be0dd8a90",
   "v": "d21c96df4aae00f958bf647d42ba9584260067b65a556ed592e593e9c11ff546"
  },
@@ -9206,6 +9378,8 @@
   "number": "545",
   "title": "Savior, Like a Shepherd",
   "path": "data/SDAH/545.json",
+  "sung": true,
+  "sv": "e03c8413641b0a493b2f1066b06fbbf2fd3c44dbcc66515cc2dd1784a1eaa41f",
   "svc": "9b5cc241e791f9071854b037e696d643a3d45c90380db595b69584e1dbf6f757",
   "v": "e298742a12af8995ef890720b3413c5683390236b7a8f7f281a1bc9f7db2c89d"
  },
@@ -9215,6 +9389,8 @@
   "number": "546",
   "title": "The Lord's My Shepherd",
   "path": "data/SDAH/546.json",
+  "sung": true,
+  "sv": "c553fa8a4fd37d3ed2e05c94a31131381ae01efe06196b14fc8aeb200bf8e7c5",
   "v": "d505cfc5424199c80ee107476336a3cad5037a0891365ad1f2a688eeba414dfa"
  },
  {
@@ -9223,6 +9399,8 @@
   "number": "547",
   "title": "Be Thou My Vision",
   "path": "data/SDAH/547.json",
+  "sung": true,
+  "sv": "7f217ce7e32bff235e406feb07518ab40800895086d3460a37d1a5032c8eee63",
   "svc": "d1f1379144eab8946f632e3146efc0da29f7e87ec8c84b685f70717712b8dcda",
   "v": "93ee9675a901ce9d06959e06bc584c55ce3b323369bad3bdc87cd6f59258637a"
  },
@@ -9232,6 +9410,8 @@
   "number": "548",
   "title": "Now Praise the Hidden God of Love",
   "path": "data/SDAH/548.json",
+  "sung": true,
+  "sv": "80a9c44c9e3ad50abc519042696c0e0f2a20b43e43551dd3b809ad648a035536",
   "v": "5b219e6552b76f06aa515aa633c5a8028488d590029a22e18a109f54507dda37"
  },
  {
@@ -9240,6 +9420,8 @@
   "number": "549",
   "title": "Loving Shepherd of Thy Sheep",
   "path": "data/SDAH/549.json",
+  "sung": true,
+  "sv": "321bfb846fe9e50500e46f7387d4b150a7ea9509bbb234a71a04fb1cba4ce0cc",
   "v": "f041419af4a7f36b8452597033407ce59fd8f4e028cc0b9a5d8b9b2e48244657"
  },
  {
@@ -9256,6 +9438,8 @@
   "number": "551",
   "title": "Jesus, Savior, Pilot Me",
   "path": "data/SDAH/551.json",
+  "sung": true,
+  "sv": "a6e701bb4abf44200f6ea2aaa65caf18d86c881ee8399674714bb048efb9a81e",
   "v": "93f30897ea88f2aceaaef0de3a9f1e9a31409ebb71f545d8b820bf4f6938bb58"
  },
  {
@@ -9264,6 +9448,8 @@
   "number": "552",
   "title": "The Lord's My Shepherd",
   "path": "data/SDAH/552.json",
+  "sung": true,
+  "sv": "e3cdc924aa971aeddc6a91251754e2c470d878106717508d2a52fa3cb2bc0cce",
   "v": "ccec12a6de6b66645440ef3799b79f7c10d5457b6055e52a951d175eef90a6c6"
  },
  {
@@ -9272,6 +9458,8 @@
   "number": "553",
   "title": "Jesus, Guide Our Way",
   "path": "data/SDAH/553.json",
+  "sung": true,
+  "sv": "fe0c6db2a81c21d482ce0c0b6d83b7be64d82ac63c394488894afb6c4021aeda",
   "svc": "ba4046d01bcecdfa371cd1d5e01c1866f5432dcedcf6bc3e8f435807d3228e66",
   "v": "f723287ccaf2e0ec1bdbbc02efbeab73b34c956cf0bc190f9e3609d3a433b31a"
  },
@@ -9281,6 +9469,8 @@
   "number": "554",
   "title": "O Let Me Walk With Thee",
   "path": "data/SDAH/554.json",
+  "sung": true,
+  "sv": "a5f104c818b95099e5fec4391d24404245c8f86cd2d82145aef43881c68e9a1c",
   "v": "6e21d472d5f0c828d7bc11a2bd2fbf047345dd2edac2a58ea9de09e99fb08665"
  },
  {
@@ -9289,6 +9479,8 @@
   "number": "555",
   "title": "Shepherd of Tender Youth",
   "path": "data/SDAH/555.json",
+  "sung": true,
+  "sv": "395157e84957ad29c033f5ee5130537c226ef0e7cb9bd2cbadfc7806992452df",
   "v": "cf0c16cd79d47a983b3eaf65e22b9feb4c1f49b4bd55603ee27d5f0cb00f3837"
  },
  {
@@ -9297,6 +9489,8 @@
   "number": "556",
   "title": "As Saints of Old",
   "path": "data/SDAH/556.json",
+  "sung": true,
+  "sv": "540cae0a9aee1ebfa91d245feb865c4dc765d31ee320aefadbcc9707c6a55642",
   "v": "84fe01e53c227ef27fc4bcf4968b87fecd2e970d2e34306d56196b923a6c0951"
  },
  {
@@ -9305,6 +9499,8 @@
   "number": "557",
   "title": "Come, Ye Thankful People",
   "path": "data/SDAH/557.json",
+  "sung": true,
+  "sv": "bf73475783f46ac537ae21362ae51538e3533fb70679d2ea9af230d4f33386f7",
   "v": "b9772425f92acd3635f5d7ba9d130eed1a9babf87900f6fcef41aaa259d3cb66"
  },
  {
@@ -9313,6 +9509,8 @@
   "number": "558",
   "title": "For the Fruits of His Creation",
   "path": "data/SDAH/558.json",
+  "sung": true,
+  "sv": "07da197cbc9ae639f96ddb7f96c9c121bec353cde9cae024652ee1891a45893e",
   "v": "0e711baae0e9a71c7413bf0b78d81a03d3cab475cf0f5c693ea3951f665b43b9"
  },
  {
@@ -9329,6 +9527,8 @@
   "number": "560",
   "title": "Let All Things Now Living",
   "path": "data/SDAH/560.json",
+  "sung": true,
+  "sv": "11c1c23fc586afa8be5d4c4a2efdca42c8a87583329f17bd89e1194c88a0a61d",
   "v": "4189d05763f9920520d573411393141fd4f30057808beec311b7b5c26f973bcf"
  },
  {
@@ -9337,6 +9537,8 @@
   "number": "561",
   "title": "We Plow the Fields",
   "path": "data/SDAH/561.json",
+  "sung": true,
+  "sv": "261e171245b56e7cbe90410d4c4dd9fa60cc618fc2e8ee08ec985d30513ffad2",
   "v": "6aff787f8ef11c09bf8f6483a367ba2c571ce7a3e8b80c113bbe94e5331f859b"
  },
  {
@@ -9345,6 +9547,8 @@
   "number": "562",
   "title": "Come, Sing a Song of Harvest",
   "path": "data/SDAH/562.json",
+  "sung": true,
+  "sv": "a5f342b01007679708cbb71f1227c6aeea40975abf040d493da88cac47455ccc",
   "v": "9fdb749dae07beaefba4e855c7da0c55a69f1cc87e0892ee31cd7de8116c45b9"
  },
  {
@@ -9353,6 +9557,8 @@
   "number": "563",
   "title": "Praise and Thanksgiving",
   "path": "data/SDAH/563.json",
+  "sung": true,
+  "sv": "642326f9995a7f50604293bf99517d7241f7dc9458e00c9f5f2a73f4439e76ef",
   "v": "7d86b9b293c7752bc650ab123675cbc6bd4f9445e94044261a9ffa4073d6b813"
  },
  {
@@ -9361,6 +9567,8 @@
   "number": "564",
   "title": "For Sunrise Hope and Sunset Calm",
   "path": "data/SDAH/564.json",
+  "sung": true,
+  "sv": "52f4cc36593f15a4c05b7916ff8a468fedfaa9a5a2fe70ce32da8b40fca6c802",
   "v": "1ef02e637906ebe5334760e5d6d04c84528c4bd0efd6779eefb856a7145db94b"
  },
  {
@@ -9369,6 +9577,8 @@
   "number": "565",
   "title": "For the Beauty of the Earth",
   "path": "data/SDAH/565.json",
+  "sung": true,
+  "sv": "47303b37f2806d8804b6e138ab39e964b992ffee90b92ebdfa18a7ea3e23b517",
   "v": "fd0811f394d008fba07b7798ae615f50af2dbb38cbd1c68a98b2777089d4858c"
  },
  {
@@ -9377,6 +9587,8 @@
   "number": "566",
   "title": "Father, We Thank You",
   "path": "data/SDAH/566.json",
+  "sung": true,
+  "sv": "d7a1be2b3d57f3f2729affbd56df2c72458cd20f5d29dc351cb99eb48d3a932e",
   "v": "c5cc398ae35a7a66bcfb3e08c0f1ac97a0e5de8d73427a2fba07e2dbbf0b937e"
  },
  {
@@ -9385,6 +9597,8 @@
   "number": "567",
   "title": "Have Thine Own Way, Lord",
   "path": "data/SDAH/567.json",
+  "sung": true,
+  "sv": "3235053db7223d96e912b2c133ef91d6ae711be3324e87eb8ad5c0bfff683ac0",
   "v": "c840c7c0ba210d84b8a01a590b0d17c79cf43dca1789e0d9bb5ffd4e17e246f7"
  },
  {
@@ -9393,6 +9607,8 @@
   "number": "568",
   "title": "Make Me a Captive, Lord",
   "path": "data/SDAH/568.json",
+  "sung": true,
+  "sv": "a61aeccd2de153b962a79953e0927679ce496d4359e798a2b49bdfd3c19c846f",
   "v": "e97794b8cc3785553a6e160e1240d750485f5b08a0628947083374428c11264b"
  },
  {
@@ -9401,6 +9617,8 @@
   "number": "569",
   "title": "Pass Me Not, O Gentle Savior",
   "path": "data/SDAH/569.json",
+  "sung": true,
+  "sv": "5e93bafca4744adc27d49cf9a309dc10b33a3ad4c0a4ad3b3b6141793bfb8bcc",
   "v": "abb114a7f7af5a98fa83685ae7f79b599f326feb70a3591236bb9dfb156893b4"
  },
  {
@@ -9409,6 +9627,8 @@
   "number": "570",
   "title": "Not I, but Christ",
   "path": "data/SDAH/570.json",
+  "sung": true,
+  "sv": "f66b9d5a89ca1fae6f88cd5abae5420f55b721e21f993da575e7bafc0b6cd4df",
   "v": "a00a022faa52dbf9e65e654a835c33a577fdbb374b69174c60e0af8180460fb5"
  },
  {
@@ -9417,6 +9637,8 @@
   "number": "571",
   "title": "What Does the Lord Require?",
   "path": "data/SDAH/571.json",
+  "sung": true,
+  "sv": "e432bf1e99595d161d44dfa73316d295c65ff4e8b2064ff81f2c0f12d94a0678",
   "v": "ce14e58bb6d29124367ba8f04f525189b0a93b3c94ea76426fe279b283e102da"
  },
  {
@@ -9425,6 +9647,8 @@
   "number": "572",
   "title": "Give of Your Best to the Master",
   "path": "data/SDAH/572.json",
+  "sung": true,
+  "sv": "b11b00d5bac6c060573826449c428c2e800712780f738a23ec3f93aec1f274a0",
   "v": "38a7b05a4084f930e8a5edcd1fbf71e27dacaca186561d531ad47bbeb51f997b"
  },
  {
@@ -9433,6 +9657,8 @@
   "number": "573",
   "title": "I'll Go Where You Want Me to Go",
   "path": "data/SDAH/573.json",
+  "sung": true,
+  "sv": "e869a0fa5ee33c738645a65c1bf3eff3f0ee04d7f5fd42e95c39270e993bbf7b",
   "v": "47350334c6dcf2e04dab75727ce6bb09df1a43cf3c93831ad146c23f55638023"
  },
  {
@@ -9441,6 +9667,8 @@
   "number": "574",
   "title": "O Master, Let Me Walk With Thee",
   "path": "data/SDAH/574.json",
+  "sung": true,
+  "sv": "69a1f28a650a69a99298cd6126bd41b27fef18175c88714a75906d39d329ae42",
   "v": "b75b155812141f0689ce7a079f98766aa3592ecca99647614c91e3c00a732ae9"
  },
  {
@@ -9449,6 +9677,8 @@
   "number": "575",
   "title": "Let Your Heart Be Broken",
   "path": "data/SDAH/575.json",
+  "sung": true,
+  "sv": "df5886f5fade484f3a7cceb05095bb011bc5b11a9f99d0a25d9b9dd4ae518823",
   "svc": "4071229a3bcfb6a51742941a385d9206787b7d719595f03b1ad3d00349f246c2",
   "v": "47f61b82b28d6a4016605d3dea737f46758a66984ef18cb3bf49eae48eb52085"
  },
@@ -9458,6 +9688,8 @@
   "number": "576",
   "title": "Awake, Awake to Love and Work",
   "path": "data/SDAH/576.json",
+  "sung": true,
+  "sv": "8acfab7cdd7f935284db594d4b0da36be0154b78ce6ee4276ba051621d2a2190",
   "v": "ea71fb4556ee92a0b22579d7e62d4fc4257f50da5cef5f9702dbe67bbfc70cc5"
  },
  {
@@ -9466,6 +9698,8 @@
   "number": "577",
   "title": "In the Heart of Jesus",
   "path": "data/SDAH/577.json",
+  "sung": true,
+  "sv": "eb3e90241fde4e549b2d91a713c3de926afa8736c7af19d2079b1b422c255ce1",
   "svc": "33302cf55a179206205f71ee04117e912d2d744e17f290194de531c055715741",
   "v": "217d5820ded09c4eb7781a40ee3b966952b7ea74a0674cba2fb98269f1c5e1d0"
  },
@@ -9475,6 +9709,8 @@
   "number": "578",
   "title": "So Send I You",
   "path": "data/SDAH/578.json",
+  "sung": true,
+  "sv": "2f6901605f3f06ee8d744592521e9b926af49f8518c0bec35cf38dc30858a5e4",
   "v": "9faa2a7f7cfc9a90876bf188b68b38916885141fa4d46d6c3cb52065db80da86"
  },
  {
@@ -9483,6 +9719,8 @@
   "number": "579",
   "title": "'Tis Love That Makes Us Happy",
   "path": "data/SDAH/579.json",
+  "sung": true,
+  "sv": "8f63905efc89d31c19362b34959a8250b8fdffd55eb0c65419b2c0eeb1800c18",
   "v": "c7713fcfd7786990b94ee786e27740eae9904c745ab358cbe0a9b8c0f2e786dd"
  },
  {
@@ -9491,6 +9729,8 @@
   "number": "580",
   "title": "This Little Light of Mine",
   "path": "data/SDAH/580.json",
+  "sung": true,
+  "sv": "2bf394eca56970b7c08c07d9301f6b53e52565dadb916edc05ce2fb687abdb0d",
   "v": "dc6b7bba0c29b326d05df9bc2fc0663c58b80f1ac0134040e49ae1413767abff"
  },
  {
@@ -9499,6 +9739,8 @@
   "number": "581",
   "title": "When the Church of Jesus",
   "path": "data/SDAH/581.json",
+  "sung": true,
+  "sv": "37a662ae2e221440dbb7f3f499bd9d2e5d14f1d55442f5dc97fe8284d96f668b",
   "v": "33aab0d9c8aa5c42cee378ff75ccb81569a870c9d83560d371c3a1cab40a1ced"
  },
  {
@@ -9507,6 +9749,8 @@
   "number": "582",
   "title": "Working, O Christ, With Thee",
   "path": "data/SDAH/582.json",
+  "sung": true,
+  "sv": "cabbeb70be3764153f8296e08c840dcc2faab820b009d63e5441e88478f04e5d",
   "v": "c871a1c3259368b023b8d5993c0b486d2a4c2501aa2b6449263cccf1f3aabc78"
  },
  {
@@ -9515,6 +9759,8 @@
   "number": "583",
   "title": "You That Know the Lord",
   "path": "data/SDAH/583.json",
+  "sung": true,
+  "sv": "468e87c59d93919c92ca44fe65b9a3ba6881c81ed3062839db394bd8bf496bee",
   "v": "8f837929d7d3c3611d3f5c9345385ae3aac302eff089b174d412708ebae665fb"
  },
  {
@@ -9523,6 +9769,8 @@
   "number": "584",
   "title": "There's a Spirit in the Air",
   "path": "data/SDAH/584.json",
+  "sung": true,
+  "sv": "3f8242ba4adb95b362299d480dc0e7f8df000413b640ed675a9eb8ee4233cfbd",
   "v": "199e34bad2a2b7308427be8071c79eecc2b34b382213478f61f213a65258fbd3"
  },
  {
@@ -9531,6 +9779,8 @@
   "number": "585",
   "title": "When Christ Was Lifted From the Earth",
   "path": "data/SDAH/585.json",
+  "sung": true,
+  "sv": "85b3379a4c7473e00951bf737c655461abf8a846855ab081b81bb2020949d35f",
   "v": "b2c7df5578872b425fd778446e5b42f75f653d0ca923786dde311cb7275d9002"
  },
  {
@@ -9539,6 +9789,8 @@
   "number": "586",
   "title": "What Joy It Is to Worship Here",
   "path": "data/SDAH/586.json",
+  "sung": true,
+  "sv": "9325a43e4ec0d1e2fad3f9a8a394c3f7daa9c2f9febfcd2ff72eddff12f8d1b4",
   "v": "534db3211f61195ced52e7a943ecfef01b85a9958f805e461b5c84911fc309ad"
  },
  {
@@ -9547,6 +9799,8 @@
   "number": "587",
   "title": "In Christ There Is No East nor West",
   "path": "data/SDAH/587.json",
+  "sung": true,
+  "sv": "370749a0827ca6ba77812898a70268030b3ff8318eae3637e1e68a9458eb0b2b",
   "v": "e75fd5d5f5007eb1682a1a362be5a7786a83ea8378bfe2f8c8742a9b1a5936e8"
  },
  {
@@ -9555,6 +9809,8 @@
   "number": "588",
   "title": "Lord of All Nations",
   "path": "data/SDAH/588.json",
+  "sung": true,
+  "sv": "41099d8c0bff943d8c7c14d7801d7ee9deecbd1b0c658a999a957020224bfe39",
   "v": "0e8d9f22edd0aa7ef1008ac45ab99c1427a546932966e49b4f3ae86157fd4558"
  },
  {
@@ -9563,6 +9819,8 @@
   "number": "589",
   "title": "Holy Spirit, Gracious Guest",
   "path": "data/SDAH/589.json",
+  "sung": true,
+  "sv": "5068111752f425f90fdb4b89700cffb2e5b3753e809a09aca35edafef023f097",
   "v": "5a4c4fb2a9a6aabe205dad0210022023a35ff48b245b408f5a40d84eb1251831"
  },
  {
@@ -9571,6 +9829,8 @@
   "number": "590",
   "title": "Trust and Obey",
   "path": "data/SDAH/590.json",
+  "sung": true,
+  "sv": "4a0f419fd4a00ee0ae3fa534aff30473c224324eaf6cc3d4d0ab92d6647ce351",
   "v": "f53f4d01b190c44037ac041055d8cdb8f13519a2ec6422e7e2b477ee42751462"
  },
  {
@@ -9579,6 +9839,8 @@
   "number": "591",
   "title": "In Our Work and in Our Play",
   "path": "data/SDAH/591.json",
+  "sung": true,
+  "sv": "cbe0cc46b34b3721f30bbe7b0a3459af44ac2d20d2513e899e49cd96f4790263",
   "v": "2124784963c19c7ba61ea0d39e34a423e9e28a6452a17bfa72fc4b244fe6148c"
  },
  {
