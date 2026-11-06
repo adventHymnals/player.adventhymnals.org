@@ -7520,6 +7520,14 @@
   "v": "e46cc7d58687e4e5bb7734590bff291ac53dac0fda0aa7276a307a8776b3e6f7"
  },
  {
+  "id": "CS1908-319",
+  "book": "CS1908",
+  "number": "319",
+  "title": "I Have Promised",
+  "path": "data/CS1908/319.json",
+  "v": "82c8f678097b991b839a4dcdc3434f2b8a4f28db110439da7c0d90f1ffe6a113"
+ },
+ {
   "id": "CS1908-380",
   "book": "CS1908",
   "number": "380",
