@@ -1870,6 +1870,54 @@
   "v": "6c6a55653ed3d935f09c71d8e6f3e412ebdb51ff7939ad8fc153a246e33371d8"
  },
  {
+  "id": "CH1941-211",
+  "book": "CH1941",
+  "number": "211",
+  "title": "Holy Spirit, Faithful Guide",
+  "path": "data/CH1941/211.json",
+  "v": "0506dd7f92e49e665f13134a772f00ef6f3d6479f6bd2be54b03a57c62e8f9b3"
+ },
+ {
+  "id": "CH1941-212",
+  "book": "CH1941",
+  "number": "212",
+  "title": "Hover O'er Me, Holy Spirit",
+  "path": "data/CH1941/212.json",
+  "v": "7809c445e0055e074b6dfa79d9b5fb9a303eb79d744a03f400bf9d894b8f6b73"
+ },
+ {
+  "id": "CH1941-213",
+  "book": "CH1941",
+  "number": "213",
+  "title": "Spirit Divine",
+  "path": "data/CH1941/213.json",
+  "v": "8f9b548b4b6db3c9c781bb7fd47c65db3329dcea7dbd8c96c457206b51490920"
+ },
+ {
+  "id": "CH1941-214",
+  "book": "CH1941",
+  "number": "214",
+  "title": "Our Blessed Redeemer",
+  "path": "data/CH1941/214.json",
+  "v": "5739a2086bf3f619efef37393312b94760915fda9dfd0670107842b031c56e02"
+ },
+ {
+  "id": "CH1941-215",
+  "book": "CH1941",
+  "number": "215",
+  "title": "Gracious Spirit, Love Divine",
+  "path": "data/CH1941/215.json",
+  "v": "5335959f06c11ec0223dbc3a8e45d70d018ab00b555ee1c4195619b68aa4cd62"
+ },
+ {
+  "id": "CH1941-216",
+  "book": "CH1941",
+  "number": "216",
+  "title": "Holy Spirit, Lamp of Light",
+  "path": "data/CH1941/216.json",
+  "v": "7bc1c963df33277cd93a1b72709b3270637b28b80556b472d7b3f2cb198e084a"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -2434,6 +2482,22 @@
   "title": "There's Room for You to Anchor",
   "path": "data/CS1900/50.json",
   "v": "aba4c2d8f83aca59fcf1b27a768e597fd26fb833181d53481d82cf9bd32edec6"
+ },
+ {
+  "id": "CS1900-51",
+  "book": "CS1900",
+  "number": "51",
+  "title": "While Jesus Whispers",
+  "path": "data/CS1900/51.json",
+  "v": "4cb6e0b9876ca265e4155b6b99ae8209031bedabcc62da9d67e6caf674b022a7"
+ },
+ {
+  "id": "CS1900-52",
+  "book": "CS1900",
+  "number": "52",
+  "title": "Pure Gold",
+  "path": "data/CS1900/52.json",
+  "v": "258a9d4e06e363698e3b2df892877a45678a3771626e1cb42bc31fe948ebc40c"
  },
  {
   "id": "CS1908-1",
@@ -4030,6 +4094,30 @@
   "sung": true,
   "sv": "6e98311e36aaec16ac68f5d2738181a55be20298c9401ad7ed64f626a9133926",
   "v": "570e8d817cb207b205a671f65e003abac8f740f222c50d98f7367be891280d34"
+ },
+ {
+  "id": "CS1908-175",
+  "book": "CS1908",
+  "number": "175",
+  "title": "Angels Hovering Round",
+  "path": "data/CS1908/175.json",
+  "v": "814e581dec35ac3525c70b553064530ef0018eca679759af0960e18243831ac8"
+ },
+ {
+  "id": "CS1908-176",
+  "book": "CS1908",
+  "number": "176",
+  "title": "I Will Not Let Thee Go",
+  "path": "data/CS1908/176.json",
+  "v": "980a0124541d93dca57fb487141c88c6a45534bd2cbea86126e0ba1b51edb6e5"
+ },
+ {
+  "id": "CS1908-177",
+  "book": "CS1908",
+  "number": "177",
+  "title": "Broad Is the Road",
+  "path": "data/CS1908/177.json",
+  "v": "50e1a021368912facd55cf956410e1787b2534a50e52c638fb00a8d42a985160"
  },
  {
   "id": "CS1908-179",
