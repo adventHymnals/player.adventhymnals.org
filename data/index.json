@@ -3910,6 +3910,30 @@
   "v": "2e6f6ce4153c1d4fc4ffbed5c1899d0ec437d24abed6f6ae20ca46870e3de3c7"
  },
  {
+  "id": "CH1941-475",
+  "book": "CH1941",
+  "number": "475",
+  "title": "By Christ Redeemed",
+  "path": "data/CH1941/475.json",
+  "v": "cea54dab1dee1a25946e2358a3f13c397da2d65c076e0302b4886e64b8e46c7c"
+ },
+ {
+  "id": "CH1941-476",
+  "book": "CH1941",
+  "number": "476",
+  "title": "Bread of the World",
+  "path": "data/CH1941/476.json",
+  "v": "83c7d193bf90b06bd5d4d1a17ba852600416bd05392b24fec6eb9709b6e19af6"
+ },
+ {
+  "id": "CH1941-477",
+  "book": "CH1941",
+  "number": "477",
+  "title": "We Give Thee But Thine Own",
+  "path": "data/CH1941/477.json",
+  "v": "52bc21c34e9b6dbee5e95f21a6bb25f8640463c63f2f4c6dd0f190c858d0a38c"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7112,6 +7136,14 @@
   "title": "Bliss of the Pure",
   "path": "data/CS1908/298.json",
   "v": "c8d76917cacda6c8ea554c8b606341f45e234f415df6f167ef7a832da99badce"
+ },
+ {
+  "id": "CS1908-299",
+  "book": "CS1908",
+  "number": "299",
+  "title": "My Jesus, I Love Thee",
+  "path": "data/CS1908/299.json",
+  "v": "6f4d657ade5cf13a0ec9be819a5568890a9551e7d00418add01d095f10e155a0"
  },
  {
   "id": "CS1908-300",
