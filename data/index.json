@@ -3406,6 +3406,86 @@
   "v": "b274a4fde1bda63fd043114a18328c78ec1ae1df892b0de46d2406270e53f50c"
  },
  {
+  "id": "CH1941-411",
+  "book": "CH1941",
+  "number": "411",
+  "title": "See, Israel's Gentle Shepherd",
+  "path": "data/CH1941/411.json",
+  "v": "ce361994b8246308e3baa419ed63dc9102aa1df8dcc48c2dde867202c21a38b0"
+ },
+ {
+  "id": "CH1941-412",
+  "book": "CH1941",
+  "number": "412",
+  "title": "O Happy Home",
+  "path": "data/CH1941/412.json",
+  "v": "8f6746d2cfdf1ec28fa284890b2e2fb8ab79438f2c0dd299f7beaa10dfe36092"
+ },
+ {
+  "id": "CH1941-413",
+  "book": "CH1941",
+  "number": "413",
+  "title": "Happy the Home",
+  "path": "data/CH1941/413.json",
+  "v": "3215ae8596594e924e6127c7778ce0fb3b356c8aa7de68ae0c28b3b8a299b7b4"
+ },
+ {
+  "id": "CH1941-414",
+  "book": "CH1941",
+  "number": "414",
+  "title": "My God, How Endless Is Thy Love!",
+  "path": "data/CH1941/414.json",
+  "v": "72686e5a47fee52f6f91abf43f4c84626ae29b9dc75b280fd64ebf8fdaabb36a"
+ },
+ {
+  "id": "CH1941-415",
+  "book": "CH1941",
+  "number": "415",
+  "title": "'Mid Pleasures and Palaces",
+  "path": "data/CH1941/415.json",
+  "v": "ac59008cb1518bcf13851f263d3de5922cc4637943029e0c230bcd78f9bdfbcb"
+ },
+ {
+  "id": "CH1941-416",
+  "book": "CH1941",
+  "number": "416",
+  "title": "O Perfect Love",
+  "path": "data/CH1941/416.json",
+  "v": "07fded4701291e528b4ca32e9ff34d28726ff40c49c0673b708fe3fcb4c91a1c"
+ },
+ {
+  "id": "CH1941-417",
+  "book": "CH1941",
+  "number": "417",
+  "title": "I Will Early Seek the Saviour",
+  "path": "data/CH1941/417.json",
+  "v": "740e48c60add3830f641da8364e6aefdf0436e7938781f66e6644ab92f86b42b"
+ },
+ {
+  "id": "CH1941-418",
+  "book": "CH1941",
+  "number": "418",
+  "title": "When He Cometh",
+  "path": "data/CH1941/418.json",
+  "v": "e267f6ec7db3106b351f6c429be20914ac34706e5ed927c83691a6ac1cef8ca8"
+ },
+ {
+  "id": "CH1941-419",
+  "book": "CH1941",
+  "number": "419",
+  "title": "In Our Hearts Celestial Voices",
+  "path": "data/CH1941/419.json",
+  "v": "95dbab4464864204d443afb59b1c1c0ecf99a7378e49e8060ffc19adf80c86f9"
+ },
+ {
+  "id": "CH1941-420",
+  "book": "CH1941",
+  "number": "420",
+  "title": "Jesus, Friend of Little Children",
+  "path": "data/CH1941/420.json",
+  "v": "0d5a5e52db14814f8238e23423c8ac2282fd3e81f84dbd062e84ce6dbe5e1d29"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -6548,6 +6628,38 @@
   "title": "My Sabbath Song",
   "path": "data/CS1908/274.json",
   "v": "d726930e097e7ae0169ad22c4067fa97b6a37be51f4df837b34c9e821713fbdb"
+ },
+ {
+  "id": "CS1908-275",
+  "book": "CS1908",
+  "number": "275",
+  "title": "Valley Lilies",
+  "path": "data/CS1908/275.json",
+  "v": "ca3190c390bf3bfe934e0847cfff423d901d4bc577a42c1948f50390b2e5b4ba"
+ },
+ {
+  "id": "CS1908-276",
+  "book": "CS1908",
+  "number": "276",
+  "title": "Sunlight",
+  "path": "data/CS1908/276.json",
+  "v": "6edd96a9d61e99b1edeef8d0e7edecec6c9d5f0e87315c5a9ddd25be11a7a4c5"
+ },
+ {
+  "id": "CS1908-277",
+  "book": "CS1908",
+  "number": "277",
+  "title": "Brightest and Best",
+  "path": "data/CS1908/277.json",
+  "v": "790de38be2adee64df723f730fec15e236dd41dacf164123f97aa3c479a8f13b"
+ },
+ {
+  "id": "CS1908-278",
+  "book": "CS1908",
+  "number": "278",
+  "title": "Jesus, Come and Bless Us",
+  "path": "data/CS1908/278.json",
+  "v": "31997676501de8a6254dcef3451a590b7b872bb86197125c5035af51388f1a53"
  },
  {
   "id": "CS1908-286",
