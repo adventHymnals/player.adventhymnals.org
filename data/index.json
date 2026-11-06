@@ -1278,6 +1278,30 @@
   "v": "95c1ecbcec1d644dd340387686df64aaf5ede0190bc374b319f4808f307f94f5"
  },
  {
+  "id": "CH1941-137",
+  "book": "CH1941",
+  "number": "137",
+  "title": "Where High the Heavenly Temple Stands",
+  "path": "data/CH1941/137.json",
+  "v": "e19e72d4578db1062e2399d3cc36fe07974553897901ad05e5d61dd8ff26d0cc"
+ },
+ {
+  "id": "CH1941-138",
+  "book": "CH1941",
+  "number": "138",
+  "title": "Within the Veil",
+  "path": "data/CH1941/138.json",
+  "v": "2fe2eb6f8920aca2a643a215d75bcd32cc905162ae4f45c0788125e8861b522b"
+ },
+ {
+  "id": "CH1941-139",
+  "book": "CH1941",
+  "number": "139",
+  "title": "Since to the Holiest",
+  "path": "data/CH1941/139.json",
+  "v": "efafa67f60e1d6fb9d1f81f38887b3197a4e5f767cd52bc2d82c45dba141edcd"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1594,6 +1618,14 @@
   "title": "Not in the Hour of Death",
   "path": "data/CS1900/19.json",
   "v": "277a7d3763061a5b66f5060de5d788faef1d617d334ae735bea8eaad18fac1e9"
+ },
+ {
+  "id": "CS1900-20",
+  "book": "CS1900",
+  "number": "20",
+  "title": "Over the Line",
+  "path": "data/CS1900/20.json",
+  "v": "ba884550c62f176d539e6afc16c90b50953d78a54d85fc894c0dc543768eba06"
  },
  {
   "id": "CS1908-1",
@@ -2180,6 +2212,14 @@
   "sung": true,
   "sv": "b50f6aa91ecef29079148e07c10d652423fbb60d586ac30000717a02c708230c",
   "v": "36d4b244fac76b41e4308edd74b221fb152c6ae76a6a98232420ea99dd51293a"
+ },
+ {
+  "id": "CS1908-63",
+  "book": "CS1908",
+  "number": "63",
+  "title": "He Did Not Die in Vain",
+  "path": "data/CS1908/63.json",
+  "v": "5a960ea6a4b38d590c78490c7ae44c679fa770d76957a306c141f75828494184"
  },
  {
   "id": "CS1908-65",
