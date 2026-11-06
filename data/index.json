@@ -1150,6 +1150,30 @@
   "v": "1f871f502aa27ce9775d67db951ef4d68944b6648187a7915e1ab3af0cb66981"
  },
  {
+  "id": "CH1941-121",
+  "book": "CH1941",
+  "number": "121",
+  "title": "'Tis Midnight; and on Olives' Brow",
+  "path": "data/CH1941/121.json",
+  "v": "41aefa83bd628a81b284dd877d21cada7ef02a89a7648a7ba94e22a05c6f995d"
+ },
+ {
+  "id": "CH1941-122",
+  "book": "CH1941",
+  "number": "122",
+  "title": "Go to Dark Gethsemane",
+  "path": "data/CH1941/122.json",
+  "v": "f11fe53b0048fd7941098b229cf3fd2c156ed8e5f67cb83a6e1c0d2eaf35a864"
+ },
+ {
+  "id": "CH1941-123",
+  "book": "CH1941",
+  "number": "123",
+  "title": "There Was One Who Was Willing",
+  "path": "data/CH1941/123.json",
+  "v": "72d9951ca991271019e82bff7d394b4438be48404f2b1f4905bda6e1e28c810d"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1410,6 +1434,14 @@
   "title": "Come unto Me",
   "path": "data/CS1900/12.json",
   "v": "c19098300c8e3171a5913a793826ab4544bc84754ccedee2f9009fce48a01c6e"
+ },
+ {
+  "id": "CS1900-13",
+  "book": "CS1900",
+  "number": "13",
+  "title": "Pass Me Not",
+  "path": "data/CS1900/13.json",
+  "v": "66a14b88169278ec6098ea695796353e63b4e51eb796764caf517a5c9cd975ec"
  },
  {
   "id": "CS1908-1",
@@ -1858,6 +1890,14 @@
   "title": "Not in the Hour of Death",
   "path": "data/CS1908/47.json",
   "v": "10b112bc00705507b01166ac371fa4f115f65d9818663e87d1b5d7515ade43fb"
+ },
+ {
+  "id": "CS1908-48",
+  "book": "CS1908",
+  "number": "48",
+  "title": "The Handwriting on the Wall",
+  "path": "data/CS1908/48.json",
+  "v": "02779b3f0df65fdd6b61bb34754650c0dd08f75052bb29717046a953853dfea8"
  },
  {
   "id": "CS1908-49",
@@ -3238,6 +3278,46 @@
   "title": "A Few More Years Shall Roll",
   "path": "data/HT1876/36.json",
   "v": "ee16e367a653e8ed9bbb2dd60a930636fdda5bd0bb9bb449aaf146ab17e97b27"
+ },
+ {
+  "id": "HT1876-37",
+  "book": "HT1876",
+  "number": "37",
+  "title": "Far from Mortal Cares Retreating",
+  "path": "data/HT1876/37.json",
+  "v": "09a9f080271249735fb5e7dbffd02d3d4afdc4d1fee7bd8055b33a2140b57941"
+ },
+ {
+  "id": "HT1876-38",
+  "book": "HT1876",
+  "number": "38",
+  "title": "Long Upon the Mountains, Weary",
+  "path": "data/HT1876/38.json",
+  "v": "9a8857b062f6cba12d770c6c6de706c3aa648355f4d0475be468cb2009b5d624"
+ },
+ {
+  "id": "HT1876-39",
+  "book": "HT1876",
+  "number": "39",
+  "title": "O Thou in Whose Presence My Soul Takes Delight",
+  "path": "data/HT1876/39.json",
+  "v": "0038a6869e433d265768df85562d2e9d0712071accc42c3f20901fe6d558fb43"
+ },
+ {
+  "id": "HT1876-40",
+  "book": "HT1876",
+  "number": "40",
+  "title": "Be Joyful in God, to Whom Praises Belong",
+  "path": "data/HT1876/40.json",
+  "v": "3123de57c81a66e3ac0acd2e96a99e461f5e80a3bace0da0e96ad319ebe6cde3"
+ },
+ {
+  "id": "HT1876-41",
+  "book": "HT1876",
+  "number": "41",
+  "title": "O Thou, to Whom, in Ancient Time",
+  "path": "data/HT1876/41.json",
+  "v": "d1a9dc2b41e9f93bb90a34e90dbfcf5f22b08cd1955e1424329863a0d9b4026f"
  },
  {
   "id": "NZK-1",
