@@ -2902,6 +2902,70 @@
   "v": "2df881fc4e00235a79209a96cbdc5819f6acb272de2087e84bf64c9a917c354b"
  },
  {
+  "id": "CH1941-343",
+  "book": "CH1941",
+  "number": "343",
+  "title": "I Love Thee",
+  "path": "data/CH1941/343.json",
+  "v": "99ff6c408fae76161b69307e42ad85109eb2263c71eb35a7f34b253de0e33919"
+ },
+ {
+  "id": "CH1941-344",
+  "book": "CH1941",
+  "number": "344",
+  "title": "Anywhere, Dear Saviour",
+  "path": "data/CH1941/344.json",
+  "v": "00f178ba9386bafe0668d96415b87fce458c2dfea51f70d5334b6d20a3d99648"
+ },
+ {
+  "id": "CH1941-345",
+  "book": "CH1941",
+  "number": "345",
+  "title": "Working, O Christ, With Thee",
+  "path": "data/CH1941/345.json",
+  "v": "fc149c2075379e6e893077ef274bf6781cab3705e81b1047427e74e605e74856"
+ },
+ {
+  "id": "CH1941-346",
+  "book": "CH1941",
+  "number": "346",
+  "title": "O Master, Let Me Walk With Thee",
+  "path": "data/CH1941/346.json",
+  "v": "6473367f827d943fa50701104e40611f64c2281efe9ff384915e1d5af3db43e9"
+ },
+ {
+  "id": "CH1941-347",
+  "book": "CH1941",
+  "number": "347",
+  "title": "Work While It Is Today",
+  "path": "data/CH1941/347.json",
+  "v": "fec6620f0e0a1b94abff80f6b3323ce706c45cf0d1cf5f3155b82daa3f49d173"
+ },
+ {
+  "id": "CH1941-348",
+  "book": "CH1941",
+  "number": "348",
+  "title": "In the Heart of Jesus",
+  "path": "data/CH1941/348.json",
+  "v": "1dff6f7c152de8a9863d25b83fd6464fca02ec0cc70e4852f33ded1aba26e588"
+ },
+ {
+  "id": "CH1941-349",
+  "book": "CH1941",
+  "number": "349",
+  "title": "Faith of Our Fathers",
+  "path": "data/CH1941/349.json",
+  "v": "e645196e3f1b02035fe5c005fbee56541e1e39ffb0f9cb56dfdd871cf4e5ceb7"
+ },
+ {
+  "id": "CH1941-350",
+  "book": "CH1941",
+  "number": "350",
+  "title": "We Have Not Known Thee",
+  "path": "data/CH1941/350.json",
+  "v": "0c8140b0475a57e3f82b464361799888a3c02ace91529c646dffaf0dfb287603"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -5770,6 +5834,22 @@
   "title": "Sing of His Mighty Love",
   "path": "data/CS1908/240.json",
   "v": "cca498d8068e0d9491a9887eeca133cb765e827e100c5689f872f5eba1d08c31"
+ },
+ {
+  "id": "CS1908-241",
+  "book": "CS1908",
+  "number": "241",
+  "title": "Holiness Unto the Lord",
+  "path": "data/CS1908/241.json",
+  "v": "116bf1cb3f429a875f60ff70bdb4f2844e70470b1da9e848d6d21f8742c807fb"
+ },
+ {
+  "id": "CS1908-242",
+  "book": "CS1908",
+  "number": "242",
+  "title": "'Tis Shining Still",
+  "path": "data/CS1908/242.json",
+  "v": "ce3c3e0eaf84baafd6719a359da5839f1d2d93f96c5128bcb62dcad794e2cf44"
  },
  {
   "id": "CS1908-245",
