@@ -4190,6 +4190,38 @@
   "v": "f8e6bc27a8ac77ac1297a76c4d6fe6a0e35964f1828abc957b04042bf1bd6601"
  },
  {
+  "id": "CH1941-517",
+  "book": "CH1941",
+  "number": "517",
+  "title": "There's No Other Name Like Jesus",
+  "path": "data/CH1941/517.json",
+  "v": "d224ad085483e98d6356656e2a92530848572d77a475ee0a353fea2be8be0fc3"
+ },
+ {
+  "id": "CH1941-518",
+  "book": "CH1941",
+  "number": "518",
+  "title": "I Love to Tell the Story",
+  "path": "data/CH1941/518.json",
+  "v": "1f1e033b192702c6bc9a8928bd5c1babc2ebc5de48377582279321ae570d0d34"
+ },
+ {
+  "id": "CH1941-519",
+  "book": "CH1941",
+  "number": "519",
+  "title": "How Shall I Follow Him?",
+  "path": "data/CH1941/519.json",
+  "v": "a8b4595f38985f1de492b0e36e721778487905d2478bbb7d8756c5aad34bf359"
+ },
+ {
+  "id": "CH1941-520",
+  "book": "CH1941",
+  "number": "520",
+  "title": "Lift Him Up",
+  "path": "data/CH1941/520.json",
+  "v": "f9b4817854868a17057e6e6ad3c69bd209664928f5e485c2934be86252041b6a"
+ },
+ {
   "id": "CH1941-604",
   "book": "CH1941",
   "number": "604",
@@ -7582,6 +7614,22 @@
   "title": "We Worship Thee",
   "path": "data/CS1908/321.json",
   "v": "3d768ebc7f0523d376fc795e0c0b98f8b14ed8cea601a7b070b54ec8fd98053a"
+ },
+ {
+  "id": "CS1908-322",
+  "book": "CS1908",
+  "number": "322",
+  "title": "O Word of God Incarnate",
+  "path": "data/CS1908/322.json",
+  "v": "5ab342fdc382ec0a20e21abc7056544df8f05cf259e94c74f921e11692958475"
+ },
+ {
+  "id": "CS1908-323",
+  "book": "CS1908",
+  "number": "323",
+  "title": "Children's Praises",
+  "path": "data/CS1908/323.json",
+  "v": "748277ba1cfeb2a8fb949921475a639f8a6c3023656d25eca341fdf9e703001e"
  },
  {
   "id": "CS1908-380",
