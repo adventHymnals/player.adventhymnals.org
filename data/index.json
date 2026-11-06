@@ -3979,7 +3979,55 @@
   "number": "484",
   "title": "O Bow Thine Ear",
   "path": "data/CH1941/484.json",
-  "v": "59af042a1b61b93bfd3e2e9f91fd52f8cf90cfeed076fef2cb589e5e279f5900"
+  "v": "2c377a108d2789c4c7d40c6192b02432b8f91f44db500cec54e8e371587afb7c"
+ },
+ {
+  "id": "CH1941-485",
+  "book": "CH1941",
+  "number": "485",
+  "title": "Great King of Glory",
+  "path": "data/CH1941/485.json",
+  "v": "335d3d1dcec939829e60c848a2b10e0727761e1b05bdd120e9a5e4bd74b5dfae"
+ },
+ {
+  "id": "CH1941-486",
+  "book": "CH1941",
+  "number": "486",
+  "title": "God of the Universe",
+  "path": "data/CH1941/486.json",
+  "v": "0b6d56634d63f28398659704f48a1337650b0465855f8846015cc0d57be25f16"
+ },
+ {
+  "id": "CH1941-487",
+  "book": "CH1941",
+  "number": "487",
+  "title": "Christ Is Made the Sure Foundation",
+  "path": "data/CH1941/487.json",
+  "v": "7237e9824ba0ce276ac5fcfb1006c87ecaa9e61fe41571f47adbabf1a3d9ae63"
+ },
+ {
+  "id": "CH1941-488",
+  "book": "CH1941",
+  "number": "488",
+  "title": "I Know That My Redeemer Lives",
+  "path": "data/CH1941/488.json",
+  "v": "324a5aeb12097d53f135df9ea2efb26acee5e71c2ab3f47acb59500f9493c45b"
+ },
+ {
+  "id": "CH1941-489",
+  "book": "CH1941",
+  "number": "489",
+  "title": "Asleep in Jesus!",
+  "path": "data/CH1941/489.json",
+  "v": "50312aaa80676149cfe1bc050573b4ce48d32fd8edc28babb6ccb38948b3e2de"
+ },
+ {
+  "id": "CH1941-490",
+  "book": "CH1941",
+  "number": "490",
+  "title": "How Vain Is All Beneath the Skies!",
+  "path": "data/CH1941/490.json",
+  "v": "50620aa87f012149c2c34f2e0bd4709d69c2ee07ad2ffa82dee6c97c15289920"
  },
  {
   "id": "CH1941-604",
@@ -7254,6 +7302,30 @@
   "v": "4bcf9f3c890c642d4bec6e2664e842b9d610816a82255f0135a985dffc8fb62c"
  },
  {
+  "id": "CS1908-307",
+  "book": "CS1908",
+  "number": "307",
+  "title": "Our Surest Stay",
+  "path": "data/CS1908/307.json",
+  "v": "8fb1c813ece87e2faa6114aa08a58b5447a76ff27295d7f285dca89a18056c2b"
+ },
+ {
+  "id": "CS1908-308",
+  "book": "CS1908",
+  "number": "308",
+  "title": "Fill Me Now",
+  "path": "data/CS1908/308.json",
+  "v": "e32e01c44a5f32ed5c280f248f7357a2ac6a8a78e35e65ae4c7554a0f4358400"
+ },
+ {
+  "id": "CS1908-309",
+  "book": "CS1908",
+  "number": "309",
+  "title": "Good and Great",
+  "path": "data/CS1908/309.json",
+  "v": "cedecf5b3f79daedb3be4048f231d9f330fbacf6b2df9aafa228476e4012d93c"
+ },
+ {
   "id": "CS1908-310",
   "book": "CS1908",
   "number": "310",
@@ -7262,6 +7334,14 @@
   "sung": true,
   "sv": "0d870ffb0a141b0991d675dd93236486062cc4af956fefd587a9be9cf75c7ba2",
   "v": "b35ff975b3f47fa8a9349c2ff059ac925f4721b4700d8a3324fe1de4599471c2"
+ },
+ {
+  "id": "CS1908-311",
+  "book": "CS1908",
+  "number": "311",
+  "title": "Tell Me the Old, Old Story",
+  "path": "data/CS1908/311.json",
+  "v": "59f31bae983c48dfbb12ff874be2355088cf28d9cb16395b9b39f3b34bc9a58b"
  },
  {
   "id": "CS1908-380",
