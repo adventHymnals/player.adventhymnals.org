@@ -990,6 +990,22 @@
   "v": "71171fb1f36c29f678923c0c4a076c947708acd715e49b5f10c26e5b64b05e9e"
  },
  {
+  "id": "CH1941-101",
+  "book": "CH1941",
+  "number": "101",
+  "title": "While Shepherds Watched Their Flocks",
+  "path": "data/CH1941/101.json",
+  "v": "01d34a61d57a6daa538862623004f36d1de1c3db4723cce175b80ca1b90e4ea7"
+ },
+ {
+  "id": "CH1941-102",
+  "book": "CH1941",
+  "number": "102",
+  "title": "Silent Night, Holy Night",
+  "path": "data/CH1941/102.json",
+  "v": "41ef569784724bce0d8b82fe402d7786ec99217e5a491189e451496c29a4dae7"
+ },
+ {
   "id": "CH1941-455",
   "book": "CH1941",
   "number": "455",
@@ -1204,6 +1220,14 @@
   "v": "c7ae14e8e00a3f3c50c2c5aace7902025f660d3559d50dece030a3109f3ab683"
  },
  {
+  "id": "CS1900-7",
+  "book": "CS1900",
+  "number": "7",
+  "title": "Let Him In",
+  "path": "data/CS1900/7.json",
+  "v": "8c545e20004a1e3e5f63b95f8051aa44afbfc6864583ad98b53e28f72bac74e8"
+ },
+ {
   "id": "CS1908-1",
   "book": "CS1908",
   "number": "1",
@@ -1302,6 +1326,14 @@
   "sung": true,
   "sv": "dabac66290bd9d272d6f323ab252491c13fd90d3bdf704dcbe7d2ad3f89c9561",
   "v": "68f5fd345df530ae410dc18297861378f0e56f360ebf99afb1a580ca6ec88cdc"
+ },
+ {
+  "id": "CS1908-11",
+  "book": "CS1908",
+  "number": "11",
+  "title": "Only Two Ways",
+  "path": "data/CS1908/11.json",
+  "v": "269d36cefd5af5958a57c41aa6ad19642e767bf1311b9ed582dec4e905a4b308"
  },
  {
   "id": "CS1908-12",
@@ -2734,6 +2766,166 @@
   "title": "Not All the Nobles of the Earth",
   "path": "data/HT1876/10.json",
   "v": "688c6c3adf11a506600cc94ac289707ac82f07c41ecf7ad7307974c153ea5cad"
+ },
+ {
+  "id": "HT1876-11",
+  "book": "HT1876",
+  "number": "11",
+  "title": "Great God, Attend, While Zion Sings",
+  "path": "data/HT1876/11.json",
+  "v": "583fc356dcb52e4badbc22d23bd889359ace3a622b1e2f77fadc2fa4b9acf7b4"
+ },
+ {
+  "id": "HT1876-12",
+  "book": "HT1876",
+  "number": "12",
+  "title": "How Pleasant, How Divinely Fair",
+  "path": "data/HT1876/12.json",
+  "v": "53cfc95bac05aaf8e93f958cd1cf4b33d2f570228651c1505765fa2f8849c51c"
+ },
+ {
+  "id": "HT1876-13",
+  "book": "HT1876",
+  "number": "13",
+  "title": "How Sweet to Leave the World Awhile",
+  "path": "data/HT1876/13.json",
+  "v": "5219c4bccd260f41e5ef510fb2511c997b0359302e6b5412fae0304114d7996c"
+ },
+ {
+  "id": "HT1876-14",
+  "book": "HT1876",
+  "number": "14",
+  "title": "From Every Stormy Wind That Blows",
+  "path": "data/HT1876/14.json",
+  "v": "fafa7db404bbf0f790d3f2d19e62bef58bee68bb5d9d8929c34e6c056aecd173"
+ },
+ {
+  "id": "HT1876-15",
+  "book": "HT1876",
+  "number": "15",
+  "title": "What Various Hindrances We Meet",
+  "path": "data/HT1876/15.json",
+  "v": "f3beed0272b69ce1e691d2a8d7cdc606a7b07001f8835f9e5fd84e92dad87d0a"
+ },
+ {
+  "id": "HT1876-16",
+  "book": "HT1876",
+  "number": "16",
+  "title": "Oh, for a Thousand Tongues, to Sing",
+  "path": "data/HT1876/16.json",
+  "v": "088c272e6c2bce987b269d85553582efd622af8f93edd71488b67f7cb180761f"
+ },
+ {
+  "id": "HT1876-17",
+  "book": "HT1876",
+  "number": "17",
+  "title": "How Blest the Children of the Lord",
+  "path": "data/HT1876/17.json",
+  "v": "b7cfd2167f067d3f6dd458ac1c5467ce5972974a0fef86d045ab2d0cefe58a2a"
+ },
+ {
+  "id": "HT1876-18",
+  "book": "HT1876",
+  "number": "18",
+  "title": "With Rev'rence Let the Saints Appear",
+  "path": "data/HT1876/18.json",
+  "v": "55a1e051938c6166f22daf2abd77da203498b41b529be7a23c13c49e247697bc"
+ },
+ {
+  "id": "HT1876-19",
+  "book": "HT1876",
+  "number": "19",
+  "title": "How Sweet the Name of Jesus Sounds",
+  "path": "data/HT1876/19.json",
+  "v": "b81700245d567605dd7e746f10ddf55e6b4f995a9458d179730a8b4bcc3352db"
+ },
+ {
+  "id": "HT1876-20",
+  "book": "HT1876",
+  "number": "20",
+  "title": "Holy and Reverend is the Name",
+  "path": "data/HT1876/20.json",
+  "v": "ec9643b38e28de118ba61b0ebb9104cfc4f6ccee5b4a5cbac2d93cdffa4aa73c"
+ },
+ {
+  "id": "HT1876-21",
+  "book": "HT1876",
+  "number": "21",
+  "title": "Come, Let Us Join Our Cheerful Songs",
+  "path": "data/HT1876/21.json",
+  "v": "fc6c9940c0dda3d96257df81c5fa6ce6682badaf6663709ec59d67058c42f628"
+ },
+ {
+  "id": "HT1876-22",
+  "book": "HT1876",
+  "number": "22",
+  "title": "Before the Gracious Throne We Bow",
+  "path": "data/HT1876/22.json",
+  "v": "3b39b1d97c220c57a98bf0c425bd02e6cb048197ddc8eeaaf4e832e3c40970a5"
+ },
+ {
+  "id": "HT1876-23",
+  "book": "HT1876",
+  "number": "23",
+  "title": "Thou Art My Portion, o My God",
+  "path": "data/HT1876/23.json",
+  "v": "316946a05ea75d9f0a5a68aa90b3c863798dc6751bb68151aceb4fa7d0018535"
+ },
+ {
+  "id": "HT1876-24",
+  "book": "HT1876",
+  "number": "24",
+  "title": "Awake, Ye Saints, and Raise Your Eyes",
+  "path": "data/HT1876/24.json",
+  "v": "315c504c9c52c24c287d7550a80191c30d58db0895448a878515caf1029e9551"
+ },
+ {
+  "id": "HT1876-25",
+  "book": "HT1876",
+  "number": "25",
+  "title": "Stand Up, and Bless the Lord",
+  "path": "data/HT1876/25.json",
+  "v": "936dde136298ef1debdd904a7f0e7abb9fc8a5f962a4e33efffba1d708bce4f0"
+ },
+ {
+  "id": "HT1876-26",
+  "book": "HT1876",
+  "number": "26",
+  "title": "How Holy God's Commands",
+  "path": "data/HT1876/26.json",
+  "v": "94cb014517aebeeed564ddf5db920660cf5d595d8b289d44f3c8bf0d53fcacbe"
+ },
+ {
+  "id": "HT1876-27",
+  "book": "HT1876",
+  "number": "27",
+  "title": "Come, Sound His Praise Abroad",
+  "path": "data/HT1876/27.json",
+  "v": "e75081ebc9f5b7d6f408d177d34f05b1b1859afd17aa2af95d833ee396ce104a"
+ },
+ {
+  "id": "HT1876-28",
+  "book": "HT1876",
+  "number": "28",
+  "title": "Come Ye That Love the Lord",
+  "path": "data/HT1876/28.json",
+  "v": "a24d415ee7b286ee014328d7b504f8e5e75a63058ef70be7b1688a49338327bf"
+ },
+ {
+  "id": "HT1876-29",
+  "book": "HT1876",
+  "number": "29",
+  "title": "How Beauteous Are Their Feet",
+  "path": "data/HT1876/29.json",
+  "v": "40de7d0b4d06efc14a07249b5361f46101e1afd1b68744c6f591f8b645490ba3"
+ },
+ {
+  "id": "HT1876-30",
+  "book": "HT1876",
+  "number": "30",
+  "title": "Lord, at This Closing Hour",
+  "path": "data/HT1876/30.json",
+  "v": "c8b8dd24cc88651219aab5bc2df3501e83762e5fae56e4dc20fdf533488fee05"
  },
  {
   "id": "NZK-1",
