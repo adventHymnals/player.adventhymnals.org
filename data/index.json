@@ -10108,6 +10108,86 @@
   "v": "3edf161451cd011645652bf2dfc8e40b649dce68e7017796e2d5888e31e3495f"
  },
  {
+  "id": "CS1908-472",
+  "book": "CS1908",
+  "number": "472",
+  "title": "On Presentation of Offering",
+  "path": "data/CS1908/472.json",
+  "v": "3be35866fa51d862996f425b66fce54dfa1c33bb2ff6d3e04eec474df4b88cea"
+ },
+ {
+  "id": "CS1908-473",
+  "book": "CS1908",
+  "number": "473",
+  "title": "The Will, the Will of Christ",
+  "path": "data/CS1908/473.json",
+  "v": "8b28dd32a147dd7954dd74f3e08444b47d086372def90a79c04b5b7bb2e67e02"
+ },
+ {
+  "id": "CS1908-474",
+  "book": "CS1908",
+  "number": "474",
+  "title": "Saved to Serve",
+  "path": "data/CS1908/474.json",
+  "v": "35d3506b67144225c83f0f1e777317aae301746fb379e480a1532c8bba94a973"
+ },
+ {
+  "id": "CS1908-475",
+  "book": "CS1908",
+  "number": "475",
+  "title": "A Year of Precious Blessings",
+  "path": "data/CS1908/475.json",
+  "v": "632e846b9da187b7b4cc9132bc5baa28604ecc63888f95206d25827576437aa2"
+ },
+ {
+  "id": "CS1908-476",
+  "book": "CS1908",
+  "number": "476",
+  "title": "I Love to Tell the Story",
+  "path": "data/CS1908/476.json",
+  "v": "26b701623ebcbffe3d335dd0576096e6fc6cd0ad52a81e558d8665bf5a4c806e"
+ },
+ {
+  "id": "CS1908-477",
+  "book": "CS1908",
+  "number": "477",
+  "title": "Working, O Christ, With Thee",
+  "path": "data/CS1908/477.json",
+  "v": "0b48500290bac03b6ec40035e0fb43905ee645d918e1952bdc3ce904816dc3d2"
+ },
+ {
+  "id": "CS1908-478",
+  "book": "CS1908",
+  "number": "478",
+  "title": "Doing His Will",
+  "path": "data/CS1908/478.json",
+  "v": "7ffab0fb3fdff76e7d48a4e0db024c9b3efab57618a5786f0dc084418ba270f1"
+ },
+ {
+  "id": "CS1908-479",
+  "book": "CS1908",
+  "number": "479",
+  "title": "Rescue the Perishing",
+  "path": "data/CS1908/479.json",
+  "v": "5fccb24cebe74c5420d4f2f9cf32e70be860b73c41a9afbf939310d71932bd84"
+ },
+ {
+  "id": "CS1908-480",
+  "book": "CS1908",
+  "number": "480",
+  "title": "Let the Lower Lights Be Burning",
+  "path": "data/CS1908/480.json",
+  "v": "0b79a467b31882e4138b5459a71c4a6970b67799e129cfd7f44c9547f560c17f"
+ },
+ {
+  "id": "CS1908-481",
+  "book": "CS1908",
+  "number": "481",
+  "title": "Is Your Lamp Burning?",
+  "path": "data/CS1908/481.json",
+  "v": "3f0ed9485c2cbf057e31f180de2b6f35435de0e26c3e645f211d0a1dbb19416a"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -11766,6 +11846,14 @@
   "english": "I Love to Tell the Story"
  },
  {
+  "id": "NZK-53b",
+  "book": "NZK",
+  "number": "53b",
+  "title": "Napenda Kuhubiri",
+  "path": "data/NZK/53b.json",
+  "v": "5f96f0101b51c1fbe1bb7ca78a9522ecf4a6bb921d447afb375c63ee89f8631a"
+ },
+ {
   "id": "NZK-54",
   "book": "NZK",
   "number": "54",
@@ -11797,6 +11885,14 @@
   "sv": "1c76a7c897c33b116da19019bed6dbae0b6b0f4382ead0053a7a199d0c1cac62",
   "v": "c7dd0b8e935fc4273e571be8fcc4a56914b582a7f5a80746b8c104a5ace08ae4",
   "english": "Rescue the Perishing"
+ },
+ {
+  "id": "NZK-56b",
+  "book": "NZK",
+  "number": "56b",
+  "title": "Waponye Watu",
+  "path": "data/NZK/56b.json",
+  "v": "8d745d2daf35f4b31559b81f65a040bdeb8ebc2f7e7e51fdc166dbdc374b09e7"
  },
  {
   "id": "NZK-58",
@@ -20522,6 +20618,14 @@
   "english": "I Love to Tell the Story"
  },
  {
+  "id": "WN-73b",
+  "book": "WN",
+  "number": "73b",
+  "title": "Ahero Nyiso Weche",
+  "path": "data/WN/73b.json",
+  "v": "de4d68eb4f2feeb5fe89acf23a0c82ec9f7b49320823823e5fd46e167785b537"
+ },
+ {
   "id": "WN-75",
   "book": "WN",
   "number": "75",
@@ -20553,6 +20657,14 @@
   "sv": "8f87713bf4a87dd768098b9f343d3ce1a9dd59d94bd7d385705a5099b5cd2041",
   "v": "8f9122570221942f60ca7ed14ec92c6d6a8e11ef0102df3ea84ee48501319b36",
   "english": "Rescue the Perishing"
+ },
+ {
+  "id": "WN-77b",
+  "book": "WN",
+  "number": "77b",
+  "title": "Kony Jo Madwaro Tho",
+  "path": "data/WN/77b.json",
+  "v": "fbdc016d42521f094dd40bb99aecd2f333ee52267777322547a4cbf088c703c8"
  },
  {
   "id": "WN-78",
