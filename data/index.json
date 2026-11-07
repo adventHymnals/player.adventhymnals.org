@@ -10380,6 +10380,30 @@
   "v": "99684d0ad6526ef563ecca7c52cdb69220239b3068591264f1b915f7bf47c1a0"
  },
  {
+  "id": "CS1908-506",
+  "book": "CS1908",
+  "number": "506",
+  "title": "Hiding in Thee",
+  "path": "data/CS1908/506.json",
+  "v": "24224ebb5d66d1806586c98b7fc5d58d535fb25d9e9f89e7048fb93830c6f393"
+ },
+ {
+  "id": "CS1908-507",
+  "book": "CS1908",
+  "number": "507",
+  "title": "Under His Wings",
+  "path": "data/CS1908/507.json",
+  "v": "1948e5c98716800cc1c3e3d8b2d69f9bd662b2e07cebce214c1007fb77872ee6"
+ },
+ {
+  "id": "CS1908-508",
+  "book": "CS1908",
+  "number": "508",
+  "title": "Stand Like the Brave",
+  "path": "data/CS1908/508.json",
+  "v": "68527743796f61964a150abb79d98af3f120bdfb6f30869496b7161acba3c6ed"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -10388,6 +10412,22 @@
   "sung": true,
   "sv": "a38077572a96e172c42416e24611c2174731512f7ccd024514cb9e25d34c2bdf",
   "v": "ee49c65c44f962cfec584b1aa14703f9c901f86c86d1cfc02949577280da37aa"
+ },
+ {
+  "id": "CS1908-510",
+  "book": "CS1908",
+  "number": "510",
+  "title": "Sound the Battle Cry",
+  "path": "data/CS1908/510.json",
+  "v": "b2d1ae2c8acf851ecf61aa349d3e217cb8b1f688cc7b6c0eedf1717dc0ad9346"
+ },
+ {
+  "id": "CS1908-511",
+  "book": "CS1908",
+  "number": "511",
+  "title": "Strike for Victory",
+  "path": "data/CS1908/511.json",
+  "v": "f3f9b2ee1875d535bde04fd21d521048dae9ff5e7008aefebc92cf5223f7ac9a"
  },
  {
   "id": "CS1908-515",
