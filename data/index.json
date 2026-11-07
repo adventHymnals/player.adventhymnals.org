@@ -9738,6 +9738,38 @@
   "v": "90176534c627fdd0af7fe2185885cf2d96b8cff81661923b357f7305b258d80c"
  },
  {
+  "id": "CS1908-426",
+  "book": "CS1908",
+  "number": "426",
+  "title": "God Made Them",
+  "path": "data/CS1908/426.json",
+  "v": "99aeb0dbae0ebcd8589c4ed32a16ace8716328f218e5bd3dcf404a223362df42"
+ },
+ {
+  "id": "CS1908-427",
+  "book": "CS1908",
+  "number": "427",
+  "title": "Praise Him",
+  "path": "data/CS1908/427.json",
+  "v": "b023ee0294e3e2da394cf48edd1b104263411e11469e01c56c3e4297b2f5ed5e"
+ },
+ {
+  "id": "CS1908-428",
+  "book": "CS1908",
+  "number": "428",
+  "title": "The Spring-Tide",
+  "path": "data/CS1908/428.json",
+  "v": "f7a531815bc75255eb1d66fe9911cbac78a2747938639ef051bad1773aea2a3d"
+ },
+ {
+  "id": "CS1908-429",
+  "book": "CS1908",
+  "number": "429",
+  "title": "We Thank Thee",
+  "path": "data/CS1908/429.json",
+  "v": "ac340daa4fc563be73c2ca5f2a585490a88fda86d37d73e38bbf271168083ec2"
+ },
+ {
   "id": "CS1908-430",
   "book": "CS1908",
   "number": "430",
@@ -9746,6 +9778,46 @@
   "sung": true,
   "sv": "71ab76de990679ad781ea18dc54d7918a454822784c0131efde8768e099ba8df",
   "v": "e6f5ea7fa40ef140567f778b45e8f3a63080f1778ade5f8dfc85038b01c019cb"
+ },
+ {
+  "id": "CS1908-431",
+  "book": "CS1908",
+  "number": "431",
+  "title": "Welcome, Welcome",
+  "path": "data/CS1908/431.json",
+  "v": "35aa32947775cd382551212fac7927e3174958e5a5a3ed54968e148409b47803"
+ },
+ {
+  "id": "CS1908-432",
+  "book": "CS1908",
+  "number": "432",
+  "title": "How Sweet!",
+  "path": "data/CS1908/432.json",
+  "v": "aa6986a1a0ba2a37835aaac0507642f29aaa09df9d3a0888792249d167e4780f"
+ },
+ {
+  "id": "CS1908-433",
+  "book": "CS1908",
+  "number": "433",
+  "title": "Come, Feed Thy Sheep",
+  "path": "data/CS1908/433.json",
+  "v": "111ca56944599af7e05cbb465bc0750dbd57a0731ec023d3ee39897077227d51"
+ },
+ {
+  "id": "CS1908-434",
+  "book": "CS1908",
+  "number": "434",
+  "title": "The Thought of God",
+  "path": "data/CS1908/434.json",
+  "v": "3d68a79844480f8f88161814e0198378f27f0739a2d41844dc5a7f5622873aa6"
+ },
+ {
+  "id": "CS1908-435",
+  "book": "CS1908",
+  "number": "435",
+  "title": "Calm My Mind",
+  "path": "data/CS1908/435.json",
+  "v": "d69cfac140c9c568662ff5f8256faa3a43fa4ff63ac68ea3a08cefeb036ec334"
  },
  {
   "id": "CS1908-509",
