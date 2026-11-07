@@ -5384,6 +5384,110 @@
   "v": "cb6f365366823135035316ab5f4d4a04591f7296794bea32328c25652da0c531"
  },
  {
+  "id": "CH1941-691",
+  "book": "CH1941",
+  "number": "691",
+  "title": "Let the Words of My Mouth",
+  "path": "data/CH1941/691.json",
+  "v": "69ffc55ff7e7210e232e247e511da7e2c4801b956a952f2145ced590d661d199"
+ },
+ {
+  "id": "CH1941-692",
+  "book": "CH1941",
+  "number": "692",
+  "title": "Cast Thy Burden Upon the Lord",
+  "path": "data/CH1941/692.json",
+  "v": "d9ca6ea48e75b4f84d181ae1e24acc6af6c14cc2a753ff911f4dc3448ae51a19"
+ },
+ {
+  "id": "CH1941-693",
+  "book": "CH1941",
+  "number": "693",
+  "title": "O Praise the Lord, All Ye Nations",
+  "path": "data/CH1941/693.json",
+  "v": "d498b3fa6a375b0a749461690dece8699ce29e9af9cd9dedd42a92331553a35a"
+ },
+ {
+  "id": "CH1941-694",
+  "book": "CH1941",
+  "number": "694",
+  "title": "Lord, Keep Us Safe This Night",
+  "path": "data/CH1941/694.json",
+  "v": "a49c4bbd2c17157483be8ccf5a1b6aaa36c8cc35204b9d818a49b6f7ad9390bf"
+ },
+ {
+  "id": "CH1941-695",
+  "book": "CH1941",
+  "number": "695",
+  "title": "The Lord Bless You and Keep You",
+  "path": "data/CH1941/695.json",
+  "v": "fc131324073f3d2e79176e6294189e64b98f03e8c7ae2ffa318bd60c4059d4f8"
+ },
+ {
+  "id": "CH1941-696",
+  "book": "CH1941",
+  "number": "696",
+  "title": "Lord, Keep Us Safe This Night",
+  "path": "data/CH1941/696.json",
+  "v": "faff1556e974b19e87e02144530b5f4ddf66e5994c45d38227f600e24a5c2bb0"
+ },
+ {
+  "id": "CH1941-697",
+  "book": "CH1941",
+  "number": "697",
+  "title": "With Praise, O God, We Worship Thee",
+  "path": "data/CH1941/697.json",
+  "v": "380922695f5a081e3a3af5f9254943dd3b0bf225fba43602700e575b396644be"
+ },
+ {
+  "id": "CH1941-698",
+  "book": "CH1941",
+  "number": "698",
+  "title": "The Shadows Lengthen",
+  "path": "data/CH1941/698.json",
+  "v": "5bb8295eb957f36f76e6ff5a44740cbde8dd1683b09de0c77e7d77dbaf1dd575"
+ },
+ {
+  "id": "CH1941-699",
+  "book": "CH1941",
+  "number": "699",
+  "title": "The Lord Is in His Holy Temple",
+  "path": "data/CH1941/699.json",
+  "v": "b69a757f59cb08f8b1999c65d0ab69d594833152998ded84bc3e159e73a086a8"
+ },
+ {
+  "id": "CH1941-700",
+  "book": "CH1941",
+  "number": "700",
+  "title": "Lord, Bless Thy Word to Every Heart",
+  "path": "data/CH1941/700.json",
+  "v": "8d6b5b2477bf4a71c434700ef86ac77a9ef28c70dc26627b8af407e537dad72d"
+ },
+ {
+  "id": "CH1941-701",
+  "book": "CH1941",
+  "number": "701",
+  "title": "Holy Spirit, Faithful Guide",
+  "path": "data/CH1941/701.json",
+  "v": "aa7e5a5c6dd76e26bc0ffba2dad6fc1b41fc687841a8003002db3d885f64e8d9"
+ },
+ {
+  "id": "CH1941-702",
+  "book": "CH1941",
+  "number": "702",
+  "title": "Dismiss Us, Lord, With Blessing",
+  "path": "data/CH1941/702.json",
+  "v": "9b94c0abab93804baf3ba356db1ab71ece4e9f1939238ebd254b94e3f951d424"
+ },
+ {
+  "id": "CH1941-703",
+  "book": "CH1941",
+  "number": "703",
+  "title": "The Lord Is in His Holy Temple",
+  "path": "data/CH1941/703.json",
+  "v": "ca5d334db6f8b5d629a7d5dd3b10824098e24b9c55729d724978f5bcb8f32048"
+ },
+ {
   "id": "CS1900-1",
   "book": "CS1900",
   "number": "1",
@@ -9269,7 +9373,7 @@
   "number": "386",
   "title": "Day of Rest and Gladness!",
   "path": "data/CS1908/386.json",
-  "v": "22629edb47ac9c06b3e72f95ea6ed7f0c3e21bfb2c668da69da3243c2da5f84d"
+  "v": "e7506b46333bee49295d458534f31ef79480e9a3cb65db1dae0ba1feefa41851"
  },
  {
   "id": "CS1908-387",
@@ -9277,7 +9381,7 @@
   "number": "387",
   "title": "Delightful Morn",
   "path": "data/CS1908/387.json",
-  "v": "6c02ddf3ec8af8e137ac2e7c309940e52ec3da674192d62266876ad0bcc586f1"
+  "v": "c1873365a18e36fd385dd2d50567ce433e08d8d710fd1d3fdc857423e55bf3f4"
  },
  {
   "id": "CS1908-388",
@@ -9285,7 +9389,15 @@
   "number": "388",
   "title": "Safely Thro' Another Week",
   "path": "data/CS1908/388.json",
-  "v": "078a83ab2821f824fa88a1e125bd0d185e1ccc6a32ee4eed826cc2e831fac482"
+  "v": "d61d2b9f53d218dc2be90798906477297c76d39576d8e4a9927d1264fb799c6b"
+ },
+ {
+  "id": "CS1908-390",
+  "book": "CS1908",
+  "number": "390",
+  "title": "That Song of Old",
+  "path": "data/CS1908/390.json",
+  "v": "f62df1989d00418e661966a7a2080fbc42030ff1e658875ce9f8b8d116c8a8d0"
  },
  {
   "id": "CS1908-399",
