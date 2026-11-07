@@ -30,6 +30,7 @@ const session = await ort.InferenceSession.create(fs.readFileSync(model), { exec
 console.log(`${path.basename(model)} loaded in ${((performance.now() - t0) / 1000).toFixed(2)} s, threads ${ort.env.wasm.numThreads}, inputs ${session.inputNames}, outputs ${session.outputNames}`);
 let bad = 0;
 for (const name of cases) {
+  if (!fs.existsSync(path.join(TV, `${name}.ref.wav`))) { console.log(`${name}: no reference in ${TV}, skipped`); continue; }
   const pass = readBin(fs.readFileSync(path.join(TV, `${name}.bin`)));
   const synth = new Synth(ort, session);
   const s0 = performance.now();

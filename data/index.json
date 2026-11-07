@@ -10472,6 +10472,22 @@
   "v": "bd39ddfe166ca3a7e826917aedf20da46cf23e267b9bad17031e0df3d3b6699f"
  },
  {
+  "id": "CS1908-517",
+  "book": "CS1908",
+  "number": "517",
+  "title": "In Heavenly Love Abiding",
+  "path": "data/CS1908/517.json",
+  "v": "41229cce72e3f2d8e1c882a331316936057335e90a8743cd7637572b82f7f7a6"
+ },
+ {
+  "id": "CS1908-518",
+  "book": "CS1908",
+  "number": "518",
+  "title": "The Cloud and Fire",
+  "path": "data/CS1908/518.json",
+  "v": "841b775ae2db92c48ee88c92841146da9606e424ed23f6a527c9f1efd3fa2041"
+ },
+ {
   "id": "CS1908-527",
   "book": "CS1908",
   "number": "527",
