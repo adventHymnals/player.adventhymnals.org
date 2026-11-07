@@ -10292,6 +10292,46 @@
   "v": "79951eb34df151da3f42a423b741550a6955b9e7ab833342d7099d952edb374a"
  },
  {
+  "id": "CS1908-495",
+  "book": "CS1908",
+  "number": "495",
+  "title": "Trust and Obey",
+  "path": "data/CS1908/495.json",
+  "v": "ca6efe8f67915ec10de791c519d6f76a30049daf9575ae6de6a7c34c7e751cac"
+ },
+ {
+  "id": "CS1908-496",
+  "book": "CS1908",
+  "number": "496",
+  "title": "Moment by Moment",
+  "path": "data/CS1908/496.json",
+  "v": "bbf49cb8374e13d72765959ef9986822cccbeb307805ffba37d0910b2796e5e0"
+ },
+ {
+  "id": "CS1908-497",
+  "book": "CS1908",
+  "number": "497",
+  "title": "Moment by Moment",
+  "path": "data/CS1908/497.json",
+  "v": "44ea0035dbe76ef1e922a69bdb89ffa52d6b0c007d33986d27befd50c3031fe8"
+ },
+ {
+  "id": "CS1908-498",
+  "book": "CS1908",
+  "number": "498",
+  "title": "Give Me the Bible",
+  "path": "data/CS1908/498.json",
+  "v": "37089f35760e3d9568f168be780707981248aebfce59b45b837ac2072f156781"
+ },
+ {
+  "id": "CS1908-499",
+  "book": "CS1908",
+  "number": "499",
+  "title": "Not a Wasted Moment",
+  "path": "data/CS1908/499.json",
+  "v": "a7bb902f0e1f17feb5ce0bdeac4bc3276f38e0de4c3a01aa651de31f93c3e8ce"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -11937,6 +11977,14 @@
   "sv": "b6b7d22bf1970ea68b4fa1ab390bc8904370e297b5cc826370ab7ff7c9b5231f",
   "v": "e8e4348d57d29720df4dcdb8a79006510a23193352801a5c45c94959f857b8b9",
   "english": "Give Me the Bible"
+ },
+ {
+  "id": "NZK-52b",
+  "book": "NZK",
+  "number": "52b",
+  "title": "Nipe Biblia",
+  "path": "data/NZK/52b.json",
+  "v": "a26579a193050ab30ca17c0bbfd0e9c5a01829e9c0a27a41b9eae5f4e3f2defa"
  },
  {
   "id": "NZK-53",
@@ -20725,6 +20773,14 @@
   "sv": "1af38785e75bc918eaca65ee8eff2613c3a839d26ae88773987b07d8b91acd98",
   "v": "0ae6166b2241f43ba528c190783301f360d7d49d40a98210c775e437412e893b",
   "english": "Give Me the Bible"
+ },
+ {
+  "id": "WN-71b",
+  "book": "WN",
+  "number": "71b",
+  "title": "Puonja Wach Biblos",
+  "path": "data/WN/71b.json",
+  "v": "568a841e0303a9c16258f69b76eedc1275bf1eb0ca51d789cf03d3ab791875d0"
  },
  {
   "id": "WN-73",
