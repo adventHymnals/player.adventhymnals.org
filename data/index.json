@@ -10430,6 +10430,30 @@
   "v": "f3f9b2ee1875d535bde04fd21d521048dae9ff5e7008aefebc92cf5223f7ac9a"
  },
  {
+  "id": "CS1908-512",
+  "book": "CS1908",
+  "number": "512",
+  "title": "Who Will Volunteer?",
+  "path": "data/CS1908/512.json",
+  "v": "d81a7c47f9d167e601a7642a8f403bed59270491c73ac8ea6bedbfb9fa26fe38"
+ },
+ {
+  "id": "CS1908-513",
+  "book": "CS1908",
+  "number": "513",
+  "title": "Ask Not to Be Excused",
+  "path": "data/CS1908/513.json",
+  "v": "6b348a2f71b7c07c6decc6ec63325f25d66d1928762ed8d4d1b7c50c6b3a2674"
+ },
+ {
+  "id": "CS1908-514",
+  "book": "CS1908",
+  "number": "514",
+  "title": "A Child of the King",
+  "path": "data/CS1908/514.json",
+  "v": "3829ae35b57d4c6cbfe4d30f0f6c7c6c5661d1322c75cc48da4b7637ecd04d85"
+ },
+ {
   "id": "CS1908-515",
   "book": "CS1908",
   "number": "515",
@@ -10438,6 +10462,14 @@
   "sung": true,
   "sv": "95a01781c90654dceb7391c918fdd797718dc95e910bd892bc822888597e9736",
   "v": "c4d311cde2703da19ef0a63e4bb84b165ae7617b9e9d1efaf9da0b11fffe1bc4"
+ },
+ {
+  "id": "CS1908-516",
+  "book": "CS1908",
+  "number": "516",
+  "title": "It Is Well With My Soul",
+  "path": "data/CS1908/516.json",
+  "v": "bd39ddfe166ca3a7e826917aedf20da46cf23e267b9bad17031e0df3d3b6699f"
  },
  {
   "id": "CS1908-527",
@@ -12835,6 +12867,14 @@
   "sv": "24042b8585e8c44715c49a5cc79f905d94e6036e67f810de18cefe581ea9689b",
   "v": "b0211af217de079e07ecc07c73c732e176509850ae79249b90553e3b380c6ef9",
   "english": "It Is Well With My Soul"
+ },
+ {
+  "id": "NZK-127b",
+  "book": "NZK",
+  "number": "127b",
+  "title": "Ni Salama Rohoni Mwangu",
+  "path": "data/NZK/127b.json",
+  "v": "28508cf6feb70d0d0a5ba9148a6139f6ea34a6c562160fca33d114c3164e3d1e"
  },
  {
   "id": "NZK-129",
