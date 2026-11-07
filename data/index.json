@@ -1171,7 +1171,7 @@
   "number": "123",
   "title": "There Was One Who Was Willing",
   "path": "data/CH1941/123.json",
-  "v": "72d9951ca991271019e82bff7d394b4438be48404f2b1f4905bda6e1e28c810d"
+  "v": "27612f0c3fab8577f69e0698fc6d81f969e5724865cb14a3ca8f6dcd46d015b0"
  },
  {
   "id": "CH1941-124",
@@ -4451,7 +4451,7 @@
   "number": "554",
   "title": "There Is a Land of Corn and Wine",
   "path": "data/CH1941/554.json",
-  "v": "922d86c84615aa471d57cb2bd38739b5099565bd906054849c5de3d589831d6c"
+  "v": "8a90dcb876632dbbb3a609e2f6e75290792b879660fbd2aed9b719e644e2cf71"
  },
  {
   "id": "CH1941-555",
@@ -4539,7 +4539,7 @@
   "number": "565",
   "title": "Christ Is Knocking at My Sad Heart",
   "path": "data/CH1941/565.json",
-  "v": "398cc63d1ceb5506b1962baf908f96856c3ab338495cfe71cb021d3215190357"
+  "v": "3db635e342388ed293951ae8c45733682b547c4b82c6492738ca3a71bde40103"
  },
  {
   "id": "CH1941-566",
@@ -4571,7 +4571,7 @@
   "number": "569",
   "title": "Jesus Is Tenderly Calling",
   "path": "data/CH1941/569.json",
-  "v": "03a4d728c8cf98eab560c59fbb6f506f3d19b446c4029c287cb4ea580d24286d"
+  "v": "d503845dbee2090e921d118104944a31665a0cbcd3d9b657dd0424658c5413d7"
  },
  {
   "id": "CH1941-570",
@@ -4579,7 +4579,7 @@
   "number": "570",
   "title": "O Tender and Sweet Was the Father's Voice",
   "path": "data/CH1941/570.json",
-  "v": "ec2933453fc22139f6ff38b65c3fca105824007fcb242b01edbff101c6151aa6"
+  "v": "56ef7a9ffbbf480c6f375b9bae8a174a6c579491d3021fa4b449567ca4f90b5b"
  },
  {
   "id": "CH1941-571",
@@ -4747,7 +4747,7 @@
   "number": "592",
   "title": "Lord Jesus, I Long to Be Perfectly Whole",
   "path": "data/CH1941/592.json",
-  "v": "6d736bbaa88689d9a434f808c72911ee11420db84aeac3e09ae0b3594e58d427"
+  "v": "446e036bec477cbc74ac57bc2f4df270dfdbddfafed5e99de998aaae1932ccdd"
  },
  {
   "id": "CH1941-593",
@@ -4763,7 +4763,7 @@
   "number": "594",
   "title": "I Am Thine, O Lord",
   "path": "data/CH1941/594.json",
-  "v": "72144a41f27fc5c8ddc89e3100ce353fb7be517a90045325fc5243b4492cd17b"
+  "v": "c4a8864c70b4eec110333ece654ad62dc2dd99562d47155a7c308391551432af"
  },
  {
   "id": "CH1941-595",
@@ -4819,7 +4819,7 @@
   "number": "601",
   "title": "Be Silent, Be Silent",
   "path": "data/CH1941/601.json",
-  "v": "8aaf52897d8e0be809501fb5fe9bf56242629ed4bc0f5862c13f31c92ce5c866"
+  "v": "c0b067c5b130cd613de6ff66d1c8fb726e96125d9dde147698ca417f55a63c4f"
  },
  {
   "id": "CH1941-602",
@@ -4861,7 +4861,7 @@
   "number": "607",
   "title": "There's Sunshine in My Soul Today",
   "path": "data/CH1941/607.json",
-  "v": "c11d644a657882deaa2b0b023f1436388c621ef3eaebc2fc2d1fa10a65e28cf5"
+  "v": "e6b477f8675457516504772e79b0c86e6cf622b42f0cc1c8c5082606e66ea659"
  },
  {
   "id": "CH1941-608",
@@ -4893,7 +4893,7 @@
   "number": "612",
   "title": "There Is Sunlight on the Hilltop",
   "path": "data/CH1941/612.json",
-  "v": "8dd5df83f3d36eba7b3ecd64b2a862e00bffbf6219bfe0948b4c148056ed69d9"
+  "v": "b6bdb2f549f6df0ea00c6f76d49386c6ce679cbfd126f1f00cc0949cf6543899"
  },
  {
   "id": "CH1941-613",
@@ -5037,7 +5037,7 @@
   "number": "636",
   "title": "O Who Is This That Cometh?",
   "path": "data/CH1941/636.json",
-  "v": "996382f61d91390f303753ab9ff5278157014dde03b189aaa11f2e69f5fbd2d0"
+  "v": "16420c7a08f93d5392fcaf8f2ce294bc538d8d2f2f6f8cee4c43098e6f055f91"
  },
  {
   "id": "CH1941-637",
@@ -5286,6 +5286,14 @@
   "title": "A Great and Mighty Wonder",
   "path": "data/CH1941/672.json",
   "v": "b25d569c3574258456ad1366fd2c28703cf2db6c2f1c4a5d772e8f5b232fb70a"
+ },
+ {
+  "id": "CH1941-675",
+  "book": "CH1941",
+  "number": "675",
+  "title": "When Wilt Thou Save the People?",
+  "path": "data/CH1941/675.json",
+  "v": "83c6dac9bf0716c981e8756eaa43fc8b3331319e0d4480d4ce8974c43c0bc4ef"
  },
  {
   "id": "CH1941-676",
@@ -6075,7 +6083,7 @@
   "path": "data/CS1908/1.json",
   "sung": true,
   "sv": "8e0762e61ad6c998886496e42d28e4183e61edfc976c9552bc56885117e1d8c0",
-  "v": "f1a0ebcc484587f1afbc8bdc48ac8ea8e9d3b020ee605dd6fc6d1711cd3ef6f6"
+  "v": "3b9aac46a7c94ad2dc48bf93cba0aec84123563cb83c5e595317a54cc529cd8f"
  },
  {
   "id": "CS1908-2",
@@ -6085,7 +6093,7 @@
   "path": "data/CS1908/2.json",
   "sung": true,
   "sv": "cc71d740f91bd6825db34497d75ffa0a300f12ddc3b285ca3ca84b838c59702c",
-  "v": "7b2b9d7960698236e91d66b744d97d1e90848c83e736b6c376571f6a4cc39be1"
+  "v": "d0824e81a99373240940c08bcdab630df752f33d5d40b7f3336491fca1c3b43e"
  },
  {
   "id": "CS1908-3",
@@ -6095,7 +6103,7 @@
   "path": "data/CS1908/3.json",
   "sung": true,
   "sv": "38abbbb01b162b2fbb3baf5bfefee7d9b2adbb7bcd7af25cb9cb4282cc3d7846",
-  "v": "74e6e14459394cb5705d0f695a81eae2abe879409bef5bd7eb9d48c344835b3b"
+  "v": "164975c3dcd27a0004e95afb25519247e5c34f3e185b6f4f747ebd4fd7df8e70"
  },
  {
   "id": "CS1908-4",
@@ -6105,7 +6113,7 @@
   "path": "data/CS1908/4.json",
   "sung": true,
   "sv": "e6b4915cb5db50a1378f7d3b57fc4c5aedd21ed639509a27d467fef7186e0ec0",
-  "v": "db72bdadcae86764f467e37e147947cf5cdaf5419b7c84b3a21d38a7e952add7"
+  "v": "c0e527e3bb97ebacd1450f189060068568fd1d4b02f8f797f456050963aa93b6"
  },
  {
   "id": "CS1908-5",
@@ -6125,7 +6133,7 @@
   "path": "data/CS1908/6.json",
   "sung": true,
   "sv": "1824a5ea0f7ae71acf1de7125f395999347b0dba0a5ee8b4023a5676da2259d2",
-  "v": "7e2fd15f5ae05e1544f55e1c247db9395b7caa8d858656df78bc77e89079b559"
+  "v": "554b08fa26ca9c369a44476b2e3c07988fa2c164b0655bbfd0f5534695efcae8"
  },
  {
   "id": "CS1908-7",
@@ -6135,7 +6143,7 @@
   "path": "data/CS1908/7.json",
   "sung": true,
   "sv": "53ea6bcbf5f23431fc189e7b550e9b2a1b1cba340821fa9267d73d2843eef3dc",
-  "v": "08a2943c3403d1c502c3bb558780b6fbde6e2270b45ca8c7666e1575f0d7116a"
+  "v": "789ad6654985d55148f4c5ca17e7bec5d7a0c1695bf3725a178427a16a04db77"
  },
  {
   "id": "CS1908-8",
@@ -6145,7 +6153,7 @@
   "path": "data/CS1908/8.json",
   "sung": true,
   "sv": "c07020015f9cdaf10c7d69b7a892ff5d0473df7aed0a06e2868801e69ca15c65",
-  "v": "aaadbd87fe87c918762e3cf14dd6cb64cdf62c2096a186758b012c8d560344de"
+  "v": "64ccd3c940df616b18f8034bd19f44d33526503671f1e298cf8566c0fed80898"
  },
  {
   "id": "CS1908-9",
@@ -6155,7 +6163,7 @@
   "path": "data/CS1908/9.json",
   "sung": true,
   "sv": "e2d0f51847192ddad0b635a15c7cfd6766d9d27ee88176af32af01fadc10e0bd",
-  "v": "a29ab771412997b87cac6a9e55df17a606e0ca088cc76eeed1813ff284941727"
+  "v": "b2b1ad855fca8fed6220d5e839a2f16a417933f1d8a96cc0571617bcd0fdd2e8"
  },
  {
   "id": "CS1908-10",
@@ -6173,7 +6181,7 @@
   "number": "11",
   "title": "Only Two Ways",
   "path": "data/CS1908/11.json",
-  "v": "269d36cefd5af5958a57c41aa6ad19642e767bf1311b9ed582dec4e905a4b308"
+  "v": "249b5eae6037546873e809fd43ff0471515737988574604e0dda8117852be664"
  },
  {
   "id": "CS1908-12",
@@ -6183,7 +6191,7 @@
   "path": "data/CS1908/12.json",
   "sung": true,
   "sv": "b53a54c6024494e121a74aec377043e136b5432d1b17b5412492c1e1e2993394",
-  "v": "6e9e4eef0a67db43715b501e6859438a2fd55f393c60444d47d9248a9bf6474c"
+  "v": "0933b04486a24471dd80b50ada3af1c2e618fc89ea2570843b164c1f10e20e97"
  },
  {
   "id": "CS1908-13",
@@ -6193,7 +6201,7 @@
   "path": "data/CS1908/13.json",
   "sung": true,
   "sv": "5f90abaca5761f031a7218d70dca1d913c1bbdfa382537777dfb6aa661b696c9",
-  "v": "a2ec9a0b3abc784cb015ddc61e9352658b15ba67b9c5f3b74a231bb85fa7230f"
+  "v": "d247ffbdc9735518ef789d58ac80cfd78b1b9f7c5e7a303c6648d72a6fb674ed"
  },
  {
   "id": "CS1908-14",
@@ -6203,7 +6211,7 @@
   "path": "data/CS1908/14.json",
   "sung": true,
   "sv": "e4823655ca82111684c52a7cb46d26baf536375679a038b283358e6a797fd8d5",
-  "v": "c5a3f576e5348999badc8aecfc736422ce22e55ae69a7c737739736a8efdce77"
+  "v": "881438c8ce3b69424c6340ff36ee9c352928c9e5ce619e6e0ed6bac42e93f19c"
  },
  {
   "id": "CS1908-15",
@@ -6213,7 +6221,7 @@
   "path": "data/CS1908/15.json",
   "sung": true,
   "sv": "489df6fd4ad70084cf8ed42ebe934af402d902794e7798be33c5611139d91673",
-  "v": "d05d6f92a213e29c963e4e2fe3ea3db944f7d70d6dd5e147bf5b6cbb8d350e68"
+  "v": "4953da73442c6be129ae771371be4b3ffd72248fc400e02830d6c665139b2c68"
  },
  {
   "id": "CS1908-16",
@@ -6221,7 +6229,7 @@
   "number": "16",
   "title": "Come unto Me",
   "path": "data/CS1908/16.json",
-  "v": "a8ccc7ae9d3dd78fd095cca5f430ba96c5ba30b8fdc2544fe93179934ec4b065"
+  "v": "39884bef33c038dd9723a4f2805b74cf0018256f767529e2ffae974f2bc4e9a2"
  },
  {
   "id": "CS1908-17",
@@ -6245,7 +6253,7 @@
   "number": "19",
   "title": "A Clean Heart",
   "path": "data/CS1908/19.json",
-  "v": "ca55648effef1db642412a7437d4e2768435679dc55eb0440b94a3ec5775beca"
+  "v": "5a05732368ae95d6cc39652f9a7b7afdd9b4ac2018e79ed363ae88b91b4b6a6c"
  },
  {
   "id": "CS1908-20",
@@ -6255,7 +6263,7 @@
   "path": "data/CS1908/20.json",
   "sung": true,
   "sv": "c9d6fdb6be3c613191170a94441a9dd0ecaebc92f5b371bd58e24f95eeee8375",
-  "v": "1c05ae12875687f4122d7a4b54c4da57eeaaa86f6e41dd115ab3072dee7c35e6"
+  "v": "b3cafaebfac7f0e04febad2968c6292e84a961d38ca5f95c5fb9108fdb8363cb"
  },
  {
   "id": "CS1908-21",
@@ -6275,7 +6283,7 @@
   "path": "data/CS1908/22.json",
   "sung": true,
   "sv": "368a955c1ffe0bacaac6222ed208ddb75b4c123553d03937ffe12150abd4cde3",
-  "v": "fd8cb21b1b0ab7cb8f494e01ece73eb5056ebb758bf4d9a389acde90a96bdb85"
+  "v": "5967958ef88676b98525d9dff680b350cfc67b9f67ce28f09f9b3c0e9ff91421"
  },
  {
   "id": "CS1908-23",
@@ -6295,7 +6303,7 @@
   "path": "data/CS1908/24.json",
   "sung": true,
   "sv": "7af45dd0582e15ecf0b657c1376b0e06a2a37cdccb97848ffddb2be62f8ff4d7",
-  "v": "3c01b85eb47fe90a0f0da0eb1c1e0b45121caec0eaa752e1aaaacbd60256e93c"
+  "v": "fbc2fec2e69339a062b198f0c0d03d7404253d822286486133c66358e7dc4bda"
  },
  {
   "id": "CS1908-25",
@@ -6305,7 +6313,7 @@
   "path": "data/CS1908/25.json",
   "sung": true,
   "sv": "9805efa3c3c34e0cc520c6f356d3990679e90d2358198e3f53172278da66f679",
-  "v": "e28817649b08b9c07610b59d107dba7f3c7dddc26127e762fc8b95cef0e238b1"
+  "v": "5fe13e5c87257f7e57e73c54c9472bd99f29d68274a18d42d39677b1ff4e350a"
  },
  {
   "id": "CS1908-26",
@@ -6315,7 +6323,7 @@
   "path": "data/CS1908/26.json",
   "sung": true,
   "sv": "198f3cab03729cde103e77fcfe28f323e500e612b06921da166f54505caa150c",
-  "v": "9b4b8674c0768873287798598ac1a9b21cd6fa04bfade4f7215b96949862311c"
+  "v": "3295f9970a2fa7f0880340406342955dfaff8adfb29354aead2b93565860f76c"
  },
  {
   "id": "CS1908-27",
@@ -6325,7 +6333,7 @@
   "path": "data/CS1908/27.json",
   "sung": true,
   "sv": "48fdab6da6533248d47b3ef84ac84c602b514a6815edba774b515bb37cfdfe05",
-  "v": "a063f116e4aaf47359c9385a4e86bbbf7c21a20e6b21f20d431fe872825e523b"
+  "v": "c1d34b41d0451fc1ad3650d246444c5cfdfe1a1a87a4874e67d9a86585c32732"
  },
  {
   "id": "CS1908-28",
@@ -6333,7 +6341,7 @@
   "number": "28",
   "title": "Whiter Than Snow",
   "path": "data/CS1908/28.json",
-  "v": "7443ce2fdf8e71e784fcc5a5afeb12df3ada906bacef68698428e20fb168f600"
+  "v": "7501ba1177dd586fc9ad7821e79a1442b3fa897a2a70e36db1ecf5ce6bcfbec9"
  },
  {
   "id": "CS1908-29",
@@ -6353,7 +6361,7 @@
   "path": "data/CS1908/30.json",
   "sung": true,
   "sv": "71ee57218d4bb16c577a8c21725743d1325ae98380072a47adc73b0509d63b99",
-  "v": "737c97884474f32e79a951e353edde5397a2c99c20acf465834a17f8f978f1e6"
+  "v": "971c1193ffc59f58e258aba6d63aa7a31a9481f610c8ac693214f2e289eed873"
  },
  {
   "id": "CS1908-31",
@@ -6363,7 +6371,7 @@
   "path": "data/CS1908/31.json",
   "sung": true,
   "sv": "f9351c1871e20b050dd8a02693ef7a621d26eff7633c27dff52928abfe95bdb3",
-  "v": "32a5387942160ccf6f23405b49ad9f36eb9ade6ab499211a5cd8b29d2195d7ba"
+  "v": "56acdc27685abefc38d4962c4999c1c8c8035586350a060da87cec304886378b"
  },
  {
   "id": "CS1908-32",
@@ -6371,7 +6379,7 @@
   "number": "32",
   "title": "Build on the Rock",
   "path": "data/CS1908/32.json",
-  "v": "5c44e5ece714413e239a88ba2dfe4f2a5cdfd74186ffe6bab7d20b06c29230ba"
+  "v": "4d477d6bb35065938354e4a5268cff6f58131b2f38c993ac6efd9d11e40caf42"
  },
  {
   "id": "CS1908-33",
@@ -6381,7 +6389,7 @@
   "path": "data/CS1908/33.json",
   "sung": true,
   "sv": "360c75331faa21bd6aecc3fbc30be00d99885be2bf42b70b5c9209daee061eca",
-  "v": "14df9da86fa8ca27524d2b70e4ac7c49762412469d83de5f120be808d0978bcc"
+  "v": "9b047f87bffd89f9c8ffacf242fe93521d52f2262ecda9355344b364db470e2c"
  },
  {
   "id": "CS1908-34",
@@ -6391,7 +6399,7 @@
   "path": "data/CS1908/34.json",
   "sung": true,
   "sv": "33c03ec7f6673ca142490627da640e00687dfb6a2a68a1bb3b8831c534634cdc",
-  "v": "c8f42b034d9ba52bf04777840efc36829a85f26b9b05176fa985224935a5e004"
+  "v": "bf9a702c575bd749c306a8441c668b8379f866a9b948e565e571708466d16034"
  },
  {
   "id": "CS1908-35",
@@ -6399,7 +6407,7 @@
   "number": "35",
   "title": "Knocking, Knocking",
   "path": "data/CS1908/35.json",
-  "v": "1fa0401ec2b55198b0030fe5169314463ee2d17b70b0df04b3a3fe3f52ec7a0d"
+  "v": "64536beb85f3f244bee0350502a541a0afbdf19436247e80233e783c5db9a31b"
  },
  {
   "id": "CS1908-36",
@@ -6409,7 +6417,7 @@
   "path": "data/CS1908/36.json",
   "sung": true,
   "sv": "69f025f2d6caa0efed583d5f6654de0cb7eae70d2af2b94b95e27027f3f260d1",
-  "v": "5502b4a9a6176d1175316b6ad3395bfdea70842e68c43ef5a19d03df1885ceff"
+  "v": "a349657ff523581226e8df106278425e5cbb5996b03f71d4922355ffcf31f381"
  },
  {
   "id": "CS1908-37",
@@ -6419,7 +6427,7 @@
   "path": "data/CS1908/37.json",
   "sung": true,
   "sv": "334047b09f254846bc58ca518080a0bda0edad24c1eb7c6189ab1151832b7be7",
-  "v": "82320befd96b6fc6b3810e1cd8f53898d56129bb52762e1d906570373541e324"
+  "v": "97bde0419eeaecc97181909865760f0035fcccba66699fdbd0cedb5647a94567"
  },
  {
   "id": "CS1908-38",
@@ -6429,7 +6437,7 @@
   "path": "data/CS1908/38.json",
   "sung": true,
   "sv": "214ae096453244d365f48dd871c1f0f55fe0d94eb969cd144cd1c32e85de39c9",
-  "v": "51253bd1f21aaf40736e08d95291e2b150b7a60d3ad08f660af2e29e64c778bb"
+  "v": "691eaaa89b4e75de86dfbd044837abcfdb869e262c6717be5a41caf63d8d485c"
  },
  {
   "id": "CS1908-39",
@@ -6457,7 +6465,7 @@
   "path": "data/CS1908/41.json",
   "sung": true,
   "sv": "12dc7d01e2ad5a312542e69325b14fadf0dd786b501b54fe877ffabcfa6403ea",
-  "v": "662032ca314deab0e17db42414840d8f5fc3d2158d6b626250c5ef819f353987"
+  "v": "633c797efeeb12fa6620e1319158b73c2be7869a5e5b3f38df545f82a1bf8954"
  },
  {
   "id": "CS1908-42",
@@ -6477,7 +6485,7 @@
   "path": "data/CS1908/43.json",
   "sung": true,
   "sv": "feb8858edd157cfeb46caff9514346ce56bed5e4d002b9d5bb4ae577000791d3",
-  "v": "ee802ac21d3a78bad9b868d9fd69ed01a290920f7e59f347f304e8660c7c55c3"
+  "v": "bc364b8cf06dfec799057d42a87c40407b0dea9377cbcec084958fffd0a5af83"
  },
  {
   "id": "CS1908-44",
@@ -6485,7 +6493,7 @@
   "number": "44",
   "title": "There's Room for You to Anchor",
   "path": "data/CS1908/44.json",
-  "v": "bf4e2192973a2f7362f12bf656096bed8836408db8b43ce64b31c04d7c2a167d"
+  "v": "6c84a8515e762194ee56c6ee0cccb23f007b2bed25cb58633bba67ec6ecd3264"
  },
  {
   "id": "CS1908-45",
@@ -6495,7 +6503,7 @@
   "path": "data/CS1908/45.json",
   "sung": true,
   "sv": "2e8fa7c1b464c3fe376ddf52abe18a1a9bba86e5d377881efcc52903b0b640bc",
-  "v": "b3ffa4e67d7a66b7c5d391839b070de190284217e26c8b9258208fc70f623602"
+  "v": "caf5b71edef2aeba9a0d733ae874cfff416e07f5a77327d32872aec5fe2fe999"
  },
  {
   "id": "CS1908-46",
@@ -6505,7 +6513,7 @@
   "path": "data/CS1908/46.json",
   "sung": true,
   "sv": "954ea67a8a389a26e659f4146dadbd06a28de6ad12efab083148261bf7b9ccd6",
-  "v": "d0c9d7fce7bc11aeb7e1a84d927c83a58f04640333358dad90872417abd93220"
+  "v": "0221399503a8e368b74a5243468dc878d4bb53a260fcccdfa6bf963b773c82e0"
  },
  {
   "id": "CS1908-47",
@@ -6513,7 +6521,7 @@
   "number": "47",
   "title": "Not in the Hour of Death",
   "path": "data/CS1908/47.json",
-  "v": "10b112bc00705507b01166ac371fa4f115f65d9818663e87d1b5d7515ade43fb"
+  "v": "df3cb3168f8f2d5fd103f5f48fefd12d7a1deecda1f6fe28d4757060642ed293"
  },
  {
   "id": "CS1908-48",
@@ -6521,7 +6529,7 @@
   "number": "48",
   "title": "The Handwriting on the Wall",
   "path": "data/CS1908/48.json",
-  "v": "02779b3f0df65fdd6b61bb34754650c0dd08f75052bb29717046a953853dfea8"
+  "v": "8c3d4bd6a8ceffd6cdb7d5d0e63595fccd3047ba298c11133111c6cc07d2780a"
  },
  {
   "id": "CS1908-49",
@@ -6531,7 +6539,7 @@
   "path": "data/CS1908/49.json",
   "sung": true,
   "sv": "cc43f66aac1c042ca0cabbc43e38785092077462f6dd089cdf8d123f8a301ae0",
-  "v": "2f56bfb95255bc6401c2b155f5404c26c064395081f51a30348fd34074d4830b"
+  "v": "a31613f9c334f7b85a2f5be2b3bbc2a7cf29c9e27b02003c40aff7145ac17541"
  },
  {
   "id": "CS1908-50",
@@ -6539,7 +6547,7 @@
   "number": "50",
   "title": "The Best Friend Is Jesus",
   "path": "data/CS1908/50.json",
-  "v": "050e0c7d13dc060770b3155220e441006d341feee3cdd2872bcab60b919cb8c2"
+  "v": "91f90784359eae645513fda14af010fe48dccf1453263ceb37489afa0b881ce4"
  },
  {
   "id": "CS1908-51",
@@ -6557,7 +6565,7 @@
   "path": "data/CS1908/52.json",
   "sung": true,
   "sv": "dad5839fcc8767650de4ee5fc945436ce81e120bc01044d29db319e09a66e71b",
-  "v": "70af262e937d203f21993556433f77e65843a07ae7e40ca7a9edc7a6378f0403"
+  "v": "008f096c09dfcd7f56d8af79e47fab68b3f83f0dc83c67984c4a87a23b18091f"
  },
  {
   "id": "CS1908-53",
@@ -6565,7 +6573,7 @@
   "number": "53",
   "title": "Your Saviour, Too",
   "path": "data/CS1908/53.json",
-  "v": "3a242f04cf4bde794ec23b7a48ca13e9c0ee346bdec7ce62d9c6722299cd6481"
+  "v": "3d44f9eee83a42cf37a7c05b9fc7540f11baeffbdd6eeb32f5842f8d4ad6d136"
  },
  {
   "id": "CS1908-54",
@@ -6573,7 +6581,7 @@
   "number": "54",
   "title": "Keep Tenting Toward the Highlands",
   "path": "data/CS1908/54.json",
-  "v": "74365212623073ec23781e5c8f3146a4cc0103807e5676102225c1d188415235"
+  "v": "a737d566dc7315ecaacbe8882eeea9f2a33b0a91438182144f6c0e2d84cc9b5f"
  },
  {
   "id": "CS1908-55",
@@ -6583,7 +6591,7 @@
   "path": "data/CS1908/55.json",
   "sung": true,
   "sv": "f00229c76cddad066ca43a1ebfdff5901e8f798920842d71f8ff3cbd2814b4b8",
-  "v": "4030b8e9cfab3f36349eda435ebb080420f9ff16835c0ee8b5132480f6940eb6"
+  "v": "3ff39c61ff950a8e4af5d15c9db4a9d1948e1cb95dff0cc900eb8ac99510a3b3"
  },
  {
   "id": "CS1908-56",
@@ -6591,7 +6599,7 @@
   "number": "56",
   "title": "What Shall the Harvest Be?",
   "path": "data/CS1908/56.json",
-  "v": "714b68d7cc3c6958be282dbead3f0b8d9025b4955c8079cc97c03904e3f54994"
+  "v": "02a4a5dca3fc4e5fc80e3067ec88a5e3fb14a62d700698bb5ce3fc6ac2f65d0b"
  },
  {
   "id": "CS1908-57",
@@ -6601,7 +6609,7 @@
   "path": "data/CS1908/57.json",
   "sung": true,
   "sv": "f7bc0dbf0c36993a074600ee3937467bf793c7079e91cb421efd6e97d37bec19",
-  "v": "6de0241165127b8d2040e41ca8e26045a71e3043d902cb74780d0f08130918e2"
+  "v": "a23bc65249e88546a4a7799d7ee4414bbfa160b7b13849f0b783b61b74227c89"
  },
  {
   "id": "CS1908-58",
@@ -6621,7 +6629,7 @@
   "path": "data/CS1908/59.json",
   "sung": true,
   "sv": "89d62a1f8972801667aba1e2379eb470cc2fde04af5cf6a830349adfee5f04da",
-  "v": "4f8906914c99e1d392ffb44ac0191a1f0485891e9f5ff558c84e3d4899912a91"
+  "v": "c1b7c91e6d7d8db528d6171ad04cac4a9aac32fabc1a012eb4057db1ece46c52"
  },
  {
   "id": "CS1908-60",
@@ -6631,7 +6639,7 @@
   "path": "data/CS1908/60.json",
   "sung": true,
   "sv": "21e01e53b60752239bfa7de6f2725c31522897aab9a503eda1658ef891ced30e",
-  "v": "e6ae5bb81e6cac25c9e2c47bca858ef12b870bf6953479647f228f6a45d60734"
+  "v": "3b95f93b1d900b956cf555695632b415496d21324c9c5f72ba1da35c72f0f40d"
  },
  {
   "id": "CS1908-61",
@@ -6641,7 +6649,7 @@
   "path": "data/CS1908/61.json",
   "sung": true,
   "sv": "ab0671685721180b8a8ee96ce323099a7f0da5db0a02edb5b717da26d198e3c4",
-  "v": "d1679834d62ccbfb565cfe1dc2e285123ebce72ec49e44d96bc2e2060c5e637d"
+  "v": "4127055e2eba2c68550d2ac7d9511886238e43bf35fd88f1999df90b1c7aea59"
  },
  {
   "id": "CS1908-62",
@@ -6651,7 +6659,7 @@
   "path": "data/CS1908/62.json",
   "sung": true,
   "sv": "b50f6aa91ecef29079148e07c10d652423fbb60d586ac30000717a02c708230c",
-  "v": "36d4b244fac76b41e4308edd74b221fb152c6ae76a6a98232420ea99dd51293a"
+  "v": "20ee161e969bc4fdc715eb782a5e5509a1544cc9aba0d169ffd8eb145d9785ba"
  },
  {
   "id": "CS1908-63",
@@ -6659,7 +6667,7 @@
   "number": "63",
   "title": "He Did Not Die in Vain",
   "path": "data/CS1908/63.json",
-  "v": "5a960ea6a4b38d590c78490c7ae44c679fa770d76957a306c141f75828494184"
+  "v": "6b3a3b25db65be14000b5b9ae1fc2b513c77baf8580db591247877f90dacb4d9"
  },
  {
   "id": "CS1908-64",
@@ -6667,7 +6675,7 @@
   "number": "64",
   "title": "Whiter Than Snow",
   "path": "data/CS1908/64.json",
-  "v": "13792daf9d03990c0aaf1b1a19d870d9e454cac707a327dabc265f61423deb15"
+  "v": "879f1076b3d8b6e364931baee3e56638405ae2d0da9792b67ef3a7ee043716d6"
  },
  {
   "id": "CS1908-65",
@@ -6677,7 +6685,7 @@
   "path": "data/CS1908/65.json",
   "sung": true,
   "sv": "0d6967d60ec4c7696156d14407fdc0695a73c3ee56bb5ca05fa27afafbf01398",
-  "v": "012fb456d345b1095cb15ccd8115abe844ee207f2be47a71f5ef9d68c1670fb9"
+  "v": "cc42d02b95be1e9b5220480c9b61344e96ee8112a47683240849dae847931029"
  },
  {
   "id": "CS1908-66",
@@ -6725,7 +6733,7 @@
   "number": "70",
   "title": "Lead Them to Thee",
   "path": "data/CS1908/70.json",
-  "v": "f121d7aa6537b6861fc4056aa180ed3f654e0a38fd939efad0f31098f7f628ec"
+  "v": "0cc4dc97b92f8f422b8fed2fa6e4d0cc45a0489bdfff469bf7992fd88b913211"
  },
  {
   "id": "CS1908-71",
@@ -6733,7 +6741,7 @@
   "number": "71",
   "title": "I Will Early Seek the Saviour",
   "path": "data/CS1908/71.json",
-  "v": "eeeb2447385d879d13dbe2cc23426200245f9dd721857bb8ba9c10d83e2d3dd9"
+  "v": "bbdb5268cf407987a5f72b5f5976464f118533aab3db202bedae688334531613"
  },
  {
   "id": "CS1908-72",
@@ -6753,7 +6761,7 @@
   "path": "data/CS1908/73.json",
   "sung": true,
   "sv": "5904e5167d16f51b0acba3cc402453406d50ea524c53873502ff5e786ad62894",
-  "v": "b6dbeb4f8071db0d0415bb71c26adb3476eb09ec458362571daa3228309bcbd7"
+  "v": "0d3363b6268d75e10e7e7d9d92221ae649422771ca2fe7cb9e551c71143dde2b"
  },
  {
   "id": "CS1908-74",
@@ -6779,7 +6787,7 @@
   "number": "76",
   "title": "Calling",
   "path": "data/CS1908/76.json",
-  "v": "dbdea064f8cee3fd77970d6feec0814a0f3e79339e98cec31b8d2c0a75f36753"
+  "v": "f6ca69da98370b503a267d298297da40e8aa3bcd6a5fa591c81bbb194ae4399f"
  },
  {
   "id": "CS1908-77",
@@ -6805,7 +6813,7 @@
   "number": "79",
   "title": "Tho' Your Sins Be as Scarlet",
   "path": "data/CS1908/79.json",
-  "v": "63862c6e2fd8fa103bb4aff1c95cfce1729ea8e4b9683c698149ce754ccc8180"
+  "v": "f24d9c9e27e4ef0dbf030b9bb043eb7bf3399315282ca77c4e594990fe342fbc"
  },
  {
   "id": "CS1908-80",
@@ -6813,7 +6821,7 @@
   "number": "80",
   "title": "Cover With His Life",
   "path": "data/CS1908/80.json",
-  "v": "e3d2bfdafcfe9c686d4eb8fd3bcde827c1bf7a1101c05c81f8008e7833dae3d2"
+  "v": "333ee95717426db5e0770bd120d963adfd05afc9fc5d43ef97eb87ba034dac8c"
  },
  {
   "id": "CS1908-81",
@@ -6851,7 +6859,7 @@
   "path": "data/CS1908/84.json",
   "sung": true,
   "sv": "86290ba12d59e2a41b361df56fd6b2c0e0e5aa4feadc40d95af63a94e371a2b0",
-  "v": "6ff0afb3e8e379d986042591752a8b873b2c1e67859436d7e2382fc111781d61"
+  "v": "5d042d485d23c8dafcad48073bcabe04cc8cb088e30ea14d77c15c56d8bedff0"
  },
  {
   "id": "CS1908-85",
@@ -6871,7 +6879,7 @@
   "path": "data/CS1908/86.json",
   "sung": true,
   "sv": "a1c7ab4d69ee079017d1ccc9ac1f1f06ff10281a62cb428a28fa87fecb6777f2",
-  "v": "533dd52c59005d8c4f7879f105ff3bc2d3462098b0bae57dc3afb86279f5d25f"
+  "v": "c284ce476232f35fd945f178fc5a3fb0410e42341eac9b3eb2c5dd0dd220e080"
  },
  {
   "id": "CS1908-87",
@@ -6879,7 +6887,7 @@
   "number": "87",
   "title": "Pass Me Not",
   "path": "data/CS1908/87.json",
-  "v": "f8fd4c9097f6739b638994ded4797221ba584264d64206e465a8d251e1508641"
+  "v": "1775d434d9eae5286a93c1e91270ddb89b8803f7aa8becd9350815577c09a47a"
  },
  {
   "id": "CS1908-88",
@@ -6909,7 +6917,7 @@
   "path": "data/CS1908/90.json",
   "sung": true,
   "sv": "a316e20929c43110db1c9e23834186599a8b620f34e6a56b10c84ba6d95887cb",
-  "v": "3522183283d997858dbe66bed583a776578f08be29528ee66f719ca30494360d"
+  "v": "5b61f67f664056a79f76e8193c05479bb24b1d48af1091e2c9b70392c7094adc"
  },
  {
   "id": "CS1908-91",
@@ -6939,7 +6947,7 @@
   "path": "data/CS1908/93.json",
   "sung": true,
   "sv": "bf4c4e100a72f8cc7859e40f75cf847899a95603c456d7fc0d67108698991a25",
-  "v": "f8d7c0799b0216a52b2e7c5cb1ca059efba1f4590bed3354aadf58131a1ae44b"
+  "v": "0852ed2408ee1994babc6ff51cb6d034e0e017939b4172980815306144b42d5a"
  },
  {
   "id": "CS1908-94",
@@ -6947,7 +6955,7 @@
   "number": "94",
   "title": "The Great Physician",
   "path": "data/CS1908/94.json",
-  "v": "149d9c3418dd54bffeca22bc6fe163640f581b91b69a7c6083691b6d5edb998c"
+  "v": "3e34a72b1c231f65eb788056af12b08e586ee87c431be119c830429edff7f9c7"
  },
  {
   "id": "CS1908-95",
@@ -6975,7 +6983,7 @@
   "path": "data/CS1908/97.json",
   "sung": true,
   "sv": "fbc9d83b9ec5d316583f93fc500569cc98065ed062ec42295b02867369d9bf9c",
-  "v": "10236eb4c3e4792c71008926a60cbe40a9d4ba0a4bc6f4463fb9e45e964257ae"
+  "v": "e7961dcb4ea5450598d13feb762ed399fa3aea032b5f38e076ecdf1838589df3"
  },
  {
   "id": "CS1908-98",
@@ -6983,7 +6991,7 @@
   "number": "98",
   "title": "Where Is My Boy To-night?",
   "path": "data/CS1908/98.json",
-  "v": "5ca61c758b0c9c72db4fe6283bb4520cbd829bebc0f40dddf47235eb2179f196"
+  "v": "009b5c67a505c7ab5ae0f95abd006f8a4a2e1adfd932107654e3d7999e225992"
  },
  {
   "id": "CS1908-99",
@@ -6993,7 +7001,7 @@
   "path": "data/CS1908/99.json",
   "sung": true,
   "sv": "c9473e8869017ec955791449ff44bc39c18924d135ec0bc8b5af93d812619fed",
-  "v": "66ca8129a25f639f8f14313a3c4e929f629b120b28cd26394b0bf1bff992cc06"
+  "v": "ec453b5ca64cfa7f895dbd58467a7e4c38d6042d576c47c1e0a8017af24c1cb1"
  },
  {
   "id": "CS1908-100",
@@ -7003,7 +7011,7 @@
   "path": "data/CS1908/100.json",
   "sung": true,
   "sv": "7477b670ae1327da501b00585f3f6b17a8a5197e3b6f94517ed6df4770b5bc6b",
-  "v": "7533a7325ec32846a6f3615d7d2b7d33ff49b5ddd4844570418ab5e1e7cb4dec"
+  "v": "af056247bfe98c5cfbd51105f0172fab9d0cd00ca594fbd9864207e687b486d1"
  },
  {
   "id": "CS1908-101",
@@ -7011,7 +7019,7 @@
   "number": "101",
   "title": "I Am Coming, Lord",
   "path": "data/CS1908/101.json",
-  "v": "5c7926bdce8910cb495b7ccb23a0ec38a28ae99f76256faaee67376e43aedc41"
+  "v": "5d3ea18de53c77f34bcf4768bb4879184d97a992f717a0e570b9362090e5946a"
  },
  {
   "id": "CS1908-102",
@@ -7049,7 +7057,7 @@
   "number": "105",
   "title": "Trusting Thee, Lord Jesus",
   "path": "data/CS1908/105.json",
-  "v": "4f6759ac3b76934f9e3d87758b17c774bba6c2e762e5815fd9078b57bc116d77"
+  "v": "ad86d58a58c6f2ab83b0ae596553e4f25666f7ee5f6c5696b1cac121a1538a02"
  },
  {
   "id": "CS1908-106",
@@ -7067,7 +7075,7 @@
   "number": "107",
   "title": "Jesus Paid It All",
   "path": "data/CS1908/107.json",
-  "v": "a5c441a9a0cbdd64a19b7a45448d3f5a23e005c67658de031fbe17e3f1dcffa9"
+  "v": "19934a7e70bd1d86bb57fe995bf6db9e0bbe7b283b0e88be8ae544a96ee97f65"
  },
  {
   "id": "CS1908-108",
@@ -7091,7 +7099,7 @@
   "number": "110",
   "title": "The Cleansing Wave",
   "path": "data/CS1908/110.json",
-  "v": "af38bafbe2a0cb7a6e1601756ccfa468745daf79edf53765c83b910d48b41f4a"
+  "v": "5fcd1eba3d6774a6feca0104d2280ab4010d599750c78023f1568f7e7e4d906a"
  },
  {
   "id": "CS1908-111",
@@ -7101,7 +7109,7 @@
   "path": "data/CS1908/111.json",
   "sung": true,
   "sv": "3295df188f8102089edb23338d8b412da3b2fed80c81906076c42719a5ec7320",
-  "v": "4b2a1aef4a60080832b1fc60f0642bc9bad38293141a5633e22c9430d522a8d7"
+  "v": "5424a62963b77b3c8f85028bf89be036f3b8782b12528c22328daa33d625e956"
  },
  {
   "id": "CS1908-112",
@@ -7139,7 +7147,7 @@
   "number": "115",
   "title": "The Gospel Trump Is Sounding",
   "path": "data/CS1908/115.json",
-  "v": "c6818110a4e84e875b3e76aee1ad9f2620785bcc9e4785aa5d999da9dd416d3b"
+  "v": "36c048367b00fd47fa92c46eb59aba3cd6db0d2d39059cf5901d27d28b773198"
  },
  {
   "id": "CS1908-116",
@@ -7159,7 +7167,7 @@
   "path": "data/CS1908/117.json",
   "sung": true,
   "sv": "7aade192667bf6a142345fbf3fd82fd2d2d06d7845a6cd1fb024a0f1680c680c",
-  "v": "1862f5b09af2908b7c8b0fbf1e209de57de13f1494ad22e5caf3419c81455958"
+  "v": "1604d6ee246c97c633b47bea44ea9a1dbdefc0da429b50f7d61a236893f8e168"
  },
  {
   "id": "CS1908-118",
@@ -7167,7 +7175,7 @@
   "number": "118",
   "title": "Outside the Door",
   "path": "data/CS1908/118.json",
-  "v": "a9fb89f200b7305a62621f16c18180caf35708ae6d5938f1874175233657fd89"
+  "v": "1779b6ac81835e03832acd66c8228a0d7aac9a32dd08b68f7651e27fdeb7c517"
  },
  {
   "id": "CS1908-119",
@@ -7177,7 +7185,7 @@
   "path": "data/CS1908/119.json",
   "sung": true,
   "sv": "dc5fee373ef023502ba71012e8bd93a90cfe416714c6c445a7f9d2a0ad60eab7",
-  "v": "99a130cf61c5a4f0277ad812939b07c3e802f18f4202979f61ce9a68b775248d"
+  "v": "d2bcbbd079f6ab92e5836cbf95a63c6f348525635faa4cf4ba8368d5ef61cdd5"
  },
  {
   "id": "CS1908-120",
@@ -7187,7 +7195,7 @@
   "path": "data/CS1908/120.json",
   "sung": true,
   "sv": "053c632c81247c9378f979745fdc6eb5e421182829f9b0092e48bc6d7fdb68d6",
-  "v": "9b947e6b62135b6a794536cd26c4366871b2b84591bdddca9dad218c4687bd57"
+  "v": "6e6b913da0c0be308d00f0a4623f3bfaecaa5dc3e8d255ff49b396a7350a2502"
  },
  {
   "id": "CS1908-121",
@@ -7207,7 +7215,7 @@
   "path": "data/CS1908/122.json",
   "sung": true,
   "sv": "259976bdc45d57ede4239daf182465253ed354e90772df2f9434d8aae1092faa",
-  "v": "596a2ef22784413b2c3ee28adaee2d71be57cdc86ff17d9a55a093a917a5374d"
+  "v": "d8e0775114a65c67ed30f926f7b5d2d3c4ef952a8ca666f74bf24f732045a576"
  },
  {
   "id": "CS1908-123",
@@ -7273,7 +7281,7 @@
   "path": "data/CS1908/129.json",
   "sung": true,
   "sv": "6751248b6cb8541091ed570553f5db5750df608efc4194d413b8e06031f8da37",
-  "v": "6c5ee932c774a7f5750147742ff4a5547fe9fccfd85635dadfd0abfca8994b24"
+  "v": "682198eb9e4709b2464dcc3d459878e7b908b846d08e0dcac7b7256a8154dbe0"
  },
  {
   "id": "CS1908-130",
@@ -7303,7 +7311,7 @@
   "path": "data/CS1908/132.json",
   "sung": true,
   "sv": "add09a00d0971227895f6cc17f41c069e0128381202b56cc8f82871ba1534212",
-  "v": "357f0c31da740fb69338d6b43ff3254b4dbc84f07c1ecf603141c947884d71d8"
+  "v": "d7fbb0a58cf55bb669800e5f540401105553af568a925a9501f11765e18f8bef"
  },
  {
   "id": "CS1908-133",
@@ -7313,7 +7321,7 @@
   "path": "data/CS1908/133.json",
   "sung": true,
   "sv": "b27b71b877536712967ef403cad3ec6fd35c06cf3ba3f450127cf5da353e3482",
-  "v": "3cf9459a22ecd094f4665ae6da1d2f25ed0f94a1d4cd23b7c82ba22b14f7e2c6"
+  "v": "52b7e5daae758b713a17af53346df52ba3b17799aed7bff8077638ab2a72b3e0"
  },
  {
   "id": "CS1908-134",
@@ -7321,7 +7329,7 @@
   "number": "134",
   "title": "Baptize Us Anew",
   "path": "data/CS1908/134.json",
-  "v": "d921c4b3f5bce44ae9924b9fbfd170cc97d0d9855b6c120fffb3cfc8f8081555"
+  "v": "eb6326cf06f2125d8eb7316c4db3dc44d6d3c8f551cdc06e78e0d9e8ce85c3de"
  },
  {
   "id": "CS1908-135",
@@ -7331,7 +7339,7 @@
   "path": "data/CS1908/135.json",
   "sung": true,
   "sv": "c30d64d80b4ea6b9d52cde018e0c2861cdca743b3b1cb9a1ea24f501d27677c3",
-  "v": "77f7a784d79f747a3be3893407201c5f958c0fbc4304cff3572921237f856b35"
+  "v": "170978372e815ad13ced138b72e2ba728ccea0755f5b526e40c3347d7dc5524c"
  },
  {
   "id": "CS1908-136",
@@ -7339,7 +7347,7 @@
   "number": "136",
   "title": "The Last Call of Mercy",
   "path": "data/CS1908/136.json",
-  "v": "16f634ccc343ac3d401e8ef6c4b49cd69f7df7825d5b500a69a3f528fd8e9cb6"
+  "v": "17e77f516fcda668bfbd1bccffc6760b8fc4aaadb60613eb68df2d53939d1758"
  },
  {
   "id": "CS1908-137",
@@ -7441,7 +7449,7 @@
   "number": "147",
   "title": "Flee as a Bird",
   "path": "data/CS1908/147.json",
-  "v": "e04d12d260f214b487183b2d2369d373d40cd1d40c697d694b3e100851250320"
+  "v": "16e5d05b3dd1a7dd09f67e96b7f7264a449a7bcf60397c1a9dfbf8cb5a74a268"
  },
  {
   "id": "CS1908-148",
@@ -9397,7 +9405,23 @@
   "number": "390",
   "title": "That Song of Old",
   "path": "data/CS1908/390.json",
-  "v": "f62df1989d00418e661966a7a2080fbc42030ff1e658875ce9f8b8d116c8a8d0"
+  "v": "840b99773b75479f0f059bcc30efd0f71d66c355a2126deb112172bf04e67a9c"
+ },
+ {
+  "id": "CS1908-391",
+  "book": "CS1908",
+  "number": "391",
+  "title": "Almighty King",
+  "path": "data/CS1908/391.json",
+  "v": "1e6e6fb0ef4606500601f78885aee5affce09ef8a1f5ba2cfa382735753541fd"
+ },
+ {
+  "id": "CS1908-392",
+  "book": "CS1908",
+  "number": "392",
+  "title": "Sound, Sound the Truth Abroad!",
+  "path": "data/CS1908/392.json",
+  "v": "b9043386d3290838cba1bd85d41ae821b99f389033526ac3bee77025a5ddc772"
  },
  {
   "id": "CS1908-399",
@@ -10833,7 +10857,7 @@
   "path": "data/NZK/44.json",
   "sung": true,
   "sv": "28c68922a4130cfa4190b84ef9245fd053e07cff0fc56faab5f5f03dc30b01b6",
-  "v": "2338194b8584383c1ebaa15457c76d8ee8e639a03287276d97ec24fc44cb68e4",
+  "v": "2ea00e2afba5d84a13bd3baf762eb2e3af7aa0d1dda1c6079b2367bc578bb9ba",
   "english": "No, Not One"
  },
  {
@@ -10844,7 +10868,7 @@
   "path": "data/NZK/45.json",
   "sung": true,
   "sv": "eae34dc468cbe97d7d23769be1b84f3df81519f05a6071b31819c3027d378cd3",
-  "v": "c453364b19f384a39e374e602d840c0429e0d8ff468c8f055f61d172dbde632a",
+  "v": "b2a8ccfabb36f8558cbb6c2faf80b0ab29a7dab78699507e6a5a8f54691c1a84",
   "english": "Sunlight in the Heart"
  },
  {
@@ -11207,7 +11231,7 @@
   "path": "data/NZK/95.json",
   "sung": true,
   "sv": "f01cb2da23e63d72e16ec5e191c66c335a571b3bccf451b6c994e8a66ccd9864",
-  "v": "e90faaf017a0b91d5b5341327e4f42197ae412760b55789066af265d8cccae6f",
+  "v": "d306e644a8899e2f59a6bacef36c6ecc58e61e62a1d0ec31249d74288c7e127a",
   "english": "Bring Ye All the Tithes Into the Storehouse"
  },
  {
@@ -11229,7 +11253,7 @@
   "path": "data/NZK/101.json",
   "sung": true,
   "sv": "b37e9c0e345ed741485491d3486f0205600b9c7711efa06af46aa30eb3d64c1d",
-  "v": "d9716c19a204a9e7cda2fdc5108e34bb8179834f379a59e54c8c18c06c9c1d44",
+  "v": "ec9606c774fc6460b59b7b6beb2408a0b14f659fe175eb18d0bb7d9d8016a7ae",
   "english": "Jesus Is Calling"
  },
  {
@@ -11284,7 +11308,7 @@
   "path": "data/NZK/109.json",
   "sung": true,
   "sv": "c06531a26e58f0f08732662cbff40aefa9e7b40111b1b0dfe4bfd2307b84da0f",
-  "v": "c4b7e6c903061db253e013360a756af595834a9cf275e856ab5dfbebabd2ca58",
+  "v": "a4ba56833b7a54f2ea9d4f24473c691e7e271a89a2eaf2e316317a5bf20f7004",
   "english": "Whosoever Will"
  },
  {
@@ -19069,7 +19093,7 @@
   "path": "data/WN/21.json",
   "sung": true,
   "sv": "8b63753744177363fad951dbb2669db45516e43ce9f256d2e4e0e703aca9fa50",
-  "v": "9e155a2dc2f01c7187048c589d1adf3b7d84a71bc9ed992d0cfa06b94b02a999"
+  "v": "0c997bc4da995c0e5554be983632b06682401fb75628a2136a06abea305569c6"
  },
  {
   "id": "WN-23",
@@ -19144,7 +19168,7 @@
   "path": "data/WN/39.json",
   "sung": true,
   "sv": "f2d22cf6d60186ef2c689148b8d6b1589c1d6e748643ded7264e3924f143a7e2",
-  "v": "3044b42db274b0e7e2532d9d9703b33c75cd03855d2f97c5c91a534a708ae725",
+  "v": "fbdacba5b89b99c5527956277f8ec55184ac1ba89198248a3ea38638e4cb5db3",
   "english": "Since I Have Been Redeemed"
  },
  {
@@ -19254,7 +19278,7 @@
   "path": "data/WN/62.json",
   "sung": true,
   "sv": "7a47c56b2709d5eac520522f2bd34494f38b07628b9e0c279306a500383070e9",
-  "v": "cd9edd759de9e4857568b317d297e030092f0098dafabe6a077b9a88c26b61ca",
+  "v": "08c280086d1dae7d085197d44ea6a9f65f19649a1a54d64dbdd3f34a07777261",
   "english": "No, Not One"
  },
  {
@@ -19536,7 +19560,7 @@
   "path": "data/WN/137.json",
   "sung": true,
   "sv": "3ec329ceb6f3614ee82319ebe72a73dedc258443ad50c9280cce0ac65f3c4810",
-  "v": "2f1848358cd7a8ce8c476b7d07c88a7d3917b738b26d01a5fbd5fbe5ad518dea",
+  "v": "d9ab963052900fcff160a607a4b2bfc2f2b8586318d0f3335cf760adcdc93b1b",
   "english": "Bring Ye All the Tithes Into the Storehouse"
  },
  {
@@ -19712,7 +19736,7 @@
   "path": "data/WN/170.json",
   "sung": true,
   "sv": "bd34e64b7726aafc8d2b87417ebae8561d0f9d79f0d4a845454416bf3567f764",
-  "v": "72cadff42f29ab606a45cafd5e57ee29e4fcc169cd8a5d50d54a93d8cb8e58c6"
+  "v": "3bcfb0d14b01f773a2606d6aac70e2e0f46d25b5410f8194a2878056b242bdb5"
  },
  {
   "id": "WN-171",
@@ -19950,7 +19974,7 @@
   "path": "data/WN/226.json",
   "sung": true,
   "sv": "9050b65d9e7013a6a6d9442e42f1bbb168ab1c9261a5c872bac29e58dbda7df9",
-  "v": "2ef31cc619f9fc5f6dabfbdcb5c09d42b2f9134bea21484fdfe452959fbbb9ff",
+  "v": "5cdeee333cab8b6642c8bf69a95f926e2f9f8fe8497550fc9db26cd619980764",
   "english": "Safe in the Arms of Jesus"
  },
  {
@@ -19972,7 +19996,7 @@
   "path": "data/WN/231.json",
   "sung": true,
   "sv": "8fbf4b0237d866a976bc40504e6c8983860061cbccb400a34974253ca8193803",
-  "v": "b993a7380fe16cbc4b5b4a025f73bc5e58abcb7670d4d2678fa78f4bd592acf0",
+  "v": "79e7624e6a61d2ea8cbc2f16bc2b148d680c821d7ef2a5f99374ebe9fbd8e828",
   "english": "Where He Leads Me"
  },
  {
@@ -20027,7 +20051,7 @@
   "path": "data/WN/251.json",
   "sung": true,
   "sv": "2f080540dcb6470080fea9c50d6ea2168c6b3b03aab85ec22072d9bdd1cb2f81",
-  "v": "3a3202aa6c4d2adf2701041efc13fc107062d84bfcf3e332a5a9218a2fda3e9c",
+  "v": "13cc30ba3d19f096d32228314ad0191620cc5c312017e3eca850c3b1eb7b3c14",
   "english": "Weighed and Wanting"
  },
  {
@@ -20190,7 +20214,7 @@
   "path": "data/WN/308.json",
   "sung": true,
   "sv": "7b6bbe8602b4faa8bc186f120e92f20c14e622ef46af9eeabd610289698e9d71",
-  "v": "dd2b34ee2e63de67a4ffedcf16d4c7ac7989def6c3112ac62f9ad8c5ba769709",
+  "v": "c00edf67081be2d397f591ca878659fdef6ec2a60c16845f1b0330137f948394",
   "english": "He Brought Me Out"
  },
  {
