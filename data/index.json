@@ -9357,7 +9357,7 @@
   "number": "377",
   "title": "Praise Ye the Father",
   "path": "data/CS1908/377.json",
-  "v": "06ccbdade967f414c3e7129b222fc74ca9492c67a52de0dbb83a86fc85cb9813"
+  "v": "3af700d83fc76bfd0d1653b23f618ca7158a7390aaf8719330c7104245e6f35a"
  },
  {
   "id": "CS1908-378",
@@ -10488,6 +10488,70 @@
   "v": "841b775ae2db92c48ee88c92841146da9606e424ed23f6a527c9f1efd3fa2041"
  },
  {
+  "id": "CS1908-519",
+  "book": "CS1908",
+  "number": "519",
+  "title": "'Tis So Sweet to Trust in Jesus",
+  "path": "data/CS1908/519.json",
+  "v": "4d9965efd6defdfe0de004c2e12b85c39d1cef26e91387b3a95528c6bec8030a"
+ },
+ {
+  "id": "CS1908-520",
+  "book": "CS1908",
+  "number": "520",
+  "title": "Lift Him Up",
+  "path": "data/CS1908/520.json",
+  "v": "eee87fb16bdd7808abf8c6c208ffbe6f0d92778b7cd6db7564db6a8274a8563b"
+ },
+ {
+  "id": "CS1908-521",
+  "book": "CS1908",
+  "number": "521",
+  "title": "The Faithful Three",
+  "path": "data/CS1908/521.json",
+  "v": "d7edd187a7e7b79424ea95db9ae9fe83b506d36fdd641db175927fb109f07b7a"
+ },
+ {
+  "id": "CS1908-522",
+  "book": "CS1908",
+  "number": "522",
+  "title": "He's the One",
+  "path": "data/CS1908/522.json",
+  "v": "545ac241b5fe148581a542aaf1713edf934e37b14f6606a3bee20147dcfd66b1"
+ },
+ {
+  "id": "CS1908-523",
+  "book": "CS1908",
+  "number": "523",
+  "title": "Look for the Beautiful",
+  "path": "data/CS1908/523.json",
+  "v": "871845b310ee22a49189ede915871669eaf135b947209e235bb10cff79eaa02e"
+ },
+ {
+  "id": "CS1908-524",
+  "book": "CS1908",
+  "number": "524",
+  "title": "Count Your Mercies",
+  "path": "data/CS1908/524.json",
+  "v": "2dc9ed0daee1a333ab91346be7384540507afab9eead54b08c1ec29d7979a196"
+ },
+ {
+  "id": "CS1908-525",
+  "book": "CS1908",
+  "number": "525",
+  "title": "More About Jesus",
+  "path": "data/CS1908/525.json",
+  "v": "b74db06ce0dc72538353f9b14dd76cd895301f971133d8170b049fdc97237510"
+ },
+ {
+  "id": "CS1908-526",
+  "book": "CS1908",
+  "number": "526",
+  "title": "Father, We Come to Thee",
+  "path": "data/CS1908/526.json",
+  "v": "e176ab4897d75cdeea5acb9e0de36c5362335e866a615e1e803a7f19a35f5921"
+ },
+ {
   "id": "CS1908-527",
   "book": "CS1908",
   "number": "527",
@@ -10498,6 +10562,22 @@
   "v": "f683aa015b7d9065d2d9db5821e518399c91059fabfa082df7b7dc8feb772529"
  },
  {
+  "id": "CS1908-528",
+  "book": "CS1908",
+  "number": "528",
+  "title": "The Lord Is My Light",
+  "path": "data/CS1908/528.json",
+  "v": "5482ca7b1df0a88b57f5a8b40bd392d43ae6e9c3c9b546268c76f85474026825"
+ },
+ {
+  "id": "CS1908-529",
+  "book": "CS1908",
+  "number": "529",
+  "title": "Pillar of Fire",
+  "path": "data/CS1908/529.json",
+  "v": "4b03ecb063d894deb4c20a080c0d485d7eace99e499e808502b25f37f1fe1e2f"
+ },
+ {
   "id": "CS1908-530",
   "book": "CS1908",
   "number": "530",
@@ -10506,6 +10586,54 @@
   "sung": true,
   "sv": "3d54ab4938dc562077b53c18e9c4ef59ad45dc0c4846f6b38528a27ce9585f82",
   "v": "06d459e3f6fe832cc02f8e5fb0e3c24acbbbba677a949044dc70aed9fdf122cf"
+ },
+ {
+  "id": "CS1908-531",
+  "book": "CS1908",
+  "number": "531",
+  "title": "Urge Them to Come",
+  "path": "data/CS1908/531.json",
+  "v": "70e6ef4b315f2589cf4c941d58fd8a22f616cf2c98e7cecbb12643d5987da3e9"
+ },
+ {
+  "id": "CS1908-532",
+  "book": "CS1908",
+  "number": "532",
+  "title": "Seeking the Lost",
+  "path": "data/CS1908/532.json",
+  "v": "bcbf6a160b67125d3fc2f6dc07ab9acaa3977d4953966495bd34cad9ee889515"
+ },
+ {
+  "id": "CS1908-533",
+  "book": "CS1908",
+  "number": "533",
+  "title": "Freely Give",
+  "path": "data/CS1908/533.json",
+  "v": "d2f0f006ef29361539a31363a883a6694b39b32b446f971337230d0905756901"
+ },
+ {
+  "id": "CS1908-534",
+  "book": "CS1908",
+  "number": "534",
+  "title": "Draw Me Closer to Thee",
+  "path": "data/CS1908/534.json",
+  "v": "5b1cc2c43b20dd262e5640b69a0f59e6fe871444c2424d3edd832dd0496d3d04"
+ },
+ {
+  "id": "CS1908-535",
+  "book": "CS1908",
+  "number": "535",
+  "title": "Anywhere with Jesus",
+  "path": "data/CS1908/535.json",
+  "v": "d7cfb84903ec8224dfec695eff6d531b13f88f869ac2278b974dd901a17aa0b6"
+ },
+ {
+  "id": "CS1908-536",
+  "book": "CS1908",
+  "number": "536",
+  "title": "Winning Precious Souls to Thee",
+  "path": "data/CS1908/536.json",
+  "v": "888528f290a8be398ace8a059026714aad54027bb587f676a1fc791897affb3d"
  },
  {
   "id": "CS1908-541",
@@ -12177,6 +12305,14 @@
   "english": "More About Jesus"
  },
  {
+  "id": "NZK-54b",
+  "book": "NZK",
+  "number": "54b",
+  "title": "Nataka Nimjue Yesu",
+  "path": "data/NZK/54b.json",
+  "v": "af8b6e171ae04ac0c734856931034703c57a18c6f1488a75d7545ff8b72def53"
+ },
+ {
   "id": "NZK-55",
   "book": "NZK",
   "number": "55",
@@ -12904,6 +13040,14 @@
   "english": "'Tis So Sweet to Trust in Jesus"
  },
  {
+  "id": "NZK-129b",
+  "book": "NZK",
+  "number": "129b",
+  "title": "Kumtegemea Mwokozi",
+  "path": "data/NZK/129b.json",
+  "v": "38181513832e130228b3933a70384b55868e2d7c90442a7ff46015036654f762"
+ },
+ {
   "id": "NZK-130",
   "book": "NZK",
   "number": "130",
@@ -12935,6 +13079,14 @@
   "sv": "4a3c67e55e8c904d6ca02ffed230c61413f200992682ae07c5bda3164c913d05",
   "v": "82b133d44cff294aea9753d219fdf378177637221ad586aeb105e676bca1d37d",
   "english": "Anywhere With Jesus"
+ },
+ {
+  "id": "NZK-133b",
+  "book": "NZK",
+  "number": "133b",
+  "title": "Popote Na Yesu",
+  "path": "data/NZK/133b.json",
+  "v": "73ca61a4d022813a3f493f082de4400419c25a3329b27269d008c735dc267ecd"
  },
  {
   "id": "NZK-134",
@@ -20997,6 +21149,14 @@
   "english": "More About Jesus"
  },
  {
+  "id": "WN-75b",
+  "book": "WN",
+  "number": "75b",
+  "title": "Adwaro Ngeyo Wach Yesu",
+  "path": "data/WN/75b.json",
+  "v": "ed25da096159a9ff9ed445f46cb5994296d784ccba402754930ff6ef75975bc4"
+ },
+ {
   "id": "WN-76",
   "book": "WN",
   "number": "76",
@@ -21595,6 +21755,14 @@
   "sv": "522d7f009d86d10a3dce53282123763962c9b978f990a89686d268abb2c8b2dd",
   "v": "bf60c3af9fe9e824fa19e677dd89e44c23cbf3180fdf962a1f3ee380e8417ccc",
   "english": "Anywhere With Jesus"
+ },
+ {
+  "id": "WN-195b",
+  "book": "WN",
+  "number": "195b",
+  "title": "Ka Yesu Ni Koda",
+  "path": "data/WN/195b.json",
+  "v": "1beedfb196cd8008a5a2f3a69e8bb19d520d4818c7a07b84ffd01f21c8eeabea"
  },
  {
   "id": "WN-201",
