@@ -10188,6 +10188,70 @@
   "v": "3f0ed9485c2cbf057e31f180de2b6f35435de0e26c3e645f211d0a1dbb19416a"
  },
  {
+  "id": "CS1908-482",
+  "book": "CS1908",
+  "number": "482",
+  "title": "An Open Bible for the World",
+  "path": "data/CS1908/482.json",
+  "v": "d56b76aa52ce5f27006079f568ea43c9ae740a8b6b7be1969c07d907509ec12d"
+ },
+ {
+  "id": "CS1908-483",
+  "book": "CS1908",
+  "number": "483",
+  "title": "We'll Live in Tents",
+  "path": "data/CS1908/483.json",
+  "v": "265700fdfabd58d657caa286db3d98146aea856c115203af1ff9518b557ad613"
+ },
+ {
+  "id": "CS1908-484",
+  "book": "CS1908",
+  "number": "484",
+  "title": "Loyalty to the Master",
+  "path": "data/CS1908/484.json",
+  "v": "6125f2a52b2aeac4f68f96e99f2263c9216b4c83d8c508b33c343598a6384c73"
+ },
+ {
+  "id": "CS1908-485",
+  "book": "CS1908",
+  "number": "485",
+  "title": "Take Time to Be Holy",
+  "path": "data/CS1908/485.json",
+  "v": "dc782243beb30460d37118e79584c41c665f8999cfe16c7afd435afa480abdb4"
+ },
+ {
+  "id": "CS1908-486",
+  "book": "CS1908",
+  "number": "486",
+  "title": "While the Days Are Going By",
+  "path": "data/CS1908/486.json",
+  "v": "91833d47ff54c961c0a4414df11e1a06eaf94a2314c4a6ed7b6e665abcd6df1d"
+ },
+ {
+  "id": "CS1908-487",
+  "book": "CS1908",
+  "number": "487",
+  "title": "Sweet To-day",
+  "path": "data/CS1908/487.json",
+  "v": "0d2fb36d8d883a364c53507921e40708065c0c45d3e3585aff17bd1f5811d4db"
+ },
+ {
+  "id": "CS1908-488",
+  "book": "CS1908",
+  "number": "488",
+  "title": "Victory Through Grace",
+  "path": "data/CS1908/488.json",
+  "v": "5e9b1de1235fa6a8daab46efcec16e627d99f22fdf77360b5565950505daef85"
+ },
+ {
+  "id": "CS1908-489",
+  "book": "CS1908",
+  "number": "489",
+  "title": "Higher Ground",
+  "path": "data/CS1908/489.json",
+  "v": "4d06b8a66631d20562e9562bb2d70177aa27dae593f45c493007e1f940ea429b"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -12010,6 +12074,14 @@
   "english": "Higher Ground"
  },
  {
+  "id": "NZK-73b",
+  "book": "NZK",
+  "number": "73b",
+  "title": "Bwana, Uniongoze Juu",
+  "path": "data/NZK/73b.json",
+  "v": "e1e6092ba384b0b3a76e42bc41b98c597ca9fd8c4337199cdc9e093957dcb6a6"
+ },
+ {
   "id": "NZK-76",
   "book": "NZK",
   "number": "76",
@@ -12618,6 +12690,14 @@
   "sv": "e71a5983d95206c6c5e5b6c85d6bdbf849aeb8a4363f720daab6355ca42f73de",
   "v": "e3ac0d9b76a583817f8144d4713c09d1d8b560a8820979c5b1166096a1249d08",
   "english": "Take Time to Be Holy"
+ },
+ {
+  "id": "NZK-134b",
+  "book": "NZK",
+  "number": "134b",
+  "title": "Tafuta Daima Utakatifu",
+  "path": "data/NZK/134b.json",
+  "v": "1b2e880cfc09cfd97e82d26f9ca3b2a0cd7ad151853f0109934b945457bf03ae"
  },
  {
   "id": "NZK-135",
@@ -21216,6 +21296,14 @@
   "sv": "63e054e8357aa1859924d4db71f6827f856d2d97a5318b74591caa85eaa7ed81",
   "v": "f3b2b497f9487abc4c2e2c02303d6910f4c87c22fdcaf183c46fa083e507c3f6",
   "english": "Take Time to Be Holy"
+ },
+ {
+  "id": "WN-192b",
+  "book": "WN",
+  "number": "192b",
+  "title": "Tim Kinda Mar Lemo",
+  "path": "data/WN/192b.json",
+  "v": "e7c46b2afa081294a3fbf6dd1b2a6044fa54bfe75a258b1c717266d057472df0"
  },
  {
   "id": "WN-195",
