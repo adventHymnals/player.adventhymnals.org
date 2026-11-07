@@ -10076,6 +10076,38 @@
   "v": "d734fa287919ab00077bcaa91fc5b705fe6b2d798cea43af5c1cf2568d611684"
  },
  {
+  "id": "CS1908-468",
+  "book": "CS1908",
+  "number": "468",
+  "title": "The Beatitudes",
+  "path": "data/CS1908/468.json",
+  "v": "6ed779649c095b3befd141c6acdd2cbb7434ab68c2a5532831e5bdef8f2fbe86"
+ },
+ {
+  "id": "CS1908-469",
+  "book": "CS1908",
+  "number": "469",
+  "title": "The Lord's Prayer",
+  "path": "data/CS1908/469.json",
+  "v": "08d022381929b7e1968f9e12a2175b3c137f263482883fc6a7631a18572dbf2f"
+ },
+ {
+  "id": "CS1908-470",
+  "book": "CS1908",
+  "number": "470",
+  "title": "Praise God, From Whom All Blessings Flow",
+  "path": "data/CS1908/470.json",
+  "v": "7e9f1e74be032bc5f20d8b473e096ae5b62c490487daf938a7dc8615106d5fc2"
+ },
+ {
+  "id": "CS1908-471",
+  "book": "CS1908",
+  "number": "471",
+  "title": "Thanks at Meals",
+  "path": "data/CS1908/471.json",
+  "v": "3edf161451cd011645652bf2dfc8e40b649dce68e7017796e2d5888e31e3495f"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
