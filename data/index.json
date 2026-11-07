@@ -7881,7 +7881,7 @@
   "number": "194",
   "title": "I Will Sing of Jesus' Love",
   "path": "data/CS1908/194.json",
-  "v": "b580a329d3da5e48ddeccea796aec54f20a1e0d22b0704e970d79c005cd3aa62"
+  "v": "7c3d44eba78df863e8328fac67df8446bd6322d3894b23009f71e88fb6cb71f4"
  },
  {
   "id": "CS1908-195",
@@ -8307,7 +8307,7 @@
   "number": "246",
   "title": "The Lily of the Valley",
   "path": "data/CS1908/246.json",
-  "v": "204d6e87195a77b2735e69c726082d4ef42e098aa6d5232ee65450869d3e7576"
+  "v": "865d7511c3435b399cb69cbd2093204f57cafb194421e8127d7a6a4d662d8707"
  },
  {
   "id": "CS1908-247",
@@ -8507,7 +8507,7 @@
   "number": "271",
   "title": "Peace: Perfect Peace!",
   "path": "data/CS1908/271.json",
-  "v": "2cd0df5dd031869b5054e1e8388d5869b2b107f0d34ca029dc460b33ed8cf538"
+  "v": "d97eb49c16e7048cf4e6c8c2581bc3b3c50a341be7f5eb106c119c11240c3ede"
  },
  {
   "id": "CS1908-272",
@@ -8877,7 +8877,7 @@
   "number": "317",
   "title": "I Lay My Sins on Jesus",
   "path": "data/CS1908/317.json",
-  "v": "775597f2fb7bc19f5f5a7e6d5de4e108f1cf22d81d98fc707ecc191aff9fc52e"
+  "v": "1b79a5b65909f9dfded51bcd83a8705c712fd1f7b5b91def8f4b14b77b348365"
  },
  {
   "id": "CS1908-318",
@@ -9632,6 +9632,110 @@
   "title": "At Thy Feet",
   "path": "data/CS1908/412.json",
   "v": "c4a1193468201610911ecdad8adc14336470283c89c22edde2ad55635206c3dd"
+ },
+ {
+  "id": "CS1908-413",
+  "book": "CS1908",
+  "number": "413",
+  "title": "Faith Views Him",
+  "path": "data/CS1908/413.json",
+  "v": "b2783b2775f8c4bd1eb247076ab36cc94e634628e92ea1c4254e389956ab0573"
+ },
+ {
+  "id": "CS1908-414",
+  "book": "CS1908",
+  "number": "414",
+  "title": "With Willing Hearts",
+  "path": "data/CS1908/414.json",
+  "v": "97c5c0460fe124f76d83c0ed79007e30937b3d2e7810949e15a024ee5978a3fa"
+ },
+ {
+  "id": "CS1908-415",
+  "book": "CS1908",
+  "number": "415",
+  "title": "We Live Anew",
+  "path": "data/CS1908/415.json",
+  "v": "e78b0d07d1ea0e4ea36349778f2ed7b8c81065ea696857f6b1ebc51c111da27e"
+ },
+ {
+  "id": "CS1908-416",
+  "book": "CS1908",
+  "number": "416",
+  "title": "Blest Be the Tie",
+  "path": "data/CS1908/416.json",
+  "v": "aff5537020871d8d3ccc7d96cac8480ed3073c6cb891fa9fe1212fb95865ede6"
+ },
+ {
+  "id": "CS1908-417",
+  "book": "CS1908",
+  "number": "417",
+  "title": "Forbid Them Not",
+  "path": "data/CS1908/417.json",
+  "v": "6c95c8dc7c5a347e5ec33a67fb40aa6ec6b9f14cf86c9cdbbc734ab75e3f84d7"
+ },
+ {
+  "id": "CS1908-418",
+  "book": "CS1908",
+  "number": "418",
+  "title": "Attempt His Praise",
+  "path": "data/CS1908/418.json",
+  "v": "56b3bcf9ab6b0ac3315abcd92a4fae8dd9aa21d417b7ba896c7556d14146bd24"
+ },
+ {
+  "id": "CS1908-419",
+  "book": "CS1908",
+  "number": "419",
+  "title": "Unseen but Known",
+  "path": "data/CS1908/419.json",
+  "v": "17a11aec9521917c7ab4e1d5764a0af24a17d59424ce4a7a468d66fb113012bb"
+ },
+ {
+  "id": "CS1908-420",
+  "book": "CS1908",
+  "number": "420",
+  "title": "Endless Love",
+  "path": "data/CS1908/420.json",
+  "v": "560dbd4ce67ca6ded3eb277120b17fce17dc9fce92102a6c6f1c58232dc8c9e3"
+ },
+ {
+  "id": "CS1908-421",
+  "book": "CS1908",
+  "number": "421",
+  "title": "The Best of Days",
+  "path": "data/CS1908/421.json",
+  "v": "b9a8d705c7d5822e6773f78d6d878d33157f714b4e061b837146d5bc7ab4a014"
+ },
+ {
+  "id": "CS1908-422",
+  "book": "CS1908",
+  "number": "422",
+  "title": "All Things Are Thine",
+  "path": "data/CS1908/422.json",
+  "v": "6e0c39bb099bbe89c61dacd20410baad5c2308ce2bc1cdc7f5689bc27902a585"
+ },
+ {
+  "id": "CS1908-423",
+  "book": "CS1908",
+  "number": "423",
+  "title": "Thy Presence Here",
+  "path": "data/CS1908/423.json",
+  "v": "7106358ea7ae843b77fa20c82be73606b2d3cb577abd22ebcdf8004a90e50e90"
+ },
+ {
+  "id": "CS1908-424",
+  "book": "CS1908",
+  "number": "424",
+  "title": "We Dedicate to Thee",
+  "path": "data/CS1908/424.json",
+  "v": "1755d6245b0e87db0edc435dc24c3fc9b21b1c99fe8b807156bd0a0bb5cf334c"
+ },
+ {
+  "id": "CS1908-425",
+  "book": "CS1908",
+  "number": "425",
+  "title": "Coming Saviour",
+  "path": "data/CS1908/425.json",
+  "v": "90176534c627fdd0af7fe2185885cf2d96b8cff81661923b357f7305b258d80c"
  },
  {
   "id": "CS1908-430",
@@ -11032,7 +11136,7 @@
   "number": "31b",
   "title": "Niimbe Pendo Lake",
   "path": "data/NZK/31b.json",
-  "v": "08c7aa829bf2b93d3fde8ae5a5c5ec0069cf87dcfed8beb20e6b51d32dea3b3a"
+  "v": "5aaacab460976990579d2d46c206b788f76f1724965c7e448a046dcbc62de4dc"
  },
  {
   "id": "NZK-34",
@@ -11207,6 +11311,14 @@
   "english": "Blest Be the Tie That Binds"
  },
  {
+  "id": "NZK-47b",
+  "book": "NZK",
+  "number": "47b",
+  "title": "Ni Heri Kifungo",
+  "path": "data/NZK/47b.json",
+  "v": "744cb04c7dbcb43f5074f95b1dfe40a3bf68bd45e1eb4cbbec7c43eb586d31b5"
+ },
+ {
   "id": "NZK-49",
   "book": "NZK",
   "number": "49",
@@ -11366,6 +11478,14 @@
   "english": "Awake, My Soul"
  },
  {
+  "id": "NZK-66b",
+  "book": "NZK",
+  "number": "66b",
+  "title": "Roho Yangu Amka Sasa",
+  "path": "data/NZK/66b.json",
+  "v": "9d2b3f639e2be503b9e50b16470ae70ee292e446cfd3d0896ec8ed4b39c76965"
+ },
+ {
   "id": "NZK-67",
   "book": "NZK",
   "number": "67",
@@ -11489,6 +11609,14 @@
   "v": "4eab5b83dcd87ee64587a52954d3d6bf1ecdddafd637b990f6446438a5871ba0"
  },
  {
+  "id": "NZK-82c",
+  "book": "NZK",
+  "number": "82c",
+  "title": "Ni Siku Ya Furaha",
+  "path": "data/NZK/82c.json",
+  "v": "6201286e542d27934297cfcee454d33c27931c30b433cdadd342fc0de89ad137"
+ },
+ {
   "id": "NZK-84",
   "book": "NZK",
   "number": "84",
@@ -11610,6 +11738,15 @@
   "sv": "f01cb2da23e63d72e16ec5e191c66c335a571b3bccf451b6c994e8a66ccd9864",
   "v": "d306e644a8899e2f59a6bacef36c6ecc58e61e62a1d0ec31249d74288c7e127a",
   "english": "Bring Ye All the Tithes Into the Storehouse"
+ },
+ {
+  "id": "NZK-96",
+  "book": "NZK",
+  "number": "96",
+  "title": "Mali Yako Sasa",
+  "path": "data/NZK/96.json",
+  "v": "fad65b40f01b45e710a83db7e9a178d0df64390fd357a1b4e0880f64d425e94d",
+  "english": "We Give Thee But Thine Own"
  },
  {
   "id": "NZK-98",
@@ -12232,6 +12369,14 @@
   "sv": "fc913e15a7da4d50e208b7663c66a3b5238b65efd2409e8c7cf9fea0ec36afea",
   "v": "c13532016358fd230311b285a03d962677b24c48b04e7e4c5d8dc9e18b05f125",
   "english": "One Sweetly Solemn Thought"
+ },
+ {
+  "id": "NZK-153b",
+  "book": "NZK",
+  "number": "153b",
+  "title": "Fikira Moja Tu",
+  "path": "data/NZK/153b.json",
+  "v": "d94a91746a423be09aeb3be87c158c1d68a9318130db4b970317d1844ef8511e"
  },
  {
   "id": "NZK-155",
@@ -19751,7 +19896,7 @@
   "number": "38b",
   "title": "Anawer Hera Yesu",
   "path": "data/WN/38b.json",
-  "v": "7f8d736ab4f033dcd1bdcdba46c4e0c5b49e6f3fcb2d43d721d2b0d41e8d4127"
+  "v": "eb388ac43ef22f123a2502d87ccc7bc507ece3f5b910bc462b42fd0699a64f2e"
  },
  {
   "id": "WN-39",
@@ -19952,6 +20097,14 @@
   "sv": "a59344a024945cb5df878e78f2867f68e1ae2187d01a1bdc198c0d1adf6f1fe4",
   "v": "1baa7f6d08855552c1c820dd606377852b57476ce88ce11c71df7fc97a6f5c99",
   "english": "Blest Be the Tie That Binds"
+ },
+ {
+  "id": "WN-70b",
+  "book": "WN",
+  "number": "70b",
+  "title": "Nyasaye Wachokore",
+  "path": "data/WN/70b.json",
+  "v": "8c41215a2bc702723072c023a72a0616628434c2834b0f911f582e07fc817038"
  },
  {
   "id": "WN-71",
