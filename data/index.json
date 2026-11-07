@@ -10044,6 +10044,38 @@
   "v": "594ca13918a8d315e3e777d85fb2808f4d73cff6d574794c697c341aecad7678"
  },
  {
+  "id": "CS1908-464",
+  "book": "CS1908",
+  "number": "464",
+  "title": "His Mercy Endureth",
+  "path": "data/CS1908/464.json",
+  "v": "1180aa9dac875a17e1d7058d7ce2c4886f41e99905a0ba168650ab46d8f0f4e8"
+ },
+ {
+  "id": "CS1908-465",
+  "book": "CS1908",
+  "number": "465",
+  "title": "Glory Be to the Father (No. 1)",
+  "path": "data/CS1908/465.json",
+  "v": "119a6c9d24d66784d611e1e2a961bea116c9a98f63f9ec69d677b31c83cad4f8"
+ },
+ {
+  "id": "CS1908-466",
+  "book": "CS1908",
+  "number": "466",
+  "title": "Glory Be to the Father (No. 2)",
+  "path": "data/CS1908/466.json",
+  "v": "940962a69229b3db5df1fcd9a1fae7b00cef41c3889dcce7d0485517ac3e2398"
+ },
+ {
+  "id": "CS1908-467",
+  "book": "CS1908",
+  "number": "467",
+  "title": "Glory Be to the Father (No. 3)",
+  "path": "data/CS1908/467.json",
+  "v": "d734fa287919ab00077bcaa91fc5b705fe6b2d798cea43af5c1cf2568d611684"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -12059,6 +12091,15 @@
   "path": "data/NZK/96.json",
   "v": "fad65b40f01b45e710a83db7e9a178d0df64390fd357a1b4e0880f64d425e94d",
   "english": "We Give Thee But Thine Own"
+ },
+ {
+  "id": "NZK-97",
+  "book": "NZK",
+  "number": "97",
+  "title": "Sioshwi Dhambi Zangu",
+  "path": "data/NZK/97.json",
+  "v": "6863bba13342d5d735a21cb13b326ba320f24a3079e3797372a2dab742e29c3b",
+  "english": "Nothing But the Blood"
  },
  {
   "id": "NZK-98",
