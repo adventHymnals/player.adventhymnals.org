@@ -5288,6 +5288,38 @@
   "v": "b25d569c3574258456ad1366fd2c28703cf2db6c2f1c4a5d772e8f5b232fb70a"
  },
  {
+  "id": "CH1941-676",
+  "book": "CH1941",
+  "number": "676",
+  "title": "Jesus, Still Lead On",
+  "path": "data/CH1941/676.json",
+  "v": "487e5a71f40d7c6014528d69afab8bf460fd077685221cb8d27a90469c8fbd46"
+ },
+ {
+  "id": "CH1941-679",
+  "book": "CH1941",
+  "number": "679",
+  "title": "Breathe on Me, Breath of God",
+  "path": "data/CH1941/679.json",
+  "v": "17d6a53da8a4f762bddb2ebf67a51da7f226bea329d414f6dba7c3e3e13ad4d0"
+ },
+ {
+  "id": "CH1941-680",
+  "book": "CH1941",
+  "number": "680",
+  "title": "Ancient of Days",
+  "path": "data/CH1941/680.json",
+  "v": "15829cc7db6e54d02299ce9f4f1617b7aee4da1a74943d4f01cca044931e7fa6"
+ },
+ {
+  "id": "CH1941-681",
+  "book": "CH1941",
+  "number": "681",
+  "title": "There Is a Place of Quiet Rest",
+  "path": "data/CH1941/681.json",
+  "v": "03f22eae98662f448d3551c02100a98e48485d7ec7521f934ebf20ea95520918"
+ },
+ {
   "id": "CS1900-1",
   "book": "CS1900",
   "number": "1",
@@ -9096,12 +9128,36 @@
   "v": "73283f3d20ff9fbe12adb641e8e25a464dfc14801f64ed60190c1950b4d7ee54"
  },
  {
+  "id": "CS1908-377",
+  "book": "CS1908",
+  "number": "377",
+  "title": "Praise Ye the Father",
+  "path": "data/CS1908/377.json",
+  "v": "06ccbdade967f414c3e7129b222fc74ca9492c67a52de0dbb83a86fc85cb9813"
+ },
+ {
+  "id": "CS1908-378",
+  "book": "CS1908",
+  "number": "378",
+  "title": "Praise the Lord",
+  "path": "data/CS1908/378.json",
+  "v": "79845374ae7e0aff352c80d36b162503145948150d4c6ff64a3b703ea33ce013"
+ },
+ {
+  "id": "CS1908-379",
+  "book": "CS1908",
+  "number": "379",
+  "title": "Salvation Free",
+  "path": "data/CS1908/379.json",
+  "v": "46eecb88a33d1b1ca395c7aed687e1c1805457db94f52afc25bf6ffaa7e0d84d"
+ },
+ {
   "id": "CS1908-380",
   "book": "CS1908",
   "number": "380",
   "title": "Again the Day Returns",
   "path": "data/CS1908/380.json",
-  "v": "ce20cde4edff0ad02e462c949cd3852ce4745e4de3239c512ab3e3773bc36b40"
+  "v": "e107ea7b0cfbbefbe1079dca89838db877770915c613923f7e3a627c5eb2882b"
  },
  {
   "id": "CS1908-385",
