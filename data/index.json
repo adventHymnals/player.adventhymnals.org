@@ -5240,6 +5240,14 @@
   "v": "fa249ece3fcdb8b3a5f09ac905fac95924aaa6150f7299f57d386b9e9d9bbf04"
  },
  {
+  "id": "CH1941-667",
+  "book": "CH1941",
+  "number": "667",
+  "title": "Awake, My Soul, in Joyful Lays",
+  "path": "data/CH1941/667.json",
+  "v": "cb87e33e413bd09c777d74cfef04c359fcf7aff754021c8a5a4d29a0cf033d92"
+ },
+ {
   "id": "CH1941-668",
   "book": "CH1941",
   "number": "668",
@@ -5254,6 +5262,30 @@
   "title": "How Sweet Are the Tidings",
   "path": "data/CH1941/669.json",
   "v": "cc81a34575a6cfc13b3ef2d4861685aef2c3b02850ab21ec37a35ae6fac51366"
+ },
+ {
+  "id": "CH1941-670",
+  "book": "CH1941",
+  "number": "670",
+  "title": "Father, I Stretch My Hands",
+  "path": "data/CH1941/670.json",
+  "v": "6f7ac518639fe876428c605ef2b3c3257c6bacab48ea9b1b2ed8fa9821411242"
+ },
+ {
+  "id": "CH1941-671",
+  "book": "CH1941",
+  "number": "671",
+  "title": "Look for the Waymarks",
+  "path": "data/CH1941/671.json",
+  "v": "d2e53008a0f7788ef747166190f02b9bf5d714e92762252e596a184c331d86c6"
+ },
+ {
+  "id": "CH1941-672",
+  "book": "CH1941",
+  "number": "672",
+  "title": "A Great and Mighty Wonder",
+  "path": "data/CH1941/672.json",
+  "v": "b25d569c3574258456ad1366fd2c28703cf2db6c2f1c4a5d772e8f5b232fb70a"
  },
  {
   "id": "CS1900-1",
@@ -9014,6 +9046,54 @@
   "title": "Fling Out the Banner!",
   "path": "data/CS1908/370.json",
   "v": "fd0dffaa5c3c29def2da2b024238cfdbb97d477415df5d196e99f771c72092c1"
+ },
+ {
+  "id": "CS1908-371",
+  "book": "CS1908",
+  "number": "371",
+  "title": "God, in the Gospel",
+  "path": "data/CS1908/371.json",
+  "v": "e504e10a03f12430b62dccb1105fc9520f31e0a5ba76d860ae01b6171564855d"
+ },
+ {
+  "id": "CS1908-372",
+  "book": "CS1908",
+  "number": "372",
+  "title": "Salvation!",
+  "path": "data/CS1908/372.json",
+  "v": "3304a3197a0c59c8a31fb0f8aaad0ad4b38d6648755992647afba7cd882ab367"
+ },
+ {
+  "id": "CS1908-373",
+  "book": "CS1908",
+  "number": "373",
+  "title": "The Spreading Gospel",
+  "path": "data/CS1908/373.json",
+  "v": "3a021ee14244a52a68659c1f3bbeeec90177b58f1b18f79a07838c40645612d6"
+ },
+ {
+  "id": "CS1908-374",
+  "book": "CS1908",
+  "number": "374",
+  "title": "The Day Awakes",
+  "path": "data/CS1908/374.json",
+  "v": "fcd699929a8431cb786ddc4f9b48a8f427c6b885a53b69026a756fede2b4f76f"
+ },
+ {
+  "id": "CS1908-375",
+  "book": "CS1908",
+  "number": "375",
+  "title": "Our Song of Praise",
+  "path": "data/CS1908/375.json",
+  "v": "37638deec5dc7ea7a1b874158d370e2da36edd9ac5c52c3aaa82546297b4b4b2"
+ },
+ {
+  "id": "CS1908-376",
+  "book": "CS1908",
+  "number": "376",
+  "title": "Power to Obey",
+  "path": "data/CS1908/376.json",
+  "v": "73283f3d20ff9fbe12adb641e8e25a464dfc14801f64ed60190c1950b4d7ee54"
  },
  {
   "id": "CS1908-380",
