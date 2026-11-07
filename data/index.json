@@ -9820,6 +9820,102 @@
   "v": "d69cfac140c9c568662ff5f8256faa3a43fa4ff63ac68ea3a08cefeb036ec334"
  },
  {
+  "id": "CS1908-436",
+  "book": "CS1908",
+  "number": "436",
+  "title": "I've Found the Pearl",
+  "path": "data/CS1908/436.json",
+  "v": "f4d845d09c9063be50bc52020bcdc28f8155366680cbfdde8de03d2c9500f1de"
+ },
+ {
+  "id": "CS1908-437",
+  "book": "CS1908",
+  "number": "437",
+  "title": "Prayer",
+  "path": "data/CS1908/437.json",
+  "v": "b8623034884c7b69118ced04f414a82b1b17ea81aaa637743e5222ab060a0a4e"
+ },
+ {
+  "id": "CS1908-438",
+  "book": "CS1908",
+  "number": "438",
+  "title": "Lord, Dismiss Us",
+  "path": "data/CS1908/438.json",
+  "v": "542d1c39ce8698d73ee1dfe0bcf3191f3299326cdfb8ebbc03f10829ce659068"
+ },
+ {
+  "id": "CS1908-439",
+  "book": "CS1908",
+  "number": "439",
+  "title": "Join Our Songs",
+  "path": "data/CS1908/439.json",
+  "v": "dc6def8c860b38fbea204da98a20767218f8c21a5bcea15fc3637d1cf1d92d78"
+ },
+ {
+  "id": "CS1908-440",
+  "book": "CS1908",
+  "number": "440",
+  "title": "Praise for Truth",
+  "path": "data/CS1908/440.json",
+  "v": "d4d8d9c7e179e31a786711c73a5194433fa1c7177e0b23ebeab72b2c9687b8d4"
+ },
+ {
+  "id": "CS1908-441",
+  "book": "CS1908",
+  "number": "441",
+  "title": "Bid Our Doubtings Cease",
+  "path": "data/CS1908/441.json",
+  "v": "5ea328bd07d9bc0459a10bce69f87bd142d6d2eb628901e94ad622acccd9d3a1"
+ },
+ {
+  "id": "CS1908-442",
+  "book": "CS1908",
+  "number": "442",
+  "title": "God of Light",
+  "path": "data/CS1908/442.json",
+  "v": "86efb2b690d746c1a86b804dad0cda4ba39a15f5b769022de47158457773a1d6"
+ },
+ {
+  "id": "CS1908-443",
+  "book": "CS1908",
+  "number": "443",
+  "title": "By Thee We Rise",
+  "path": "data/CS1908/443.json",
+  "v": "1f4a9dc13670c8a99c0fad55664c15930972fbab9c04ff6958d744fb2bcb760b"
+ },
+ {
+  "id": "CS1908-444",
+  "book": "CS1908",
+  "number": "444",
+  "title": "High in the Heavens",
+  "path": "data/CS1908/444.json",
+  "v": "9bd08ac6661b4adb84dd45af682e4a7ed579870f1d8eb577012fae446e65a5bb"
+ },
+ {
+  "id": "CS1908-445",
+  "book": "CS1908",
+  "number": "445",
+  "title": "He Reigns!",
+  "path": "data/CS1908/445.json",
+  "v": "c1842c5c0ef5767bb608a7deec54a58197fe70ba8915f2e472eb775c200d7ba8"
+ },
+ {
+  "id": "CS1908-446",
+  "book": "CS1908",
+  "number": "446",
+  "title": "In the Cross of Christ",
+  "path": "data/CS1908/446.json",
+  "v": "91aa5f025506fc3965c3510f2c97399f21028e69c3fc48bde773966559542fa2"
+ },
+ {
+  "id": "CS1908-447",
+  "book": "CS1908",
+  "number": "447",
+  "title": "The Rising Day",
+  "path": "data/CS1908/447.json",
+  "v": "2241a66829e3211ef98890d684190fc24f217d2582cfcc80e74b045c83dcf228"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -19931,6 +20027,14 @@
   "sv": "22ba4dd89662ccd051e49f051fb075ba37dec97e35307ae7f25c0cf89ec992fe",
   "v": "91b44790a73cc4bf820d01641fd4fec49926c7fc860d285eb6ab2c508a648a0d",
   "english": "Lord, Dismiss Us With Thy Blessing"
+ },
+ {
+  "id": "WN-33b",
+  "book": "WN",
+  "number": "33b",
+  "title": "Wuonwa, Gonywa Gi Gweth Mari",
+  "path": "data/WN/33b.json",
+  "v": "d0831479180f57607dbaa5607285b44843de3c329dc247a0cdcdef4fbd276ba2"
  },
  {
   "id": "WN-36",
