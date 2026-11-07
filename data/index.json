@@ -9916,6 +9916,134 @@
   "v": "2241a66829e3211ef98890d684190fc24f217d2582cfcc80e74b045c83dcf228"
  },
  {
+  "id": "CS1908-448",
+  "book": "CS1908",
+  "number": "448",
+  "title": "How Sweet the Name!",
+  "path": "data/CS1908/448.json",
+  "v": "3bd5efa79be0c6d4df663f41b3711af61b2187da19e628fd9904ad20326bb869"
+ },
+ {
+  "id": "CS1908-449",
+  "book": "CS1908",
+  "number": "449",
+  "title": "The Thought of Thee",
+  "path": "data/CS1908/449.json",
+  "v": "2e89c74715f09feeb27f7297a8f19191f959b73d302568c754924dea602303c1"
+ },
+ {
+  "id": "CS1908-450",
+  "book": "CS1908",
+  "number": "450",
+  "title": "A Thousand Tongues",
+  "path": "data/CS1908/450.json",
+  "v": "ea6100e8fc27e3b2860ab1f4e943bd4e89655c2731abc192f2177fc6d5655a57"
+ },
+ {
+  "id": "CS1908-451",
+  "book": "CS1908",
+  "number": "451",
+  "title": "Before Jehovah's Throne",
+  "path": "data/CS1908/451.json",
+  "v": "26ad2bbbed80657cea2d5830f8eb2218456dc2f71f3858948eb1d1288139678f"
+ },
+ {
+  "id": "CS1908-452",
+  "book": "CS1908",
+  "number": "452",
+  "title": "Joy of Loving Hearts",
+  "path": "data/CS1908/452.json",
+  "v": "62416906e12a51ff500b8c7b699b50eaedfe8b7c1e60d4c911ea5cb8b937c5e0"
+ },
+ {
+  "id": "CS1908-453",
+  "book": "CS1908",
+  "number": "453",
+  "title": "Sing of Jesus Forever",
+  "path": "data/CS1908/453.json",
+  "v": "b0157408f1d085ba07f719f8b87fd2ef1ad710ffac2cea29133a8b1b9854fbc7"
+ },
+ {
+  "id": "CS1908-454",
+  "book": "CS1908",
+  "number": "454",
+  "title": "Come, Let Us Sing",
+  "path": "data/CS1908/454.json",
+  "v": "b16cd0e481262479a1abd8f3979a1d982105759b6f3e79ade8206f51a6b0a92e"
+ },
+ {
+  "id": "CS1908-455",
+  "book": "CS1908",
+  "number": "455",
+  "title": "With Reverence",
+  "path": "data/CS1908/455.json",
+  "v": "066f5d763366a9aca4e40de51ddb5b6b97a5fdeffa2faa368e0093a303e76d3d"
+ },
+ {
+  "id": "CS1908-456",
+  "book": "CS1908",
+  "number": "456",
+  "title": "How Pleasant",
+  "path": "data/CS1908/456.json",
+  "v": "9ac4e42462e597bdc9b70b3d2956af9f1771f35e5e3def581102100f974c32bd"
+ },
+ {
+  "id": "CS1908-457",
+  "book": "CS1908",
+  "number": "457",
+  "title": "From Every Place",
+  "path": "data/CS1908/457.json",
+  "v": "0f889133a311bf476d2110461445053b1ec1f979e18cc717bec7dece8e250a3e"
+ },
+ {
+  "id": "CS1908-458",
+  "book": "CS1908",
+  "number": "458",
+  "title": "A Present Help",
+  "path": "data/CS1908/458.json",
+  "v": "fa864363515f0d2e46df9a10ffa69103b7c4426b4c476b986702ade198bf60d1"
+ },
+ {
+  "id": "CS1908-459",
+  "book": "CS1908",
+  "number": "459",
+  "title": "The Comforter With Us",
+  "path": "data/CS1908/459.json",
+  "v": "c08631bd6a8927dc462090e4ec05d91f5cc79ab098ac68c81b2ac48d559ae703"
+ },
+ {
+  "id": "CS1908-460",
+  "book": "CS1908",
+  "number": "460",
+  "title": "Sweetly the Holy Hymn",
+  "path": "data/CS1908/460.json",
+  "v": "b6747ee4244073fda4e48d13d646bf561c47a043df047656e1bf3893ef251a9a"
+ },
+ {
+  "id": "CS1908-461",
+  "book": "CS1908",
+  "number": "461",
+  "title": "His Example",
+  "path": "data/CS1908/461.json",
+  "v": "c91a93959b0bfad1afacc51923f370f177096be4e307250c27a9b4c0140af65c"
+ },
+ {
+  "id": "CS1908-462",
+  "book": "CS1908",
+  "number": "462",
+  "title": "In Sweet Communion",
+  "path": "data/CS1908/462.json",
+  "v": "4b9702f2e247030fa4a889ad4621409233261b0230cc10e1da28608460605a56"
+ },
+ {
+  "id": "CS1908-463",
+  "book": "CS1908",
+  "number": "463",
+  "title": "Submission Sweet",
+  "path": "data/CS1908/463.json",
+  "v": "594ca13918a8d315e3e777d85fb2808f4d73cff6d574794c697c341aecad7678"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -11198,6 +11326,14 @@
   "english": "Jesus, Thou Joy of Loving Hearts"
  },
  {
+  "id": "NZK-23b",
+  "book": "NZK",
+  "number": "23b",
+  "title": "Yesu Furaha Ya Moyo",
+  "path": "data/NZK/23b.json",
+  "v": "c7014f4233595944e5238970b049b9e17ac9994e593bfb86463d96f3878b9b68"
+ },
+ {
   "id": "NZK-24",
   "book": "NZK",
   "number": "24",
@@ -11207,6 +11343,14 @@
   "sv": "876dc58b952b772ff379ba1f4432eb4f729e59873886c9b934e63b12203d9a42",
   "v": "14b6f5a3204b3a0a2ec738824be90ab1c2200fa1d02d5e69f37c1f0951119e55",
   "english": "How Sweet the Name of Jesus Sounds"
+ },
+ {
+  "id": "NZK-24b",
+  "book": "NZK",
+  "number": "24b",
+  "title": "Jina Lake Yesu Tamu",
+  "path": "data/NZK/24b.json",
+  "v": "5879a58a578bb2103a54db74d418e2075b38e38d788492c754d67bb61d231f6f"
  },
  {
   "id": "NZK-25",
