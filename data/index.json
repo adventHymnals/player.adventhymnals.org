@@ -10252,6 +10252,46 @@
   "v": "4d06b8a66631d20562e9562bb2d70177aa27dae593f45c493007e1f940ea429b"
  },
  {
+  "id": "CS1908-490",
+  "book": "CS1908",
+  "number": "490",
+  "title": "Faith Is the Victory",
+  "path": "data/CS1908/490.json",
+  "v": "beca3b400888b086a8596845eb409bc119578acba4622a45cc8b3736652040ff"
+ },
+ {
+  "id": "CS1908-491",
+  "book": "CS1908",
+  "number": "491",
+  "title": "Every Day and Hour",
+  "path": "data/CS1908/491.json",
+  "v": "dddf5780c579d7f724f523fea9b49db7ac2f9fc4e374fa640069c7532165fba5"
+ },
+ {
+  "id": "CS1908-492",
+  "book": "CS1908",
+  "number": "492",
+  "title": "Does Jesus Care?",
+  "path": "data/CS1908/492.json",
+  "v": "5d8eb07f4e65f7dbe6feefa69f094fd4600da0ce83d14726fd06f82b02997e53"
+ },
+ {
+  "id": "CS1908-493",
+  "book": "CS1908",
+  "number": "493",
+  "title": "Casting All Your Care Upon Jesus",
+  "path": "data/CS1908/493.json",
+  "v": "5de5aea848bae0c8a77aa0d5e42306acf8693125fe0b6d06e22f36abbf0f0cc5"
+ },
+ {
+  "id": "CS1908-494",
+  "book": "CS1908",
+  "number": "494",
+  "title": "The Cross That He Gave",
+  "path": "data/CS1908/494.json",
+  "v": "79951eb34df151da3f42a423b741550a6955b9e7ab833342d7099d952edb374a"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -21534,6 +21574,14 @@
   "sv": "a09b7dbf41e21fb5cba3c2909e80222eaccfda7b5ea041f153bd417ae476c5b3",
   "v": "f506af4af3cee15904f202ec4bee7c58dd51e67c9a1431d53db2452d921b3ce2",
   "english": "Does Jesus Care?"
+ },
+ {
+  "id": "WN-227b",
+  "book": "WN",
+  "number": "227b",
+  "title": "Be Yesu Ling",
+  "path": "data/WN/227b.json",
+  "v": "f39f6ab6ce5c6c9eb1342fc067342712103203f586b389002fdc4fe9a381d109"
  },
  {
   "id": "WN-231",
