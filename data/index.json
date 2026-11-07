@@ -5181,7 +5181,79 @@
   "number": "658",
   "title": "They Brought Their Gifts to Jesus",
   "path": "data/CH1941/658.json",
-  "v": "e65fbab8e6420f6f5657070189c25b163278e39d0e5ade37fe53c9bffc0df7ac"
+  "v": "61842ef68af45c091a0284792b37046cf867a356b17bbc178589ed40bc515bff"
+ },
+ {
+  "id": "CH1941-659",
+  "book": "CH1941",
+  "number": "659",
+  "title": "I'm but a Stranger Here",
+  "path": "data/CH1941/659.json",
+  "v": "81bbeed8333b86fcad34bdf7eb4da3969bdafca2cbbd8520437d8fab0e75f027"
+ },
+ {
+  "id": "CH1941-660",
+  "book": "CH1941",
+  "number": "660",
+  "title": "How Tedious and Tasteless the Hours",
+  "path": "data/CH1941/660.json",
+  "v": "253f41eb4534829ba38c569826f24538e08863c2c005d9c62278496ac1a94d7f"
+ },
+ {
+  "id": "CH1941-661",
+  "book": "CH1941",
+  "number": "661",
+  "title": "Out on an Ocean All Boundless We Ride",
+  "path": "data/CH1941/661.json",
+  "v": "07992edcc3e5a0e64466d920f1c7ec5314ee08760ef871a20eea19bfbaa76ac3"
+ },
+ {
+  "id": "CH1941-663",
+  "book": "CH1941",
+  "number": "663",
+  "title": "Gracious Father, Guard Thy Children",
+  "path": "data/CH1941/663.json",
+  "v": "c009f2de7966cd75a23baf98acd7352705f6dd9c1996af3272d61fd6d5f24873"
+ },
+ {
+  "id": "CH1941-664",
+  "book": "CH1941",
+  "number": "664",
+  "title": "Long Upon the Mountains",
+  "path": "data/CH1941/664.json",
+  "v": "8e86ac2765b971908df6e9eefcc25bc68e31629eec79b3f053a0964d90d9ff71"
+ },
+ {
+  "id": "CH1941-665",
+  "book": "CH1941",
+  "number": "665",
+  "title": "How Far From Home?",
+  "path": "data/CH1941/665.json",
+  "v": "30c77e088746c4ad469320849a30c9f163fc2cc607cc9c6cd8b49fc6bf3b3243"
+ },
+ {
+  "id": "CH1941-666",
+  "book": "CH1941",
+  "number": "666",
+  "title": "I'm a Pilgrim",
+  "path": "data/CH1941/666.json",
+  "v": "fa249ece3fcdb8b3a5f09ac905fac95924aaa6150f7299f57d386b9e9d9bbf04"
+ },
+ {
+  "id": "CH1941-668",
+  "book": "CH1941",
+  "number": "668",
+  "title": "Rise, My Soul, and Stretch Thy Wings",
+  "path": "data/CH1941/668.json",
+  "v": "08002f3d329b3c2734f372649c69ccb3532bc8fc9484727ce88a932532097299"
+ },
+ {
+  "id": "CH1941-669",
+  "book": "CH1941",
+  "number": "669",
+  "title": "How Sweet Are the Tidings",
+  "path": "data/CH1941/669.json",
+  "v": "cc81a34575a6cfc13b3ef2d4861685aef2c3b02850ab21ec37a35ae6fac51366"
  },
  {
   "id": "CS1900-1",
@@ -8910,6 +8982,38 @@
   "title": "Blessed Quietness",
   "path": "data/CS1908/366.json",
   "v": "11f3462b21cd47ebc2dffef36b1e6d9f2c46205e6a5956365498b912056898a4"
+ },
+ {
+  "id": "CS1908-367",
+  "book": "CS1908",
+  "number": "367",
+  "title": "His Loving Kindness",
+  "path": "data/CS1908/367.json",
+  "v": "49d72f57ebe5ab645fbcfd59f7efc8d3ea9e513e1810303ca8be8faae124b4c5"
+ },
+ {
+  "id": "CS1908-368",
+  "book": "CS1908",
+  "number": "368",
+  "title": "I'll Pursue Him",
+  "path": "data/CS1908/368.json",
+  "v": "9b9f14dc59a6d87162cc76de0e5c7f302bc77b54b43cd56786803e1b520a9b49"
+ },
+ {
+  "id": "CS1908-369",
+  "book": "CS1908",
+  "number": "369",
+  "title": "We Are on the Lord's Side",
+  "path": "data/CS1908/369.json",
+  "v": "0c168b9cd8c1e79c55a7aacefcce452fd4cb0a24512660d0ad0881826f02bb2f"
+ },
+ {
+  "id": "CS1908-370",
+  "book": "CS1908",
+  "number": "370",
+  "title": "Fling Out the Banner!",
+  "path": "data/CS1908/370.json",
+  "v": "fd0dffaa5c3c29def2da2b024238cfdbb97d477415df5d196e99f771c72092c1"
  },
  {
   "id": "CS1908-380",
