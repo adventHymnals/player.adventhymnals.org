@@ -4102,6 +4102,14 @@
   "v": "4e83d5174b3331ea4dafae57136bfae5dd68ed9ca1f7dc7248bf0d8234c8e7e9"
  },
  {
+  "id": "CH1941-500",
+  "book": "CH1941",
+  "number": "500",
+  "title": "Raise the Standard High",
+  "path": "data/CH1941/500.json",
+  "v": "864879941a0dcefc5f369f8b8b8a84b903b5f9faf6ef66b65c7bdb7658a3b6c0"
+ },
+ {
   "id": "CH1941-502",
   "book": "CH1941",
   "number": "502",
@@ -5230,6 +5238,14 @@
   "title": "Out on an Ocean All Boundless We Ride",
   "path": "data/CH1941/661.json",
   "v": "07992edcc3e5a0e64466d920f1c7ec5314ee08760ef871a20eea19bfbaa76ac3"
+ },
+ {
+  "id": "CH1941-662",
+  "book": "CH1941",
+  "number": "662",
+  "title": "Let Others Seek a Home Below",
+  "path": "data/CH1941/662.json",
+  "v": "ef143bc75c3963d9f9873355c39b1bd8ecab7c5b9dc351937d840e60f15bab33"
  },
  {
   "id": "CH1941-663",
@@ -9562,6 +9578,46 @@
   "v": "ac6b0f8083b8962adca288e194bc6140041cd16be126a0aacdb9d9bb11acd7cf"
  },
  {
+  "id": "CS1908-406",
+  "book": "CS1908",
+  "number": "406",
+  "title": "Benediction",
+  "path": "data/CS1908/406.json",
+  "v": "03e42bf7a8ae0023199870e14b7c8e5d980e3f0815b109c8a61fd3b4023ba6ab"
+ },
+ {
+  "id": "CS1908-407",
+  "book": "CS1908",
+  "number": "407",
+  "title": "Choose Some Heralds Here",
+  "path": "data/CS1908/407.json",
+  "v": "e745216660f44c765a968998c21ef4c4b4383ee498c9d2e4319245e9f11e7c32"
+ },
+ {
+  "id": "CS1908-408",
+  "book": "CS1908",
+  "number": "408",
+  "title": "O Holy Book!",
+  "path": "data/CS1908/408.json",
+  "v": "a9d573debd736e62c6c7b4311f5f7ca15bb547b180d7601079060eda83214fea"
+ },
+ {
+  "id": "CS1908-409",
+  "book": "CS1908",
+  "number": "409",
+  "title": "I Will Follow Thee",
+  "path": "data/CS1908/409.json",
+  "v": "9dc08b1f05201b9efbc44270b10698ebf8eebc7f758eae88342bf00319e329aa"
+ },
+ {
+  "id": "CS1908-410",
+  "book": "CS1908",
+  "number": "410",
+  "title": "Can We Forget?",
+  "path": "data/CS1908/410.json",
+  "v": "fc6340b5865a853f7dcbef0a916353bc01e14e7793adb8ed7b574017c656369a"
+ },
+ {
   "id": "CS1908-430",
   "book": "CS1908",
   "number": "430",
@@ -11980,6 +12036,14 @@
   "sv": "441858c18cc2e32b3d7268d0218ea2c801a004c280fc9892f99a85a3c4a39574",
   "v": "218fca7c24835cf11b1ffad16aa0c365bc1addf1ce422975bbe5d2cb6841a892",
   "english": "I Will Follow Thee"
+ },
+ {
+  "id": "NZK-138b",
+  "book": "NZK",
+  "number": "138b",
+  "title": "Nitakuandama Kote",
+  "path": "data/NZK/138b.json",
+  "v": "c3e06a517af0df28dc8b3d1d935942598cb58f8382380124bd438b23e2570199"
  },
  {
   "id": "NZK-139",
@@ -20500,6 +20564,14 @@
   "sv": "9e5c68d5688442b2a6764550aa939b8a9dba71c8bbccc3fc1b31b866884840a3",
   "v": "852cc32b76e0f354e0623fee2fe30ec7e2c12cd60067a0af32d096a469bf0d77",
   "english": "I Will Follow Thee"
+ },
+ {
+  "id": "WN-201b",
+  "book": "WN",
+  "number": "201b",
+  "title": "Analu Bang'i Jakonya",
+  "path": "data/WN/201b.json",
+  "v": "14494c18aa138d3b69cc97f39d6f6c9b84afd6ceab67298f301427df51c51636"
  },
  {
   "id": "WN-205",
