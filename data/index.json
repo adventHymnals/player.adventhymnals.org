@@ -10332,6 +10332,54 @@
   "v": "a7bb902f0e1f17feb5ce0bdeac4bc3276f38e0de4c3a01aa651de31f93c3e8ce"
  },
  {
+  "id": "CS1908-500",
+  "book": "CS1908",
+  "number": "500",
+  "title": "Make Me a Blessing To-day",
+  "path": "data/CS1908/500.json",
+  "v": "fab99e383b4b720bd5c2e8cb8df1cb407c0bc88132c3fcb19de07b695b99985a"
+ },
+ {
+  "id": "CS1908-501",
+  "book": "CS1908",
+  "number": "501",
+  "title": "Like a Little Candle",
+  "path": "data/CS1908/501.json",
+  "v": "629cb244c2f376bf2d01f98cc95f8570beba7bb7ede7b7f64361a49d717a7642"
+ },
+ {
+  "id": "CS1908-502",
+  "book": "CS1908",
+  "number": "502",
+  "title": "Lean on His Arms",
+  "path": "data/CS1908/502.json",
+  "v": "06226bda13a4560791ed22fd7315420005ae8cfe95ace739bfe9799fcca50679"
+ },
+ {
+  "id": "CS1908-503",
+  "book": "CS1908",
+  "number": "503",
+  "title": "Leaning on the Everlasting Arms",
+  "path": "data/CS1908/503.json",
+  "v": "a4a8ede536808313df66b0e2b1d1ca3b01b4a1c469358197948800c265a694a7"
+ },
+ {
+  "id": "CS1908-504",
+  "book": "CS1908",
+  "number": "504",
+  "title": "God Be With You",
+  "path": "data/CS1908/504.json",
+  "v": "324dcc71d223ffbaa336db96a8bf36f6fde86411886c2fc8c03ce7220510877b"
+ },
+ {
+  "id": "CS1908-505",
+  "book": "CS1908",
+  "number": "505",
+  "title": "A Shelter in the Time of Storm",
+  "path": "data/CS1908/505.json",
+  "v": "99684d0ad6526ef563ecca7c52cdb69220239b3068591264f1b915f7bf47c1a0"
+ },
+ {
   "id": "CS1908-509",
   "book": "CS1908",
   "number": "509",
@@ -11584,6 +11632,14 @@
   "english": "A Shelter in the Time of Storm"
  },
  {
+  "id": "NZK-20b",
+  "book": "NZK",
+  "number": "20b",
+  "title": "Mungu Wetu Yeye Mwamba",
+  "path": "data/NZK/20b.json",
+  "v": "3a299fc8a5238106d1d4f41c2235997312f692d18fb38cd058107d4b9e0ee579"
+ },
+ {
   "id": "NZK-22",
   "book": "NZK",
   "number": "22",
@@ -11867,6 +11923,14 @@
   "english": "Leaning on the Everlasting Arms"
  },
  {
+  "id": "NZK-43b",
+  "book": "NZK",
+  "number": "43b",
+  "title": "Furaha Gani!",
+  "path": "data/NZK/43b.json",
+  "v": "c8043445b36f5d073643e30fb70719f7a8d707156ea5f7d720e443970f97c892"
+ },
+ {
   "id": "NZK-44",
   "book": "NZK",
   "number": "44",
@@ -11947,6 +12011,14 @@
   "sv": "7d70879e74556fef5e8ef12d3127a4eec0cb5c5a8f3980cd020e2d4b741d532d",
   "v": "7a82568bf3cb22208deaa0f6f2e9ce4ab3511d9c348bc737ec251cd5fb916d75",
   "english": "God Be With You"
+ },
+ {
+  "id": "NZK-50b",
+  "book": "NZK",
+  "number": "50b",
+  "title": "Mungu Nawe Nanyi Daima",
+  "path": "data/NZK/50b.json",
+  "v": "0eebe8a26932551f52b49a4a61b8a761dfe5f99ea0e1f45c91bc71f4f607e8d9"
  },
  {
   "id": "NZK-51",
@@ -20682,6 +20754,14 @@
   "english": "Leaning on the Everlasting Arms"
  },
  {
+  "id": "WN-61b",
+  "book": "WN",
+  "number": "61b",
+  "title": "Osiep Manade En Mor Manade",
+  "path": "data/WN/61b.json",
+  "v": "29d7769ac72a598d85f8a4f406e3e4d539adb30957580fd1f928ec24595c1ea9"
+ },
+ {
   "id": "WN-62",
   "book": "WN",
   "number": "62",
@@ -20724,6 +20804,14 @@
   "sv": "5ddcfd4b15f1cd3baa90dd768f53b7c188bb178939332dd4a7f4f8ac7768576f",
   "v": "d8903d64081cecc55df33449ece5eaead7e8e360d6a323657dfd8d14b30a9371",
   "english": "God Be With You"
+ },
+ {
+  "id": "WN-67b",
+  "book": "WN",
+  "number": "67b",
+  "title": "Nyasachwa Mondo Obed Kodu",
+  "path": "data/WN/67b.json",
+  "v": "78ab00e9c38f38030105319cfd1b5b20697f684e5b52d2287964013422f3e46c"
  },
  {
   "id": "WN-69",
