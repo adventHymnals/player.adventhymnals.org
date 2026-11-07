@@ -2726,6 +2726,14 @@
   "v": "d657bc8d55597b702a32e87cb77e55d218ae3dd1b9809678f6022605276c7b85"
  },
  {
+  "id": "CH1941-319",
+  "book": "CH1941",
+  "number": "319",
+  "title": "Prayer Is the Soul's Sincere Desire",
+  "path": "data/CH1941/319.json",
+  "v": "a51062a066e14e46606b10b06d7fddf0f59c9af091c66021988311d5aa4cbf4d"
+ },
+ {
   "id": "CH1941-320",
   "book": "CH1941",
   "number": "320",
@@ -3068,6 +3076,14 @@
   "title": "O Master! When Thou Callest",
   "path": "data/CH1941/363.json",
   "v": "d47827dfae2e1466fc9df31163561efc9bc23ca1d0d547dfff12d258c528a03f"
+ },
+ {
+  "id": "CH1941-364",
+  "book": "CH1941",
+  "number": "364",
+  "title": "For All the Saints",
+  "path": "data/CH1941/364.json",
+  "v": "4330e7b32d6725c0c6250353c03fa9a7adac8986d9f0e531165359115f3c0ecc"
  },
  {
   "id": "CH1941-365",
@@ -4172,6 +4188,14 @@
   "title": "Once to Every Man and Nation",
   "path": "data/CH1941/513.json",
   "v": "db9814f7c3f98e4b217b306484ff653163a297b3c33efbec86050ca947079ffc"
+ },
+ {
+  "id": "CH1941-514",
+  "book": "CH1941",
+  "number": "514",
+  "title": "Ring Out, Wild Bells",
+  "path": "data/CH1941/514.json",
+  "v": "cffce24b81fb058ef0fda2cf7f15548f9bc07da8975329d606db4bddc83827de"
  },
  {
   "id": "CH1941-515",
@@ -5350,6 +5374,14 @@
   "title": "O Thou Who Hearest Every Heartfelt Prayer",
   "path": "data/CH1941/684.json",
   "v": "b4cc93904906d096e40458aa3a885b7df956a51c0fcbc4886daf334b2860d470"
+ },
+ {
+  "id": "CH1941-685",
+  "book": "CH1941",
+  "number": "685",
+  "title": "Let All Mortal Flesh Keep Silence",
+  "path": "data/CH1941/685.json",
+  "v": "f9b21f02f49871d0b1b900794646c87e9a3199ef28682d228c1d8735f7337937"
  },
  {
   "id": "CH1941-686",
@@ -9173,7 +9205,7 @@
   "number": "360",
   "title": "I Heard the Voice of Jesus",
   "path": "data/CS1908/360.json",
-  "v": "252660f38eb42734314f54833ef1909388b54480ffa1969fe270f8c1cfd8a46c"
+  "v": "b0435338789476d892c285b2614698c07e90cd3641a5431ef054515f1f2c99a8"
  },
  {
   "id": "CS1908-361",
@@ -9432,6 +9464,46 @@
   "v": "e65873e011484ae53db7ec57abbe2242672a7044386a3709de484ee7a2e4eda4"
  },
  {
+  "id": "CS1908-394",
+  "book": "CS1908",
+  "number": "394",
+  "title": "How Happy Are They!",
+  "path": "data/CS1908/394.json",
+  "v": "edc33ebf33f22c75a420c19a5ba616806234398fdb4264691c187474b94b9000"
+ },
+ {
+  "id": "CS1908-395",
+  "book": "CS1908",
+  "number": "395",
+  "title": "Wholly Thine",
+  "path": "data/CS1908/395.json",
+  "v": "faa1b1d2c379a6ad6e166a0e6866f95836fea875b3054edb30139896a64c359b"
+ },
+ {
+  "id": "CS1908-396",
+  "book": "CS1908",
+  "number": "396",
+  "title": "Revive Us Again",
+  "path": "data/CS1908/396.json",
+  "v": "f7d092bae9977948ded2c96009969358b105549c0f3617a7a37bd4bcc8e36427"
+ },
+ {
+  "id": "CS1908-397",
+  "book": "CS1908",
+  "number": "397",
+  "title": "Rejoice and Be Glad",
+  "path": "data/CS1908/397.json",
+  "v": "66da3558399a56f37c7ae20edf0a0fe2de3feda34a32a8b4bb0fdf914b838e06"
+ },
+ {
+  "id": "CS1908-398",
+  "book": "CS1908",
+  "number": "398",
+  "title": "Fount of Every Blessing",
+  "path": "data/CS1908/398.json",
+  "v": "4573c9519606e62ef7d3c57b206709478e626c9c495cf468c138effccebd3207"
+ },
+ {
   "id": "CS1908-399",
   "book": "CS1908",
   "number": "399",
@@ -9440,6 +9512,54 @@
   "sung": true,
   "sv": "09df1c00ff1c7e52595c5999f18f90b841a0776f472ce8aa5a0e6f040657c00b",
   "v": "7c5a3e5814490967bc60fb18e50ddd6b3b9a684b97d9eb5f9a52334a92149a82"
+ },
+ {
+  "id": "CS1908-400",
+  "book": "CS1908",
+  "number": "400",
+  "title": "The Sweetest Name",
+  "path": "data/CS1908/400.json",
+  "v": "c156dfc229a6158ba2bffb4d653c785129e02aa8ffafaafe618eb82060d91a1a"
+ },
+ {
+  "id": "CS1908-401",
+  "book": "CS1908",
+  "number": "401",
+  "title": "Love That Will Not Let Me Go",
+  "path": "data/CS1908/401.json",
+  "v": "181634b4ec7b92c985258d636f91bb7702cb0c33b1eccd77771ca636b00f4b5a"
+ },
+ {
+  "id": "CS1908-402",
+  "book": "CS1908",
+  "number": "402",
+  "title": "Thy Word Is Like a Garden",
+  "path": "data/CS1908/402.json",
+  "v": "6bd79ba25a565ac29ba62e362458cdec38496c2b0013e0b24f5ca6220bd8c510"
+ },
+ {
+  "id": "CS1908-403",
+  "book": "CS1908",
+  "number": "403",
+  "title": "The King of Love",
+  "path": "data/CS1908/403.json",
+  "v": "dc08a43773a1068b4ef9189ce49f32be4928cd394c6177141ab526e2830c73eb"
+ },
+ {
+  "id": "CS1908-404",
+  "book": "CS1908",
+  "number": "404",
+  "title": "Bless the Lord",
+  "path": "data/CS1908/404.json",
+  "v": "c2d9b9b29444b25578d2d08fcad825c658ec06e1bf247869ad77b9f78480fe2c"
+ },
+ {
+  "id": "CS1908-405",
+  "book": "CS1908",
+  "number": "405",
+  "title": "Consecrated Childhood",
+  "path": "data/CS1908/405.json",
+  "v": "ac6b0f8083b8962adca288e194bc6140041cd16be126a0aacdb9d9bb11acd7cf"
  },
  {
   "id": "CS1908-430",
@@ -10563,6 +10683,15 @@
   "english": "Holy, Holy, Holy"
  },
  {
+  "id": "NZK-2",
+  "book": "NZK",
+  "number": "2",
+  "title": "Twamsifu Mungu",
+  "path": "data/NZK/2.json",
+  "v": "dca40eef0d4ad263a78fdb168d2e7ea127e1b5433607f8665fe074caa579e295",
+  "english": "We Praise Thee, O God"
+ },
+ {
   "id": "NZK-3",
   "book": "NZK",
   "number": "3",
@@ -10632,6 +10761,14 @@
   "sv": "3721e12633be06f80e82ba38e8d78cac015acf41f87df3c705a1ae3b6493170c",
   "v": "a3b09304e2c742ed27ef8755910a0fdd0ab7afb4a07a22288917e50657e97d84",
   "english": "Come, Thou Fount of Every Blessing"
+ },
+ {
+  "id": "NZK-10b",
+  "book": "NZK",
+  "number": "10b",
+  "title": "Kristo Wa Neema Zote",
+  "path": "data/NZK/10b.json",
+  "v": "10dcaddc54db9ae59fb4c778db2be9832c11ed2cba31f5377ec45f1df9121cb8"
  },
  {
   "id": "NZK-11",
@@ -10744,7 +10881,7 @@
   "number": "25b",
   "title": "Taji Mvikeni",
   "path": "data/NZK/25b.json",
-  "v": "ff078d2889480ba6c044b76bce3e5ac89521a917118e5e4cb1a0f518064ad3e7"
+  "v": "121ed3bf139419f901afdd88eafffa939d1e7fb6b20087d7fc38bc269ba2b0e6"
  },
  {
   "id": "NZK-26",
@@ -10793,7 +10930,7 @@
   "number": "29b",
   "title": "Yesu, Nakupenda",
   "path": "data/NZK/29b.json",
-  "v": "44da759336c0e8ee7f53c15ded429de8005248349f64114a7b2a7fcce30c96ba"
+  "v": "82e865a9cf706e9d4f5980e93408b994959b924bc6d1fdebb21969508c361c5f"
  },
  {
   "id": "NZK-30",
@@ -10842,7 +10979,7 @@
   "number": "34b",
   "title": "Nipe Habari za Yesu",
   "path": "data/NZK/34b.json",
-  "v": "0502af45b66fbbe8768b525dc1fdade771ad02e62e7c96f07f3056390ad7e6ce"
+  "v": "8c5a4776dc30dcd5d4c3d2337fad6d02c48a8b89c3c9a5f5b31cc14c05f92cc9"
  },
  {
   "id": "NZK-35",
@@ -10891,7 +11028,7 @@
   "number": "37b",
   "title": "Pendo Lako, Ee Mwokozi",
   "path": "data/NZK/37b.json",
-  "v": "3f8e9396da246129570518acf4d242e69682cc07a30c084536e5cfcada733cf6"
+  "v": "e431d08d3c37961b4df7d436c4d2da360a81b3775378d8fdd4b8cc111c7b63fb"
  },
  {
   "id": "NZK-38",
@@ -11247,7 +11384,7 @@
   "number": "80b",
   "title": "Tupe Moto Wa Injili",
   "path": "data/NZK/80b.json",
-  "v": "05c2dcef78c90c02115e5a481587cc9cdc4cc6ca22bc94318483f10d376f10a8"
+  "v": "139cf80f932fc78ffa96ac104d88b796c485544561da5f67812f677de0e7c87a"
  },
  {
   "id": "NZK-81",
@@ -11270,6 +11407,14 @@
   "sv": "e5a1945e49cc875ba5daac9dcd47499138c7eff571b749021d0de5748897bbd0",
   "v": "d522fdc687313700944311d2b7f1f0188e46149f1741faf9b822e7e72e354641",
   "english": "O Day of Rest and Gladness"
+ },
+ {
+  "id": "NZK-82b",
+  "book": "NZK",
+  "number": "82b",
+  "title": "Ni Siku Ya Furaha",
+  "path": "data/NZK/82b.json",
+  "v": "4eab5b83dcd87ee64587a52954d3d6bf1ecdddafd637b990f6446438a5871ba0"
  },
  {
   "id": "NZK-84",
@@ -11441,7 +11586,7 @@
   "number": "103b",
   "title": "Njoni Kwangu",
   "path": "data/NZK/103b.json",
-  "v": "f4d36b90fd299bee6c4483dfe6dd8b471ddadf75f6d7c39ab5ab5b591c323d4e"
+  "v": "6e7055c2ad8117f9a3c308bda29ddef17222d86411d26b7558b75bac8b711557"
  },
  {
   "id": "NZK-104",
@@ -11599,7 +11744,7 @@
   "number": "118b",
   "title": "Nilipotoka Kabisa",
   "path": "data/NZK/118b.json",
-  "v": "195e4118f34f2f39d6ea97184c4a845a90defe3024e1914c1c647a9846063526"
+  "v": "f4a0e2f5171a40e7a62e84398156647054e42cda54f9a650e440e4f4330fe78c"
  },
  {
   "id": "NZK-119",
@@ -11618,7 +11763,7 @@
   "number": "119b",
   "title": "Alilipa Bei",
   "path": "data/NZK/119b.json",
-  "v": "a54e57f572a4678f9652ce6aea8806cccd7314fbb4816ecbdba4feef76b1fe09"
+  "v": "4974dab334b4219c283a292ecf7ecbf8748943c193faa6628d4a79d522a670a6"
  },
  {
   "id": "NZK-120",
@@ -11675,7 +11820,7 @@
   "number": "122b",
   "title": "Yote Namtolea Yesu",
   "path": "data/NZK/122b.json",
-  "v": "67f79729461ee8883f251453685e6a777a0ac2ad36addedea7ae24a2a1fc9881"
+  "v": "a0a7773cfd8bba3b61d6c010952cc363241581ec61c69be9d941e2f57882cf75"
  },
  {
   "id": "NZK-123",
@@ -11694,7 +11839,7 @@
   "number": "123b",
   "title": "Yesu Kwa Imani",
   "path": "data/NZK/123b.json",
-  "v": "739baefba6b52d959b0758fdd7f146a8a16cbc7e12792648efab78b86673b451"
+  "v": "bde9a3d68e01a5508841fc914134b88259241815eaf58f4f71d130c2537b2d54"
  },
  {
   "id": "NZK-124",
@@ -11853,7 +11998,7 @@
   "number": "139b",
   "title": "Uniimbie Tena",
   "path": "data/NZK/139b.json",
-  "v": "01958311718ad7c7e4bc2f560761ec29121fb7974b869f9ab15d73e65156d4ab"
+  "v": "0df68e935463e97046d219451937d33c647b1d2e6d759b879b7f6cd61c805a70"
  },
  {
   "id": "NZK-141",
@@ -19507,7 +19652,7 @@
   "number": "36b",
   "title": "Ruoth Yesu, Nithona",
   "path": "data/WN/36b.json",
-  "v": "891e8cd9c196c1d7261fdf6eb66640bac70956d92a9c446b4becc3b5578bdf41"
+  "v": "f5ed5b0c9e572c004cb1cdf73bcdb1c5879ab467e11e3195e34f84f773b7e590"
  },
  {
   "id": "WN-38",
@@ -19874,7 +20019,7 @@
   "number": "111b",
   "title": "Wakwayi, Ruoth, Kuom Tekoni",
   "path": "data/WN/111b.json",
-  "v": "47db3ce405b1acdfaea7e712c14f2673e575c3fa4d3ace9741b52e0e143c9895"
+  "v": "c4e33424d602764dc0d9036d2f08661eabc176d6a5e929202137878c38a87f79"
  },
  {
   "id": "WN-112",
@@ -19999,7 +20144,7 @@
   "number": "143b",
   "title": "Yesu Oluongowa Koro",
   "path": "data/WN/143b.json",
-  "v": "e2412b00a9bac54d5608651255139e598be0f56a52e1233c32646cc54bfebaa3"
+  "v": "a7846d6e57e69eb11717e1a57a95a1fa4ccefca3d6077fb784c7e85e0bf20381"
  },
  {
   "id": "WN-144",
@@ -20011,6 +20156,14 @@
   "sv": "87fa07b45762ee7b3cfe5711038eda0c95236e652f0e048a20c2b2ea5413b0b6",
   "v": "9a9968efe759786d1c64b822a04edcb2c8c1b561af9f88e01436a72d81d2039c",
   "english": "I Heard the Voice of Jesus Say"
+ },
+ {
+  "id": "WN-144b",
+  "book": "WN",
+  "number": "144b",
+  "title": "Nawinjo Yesu Kowacho",
+  "path": "data/WN/144b.json",
+  "v": "5c98ab333c60217b441b5c2044f3c9705856b7d673963e04ab78de2ff0157a91"
  },
  {
   "id": "WN-146",
@@ -20165,7 +20318,7 @@
   "number": "166b",
   "title": "Jawar Owachona",
   "path": "data/WN/166b.json",
-  "v": "fc7a9b06a29f57e48f7b69c9a551a0a300a0bf4a01aa3cf73187d4ba9be26be4"
+  "v": "3a070b786310fbc9f90f23373a316a06edb829beb8053f2f6797e231dca60723"
  },
  {
   "id": "WN-167",
@@ -20203,7 +20356,7 @@
   "number": "168b",
   "title": "Duto Amiyo Ruoth Yesu",
   "path": "data/WN/168b.json",
-  "v": "3a1a005706ef7397af57064930149fe107f2b81452a81225a35f73d21c4fa65e"
+  "v": "8db74894157f9211d41637d2cdbd5970a9a20b5328e91ca58338f1910fcf4ed7"
  },
  {
   "id": "WN-169",
@@ -20283,7 +20436,7 @@
   "number": "182b",
   "title": "Koro Wagenoi",
   "path": "data/WN/182b.json",
-  "v": "d358e73229fcf39f5909220837d831768fabf04ed6e51f31531b648e61abb3f3"
+  "v": "1bc4164c7c229f0d75a7fce8f77509cf6919570e23d69cd7cec4cf10903cc952"
  },
  {
   "id": "WN-184",
@@ -20427,6 +20580,14 @@
   "english": "Jesus, I My Cross Have Taken"
  },
  {
+  "id": "WN-211b",
+  "book": "WN",
+  "number": "211b",
+  "title": "Aseweyo Tich Maricho",
+  "path": "data/WN/211b.json",
+  "v": "e2d8718576cd71b589bdc7d2e24995e60df5633ab79ce2f8afc03734cb01a415"
+ },
+ {
   "id": "WN-212",
   "book": "WN",
   "number": "212",
@@ -20436,6 +20597,14 @@
   "sv": "1a55d739929832732d0a18d69085f7e2a99a1635c059c7e3a1584cae07fdace1",
   "v": "201aab2c2971c5869cd1ad18f1b0aef09e78e3f2c90e5d66730c7ec4a5c167c4",
   "english": "Wholly Thine"
+ },
+ {
+  "id": "WN-212b",
+  "book": "WN",
+  "number": "212b",
+  "title": "Adwaro Bedo Nyathi Yesu",
+  "path": "data/WN/212b.json",
+  "v": "b5969ea113a019cb3a2486168a2c07ed2959f8584ba19439a82c469f33cc889b"
  },
  {
   "id": "WN-213",
