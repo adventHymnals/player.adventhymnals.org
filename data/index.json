@@ -9618,6 +9618,22 @@
   "v": "fc6340b5865a853f7dcbef0a916353bc01e14e7793adb8ed7b574017c656369a"
  },
  {
+  "id": "CS1908-411",
+  "book": "CS1908",
+  "number": "411",
+  "title": "My Need, and Thy Love",
+  "path": "data/CS1908/411.json",
+  "v": "f75494ba663b445d2375a1f7e215995801e5bd2332e474e57d7c014e353f8e5e"
+ },
+ {
+  "id": "CS1908-412",
+  "book": "CS1908",
+  "number": "412",
+  "title": "At Thy Feet",
+  "path": "data/CS1908/412.json",
+  "v": "c4a1193468201610911ecdad8adc14336470283c89c22edde2ad55635206c3dd"
+ },
+ {
   "id": "CS1908-430",
   "book": "CS1908",
   "number": "430",
