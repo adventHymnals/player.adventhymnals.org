@@ -9424,6 +9424,14 @@
   "v": "b9043386d3290838cba1bd85d41ae821b99f389033526ac3bee77025a5ddc772"
  },
  {
+  "id": "CS1908-393",
+  "book": "CS1908",
+  "number": "393",
+  "title": "Thy Mercies",
+  "path": "data/CS1908/393.json",
+  "v": "e65873e011484ae53db7ec57abbe2242672a7044386a3709de484ee7a2e4eda4"
+ },
+ {
   "id": "CS1908-399",
   "book": "CS1908",
   "number": "399",
@@ -10566,6 +10574,14 @@
   "english": "To God Be the Glory"
  },
  {
+  "id": "NZK-3b",
+  "book": "NZK",
+  "number": "3b",
+  "title": "Mungu Atukuzwe",
+  "path": "data/NZK/3b.json",
+  "v": "4a3f25f611a05d79331ba33c17ac1b93e8189bff6b3ede942ffbf365c9236705"
+ },
+ {
   "id": "NZK-4",
   "book": "NZK",
   "number": "4",
@@ -10586,6 +10602,14 @@
   "sv": "daa94ab90489976d992666c0254fc3ccc7cdbd1ecd3ce6e336f8a97722153279",
   "v": "bc3f424e706633f4b6b1129bca820a1dd3e1313efba7eb84fa3c030d2d102641",
   "english": "O Worship the King"
+ },
+ {
+  "id": "NZK-5b",
+  "book": "NZK",
+  "number": "5b",
+  "title": "Na Tumwabudu Mfalme Mtukufu",
+  "path": "data/NZK/5b.json",
+  "v": "ea32426a8361e9aeb709300186dd49ed91f87d10260eec92955e8dbd75e424dc"
  },
  {
   "id": "NZK-9",
@@ -10674,6 +10698,14 @@
   "english": "Pass Me Not, O Gentle Savior"
  },
  {
+  "id": "NZK-22b",
+  "book": "NZK",
+  "number": "22b",
+  "title": "Usinipite Mwokozi",
+  "path": "data/NZK/22b.json",
+  "v": "0ec8a8fede7e130fbe9d88007c9f5dfee7aea7fa346d0f2a8e9d6e7fddc82be7"
+ },
+ {
   "id": "NZK-23",
   "book": "NZK",
   "number": "23",
@@ -10707,6 +10739,14 @@
   "english": "Crown Him With Many Crowns"
  },
  {
+  "id": "NZK-25b",
+  "book": "NZK",
+  "number": "25b",
+  "title": "Taji Mvikeni",
+  "path": "data/NZK/25b.json",
+  "v": "ff078d2889480ba6c044b76bce3e5ac89521a917118e5e4cb1a0f518064ad3e7"
+ },
+ {
   "id": "NZK-26",
   "book": "NZK",
   "number": "26",
@@ -10729,6 +10769,14 @@
   "english": "Savior, Again to Thy Dear Name"
  },
  {
+  "id": "NZK-27b",
+  "book": "NZK",
+  "number": "27b",
+  "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
+  "path": "data/NZK/27b.json",
+  "v": "a5de1a33cb59dce1019ee759ad18e02e6220ad48811102016ebad47e6c82d646"
+ },
+ {
   "id": "NZK-29",
   "book": "NZK",
   "number": "29",
@@ -10738,6 +10786,14 @@
   "sv": "952bf6426655db71f108c1c45f8825de71fba06ad09087d8ea5b1a2de950f840",
   "v": "14f5020f0c269d43779a56a1297c0ee403b3e1971fa8c49f8ec5b96f1083b2ab",
   "english": "My Jesus, I Love Thee"
+ },
+ {
+  "id": "NZK-29b",
+  "book": "NZK",
+  "number": "29b",
+  "title": "Yesu, Nakupenda",
+  "path": "data/NZK/29b.json",
+  "v": "44da759336c0e8ee7f53c15ded429de8005248349f64114a7b2a7fcce30c96ba"
  },
  {
   "id": "NZK-30",
@@ -10762,6 +10818,14 @@
   "english": "I Will Sing of Jesus' Love"
  },
  {
+  "id": "NZK-31b",
+  "book": "NZK",
+  "number": "31b",
+  "title": "Niimbe Pendo Lake",
+  "path": "data/NZK/31b.json",
+  "v": "08c7aa829bf2b93d3fde8ae5a5c5ec0069cf87dcfed8beb20e6b51d32dea3b3a"
+ },
+ {
   "id": "NZK-34",
   "book": "NZK",
   "number": "34",
@@ -10773,6 +10837,14 @@
   "english": "Tell Me the Story of Jesus"
  },
  {
+  "id": "NZK-34b",
+  "book": "NZK",
+  "number": "34b",
+  "title": "Nipe Habari za Yesu",
+  "path": "data/NZK/34b.json",
+  "v": "0502af45b66fbbe8768b525dc1fdade771ad02e62e7c96f07f3056390ad7e6ce"
+ },
+ {
   "id": "NZK-35",
   "book": "NZK",
   "number": "35",
@@ -10782,6 +10854,14 @@
   "sv": "0ef2f2b69d25f5f36fc14bfdd54e1728370edd32f77bd315c88034681c713fe8",
   "v": "b554f0f9e6b7c4ef98d589241fb26fe88ab0767892982e1c4375df161fa3b517",
   "english": "Redeemed! How I Love to Proclaim It"
+ },
+ {
+  "id": "NZK-35b",
+  "book": "NZK",
+  "number": "35b",
+  "title": "Nimekombolewa Na Yesu",
+  "path": "data/NZK/35b.json",
+  "v": "e6de12e299f0c82f4da83e90546f4cf9d4ae80633dcb1609523c74229cfdae1a"
  },
  {
   "id": "NZK-36",
@@ -10806,6 +10886,14 @@
   "english": "Love Divine, All Loves Excelling"
  },
  {
+  "id": "NZK-37b",
+  "book": "NZK",
+  "number": "37b",
+  "title": "Pendo Lako, Ee Mwokozi",
+  "path": "data/NZK/37b.json",
+  "v": "3f8e9396da246129570518acf4d242e69682cc07a30c084536e5cfcada733cf6"
+ },
+ {
   "id": "NZK-38",
   "book": "NZK",
   "number": "38",
@@ -10817,6 +10905,14 @@
   "english": "I Sing the Mighty Power of God"
  },
  {
+  "id": "NZK-38b",
+  "book": "NZK",
+  "number": "38b",
+  "title": "Nasifu Shani ya Mungu",
+  "path": "data/NZK/38b.json",
+  "v": "9bb1b34805922219931da5d8629c0eeabab0968f4b0c29da5ad167af58790707"
+ },
+ {
   "id": "NZK-40",
   "book": "NZK",
   "number": "40",
@@ -10826,6 +10922,14 @@
   "sv": "476cd75c4d9267132567503e787ecc4d982e496c022128f5313774593e06ef58",
   "v": "2eb5acd59920464f21ccbcef5c597bba9fe10c93396367be658c19e571cc95de",
   "english": "Fill Me Now"
+ },
+ {
+  "id": "NZK-40b",
+  "book": "NZK",
+  "number": "40b",
+  "title": "Nijaze Sasa",
+  "path": "data/NZK/40b.json",
+  "v": "b58979702985ebe6e018422f3444fecbf08609fd836035dfb6e93fbc0eed6f8d"
  },
  {
   "id": "NZK-41",
@@ -10905,6 +11009,14 @@
   "english": "I've Found a Friend"
  },
  {
+  "id": "NZK-49b",
+  "book": "NZK",
+  "number": "49b",
+  "title": "Ninaye Rafiki",
+  "path": "data/NZK/49b.json",
+  "v": "44aa19bddffaafbff060cb4f95e9769657fecd8d0326f12dc65623680b8a6b25"
+ },
+ {
   "id": "NZK-50",
   "book": "NZK",
   "number": "50",
@@ -10925,6 +11037,14 @@
   "sv": "05427b8a4566c1e4d446e6ebbd327f6d646e7cb5ec9dcd80e33f98e580081e35",
   "v": "cab2757169a0dfe1902fd74f9d2fd596ca50b415a6239f7f283c9b2d78f53f17",
   "english": "Blessed Assurance"
+ },
+ {
+  "id": "NZK-51b",
+  "book": "NZK",
+  "number": "51b",
+  "title": "Kuwa Na Yesu Mwokozi",
+  "path": "data/NZK/51b.json",
+  "v": "168f34140c45d79eea2d2980e419f8dbb14d55d34ff7147da1f7b4f526512e44"
  },
  {
   "id": "NZK-52",
@@ -11059,6 +11179,14 @@
   "english": "My Hope Is Built on Nothing Less"
  },
  {
+  "id": "NZK-69b",
+  "book": "NZK",
+  "number": "69b",
+  "title": "Cha Kutumaini Sina",
+  "path": "data/NZK/69b.json",
+  "v": "73c85c1f0602a1324f96d9a1b32f1de5767afbbf2dce5ac7b1a4d7aff6c1fb92"
+ },
+ {
   "id": "NZK-70",
   "book": "NZK",
   "number": "70",
@@ -11114,6 +11242,14 @@
   "english": "O for That Flame of Living Fire"
  },
  {
+  "id": "NZK-80b",
+  "book": "NZK",
+  "number": "80b",
+  "title": "Tupe Moto Wa Injili",
+  "path": "data/NZK/80b.json",
+  "v": "05c2dcef78c90c02115e5a481587cc9cdc4cc6ca22bc94318483f10d376f10a8"
+ },
+ {
   "id": "NZK-81",
   "book": "NZK",
   "number": "81",
@@ -11147,6 +11283,14 @@
   "english": "Don't Forget the Sabbath"
  },
  {
+  "id": "NZK-84b",
+  "book": "NZK",
+  "number": "84b",
+  "title": "Ikumbuke Sabato",
+  "path": "data/NZK/84b.json",
+  "v": "c5885059d590c20af3288db58c755552580f5ae84a921b4ae26ae235fb62a2e5"
+ },
+ {
   "id": "NZK-85",
   "book": "NZK",
   "number": "85",
@@ -11156,6 +11300,14 @@
   "sv": "f757b72eea530f08d5d152f2a3b462f0f14bd7f16b20e533ed46f33aba6b4d2c",
   "v": "8d3c469a228f5d86d6c8ef1be1ad469cdda64408ec40fa57055d923c9afdbe57",
   "english": "Safely Through Another Week"
+ },
+ {
+  "id": "NZK-85b",
+  "book": "NZK",
+  "number": "85b",
+  "title": "Salama Tumepita",
+  "path": "data/NZK/85b.json",
+  "v": "3b870d6195a29f078b0fea661bf76d27e00b78d355eabf5e587a856ea7896f6c"
  },
  {
   "id": "NZK-86",
@@ -11202,6 +11354,14 @@
   "english": "Day Is Dying in the West"
  },
  {
+  "id": "NZK-92b",
+  "book": "NZK",
+  "number": "92b",
+  "title": "Magharibi Jua",
+  "path": "data/NZK/92b.json",
+  "v": "bd1081fb077f4234d28ef85aa85e7397032a4e9c778aa2aebd02c8e201a3a357"
+ },
+ {
   "id": "NZK-93",
   "book": "NZK",
   "number": "93",
@@ -11246,6 +11406,14 @@
   "english": "I Gave My Life for Thee"
  },
  {
+  "id": "NZK-98b",
+  "book": "NZK",
+  "number": "98b",
+  "title": "Nilikupa Wewe",
+  "path": "data/NZK/98b.json",
+  "v": "a995d09d9b66c186cc92989a5b26d062fc9d64efb422a332a45fa408e564f023"
+ },
+ {
   "id": "NZK-101",
   "book": "NZK",
   "number": "101",
@@ -11266,6 +11434,14 @@
   "sv": "e72fdc14264f014f35ad8ae53511584bd37d71d33ecf0760539563780e8eeaa2",
   "v": "f1d3090d122a835855a39fb62cef3de9e28a23463b5a8863935cb139c06b38dc",
   "english": "Softly and Tenderly"
+ },
+ {
+  "id": "NZK-103b",
+  "book": "NZK",
+  "number": "103b",
+  "title": "Njoni Kwangu",
+  "path": "data/NZK/103b.json",
+  "v": "f4d36b90fd299bee6c4483dfe6dd8b471ddadf75f6d7c39ab5ab5b591c323d4e"
  },
  {
   "id": "NZK-104",
@@ -11301,6 +11477,14 @@
   "english": "Jesus Saves"
  },
  {
+  "id": "NZK-108b",
+  "book": "NZK",
+  "number": "108b",
+  "title": "Tumesikia Mbiu",
+  "path": "data/NZK/108b.json",
+  "v": "988fb59f8e37a802c1a0cf0cddb54dfba4a6adfad16b02100663a35286ceea0e"
+ },
+ {
   "id": "NZK-109",
   "book": "NZK",
   "number": "109",
@@ -11321,6 +11505,14 @@
   "sv": "40b07d031f095d0f273da57a65514259ac4496a2c8a01f215fc8b0f7f83feec5",
   "v": "90ca979c43594706c4e7c283cf17a7d9452222aed304ddb452b6c5a61569e1ba",
   "english": "The Great Physician"
+ },
+ {
+  "id": "NZK-111b",
+  "book": "NZK",
+  "number": "111b",
+  "title": "Tabibu Mkuu",
+  "path": "data/NZK/111b.json",
+  "v": "4e34724dea3da1796b83d968b3d35fc2ee57fc220d3e45aa369b9c34eb4bc44d"
  },
  {
   "id": "NZK-112",
@@ -11345,6 +11537,14 @@
   "english": "There Is a Fountain"
  },
  {
+  "id": "NZK-113b",
+  "book": "NZK",
+  "number": "113b",
+  "title": "Bubujiko",
+  "path": "data/NZK/113b.json",
+  "v": "b0f2b0e2c4ecb1d1dcda7044e8c7b98af52e310e8ebb8fda1fce13e858b28ce0"
+ },
+ {
   "id": "NZK-114",
   "book": "NZK",
   "number": "114",
@@ -11354,6 +11554,14 @@
   "sv": "500060b6a4c9f24454dec5a7089ec4064a833259bd5398a7b51a45193dcc1d33",
   "v": "c2718a3c61a1e66a3d462c6d79c4da419806d4945620c0f75a62338e08773e86",
   "english": "Whiter Than Snow"
+ },
+ {
+  "id": "NZK-114b",
+  "book": "NZK",
+  "number": "114b",
+  "title": "Yesu Nataka Kutakaswa Sana",
+  "path": "data/NZK/114b.json",
+  "v": "1641c1189237e1a5ac18548930380ed7417e46b0f5d27348565d23d955c3a04f"
  },
  {
   "id": "NZK-115",
@@ -11367,6 +11575,14 @@
   "english": "I Am Coming to the Cross"
  },
  {
+  "id": "NZK-115b",
+  "book": "NZK",
+  "number": "115b",
+  "title": "Naendea Msalaba",
+  "path": "data/NZK/115b.json",
+  "v": "f599d7dd8b4c1ceccbe3c51cf4ec715b9e429b0e2b4998bdf78005aae049c5de"
+ },
+ {
   "id": "NZK-118",
   "book": "NZK",
   "number": "118",
@@ -11376,6 +11592,14 @@
   "sv": "4d59874307bb289bfdc3be22f10cdbb24ff84a9003d3f6fa846c11cbbb6d5b1f",
   "v": "ebbd3526230bd506c9fcf62ae44544a7adc3ba0e08a97e4de28820e7654711d6",
   "english": "Lord, I'm Coming Home"
+ },
+ {
+  "id": "NZK-118b",
+  "book": "NZK",
+  "number": "118b",
+  "title": "Nilipotoka Kabisa",
+  "path": "data/NZK/118b.json",
+  "v": "195e4118f34f2f39d6ea97184c4a845a90defe3024e1914c1c647a9846063526"
  },
  {
   "id": "NZK-119",
@@ -11389,6 +11613,14 @@
   "english": "Jesus Paid It All"
  },
  {
+  "id": "NZK-119b",
+  "book": "NZK",
+  "number": "119b",
+  "title": "Alilipa Bei",
+  "path": "data/NZK/119b.json",
+  "v": "a54e57f572a4678f9652ce6aea8806cccd7314fbb4816ecbdba4feef76b1fe09"
+ },
+ {
   "id": "NZK-120",
   "book": "NZK",
   "number": "120",
@@ -11398,6 +11630,14 @@
   "sv": "8d79c1d04c6036ba7050336fc197eade406962da8f51a351ffea6fe12e13b72d",
   "v": "a9b1b634a4822330a4a094e46f695c8282612c34caf06e17d1c388965677e4c5",
   "english": "Near the Cross"
+ },
+ {
+  "id": "NZK-120b",
+  "book": "NZK",
+  "number": "120b",
+  "title": "Msalaba Wa Yesu",
+  "path": "data/NZK/120b.json",
+  "v": "ed197fcab032078ec6cef50c567f42725af9528eac71f5d05cb043ee57466320"
  },
  {
   "id": "NZK-121",
@@ -11411,6 +11651,14 @@
   "english": "Chief of Sinners Though I Be"
  },
  {
+  "id": "NZK-121b",
+  "book": "NZK",
+  "number": "121b",
+  "title": "Katika Wenye Dhambi",
+  "path": "data/NZK/121b.json",
+  "v": "eea7c826c5fb9fd44372e18efd3d8ae4149f809c58891eb19d81a82b5ccf2dca"
+ },
+ {
   "id": "NZK-122",
   "book": "NZK",
   "number": "122",
@@ -11422,6 +11670,14 @@
   "english": "I Surrender All"
  },
  {
+  "id": "NZK-122b",
+  "book": "NZK",
+  "number": "122b",
+  "title": "Yote Namtolea Yesu",
+  "path": "data/NZK/122b.json",
+  "v": "67f79729461ee8883f251453685e6a777a0ac2ad36addedea7ae24a2a1fc9881"
+ },
+ {
   "id": "NZK-123",
   "book": "NZK",
   "number": "123",
@@ -11431,6 +11687,14 @@
   "sv": "2bc1a174d3dd440131b89069f686a1e96c8f5c5c11bc0ec5bafdfa4a63ff30ed",
   "v": "f6602690e8b5fb9a48656429ed4c6ee21f39042104c29fb40ed7a2e57e71c44e",
   "english": "My Faith Looks Up to Thee"
+ },
+ {
+  "id": "NZK-123b",
+  "book": "NZK",
+  "number": "123b",
+  "title": "Yesu Kwa Imani",
+  "path": "data/NZK/123b.json",
+  "v": "739baefba6b52d959b0758fdd7f146a8a16cbc7e12792648efab78b86673b451"
  },
  {
   "id": "NZK-124",
@@ -11554,6 +11818,14 @@
   "english": "'Tis the Blessed Hour of Prayer"
  },
  {
+  "id": "NZK-137b",
+  "book": "NZK",
+  "number": "137b",
+  "title": "Saa Heri Ya Sala",
+  "path": "data/NZK/137b.json",
+  "v": "940ad25c31e62b7a33f61692df4871716f490b3aefd4fc981f1105b13b5e5974"
+ },
+ {
   "id": "NZK-138",
   "book": "NZK",
   "number": "138",
@@ -11574,6 +11846,14 @@
   "sv": "3eea893dba8e083ad91fc778c6e40c618d09685cdb77da5e417afa5fd5acc2db",
   "v": "c2c729aac4859f81a6a28321461d052f31fa048ea44cb171712cea7eee6be72a",
   "english": "Wonderful Words of Life"
+ },
+ {
+  "id": "NZK-139b",
+  "book": "NZK",
+  "number": "139b",
+  "title": "Uniimbie Tena",
+  "path": "data/NZK/139b.json",
+  "v": "01958311718ad7c7e4bc2f560761ec29121fb7974b869f9ab15d73e65156d4ab"
  },
  {
   "id": "NZK-141",
@@ -11598,6 +11878,14 @@
   "english": "I Hear Thy Welcome Voice"
  },
  {
+  "id": "NZK-142b",
+  "book": "NZK",
+  "number": "142b",
+  "title": "Nasikia Sauti Yako",
+  "path": "data/NZK/142b.json",
+  "v": "58de49194e36b9e2f7584876192f775655cacff2d6d3a825be88c12c37296559"
+ },
+ {
   "id": "NZK-143",
   "book": "NZK",
   "number": "143",
@@ -11620,6 +11908,14 @@
   "english": "Draw Me Nearer"
  },
  {
+  "id": "NZK-144b",
+  "book": "NZK",
+  "number": "144b",
+  "title": "Ni Wako Bwana",
+  "path": "data/NZK/144b.json",
+  "v": "996bde32b813ec523d4c3c18da8c4eae67dcc33e7dba9f3b08ee48d23a1ee9c8"
+ },
+ {
   "id": "NZK-145",
   "book": "NZK",
   "number": "145",
@@ -11629,6 +11925,14 @@
   "sv": "d5480dfe6f076fcc564833b29da88b00cd6c3e5bf5f1fadba3d312718316cab7",
   "v": "df56077f02e0bf949689070bedcf83a9b25b5245aab94ff668ed65c31e1e0c93",
   "english": "Take the World, but Give Me Jesus"
+ },
+ {
+  "id": "NZK-145b",
+  "book": "NZK",
+  "number": "145b",
+  "title": "Namtaka Bwana Yesu",
+  "path": "data/NZK/145b.json",
+  "v": "3b59b1229a425af3bbe3c668a96c5e786d1603b41cfa2c70f39b27f739b38435"
  },
  {
   "id": "NZK-146",
@@ -11651,6 +11955,14 @@
   "sv": "c430dbd59f7ad8ffd309e4293ca45be867832894e731dea5d821a7c7dcc5ad05",
   "v": "53d800d7cbfe6376454ad466cf6e200a6789845847172cd8c716a42e76f00112",
   "english": "Live Out Thy Life Within Me"
+ },
+ {
+  "id": "NZK-147b",
+  "book": "NZK",
+  "number": "147b",
+  "title": "Uishi Ndani Yangu",
+  "path": "data/NZK/147b.json",
+  "v": "db283d281661873a9613eb1e3827be6eea7a05aeccdf6a3496a823286655cd7a"
  },
  {
   "id": "NZK-150",
@@ -11895,6 +12207,14 @@
   "english": "The Cleansing Wave"
  },
  {
+  "id": "NZK-188b",
+  "book": "NZK",
+  "number": "188b",
+  "title": "Wimbi Litakasalo",
+  "path": "data/NZK/188b.json",
+  "v": "1220292060f0cf3e703de073626fd0708042bacb121d74d5ddc32b4e3d12894c"
+ },
+ {
   "id": "NZK-189",
   "book": "NZK",
   "number": "189",
@@ -11906,6 +12226,14 @@
   "english": "Baptize Us Anew"
  },
  {
+  "id": "NZK-189b",
+  "book": "NZK",
+  "number": "189b",
+  "title": "Tubatize Upya",
+  "path": "data/NZK/189b.json",
+  "v": "37a0686c6e626bf5903414fdd69eaccbc39de840bfa7264254204fcc61a40390"
+ },
+ {
   "id": "NZK-191",
   "book": "NZK",
   "number": "191",
@@ -11915,6 +12243,14 @@
   "sv": "a6a7b3589befc0aa48ed5ead78afde2fbf46422f50e4b45daf041235106533b0",
   "v": "d079583a1ea195934051b9552d75e13d37f3c9ec992efcf532dad3f2677c5d63",
   "english": "Break Thou the Bread of Life"
+ },
+ {
+  "id": "NZK-191b",
+  "book": "NZK",
+  "number": "191b",
+  "title": "Mkate Wa Mbingu",
+  "path": "data/NZK/191b.json",
+  "v": "1a2858b888f4aed38e4fcab719ec946c1dc7d5b2fa093bead1c150e5c891e4bd"
  },
  {
   "id": "NZK-192",
@@ -11970,6 +12306,14 @@
   "sv": "b5e66bee4133d4d3d4c28cf3851760fce07290542da8af9efd9276f165cc2cf1",
   "v": "88e5fe584b48d33eb8756fcdd6a85a6926e12afc3e0f69d777033b863029e2aa",
   "english": "Jesus Loves Me"
+ },
+ {
+  "id": "NZK-197b",
+  "book": "NZK",
+  "number": "197b",
+  "title": "Anipenda Ni Kweli",
+  "path": "data/NZK/197b.json",
+  "v": "f34b32d7ce720c89ce3388ae16dfb8667c201af493429de3eb6d7dfbb0424340"
  },
  {
   "id": "NZK-199",
@@ -19009,6 +19353,14 @@
   "english": "To God Be the Glory"
  },
  {
+  "id": "WN-3b",
+  "book": "WN",
+  "number": "3b",
+  "title": "Duong' Obed Ni Wuonwa",
+  "path": "data/WN/3b.json",
+  "v": "bd0cdfa5f3d87c321c7734f8f9268f77cf7c707bd6d61abe7ba18a7f92012a35"
+ },
+ {
   "id": "WN-4",
   "book": "WN",
   "number": "4",
@@ -19150,6 +19502,14 @@
   "english": "My Jesus, I Love Thee"
  },
  {
+  "id": "WN-36b",
+  "book": "WN",
+  "number": "36b",
+  "title": "Ruoth Yesu, Nithona",
+  "path": "data/WN/36b.json",
+  "v": "891e8cd9c196c1d7261fdf6eb66640bac70956d92a9c446b4becc3b5578bdf41"
+ },
+ {
   "id": "WN-38",
   "book": "WN",
   "number": "38",
@@ -19159,6 +19519,14 @@
   "sv": "6ff26be3ae76b3bc257b250cbfd459aeda0b03b3dbcaae5a7fdddf57ca3ec369",
   "v": "87aaf84d970925aa433ab77a2aa950f38140047a9eb08c79a3dfaa899b246716",
   "english": "I Will Sing of Jesus' Love"
+ },
+ {
+  "id": "WN-38b",
+  "book": "WN",
+  "number": "38b",
+  "title": "Anawer Hera Yesu",
+  "path": "data/WN/38b.json",
+  "v": "7f8d736ab4f033dcd1bdcdba46c4e0c5b49e6f3fcb2d43d721d2b0d41e8d4127"
  },
  {
   "id": "WN-39",
@@ -19192,6 +19560,14 @@
   "sv": "b7b2bc4032bd9442227f2d27ebfb82a00d393bd9ca864ff8dc64e0da4c2bf61f",
   "v": "e3362dc3cb933dd30c0d261fecbddeb86e1e3226ebaf786b20277face14aab35",
   "english": "Redeemed! How I Love to Proclaim It"
+ },
+ {
+  "id": "WN-44b",
+  "book": "WN",
+  "number": "44b",
+  "title": "Ang'eyo Yesu Osewara",
+  "path": "data/WN/44b.json",
+  "v": "76c9d0c9c1e8af292faa4988a7dfe02b853de3748d82e54b6700badabcb641f6"
  },
  {
   "id": "WN-48",
@@ -19247,6 +19623,14 @@
   "sv": "e20aab960537e9b9ab14a7a4a7f749075c84cdb3da0466d59c9349ab1e28772a",
   "v": "43903d25d92cc4d266b8816ac793372c2472ea4f4a08c0b0b09f6d82d96cbdca",
   "english": "Fill Me Now"
+ },
+ {
+  "id": "WN-57b",
+  "book": "WN",
+  "number": "57b",
+  "title": "Roho Mar Nyasaye Ibina",
+  "path": "data/WN/57b.json",
+  "v": "48e0b5df2c8d299e206e7e95c378f7455753f68ae80ace39f5210b89b73f48a7"
  },
  {
   "id": "WN-58",
@@ -19324,6 +19708,14 @@
   "sv": "ead7993e00292571a3cc8063962466574794c888fa9a2dc97a7fb6d81ca44d89",
   "v": "c4a80e6ee85314c548c6fdc3fbdbf652d555054fd0ebf0badf25c53b1e68613f",
   "english": "Tell Me the Old, Old Story"
+ },
+ {
+  "id": "WN-69b",
+  "book": "WN",
+  "number": "69b",
+  "title": "Puonja Injili Lilo",
+  "path": "data/WN/69b.json",
+  "v": "c3334acb90d15bac4957c2d354387afde6e2b68244082c72e84548a94509e844"
  },
  {
   "id": "WN-70",
@@ -19477,6 +19869,14 @@
   "english": "O for That Flame of Living Fire"
  },
  {
+  "id": "WN-111b",
+  "book": "WN",
+  "number": "111b",
+  "title": "Wakwayi, Ruoth, Kuom Tekoni",
+  "path": "data/WN/111b.json",
+  "v": "47db3ce405b1acdfaea7e712c14f2673e575c3fa4d3ace9741b52e0e143c9895"
+ },
+ {
   "id": "WN-112",
   "book": "WN",
   "number": "112",
@@ -19575,6 +19975,14 @@
   "english": "I Gave My Life for Thee"
  },
  {
+  "id": "WN-139b",
+  "book": "WN",
+  "number": "139b",
+  "title": "Ringra Namiyo In",
+  "path": "data/WN/139b.json",
+  "v": "98386c255b3b4bda22eb408d3214e778c8e7fdd30ae1b87df786b0f331bde712"
+ },
+ {
   "id": "WN-143",
   "book": "WN",
   "number": "143",
@@ -19584,6 +19992,14 @@
   "sv": "753e3670fedce7ba4401b55f8fd5da48cc3d5ce28afda5b8bbeb14605f144dec",
   "v": "b3068bc44a17391bd93f27e91df69c647aba19d5cacd20a6b5d4c800d430ef0a",
   "english": "Softly and Tenderly"
+ },
+ {
+  "id": "WN-143b",
+  "book": "WN",
+  "number": "143b",
+  "title": "Yesu Oluongowa Koro",
+  "path": "data/WN/143b.json",
+  "v": "e2412b00a9bac54d5608651255139e598be0f56a52e1233c32646cc54bfebaa3"
  },
  {
   "id": "WN-144",
@@ -19619,6 +20035,14 @@
   "english": "Jesus Saves"
  },
  {
+  "id": "WN-147b",
+  "book": "WN",
+  "number": "147b",
+  "title": "Wasewinjo Wach Maber",
+  "path": "data/WN/147b.json",
+  "v": "24fd9549bbdf77140b1d040fb9431c036c1584a68bb120f04c8cfba1d8c950e4"
+ },
+ {
   "id": "WN-150",
   "book": "WN",
   "number": "150",
@@ -19628,6 +20052,14 @@
   "sv": "52a43b6990511ae72b2d329d4368b970e4b9876c8629deee446d3a081ce8378b",
   "v": "ace0bf2c5d1e39c95c5e221594947ce9daaafb602a774fe6c10a0712c4ccb508",
   "english": "The Great Physician"
+ },
+ {
+  "id": "WN-150b",
+  "book": "WN",
+  "number": "150b",
+  "title": "Jathieth Maduong' Osudo Ka",
+  "path": "data/WN/150b.json",
+  "v": "b03692f13f855a557358b8c67d344b8a8374e83e75465656132f8eff96fe391a"
  },
  {
   "id": "WN-156",
@@ -19652,6 +20084,14 @@
   "english": "There Is a Fountain"
  },
  {
+  "id": "WN-160b",
+  "book": "WN",
+  "number": "160b",
+  "title": "Nitie Remo Ma Nochwer",
+  "path": "data/WN/160b.json",
+  "v": "6d74cb499e71187ac6d4ba4d4d739fe732ee8387366fc98fab5698ee0ff97962"
+ },
+ {
   "id": "WN-161",
   "book": "WN",
   "number": "161",
@@ -19661,6 +20101,14 @@
   "sv": "c352c7999c50e63e61b3fba60ee41138b8b598e2489370114b63912f66f62821",
   "v": "5ec44ae6c217557e68ab5ad81a8d654b8c60771cafa47b80c600e9ccd5b9fc49",
   "english": "Whiter Than Snow"
+ },
+ {
+  "id": "WN-161b",
+  "book": "WN",
+  "number": "161b",
+  "title": "Ruoth Yesu, Agombo Bedo Nga'ti",
+  "path": "data/WN/161b.json",
+  "v": "df337c518cc4032aa8b5223420117d06b8449b750b612663609d0ffc6706009a"
  },
  {
   "id": "WN-162",
@@ -19674,6 +20122,14 @@
   "english": "I Am Coming to the Cross"
  },
  {
+  "id": "WN-162b",
+  "book": "WN",
+  "number": "162b",
+  "title": "Abiro Ni Msalaba",
+  "path": "data/WN/162b.json",
+  "v": "31983bf70e88735c7bc3246ddbab678e21abddf9535084a7c0192bc11aeedd05"
+ },
+ {
   "id": "WN-165",
   "book": "WN",
   "number": "165",
@@ -19683,6 +20139,14 @@
   "sv": "42d6f9ba3134c630e79a1955051fc4681e1592c0e0eb4145ada65873a78cec71",
   "v": "d66182975555a59218a65fd6369c8a7a507429bce0bec860317679d36636c7f8",
   "english": "Lord, I'm Coming Home"
+ },
+ {
+  "id": "WN-165b",
+  "book": "WN",
+  "number": "165b",
+  "title": "Asebayo Mabor Kod Ruoth",
+  "path": "data/WN/165b.json",
+  "v": "55f35a24b52f3edb8d380ea61b8f808482ac3701574dc7bdc3f942d9b3668401"
  },
  {
   "id": "WN-166",
@@ -19696,6 +20160,14 @@
   "english": "Jesus Paid It All"
  },
  {
+  "id": "WN-166b",
+  "book": "WN",
+  "number": "166b",
+  "title": "Jawar Owachona",
+  "path": "data/WN/166b.json",
+  "v": "fc7a9b06a29f57e48f7b69c9a551a0a300a0bf4a01aa3cf73187d4ba9be26be4"
+ },
+ {
   "id": "WN-167",
   "book": "WN",
   "number": "167",
@@ -19705,6 +20177,14 @@
   "sv": "dd4211b4b9218d10a854755d09fec9fac5aaa0cb2c5de4b186c126bd0c5f9df6",
   "v": "e438f7b4fdaa54b3620bf2d0f6ce0b06ebdb8fe6713a563b7c84f534e37e5bc3",
   "english": "Near the Cross"
+ },
+ {
+  "id": "WN-167b",
+  "book": "WN",
+  "number": "167b",
+  "title": "Yesu, Kar Msalabani",
+  "path": "data/WN/167b.json",
+  "v": "8a58988d820ba763d5c957e9e026bdcb7b3f5f5e928e093f1d15e25be6ab48f2"
  },
  {
   "id": "WN-168",
@@ -19718,6 +20198,14 @@
   "english": "I Surrender All"
  },
  {
+  "id": "WN-168b",
+  "book": "WN",
+  "number": "168b",
+  "title": "Duto Amiyo Ruoth Yesu",
+  "path": "data/WN/168b.json",
+  "v": "3a1a005706ef7397af57064930149fe107f2b81452a81225a35f73d21c4fa65e"
+ },
+ {
   "id": "WN-169",
   "book": "WN",
   "number": "169",
@@ -19727,6 +20215,14 @@
   "sv": "5bec5d4905dc6288141ae662cfd55ddd4a2dfb2a1b9c6619790996e30902613b",
   "v": "6e294edebe8a5f121a76941416ffd514aa5b3da5c1bb9ce78a858f718b9cc0a8",
   "english": "There Is Power in the Blood"
+ },
+ {
+  "id": "WN-169b",
+  "book": "WN",
+  "number": "169b",
+  "title": "Yesu Luongi, We Ting'ni Mar Richo",
+  "path": "data/WN/169b.json",
+  "v": "fdf7d06eda04683cd1e38a390b18cfc0f573184f0fc737badb1eb8f135784796"
  },
  {
   "id": "WN-170",
@@ -19782,6 +20278,14 @@
   "english": "My Faith Looks Up to Thee"
  },
  {
+  "id": "WN-182b",
+  "book": "WN",
+  "number": "182b",
+  "title": "Koro Wagenoi",
+  "path": "data/WN/182b.json",
+  "v": "d358e73229fcf39f5909220837d831768fabf04ed6e51f31531b648e61abb3f3"
+ },
+ {
   "id": "WN-184",
   "book": "WN",
   "number": "184",
@@ -19791,6 +20295,14 @@
   "sv": "2892cef11d1dc53347b3dde0e06b0d3fa2f58f24a00bf3d04e6a6ed7ce059e55",
   "v": "92594279f10557aaff0a13ae0198ad215e672d2608d678b738d25c15b43f7f4f",
   "english": "Chief of Sinners Though I Be"
+ },
+ {
+  "id": "WN-184b",
+  "book": "WN",
+  "number": "184b",
+  "title": "Kat' Abed Jaketh Maduong'",
+  "path": "data/WN/184b.json",
+  "v": "db0863d7e9f70c57d945d877147d729fcdd8b43840bacd9cb5e91d597e715098"
  },
  {
   "id": "WN-189",
@@ -19848,6 +20360,14 @@
   "english": "Draw Me Nearer"
  },
  {
+  "id": "WN-205b",
+  "book": "WN",
+  "number": "205b",
+  "title": "An Ni Mari Ruoth",
+  "path": "data/WN/205b.json",
+  "v": "51fb4371164e8c58f954a6d8b37243be7c9d34da004afca41c1f75cf959adfe7"
+ },
+ {
   "id": "WN-206",
   "book": "WN",
   "number": "206",
@@ -19859,6 +20379,14 @@
   "english": "Take the World, but Give Me Jesus"
  },
  {
+  "id": "WN-206b",
+  "book": "WN",
+  "number": "206b",
+  "title": "Kaw Piny Duto Miya Yesu",
+  "path": "data/WN/206b.json",
+  "v": "1e4cd5974a1825e5f24b1beaa03d13cf54aeaed11c099a5d4bbf69d0980769b1"
+ },
+ {
   "id": "WN-208",
   "book": "WN",
   "number": "208",
@@ -19868,6 +20396,14 @@
   "sv": "340867471d53ee8f99d7b55a261afc1705c02621a282ce861b71d56e06492535",
   "v": "c9b2bc91dd6af1c5fc412ee647d90eff02f30c12b310ea099b328434cac985d4",
   "english": "Live Out Thy Life Within Me"
+ },
+ {
+  "id": "WN-208b",
+  "book": "WN",
+  "number": "208b",
+  "title": "Bedi Mangima Kuoma",
+  "path": "data/WN/208b.json",
+  "v": "225af87edd08c49112dfbe108df41241dd2ab6499d569c95c151aeaeca91ce2c"
  },
  {
   "id": "WN-210",
@@ -19921,6 +20457,14 @@
   "sv": "1f48c3d2447baf17e4ba1a99c02738da792f9c8d5959c0c0a4e7de3b2e29c167",
   "v": "4854ac2cd7f33f1e7632305344743e7e28a559a66379bde95b508b8f6a4ca536",
   "english": "O Jesus, I Have Promised"
+ },
+ {
+  "id": "WN-218b",
+  "book": "WN",
+  "number": "218b",
+  "title": "Yesu An Adwaro",
+  "path": "data/WN/218b.json",
+  "v": "c0823b5d4453d0415fe6b904a8f967466e652cf41d6ed93e4f436af5a17f1486"
  },
  {
   "id": "WN-219",
@@ -20142,6 +20686,14 @@
   "english": "Baptize Us Anew"
  },
  {
+  "id": "WN-283b",
+  "book": "WN",
+  "number": "283b",
+  "title": "Yesu Wabiro Iri",
+  "path": "data/WN/283b.json",
+  "v": "adee7aae6f937d8a20cccb91cabed7a4bd8db6a60b63ed2ca70d25b2f68ad042"
+ },
+ {
   "id": "WN-284",
   "book": "WN",
   "number": "284",
@@ -20151,6 +20703,14 @@
   "sv": "6444ceebbb85fab88f0249d405a271e4cd5fd8a6eeb12798312ec14284b52d51",
   "v": "54a2b5144c27e7283d777b59fd1ad9588171506fb3f2bb71a6d0c1dbdbf4337f",
   "english": "Break Thou the Bread of Life"
+ },
+ {
+  "id": "WN-284b",
+  "book": "WN",
+  "number": "284b",
+  "title": "Ruodha Dak Ipogna Kuon Mar Ngima",
+  "path": "data/WN/284b.json",
+  "v": "574c285adb1abbe3b53fd36a9ac71fe2cf11d110e40efdfb9e9087ff6c345bee"
  },
  {
   "id": "WN-285",
@@ -20194,6 +20754,14 @@
   "sv": "a97703155d1680c1e292211aca045124b0777ee4e33ac7b54b45d22d1fdc398c",
   "v": "c703996220cc8c15dce95e2610ff135a083ec0bc16df423d6eeb655ba734cbf1",
   "english": "Jesus Loves Me"
+ },
+ {
+  "id": "WN-301b",
+  "book": "WN",
+  "number": "301b",
+  "title": "Yesu 'Hera Ang'eyo",
+  "path": "data/WN/301b.json",
+  "v": "65b7aa0d807e4139232c4cf507347731370db8682a136c7ac9237211f77932da"
  },
  {
   "id": "WN-302",
