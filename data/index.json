@@ -5320,6 +5320,70 @@
   "v": "03f22eae98662f448d3551c02100a98e48485d7ec7521f934ebf20ea95520918"
  },
  {
+  "id": "CH1941-682",
+  "book": "CH1941",
+  "number": "682",
+  "title": "Father, I Yield to Thee My Life",
+  "path": "data/CH1941/682.json",
+  "v": "56ee4396430bbc8b0a40452e857aa417985602cbfb1a942dd42aef48519881e4"
+ },
+ {
+  "id": "CH1941-683",
+  "book": "CH1941",
+  "number": "683",
+  "title": "Praise God, From Whom All Blessings Flow",
+  "path": "data/CH1941/683.json",
+  "v": "19e868ad660465857a3e14ab7dc59e6f754db99a23445beccaa205e0fd5e1ab2"
+ },
+ {
+  "id": "CH1941-684",
+  "book": "CH1941",
+  "number": "684",
+  "title": "O Thou Who Hearest Every Heartfelt Prayer",
+  "path": "data/CH1941/684.json",
+  "v": "b4cc93904906d096e40458aa3a885b7df956a51c0fcbc4886daf334b2860d470"
+ },
+ {
+  "id": "CH1941-686",
+  "book": "CH1941",
+  "number": "686",
+  "title": "Lord, Have Mercy",
+  "path": "data/CH1941/686.json",
+  "v": "8753cdb135384e6affd5b8fdc913cec523167f88d5c1a95264823fb422cbda44"
+ },
+ {
+  "id": "CH1941-687",
+  "book": "CH1941",
+  "number": "687",
+  "title": "Almighty Father",
+  "path": "data/CH1941/687.json",
+  "v": "468656a56928158fd4909f1aae5144b24636fcf90ec228795447628d58e42b9f"
+ },
+ {
+  "id": "CH1941-688",
+  "book": "CH1941",
+  "number": "688",
+  "title": "Hear Our Prayer, O Lord",
+  "path": "data/CH1941/688.json",
+  "v": "ab354381fed895241b4f91dfec240ffa8df863611c78991c0449941cd903ad39"
+ },
+ {
+  "id": "CH1941-689",
+  "book": "CH1941",
+  "number": "689",
+  "title": "Glory Be to the Father",
+  "path": "data/CH1941/689.json",
+  "v": "5b55a1f16e20fce021e7bfd75fe3c6902dd29e1ebb371e416e28ae45a496be1e"
+ },
+ {
+  "id": "CH1941-690",
+  "book": "CH1941",
+  "number": "690",
+  "title": "The Lord Is in His Holy Temple",
+  "path": "data/CH1941/690.json",
+  "v": "cb6f365366823135035316ab5f4d4a04591f7296794bea32328c25652da0c531"
+ },
+ {
   "id": "CS1900-1",
   "book": "CS1900",
   "number": "1",
@@ -9160,12 +9224,44 @@
   "v": "e107ea7b0cfbbefbe1079dca89838db877770915c613923f7e3a627c5eb2882b"
  },
  {
+  "id": "CS1908-381",
+  "book": "CS1908",
+  "number": "381",
+  "title": "Again We Meet",
+  "path": "data/CS1908/381.json",
+  "v": "23f114cbca15c5652403977f09e85a4262cd2d6ce3a8e02cab6de41b60d76464"
+ },
+ {
+  "id": "CS1908-382",
+  "book": "CS1908",
+  "number": "382",
+  "title": "Our Parting Hymn",
+  "path": "data/CS1908/382.json",
+  "v": "457bf344c95fdd8008ecb53ae8087bfe25c6b3d0eef0a8e41f42cea50691c46d"
+ },
+ {
+  "id": "CS1908-383",
+  "book": "CS1908",
+  "number": "383",
+  "title": "I'll Live for Him",
+  "path": "data/CS1908/383.json",
+  "v": "69e4d4a3f2f804b84da2801a4d42c8376c586e28a2d633c8776087c39670b6ca"
+ },
+ {
+  "id": "CS1908-384",
+  "book": "CS1908",
+  "number": "384",
+  "title": "Break Thou the Bread of Life",
+  "path": "data/CS1908/384.json",
+  "v": "1488afd678e39f17dfaae715734ab76e48bc27c5fa9bfed82186c0438dd08c6d"
+ },
+ {
   "id": "CS1908-385",
   "book": "CS1908",
   "number": "385",
   "title": "Sabbath Dawn",
   "path": "data/CS1908/385.json",
-  "v": "b6f66e999c513a14bc7f4be1875526585d4b2e8e898a505ffd3cab17ab39d4af"
+  "v": "fbdc54bfe39718f55ddaf080596915820acb05d378484524fc57edb6b989d4d8"
  },
  {
   "id": "CS1908-386",
