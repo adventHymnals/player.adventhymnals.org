@@ -5609,7 +5609,7 @@
   "number": "7",
   "title": "Let Him In",
   "path": "data/CS1900/7.json",
-  "v": "8c545e20004a1e3e5f63b95f8051aa44afbfc6864583ad98b53e28f72bac74e8"
+  "v": "88a4bb7b3f50d8310035fefe22ffb360671aac7c0daae06529a72634f35e2c59"
  },
  {
   "id": "CS1900-8",
@@ -5673,7 +5673,7 @@
   "number": "15",
   "title": "Able to Deliver",
   "path": "data/CS1900/15.json",
-  "v": "be87ad477923e3538bc6c3098cb83fed001620669772306fb6a71ab2aa13471f"
+  "v": "fc69fdb87ff1e28c1f9bae91e5f0e4a3c7bfc7a106ffc74cfba01b8246b1d902"
  },
  {
   "id": "CS1900-16",
@@ -5841,7 +5841,7 @@
   "number": "36",
   "title": "How Shall We Stand in the Judgment?",
   "path": "data/CS1900/36.json",
-  "v": "33e29a7594478f17a2951a0765883ce4fe59bbd26b5643f47f5b575e9f71e553"
+  "v": "a5d683e898f3c6de01a01256d950ae8de7e6f104aacc3e9eba5839f1c885d92b"
  },
  {
   "id": "CS1900-37",
@@ -5929,7 +5929,7 @@
   "number": "47",
   "title": "Your Saviour, Too",
   "path": "data/CS1900/47.json",
-  "v": "f8527d096ea6a977a0634a55ac605edfa7dfdd531ddf40059a8bd69106a33530"
+  "v": "7409136ec9530a9f51b464290a60e76f3e3a46bf9b8d404e646534886b99d9b8"
  },
  {
   "id": "CS1900-48",
@@ -5953,7 +5953,7 @@
   "number": "50",
   "title": "There's Room for You to Anchor",
   "path": "data/CS1900/50.json",
-  "v": "aba4c2d8f83aca59fcf1b27a768e597fd26fb833181d53481d82cf9bd32edec6"
+  "v": "e313cdad15502b0bcff1fedf82da202b4286839c9a885cc9f0f23d0303937e2c"
  },
  {
   "id": "CS1900-51",
@@ -6089,7 +6089,7 @@
   "number": "67",
   "title": "I Will Early Seek the Saviour",
   "path": "data/CS1900/67.json",
-  "v": "38c01b6e6fca00b3605d8a214c3609ea46cdca11119326dd8c8e8e36d487176f"
+  "v": "15b5a151b953ce9724958b202d84fda51d45e0ba8ae8d028cb83a7bcb28dbfc6"
  },
  {
   "id": "CS1900-68",
@@ -6113,7 +6113,7 @@
   "number": "70",
   "title": "Jesus Paid It All",
   "path": "data/CS1900/70.json",
-  "v": "ab98e500054efd46baa7e7c9f57d4aac0547f1563ef5f63a450f9a9401c39731"
+  "v": "0c5f44f90253794f8da7c9bcfbe8f7eb99daeb0767a0e7c3368d64251d216a88"
  },
  {
   "id": "CS1900-71",
@@ -6121,7 +6121,39 @@
   "number": "71",
   "title": "My Faith Looks Up",
   "path": "data/CS1900/71.json",
-  "v": "12d2d8429f1b1e46d807b5c537999c575fa0df1a685b0a01b7a0535d87f6170d"
+  "v": "b3e971d08e02ad968916f346bf26c830c569f7730278dddbe78b20076e7c2617"
+ },
+ {
+  "id": "CS1900-72",
+  "book": "CS1900",
+  "number": "72",
+  "title": "God Calling Yet",
+  "path": "data/CS1900/72.json",
+  "v": "c91a8c6debc13820d99c288d49d8497b641a02ab2dc7622b86cae83bda7c6683"
+ },
+ {
+  "id": "CS1900-73",
+  "book": "CS1900",
+  "number": "73",
+  "title": "A Present Help",
+  "path": "data/CS1900/73.json",
+  "v": "fb2403ba2440fea2446de428a2cf9df8dfe902b0d50dd7fb14a63dd3cff9f792"
+ },
+ {
+  "id": "CS1900-74",
+  "book": "CS1900",
+  "number": "74",
+  "title": "Ashamed of Jesus",
+  "path": "data/CS1900/74.json",
+  "v": "299b7900f31ae15704b28c2b9c417a17e375d5a145f6b992ca22e3d84c77c718"
+ },
+ {
+  "id": "CS1900-75",
+  "book": "CS1900",
+  "number": "75",
+  "title": "At the Door",
+  "path": "data/CS1900/75.json",
+  "v": "2e3f6f5700733e2bb242baefdfe97312281bb5c83c96a58a38b02c4bf93fe972"
  },
  {
   "id": "CS1908-1",
@@ -8033,7 +8065,7 @@
   "number": "213",
   "title": "Hallelujah for the Cross!",
   "path": "data/CS1908/213.json",
-  "v": "be9a9f1f05e4ff93608c25a6697c000f7e7ea4bb9cd62e907a4b92faa3d84c82"
+  "v": "cfdfa68c59ecb91e59a3c8e6b869881bb3082b03962f635d47bdd992c6592e2f"
  },
  {
   "id": "CS1908-214",
@@ -10477,7 +10509,7 @@
   "number": "517",
   "title": "In Heavenly Love Abiding",
   "path": "data/CS1908/517.json",
-  "v": "41229cce72e3f2d8e1c882a331316936057335e90a8743cd7637572b82f7f7a6"
+  "v": "fe53430426d16c3bacc6c6d5eb104979ae67bf60d90f159cbe3f55510686d8a7"
  },
  {
   "id": "CS1908-518",
@@ -10634,6 +10666,38 @@
   "title": "Winning Precious Souls to Thee",
   "path": "data/CS1908/536.json",
   "v": "888528f290a8be398ace8a059026714aad54027bb587f676a1fc791897affb3d"
+ },
+ {
+  "id": "CS1908-537",
+  "book": "CS1908",
+  "number": "537",
+  "title": "",
+  "path": "data/CS1908/537.json",
+  "v": "72f74c182fef1c6e5ab200f1a7912b9dadd0cf8368b85c32e259b311a2a1b9ef"
+ },
+ {
+  "id": "CS1908-538",
+  "book": "CS1908",
+  "number": "538",
+  "title": "Love's Rainbow",
+  "path": "data/CS1908/538.json",
+  "v": "84b63305d7d9436955c43b60adfa6b7af31cc2496d65416fe40f8a564ed7462d"
+ },
+ {
+  "id": "CS1908-539",
+  "book": "CS1908",
+  "number": "539",
+  "title": "Just a Ray of Sunshine",
+  "path": "data/CS1908/539.json",
+  "v": "48b9b858f8dd72073423e3f070eb8d525e1c26308fc33fdddb30e205332d4b62"
+ },
+ {
+  "id": "CS1908-540",
+  "book": "CS1908",
+  "number": "540",
+  "title": "Walk in the Light",
+  "path": "data/CS1908/540.json",
+  "v": "d6cc0a08d8568111e03556f20a514ef56b8ba227e7370881a5bc1984a5394100"
  },
  {
   "id": "CS1908-541",
@@ -11853,7 +11917,7 @@
   "number": "20b",
   "title": "Mungu Wetu Yeye Mwamba",
   "path": "data/NZK/20b.json",
-  "v": "3a299fc8a5238106d1d4f41c2235997312f692d18fb38cd058107d4b9e0ee579"
+  "v": "3d023a2ab5dec8fddc14ec533bbc149bc0f150008ecc95f1ca0ee19e62432303"
  },
  {
   "id": "NZK-22",
@@ -12008,7 +12072,7 @@
   "number": "31b",
   "title": "Niimbe Pendo Lake",
   "path": "data/NZK/31b.json",
-  "v": "5aaacab460976990579d2d46c206b788f76f1724965c7e448a046dcbc62de4dc"
+  "v": "095e41b71ef49d4a8d376d4b476fd8209270c63660532b46bf42ac3f313db4f0"
  },
  {
   "id": "NZK-34",
@@ -12027,7 +12091,7 @@
   "number": "34b",
   "title": "Nipe Habari za Yesu",
   "path": "data/NZK/34b.json",
-  "v": "8c5a4776dc30dcd5d4c3d2337fad6d02c48a8b89c3c9a5f5b31cc14c05f92cc9"
+  "v": "f6801d76451480d5e8b843c9376e1c7066babed53c870beca7e0633c1e579ec0"
  },
  {
   "id": "NZK-35",
@@ -12076,7 +12140,7 @@
   "number": "37b",
   "title": "Pendo Lako, Ee Mwokozi",
   "path": "data/NZK/37b.json",
-  "v": "e431d08d3c37961b4df7d436c4d2da360a81b3775378d8fdd4b8cc111c7b63fb"
+  "v": "d6211733500de66db4415bedaafa68baad9eae496ba9af33823bc0f8e1d8b737"
  },
  {
   "id": "NZK-38",
@@ -12234,7 +12298,7 @@
   "number": "50b",
   "title": "Mungu Nawe Nanyi Daima",
   "path": "data/NZK/50b.json",
-  "v": "0eebe8a26932551f52b49a4a61b8a761dfe5f99ea0e1f45c91bc71f4f607e8d9"
+  "v": "61c63bce267dff98e9b39510f7ef836aaa082c939454416c70f4133b5982ca00"
  },
  {
   "id": "NZK-51",
@@ -12291,7 +12355,7 @@
   "number": "53b",
   "title": "Napenda Kuhubiri",
   "path": "data/NZK/53b.json",
-  "v": "5f96f0101b51c1fbe1bb7ca78a9522ecf4a6bb921d447afb375c63ee89f8631a"
+  "v": "19cdca2ee20eb9692bb81938799bf2f0f1d9fe89ca7fd5a9c5e57c157977d559"
  },
  {
   "id": "NZK-54",
@@ -12966,7 +13030,7 @@
   "number": "122b",
   "title": "Yote Namtolea Yesu",
   "path": "data/NZK/122b.json",
-  "v": "a0a7773cfd8bba3b61d6c010952cc363241581ec61c69be9d941e2f57882cf75"
+  "v": "2e7fcbc2b35a9ac770ab8c89eef6763cc4e79129e5ae52ced246a63a91e00c47"
  },
  {
   "id": "NZK-123",
@@ -12985,7 +13049,7 @@
   "number": "123b",
   "title": "Yesu Kwa Imani",
   "path": "data/NZK/123b.json",
-  "v": "bde9a3d68e01a5508841fc914134b88259241815eaf58f4f71d130c2537b2d54"
+  "v": "8826da7faeba5f7ada4ab4b1e6e66c50fd542d0f48ae4f565d811b672157abb0"
  },
  {
   "id": "NZK-124",
@@ -21059,7 +21123,7 @@
   "number": "67b",
   "title": "Nyasachwa Mondo Obed Kodu",
   "path": "data/WN/67b.json",
-  "v": "78ab00e9c38f38030105319cfd1b5b20697f684e5b52d2287964013422f3e46c"
+  "v": "6471762c8ea87f8d0510cae05f36ad89139a4de057440472030215cd06b90c99"
  },
  {
   "id": "WN-69",
@@ -21097,7 +21161,7 @@
   "number": "70b",
   "title": "Nyasaye Wachokore",
   "path": "data/WN/70b.json",
-  "v": "8c41215a2bc702723072c023a72a0616628434c2834b0f911f582e07fc817038"
+  "v": "68d669d38799b1c6316da0dd0a365561ef0d78b2705f7fb32943ba32b1894ce3"
  },
  {
   "id": "WN-71",
@@ -21614,7 +21678,7 @@
   "number": "168b",
   "title": "Duto Amiyo Ruoth Yesu",
   "path": "data/WN/168b.json",
-  "v": "8db74894157f9211d41637d2cdbd5970a9a20b5328e91ca58338f1910fcf4ed7"
+  "v": "9de2ce8a9fe8fdd5ec4311d1fc75b7749ef0bd75c3972cf07ca95f5e3a1e15eb"
  },
  {
   "id": "WN-169",
@@ -21694,7 +21758,7 @@
   "number": "182b",
   "title": "Koro Wagenoi",
   "path": "data/WN/182b.json",
-  "v": "1bc4164c7c229f0d75a7fce8f77509cf6919570e23d69cd7cec4cf10903cc952"
+  "v": "4f66f864206115cf1c0b343da2bb740e48249ffbb341e77318be25ddfdf4bfa2"
  },
  {
   "id": "WN-184",
