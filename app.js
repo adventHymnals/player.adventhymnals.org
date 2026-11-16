@@ -85,7 +85,7 @@ const state = {
   verses: [1],
   transpose: 0,       // semitones for the whole hymn (saved per hymn)
   lastVerseUp: store.get("lastVerseUp", 0), // modulate the last verse up 0, 1 or 2 semitones
-  verseLayout: store.get("verseLayout", APP ? "unfold" : "stack"), // "stack": verses under one another; "unfold": written out, each verse starting where the last ends (the app's default: reading along, the eye never jumps back)
+  verseLayout: store.get("verseLayout", "stack"), // "stack": verses under one another; "unfold": written out
   presenterShows: store.get("presenterShows", "score"), // or "words" for projection
   showSync: store.get("showSync", false),
   headsCollapsed: store.get("headsCollapsed", false),
@@ -2570,6 +2570,7 @@ function describeCents(off) {
 // your tempo, from the notes you sing), comes in where you are by then, and keeps your pace (follow.js).
 // A singer it loses (a line skipped, a verse begun again) is found again in the hymn.
 const SURE = { fit: 1.6, margin: 0.35 }; // when a match is sure enough to join in (see harness qbh_stream)
+const HERE = 0.5; // the music moves only when another place fits the singer this much better than where it is
 const swm = { on: false, do: "piano", find: false, joined: false, joining: false, status: "", tracker: new NoteTracker(),
   idx: null, hymnIdx: null, searched: 0, saved: null, voice: "S" };
 if (new URLSearchParams(location.search).has("debug")) window.__swm = swm; // tests read what it heard
@@ -2615,7 +2616,7 @@ async function swmStart({ do: what = "piano", find = false } = {}) {
     toast("Sing with me needs the microphone. Allow it for this page and try again.", 6000);
     return;
   }
-  Object.assign(swm, { on: true, do: what === "sing" ? "sing" : "piano", find: !!find, joined: false, joining: false, searched: 0, candidates: [], idx: null, hymnIdx: null, reSearched: 0, checkedAt: 0 });
+  Object.assign(swm, { on: true, do: what === "sing" ? "sing" : "piano", find: !!find, joined: false, joining: false, searched: 0, candidates: [], idx: null, hymnIdx: null, reSearched: 0, checkedAt: 0, prev: null, lost: false, away: null });
   swm.tracker.reset();
   // listening runs on its own clock, not the screen's: a locked phone draws about two frames a second
   clearInterval(swm.timer);
@@ -2669,7 +2670,13 @@ function swmTick() {
   if (notes.length < 6) { swmSay(notes.length ? `Heard ${heard}. I start comparing after 6 notes…` : swm.status); return; }
   const results = swm.idx.search(notes.slice(-24));
   const d = decide(results, SURE, swm.idx);
-  if (!d) { swmSay(swmSearching(notes, heard, results)); return; }
+  // sure twice running, the same tune at the same place: among 1,689 tunes one lucky fit comes too easily
+  // (a song that is in no hymnal, or an alto, was joined to a wrong hymn one time in four)
+  // (not needed for a place in the open hymn: four parts to choose from, and a wrong place is put right)
+  const again = d && (!swm.find || (swm.prev && swm.prev.tune === d.tune && Math.abs(d.end - swm.prev.end) <= 3));
+  swm.prev = d;
+  if (d && !again) decide.why = "again";
+  if (!d || !again) { swmSay(swmSearching(notes, heard, results)); return; }
   swmJoin(d, notes);
 }
 
@@ -2693,7 +2700,7 @@ function swmSearching(notes, heard, results) {
   swm.candidates = names;
   const what = swm.find ? `Comparing with ${swm.idx.tunes.length.toLocaleString()} hymn tunes` : `Looking for your place in ${hymn.title}`;
   if (!names.length) return `Heard ${heard}. ${what}: nothing close yet, sing on…`;
-  const why = { fit: "not close enough yet", margin: "these are too close to tell apart", place: "those notes come twice in it, waiting to hear which", tunes: "several tunes start alike, waiting until they part" }[decide.why] || "not sure yet";
+  const why = { fit: "not close enough yet", margin: "these are too close to tell apart", place: "those notes come twice in it, waiting to hear which", tunes: "several tunes start alike, waiting until they part", again: "nearly sure, one more note" }[decide.why] || "not sure yet";
   return `Heard ${heard}. ${what}. Closest: ${names.join("; ")}. ${why[0].toUpperCase()}${why.slice(1)}, sing on…`;
 }
 
@@ -2704,9 +2711,11 @@ async function swmJoin(d, notes) {
     let match = d, voice;
     if (swm.find) {
       // this hymn when it is one of those with these notes, else the best match
+      // (else one in the open hymn's hymnal: the same tune is in several, and the best fit is any of them)
       const has = (r) => r.ids.includes(hymn?.id);
-      match = d.same.find(has) || d;
-      const id = has(match) ? hymn.id : match.ids[0];
+      const mine = (id) => !!hymn && id.startsWith(`${hymn.book}-`);
+      match = d.same.find(has) || d.same.find((r) => r.ids.some(mine)) || d;
+      const id = has(match) ? hymn.id : match.ids.find(mine) || match.ids[0];
       if (id !== hymn?.id) {
         const entry = hymnList.find((x) => x.id === id);
         if (!entry) { swm.searched = 0; return; }
@@ -2759,6 +2768,16 @@ function swmGo(q, sungAt, spq, pass) {
  * that is sure and the music is somewhere else (a line skipped, a verse begun again), the music goes there.
  * The note-by-note following alone can be fooled: nearby notes of the same pitch keep it busy in the wrong place.
  */
+/** How much worse the notes fit where the music is (quarter q) than at their best place in the hymn. */
+function swmHereGap(notes, best, q, spq, now) {
+  const span = (notes[notes.length - 1].t0 - notes[0].t0) / spq + 4;
+  const tunes = swm.hymnIdx.tunes.map((t) => ({ ids: t.ids, n: t.notes.filter((x) => x[2] >= q - span && x[2] <= q + 3) })).filter((t) => t.n.length >= 4);
+  const here = tunes.length ? new MelodyIndex({ tunes }).search(notes)[0] : null;
+  // "here" is within three quarters of the music, not merely in the stretch searched
+  if (!here || Math.abs(here.at + (now - here.sungFrom) / spq - q) >= 3) return Infinity;
+  return here.score - best.score;
+}
+
 function swmRelocate(now) {
   if (now - (swm.checkedAt || 0) < 1.5 || now - swm.joinedAt < 2) return;
   const all = swm.tracker.sung();
@@ -2775,16 +2794,25 @@ function swmRelocate(now) {
   const d = notes.length >= 7 ? decide(res, SURE, swm.hymnIdx) : null;
   const loc = locate(perf, engine.now());
   if (!loc) return;
+  // a line that repeats an earlier one, or a few notes that fit several places: when they fit where the
+  // music is about as well, the singer is here (a steady singer was "lost" about once a minute without this)
+  const gap = engine.playing && res[0] ? swmHereGap(notes, res[0], loc.q, 60 / (state.tempo * engine.rate), now) : Infinity;
   if (!d) {
     // not sure where you are, but sure it is not where the music is (both places you might be are
     // elsewhere): stop and listen, as a pianist who has lost the singer
     const b = res[0];
-    if (engine.playing && b && b.score < SURE.fit) {
+    if (!(engine.playing && b && b.score < SURE.fit && gap > HERE)) swm.away = null;
+    else {
       const ok = (x) => x > 0.15 && x < 2.5;
       const spq = ok(b.spqNow) ? b.spqNow : 60 / state.tempo;
       const off = (at) => Math.abs(at + (now - b.sungFrom) / spq - loc.q);
       const places = b.placeGap < SURE.margin && b.otherAt !== null ? [b.at, b.otherAt] : [b.at];
-      if (places.every((at) => off(at) > 3)) {
+      const far = places.every((at) => off(at) > 3);
+      // twice running (as for joining): one odd check is not a lost singer
+      const again = swm.away && now - swm.away.t < 4;
+      swm.away = far ? { t: now } : null;
+      if (far && again) {
+        swm.away = null;
         engine.pause();
         swm.lost = true;
         swmSay("Finding where you are… sing on");
@@ -2796,7 +2824,14 @@ function swmRelocate(now) {
   const spq = ok(d.spqNow) ? d.spqNow : ok(d.spq) ? d.spq : 60 / state.tempo;
   const youNow = d.at + (now - d.sungFrom) / spq; // quarters
   const musicNow = loc.q;
-  if (Math.abs(youNow - musicNow) < 2 && !swm.lost) return; // with you (the following keeps it so)
+  if (!swm.lost && (Math.abs(youNow - musicNow) < 2 || gap <= HERE)) { swm.away = null; return; } // with you (the following keeps it so), or these notes fit where the music is as well
+  if (!swm.lost) {
+    // twice running, the same place both times, before the music leaves where it is
+    const a = swm.away, again = a && now - a.t < 4 && (a.you === undefined || Math.abs(a.you + (now - a.t) / spq - youNow) < 2);
+    swm.away = { t: now, you: youNow };
+    if (!again) return;
+  }
+  swm.away = null;
   // back at the start after the end of a verse: the next verse
   let k = loc.kind === "verse" ? loc.pass : Math.max(0, perf.passes.findIndex((x) => x.kind === "verse"));
   if (youNow < musicNow - hymn.totalQ / 2) {
@@ -4477,10 +4512,6 @@ window.AHStudio = {
       if (r) { r.checked = true; r.dispatchEvent(new Event("change", { bubbles: true })); }
     } else if (name === "sweep") {
       state.sweep = !!value; store.set("lineByLine", state.sweep); renderAll();
-    } else if (name === "verseLayout" && (value === "unfold" || value === "stack")) {
-      // "unfold": the verses written out one after another, each starting where the last ends on its line
-      $("verseUnfold").checked = value === "unfold";
-      $("verseUnfold").dispatchEvent(new Event("change", { bubbles: true }));
     } else if (name === "staves" && /^[SATB|]+$/.test(value)) {
       setStaves(value);
     } else if (name === "accStaff") {
@@ -4611,7 +4642,7 @@ window.AHStudio = {
     const want = appWant.id ?? hymn?.id ?? null;
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
-      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep, verseLayout: state.verseLayout,
+      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
       singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, candidates: swm.joined ? [] : swm.candidates || [], tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
         lag: swm.joined ? Math.round(follower.lag * 100) / 100 : null, q: swm.joined && perf ? Math.round((locate(perf, engine.now())?.q ?? 0) * 100) / 100 : null, transpose: state.transpose } : null,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,

@@ -37,13 +37,17 @@ export function decide(results, { fit = 0.9, margin = 0.35 } = {}, index = null)
   return { ...best, same };
 }
 
-/** The written notes a match puts the singer's notes on, repeats left out: equal for matches that sound alike. */
+/**
+ * The written notes a match puts the singer's notes on, repeats left out, counted from the first of them:
+ * equal for matches that sound alike in any key (one tune is printed in G in one hymnal and in A flat in
+ * another; a singer's key says nothing about which, so they are one answer, not rivals).
+ */
 function sungShape(r, index) {
   if (!index) return String(r.tune);
-  const ps = r.pairs.map(([, w]) => index.tunes[r.tune].cp[w]);
-  return ps.filter((p, i) => i === 0 || p !== ps[i - 1]).join(",");
+  const ps = r.pairs.map(([, w]) => index.tunes[r.tune].cp[w]).filter((p, i, a) => i === 0 || p !== a[i - 1]);
+  return ps.map((p) => p - ps[0]).join(",");
 }
-const wholeShape = (t) => (t.whole ??= t.cp.join(","));
+const wholeShape = (t) => (t.whole ??= t.steps.join(","));
 
 /**
  * Notes of a tune, [[midi, quarters, start], ...] -> its shape as sung: repeated notes as one (a singer
