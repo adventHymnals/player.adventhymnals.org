@@ -85,7 +85,7 @@ const state = {
   verses: [1],
   transpose: 0,       // semitones for the whole hymn (saved per hymn)
   lastVerseUp: store.get("lastVerseUp", 0), // modulate the last verse up 0, 1 or 2 semitones
-  verseLayout: store.get("verseLayout", "stack"), // "stack": verses under one another; "unfold": written out
+  verseLayout: store.get("verseLayout", "stack"), // "stack": verses under one another; "unfold": written out, each verse starting where the last ends (a score several times longer: a phone draws it slowly)
   presenterShows: store.get("presenterShows", "score"), // or "words" for projection
   showSync: store.get("showSync", false),
   headsCollapsed: store.get("headsCollapsed", false),
@@ -4512,6 +4512,10 @@ window.AHStudio = {
       if (r) { r.checked = true; r.dispatchEvent(new Event("change", { bubbles: true })); }
     } else if (name === "sweep") {
       state.sweep = !!value; store.set("lineByLine", state.sweep); renderAll();
+    } else if (name === "verseLayout" && (value === "unfold" || value === "stack")) {
+      // "unfold": the verses written out one after another, each starting where the last ends on its line
+      $("verseUnfold").checked = value === "unfold";
+      $("verseUnfold").dispatchEvent(new Event("change", { bubbles: true }));
     } else if (name === "staves" && /^[SATB|]+$/.test(value)) {
       setStaves(value);
     } else if (name === "accStaff") {
@@ -4642,7 +4646,7 @@ window.AHStudio = {
     const want = appWant.id ?? hymn?.id ?? null;
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
-      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
+      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep, verseLayout: state.verseLayout,
       singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, candidates: swm.joined ? [] : swm.candidates || [], tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
         lag: swm.joined ? Math.round(follower.lag * 100) / 100 : null, q: swm.joined && perf ? Math.round((locate(perf, engine.now())?.q ?? 0) * 100) / 100 : null, transpose: state.transpose } : null,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
