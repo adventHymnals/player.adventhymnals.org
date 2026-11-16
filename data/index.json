@@ -10710,6 +10710,86 @@
   "v": "fa2876a6a80115cd891ad032723862491bc1330609ab29f6cbab91fed9d84161"
  },
  {
+  "id": "CS1908-542",
+  "book": "CS1908",
+  "number": "542",
+  "title": "What Are You Doing for Jesus?",
+  "path": "data/CS1908/542.json",
+  "v": "8fc994218cdd43a0b5b77e8a82b224da40685a1287a2607a47b61a0d30eab3df"
+ },
+ {
+  "id": "CS1908-543",
+  "book": "CS1908",
+  "number": "543",
+  "title": "Lift! Brother, Lift!",
+  "path": "data/CS1908/543.json",
+  "v": "599e05579fbfcdbb35586e6e23e077931c6ddba95d2685f563980f38d597bc1a"
+ },
+ {
+  "id": "CS1908-544",
+  "book": "CS1908",
+  "number": "544",
+  "title": "Throw Out the Life-Line",
+  "path": "data/CS1908/544.json",
+  "v": "653d0d27e71926b431255215742fc7099d0e1585ad2e7735fdeb202ef0311925"
+ },
+ {
+  "id": "CS1908-545",
+  "book": "CS1908",
+  "number": "545",
+  "title": "Throw Out the Life-Line!",
+  "path": "data/CS1908/545.json",
+  "v": "c6dbd6d14751a320fe0b6f706b9a2041cd5bdab839a451c8f282abcd0c3295aa"
+ },
+ {
+  "id": "CS1908-546",
+  "book": "CS1908",
+  "number": "546",
+  "title": "Missionary's Farewell",
+  "path": "data/CS1908/546.json",
+  "v": "f9b2e5e0365ae4a0c4705701ff35762d8c5112bf86a39e51e98952bfbdb59e08"
+ },
+ {
+  "id": "CS1908-547",
+  "book": "CS1908",
+  "number": "547",
+  "title": "The Call for Reapers",
+  "path": "data/CS1908/547.json",
+  "v": "d9c05cf159a5a50b28519a7fc5afef5db71e1869c9aec09da342b3c401ad72bd"
+ },
+ {
+  "id": "CS1908-548",
+  "book": "CS1908",
+  "number": "548",
+  "title": "Where Are the Reapers?",
+  "path": "data/CS1908/548.json",
+  "v": "e06077fb14b856e5f4cd021ba35acbccfb4a1228ee960c87939a45e1f7912a78"
+ },
+ {
+  "id": "CS1908-549",
+  "book": "CS1908",
+  "number": "549",
+  "title": "One More Day's Work for Jesus",
+  "path": "data/CS1908/549.json",
+  "v": "c4265aeaba950442028c4df8620f243c45d003f29d470ad513182a3c2cc1cc45"
+ },
+ {
+  "id": "CS1908-550",
+  "book": "CS1908",
+  "number": "550",
+  "title": "Pray for the Erring",
+  "path": "data/CS1908/550.json",
+  "v": "1dd79e7aa3bcefbd4dfc5854287c65e41273a7edefe8776200bc1469666abb45"
+ },
+ {
+  "id": "CS1908-551",
+  "book": "CS1908",
+  "number": "551",
+  "title": "Wait, and Murmur Not",
+  "path": "data/CS1908/551.json",
+  "v": "a775c2d72abc66fca3f5ceca421f27e6b18e1863c116a0621afc4215a9f2d4ff"
+ },
+ {
   "id": "CS1908-552",
   "book": "CS1908",
   "number": "552",
@@ -10718,6 +10798,14 @@
   "sung": true,
   "sv": "d2c1ac993c2a06b58655438689052588758e33fc37bf8faf253e48621aaeb286",
   "v": "a6f972da57da4da28fe2eed484c3cd65423dda79bab575850cb87b20575fe988"
+ },
+ {
+  "id": "CS1908-553",
+  "book": "CS1908",
+  "number": "553",
+  "title": "All My Class",
+  "path": "data/CS1908/553.json",
+  "v": "e8c1fccbd86ab1cb0e6728b14036c6a5667965d8e2baa10bcdcae180ae0be62f"
  },
  {
   "id": "CS1908-554",
@@ -10740,6 +10828,14 @@
   "v": "0c33d4a4ee778b4b00fc2f5f76e84827636430a901944edafe0f366435d26258"
  },
  {
+  "id": "CS1908-556",
+  "book": "CS1908",
+  "number": "556",
+  "title": "Good Night",
+  "path": "data/CS1908/556.json",
+  "v": "9e748213401d4635082b55ed7b825fcac2cb20e12145681a9b30755ff3ec2368"
+ },
+ {
   "id": "CS1908-557",
   "book": "CS1908",
   "number": "557",
@@ -10748,6 +10844,126 @@
   "sung": true,
   "sv": "2fea4a323722d0ebe5ad5026812fb601c5b161fd5d7eaeff7ac88155a20386e0",
   "v": "a7c8ad8892f99654ef56de4522832575d618ae6e460f6e3b12462089dc3f60e8"
+ },
+ {
+  "id": "CS1908-558",
+  "book": "CS1908",
+  "number": "558",
+  "title": "Lifetime Is Working Time",
+  "path": "data/CS1908/558.json",
+  "v": "3003d3e8a12ef966e6bc0f789cfc3c6d1d5c0db0ffd17dfdda20079316481f5f"
+ },
+ {
+  "id": "CS1908-559",
+  "book": "CS1908",
+  "number": "559",
+  "title": "The Helping Word",
+  "path": "data/CS1908/559.json",
+  "v": "211e5fb18b45b40e9f073e43af235f4b6c9eba70bd39c9f088ba2b79e7d86f57"
+ },
+ {
+  "id": "CS1908-560",
+  "book": "CS1908",
+  "number": "560",
+  "title": "Never Give Up",
+  "path": "data/CS1908/560.json",
+  "v": "90a035d597fb0a8209f000dade2c6b3b75bdf457f17772643254685368b7e936"
+ },
+ {
+  "id": "CS1908-561",
+  "book": "CS1908",
+  "number": "561",
+  "title": "Bring Them In",
+  "path": "data/CS1908/561.json",
+  "v": "753c72e8f786da6bf3c802de870abc21c6a5dce2e2228485730f0715519ff73c"
+ },
+ {
+  "id": "CS1908-562",
+  "book": "CS1908",
+  "number": "562",
+  "title": "Abiding and Confiding",
+  "path": "data/CS1908/562.json",
+  "v": "b955cb6e2787160a8612a52dc4cc8b5df045d21f85fddd0c63786dff7324e11d"
+ },
+ {
+  "id": "CS1908-563",
+  "book": "CS1908",
+  "number": "563",
+  "title": "Just for To-day",
+  "path": "data/CS1908/563.json",
+  "v": "ba99aa6983a75c2320f4b138b620bcbe42950ec2b5f6b2f560fef87947e8f6e5"
+ },
+ {
+  "id": "CS1908-564",
+  "book": "CS1908",
+  "number": "564",
+  "title": "We Have an Anchor",
+  "path": "data/CS1908/564.json",
+  "v": "d17de6390d2c6e85aa027f20988338e452ec83f47fad7a388d8f52471c9cb481"
+ },
+ {
+  "id": "CS1908-565",
+  "book": "CS1908",
+  "number": "565",
+  "title": "Christian, Onward!",
+  "path": "data/CS1908/565.json",
+  "v": "e7d57f232933ab5889774dafa782eec8d2c60f02e60dd8cbf42abc10825984ad"
+ },
+ {
+  "id": "CS1908-566",
+  "book": "CS1908",
+  "number": "566",
+  "title": "I'll Go Where You Want Me to Go",
+  "path": "data/CS1908/566.json",
+  "v": "b51e12f1b959cdc6941de34a1f724ae8878af379f29c2b2f488d3b7be88dd693"
+ },
+ {
+  "id": "CS1908-567",
+  "book": "CS1908",
+  "number": "567",
+  "title": "'Tis Love That Makes Us Happy",
+  "path": "data/CS1908/567.json",
+  "v": "f5f166e641530502e4f2c6866c66900dd13e40d62e42cc17fc5f72cd33599958"
+ },
+ {
+  "id": "CS1908-568",
+  "book": "CS1908",
+  "number": "568",
+  "title": "Scatter the Seeds of Kindness",
+  "path": "data/CS1908/568.json",
+  "v": "409ae2a46eb7eac262253960fb013a634033c2bfcc56fbc6080a4883e44f6c73"
+ },
+ {
+  "id": "CS1908-569",
+  "book": "CS1908",
+  "number": "569",
+  "title": "Little Feet, Be Careful",
+  "path": "data/CS1908/569.json",
+  "v": "7c8b36c72f07b155fd5222e9a7c11a7f08634d4d27072d2fb36560ff64a497ef"
+ },
+ {
+  "id": "CS1908-570",
+  "book": "CS1908",
+  "number": "570",
+  "title": "Hold On",
+  "path": "data/CS1908/570.json",
+  "v": "1b08e1f4e97c186799427e3335e8f5713a427f0e548f5aa91bfd5cd4f18e3a84"
+ },
+ {
+  "id": "CS1908-571",
+  "book": "CS1908",
+  "number": "571",
+  "title": "Master, Hast Thou Work for Me",
+  "path": "data/CS1908/571.json",
+  "v": "798dfc68f09a033894010f8938305a3250375db71e258da4af80a719107d0c31"
+ },
+ {
+  "id": "CS1908-572",
+  "book": "CS1908",
+  "number": "572",
+  "title": "Keep Step",
+  "path": "data/CS1908/572.json",
+  "v": "80f1bcfa3b363ebdf61303f1e71d07a864444fd07ac85b571097f86ea8bbf437"
  },
  {
   "id": "CS1908-573",
@@ -10760,6 +10976,62 @@
   "v": "66a5587564a66d735c7f8e015abfbfa1980367521a917b3736245c5d782d32e9"
  },
  {
+  "id": "CS1908-574",
+  "book": "CS1908",
+  "number": "574",
+  "title": "Toiling for Jesus",
+  "path": "data/CS1908/574.json",
+  "v": "f94838678c154965f0fc982d5cbe05e27cb0953d4c433c8e6778be94d20792b9"
+ },
+ {
+  "id": "CS1908-575",
+  "book": "CS1908",
+  "number": "575",
+  "title": "Living Is Giving",
+  "path": "data/CS1908/575.json",
+  "v": "675d9b494d039caeb4652a11809b1f452f49d0fdfd440f6d920e20db79a65210"
+ },
+ {
+  "id": "CS1908-576",
+  "book": "CS1908",
+  "number": "576",
+  "title": "Toiling On",
+  "path": "data/CS1908/576.json",
+  "v": "9f9c39b1cc427c97184e1ac8a1c6802b93f6c37f102a81fc1092e750273fe0e5"
+ },
+ {
+  "id": "CS1908-577",
+  "book": "CS1908",
+  "number": "577",
+  "title": "Beautiful Little Hands",
+  "path": "data/CS1908/577.json",
+  "v": "7977d47ebbdf3e0fc524ab926c22f7f6af8dbcb0036a7508a149f965ff62cd6f"
+ },
+ {
+  "id": "CS1908-578",
+  "book": "CS1908",
+  "number": "578",
+  "title": "Beautiful Flowers",
+  "path": "data/CS1908/578.json",
+  "v": "37838c6ca21c87c8ad136122c36c3bde845d500e23d67f985a63585558c67ab2"
+ },
+ {
+  "id": "CS1908-579",
+  "book": "CS1908",
+  "number": "579",
+  "title": "I'll Be a Sunbeam",
+  "path": "data/CS1908/579.json",
+  "v": "bacc9a340d9bf2a722472ba72fe966c21bdd06103b97587a3ce59d08e9f95e38"
+ },
+ {
+  "id": "CS1908-580",
+  "book": "CS1908",
+  "number": "580",
+  "title": "Love at Home",
+  "path": "data/CS1908/580.json",
+  "v": "1e09717d2899a7ef1ac776e1bb5dbabc8ffaddeb479eaef173d048b11935365e"
+ },
+ {
   "id": "CS1908-581",
   "book": "CS1908",
   "number": "581",
@@ -10768,6 +11040,134 @@
   "sung": true,
   "sv": "23372d1068aa86186a674bd1932b2efa0c11991bd7bf06ea649936e9a34e129a",
   "v": "55fd8ef6f0442e51ee2dbe0a9c623911ebf3256da5d2021fd9968315549506e2"
+ },
+ {
+  "id": "CS1908-582",
+  "book": "CS1908",
+  "number": "582",
+  "title": "Tell It Again",
+  "path": "data/CS1908/582.json",
+  "v": "f753fe932a4cd78a67dd7564483e453bfe1da1b0019fe425debe2bb9cd15ac87"
+ },
+ {
+  "id": "CS1908-583",
+  "book": "CS1908",
+  "number": "583",
+  "title": "Bringing in the Sheaves",
+  "path": "data/CS1908/583.json",
+  "v": "4c70b1f15cbb22cbaaff8abf140546cd02be4c970aa4cad9951531c4c65a57fb"
+ },
+ {
+  "id": "CS1908-584",
+  "book": "CS1908",
+  "number": "584",
+  "title": "Peace, Be Still!",
+  "path": "data/CS1908/584.json",
+  "v": "cfe16c3e4eefd5255201303aa868c053ba51341ff8a10975dcf57a9901d9d615"
+ },
+ {
+  "id": "CS1908-585",
+  "book": "CS1908",
+  "number": "585",
+  "title": "Away the Bowl!",
+  "path": "data/CS1908/585.json",
+  "v": "1e4206811f61f267891186fae42da571ef34bc472a2fb06c5bdb94501d470ff0"
+ },
+ {
+  "id": "CS1908-586",
+  "book": "CS1908",
+  "number": "586",
+  "title": "Look for the Waymarks",
+  "path": "data/CS1908/586.json",
+  "v": "65d66dfd7ab6514ae84269cba17b952971e29940a79be2aadb34383123314605"
+ },
+ {
+  "id": "CS1908-587",
+  "book": "CS1908",
+  "number": "587",
+  "title": "The Temperance Call",
+  "path": "data/CS1908/587.json",
+  "v": "3d55607dbc1c75bc761462397a0fd335ab9841e03dbc4a654cf257af024cdbe7"
+ },
+ {
+  "id": "CS1908-588",
+  "book": "CS1908",
+  "number": "588",
+  "title": "Harvest Time",
+  "path": "data/CS1908/588.json",
+  "v": "d0f6afdb9390d2b85a6bc7052005bb8f7d5ebb04fbf42e54ba2bf8c729d60bc4"
+ },
+ {
+  "id": "CS1908-589",
+  "book": "CS1908",
+  "number": "589",
+  "title": "Hasten On, Glad Day",
+  "path": "data/CS1908/589.json",
+  "v": "c49a15adc199ca4f8ede97b040c5bb2c8d189ba7b4aa6d736d884d32158b3285"
+ },
+ {
+  "id": "CS1908-590",
+  "book": "CS1908",
+  "number": "590",
+  "title": "Man the Life-Boat!",
+  "path": "data/CS1908/590.json",
+  "v": "fa947ab1db1873ac17630176938d5685755dac4b5e7d7399ee0d7087b41aa019"
+ },
+ {
+  "id": "CS1908-591",
+  "book": "CS1908",
+  "number": "591",
+  "title": "Courageous Lives",
+  "path": "data/CS1908/591.json",
+  "v": "05594e600920fbdb20d4555f4088a8b30627c4e49f77b9dc778662fed52da475"
+ },
+ {
+  "id": "CS1908-592",
+  "book": "CS1908",
+  "number": "592",
+  "title": "Sleeping on Guard",
+  "path": "data/CS1908/592.json",
+  "v": "b3f7c64b7ed3280e5d4578a492a22fc0a04d9bd5ca277913fb68a4caa54a2e66"
+ },
+ {
+  "id": "CS1908-593",
+  "book": "CS1908",
+  "number": "593",
+  "title": "God Speed the Right",
+  "path": "data/CS1908/593.json",
+  "v": "d719e8b19c4e030f278c1d315e328b8cc58c73d02e4a74203199e157817a6316"
+ },
+ {
+  "id": "CS1908-594",
+  "book": "CS1908",
+  "number": "594",
+  "title": "Give of Your Best",
+  "path": "data/CS1908/594.json",
+  "v": "fd70cb9f26402c81a292e1057cecb3885e289b595e05ca5edd491afbfb4b97b3"
+ },
+ {
+  "id": "CS1908-595",
+  "book": "CS1908",
+  "number": "595",
+  "title": "The Hour of Prayer",
+  "path": "data/CS1908/595.json",
+  "v": "f47de586a9475484b211120e1f0d6ca744896f316f32198561ae5a78b3a05d3a"
+ },
+ {
+  "id": "CS1908-596",
+  "book": "CS1908",
+  "number": "596",
+  "title": "Buy Up the Opportunity",
+  "path": "data/CS1908/596.json",
+  "v": "1fe8c3698a4e971d3e66d0226a87bb9caad268ce376a51a3ac460a57794bce22"
+ },
+ {
+  "id": "CS1908-597",
+  "book": "CS1908",
+  "number": "597",
+  "title": "How Much I Need Thee",
+  "path": "data/CS1908/597.json",
+  "v": "80ce17ef7d89b10de53a305cecac337a5a42af5d62dceb6528b6b760e4884aec"
  },
  {
   "id": "CS1908-598",
@@ -10780,6 +11180,78 @@
   "v": "5340b4bc980068cbb22ce733a456a5fcefd15b9c2472ae3ad3b50d52d8ef3bbe"
  },
  {
+  "id": "CS1908-599",
+  "book": "CS1908",
+  "number": "599",
+  "title": "My Lord and I",
+  "path": "data/CS1908/599.json",
+  "v": "621d2fcc2718f3ced022318e1c7dc8182dc77ee417c63e3f9eeabdd4e286388e"
+ },
+ {
+  "id": "CS1908-600",
+  "book": "CS1908",
+  "number": "600",
+  "title": "Ready to Do His Will",
+  "path": "data/CS1908/600.json",
+  "v": "97f84912bfa2f3701fae7bec9da33e1ca4a1ac05eefd0518e40a81c0a8edbe4a"
+ },
+ {
+  "id": "CS1908-601",
+  "book": "CS1908",
+  "number": "601",
+  "title": "Precious Promise",
+  "path": "data/CS1908/601.json",
+  "v": "0dd002085dc08055664437050df10c05e5df9aab6ef471d0a2760b9de7eb303e"
+ },
+ {
+  "id": "CS1908-602",
+  "book": "CS1908",
+  "number": "602",
+  "title": "Forward, Brothers!",
+  "path": "data/CS1908/602.json",
+  "v": "ae0b5ab5df937152fbbf8d10568488c2e7ff015cb5b1de94e29244dd8f7caec4"
+ },
+ {
+  "id": "CS1908-603",
+  "book": "CS1908",
+  "number": "603",
+  "title": "God Bless Our School",
+  "path": "data/CS1908/603.json",
+  "v": "f06586de591379e419d10b4b7b2774638b2c2471cfdf832e3c991b7c95f6c0d2"
+ },
+ {
+  "id": "CS1908-604",
+  "book": "CS1908",
+  "number": "604",
+  "title": "More Diligence",
+  "path": "data/CS1908/604.json",
+  "v": "ebc658543988b6913ef7c5275ec3154681e4b8c887dca371b85a760cfbc5d845"
+ },
+ {
+  "id": "CS1908-605",
+  "book": "CS1908",
+  "number": "605",
+  "title": "Chide Mildly the Erring",
+  "path": "data/CS1908/605.json",
+  "v": "b8a67ac41b77594eb728725665ae19e378586c4096d7bee1e582783f1ee9b038"
+ },
+ {
+  "id": "CS1908-606",
+  "book": "CS1908",
+  "number": "606",
+  "title": "Not Now, My Child",
+  "path": "data/CS1908/606.json",
+  "v": "d301a9d463edcc06327f7717285ebfa212028a6ab5c872548d45300ea733c770"
+ },
+ {
+  "id": "CS1908-607",
+  "book": "CS1908",
+  "number": "607",
+  "title": "Work for the School",
+  "path": "data/CS1908/607.json",
+  "v": "06f01fa165eedef814c1e2a506497c6a0c347ed8a1426af79898437c8113ae19"
+ },
+ {
   "id": "CS1908-608",
   "book": "CS1908",
   "number": "608",
@@ -10788,6 +11260,78 @@
   "sung": true,
   "sv": "8c8c6d344a97a51c248fa95db675f097ecf7eaffc4883f1eaef8633d429719b4",
   "v": "056a0ebf6707b2ef603370ccc45b92f5f6fde4c1fd04cf050990645522e34c9a"
+ },
+ {
+  "id": "CS1908-609",
+  "book": "CS1908",
+  "number": "609",
+  "title": "I Need Thee Every Hour",
+  "path": "data/CS1908/609.json",
+  "v": "3743f11dda6dbb511cd90978bafa618a8779b12512cc686a37e337f0997c437b"
+ },
+ {
+  "id": "CS1908-610",
+  "book": "CS1908",
+  "number": "610",
+  "title": "Vale of Beulah",
+  "path": "data/CS1908/610.json",
+  "v": "3dd138e54ae6c948d4e8b2561f509f1d3a0c00f0d7d8488a8e2b1f09f762e88e"
+ },
+ {
+  "id": "CS1908-611",
+  "book": "CS1908",
+  "number": "611",
+  "title": "All the Way",
+  "path": "data/CS1908/611.json",
+  "v": "96be4e17b2e93760f7132c6a71778f6c0cf3eb2f4c23424c20485bd6eb9433fe"
+ },
+ {
+  "id": "CS1908-612",
+  "book": "CS1908",
+  "number": "612",
+  "title": "On Thee My Hopes Repose",
+  "path": "data/CS1908/612.json",
+  "v": "1281b5af7b6f2095277e211838d627749b0e9c4cd18bf85a65cf9f88f4910f80"
+ },
+ {
+  "id": "CS1908-613",
+  "book": "CS1908",
+  "number": "613",
+  "title": "The Rock That Is Higher",
+  "path": "data/CS1908/613.json",
+  "v": "a9ef304bdb674435e6568514e3eeed71e62b79ff692f8d37bce0cb7adc5b4222"
+ },
+ {
+  "id": "CS1908-614",
+  "book": "CS1908",
+  "number": "614",
+  "title": "Something for Jesus",
+  "path": "data/CS1908/614.json",
+  "v": "2592634f6552a973f36b16ee61fc29623ff715b1512df06dbc627c2f74cdc643"
+ },
+ {
+  "id": "CS1908-615",
+  "book": "CS1908",
+  "number": "615",
+  "title": "Jesus Only",
+  "path": "data/CS1908/615.json",
+  "v": "c82fc931b91871db4b58ca5e13cee519fdeee8837fa7d3c88707205c2fa9a2e0"
+ },
+ {
+  "id": "CS1908-616",
+  "book": "CS1908",
+  "number": "616",
+  "title": "Call Them In",
+  "path": "data/CS1908/616.json",
+  "v": "09806893aaffbead9b583ae2d76d9d98c35cc29e7b76fc11211a9ddc407407f9"
+ },
+ {
+  "id": "CS1908-617",
+  "book": "CS1908",
+  "number": "617",
+  "title": "A Cry from Macedonia",
+  "path": "data/CS1908/617.json",
+  "v": "933a92a9780f48600308f2e642e1747915f9f61ec43efd0aeadcf953d02a7734"
  },
  {
   "id": "CS1908-631",
@@ -12388,6 +12932,14 @@
   "english": "Bringing in the Sheaves"
  },
  {
+  "id": "NZK-55b",
+  "book": "NZK",
+  "number": "55b",
+  "title": "Twapanda Mapema",
+  "path": "data/NZK/55b.json",
+  "v": "130ec2dd1f03ae76fb3e2fc72bf2d826e0ed01b4511b78bcb1f713df44393845"
+ },
+ {
   "id": "NZK-56",
   "book": "NZK",
   "number": "56",
@@ -12427,6 +12979,14 @@
   "sv": "51697e5c3992f5fce7715f479ebd717cc771d4e11f0a9b870f2cecc01bc74372",
   "v": "e611785ffd92fa4db7f926889bf36d393669a0c7b7f702b992146d13f4339326",
   "english": "My Lord and I"
+ },
+ {
+  "id": "NZK-61b",
+  "book": "NZK",
+  "number": "61b",
+  "title": "Bwana Nami",
+  "path": "data/NZK/61b.json",
+  "v": "7c455171cc33f8ccbe5c21ce7e785ab0d5f2c7202ca0462d23049de7c721474f"
  },
  {
   "id": "NZK-64",
@@ -12719,6 +13279,14 @@
   "sv": "f7d810977cef9efcae0d5563c8c641407229503cf8064eaa1d10acca5505c2c2",
   "v": "abecaa497b5929dcf54116cb925a39a3e8ce082b652702e5b828830818fb6bd9",
   "english": "Far and Near the Fields Are Teeming"
+ },
+ {
+  "id": "NZK-94b",
+  "book": "NZK",
+  "number": "94b",
+  "title": "Po Pote Mashamba Yajaa",
+  "path": "data/NZK/94b.json",
+  "v": "113df45849a8481508269ffa01933207db70294b7c22ca85ace5b3f726b9415c"
  },
  {
   "id": "NZK-95",
@@ -13074,6 +13642,14 @@
   "english": "I Need Thee Every Hour"
  },
  {
+  "id": "NZK-126b",
+  "book": "NZK",
+  "number": "126b",
+  "title": "Nina Haja Nawe",
+  "path": "data/NZK/126b.json",
+  "v": "b9273cd0bbfd00817f3d1b2af583161a66fba552f67d87ceaa53a2c66b6e7c32"
+ },
+ {
   "id": "NZK-127",
   "book": "NZK",
   "number": "127",
@@ -13423,6 +13999,14 @@
   "english": "All the Way My Savior Leads Me"
  },
  {
+  "id": "NZK-155b",
+  "book": "NZK",
+  "number": "155b",
+  "title": "Njiani Huniongoza",
+  "path": "data/NZK/155b.json",
+  "v": "515e91e2e4d58c42c527e9834a9825bf7e39786edc44731dc23e76ccdaaeb4f6"
+ },
+ {
   "id": "NZK-156",
   "book": "NZK",
   "number": "156",
@@ -13588,6 +14172,14 @@
   "english": "Love at Home"
  },
  {
+  "id": "NZK-184b",
+  "book": "NZK",
+  "number": "184b",
+  "title": "Panapo Pendo",
+  "path": "data/NZK/184b.json",
+  "v": "e0e8698717f1ebd9f83bd48e7c621e959dac1576cbbb2e524faab93908f2dd98"
+ },
+ {
   "id": "NZK-185",
   "book": "NZK",
   "number": "185",
@@ -13728,6 +14320,14 @@
   "sv": "eb0d762013a57ff23f8a1b3a6c094c19898c698997f0551d9585599084a12bcf",
   "v": "c90b8e7b0c251a7d6ec0742f815a0b340158a534b5030e48c46cad3a73f418ae",
   "english": "'Tis Love That Makes Us Happy"
+ },
+ {
+  "id": "NZK-199b",
+  "book": "NZK",
+  "number": "199b",
+  "title": "Upendo Ni Furaha",
+  "path": "data/NZK/199b.json",
+  "v": "92618a967b3c107ae2254881af59d47f8a03d70f92cd6527fc15616152cd2f6d"
  },
  {
   "id": "NZK-202",
@@ -21232,6 +21832,14 @@
   "english": "Bringing in the Sheaves"
  },
  {
+  "id": "WN-76b",
+  "book": "WN",
+  "number": "76b",
+  "title": "Chwoyo Ndalo Duto",
+  "path": "data/WN/76b.json",
+  "v": "81e23c111de5d3bcaaf6fa72f0f77f74581619548c0f82730919c3be2cc78ae1"
+ },
+ {
   "id": "WN-77",
   "book": "WN",
   "number": "77",
@@ -21273,6 +21881,14 @@
   "english": "My Lord and I"
  },
  {
+  "id": "WN-83b",
+  "book": "WN",
+  "number": "83b",
+  "title": "Yesu Osiep Malongo",
+  "path": "data/WN/83b.json",
+  "v": "b5876afd84c95cb07c1d7b0deda48e1c8628c407a1f08a26c3d841a211a67d62"
+ },
+ {
   "id": "WN-87",
   "book": "WN",
   "number": "87",
@@ -21282,6 +21898,14 @@
   "sv": "8ab158bf0e1228fa7da301603d73c9c04e87bf26b50c8931230fb1df4f1c8978",
   "v": "05f97d093e4977059bb5b82197f3ceef4988f74ff56fa321218e7d73a61ddf7c",
   "english": "O Where Are the Reapers?"
+ },
+ {
+  "id": "WN-87b",
+  "book": "WN",
+  "number": "87b",
+  "title": "Jokeyo Ni Kanye",
+  "path": "data/WN/87b.json",
+  "v": "a7e1e5f37346fbeb398aa0dc8f43600eaeea8b3d8607f5a1d089d6fbe8a650b2"
  },
  {
   "id": "WN-95",
@@ -21418,6 +22042,14 @@
   "sv": "2fdfb92ccc02e8a70528e46051b7a3b8a6d0fbe44fa5ea64d756b48034b20e5c",
   "v": "547e60117057e3b334c838a96d47512037d38d4fac47dfaf2cd95ddd09b7b064",
   "english": "Far and Near the Fields Are Teeming"
+ },
+ {
+  "id": "WN-136b",
+  "book": "WN",
+  "number": "136b",
+  "title": "Puothe Chiek E Pinje Duto",
+  "path": "data/WN/136b.json",
+  "v": "638e4bc9576ef29e558294864cec0313dfa16498d9a760369b43dc1557d15750"
  },
  {
   "id": "WN-137",

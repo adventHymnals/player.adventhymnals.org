@@ -1,3 +1,8 @@
+/* Score words: Verovio spaces syllables by Times' letter widths. Phones have no Times (Android draws "Times"
+   in Noto Serif, much wider), so the words ran into each other. Liberation Serif (SIL OFL) has Times' widths. */
+@font-face { font-family: "AH Score Serif"; src: url("fonts/ScoreSerif-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "AH Score Serif"; src: url("fonts/ScoreSerif-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "AH Score Serif"; src: url("fonts/ScoreSerif-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 :root {
   --paper: #fcfbf7;
   --paper-2: #f2f0e8;
@@ -183,7 +188,11 @@ button, select, input { font: inherit; color: inherit; }
 .score g.note.on-A > :not(.verse), .score g.note.on-A > :not(.verse) * { fill: var(--A); }
 .score g.note.on-T > :not(.verse), .score g.note.on-T > :not(.verse) * { fill: var(--T); }
 .score g.note.on-B > :not(.verse), .score g.note.on-B > :not(.verse) * { fill: var(--B); }
-.score g.verse.sung text, .score g.verse.sung tspan { font-weight: 700; }
+/* the sung syllable is coloured and underlined, not bold: bold is wider than the space the words were set in */
+.score g.verse.sung text { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+/* a lower voice's own words (an echo of the tune, other words than the voice above it) are in its colour */
+.score g.verse.own-S * { fill: var(--S); } .score g.verse.own-A * { fill: var(--A); }
+.score g.verse.own-T * { fill: var(--T); } .score g.verse.own-B * { fill: var(--B); }
 .score g.note.on-S g.verse.sung * { fill: var(--S); }
 .score g.note.on-A g.verse.sung * { fill: var(--A); }
 .score g.note.on-T g.verse.sung * { fill: var(--T); }
@@ -736,3 +745,15 @@ body.app .workspace[data-view="words"] .alt-view { overflow-x: hidden; }
 
 /* sol-fa line by line: the key line stays on top; nothing of the line above shows behind it */
 .alt-view.sf-sweeping .sf-key { position: relative; z-index: 5; background: var(--paper); margin: 0; padding: 6px 0 4px; }
+
+/* Sing with me: its choices and the bar that says what it is doing */
+#swmDialog .sing-choice[aria-pressed="true"] { border-color: var(--cloth); box-shadow: 0 0 0 2px var(--cloth) inset; }
+#swmDialog .pr-h { display: block; margin: 14px 0 6px; }
+#swmDialog .dlg-row { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.swm-bar { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 60; display: flex; align-items: center; gap: 12px;
+  max-width: calc(100vw - 32px); padding: 10px 14px; border-radius: 12px; background: var(--cloth); color: var(--paper); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+.swm-bar .ghost { color: var(--paper); border-color: color-mix(in srgb, var(--paper) 50%, transparent); }
+#swmDialog .sing-choice { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; }
+#swmDialog .sing-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 420px) { #swmDialog .sing-choices { grid-template-columns: 1fr; } }
+body.app #swmBar { display: none; } /* the app shows Sing with me's status in its own strip */

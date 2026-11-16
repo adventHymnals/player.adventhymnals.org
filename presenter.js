@@ -29,7 +29,7 @@ export class Presenter {
       svgAdditionalAttribute: ["staff@n", "layer@n", "verse@n", "measure@n"],
       breaks: "auto", adjustPageWidth: false, adjustPageHeight: true,
       pageWidth: Math.round(((W - 2 * MARGIN) * 100) / scale), pageHeight: 100, // one system per page
-      pageMarginLeft: 20, pageMarginRight: 40, pageMarginTop: 30, pageMarginBottom: 20, lyricSize: 4.4, spacingStaff: 10, svgCss: SVG_CSS,
+      pageMarginLeft: 20, pageMarginRight: 40, pageMarginTop: 30, pageMarginBottom: 20, lyricSize: 4.4, lyricWordSpace: 1.8, spacingStaff: 10, svgCss: SVG_CSS,
       transpose,
     });
     tk.loadData(xml);
@@ -72,7 +72,8 @@ export class Presenter {
       pages.push({ svg: new XMLSerializer().serializeToString(root), w: base.width, h: base.height, notes, anchors, measures, qStart: anchors[0]?.q ?? 0, qEnd });
     }
     this.host.innerHTML = "";
-    for (const pg of pages) pg.img = await svgImage(pg.svg);
+    const fontCss = await scoreFontCss();
+    for (const pg of pages) pg.img = await svgImage(fontCss ? pg.svg.replace(/(<svg\b[^>]*>)/, `$1<style>${fontCss}</style>`) : pg.svg);
     if (gen !== this.gen) return; // settings changed while the images were being made
     this.pages = pages;
   }
@@ -677,6 +678,21 @@ function drawLogo(g, logo, cx, cy, d) {
   g.arc(cx, cy, d / 2 - g.lineWidth / 2, 0, Math.PI * 2);
   g.stroke();
   g.restore();
+}
+
+// A page drawn as an image cannot load the document's fonts, so the score font (style.css) goes inside it,
+// or the words fall back to the phone's serif, wider than Verovio spaced them for. Fetched once.
+let scoreFontCssP = null;
+function scoreFontCss() {
+  scoreFontCssP ??= Promise.all(["Regular", "Italic"].map(async (st) => {
+    const r = await fetch(`fonts/ScoreSerif-${st}.woff2`);
+    if (!r.ok) throw new Error(`score font ${r.status}`);
+    const b = new Uint8Array(await r.arrayBuffer());
+    let bin = "";
+    for (let i = 0; i < b.length; i += 0x8000) bin += String.fromCharCode(...b.subarray(i, i + 0x8000));
+    return `@font-face{font-family:"AH Score Serif";src:url(data:font/woff2;base64,${btoa(bin)}) format("woff2");font-style:${st === "Italic" ? "italic" : "normal"}}`;
+  })).then((x) => x.join("")).catch(() => { scoreFontCssP = null; return ""; });
+  return scoreFontCssP;
 }
 
 function svgImage(svg) {

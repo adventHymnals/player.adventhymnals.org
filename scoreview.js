@@ -15,12 +15,13 @@ export class ScoreView {
     this.active = new Set();
   }
 
-  render(xml, { mode, zoom, width, tracks, barOffset = 0, transpose = "" }) {
+  render(xml, { mode, zoom, width, tracks, barOffset = 0, transpose = "", ownBase = Infinity }) {
+    this.ownBase = ownBase; // lines of words after this many are a lower voice's own (lyricLines in core.js)
     this.barOffset = barOffset; // printed bar numbers start at 0 when there is a pickup
     const scale = Math.round(46 * zoom);
     const base = {
       scale, header: "none", footer: "none", svgHtml5: true, svgViewBox: true, svgAdditionalAttribute: SVG_ATTRS,
-      pageMarginLeft: 30, pageMarginRight: 60, pageMarginTop: 50, pageMarginBottom: 40, lyricSize: 4.2,
+      pageMarginLeft: 30, pageMarginRight: 60, pageMarginTop: 50, pageMarginBottom: 40, lyricSize: 4.2, lyricWordSpace: 1.8,
       spacingStaff: 14, adjustPageHeight: true, svgCss: SVG_CSS,
       transpose, // the toolkit keeps options between calls, so always set it
     };
@@ -56,7 +57,9 @@ export class ScoreView {
       const staffN = Number(el.closest("g.staff")?.dataset.n) || 1;
       const layer = Number(el.closest("g.layer")?.dataset.n) || 1;
       const track = tracks[staffN - 1] || [];
-      this.notes.push({ el, on: tm.on, off: tm.off, voice: track[layer - 1] ?? track[0], staffN, system: el.closest("g.system") });
+      const voice = track[layer - 1] ?? track[0];
+      for (const v of el.querySelectorAll("g.verse")) if (Number(v.dataset.n) > ownBase) v.classList.add(`own-${voice}`);
+      this.notes.push({ el, on: tm.on, off: tm.off, voice, staffN, system: el.closest("g.system") });
     }
     this.harms = [...this.content.querySelectorAll("g.harm")];
     this.active = new Set();
@@ -149,7 +152,7 @@ export class ScoreView {
       if (this.active.has(n)) continue;
       n.el.classList.add(`on-${n.voice}`);
       if (verseN === 0) n.el.querySelectorAll("g.verse").forEach((v) => v.classList.add("sung"));
-      else n.el.querySelector(`g.verse[data-n="${verseN}"]`)?.classList.add("sung");
+      else n.el.querySelectorAll(`g.verse[data-n="${verseN}"], g.verse[data-n="${this.ownBase + verseN}"]`).forEach((v) => v.classList.add("sung"));
     }
     this.active = now;
   }

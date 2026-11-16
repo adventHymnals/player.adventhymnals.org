@@ -145,7 +145,15 @@ function rootXml(tag, spelled) {
 
 // Soprano/alto read treble; tenor and bass read bass, as in the hymnal (also the tenor on its own staff).
 // the words on a hidden lyric voice (see buildMusicXML) show although their note is hidden
-export const SVG_CSS = "g.verse{visibility:visible}";
+/** How many lines of words the verses take under a staff; a lower voice's own words go on the lines after
+ *  these (its line n is lyricLines + n), as Verovio stacks the lines by their number. */
+export function lyricLines(h, opts) {
+  if (opts.unfold?.length || opts.words === "current") return 1;
+  return Math.max(h.verses.length, 1 + (h.refrains || []).filter(Boolean).length, 1);
+}
+// its text is set in a font with Times' letter widths, which Verovio spaces the words by (see style.css)
+export const SCORE_FONT = '"AH Score Serif", Times, serif';
+export const SVG_CSS = `g.verse{visibility:visible}text{font-family:${SCORE_FONT}}`;
 
 export function clefFor(voices) {
   if (voices.some((k) => k === "S" || k === "A" || k === "R")) return ["G", 2, 0];
@@ -175,12 +183,12 @@ export function buildMusicXML(h, opts) {
   // k, idx: the voice and its note; a voice with words of its own (h.voiceWords) shows them,
   // and the lyric voice's words where its list says "*".
   const refrainQ = h.voices[h.lyricVoice][refrainAt]?.q ?? Infinity;
-  const lyricsFor = (q, passVerse, k, idx) => {
-    if (opts.words === "none" || opts.words === "solfa") return "";
+  const lyricItems = (q, passVerse, k, idx) => {
+    if (opts.words === "none" || opts.words === "solfa") return [];
     const own = h.voiceWords?.[k];
     const ownAt = (v) => { const e = own?.[v]?.[idx]; return e === undefined || e === "*" ? undefined : e; };
     const i = lyricIndex.get(q);
-    if (i === undefined && !own) return "";
+    if (i === undefined && !own) return [];
     const items = [];
     const one = passVerse ?? (opts.words === "current" ? opts.verse : null);
     if (q >= refrainQ - 1e-9) {
@@ -215,13 +223,35 @@ export function buildMusicXML(h, opts) {
         if (s) items.push([n + 1, s, n + 1]);
       });
     }
-    return items
-      .map(([n, s, label, alt]) => {
-        // the verse number goes on a verse's first syllable, and where a verse's own refrain words begin
-        const text = label && (i === 0 || alt) ? `${label}. ${s.t}` : s.t;
-        return `<lyric number="${n}"><syllabic>${s.s}</syllabic><text>${esc(text)}</text></lyric>`;
-      })
-      .join("");
+    // the verse number goes on a verse's first syllable, and where a verse's own refrain words begin
+    return items.map(([n, s, label, alt]) => ({ n, s, text: label && (i === 0 || alt) ? `${label}. ${s.t}` : s.t }));
+  };
+  const lyricXml = (items, line = (n) => n) => items
+    .map(({ n, s, text }) => `<lyric number="${line(n)}"><syllabic>${s.s}</syllabic><text>${esc(text)}</text></lyric>`).join("");
+  const lyricsFor = (q, passVerse, k, idx) => lyricXml(lyricItems(q, passVerse, k, idx));
+  // A lower voice sharing a staff (alto under soprano, bass under tenor) that sings other words than the upper
+  // voice, e.g. an echo of the soprano's line, gets those words on lines of their own under the staff (as two
+  // parts with different texts are engraved), only where they differ; the same words are printed once.
+  const word = (t) => String(t ?? "").replace(/^\d+\.\s*/, "").toLowerCase().replace(/[^\p{L}\p{N}']/gu, "");
+  const ownBase = lyricLines(h, opts);
+  const lowerLyrics = (n, passVerse, upper, k) => {
+    const idx = h.voices[k].indexOf(n);
+    const items = lyricItems(n.q, passVerse, k, idx);
+    if (!items.length) return "";
+    const ui = h.voices[upper].findIndex((x) => Math.abs(x.q - n.q) < 1e-6);
+    const own = h.voiceWords?.[k];
+    const ownHere = own && own.some((v) => v?.[idx] !== undefined && v?.[idx] !== "*");
+    if (ui < 0 && !ownHere) return lyricXml(items); // the lyric voice's words where the upper voice is silent: one line
+    const up = ui < 0 ? [] : lyricItems(n.q, passVerse, upper, ui);
+    const differs = items.filter((it) => word(up.find((u) => u.n === it.n)?.text) !== word(it.text));
+    if (ui < 0) {
+      // the upper voice is silent here: its words go on the main lines when they are the lyric voice's own
+      const li = h.voices[h.lyricVoice].findIndex((x) => Math.abs(x.q - n.q) < 1e-6);
+      const main = li < 0 ? [] : lyricItems(n.q, passVerse, h.lyricVoice, li);
+      const same = items.filter((it) => word(main.find((u) => u.n === it.n)?.text) === word(it.text));
+      return lyricXml(same) + lyricXml(items.filter((it) => !same.includes(it)), (x) => x + ownBase);
+    }
+    return lyricXml(differs, (x) => x + ownBase);
   };
 
   // sol-fa words: every voice sings its own note names (a shared staff gets two lines)
@@ -263,8 +293,6 @@ export function buildMusicXML(h, opts) {
           }
         }
         const printedDyn = new Set(); // one dynamic per onset per staff
-        // a syllable where the staff's upper voice has no note goes on the lower voice's note instead
-        const upperOnsets = new Set(h.voices[voices[0]].filter((x) => x.m === m).map((x) => x.q));
         voices.forEach((k, vi) => {
           if (vi > 0) mx += `<backup><duration>${Math.round((barEnd(h, m) - barStart(h, m)) * DIV)}</duration></backup>`;
           // rests fill every silence, so each note sits at its own time (Verovio places notes one after another)
@@ -342,7 +370,8 @@ export function buildMusicXML(h, opts) {
             const words = !opts.trackWords?.[si] ? ""
               : opts.words === "solfa" ? solfaFor(k, n, vi + 1)
               : ghost ? ""
-              : vi === 0 || !upperOnsets.has(n.q) ? lyricsFor(n.q, passVerse, k, h.voices[k].indexOf(n)) : "";
+              : vi === 0 ? lyricsFor(n.q, passVerse, k, h.voices[k].indexOf(n))
+              : lowerLyrics(n, passVerse, voices[0], k);
             mx += `<note><pitch><step>${n.step}</step>${n.alter ? `<alter>${n.alter}</alter>` : ""}<octave>${n.oct}</octave></pitch>`
               + `<duration>${Math.round(n.d * DIV)}</duration>${ties}<voice>${vi + 1}</voice><type>${noteType(written, n.dots)}</type>`
               + `${"<dot/>".repeat(n.dots)}${acc}${tm}${stem}${fermata}${words}</note>`;

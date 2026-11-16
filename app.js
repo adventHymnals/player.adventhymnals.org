@@ -1,5 +1,5 @@
 import {
-  VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
+  VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, lyricLines, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
   trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds, countQ,
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
@@ -12,6 +12,8 @@ import { Studio } from "./studio.js";
 import { exportPdf } from "./pdfexport.js";
 import { canMakeVideo, makeVideos } from "./videomaker.js";
 import { Conductor, feel, mysteryTune, meterHint, PitchListener, centsOff, drawLane, noteName } from "./practice.js";
+import { TempoFollower } from "./follow.js";
+import { MelodyIndex, NoteTracker, decide } from "./melody.js";
 
 const $ = (id) => document.getElementById(id);
 const workspace = $("workspace");
@@ -259,8 +261,13 @@ const visibleTracks = () => tracksOfHymn().filter((t) => !state.hidden.includes(
 const visibleVoices = () => visibleTracks().flat();
 const singing = () => state.practice && state.practiceTab === "sing" && listener?.on;
 const heard = (ch) => !(state.mute[ch] || (CH.some((c) => state.solo[c]) && !state.solo[ch])
-  || (singing() && state.muteMine && ch === state.singVoice)); // you sing your own part
-const soundOf = (k) => state.voiceSounds[k] || (manifest || useWarble() ? "sung" : "choir");
+  || ((singing() || following()) && state.muteMine && ch === state.singVoice)); // you sing your own part
+// following your tempo, the voices are synthesised: recorded and live singers sing at one tempo only
+const following = () => swm.on && swm.joined && !!listener?.on; // Sing with me, once it has joined you
+const baseSound = (k) => state.voiceSounds[k] || (manifest || useWarble() ? "sung" : "choir");
+// Sing with me: the piano plays the hymn for you, or the choir sings it with you (the recorded and live singers
+// sing at one tempo, so they can't follow you)
+const soundOf = (k) => (swm.on ? (swm.do === "piano" ? "piano" : "choir") : baseSound(k));
 const hymnVoices = () => "SATB".split("").filter((k) => hymn?.voices[k]);
 const anySung = () => hymnVoices().some((k) => soundOf(k) === "sung");
 const anyPiano = () => hymnVoices().some((k) => soundOf(k) === "piano");
@@ -1097,6 +1104,7 @@ async function boot() {
   }
   if (APP) { state.zoom = APP_ZOOM; state.solfaZoom = APP_ZOOM; state.altZoom = 1; setupPinch(); }
   setupPractice();
+  setupSingWithMe();
   solfa = new SolfaView($("altView"));
   words = new WordsView($("altView"));
   presenter = new Presenter($("stage"), $("measureHost"));
@@ -1223,6 +1231,7 @@ async function loadHymn(entry) {
   syncTunePicker();
   $("copyright").textContent = hymn.copyright;
   state.tempo = store.get(`tempo:${hymn.id}`, hymn.tempo);
+  engine?.setRate?.(1); // a new hymn starts at its own tempo, not the pace the last one was followed at
   state.transpose = store.get(`transpose:${hymn.id}`, 0);
   liveChanges = [];
   $("tempo").value = state.tempo;
@@ -1308,7 +1317,7 @@ function offerLiveVoices() {
 function chooseSingers(from, always = false) {
   const d = $("singDialog");
   if (!d || !singingCfg.warble || APP || MAKE) return Promise.resolve(true);
-  if (!always && (appAnswered || !asksAtPlay())) return Promise.resolve(true);
+  if (!always && (appAnswered || !asksAtPlay() || following())) return Promise.resolve(true); // following you: the choir sings
   pickManifest();
   const recorded = !!manifests.stems?.stems?.length;
   offerRecordedV2();
@@ -1763,7 +1772,7 @@ async function renderAll() {
     const opts = withPiano(xmlOptions());
     // pinched bigger in the app: the sheet itself is wider than the screen, and scrolls sideways
     sheet.style.width = state.view === "page" && appWide(state.zoom) > 1 ? `${Math.floor((viewport.clientWidth - 8) * appWide(state.zoom))}px` : "";
-    view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose });
+    view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose, ownBase: lyricLines(scoreHymn(), opts) });
     buildLane();
     setupSweep();
     positionHeaders(view.systems[0]);
@@ -2057,6 +2066,7 @@ function rebuild(keep = true, seamless = false) {
   }
   engine.load(perf.events);
   waterfall.setPerformance(perf);
+  resetFollower();
   applyLoop();
   let t = 0;
   if (loc) {
@@ -2093,6 +2103,7 @@ async function togglePlay() {
 }
 
 function stopPlayback() {
+  if (swm.on && !swm.joining) { swmStop(); return; }
   engine.stop();
   if (liveChanges.length) { liveChanges = []; if (perf) rebuild(false); } // live key changes last one run
   setPlaying(false);
@@ -2477,7 +2488,7 @@ function setupPractice() {
     $(id).checked = state[id];
     $(id).onchange = (e) => { state[id] = e.target.checked; save(id); applyMix(); };
   }
-  $("singVoice").onchange = (e) => { state.singVoice = e.target.value; save("singVoice"); trace = []; applyMix(); };
+  $("singVoice").onchange = (e) => { state.singVoice = e.target.value; save("singVoice"); trace = []; applyMix(); resetFollower(); };
 }
 
 function syncPracticeForHymn() {
@@ -2554,6 +2565,250 @@ function describeCents(off) {
   return `${off > 0 ? "Too high" : "Too low"} by ${semis === 1 ? "a semitone" : `${semis} semitones`}`;
 }
 
+// ---- sing with me --------------------------------------------------------------
+// You sing; the music joins you. It listens (melody.js: the hymn, or your place in this one, your key and
+// your tempo, from the notes you sing), comes in where you are by then, and keeps your pace (follow.js).
+// A singer it loses (a line skipped, a verse begun again) is found again in the hymn.
+const SURE = { fit: 1.6, margin: 0.35 }; // when a match is sure enough to join in (see harness qbh_stream)
+const swm = { on: false, do: "piano", find: false, joined: false, joining: false, status: "", tracker: new NoteTracker(),
+  idx: null, hymnIdx: null, searched: 0, saved: null, voice: "S" };
+if (new URLSearchParams(location.search).has("debug")) window.__swm = swm; // tests read what it heard
+let melodiesP = null;
+function allMelodies() {
+  // the tunes of every hymn (tools/build_melodies.py): the site's newest copy, else the one shipped with the player
+  melodiesP ??= (async () => {
+    let data = null;
+    try { const r = await fetchWithin(`${DATA}data/melodies.json`, 15000, { cache: "no-cache" }); if (r.ok) data = await r.json(); } catch { /* offline */ }
+    if (!data) data = await fetch("data/melodies.json").then((r) => r.json());
+    return new MelodyIndex(data);
+  })().catch((e) => { melodiesP = null; throw e; });
+  return melodiesP;
+}
+/** This hymn's parts as tunes, for finding where in it someone sings (any part). */
+function hymnTunes(h) {
+  return { tunes: ["S", "A", "T", "B"].filter((k) => h.voices[k]?.length).map((k) => {
+    const n = [];
+    let prev = null;
+    for (const x of h.voices[k]) {
+      if (prev?.tie && prev.p === x.p && n.length) n[n.length - 1][1] += x.d; else n.push([x.p, x.d, x.q]);
+      prev = x;
+    }
+    return { ids: [k], n };
+  }) };
+}
+function swmSay(text) {
+  swm.status = text;
+  $("swmStatus").textContent = text;
+  $("swmBar").hidden = !swm.on;
+}
+
+async function swmStart({ do: what = "piano", find = false } = {}) {
+  if (!hymn && !find) return;
+  swmStop();
+  engine.ensure();
+  stopPlayback();
+  listener = listener || new PitchListener();
+  try {
+    await engine.ctx.resume();
+    if (!listener.on) await listener.start(engine.ctx);
+  } catch {
+    toast("Sing with me needs the microphone. Allow it for this page and try again.", 6000);
+    return;
+  }
+  Object.assign(swm, { on: true, do: what === "sing" ? "sing" : "piano", find: !!find, joined: false, joining: false, searched: 0, idx: null, hymnIdx: null, reSearched: 0, checkedAt: 0 });
+  swm.tracker.reset();
+  // listening runs on its own clock, not the screen's: a locked phone draws about two frames a second
+  clearInterval(swm.timer);
+  swm.timer = setInterval(() => { if (swm.on) swmTick(); }, 30);
+  $("swmBtn").setAttribute("aria-pressed", "true");
+  swmSay(find ? "Sing a line or two of any hymn. I'm listening…" : `Start singing ${hymn.title}, anywhere, any part. I'm listening…`);
+  if (find) {
+    try { swm.idx = await allMelodies(); } catch { swmSay("The hymn tunes could not load. Check the connection and try again."); }
+  } else swm.idx = new MelodyIndex(hymnTunes(hymn));
+}
+
+function swmStop() {
+  if (!swm.on) return;
+  swm.on = false;
+  swm.joined = false;
+  clearInterval(swm.timer);
+  stopPlayback();
+  engine.setRate(1);
+  if (!singing()) listener?.stop();
+  if (swm.saved) {
+    Object.assign(state, swm.saved);
+    swm.saved = null;
+    $("tempo").value = state.tempo;
+    $("tempoLabel").textContent = `${state.tempo} a minute`;
+  }
+  if (hymn) { applyMix(); rebuild(false); renderAll(); }
+  $("swmBtn").setAttribute("aria-pressed", "false");
+  swmSay("");
+}
+
+/** Every frame while on: listen; before joining, look for the hymn or the place; after, keep the pace. */
+function swmTick() {
+  if (!listener?.on || !engine.ctx) return;
+  const now = engine.ctx.currentTime;
+  const p = listener.read();
+  swm.tracker.feed(p, now - 0.035); // the pitch is read from the last ~40 ms of sound
+  if (swm.tracker.notes.length > 80) swm.tracker.notes.splice(0, 40);
+  if (swm.joined) {
+    if (engine.playing) {
+      const r = follower.update(p, engine.now(), now, true);
+      if (r) engine.setRate(r);
+    }
+    if (engine.playing || swm.lost) swmRelocate(now);
+    return;
+  }
+  if (!swm.idx || swm.joining) return;
+  const notes = swm.tracker.sung();
+  if (notes.length < 6 || notes.length === swm.searched) return; // look again at each new note
+  swm.searched = notes.length;
+  const d = decide(swm.idx.search(notes.slice(-24)), SURE, swm.idx);
+  if (!d) { swmSay(`Listening… ${notes.length} notes`); return; }
+  swmJoin(d, notes);
+}
+
+/** Join in: the hymn (find), the key and tempo you sing in, from where you will be when the sound arrives. */
+async function swmJoin(d, notes) {
+  swm.joining = true;
+  try {
+    let match = d, voice;
+    if (swm.find) {
+      // this hymn when it is one of those with these notes, else the best match
+      const has = (r) => r.ids.includes(hymn?.id);
+      match = d.same.find(has) || d;
+      const id = has(match) ? hymn.id : match.ids[0];
+      if (id !== hymn?.id) {
+        const entry = hymnList.find((x) => x.id === id);
+        if (!entry) { swm.searched = 0; return; }
+        $("hymnPicker").value = id;
+        history.replaceState(null, "", `#${id}`); // (not location.hash: a hash change reloads the app's page)
+        await loadHymn(entry);
+        if (!swm.on) return;
+      }
+      voice = hymn.lyricVoice;
+    } else voice = swm.idx.tunes[match.tune].ids[0];
+    const ok = (x) => x > 0.15 && x < 2.5;
+    const spq = ok(match.spqNow) ? match.spqNow : ok(match.spq) ? match.spq : 60 / state.tempo; // your pace lately
+    let shift = Math.round(match.shift);
+    shift = ((shift % 12) + 12) % 12;
+    if (shift > 6) shift -= 12; // an octave off is the same key
+    swm.saved ??= { tempo: state.tempo, transpose: state.transpose, countIn: state.countIn, intro: state.intro, interlude: state.interlude };
+    Object.assign(state, { tempo: Math.max(30, Math.min(240, Math.round(60 / spq))), transpose: shift, countIn: false, intro: "none", interlude: "none" });
+    $("tempo").value = state.tempo;
+    $("tempoLabel").textContent = `${state.tempo} a minute`;
+    swm.voice = voice;
+    swm.hymnIdx = new MelodyIndex(hymnTunes(hymn));
+    swm.joined = true;
+    engine.setRate(1);
+    applyMix();
+    rebuild(false);
+    renderAll();
+    if (swm.do === "piano") await engine.loadPiano();
+    if (!swm.on) return;
+    swmGo(match.at, match.sungFrom, spq, null);
+    swm.joinedAt = engine.ctx.currentTime;
+    const keyName = prettyChord(keyFor(state.transpose).name);
+    swmSay(`${hymn.number} ${hymn.title}, in ${keyName}: ${swm.do === "piano" ? "playing" : "singing"} with you`);
+  } finally {
+    swm.joining = false;
+  }
+}
+
+/** Play from the place you are singing: q (quarters) is where the note you are on is written, sungAt when you began it. */
+function swmGo(q, sungAt, spq, pass) {
+  const now = engine.ctx.currentTime;
+  const lead = 0.12 + engine.latency(); // the sound reaches you this long after it is scheduled
+  const k = pass ?? Math.max(0, perf.passes.findIndex((x) => x.kind === "verse"));
+  const qNow = Math.min(q + (now + lead - sungAt) / spq, perf.passes[k].qTo - 1e-3);
+  engine.play(passTime(perf, k, qNow)).then(() => setPlaying(true));
+  resetFollower();
+}
+
+/**
+ * Where are you? Every second and a half, your last ten notes are looked for in the whole hymn (any part); when
+ * that is sure and the music is somewhere else (a line skipped, a verse begun again), the music goes there.
+ * The note-by-note following alone can be fooled: nearby notes of the same pitch keep it busy in the wrong place.
+ */
+function swmRelocate(now) {
+  if (now - (swm.checkedAt || 0) < 1.5 || now - swm.joinedAt < 2) return;
+  const all = swm.tracker.sung();
+  if (all.length === swm.reSearched) return;
+  // only the notes since your last breath: a singer who goes elsewhere breathes first, and notes from
+  // before and after a jump fit no one place
+  let from = Math.max(0, all.length - 10);
+  for (let i = all.length - 1; i > from; i--) if (all[i].t0 - all[i - 1].t1 > 0.6) { from = i; break; }
+  const notes = all.slice(from);
+  if (notes.length < 5) return; // 5 notes tell that you are elsewhere; 7 where
+  swm.checkedAt = now;
+  swm.reSearched = all.length;
+  const res = swm.hymnIdx.search(notes);
+  const d = notes.length >= 7 ? decide(res, SURE, swm.hymnIdx) : null;
+  const loc = locate(perf, engine.now());
+  if (!loc) return;
+  if (!d) {
+    // not sure where you are, but sure it is not where the music is (both places you might be are
+    // elsewhere): stop and listen, as a pianist who has lost the singer
+    const b = res[0];
+    if (engine.playing && b && b.score < SURE.fit) {
+      const ok = (x) => x > 0.15 && x < 2.5;
+      const spq = ok(b.spqNow) ? b.spqNow : 60 / state.tempo;
+      const off = (at) => Math.abs(at + (now - b.sungFrom) / spq - loc.q);
+      const places = b.placeGap < SURE.margin && b.otherAt !== null ? [b.at, b.otherAt] : [b.at];
+      if (places.every((at) => off(at) > 3)) {
+        engine.pause();
+        swm.lost = true;
+        swmSay("Finding where you are… sing on");
+      }
+    }
+    return;
+  }
+  const ok = (x) => x > 0.15 && x < 2.5;
+  const spq = ok(d.spqNow) ? d.spqNow : ok(d.spq) ? d.spq : 60 / state.tempo;
+  const youNow = d.at + (now - d.sungFrom) / spq; // quarters
+  const musicNow = loc.q;
+  if (Math.abs(youNow - musicNow) < 2 && !swm.lost) return; // with you (the following keeps it so)
+  // back at the start after the end of a verse: the next verse
+  let k = loc.kind === "verse" ? loc.pass : Math.max(0, perf.passes.findIndex((x) => x.kind === "verse"));
+  if (youNow < musicNow - hymn.totalQ / 2) {
+    const next = perf.passes.findIndex((x, i) => i > k && x.kind === "verse");
+    if (next >= 0) k = next;
+  }
+  swm.voice = swm.hymnIdx.tunes[d.tune].ids[0];
+  engine.setRate(1);
+  swmGo(d.at, d.sungFrom, spq, k);
+  swm.joinedAt = now;
+  if (swm.lost) { swm.lost = false; swmSay(`${hymn.number} ${hymn.title}: ${swm.do === "piano" ? "playing" : "singing"} with you`); }
+}
+
+function setupSingWithMe() {
+  const dlg = $("swmDialog");
+  let choice = { do: store.get("swmDo", "piano"), find: store.get("swmFind", false) };
+  const show = () => {
+    dlg.querySelectorAll("[data-swm-do]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.swmDo === choice.do)));
+    dlg.querySelectorAll("[data-swm-find]").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.swmFind === "1") === choice.find)));
+    $("swmThis").textContent = hymn ? `${hymn.number} ${hymn.title}: start anywhere in it, any part` : "Start anywhere in it, any part";
+  };
+  dlg.querySelectorAll("[data-swm-do]").forEach((b) => { b.onclick = () => { choice.do = b.dataset.swmDo; show(); }; });
+  dlg.querySelectorAll("[data-swm-find]").forEach((b) => { b.onclick = () => { choice.find = b.dataset.swmFind === "1"; show(); }; });
+  $("swmBtn").onclick = () => { if (swm.on) { swmStop(); return; } show(); dlg.showModal(); };
+  $("swmCancel").onclick = () => dlg.close();
+  $("swmStart").onclick = () => {
+    store.set("swmDo", choice.do); store.set("swmFind", choice.find);
+    dlg.close();
+    swmStart(choice);
+  };
+  $("swmStop").onclick = () => swmStop();
+}
+
+// ---- follow my tempo ----------------------------------------------------------
+const follower = new TempoFollower();
+function resetFollower() {
+  const v = swm.on ? swm.voice : state.singVoice;
+  follower.reset((perf?.events || []).filter((e) => e.ch === v && !e.stem && e.p > 0).map((e) => ({ t: e.t, dur: e.dur, p: e.p })));
+}
 async function startListening() {
   engine.ensure();
   listener = listener || new PitchListener();
@@ -2567,6 +2822,7 @@ async function startListening() {
   $("micBtn").textContent = "Stop listening";
   trace = [];
   applyMix();
+
   toast(state.muteMine ? `Listening. Your part (${VOICES[state.singVoice].name}) is muted so you can sing it.` : "Listening.", 4000);
 }
 
@@ -2576,6 +2832,7 @@ function stopListening() {
   $("micBtn").textContent = "Start listening";
   $("pitchReadout").textContent = "Not listening";
   applyMix();
+
 }
 
 function tap() {
@@ -4252,6 +4509,8 @@ window.AHStudio = {
   hymns() { return JSON.stringify(hymnList.map((x) => x.id)); },
   /** Out of a repeat (the app's Back gesture): the music plays on from where it is. */
   stopRepeat() { stopRepeat(); },
+  /** Sing with me: { do: "piano" | "sing", find: true (any hymn, from the singing) | false (this hymn) }, or null to stop. */
+  singWithMe(opts) { if (opts) swmStart(typeof opts === "string" ? JSON.parse(opts) : opts); else swmStop(); },
   toggle() { if (appWant.id && (appWant.id !== hymn?.id || appWant.loading)) return; return togglePlay(); },
   stop() { stopPlayback(); },
   setMute(ch, on) { state.mute[ch] = !!on; save("mute"); applyMix(); buildHeaders(); },
@@ -4301,6 +4560,8 @@ window.AHStudio = {
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
+      singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
+        lag: swm.joined ? Math.round(follower.lag * 100) / 100 : null, q: swm.joined && perf ? Math.round((locate(perf, engine.now())?.q ?? 0) * 100) / 100 : null, transpose: state.transpose } : null,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
       accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, countAt: state.countAt, zoom: state.zoom,
       // the tune: "" the printed one; tunes: the choices ({value, label, why: "printed" | "fits"}), empty when there are none

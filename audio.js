@@ -25,7 +25,8 @@ export class Engine {
     this.pianoLoading = null;
     this.events = [];
     this.playing = false;
-    this.startAt = 0; // ctx time when performance t=0
+    this.startAt = 0; // ctx time when performance t=0 (at the current rate)
+    this.rate = 1; // performance seconds per real second: following a singer's tempo moves it (setRate)
     this.next = 0;
     this.live = new Set();
   }
@@ -334,7 +335,7 @@ export class Engine {
     if (!this.playing) return;
     if (this.native && JSON.stringify(this.nativeSegs()) !== before) this.nativePlay(this.now());
     const ct = this.ctx.currentTime;
-    const horizonT = ct + 0.2 - this.startAt; // scheduled up to here
+    const horizonT = (ct + 0.2 - this.startAt) * this.rate; // scheduled up to here
     this.next = this.indexAt(horizonT);
     // recordings no longer in the performance (the singers changed) stop now, with a short fade
     const keep = new Map(this.stemEvents.map((e) => [`${e.stem}@${e.t.toFixed(3)}`, e]));
@@ -342,7 +343,7 @@ export class Engine {
       const e = keep.get(item.id);
       if (e && this.stemBuffers?.get(e.stem) === item.src.buffer) {
         // the same stretch plays on; a key change may have moved where it ends
-        if (e.cut) this.endStem(item, this.startAt + e.t + e.dur);
+        if (e.cut) this.endStem(item, this.ctxAt(e.t + e.dur));
         continue;
       }
       try { item.g.gain.setTargetAtTime(0, ct, 0.03); item.src.stop(ct + 0.15); } catch { /* already stopped */ }
@@ -350,7 +351,7 @@ export class Engine {
     }
     const live = new Set([...(this.liveStems || [])].map((s) => s.id));
     for (const e of this.stemEvents) {
-      if (e.t < horizonT && e.t + e.dur > ct - this.startAt && !live.has(`${e.stem}@${e.t.toFixed(3)}`)) this.startStem(e, this.startAt + e.t);
+      if (e.t < horizonT && e.t + e.dur > (ct - this.startAt) * this.rate && !live.has(`${e.stem}@${e.t.toFixed(3)}`)) this.startStem(e, this.ctxAt(e.t));
     }
   }
 
@@ -386,9 +387,29 @@ export class Engine {
       if (p >= 0) return p;
     }
     const ct = this.ctx.currentTime - this.latency();
-    let s = this.clock[0].startAt;
-    for (const c of this.clock) if (c.from <= ct) s = c.startAt;
-    return Math.max(0, ct - s);
+    let s = this.clock[0];
+    for (const c of this.clock) if (c.from <= ct) s = c;
+    return Math.max(0, (ct - s.startAt) * (s.rate ?? 1));
+  }
+
+  /** The context time performance time t is scheduled at. */
+  ctxAt(t) { return this.startAt + t / this.rate; }
+
+  /**
+   * Play on faster (r > 1) or slower than written, from now, without a restart: what is already scheduled
+   * (the next 0.2 s) keeps its time. Recordings and the app's singer cannot follow, so callers use it with
+   * the synthesised voices only.
+   */
+  setRate(r) {
+    r = Math.min(2.5, Math.max(0.4, r));
+    if (Math.abs(r - this.rate) < 1e-4) return;
+    if (!this.playing || !this.ctx) { this.rate = r; return; }
+    const c = this.ctx.currentTime;
+    const p = (c - this.startAt) * this.rate;
+    this.rate = r;
+    this.startAt = c - p / r;
+    this.clock.push({ from: c, startAt: this.startAt, rate: r });
+    while (this.clock.length > 1 && this.clock[1].from <= c - 1) this.clock.shift();
   }
 
   latency() {
@@ -405,10 +426,10 @@ export class Engine {
     await this.ctx.resume();
     this.stopSources();
     if (this.loop && (fromT < this.loop.a || fromT >= this.loop.b)) fromT = this.loop.a;
-    this.startAt = this.ctx.currentTime + 0.12 - fromT;
-    this.clock = [{ from: -Infinity, startAt: this.startAt }];
+    this.startAt = this.ctx.currentTime + 0.12 - fromT / this.rate;
+    this.clock = [{ from: -Infinity, startAt: this.startAt, rate: this.rate }];
     this.next = this.indexAt(fromT);
-    this.resumeStems(fromT, this.startAt + fromT);
+    this.resumeStems(fromT, this.ctxAt(fromT));
     this.nativePlay(fromT);
     this.playing = true;
     clearInterval(this.timer);
@@ -422,11 +443,11 @@ export class Engine {
       const e = this.events[this.next];
       // at the loop end, carry on seamlessly from the loop start
       if (this.loop && (!e || e.t >= this.loop.b - 1e-6)) {
-        if (this.startAt + this.loop.b > horizon) break;
-        const wrapAt = this.startAt + this.loop.b;
+        if (this.ctxAt(this.loop.b) > horizon) break;
+        const wrapAt = this.ctxAt(this.loop.b);
         this.stopStemsAt(wrapAt);
-        this.startAt += this.loop.b - this.loop.a;
-        this.clock.push({ from: wrapAt, startAt: this.startAt });
+        this.startAt += (this.loop.b - this.loop.a) / this.rate;
+        this.clock.push({ from: wrapAt, startAt: this.startAt, rate: this.rate });
         while (this.clock.length > 1 && this.clock[1].from <= this.ctx.currentTime) this.clock.shift();
         this.next = this.indexAt(this.loop.a);
         this.resumeStems(this.loop.a, wrapAt);
@@ -434,7 +455,7 @@ export class Engine {
         continue;
       }
       if (!e) break;
-      const at = this.startAt + e.t;
+      const at = this.ctxAt(e.t);
       if (at > horizon) break;
       this.next++;
       if (e.stem) { this.startStem(e, at); continue; }
@@ -444,10 +465,11 @@ export class Engine {
   }
 
   sound(e, at) {
+    const dur = e.dur / this.rate;
     if (e.ch === "click") this.click(e.p, at, e.v);
     // an introduction's voice lines (inst) are piano, whatever the voice sounds like in the verses
-    else if (e.ch === "acc" || e.inst || this.voiceSounds[e.ch] === "piano") this.pianoNote(e.ch, e.p, at, e.dur, e.v * (e.ch === "acc" ? 1 : 0.7));
-    else this.choirNote(e.ch, e.p, at, e.dur, e.v);
+    else if (e.ch === "acc" || e.inst || this.voiceSounds[e.ch] === "piano") this.pianoNote(e.ch, e.p, at, dur, e.v * (e.ch === "acc" ? 1 : 0.7));
+    else this.choirNote(e.ch, e.p, at, dur, e.v);
   }
 
   /**
@@ -456,7 +478,8 @@ export class Engine {
    */
   async renderOffline(events, seconds, sampleRate = 48000) {
     this.ensure();
-    const keep = ["ctx", "channels", "panners", "master", "out", "live", "liveStems"].map((k) => [k, this[k]]);
+    const keep = ["ctx", "channels", "panners", "master", "out", "live", "liveStems", "rate"].map((k) => [k, this[k]]);
+    this.rate = 1;
     const ctx = new OfflineAudioContext(2, Math.ceil(seconds * sampleRate), sampleRate);
     this.ctx = ctx;
     this.channels = {};

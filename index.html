@@ -119,6 +119,7 @@
     <button class="toggle" id="chordsBtn" aria-pressed="false" data-tip="Show chord names over the music">Chords</button>
     <button class="toggle" id="pianoBtn" aria-pressed="false" data-tip="Piano roll at the bottom: drag its handle to resize">Piano</button>
     <button class="toggle" id="practiceBtn" aria-pressed="false" data-tip="Feel the meter, and sing in tune with your part">Practice</button>
+    <button class="toggle" id="swmBtn" aria-pressed="false" data-tip="Sing with me: you sing, and the music joins you (the piano, or the choir), at your pace and in your key">Sing with me</button>
     <button class="icon-btn" id="studioBtn" aria-label="Studio" data-tip="Studio: place the singers on a stage (further back is softer)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2.6"/><path d="M3 20c0-6 1.8-9 4-9s4 3 4 9z"/><circle cx="17" cy="6" r="2.6"/><path d="M13 20c0-6 1.8-9 4-9s4 3 4 9z"/></svg>
     </button>
@@ -269,7 +270,7 @@
       <button class="play-text" id="micBtn">Start listening</button>
       <label class="check"><input type="checkbox" id="muteMine" checked> Mute my part</label>
       <label class="check"><input type="checkbox" id="anyOctave" checked> Any octave counts</label>
-      <div class="pr-readout"><strong id="pitchReadout">Not listening</strong><small id="tuneScore"></small></div>
+      <div class="pr-readout"><strong id="pitchReadout">Not listening</strong><small id="tuneScore"></small><small id="followReadout"></small></div>
     </div>
     <canvas id="pitchLane" aria-label="Your pitch against the notes of your part"></canvas>
     <p class="hint">Start listening, then press play and sing your part: your voice is the line, gilt when in tune, red when off. Stopped, it works as a tuner and names the note you sing. Use headphones, so the microphone hears only you.</p>
@@ -302,6 +303,22 @@
   </div>
 </dialog>
 
+<dialog class="recdlg singdlg" id="swmDialog" aria-labelledby="swmTitle">
+  <h2 id="swmTitle">Sing with me</h2>
+  <p class="hint">You sing; the music joins you where you are, in your key, and keeps your pace.</p>
+  <strong class="pr-h">What should it do?</strong>
+  <div class="sing-choices">
+    <button class="sing-choice" data-swm-do="piano"><strong>Play the piano for me</strong><small>As a pianist accompanies a singer</small></button>
+    <button class="sing-choice" data-swm-do="sing"><strong>Sing along with me</strong><small>The choir sings every part with you</small></button>
+  </div>
+  <strong class="pr-h">Which hymn?</strong>
+  <div class="sing-choices">
+    <button class="sing-choice" data-swm-find="0"><strong>This hymn</strong><small id="swmThis">Start anywhere in it, any part</small></button>
+    <button class="sing-choice" data-swm-find="1"><strong>Find it from my singing</strong><small>Sing a line or two of any hymn</small></button>
+  </div>
+  <div class="dlg-row"><button class="ghost" id="swmCancel">Cancel</button><button class="play-text" id="swmStart">Start</button></div>
+</dialog>
+<div class="swm-bar" id="swmBar" hidden role="status"><span id="swmStatus"></span><button class="ghost" id="swmStop">Stop</button></div>
 <dialog class="recdlg singdlg" id="singDialog" aria-labelledby="singTitle">
   <h2 id="singTitle">Who sings?</h2>
   <div class="sing-choices">
