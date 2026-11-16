@@ -61,7 +61,10 @@ export class TempoFollower {
       const off = anyOctave ? pcDist(p, n.p) : Math.abs(p - n.p);
       if (off > 0.75) continue;
       // nearer in time wins; skipping notes costs a little, so a repeated pitch is taken in order
-      const d = Math.abs(n.t - perfAt) + 0.12 * (j - this.last - 1);
+      // (near where YOU are: the music was this.lag ahead of you at your last note. Measured from where the
+      // music is, a music that has got ahead takes the second of two notes of one pitch for the first,
+      // reads that as you being ahead, and speeds up further)
+      const d = Math.abs(n.t - (perfAt - this.lag)) + 0.12 * (j - this.last - 1);
       if (d < bestD) { bestD = d; best = j; }
     }
     if (best < 0) return null;

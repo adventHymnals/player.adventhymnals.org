@@ -16,7 +16,7 @@
    "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
    "speakers": {
     "S": 4,
-    "A": 2,
+    "A": 12,
     "T": 3,
     "B": 10
    },

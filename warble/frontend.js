@@ -334,6 +334,11 @@ const CLIP = {
   r: [0.04, 0.13], w: [0.04, 0.13], y: [0.04, 0.13], l: [0.04, 0.15],
 };
 const clipOf = (p) => CLIP[p] || [0.04, 0.15];
+// How long a consonant is sung when there is no duration model (dsinger.FIXED). All were 0.07 s, which made
+// the unvoiced ones half as long as recorded singers sing them (2.1% of the time against 4.5%): words were
+// less clear. Measured in review/voice (16 Nov 2026): SingMOS +0.07, consonant time and level as the singers'.
+const FIXED = { s: 0.12, sh: 0.12, ch: 0.12, f: 0.11, th: 0.11, hh: 0.09, p: 0.085, t: 0.085, k: 0.085 };
+const consLen = (p) => FIXED[p] ?? 0.07;
 const CLOSURE = { b: 0.055, d: 0.055, g: 0.055, jh: 0.035, p: 0.02, t: 0.02, k: 0.02, ch: 0.02 };
 const ONSET_SUBS = { b: "de/b", d: "de/d", g: "de/g", p: "de/p", t: "de/t", k: "de/k", l: "de/l" };
 const CODA_SUBS = { l: "de/l" };
@@ -385,8 +390,8 @@ function choralR(units) {
 function plan(units) {
   const c = (p, v) => clip(v, ...clipOf(p));
   for (const u of units) {
-    u.on_d = u.onset.map((p) => c(p, 0.07));
-    u.co_d = u.coda.map((p) => c(p, 0.07));
+    u.on_d = u.onset.map((p) => c(p, consLen(p)));
+    u.co_d = u.coda.map((p) => c(p, consLen(p)));
     u.co_d = u.coda.map((p, i) => (p === "l" ? Math.max(u.co_d[i], CODA_L_MIN) : u.co_d[i]));
     if (u.coda.length && ["m", "n", "ng"].includes(u.coda[u.coda.length - 1])) {
       const k = u.co_d.length - 1;
