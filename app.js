@@ -2615,7 +2615,7 @@ async function swmStart({ do: what = "piano", find = false } = {}) {
     toast("Sing with me needs the microphone. Allow it for this page and try again.", 6000);
     return;
   }
-  Object.assign(swm, { on: true, do: what === "sing" ? "sing" : "piano", find: !!find, joined: false, joining: false, searched: 0, idx: null, hymnIdx: null, reSearched: 0, checkedAt: 0 });
+  Object.assign(swm, { on: true, do: what === "sing" ? "sing" : "piano", find: !!find, joined: false, joining: false, searched: 0, candidates: [], idx: null, hymnIdx: null, reSearched: 0, checkedAt: 0 });
   swm.tracker.reset();
   // listening runs on its own clock, not the screen's: a locked phone draws about two frames a second
   clearInterval(swm.timer);
@@ -2663,11 +2663,38 @@ function swmTick() {
   }
   if (!swm.idx || swm.joining) return;
   const notes = swm.tracker.sung();
-  if (notes.length < 6 || notes.length === swm.searched) return; // look again at each new note
+  if (notes.length === swm.searched) return; // look again at each new note
   swm.searched = notes.length;
-  const d = decide(swm.idx.search(notes.slice(-24)), SURE, swm.idx);
-  if (!d) { swmSay(`Listening… ${notes.length} notes`); return; }
+  const heard = swmHeard(notes);
+  if (notes.length < 6) { swmSay(notes.length ? `Heard ${heard}. I start comparing after 6 notes…` : swm.status); return; }
+  const results = swm.idx.search(notes.slice(-24));
+  const d = decide(results, SURE, swm.idx);
+  if (!d) { swmSay(swmSearching(notes, heard, results)); return; }
   swmJoin(d, notes);
+}
+
+const PC = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
+/** The notes heard, as letters (the last few): so the singer sees it hears them. */
+function swmHeard(notes) {
+  const last = notes.slice(-8).map((n) => PC[((Math.round(n.p) % 12) + 12) % 12]);
+  return `${notes.length} note${notes.length === 1 ? "" : "s"}: ${notes.length > 8 ? "… " : ""}${last.join(" ")}`;
+}
+
+/** What the search found so far, in words: the closest hymns (or parts) and why it is not sure yet. */
+function swmSearching(notes, heard, results) {
+  const names = [];
+  for (const r of results) {
+    const name = swm.find
+      ? (() => { const e = hymnList.find((x) => x.id === r.ids[0]); return e ? `${e.title} (${e.book} ${e.number})` : r.ids[0]; })()
+      : `${VOICES[r.ids[0]]?.name || r.ids[0]}, bar ${barAt(hymn, r.at ?? 0)}`;
+    if (!names.includes(name)) names.push(name);
+    if (names.length === 3) break;
+  }
+  swm.candidates = names;
+  const what = swm.find ? `Comparing with ${swm.idx.tunes.length.toLocaleString()} hymn tunes` : `Looking for your place in ${hymn.title}`;
+  if (!names.length) return `Heard ${heard}. ${what}: nothing close yet, sing on…`;
+  const why = { fit: "not close enough yet", margin: "these are too close to tell apart", place: "those notes come twice in it, waiting to hear which", tunes: "several tunes start alike, waiting until they part" }[decide.why] || "not sure yet";
+  return `Heard ${heard}. ${what}. Closest: ${names.join("; ")}. ${why[0].toUpperCase()}${why.slice(1)}, sing on…`;
 }
 
 /** Join in: the hymn (find), the key and tempo you sing in, from where you will be when the sound arrives. */
@@ -4560,7 +4587,7 @@ window.AHStudio = {
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
-      singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
+      singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, candidates: swm.joined ? [] : swm.candidates || [], tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
         lag: swm.joined ? Math.round(follower.lag * 100) / 100 : null, q: swm.joined && perf ? Math.round((locate(perf, engine.now())?.q ?? 0) * 100) / 100 : null, transpose: state.transpose } : null,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
       accomp: state.accomp, intro: state.intro, interlude: state.interlude, countIn: !!state.countIn, countAt: state.countAt, zoom: state.zoom,
