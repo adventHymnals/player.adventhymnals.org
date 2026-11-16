@@ -85,7 +85,7 @@ const state = {
   verses: [1],
   transpose: 0,       // semitones for the whole hymn (saved per hymn)
   lastVerseUp: store.get("lastVerseUp", 0), // modulate the last verse up 0, 1 or 2 semitones
-  verseLayout: store.get("verseLayout", "stack"), // "stack": verses under one another; "unfold": written out
+  verseLayout: store.get("verseLayout", APP ? "unfold" : "stack"), // "stack": verses under one another; "unfold": written out, each verse starting where the last ends (the app's default: reading along, the eye never jumps back)
   presenterShows: store.get("presenterShows", "score"), // or "words" for projection
   showSync: store.get("showSync", false),
   headsCollapsed: store.get("headsCollapsed", false),
@@ -3621,8 +3621,8 @@ async function makeTakeVideos(takeKeys) {
     await makeVideos($("stage"), takes, {
       progress: (text) => toast(text, 0),
       onVideo: async (name, blob, audioCodec) => {
-        // Opus sound in an mp4 does not play everywhere: the server makes it AAC when it can
-        if (audioCodec !== "aac") {
+        // Opus sound in an mp4 does not play everywhere: the server makes it AAC when it can (the app has no server)
+        if (audioCodec !== "aac" && !APP) {
           try {
             const r = await fetch("api/to-mp4", { method: "POST", body: blob });
             if (r.ok) blob = new Blob([await r.arrayBuffer()], { type: "video/mp4" });
@@ -3632,7 +3632,8 @@ async function makeTakeVideos(takeKeys) {
       },
     });
     $("toast").hidden = true;
-    showMadeVideos(made);
+    if (APP) saveInApp(made); // the app keeps them with the phone's videos at once, and offers to share
+    else showMadeVideos(made);
   } catch (err) {
     toast(`The video could not be made: ${err.message}`, 8000);
   } finally {
@@ -3646,6 +3647,26 @@ async function makeTakeVideos(takeKeys) {
   }
 }
 
+// In the app: each video goes straight to the phone (Movies/Advent Hymnals); the app copies it out of the page
+// and says when it is saved (then offers to share it). Its progress shows here while it copies.
+function saveInApp(made) {
+  for (const v of made) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(v.blob);
+    a.download = v.file;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 10 * 60000);
+  }
+  toast(made.length === 1 ? "Saving the video to your phone…" : `Saving ${made.length} videos to your phone…`, 0);
+}
+// the app's copy reports how far it is (StudioSaver)
+window.addEventListener("ah-save-progress", (e) => {
+  const { done, total, name } = e.detail || {};
+  if (!total) return;
+  if (done >= total) { $("toast").hidden = true; return; }
+  toast(`Saving ${name || "the video"} to your phone… ${Math.round((done / total) * 100)}%`, 0);
+});
+
 // Finished videos are kept until the user saves them: nothing says "saved" before a file is really written.
 function showMadeVideos(made) {
   const d = $("vidDialog");
@@ -3654,7 +3675,7 @@ function showMadeVideos(made) {
   $("vidNote").textContent = made.length === 1 ? "It is not saved yet. Choose where to keep it." : "They are not saved yet. Choose where to keep each one.";
   const mb = (b) => `${(b.size / 1e6).toFixed(1)} MB`;
   $("vidList").innerHTML = made.map((v, i) => `<li><span class="vname">${v.file}</span><span class="vsize">${mb(v.blob)}</span>`
-    + `<button class="ghost" data-save="${i}">Save…</button></li>`).join("");
+    + `<button class="play-text" data-save="${i}">Save…</button></li>`).join("");
   const done = (i, where) => {
     const li = $("vidList").children[i];
     li.querySelector("[data-save]").replaceWith(Object.assign(document.createElement("span"), { className: "saved", textContent: where }));
@@ -4456,6 +4477,10 @@ window.AHStudio = {
       if (r) { r.checked = true; r.dispatchEvent(new Event("change", { bubbles: true })); }
     } else if (name === "sweep") {
       state.sweep = !!value; store.set("lineByLine", state.sweep); renderAll();
+    } else if (name === "verseLayout" && (value === "unfold" || value === "stack")) {
+      // "unfold": the verses written out one after another, each starting where the last ends on its line
+      $("verseUnfold").checked = value === "unfold";
+      $("verseUnfold").dispatchEvent(new Event("change", { bubbles: true }));
     } else if (name === "staves" && /^[SATB|]+$/.test(value)) {
       setStaves(value);
     } else if (name === "accStaff") {
@@ -4586,7 +4611,7 @@ window.AHStudio = {
     const want = appWant.id ?? hymn?.id ?? null;
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
-      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep,
+      title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep, verseLayout: state.verseLayout,
       singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, candidates: swm.joined ? [] : swm.candidates || [], tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
         lag: swm.joined ? Math.round(follower.lag * 100) / 100 : null, q: swm.joined && perf ? Math.round((locate(perf, engine.now())?.q ?? 0) * 100) / 100 : null, transpose: state.transpose } : null,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
