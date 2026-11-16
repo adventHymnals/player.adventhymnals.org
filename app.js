@@ -2670,6 +2670,7 @@ function swmTick() {
   if (notes.length < 6) { swmSay(notes.length ? `Heard ${heard}. I start comparing after 6 notes…` : swm.status); return; }
   const results = swm.idx.search(notes.slice(-24));
   const d = decide(results, SURE, swm.idx);
+  swmLog(notes, results, d);
   // sure twice running, the same tune at the same place: among 1,689 tunes one lucky fit comes too easily
   // (a song that is in no hymnal, or an alto, was joined to a wrong hymn one time in four)
   // (not needed for a place in the open hymn: four parts to choose from, and a wrong place is put right)
@@ -2678,6 +2679,20 @@ function swmTick() {
   if (d && !again) decide.why = "again";
   if (!d || !again) { swmSay(swmSearching(notes, heard, results)); return; }
   swmJoin(d, notes);
+}
+
+/** What it heard and weighed, for the app's log (a wrong hymn can be traced): the notes (MIDI pitch, start, end s),
+ *  the closest five (hymn, score, place) and the answer. */
+function swmLog(notes, results, d) {
+  if (!APP && !new URLSearchParams(location.search).has("debug")) return;
+  try {
+    console.info("AH-SWM " + JSON.stringify({
+      mode: swm.find ? "find" : "this", n: notes.length, why: d ? "join" : decide.why,
+      heard: notes.slice(-24).map((x) => [Math.round(x.p * 10) / 10, Math.round(x.t0 * 100) / 100, Math.round(x.t1 * 100) / 100]),
+      top: results.slice(0, 5).map((r) => [r.ids[0], Math.round(r.score * 100) / 100, r.end]),
+      join: d ? d.ids[0] : null,
+    }));
+  } catch { /* logging only */ }
 }
 
 const PC = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
