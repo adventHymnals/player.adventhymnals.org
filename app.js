@@ -2483,7 +2483,7 @@ let making = false; // a video is being made: its frames are drawn by the maker,
 // singer needs the phone's time (Brian's phone fell behind on CS1908 1, 18 Nov 2026)
 const APP_FPS = 20;
 let lastPaintAt = 0;
-function frame(now = performance.now()) {
+function frame(now = window.performance.now()) { // (rAF gives the time; core.js exports its own performance())
   requestAnimationFrame(frame);
   if (making) return;
   if (APP && engine.nativeOn && now - lastPaintAt < 1000 / APP_FPS - 4) return;
@@ -3277,6 +3277,8 @@ function sweepTo(ph, wipe = true) {
   const sys = ph.system;
   const i = view.systems.indexOf(sys);
   if (i !== sweep.i) {
+    // following the singers line by line, a pinched-bigger line runs off the screen: the next line comes at fit
+    if (APP && engine.playing && sweep.i >= 0 && state.zoom > APP_ZOOM + 1e-6) { setTimeout(fitStaff, 0); return; }
     sweep.i = i;
     sweep.x = 0;
     sweep.next = undefined;
@@ -3551,34 +3553,53 @@ function solfaSweepTo(li, cell) {
 // Two fingers make the score (staff), or the sol-fa and words, larger or smaller. While pinching the
 // view is only stretched; on letting go it is laid out again at the new size.
 function setupPinch() {
+  // Only a deliberate pinch zooms (Brian got a giant staff twice without meaning to, 18 Nov 2026): two
+  // fingers must change the distance between them by more than 15% first, and a second finger landing
+  // while the first scrolls is not a pinch for 300 ms.
   let p = null;
+  let one = null; // the single finger: { t, x, y, moved }
+  let lastTap = null; // a double tap on a zoomed staff: back to fit
   const dist = (t) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
   const target = () => (isScoreView() ? sheet : state.view === "solfa" || state.view === "words" ? $("altView") : null);
   workspace.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) { one = { t: Date.now(), x: e.touches[0].clientX, y: e.touches[0].clientY, moved: false }; return; }
     if (e.touches.length !== 2) return;
-    drag = null; // two fingers: neither a loop nor a tap on a note
     const el = target();
     if (!el) return;
-    const r = el.getBoundingClientRect();
-    const altKey = state.view === "solfa" ? "solfaZoom" : "altZoom";
-    const z = el === sheet ? 1 : state[altKey]; // CSS zoom scales the box, not the transform origin
-    const mx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-    const my = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-    p = { el, d: dist(e.touches), k: 1, base: el.style.transform || "" };
-    el.style.transition = "none";
-    el.style.transformOrigin = `${(mx - r.left) / z}px ${(my - r.top) / z}px`;
+    p = { el, d: dist(e.touches), k: 1, on: false, quietUntil: one?.moved ? Date.now() + 300 : 0, touches: e.touches };
   }, { passive: true });
   workspace.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 1 && one && Math.hypot(e.touches[0].clientX - one.x, e.touches[0].clientY - one.y) > 8) one.moved = true;
     if (!p || e.touches.length !== 2) return;
+    if (Date.now() < p.quietUntil) { p.d = dist(e.touches); return; } // a scroll's second finger: not yet
+    const raw = dist(e.touches) / p.d;
+    if (!p.on) {
+      if (Math.abs(raw - 1) < 0.15) return; // not a pinch yet: the page may scroll
+      p.on = true; // a pinch: from here the view follows the fingers
+      drag = null; // two fingers: neither a loop nor a tap on a note
+      const el = p.el, r = el.getBoundingClientRect();
+      const z = el === sheet ? 1 : state[state.view === "solfa" ? "solfaZoom" : "altZoom"]; // CSS zoom scales the box, not the transform origin
+      const mx = (e.touches[0].clientX + e.touches[1].clientX) / 2, my = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      p.base = el.style.transform || "";
+      el.style.transition = "none";
+      el.style.transformOrigin = `${(mx - r.left) / z}px ${(my - r.top) / z}px`;
+    }
     e.preventDefault();
     const now = p.el === sheet ? state.zoom : state[state.view === "solfa" ? "solfaZoom" : "altZoom"];
-    p.k = Math.max(0.5 / now, Math.min(2.5 / now, dist(e.touches) / p.d));
+    p.k = Math.max(0.5 / now, Math.min(2.5 / now, raw));
     p.el.style.transform = `${p.base} scale(${p.k})`;
   }, { passive: false });
   const end = (e) => {
+    // a double tap on the staff, pinched bigger: back to the whole width
+    if (!p && e.type === "touchend" && e.touches.length === 0 && one && !one.moved && Date.now() - one.t < 300 && isScoreView() && state.zoom > APP_ZOOM + 1e-6) {
+      const t = { at: Date.now(), x: one.x, y: one.y };
+      if (lastTap && t.at - lastTap.at < 350 && Math.hypot(t.x - lastTap.x, t.y - lastTap.y) < 40) { lastTap = null; fitStaff(); return; }
+      lastTap = t;
+    }
     if (!p || e.touches.length >= 2) return;
-    const { el, k, base } = p;
+    const { el, k, base, on } = p;
     p = null;
+    if (!on) return;
     el.style.transform = base;
     el.style.transformOrigin = "";
     el.style.transition = "";
@@ -3592,6 +3613,12 @@ function setupPinch() {
   };
   workspace.addEventListener("touchend", end);
   workspace.addEventListener("touchcancel", end);
+}
+/** The staff back to the whole width (the app's smallest size). */
+function fitStaff() {
+  if (!APP || state.zoom <= APP_ZOOM + 1e-6) return;
+  state.zoom = APP_ZOOM; save("zoom");
+  renderAll();
 }
 
 // ---- piano roll sheet ----------------------------------------------------------------------------
