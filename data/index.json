@@ -8479,7 +8479,7 @@
   "number": "202",
   "title": "Nearer, Still Nearer",
   "path": "data/CS1908/202.json",
-  "v": "7ea46eceecfa32b6626a58a9a370b8b78c469eeb835c5568e90a5fde81a416fa"
+  "v": "aec037ad827948f60a75b21a4637befabc35ffd6f81aca54eb06054c2d6ce4e7"
  },
  {
   "id": "CS1908-203",
@@ -13389,7 +13389,7 @@
   "sung": true,
   "sv": "6cb52758c5df0f4f4cca521c9f4340fd725d05827da9b641c65a4420e8e9f2c8",
   "english": "I Love to Tell the Story",
-  "v": "8764801a326a824ff21a5b634e04185a4841642c522fee89a359638a512ccc79"
+  "v": "4bc35bb496b56ae78a2f2e89a4a9c70a5a67662376b92ae3b8a294b8b8c14589"
  },
  {
   "id": "NZK-53b",
@@ -14331,7 +14331,7 @@
   "sung": true,
   "sv": "1db1b111ec39c3380db7c0b5918ddc738dc52fc3b000f2fcbccebfe24432645a",
   "english": "Beneath the Cross of Jesus",
-  "v": "d8644a3061fefd8dbdbbbc323b778a9f50c261f6710b23fa4cb1f32eb22d3aae"
+  "v": "764814765c6a306fc5cf88cc5cba74bc4a8932169f6a17a981d9e673728134f8"
  },
  {
   "id": "NZK-142",
@@ -14421,7 +14421,7 @@
   "sung": true,
   "sv": "c430dbd59f7ad8ffd309e4293ca45be867832894e731dea5d821a7c7dcc5ad05",
   "english": "Live Out Thy Life Within Me",
-  "v": "9d50cb7f724648d29d8c69108862ee20f2306b1e6eab84035bf558e02e010f2f"
+  "v": "13c648099409ee37c2d487c36810705db9717f59c58321d9c4124ca3f363d934"
  },
  {
   "id": "NZK-147b",
@@ -14492,7 +14492,7 @@
   "sung": true,
   "sv": "e9302d0409243eb40c82ea7aceaaddb99d59bc84452c58a6dd0415da552bce83",
   "english": "All the Way My Savior Leads Me",
-  "v": "3a2679b040db6980a49839a6652e2b2488a01ecbc78e1cbfe08f7d81136945ab"
+  "v": "914d2847eed59830452f03a4bba494d237cf98eff8944a97ae8f5c82f03f2153"
  },
  {
   "id": "NZK-155b",
@@ -14632,7 +14632,7 @@
   "sung": true,
   "sv": "52e5683d609efa96ded6ff2585b9fbc188b8c9bcb306b6c1916704c0e56cb486",
   "english": "Face to Face",
-  "v": "443ef35b61e19cc1b5f01df01321d45b55ab1d239e2790a0f01856b72a8014cc"
+  "v": "e17923d1aec75b706854503319917904bd69f1843b5ee6c12e9ed0459d106802"
  },
  {
   "id": "NZK-176",
@@ -14774,7 +14774,7 @@
   "sung": true,
   "sv": "4f5ac6b8a16be69bd76b4ac0e885799d35233c7d871c06931640cd693d46fd84",
   "english": "The Church Has One Foundation",
-  "v": "0a22bffe564cdc8af796ce3350dd39f24c0023449c3f9b5a912ada8862246b4d"
+  "v": "7d48f058ae97f3b770b5795db97bd68c93a49e1f654509f9f19b7744ca9f1ad8"
  },
  {
   "id": "NZK-196",
@@ -22188,7 +22188,7 @@
   "sung": true,
   "sv": "5d5b8bb1ffc8a61ae55f3947ed087b651084e451129e37239001f2f897746720",
   "english": "I Love to Tell the Story",
-  "v": "01568441685bf6068436e037c1d8f94f65fee65cb894eda0aeb284b754339517"
+  "v": "254f98a5baf00451ec0392d8f44989f210f56190e6427c1fcfd342ce478028b0"
  },
  {
   "id": "WN-73b",
@@ -22917,7 +22917,7 @@
   "sung": true,
   "sv": "340867471d53ee8f99d7b55a261afc1705c02621a282ce861b71d56e06492535",
   "english": "Live Out Thy Life Within Me",
-  "v": "bda3878a67b8e8b1989cca607365c88d4b8a1369bb67d8dd9badc12cfa762602"
+  "v": "9faf24234b1e97ff68bea76a66b96c1f61ade0e64eab9e48f78c1f300f6f3e7b"
  },
  {
   "id": "WN-208b",
@@ -22994,7 +22994,7 @@
   "sung": true,
   "sv": "1f48c3d2447baf17e4ba1a99c02738da792f9c8d5959c0c0a4e7de3b2e29c167",
   "english": "O Jesus, I Have Promised",
-  "v": "ad1fd3a92107d0971c7a159d33c500c9cc36d4e051ec1f8f6548ec06b7cbb8d1"
+  "v": "0847bc44599da913e791cbd7f6eb3fd616a043b483598c762e72f8f929f75d0d"
  },
  {
   "id": "WN-218b",
@@ -23163,7 +23163,7 @@
   "path": "data/WN/258.json",
   "sung": true,
   "sv": "f355ba43842e42b3af5dbdd27934bdab638fb667654ee829d846f5c605b2a9ff",
-  "v": "b2c126041a0d08d023364180204d472792dbe8928439a1bd0721915784f5ad64"
+  "v": "2d65aa7cd973238790e41bd0a54698da89a4d266aa6eef5e1798b294c2223f72"
  },
  {
   "id": "WN-259",
@@ -23383,6 +23383,6 @@
   "sung": true,
   "sv": "3822a91531ad7c393fe3578c35274a9e6dd52b9b4e121571f1c30d3f64bda1ee",
   "english": "Faith of Our Fathers",
-  "v": "eee2f6a8b5970eadd7b1be9346572fc5946b6d5e63a6001b788cd3dc5386eb8e"
+  "v": "390c13d5b63ea86b829abcee34521c4191b2fdf7ed7a6a59c7eb5f79982de6eb"
  }
 ]
