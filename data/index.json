@@ -15983,8 +15983,6 @@
   "number": "142",
   "title": "Angels We Have Heard on High",
   "path": "data/SDAH/142.json",
-  "sung": true,
-  "sv": "76f23f6e5e28681f2f6219757c75fd574c1183fe819a50b32f57f6a94b92b79d",
   "v": "97e35f4e08d02fad6035b94efbd5c931d1ef6f6351ee831ba924cfc420cb3c2c"
  },
  {
@@ -18800,8 +18798,6 @@
   "number": "422",
   "title": "Marching to Zion",
   "path": "data/SDAH/422.json",
-  "sung": true,
-  "sv": "c551cecdd72d2245d7f8bb9642ac777dda71a43a5957703fd35c0b61e2029d4a",
   "v": "c4cc10e4dda9f4d2b626dac5c974126e4c698cafca9978a43c839421cae3dcaa"
  },
  {
@@ -18984,8 +18980,6 @@
   "number": "440",
   "title": "How Cheering Is the Christian's Hope",
   "path": "data/SDAH/440.json",
-  "sung": true,
-  "sv": "8c1ae4593a13760d0e85e168c4756fb6668e07405c0f628e2ec0e0fbce81a02f",
   "v": "48c5ae7759bb29670499136d2f7a930ee9fa3ee30eb9c5e453933a5244813644"
  },
  {
@@ -22216,9 +22210,7 @@
   "number": "116",
   "title": "Biuru, Jo Nyasaye",
   "path": "data/WN/116.json",
-  "sung": true,
-  "sv": "e591948756851613dcb42ccb698498f8bcb35e8b67d660cf23a8092e39e2e50c",
-  "v": "25a3b780bce99b0f9300b934c5b6764b04671b7d8fcd3ae094784e4e313d9ba8",
+  "v": "b0dbc756a9a5dbfeb28c4c3d9c8329b12d7c414bd96b875cb1861160dff47a1e",
   "english": "Marching to Zion"
  },
  {
