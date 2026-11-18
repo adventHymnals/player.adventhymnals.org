@@ -287,7 +287,13 @@ const singEngine = () => {
   return isLive(e) && !liveVoice(e) ? "warble" : e; // a live voice no longer offered: the first
 };
 const useWarble = () => isLive(singEngine()) && !!singingCfg.warble;
-const liveW = () => liveVoice(singEngine()) || singingCfg.warble; // the live voice that sings now
+// the voice that sings now: the chosen one, or Singers v5 standing in while the app's engine for it is getting
+// ready on this phone (its first-use setup takes minutes) or unavailable; the choice itself stays
+let standIn = null; // the app engine stood in for ("leap"), or null
+const liveW = () => {
+  const v = liveVoice(singEngine());
+  return v && standIn && v.nativeEngine === standIn ? singingCfg.warble : v || singingCfg.warble;
+};
 
 const tracksOfHymn = () => {
   const ts = state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
@@ -1671,9 +1677,13 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
     let r = {};
     try { r = JSON.parse(native.use(want) || "{}"); } catch { r = {}; }
     if (r.ok === false) {
-      console.warn(`live singer: use(${want}) refused: ${r.error || "not ready"}`);
-      toast(COPY.notReadyYet(w.label, singingCfg.warble?.label || COPY.singers), 6000);
-      if (want !== "warble") return;
+      console.warn(`live singer: use(${want}) refused: ${r.error || "not ready"}${r.preparing ? ` (preparing, ${Math.round((r.progress || 0) * 100)}%)` : ""}`);
+      if (want === "warble") { toast(COPY.noStart, 6000); return; }
+      // the chosen voice stays chosen; Singers v5 sing until the app says it is ready ({"type": "engines"})
+      standIn = want;
+      toast(r.preparing ? COPY.notReadyYet(w.label, singingCfg.warble.label) : leapReason() || COPY.notReadyNow(w.label, singingCfg.warble.label), 6000);
+      $("credit").textContent = singingCfg.warble.credits();
+      return prepareNativeWarble(native, singingCfg.warble, gen, keep);
     }
     nativeUsing = want; nativeLoaded.clear(); nativeModel = null;
   }
@@ -1737,6 +1747,7 @@ function onNativeWarble(json) {
   else if (m.type === "model" && m.state === "error") oops(COPY.noModel, m.msg, 8000);
   else if (m.type === "error") oops(COPY.stopped, m.msg, 8000);
   else if (m.type === "engines") enginesChanged();
+  else if (m.type === "leap") console.info(`singers v6: ${m.state}${m.progress != null ? ` ${Math.round(m.progress * 100)}%` : ""}`); // (its engines event follows)
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
     if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind briefly. They will catch up on their own.", 4000); }
@@ -1747,12 +1758,24 @@ function onNativeWarble(json) {
  *  this phone (its files gone, a failed benchmark), Warble sings from the next play: the passes are made again
  *  for it, at once when stopped, else when play is next pressed; said quietly, once. */
 let engineSwitchPending = false;
+/** The app's plain-words reason why its engine cannot sing on this phone (Round 3 wording, the app's). */
+const leapReason = () => Warble.nativeEngines()?.leap?.reason || "";
 function enginesChanged() {
-  const lw = liveW();
-  if (!lw?.nativeEngine || Warble.nativeEngines()?.[lw.nativeEngine]?.ready) return;
-  state.singEngine = "warble"; // for now (not saved: the app keeps its own choice)
-  toast(COPY.notReadyNow(lw.label, singingCfg.warble?.label || COPY.singers), 4000);
-  if (engine.playing) engineSwitchPending = true; else prepareStems();
+  const chosen = liveVoice(singEngine());
+  if (!chosen?.nativeEngine) { standIn = null; return; }
+  const e = Warble.nativeEngines()?.[chosen.nativeEngine];
+  const switchNow = () => { if (engine.playing) engineSwitchPending = true; else prepareStems(); };
+  if (e?.ready) { // ready (again): the chosen voice sings from the next play
+    if (standIn) { standIn = null; console.info(`singers: ${chosen.label} ready`); switchNow(); }
+    return;
+  }
+  if (standIn === chosen.nativeEngine) { // already standing in: say why only when it can no longer get ready
+    if (!e?.preparing) { const why = leapReason(); if (why && why !== enginesChanged.said) { enginesChanged.said = why; toast(why, 6000); } }
+    return;
+  }
+  standIn = chosen.nativeEngine;
+  toast(e?.preparing ? COPY.notReadyYet(chosen.label, singingCfg.warble.label) : leapReason() || COPY.notReadyNow(chosen.label, singingCfg.warble.label), 6000);
+  switchNow();
 }
 
 /** What the recorded singers of this hymn cost at the current tempo, key and verses, for the app's
