@@ -13,7 +13,8 @@ export const SINGERS = {
 };
 export const DATASETS = {
   warble: "GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
-  leap: "GTSinger (Zhang et al., NeurIPS 2024) and M4Singer (Zhang et al., NeurIPS 2022), CC BY-NC-SA 4.0.",
+  // the voice peer's HANDOFF.md wording (no M4Singer data in the shipped model), until the final credit lines
+  leap: "LeapSinger and NHVSing by wavtechyukky; singers from GTSinger (CC BY-NC-SA 4.0); hymn lines after LUNAI.",
 };
 export const COPY = {
   firstUse: (mb) => (mb ? `Downloads ${mb} MB the first time only` : ""),
