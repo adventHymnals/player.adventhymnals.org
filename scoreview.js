@@ -16,7 +16,14 @@ export class ScoreView {
     this.active = new Set();
   }
 
-  render(xml, { mode, zoom, width, tracks, barOffset = 0, transpose = "", ownBase = Infinity }) {
+  /** The options Verovio engraves with: part of the engraving cache's key (engravecache.js). */
+  static engraveOptions({ mode, zoom, width, transpose = "" }) {
+    return { mode, scale: Math.round(46 * zoom), pageWidth: mode === "tracks" ? 60000 : Math.round((Math.max(320, width) * 100) / Math.round(46 * zoom)), transpose };
+  }
+
+  /** pre: a kept engraving ({ pages, timemap }, engravecache.js) to show without engraving; this.engraved is
+   *  the one shown (to keep). */
+  render(xml, { mode, zoom, width, tracks, barOffset = 0, transpose = "", ownBase = Infinity, pre = null }) {
     this.ownBase = ownBase; // lines of words after this many are a lower voice's own (lyricLines in core.js)
     this.barOffset = barOffset; // printed bar numbers start at 0 when there is a pickup
     const scale = Math.round(46 * zoom);
@@ -26,14 +33,21 @@ export class ScoreView {
       spacingStaff: 14, adjustPageHeight: true, svgCss: SVG_CSS,
       transpose, // the toolkit keeps options between calls, so always set it
     };
-    if (mode === "tracks") {
-      this.tk.setOptions({ ...base, breaks: "none", adjustPageWidth: true, pageWidth: 60000, pageHeight: 60000 });
-    } else {
-      this.tk.setOptions({ ...base, breaks: "auto", adjustPageWidth: false, pageWidth: Math.round((Math.max(320, width) * 100) / scale), pageHeight: 60000 });
+    let pages, timemap;
+    if (pre) ({ pages, timemap } = pre);
+    else {
+      if (mode === "tracks") {
+        this.tk.setOptions({ ...base, breaks: "none", adjustPageWidth: true, pageWidth: 60000, pageHeight: 60000 });
+      } else {
+        this.tk.setOptions({ ...base, breaks: "auto", adjustPageWidth: false, pageWidth: Math.round((Math.max(320, width) * 100) / scale), pageHeight: 60000 });
+      }
+      this.tk.loadData(xml);
+      pages = [];
+      for (let p = 1; p <= this.tk.getPageCount(); p++) pages.push(this.tk.renderToSVG(p));
+      timemap = this.tk.renderToTimemap({ includeMeasures: true });
     }
-    this.tk.loadData(xml);
-    let svg = "";
-    for (let p = 1; p <= this.tk.getPageCount(); p++) svg += this.tk.renderToSVG(p);
+    this.engraved = { pages, timemap };
+    const svg = pages.join("");
     this.content.innerHTML = svg;
     // every line with its staves and words at the same heights (the next line is shown beside this one);
     // guarded: if the lined-up score is not drawn at the same width (scale) as Verovio's, within 1%, the
@@ -60,7 +74,7 @@ export class ScoreView {
     this.tracks = tracks;
 
     const times = new Map();
-    for (const e of this.tk.renderToTimemap({ includeMeasures: true })) {
+    for (const e of timemap) {
       for (const id of e.on || []) times.set(id, { on: e.qstamp, off: Infinity });
       for (const id of e.off || []) { const x = times.get(id); if (x) x.off = e.qstamp; }
     }

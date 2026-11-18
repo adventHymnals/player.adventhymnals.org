@@ -6,6 +6,7 @@ import {
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
 import { ScoreView } from "./scoreview.js";
+import { engraveKey, getEngraved, putEngraved } from "./engravecache.js";
 import { SolfaView, WordsView } from "./solfa.js";
 import { Waterfall } from "./waterfall.js";
 import { Presenter } from "./presenter.js";
@@ -1837,7 +1838,16 @@ async function renderAll() {
     if (quick) opts = { ...opts, unfold: opts.unfold.slice(0, 1) };
     // pinched bigger in the app: the sheet itself is wider than the screen, and scrolls sideways
     sheet.style.width = state.view === "page" && appWide(state.zoom) > 1 ? `${Math.floor((viewport.clientWidth - 8) * appWide(state.zoom))}px` : "";
-    view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose, ownBase: lyricLines(scoreHymn(), opts) });
+    const xml = buildMusicXML(scoreHymn(), opts);
+    const ro = { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose, ownBase: lyricLines(scoreHymn(), opts) };
+    // an engraving kept on this device from an earlier open (engravecache.js): shown without engraving
+    const key = engraveKey(xml, ScoreView.engraveOptions(ro));
+    const gen = ++drawGen, t0 = Date.now();
+    const pre = await getEngraved(key);
+    if (gen !== drawGen) return; // a newer drawing has begun
+    view.render(xml, { ...ro, pre });
+    if (DEBUG_TIMES) console.info(`AHTime staff ${hymn.id}${quick ? " (first verse)" : ""}: ${pre ? "kept" : "engraved"} ${Date.now() - t0} ms, ${Math.round(Date.now() - window.performance.timing.navigationStart)} ms since start`);
+    if (!pre) putEngraved(key, view.engraved).catch(() => {});
     buildLane();
     setupSweep();
     positionHeaders(view.systems[0]);
@@ -1849,6 +1859,8 @@ async function renderAll() {
   paint(true);
 }
 let drawnWhole = ""; // the hymn (and tune) whose staff was last drawn whole
+let drawGen = 0;
+const DEBUG_TIMES = new URLSearchParams(location.search).has("debug");
 
 async function prepareStage() {
   const opts = xmlOptions();
