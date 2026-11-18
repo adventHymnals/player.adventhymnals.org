@@ -3263,7 +3263,7 @@ function setupSweep() {
   viewport.classList.add("sweeping");
   viewport.style.height = `${Math.ceil(h)}px`;
   sweep.el.style.left = `${sheet.offsetLeft}px`;
-  sweep.el.style.width = `${sheet.offsetWidth}px`;
+  sweep.el.style.width = `${sheet.getBoundingClientRect().width}px`; // exact: a fraction of a pixel narrower scaled the next line 1.5 px off near the end of a long hymn
   sweep.el.style.height = `${Math.ceil(h)}px`;
   sweep.i = -1;
 }
@@ -3363,11 +3363,29 @@ function wordsAtJoin(sys, next) {
   const nextEl = sweep.inner.querySelector("g.system.sw-on");
   const steps = [];
   for (const w of nextEl ? wordBoxes(nextEl, E) : []) {
-    if (!(w.x0 < x && w.x1 > x + 1)) continue;
+    if (!(w.x0 < x && w.x1 > x + 1)) continue; // cut by the edge
     // text boxes of lines of words touch: the band is the box less a pixel each side (the ink is inside)
     const st = { y0: w.y0 + 1, y1: w.y1 - 1, x1: w.x1 + 0.5 };
     const o = steps.find((t) => st.y0 < t.y1 && st.y1 > t.y0);
     if (o) { o.y0 = Math.min(o.y0, st.y0); o.y1 = Math.max(o.y1, st.y1); o.x1 = Math.max(o.x1, st.x1); } else steps.push(st);
+  }
+  // a word of the next line that a step touches (lines of words sit close: their boxes overlap) is taken in
+  // whole too, until no step touches a word only in part
+  const nextWords = nextEl ? wordBoxes(nextEl, E) : [];
+  for (let grew = true, n = 0; grew && n < 20; n++) {
+    grew = false;
+    for (const w of nextWords) {
+      if (w.x1 <= x + 1) continue;
+      const t = steps.find((st) => w.y0 < st.y1 - 0.5 && w.y1 > st.y0 + 0.5 && w.x0 < st.x1);
+      if (!t) continue;
+      const inside = w.y0 >= t.y0 - 1.5 && w.y1 <= t.y1 + 1.5 && w.x1 <= t.x1;
+      if (inside) continue;
+      t.y0 = Math.min(t.y0, w.y0 + 1); t.y1 = Math.max(t.y1, w.y1 - 1); t.x1 = Math.max(t.x1, w.x1 + 0.5);
+      grew = true;
+    }
+    // steps that now overlap become one
+    steps.sort((a, b) => a.y0 - b.y0);
+    for (let i = 1; i < steps.length; i++) if (steps[i].y0 < steps[i - 1].y1) { steps[i - 1].y1 = Math.max(steps[i - 1].y1, steps[i].y1); steps[i - 1].x1 = Math.max(steps[i - 1].x1, steps[i].x1); steps.splice(i--, 1); grew = true; }
   }
   steps.sort((a, b) => a.y0 - b.y0);
   for (const w of wordBoxes(sys.el, E)) {
@@ -4913,6 +4931,8 @@ window.AHStudio = {
     return JSON.stringify({
       ready: !!perf && !appWant.loading && hymn?.id === want, hymn: hymn?.id ?? null, want, missing: appWant.missing,
       title: hymn?.title ?? "", english: hymn?.english ?? "", view: state.view, words: state.words, sweep: !!state.sweep, verseLayout: state.verseLayout,
+      // the staff pinched wider than the screen (the app's Fit chip: AHStudio.set('fit', true))
+      zoom: state.zoom, fitZoom: APP_ZOOM, zoomed: isScoreView() && state.zoom > APP_ZOOM + 1e-6,
       singWithMe: swm.on ? { do: swm.do, find: swm.find, joined: swm.joined, status: swm.status, candidates: swm.joined ? [] : swm.candidates || [], tempo: swm.joined ? Math.round(state.tempo * engine.rate) : null,
         lag: swm.joined ? Math.round(follower.lag * 100) / 100 : null, q: swm.joined && perf ? Math.round((locate(perf, engine.now())?.q ?? 0) * 100) / 100 : null, transpose: state.transpose } : null,
       staves: state.tracks.map((t) => t.join("")).join("|"), wordsAt: wordsAt(), accStaff: !!state.accStaff,
