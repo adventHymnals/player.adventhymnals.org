@@ -1,7 +1,7 @@
 import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, lyricLines, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
   trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds, countQ,
-  registerParts, partsOf, baseOf,
+  registerParts, partsOf, baseOf, retune,
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
@@ -1205,19 +1205,12 @@ const tunesReady = fetch("data/tunes.json").then((r) => (r.ok ? r.json() : {})).
 const tuneChoices = (id) => tunesTable?.[id] || null;
 const chosenTune = (id) => { const k = store.get(`tune:${id}`, ""); return (k && tuneChoices(id)?.alts.find((a) => a.tune === k)) || null; };
 /** The syllables of `words` poured in order into the notes of `pattern` that carry one. */
-const fillWords = (pattern, words) => { const syl = (words || []).filter(Boolean); let i = 0; return (pattern || []).map((s) => (s ? syl[i++] ?? null : null)); };
 /** Hymn x's words on the music of the tune `alt` (taken from the player hymn that carries it). */
 async function withTune(x, alt) {
   const src = hymnList.find((e) => e.id === alt.from);
   if (!src) return x;
   const y = await (await fetch(src.path)).json();
-  return {
-    ...y, id: x.id, book: x.book, number: x.number, title: x.title, english: x.english, poet: x.poet,
-    copyright: [...new Set([x.copyright, y.copyright].filter(Boolean))].join(" "),
-    verses: x.verses.map((v) => fillWords(y.verses[0], v)),
-    refrain: y.refrain ? fillWords(y.refrain, x.refrain) : y.refrain, refrains: undefined,
-    tune: { key: alt.tune, name: alt.name, from: alt.from },
-  };
+  return retune(x, y, alt);
 }
 /** The tune picker beside the title: shown only for a hymn that has another tune. */
 function syncTunePicker() {

@@ -1081,3 +1081,33 @@ export function chordIndexAt(h, q) {
   h.chords.forEach((c, k) => { if (c.q <= q + 1e-6) i = k; });
   return i;
 }
+
+/** A tune's notes take a text's syllables, in order (a melisma or tied note: null). */
+export const fillWords = (pattern, words) => { const syl = (words || []).filter(Boolean); let i = 0; return (pattern || []).map((s) => (s ? syl[i++] ?? null : null)); };
+
+/**
+ * Hymn x (its words) sung to the tune of hymn y (alt: its tunes.json entry): y's music with x's words.
+ * Everything about the words is x's: the title and credits, the language (a Swahili text keeps Swahili
+ * pronunciation), the verses poured into the tune, and the lower parts' own words. Those are x's only
+ * where they line up with the tune's notes (the same number of notes in that part); otherwise the lower
+ * parts sing the text with the melody. y's own lower-part words never come along (they were English words
+ * under a Swahili text, TRANSCRIBING.md 11, 18 Nov 2026).
+ */
+export function retune(x, y, alt) {
+  const vw = {};
+  for (const [k, lists] of Object.entries(x.voiceWords || {})) {
+    if (!y.voices?.[k] || !Array.isArray(lists)) continue;
+    const fit = lists.map((l) => (Array.isArray(l) && l.length === y.voices[k].length ? l : null));
+    if (fit.some(Boolean)) vw[k] = fit;
+  }
+  const out = {
+    ...y, id: x.id, book: x.book, number: x.number, title: x.title, english: x.english, poet: x.poet,
+    copyright: [...new Set([x.copyright, y.copyright].filter(Boolean))].join(" "),
+    verses: x.verses.map((v) => fillWords(y.verses[0], v)),
+    refrain: y.refrain ? fillWords(y.refrain, x.refrain) : y.refrain, refrains: undefined,
+    voiceWords: Object.keys(vw).length ? vw : undefined,
+    tune: { key: alt.tune, name: alt.name, from: alt.from },
+  };
+  if (x.language) out.language = x.language; else delete out.language;
+  return out;
+}
