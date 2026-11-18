@@ -3724,6 +3724,14 @@
   "v": "eb3138df31ce84a1a7c9c43207ba1fb835fb4d071749f5036f05d12bf81da748"
  },
  {
+  "id": "CH1941-387",
+  "book": "CH1941",
+  "number": "387",
+  "title": "How Cheering Is the Christian's Hope",
+  "path": "data/CH1941/387.json",
+  "v": "9cda6691a561f5e057a040ee5bb0d74ecf758eafe44033351f67c54092fcda5a"
+ },
+ {
   "id": "CH1941-388",
   "book": "CH1941",
   "number": "388",
@@ -22844,9 +22852,7 @@
   "number": "175",
   "title": "Geno Kristo Kelonwa Mor",
   "path": "data/WN/175.json",
-  "sung": true,
-  "sv": "b0490888e64df5239c9f381ee742e475f7b4c08a958974e0a979fc72e6233c2e",
-  "v": "1b20c1923832add3117edd17336413afa847578f07960160ec416710ed879f50"
+  "v": "03d653fb7c999ea5b4db3bb1bb48364b165ea6f142c7d9fb38ca35bf19eb7a67"
  },
  {
   "id": "WN-176",

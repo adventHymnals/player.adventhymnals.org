@@ -26,6 +26,19 @@ export const DYNAMIC_LEVEL = { ppp: 0.3, pp: 0.4, p: 0.52, mp: 0.66, mf: 0.8, f:
  *  old steps of 1.5-2 dB were not heard): a level of DYNAMIC_LEVEL's scale (ramps between marks included)
  *  as a gain against mf. */
 const SING_DB = [[0.3, -12], [0.4, -9], [0.52, -6], [0.66, -3], [0.8, 0], [0.95, 3], [1.08, 5], [1.18, 7]];
+/** The app's live singer on a phone speaker: the marks further apart, about 5 dB each (Brian, 18 Nov 2026:
+ *  3 dB steps were not heard), in dB against ff; the player sets the hymn's loudest mark at the level used before. */
+const PHONE_DB = [[0.3, -25], [0.4, -20], [0.52, -15], [0.66, -10], [0.8, -5], [0.95, -2], [1.08, 0], [1.18, 2]];
+export const phoneDb = (level) => interpDb(PHONE_DB, level);
+function interpDb(table, level) {
+  if (level <= table[0][0]) return table[0][1];
+  if (level >= table[table.length - 1][0]) return table[table.length - 1][1];
+  for (let i = 1; i < table.length; i++) if (level <= table[i][0]) {
+    const [a, da] = table[i - 1], [b, d2] = table[i];
+    return da + ((d2 - da) * (level - a)) / (b - a);
+  }
+  return 0;
+}
 export function singGain(level) {
   let db;
   if (level <= SING_DB[0][0]) db = SING_DB[0][1];
@@ -957,7 +970,8 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
         const a = j ? t0 + tm.qToT(r.q) - 0.06 - XF / 2 : s0;
         const b = j < runs.length - 1 ? t0 + tm.qToT(runs[j + 1].q) - 0.06 + XF / 2 : s0 + stem.duration;
         if (b <= a) return null;
-        const env = !marked[key] ? null : h.voices[key].map((n, i) => [t0 + tm.qToT(n.q), singGain(levels[key][i])]).filter(([x]) => x >= a - 2 && x <= b);
+        // [time, gain (the browser's ~3 dB steps), the level itself (the phone's wider steps)]
+        const env = !marked[key] ? null : h.voices[key].map((n, i) => [t0 + tm.qToT(n.q), singGain(levels[key][i]), levels[key][i]]).filter(([x]) => x >= a - 2 && x <= b);
         events.push({ t: a, dur: b - a, off: a - s0, cut: j < runs.length - 1, ch: key, stem: `${key}:${verse}:${r.s}`, native: stem.native, v: 1, env, pass: k, q: r.q, p: 0 });
         return true;
       });

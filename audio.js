@@ -1,4 +1,5 @@
 import { stretchBuffer } from "./stretch.js";
+import { phoneDb } from "./core.js";
 // Audio engine: synthesized choir "aah" per voice, sampled piano, count-in click.
 // A look-ahead scheduler plays performance events (see core.performance).
 
@@ -103,7 +104,10 @@ export class Engine {
     this.nativeDyn = {};
     // the phone has no limiter after the singer: the loudest mark of the hymn sings at the level used so
     // far (never louder than before), the softer ones below it in the same steps
-    this.nativeTop = Math.max(1, ...(this.stemEvents || []).filter((e) => e.native && e.env?.length).flatMap((e) => e.env.map(([, g]) => g)));
+    // (a hymn with one mark only, nothing to contrast, sings at that level: no quieter than before)
+    const lv = (this.stemEvents || []).filter((e) => e.native && e.env?.length).flatMap((e) => e.env.map((x) => x[2] ?? 0.8));
+    this.nativeTop = lv.length ? Math.max(...lv.map(phoneDb)) : 0;
+    this.nativeFlat = new Set(lv.map((x) => Math.round(x * 1000))).size <= 1;
     this.nativeLevels(fromT);
     this.nativeGains(true);
     try { this.native.play(JSON.stringify({ from: fromT, segs })); this.nativeOn = true; } catch { this.nativeOn = false; }
@@ -119,9 +123,9 @@ export class Engine {
     const out = {};
     for (const e of this.stemEvents || []) {
       if (!e.native || !e.env?.length || t < e.t - 0.05 || t > e.t + e.dur) continue;
-      let v = e.env[0][1];
-      for (const [T, g] of e.env) { if (T <= t + 0.03) v = g; else break; } // a touch early: the change lands on the note
-      out[e.ch] = v / (this.nativeTop || 1);
+      let lvl = e.env[0][2] ?? 0.8;
+      for (const x of e.env) { if (x[0] <= t + 0.03) lvl = x[2] ?? 0.8; else break; } // a touch early: the change lands on the note
+      out[e.ch] = this.nativeFlat ? 1 : Math.round(10 ** ((phoneDb(lvl) - this.nativeTop) / 20) * 1000) / 1000;
     }
     this.nativeDyn = out;
   }
@@ -139,7 +143,7 @@ export class Engine {
     if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
     this.nativeG = g;
     // in the app's log (logcat, tag chromium): what the singer is told, as it changes (the dynamics too)
-    if (this.nativeOn || force) console.info(`AHDyn t=${this.playing ? this.now().toFixed(2) : "-"} gains ${g.slice(0, 60)}`);
+    if (this.nativeOn || force) console.info(`AHDyn t=${this.nativeOn ? this.now().toFixed(2) : "-"} gains ${g.slice(0, 60)}`);
     try { this.native.gains(g); } catch (e) { console.warn(`AHDyn gains failed: ${e?.message || e}`); }
   }
 
