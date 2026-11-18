@@ -124,14 +124,61 @@ export class Engine {
     const lv = (this.stemEvents || []).filter((e) => e.native && e.env?.length).flatMap((e) => e.env.map((x) => x[2] ?? 0.8));
     this.nativeTop = lv.length ? Math.max(...lv.map(phoneDb)) : 0;
     this.nativeFlat = new Set(lv.map((x) => Math.round(x * 1000))).size <= 1;
-    this.nativeLevels(fromT);
+    // the score's dynamics: an app whose engine takes them (available().dyn) gets each pass's marks once,
+    // as a schedule it applies itself while it sings; otherwise the page moves each voice's gain where its
+    // level changes (timed ahead from the timeline; no polling)
+    const engineDyn = this.nativeEngineDyn();
+    if (engineDyn) { this.nativeDyn = {}; this.nativeSendSchedules(); } else this.nativeLevels(fromT);
     this.nativeGains(true);
     try { this.native.play(JSON.stringify({ from: fromT, segs })); this.nativeOn = true; } catch { this.nativeOn = false; }
-    // the score's dynamics: the app sings each voice at one level, so the page moves that level with the
-    // marks: only where a voice's level changes (a mark, the notes of a hairpin), each change timed ahead
-    // from the timeline (no polling: the app's singer needs the phone's time, Brian 18 Nov 2026)
     clearTimeout(this.nativeDynTimer);
-    if (this.nativeOn) this.nativeDynNext(fromT);
+    if (this.nativeOn && !engineDyn) this.nativeDynNext(fromT);
+  }
+  /** The app's engine applies loudness marks itself (AHNative.warble.dynamics). */
+  nativeEngineDyn() {
+    if (this.nativeDynCap === undefined) { try { this.nativeDynCap = !!JSON.parse(this.native.available() || "null")?.dyn && typeof this.native.dynamics === "function"; } catch { this.nativeDynCap = false; } }
+    return this.nativeDynCap;
+  }
+  /** Each native pass's loudness marks, per voice letter: [[t, gain]] with t in seconds from the pass's own
+   *  start, linear between points; a step is two points 20 ms apart. The same levels as level 1 (phone steps,
+   *  the hymn's loudest mark at the old level, one mark only: 1). */
+  nativeSchedules() {
+    const keys = this.nativeParts || ["S", "A", "T", "B"];
+    const letters = partLetters(keys);
+    const letterOf = Object.fromEntries(keys.map((k, i) => [k, letters[i]]));
+    const gainOf = (lv) => (this.nativeFlat ? 1 : Math.round(10 ** ((phoneDb(lv) - this.nativeTop) / 20) * 1000) / 1000);
+    const out = new Map(); // pass key -> { letter: Map(t -> g) }
+    for (const e of this.stemEvents || []) {
+      if (!e.native || !e.env?.length || !letterOf[e.ch]) continue;
+      const at = e.t - (e.off || 0); // the timeline time of the pass's first sample
+      const pass = out.get(e.native) || {};
+      out.set(e.native, pass);
+      const pts = (pass[letterOf[e.ch]] ||= new Map());
+      let prev = null;
+      for (const x of e.env) {
+        const t = x[0] - at, g = gainOf(x[2] ?? 0.8);
+        if (t <= 0) { prev = g; continue; }
+        if (prev === null) { pts.set(0, g); prev = g; continue; }
+        if (!pts.size) pts.set(0, prev);
+        if (g !== prev) { pts.set(Math.round(Math.max(0, t - 0.02) * 1000) / 1000, prev); pts.set(Math.round(t * 1000) / 1000, g); }
+        prev = g;
+      }
+      if (!pts.size && prev !== null) pts.set(0, prev);
+    }
+    const res = {};
+    for (const [key, pass] of out) {
+      const points = {};
+      for (const [L, m] of Object.entries(pass)) points[L] = [...m].sort((a, b) => a[0] - b[0]);
+      res[key] = { letters: Object.keys(points).join(""), points };
+    }
+    return res;
+  }
+  /** Sent at each play or seek (a call per pass, never while it sings): passes unloaded and loaded again
+   *  lose theirs in the engine. */
+  nativeSendSchedules() {
+    for (const [key, sched] of Object.entries(this.nativeSchedules())) {
+      try { this.native.dynamics(key, JSON.stringify(sched)); } catch { /* an older app */ }
+    }
   }
   /** Timeline times where some voice's dynamics level changes, after t. */
   nativeChanges() {
