@@ -3481,7 +3481,7 @@
   "number": "355",
   "title": "Awake, My Soul!",
   "path": "data/CH1941/355.json",
-  "v": "836f74e78e640abab803f16dbba145f53483221a1e3315a538889a352dc95d87"
+  "v": "a7912d7ee06be530fc82343f97be48f34582d553763f69a07329759fff748635"
  },
  {
   "id": "CH1941-356",
@@ -6207,7 +6207,7 @@
   "number": "19",
   "title": "Not in the Hour of Death",
   "path": "data/CS1900/19.json",
-  "v": "277a7d3763061a5b66f5060de5d788faef1d617d334ae735bea8eaad18fac1e9"
+  "v": "fa04ee80ae691825e0724564854a5483fa8671363edee0b726faf5b4538386cb"
  },
  {
   "id": "CS1900-20",
@@ -6231,7 +6231,7 @@
   "number": "22",
   "title": "The Comforter Has Come",
   "path": "data/CS1900/22.json",
-  "v": "c8ee25b6457f6920ff76c58fab5bcf9d9c1e27c2efc33f92dab21f77a376dfa8"
+  "v": "58cbd896fea3e090be8c216d4df136e27fede68d4a2402239c5ab655bbdb6a2a"
  },
  {
   "id": "CS1900-23",
@@ -6239,7 +6239,7 @@
   "number": "23",
   "title": "Able to Save and Keep",
   "path": "data/CS1900/23.json",
-  "v": "24fc80a3f9f8660f62d58b566b914fff0fd0f6928eced4a2202380a649943ae5"
+  "v": "837ca20b1f1cdb60ebf4c12adc46f8cfae84d57e4f58c6c05751f6ca3876625c"
  },
  {
   "id": "CS1900-24",
@@ -6279,7 +6279,7 @@
   "number": "28",
   "title": "Christ Receiveth Sinful Men",
   "path": "data/CS1900/28.json",
-  "v": "d804c50621efe0f898bcbb1240ec313670621a4f86c998987d9b037322068d12"
+  "v": "3ffb9e87fbc59c31203168eb3a279ee09c6eb6cd79601dd1d5b9f436486d8461"
  },
  {
   "id": "CS1900-29",
@@ -7249,7 +7249,7 @@
   "number": "63",
   "title": "He Did Not Die in Vain",
   "path": "data/CS1908/63.json",
-  "v": "6b3a3b25db65be14000b5b9ae1fc2b513c77baf8580db591247877f90dacb4d9"
+  "v": "22e0fce33c19bff5b3579fd748ca66cefb4c005d6761315db45bd14db9041760"
  },
  {
   "id": "CS1908-64",
@@ -9237,7 +9237,7 @@
   "number": "296",
   "title": "Walking with Thee",
   "path": "data/CS1908/296.json",
-  "v": "ac9c9e90d3f6ed7a32b98576552ef39de9daf9628e6d9751b3c0da5932c42e68"
+  "v": "c50c49835843a5fb6de3f74a6da0de1efe6ceceec144aeb1fd37a65ebed0a719"
  },
  {
   "id": "CS1908-297",
@@ -11175,7 +11175,7 @@
   "number": "537",
   "title": "",
   "path": "data/CS1908/537.json",
-  "v": "72f74c182fef1c6e5ab200f1a7912b9dadd0cf8368b85c32e259b311a2a1b9ef"
+  "v": "45f09887d6eab6ffdb07434439aa3b17d3d1b117de730b013d7774218067e57e"
  },
  {
   "id": "CS1908-538",
@@ -11217,7 +11217,7 @@
   "number": "542",
   "title": "What Are You Doing for Jesus?",
   "path": "data/CS1908/542.json",
-  "v": "8fc994218cdd43a0b5b77e8a82b224da40685a1287a2607a47b61a0d30eab3df"
+  "v": "7493b4be46faa91c29ce36e57c2f62246ce80becbe933917fabbdf6ca629bd45"
  },
  {
   "id": "CS1908-543",
@@ -11317,7 +11317,7 @@
   "path": "data/CS1908/554.json",
   "sung": true,
   "sv": "49215060d00e52b20aafb3c898408783649ac59a8cd717416024718b175770da",
-  "v": "b24b1f3171c467d054b7a70b5f6f1c3ce350fbb83f844ba42a9bd7cd3805aca8"
+  "v": "c7550f03362dd2a752384254a5f913317845bd967f7d1648d40803189d6709c7"
  },
  {
   "id": "CS1908-555",
@@ -13525,7 +13525,7 @@
   "number": "66b",
   "title": "Roho Yangu Amka Sasa",
   "path": "data/NZK/66b.json",
-  "v": "9d2b3f639e2be503b9e50b16470ae70ee292e446cfd3d0896ec8ed4b39c76965"
+  "v": "d224d87e57a3dac01cbe0e13a4f1dd7f22fd022f38b1fa61aa26ccd53f92fb34"
  },
  {
   "id": "NZK-67",
@@ -14585,10 +14585,8 @@
   "number": "167",
   "title": "Yu Hai, Yu Hai",
   "path": "data/NZK/167.json",
-  "sung": true,
-  "sv": "2e86c8934fca6886f8bf9a58d41ccd53d4caeef7f9ac53e6964647bb8d8f2adf",
   "english": "He Lives",
-  "v": "9cb8187d6d0a473e5d89fb1bea59b5fc3e3b6e0da5ed565bae236c0071ff17b8"
+  "v": "cf4d54b98b3d6f9a36e865d0918077bf301001c95ea5c808b65d449a94ca1917"
  },
  {
   "id": "NZK-170",
@@ -14845,7 +14843,7 @@
   "sung": true,
   "sv": "07bac374aec16d7355e291a5999bf69ccb615a836bd9cb3d336bfbaa3d8354b3",
   "english": "Turn Your Eyes Upon Jesus",
-  "v": "c3316575e61690be256d54b0d0255ec19cd9d791f19934d3cf6d64fe24f4fd33"
+  "v": "0d4d9cb9625d3b5978c471d54b1c39fd4ba78b4aad88a2b0e2d806a4f3d55b99"
  },
  {
   "id": "SDAH-1",
@@ -21822,7 +21820,7 @@
   "sung": true,
   "sv": "0e0e0f38c4450ddb1be1a434287d729b555588b4ce290b708eb5d5aa0ee1d222",
   "english": "Speak to My Soul, Dear Jesus",
-  "v": "9e7a4eff5d2aa133d960588d6a0d5f8910e220c259cddebdd76bad06d4cbeb20"
+  "v": "6201ff30e2583353ffa0aff209125b8e45c963e1fbf7ae0e11726fd5dc377fc8"
  },
  {
   "id": "WN-19",
@@ -23189,10 +23187,8 @@
   "number": "267",
   "title": "Ka Tichna Rumo",
   "path": "data/WN/267.json",
-  "sung": true,
-  "sv": "28dd69ec5f2239cefc096e5a53469baced01c04f3e85e58b5e4b31b7a8739714",
   "english": "The Glory Song",
-  "v": "23c3f3a066020d73b4a0b8e3a6a1a395df337b46f415ab51e678980536d05ef9"
+  "v": "c8ed0037b75369d8294577c48620cc3a5b714f1b3cb1db93a4ee4ad390413ffa"
  },
  {
   "id": "WN-268",
