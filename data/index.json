@@ -272,12 +272,36 @@
   "v": "5fc90b099d91a1473a0959300583446ae1f9e731c18f13b17eb9a03b62abacca"
  },
  {
+  "id": "AHC-35",
+  "book": "AHC",
+  "number": "35",
+  "title": "Rejoice Greatly, O Daughter of Zion",
+  "path": "data/AHC/35.json",
+  "v": "6247a920f1fb06a460285c324786a9357702761af929e2e06a6eeac01100e31e"
+ },
+ {
   "id": "AHC-36",
   "book": "AHC",
   "number": "36",
   "title": "Then Shall the Eyes of the Blind Be Opened",
   "path": "data/AHC/36.json",
   "v": "b12c5738263627ef0b6a3d86a839af60f535041dfb2ed370673b588a609e8231"
+ },
+ {
+  "id": "AHC-37",
+  "book": "AHC",
+  "number": "37",
+  "title": "He Shall Feed His Flock",
+  "path": "data/AHC/37.json",
+  "v": "88da63a170c569960755d8dade0101c86395bdec2c7893e4a5e66a1b6b6896d1"
+ },
+ {
+  "id": "AHC-38",
+  "book": "AHC",
+  "number": "38",
+  "title": "He Was Despised",
+  "path": "data/AHC/38.json",
+  "v": "4d50981b7c388211de02c46a02b5a231fa8747c0e427e82be85bee8fb300c952"
  },
  {
   "id": "AHC-39",
@@ -384,12 +408,28 @@
   "v": "816ea79c1a3a2ad21fff670182486ea14f5e9ce590b06c323ddb9b9bb9e898d0"
  },
  {
+  "id": "AHC-52",
+  "book": "AHC",
+  "number": "52",
+  "title": "The Trumpet Shall Sound",
+  "path": "data/AHC/52.json",
+  "v": "ebeb1ef92b4043a8f99a0ca1ce675c1e007f56d199ee6de47219f18358ec4ff3"
+ },
+ {
   "id": "AHC-53",
   "book": "AHC",
   "number": "53",
   "title": "Then Shall Be Brought to Pass",
   "path": "data/AHC/53.json",
   "v": "db5cfa604600b12536c12b63d5d4dff35580746d48a88dc258fef6e5401fe65a"
+ },
+ {
+  "id": "AHC-54",
+  "book": "AHC",
+  "number": "54",
+  "title": "O Death, Where Is Thy Sting?",
+  "path": "data/AHC/54.json",
+  "v": "70d30a8d9c9748b913397270eb4754fa1279e8903e48a002bbe3aacc0b986587"
  },
  {
   "id": "AHC-55",

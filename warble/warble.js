@@ -2,7 +2,7 @@
 // features here (frontend.js, cheap); the singing is made by a pool of Web Workers, one voice of
 // one pass per job, each worker with its own onnxruntime-web (WASM) session. The result is one
 // AudioBuffer per voice and pass, used exactly like a recorded stem (offsetSec -0.3).
-import { passFrames, SR, LEAD } from "./frontend.js";
+import { passFrames, SR, LEAD, unsung } from "./frontend.js";
 import { writeBin } from "./bin.js";
 
 const IDB = "ah-warble", STORE = "models";
@@ -168,8 +168,30 @@ export class Warble {
   async features(h, verse, tempo, transpose) {
     const lex = await this.lexicon();
     const voices = "SATB".split("").filter((k) => h.voices[k]);
-    const pass = passFrames(h, voices, verse, tempo, transpose, lex, this.speakers);
+    unsung.clear();
+    let pass = passFrames(h, voices, verse, tempo, transpose, lex, this.speakers);
+    // a word this copy of the lexicon lacks: the hymn may be newer than the Studio it came with (the hymns
+    // come from the store, the lexicon with the Studio): fetch the published lexicon once and try again;
+    // a word still missing is sung on "aa" (frontend.js)
+    if (unsung.size && (await Warble.refreshLexicon(lex, [...unsung]))) { unsung.clear(); pass = passFrames(h, voices, verse, tempo, transpose, lex, this.speakers); }
     return { ...pass, letters: voices.join("") };
+  }
+
+  /** The published lexicon (Warble.lexiconUrl, set by the player), merged into lex when it has any of the
+   *  words missing; at most one fetch every 10 minutes. True when it added any of them. */
+  static async refreshLexicon(lex, missing) {
+    const url = Warble.lexiconUrl;
+    if (!url || Date.now() - (Warble.lexFetched || 0) < 10 * 60 * 1000) return false;
+    Warble.lexFetched = Date.now();
+    try {
+      const r = await fetch(`${url}${url.includes("?") ? "&" : "?"}t=${Math.floor(Date.now() / 60000)}`, { cache: "no-cache", signal: AbortSignal.timeout?.(8000) });
+      if (!r.ok) return false;
+      const fresh = await r.json();
+      const got = missing.filter((w) => Object.prototype.hasOwnProperty.call(fresh, w));
+      Object.assign(lex, fresh);
+      if (got.length) console.info(`Warble: ${got.length} word(s) taken from the published lexicon`);
+      return got.length > 0;
+    } catch { return false; }
   }
 
   /** .bin bytes of a pass, for the app's native engine */
