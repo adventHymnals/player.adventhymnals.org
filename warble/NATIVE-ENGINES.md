@@ -1,6 +1,8 @@
-# The app's live singing engines: the page ↔ app bridge (DRAFT, 18 Nov 2026)
+# The app's live singing engines: the page ↔ app bridge (agreed 18 Nov 2026)
 
-Status: draft by the player peer, for the app peer and the voice peer to agree before either builds.
+Status: agreed by the app peer (weaverbird-mvp-monorepo-78) on 18 Nov 2026; the page side is built
+(web/warble/warble.js, web/app.js, test web/warble/test/native-engines.test.mjs). The voice peer confirms the
+conversion (byte-identical against leap_hymn.py FEEDS) when it builds the engine's C code.
 Scope: the Android app gains a second live engine, the new voice (LeapSinger acoustic model + NHVSing
 vocoder, native C, by the voice peer), beside Warble. The browser keeps Warble only (no WASM port now).
 
@@ -39,11 +41,19 @@ New:
     "engines": {"warble": {"label": "Live singers", "ready": true},
                 "leap":   {"label": "New voice", "ready": true, "tier": "mixed", "tiers": ["int8", "mixed", "full"]}}}
    ```
-   `ready`: the engine's files are on the phone and it passed its benchmark. An app without `engines` has
+   `ready`: the engine's model file is on the phone and its first-use benchmark passed; before that
+   `"ready": false` with `"size"` (bytes to download), which the page shows. An app without `engines` has
    Warble only (the page behaves exactly as today).
+   Model files: singing.json's new-voice entry is `{"id": "leap", "engine": "leap", "label": "New voice",
+   "tiers": [{"tier", "url", "sha256", "size"}, …]}`; after `use("leap")` the page calls `model(url, sha256)`
+   once per tier file and the app fetches the tier it picks (the existing model() path). The label is the
+   page's (singing.json), not the app's.
 2. `use(engine)`: `"warble"` or `"leap"`; the engine that the following `load`/`play` go to. Returns
    `{"ok":true}` or `{"ok":false,"error":"…"}` (not ready). Pages that never call it get Warble (as today).
-   Passes loaded for one engine are its own; switching engines unloads the other's.
+   ONE engine at a time (agreed): `use(x)` stops play, unloads the other engine's passes and model and loads
+   x's model (the first use may take a few seconds); both resident is too much memory for a G99. Call it while
+   stopped (if playing, the app stops first). The page calls it before loading passes, only when it changes,
+   and forgets the passes it had loaded.
 3. `engine()` (the phone's saved choice, as today) may also return `"leap"`.
 4. Cast: `cast(json)` optional, `{"S":"de_soprano_1","A":"en_alto_2","T":"en_alto_1","B":"it_bass_1"}`;
    an extra part's letter (lower case of its base: `s` Soprano II) takes its base voice's singer with a
@@ -78,10 +88,13 @@ New:
   `frontend.js` → `bin.js`) converted by the engine's C code give the same tokens, durations and f0 as
   `leap_hymn.py` FEEDS for the same dump (byte-identical), before any audio is compared.
 
-## Open questions
+## Also agreed
+
+- `AHStudio.set('next', id)`: the app sends the playlist's or queue's next hymn whenever it changes (null when
+  none); the page engraves that hymn in the background (while idle and stopped) instead of the next in the list.
+
+## Open questions (voice peer)
 
 1. Voice peer: is the conversion above exactly what the shipping model wants (diphthong rule, pause ids,
    phrase cut, chunk size, context), and the default cast after today's bass runs?
-2. App peer: one AudioTrack mixing whichever engine sings (one engine at a time), or both loaded? Memory:
-   Warble's model (~17 MB) and the new voice's tier (29-60 MB) both resident, or unload the other on `use`?
-3. Both: the engine id (`leap`?) and the label the page shows ("New voice"?).
+2. (answered: one engine at a time; id "leap"; the label from singing.json.)

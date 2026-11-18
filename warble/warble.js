@@ -14,6 +14,9 @@ const WEB_CAN = new Set(["cs"]);
 
 /** Can the engine that sings here (the app's native one if any, else synth.js) sing voice config c? */
 export function canSing(c) {
+  // a voice the app's own engine sings (the new voice, "engine": "leap"): only in an app that has that engine
+  // (web/warble/NATIVE-ENGINES.md); the browser keeps Warble
+  if (c?.engine === "leap") return !!Warble.nativeEngines()?.leap;
   const need = [].concat(c?.requires || []);
   if (!need.length) return true;
   let caps = WEB_CAN;
@@ -76,7 +79,12 @@ export class Warble {
     this.engine = this.id ? `warble-${this.id}` : "warble"; // the first live voice is plain "warble"
     this.label = cfg.label || "Live singers";
     this.speakers = cfg.speakers || undefined; // { S, A, T, B } singer numbers; the frontend's default when absent
-    this.modelUrl = new URL(cfg.model, base).href;
+    // a voice sung by the app's own engine (the new voice): its model files are the app's to fetch (by tier);
+    // the page only passes their addresses (NATIVE-ENGINES.md)
+    this.nativeEngine = cfg.engine === "leap" ? "leap" : null;
+    if (this.nativeEngine) { this.id = cfg.id || "leap"; this.engine = "leap"; this.label = cfg.label || "New voice"; }
+    this.modelUrl = cfg.model ? new URL(cfg.model, base).href : null;
+    this.tiers = (cfg.tiers || []).map((t) => ({ ...t, url: new URL(t.url, base).href }));
     this.workers = [];
     this.ready = null;
     this.lex = null;
@@ -285,7 +293,12 @@ export class Warble {
   }
 
   /** Is the singing model saved on this device (no download needed)? */
-  async saved() { const sha = (this.cfg.sha256 || "").toLowerCase(); return !!sha && idbHas(sha); }
+  async saved() {
+    if (this.nativeEngine) return !!Warble.nativeEngines()?.[this.nativeEngine]?.ready;
+    const sha = (this.cfg.sha256 || "").toLowerCase(); return !!sha && idbHas(sha);
+  }
+  /** The app's engines (available().engines), or null for an app with Warble only / no app. */
+  static nativeEngines() { try { return JSON.parse(Warble.native()?.available() || "null")?.engines || null; } catch { return null; } }
 
   credits() { return this.cfg.credits || "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0."; }
 }
@@ -301,7 +314,8 @@ export async function loadSinging(urls, page = location.href) {
       if (!r.ok) continue;
       const cfg = await r.json();
       const base = new URL(url.startsWith("blob:") ? page : url, location.href);
-      const all = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => c?.model && canSing(c));
+      const all = (Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble]).filter((c) => (c?.model || c?.engine === "leap") && canSing(c))
+        .sort((a, b) => (a.engine === "leap") - (b.engine === "leap")); // Warble's voices first: the first is plain "warble"
       // "enabled": false keeps a voice listed but not offered; a player or app that can sing none of the enabled
       // voices (an older engine) still gets the first voice it can sing, so it never loses live singing
       let list = all.filter((c) => c.enabled !== false);
@@ -309,7 +323,8 @@ export async function loadSinging(urls, page = location.href) {
       Warble.keep = new Set(list.map((c) => (c.sha256 || "").toLowerCase()).filter(Boolean));
       const voices = [];
       for (const [i, c] of list.entries()) {
-        const w = new Warble(i === 0 ? { ...c, id: "" } : c, base);
+        const w = new Warble(i === 0 && c.engine !== "leap" ? { ...c, id: "" } : c, base);
+        if (w.nativeEngine) { voices.push(w); continue; } // the app fetches its files itself
         // offered only where it can sing: the model saved on this device, or reachable
         const sha = (c.sha256 || "").toLowerCase();
         const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };
@@ -319,7 +334,7 @@ export async function loadSinging(urls, page = location.href) {
         }
         voices.push(w);
       }
-      if (voices[0] && voices[0].id) { voices[0].id = ""; voices[0].engine = "warble"; } // the first that can sing is "warble"
+      if (voices[0] && voices[0].id && !voices[0].nativeEngine) { voices[0].id = ""; voices[0].engine = "warble"; } // the first that can sing is "warble"
       const dflt = cfg.default && voices.some((w) => w.engine === cfg.default) ? cfg.default : "stems";
       return { default: dflt, warble: voices[0] || null, voices };
     } catch { /* offline or absent: try the next */ }

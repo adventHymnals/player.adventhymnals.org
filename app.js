@@ -226,7 +226,7 @@ let stemInfo = new Map(); // "S:1:0" (voice:verse:transpose) -> { offsetSec, dur
 // data/singing.json says which is the default, the listener may choose per device
 let singingCfg = { default: "stems", warble: null, voices: [] };
 // live voices: engine "warble" (the first in singing.json) or "warble-<id>" (the others)
-const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-"));
+const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-") || v === "leap");
 const liveVoice = (v) => singingCfg.voices.find((w) => w.engine === v) || null;
 const otherLive = (v) => { for (const w of singingCfg.voices) if (w.engine !== v) w.cancelAll(); }; // only the chosen voice works
 // which singers there are (data/singing.json): the app's saved copy (kept up to date by its occasional
@@ -1376,7 +1376,11 @@ function chooseSingers(from, always = false) {
     const liveNote = d.querySelector(`[data-engine="${w.engine}"] small`);
     if (!liveNote) continue;
     liveNote.textContent = "Sung live on this device · no download needed for each hymn · any tempo or key";
-    w.saved().then((has) => { if (!has) liveNote.textContent += " (the first time: the singers, 17 MB, once)"; });
+    w.saved().then((has) => {
+      if (has) return;
+      const mb = w.nativeEngine ? Math.round((Warble.nativeEngines()?.[w.nativeEngine]?.size || 0) / 1e6) : 17; // the app says how big its tier is
+      liveNote.textContent += mb ? ` (the first time: the singers, ${mb} MB, once)` : " (the first time: the singers, once)";
+    });
   }
   const now = whoSings();
   for (const b of d.querySelectorAll(".sing-choice")) b.classList.toggle("current", b.dataset.engine === now);
@@ -1624,12 +1628,27 @@ async function prepareWarble(keep = false) {
 /** Inside the Android app: its native engine sings (faster than WASM). The page makes the features
  * and hands each pass over (AHNative.warble.load); the engine plays them on the player's timeline. */
 let nativeModel = null;
+let nativeUsing = null; // the app's engine in use ("warble", "leap"), when it has several
 /** The passes the app's singer holds now: key -> { keys, T } (forgotten when they are unloaded). */
 const nativeLoaded = new Map();
 async function prepareNativeWarble(native, w, gen, keep = false) {
   engine.setNative(native);
   window.AHWarble = { onEvent: onNativeWarble };
-  if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
+  // the engine that sings (NATIVE-ENGINES.md): an app with several engines is told which, while stopped;
+  // switching unloads the other engine's passes and model there, so they are forgotten here too
+  const want = w.nativeEngine || "warble";
+  if (Warble.nativeEngines() && nativeUsing !== want) {
+    if (engine.playing) { engine.nativeStop(); }
+    let r = {};
+    try { r = JSON.parse(native.use(want) || "{}"); } catch { r = {}; }
+    if (r.ok === false) { toast(`${w.label} could not start: ${r.error || "not ready"}. Warble sings.`, 6000); if (want !== "warble") return; }
+    nativeUsing = want; nativeLoaded.clear(); nativeModel = null;
+  }
+  if (w.nativeEngine) {
+    // its model files, one per tier: the app fetches the tier it picks
+    const k = JSON.stringify(w.tiers.map((t) => t.url));
+    if (nativeModel !== k) { for (const t of w.tiers) native.model(t.url, t.sha256 || ""); nativeModel = k; }
+  } else if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
   const failed = [];
   let first = true;
   for (const { v, verse, transpose } of warbleList()) {
@@ -1880,6 +1899,7 @@ let drawnWhole = ""; // the hymn (and tune) whose staff was last drawn whole
  *  certain to match (nothing of its own saved: verses, key, tune; no parts beyond S/A/T/B; no piano staff);
  *  never while singing (the app's singer needs the phone's time). */
 let prewarmTimer = 0;
+let nextHint = null;
 function prewarmSoon(gen) {
   clearTimeout(prewarmTimer);
   prewarmTimer = setTimeout(() => prewarmNext(gen).catch(() => {}), 4000);
@@ -1887,8 +1907,9 @@ function prewarmSoon(gen) {
 async function prewarmNext(gen) {
   if (gen !== drawGen || engine.playing || document.hidden || !isScoreView() || MAKE || pianoShown() || state.words === "current") return;
   const i = hymnList.findIndex((x) => x.id === hymn?.id);
-  const entry = i >= 0 ? hymnList[i + 1] : null;
-  if (!entry || entry.book !== hymn.book) return;
+  // the app's playlist says which comes next (AHStudio.set('next', id)); else the next in this hymnal
+  const entry = nextHint ? hymnList.find((x) => x.id === nextHint && x.id !== hymn?.id) : i >= 0 && hymnList[i + 1]?.book === hymn.book ? hymnList[i + 1] : null;
+  if (!entry) return;
   const id = entry.id;
   if (store.get(`verses:${id}`, null) || store.get(`transpose:${id}`, 0) || store.get(`tune:${id}`, "")) return;
   // ordinary hymns only, so a tap on Play is never kept waiting by a long engraving: not when it is
@@ -4934,6 +4955,9 @@ window.AHStudio = {
     } else if (name === "countIn") {
       $("countIn").checked = !!value;
       $("countIn").dispatchEvent(new Event("change", { bubbles: true }));
+    } else if (name === "next") {
+      // the hymn the app's playlist plays after this one: engraved in the background instead of the next in the list
+      nextHint = typeof value === "string" && value ? value : null;
     } else if (name === "tune") {
       // another tune for this hymn's words ("" = the printed one), from state().tunes
       setTune(String(value || ""));
