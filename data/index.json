@@ -10695,7 +10695,7 @@
   "number": "478",
   "title": "Doing His Will",
   "path": "data/CS1908/478.json",
-  "v": "7ffab0fb3fdff76e7d48a4e0db024c9b3efab57618a5786f0dc084418ba270f1"
+  "v": "36b03903d79725f477e62dae7d722a5a8430ccb05079e5c1c8f627908f3b00dd"
  },
  {
   "id": "CS1908-479",
@@ -10815,7 +10815,7 @@
   "number": "493",
   "title": "Casting All Your Care Upon Jesus",
   "path": "data/CS1908/493.json",
-  "v": "5de5aea848bae0c8a77aa0d5e42306acf8693125fe0b6d06e22f36abbf0f0cc5"
+  "v": "aacd11c18bb0ec05ed495d4b7f1a95c862e0c683e637dc53bce648619b52f918"
  },
  {
   "id": "CS1908-494",
@@ -15149,9 +15149,7 @@
   "number": "31",
   "title": "Tell Out, My Soul",
   "path": "data/SDAH/31.json",
-  "sung": true,
-  "sv": "e9c2d8ed0eb7d3faa0e0da34a8a618686db0bca86e7a3d1853614a35068b502f",
-  "v": "652da9d94a5e5925502977c0048255e62c56f61165fd0bab2ba8b8d93493bb1b"
+  "v": "36ef80e0e61474dafb2cf10796dbf0161a3467178f4af41eb95b50175e5b7152"
  },
  {
   "id": "SDAH-32",
@@ -16007,7 +16005,7 @@
   "path": "data/SDAH/121.json",
   "sung": true,
   "sv": "c8a29fde332b2fc932c81bbe6810b763142a0ed54ce3c3ebe557efe188eadb2f",
-  "v": "0baf0b098783507584ce5791875bc068a6664299d9733ff4bb29eb973a83882d"
+  "v": "cfddd8a197081f90ed70567339f8600c4c0abf83fb461f998dcfc1ec99d12717"
  },
  {
   "id": "SDAH-122",
@@ -16023,7 +16021,7 @@
   "number": "123",
   "title": "As With Gladness Men of Old",
   "path": "data/SDAH/123.json",
-  "v": "311305b91019e5a2ea8263a0f92c6d87c8b9bcc18067b5c839a90b17325c2db4"
+  "v": "097d23f09485a2d81814a33ffeea5045978c213db08c3d5e20584f6d86b6e066"
  },
  {
   "id": "SDAH-124",
@@ -16125,9 +16123,7 @@
   "number": "135",
   "title": "O Little Town of Bethlehem",
   "path": "data/SDAH/135.json",
-  "sung": true,
-  "sv": "c07faecb34aceeb5879f14d00d00627703e3529356f74332171138f07fe57a73",
-  "v": "06f1e6e3e1f16b84905298388b78390fa8001d61d246f5d96eab0ed00c993c13"
+  "v": "a7fcf4bebd71afec3357480e7ad6f9fb023c28a5795c1daa4cff71b97a5ccd52"
  },
  {
   "id": "SDAH-136",
@@ -16381,7 +16377,7 @@
   "path": "data/SDAH/161.json",
   "sung": true,
   "sv": "7bdf9c3c36530cefcb59478a37430e0b2e276623e159b85f48ddd3572ff5fda0",
-  "v": "adc569190822474780652675eeba556014f4ae6868ee133737edc0636a82652d"
+  "v": "4dfb6c4c410efe37eb846ca3885d20c704d21539ea30a69614017e2970780876"
  },
  {
   "id": "SDAH-162",
@@ -16473,7 +16469,7 @@
   "path": "data/SDAH/171.json",
   "sung": true,
   "sv": "5c8928979ff3f80b8dc94b46a91b6aa99ae66169ec1b513cbe76623d0bd0c6ca",
-  "v": "a8713985338c806c92679c72d047597eea3bf57d2c7266fb9dd8c5fc049fd97a"
+  "v": "7c655f39eab7bc963a208be1313252b35c30a778f292efe4997c147fec2d6870"
  },
  {
   "id": "SDAH-172",
@@ -16534,7 +16530,7 @@
   "path": "data/SDAH/177.json",
   "sung": true,
   "sv": "64c28de74c461d86ba2f98625e69f4f36ed1e7573801e4cd965abe6d00503b55",
-  "v": "d78450016461dd81623a5bf8079c97be36ecf075fe4caf3257edcea6fc6fa5c9"
+  "v": "b9b917a9d7c03d0e953257837116ea06ce3df64ac577b9490e2c1b7b507883ad"
  },
  {
   "id": "SDAH-178",
@@ -16542,9 +16538,7 @@
   "number": "178",
   "title": "The Unveiled Christ",
   "path": "data/SDAH/178.json",
-  "sung": true,
-  "sv": "276635c64df1dbefa28f70937b911c09f5c44f12b89535f54233ab982a0b60f5",
-  "v": "dc8388bfcf5b3a07a7905f0c91ad87a3fd4b61645d3af1ececa36964fb5d90e5"
+  "v": "daec2a9d7fb41ec407c543410c5d4a15fb0636c96fdf489c9824b1b2c66fe4f1"
  },
  {
   "id": "SDAH-179",
@@ -16733,7 +16727,7 @@
   "path": "data/SDAH/197.json",
   "sung": true,
   "sv": "115733aa69f0dbbe27fd33530f694f490801ab466629208698d5a5543067f444",
-  "v": "12d0cfc6a6ed5094910d0c0ec7ed49bd783c9708608ba221e21291227a4be782"
+  "v": "2ec46fbe950f04e18e11e47e98f5f44272ac9b84be2b8ac67767d1d2e34282d0"
  },
  {
   "id": "SDAH-198",

@@ -367,7 +367,9 @@ export function buildMusicXML(h, opts) {
           // rests fill every silence, so each note sits at its own time (Verovio places notes one after another)
           const inBar = h.voices[k].filter((x) => x.m === m);
           let at = barStart(h, m);
-          if (!inBar.length) mx += restXml(barEnd(h, m) - at, vi + 1, !pickupBar); // a whole-bar rest in a short pickup bar would be drawn (and timed) as a full bar
+          // a whole-bar rest only in a bar of the hymn's normal length: in a short pickup bar, or a bar after a time
+          // change (CS1908 493's 3/8 bar), Verovio draws and times it as a bar of the first meter
+          if (!inBar.length) mx += restXml(barEnd(h, m) - at, vi + 1, !pickupBar && Math.abs(barEnd(h, m) - barStart(h, m) - h.measureQ) < 1e-6);
           for (const n of inBar) {
             if (n.q > at + 1e-6) mx += restXml(n.q - at, vi + 1);
             at = n.q + n.d;
