@@ -176,6 +176,230 @@
   "v": "d1ae635273ce425cadc9f0c2a1f604d701973f2d2e3e94f4a0f38de36294374c"
  },
  {
+  "id": "AHC-23",
+  "book": "AHC",
+  "number": "23",
+  "title": "Comfort Ye My People",
+  "path": "data/AHC/23.json",
+  "v": "138254b6325bfaad346a060891c40690a9ab23462296c36c6ba68855ab319059"
+ },
+ {
+  "id": "AHC-24",
+  "book": "AHC",
+  "number": "24",
+  "title": "Every Valley Shall Be Exalted",
+  "path": "data/AHC/24.json",
+  "v": "3bd9e1d2a48d3f5037351f9faf2ac67cfea1330649c9c7a4c34071610ab81c0e"
+ },
+ {
+  "id": "AHC-25",
+  "book": "AHC",
+  "number": "25",
+  "title": "Thus Saith the Lord",
+  "path": "data/AHC/25.json",
+  "v": "1605bde88b9c5f7bf24c0040f6fda03b358b257216692e390986749fa359bdd9"
+ },
+ {
+  "id": "AHC-26",
+  "book": "AHC",
+  "number": "26",
+  "title": "But Who May Abide the Day of His Coming",
+  "path": "data/AHC/26.json",
+  "v": "fe7846dffc81163b6e73f886f81956ea3faec45ce930deb2ea8388ec4f2fe249"
+ },
+ {
+  "id": "AHC-27",
+  "book": "AHC",
+  "number": "27",
+  "title": "Behold, a Virgin Shall Conceive",
+  "path": "data/AHC/27.json",
+  "v": "d61a3cb56fe9f6e4cbdc36c584c7518acf732241c8f34206106e0def732a6e2b"
+ },
+ {
+  "id": "AHC-28",
+  "book": "AHC",
+  "number": "28",
+  "title": "O Thou That Tellest Good Tidings to Zion (Air)",
+  "path": "data/AHC/28.json",
+  "v": "5695cbf756d93feb5931c5be0877ffdaadaca694e8dd1ef72e7e43958e7358eb"
+ },
+ {
+  "id": "AHC-29",
+  "book": "AHC",
+  "number": "29",
+  "title": "For, Behold, Darkness Shall Cover the Earth",
+  "path": "data/AHC/29.json",
+  "v": "5f5af41896994533dd62387f122979bb7c7af4c703dd7fad8fdd44e235230cb4"
+ },
+ {
+  "id": "AHC-30",
+  "book": "AHC",
+  "number": "30",
+  "title": "The People That Walked in Darkness",
+  "path": "data/AHC/30.json",
+  "v": "0fd854fa8bf9b230b581e7f807fb6a9043a67a6be45cfc07ff4ad530812bd9ed"
+ },
+ {
+  "id": "AHC-31",
+  "book": "AHC",
+  "number": "31",
+  "title": "There Were Shepherds Abiding in the Field",
+  "path": "data/AHC/31.json",
+  "v": "f92c92903b688eb5fd363f821be3e03efa931843904bac6a17d221c80aeb125e"
+ },
+ {
+  "id": "AHC-32",
+  "book": "AHC",
+  "number": "32",
+  "title": "And Lo, the Angel of the Lord Came upon Them",
+  "path": "data/AHC/32.json",
+  "v": "1df0aae312b930e1609705f984581449ef78fd03ca6efdfa0efdd37dc948cffd"
+ },
+ {
+  "id": "AHC-33",
+  "book": "AHC",
+  "number": "33",
+  "title": "And the Angel Said unto Them",
+  "path": "data/AHC/33.json",
+  "v": "e5bfdd2c9f8f68c2647cca308490ad9f04ea1769d2f996bb426337f0609e27cd"
+ },
+ {
+  "id": "AHC-34",
+  "book": "AHC",
+  "number": "34",
+  "title": "And Suddenly There Was with the Angel",
+  "path": "data/AHC/34.json",
+  "v": "5fc90b099d91a1473a0959300583446ae1f9e731c18f13b17eb9a03b62abacca"
+ },
+ {
+  "id": "AHC-36",
+  "book": "AHC",
+  "number": "36",
+  "title": "Then Shall the Eyes of the Blind Be Opened",
+  "path": "data/AHC/36.json",
+  "v": "b12c5738263627ef0b6a3d86a839af60f535041dfb2ed370673b588a609e8231"
+ },
+ {
+  "id": "AHC-39",
+  "book": "AHC",
+  "number": "39",
+  "title": "All They That See Him Laugh Him to Scorn",
+  "path": "data/AHC/39.json",
+  "v": "85b68ac28a13b095039cae4e5e40a69f378531fd971079635f768d1785bf859f"
+ },
+ {
+  "id": "AHC-40",
+  "book": "AHC",
+  "number": "40",
+  "title": "Thy Rebuke Hath Broken His Heart",
+  "path": "data/AHC/40.json",
+  "v": "d386a72288662283fdd9fb4ff514246b00a6db43d0f8a98192e0d6dfd799b7e6"
+ },
+ {
+  "id": "AHC-41",
+  "book": "AHC",
+  "number": "41",
+  "title": "Behold, and See If There Be Any Sorrow",
+  "path": "data/AHC/41.json",
+  "v": "cf096694310ff56a32b8230a46e7401372f6a5fe8166cc378a34cbfd410b6096"
+ },
+ {
+  "id": "AHC-42",
+  "book": "AHC",
+  "number": "42",
+  "title": "He Was Cut Off out of the Land of the Living",
+  "path": "data/AHC/42.json",
+  "v": "e0556622b98c206a070efb930519ca24d9fb67b30abca989d7daf4f4abcfb663"
+ },
+ {
+  "id": "AHC-43",
+  "book": "AHC",
+  "number": "43",
+  "title": "But Thou Didst Not Leave His Soul in Hell",
+  "path": "data/AHC/43.json",
+  "v": "df85ee576c82a6685a5ce0b96058249ec40282b6ba90f728a64885d372befd38"
+ },
+ {
+  "id": "AHC-44",
+  "book": "AHC",
+  "number": "44",
+  "title": "Unto Which of the Angels",
+  "path": "data/AHC/44.json",
+  "v": "e03d20335505880fad2e5f86022a7abd779696eeb55f185baceec8f7b78985a0"
+ },
+ {
+  "id": "AHC-45",
+  "book": "AHC",
+  "number": "45",
+  "title": "Thou Art Gone Up on High",
+  "path": "data/AHC/45.json",
+  "v": "8c2ca48b72b558b179d8bca1c63828999d2c15538a7eae4364fb62398903a1ae"
+ },
+ {
+  "id": "AHC-46",
+  "book": "AHC",
+  "number": "46",
+  "title": "How Beautiful Are the Feet",
+  "path": "data/AHC/46.json",
+  "v": "ff1dc5577647f27bb1265c3adeac9f987914545eb93ed38e3798a37ea52e94db"
+ },
+ {
+  "id": "AHC-47",
+  "book": "AHC",
+  "number": "47",
+  "title": "Why Do the Nations So Furiously Rage Together",
+  "path": "data/AHC/47.json",
+  "v": "57bc6dd1aa903efb23ab36107bc9ee373dd684059dcd00eb9f4e7bb775a5d433"
+ },
+ {
+  "id": "AHC-48",
+  "book": "AHC",
+  "number": "48",
+  "title": "He That Dwelleth in Heaven",
+  "path": "data/AHC/48.json",
+  "v": "c4d15fa6f1d503667d03ed4057e36dad2ed473e25b9f9a3414fe37ebffd675b6"
+ },
+ {
+  "id": "AHC-49",
+  "book": "AHC",
+  "number": "49",
+  "title": "Thou Shalt Break Them",
+  "path": "data/AHC/49.json",
+  "v": "ee55f4f04274655b727e298ba266ad646c17cde0f808f6b3ed275f3dce454aa1"
+ },
+ {
+  "id": "AHC-50",
+  "book": "AHC",
+  "number": "50",
+  "title": "I Know That My Redeemer Liveth",
+  "path": "data/AHC/50.json",
+  "v": "c81aa02ad0f4803343a866be61b740d9d9b029437d00f10acb05d32f5211e2c9"
+ },
+ {
+  "id": "AHC-51",
+  "book": "AHC",
+  "number": "51",
+  "title": "Behold, I Tell You a Mystery",
+  "path": "data/AHC/51.json",
+  "v": "816ea79c1a3a2ad21fff670182486ea14f5e9ce590b06c323ddb9b9bb9e898d0"
+ },
+ {
+  "id": "AHC-53",
+  "book": "AHC",
+  "number": "53",
+  "title": "Then Shall Be Brought to Pass",
+  "path": "data/AHC/53.json",
+  "v": "db5cfa604600b12536c12b63d5d4dff35580746d48a88dc258fef6e5401fe65a"
+ },
+ {
+  "id": "AHC-55",
+  "book": "AHC",
+  "number": "55",
+  "title": "If God Be for Us",
+  "path": "data/AHC/55.json",
+  "v": "91f0722291cae21326bf2f8a6ea0a5521cdca569646a72aeb5b4290d4d570be6"
+ },
+ {
   "id": "ANTHEMS-1",
   "book": "ANTHEMS",
   "number": "1",

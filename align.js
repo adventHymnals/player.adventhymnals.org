@@ -12,6 +12,9 @@
 // the app's native Verovio and the WebAssembly copy write the same SVG), so it costs a few milliseconds.
 
 const NUM = /-?\d+(?:\.\d+)?/g;
+/** Off where the app draws with its native Verovio: there the staff came out giant (18 Nov 2026, being
+ *  looked into); the WebAssembly copy keeps it. */
+const nativeVerovio = () => { try { return !!window.AHNative?.verovio?.available?.(); } catch { return false; } };
 const nums = (s) => (s ? (s.match(NUM) || []).map(Number) : []);
 const SHAPES = "text, path, use, rect, ellipse, polygon, polyline";
 
@@ -198,6 +201,7 @@ export function growSvg(root, dy) {
 /** Systems stacked on pages (the page view): all lined up together, and on each page the ones below
  *  moved down by what those above them grew. */
 export function alignPage(roots) {
+  if (nativeVerovio()) return;
   const pages = roots.map((r) => [...r.querySelectorAll("g.system")]);
   const all = pages.flat();
   if (all.length < 2) return;
@@ -215,6 +219,7 @@ export function alignPage(roots) {
 /** One system per SVG (the presenter): lined up, and every SVG given the same frame, its first staff
  *  the same distance from the top, so the lines lie in the same place one after another. */
 export function alignPages(roots) {
+  if (nativeVerovio()) return;
   const sys = roots.map((r) => r.querySelector("g.system"));
   const ok = roots.filter((r, i) => sys[i] && frames(r));
   if (ok.length < 2) return;
