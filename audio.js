@@ -1,5 +1,5 @@
 import { stretchBuffer } from "./stretch.js";
-import { phoneDb } from "./core.js";
+import { phoneDb, baseOf, partLetters } from "./core.js";
 // Audio engine: synthesized choir "aah" per voice, sampled piano, count-in click.
 // A look-ahead scheduler plays performance events (see core.performance).
 
@@ -63,8 +63,22 @@ export class Engine {
       this.channels[ch] = g;
       this.panners[ch] = pan;
     }
+    for (const ch of Object.keys(this.channels)) if (!(ch in PAN)) { delete this.channels[ch]; this.chan(ch); }
     if (instant) for (const [ch, g] of Object.entries(this.channels)) g.gain.value = this.muted[ch] ? 0 : this.levels[ch] ?? 0.8;
     else this.applyLevels();
+  }
+
+  /** A channel for a part beyond S/A/T/B (a Soprano II): made when first used, placed as its base voice. */
+  chan(ch) {
+    if (this.channels[ch] || !this.ctx || !this.master) return this.channels[ch];
+    const g = this.ctx.createGain();
+    const pan = this.ctx.createStereoPanner();
+    pan.pan.value = this.pans?.[ch] ?? PAN[baseOf(ch)] ?? 0;
+    g.gain.value = this.muted[ch] ? 0 : this.levels[ch] ?? 0.8;
+    g.connect(pan).connect(this.master);
+    this.channels[ch] = g;
+    this.panners[ch] = pan;
+    return g;
   }
 
   /** Stereo position of a channel, -1 (left) to 1 (right). Remembered until the context exists. */
@@ -138,8 +152,11 @@ export class Engine {
   nativeGains(force = false) {
     if (!this.native) return;
     // with each voice's place between the ears (the app sings them in stereo; older apps read only the letters)
-    const g = JSON.stringify({ ...Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.muted[k] ? 0 : Math.round((this.levels[k] ?? 0.8) * (this.nativeDyn?.[k] ?? 1) * 1000) / 1000])),
-      pan: Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.pans?.[k] ?? PAN[k]])) });
+    // the parts by their one-letter names (S, A, T, B; a Soprano II "s"…, core.js partLetters)
+    const keys = this.nativeParts || ["S", "A", "T", "B"];
+    const letters = partLetters(keys);
+    const g = JSON.stringify({ ...Object.fromEntries(keys.map((k, i) => [letters[i], this.muted[k] ? 0 : Math.round((this.levels[k] ?? 0.8) * (this.nativeDyn?.[k] ?? 1) * 1000) / 1000])),
+      pan: Object.fromEntries(keys.map((k, i) => [letters[i], this.pans?.[k] ?? PAN[k] ?? PAN[baseOf(k)] ?? 0])) });
     if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
     this.nativeG = g;
     // in the app's log (logcat, tag chromium): what the singer is told, as it changes (the dynamics too)
@@ -202,7 +219,7 @@ export class Engine {
       o.connect(sum);
       nodes.push(o);
     }
-    out.connect(this.channels[ch]);
+    out.connect(this.chan(ch));
     const stop = end + 0.4;
     for (const n of nodes) { n.start(t); n.stop(stop); }
     this.track(nodes, out, stop);
@@ -214,7 +231,7 @@ export class Engine {
     const end = t + Math.max(0.1, dur);
     g.gain.setValueAtTime(0.9 * vel, t);
     g.gain.setTargetAtTime(0, end, 0.12);
-    g.connect(this.channels[ch]);
+    g.connect(this.chan(ch));
     if (this.piano) {
       let best = null;
       for (const m of this.piano.keys()) if (best === null || Math.abs(m - p) < Math.abs(best - p)) best = m;
@@ -324,7 +341,7 @@ export class Engine {
     const c = this.ctx;
     const g = c.createGain();
     g.gain.value = 1;
-    g.connect(this.channels[e.ch]);
+    g.connect(this.chan(e.ch));
     const src = c.createBufferSource();
     src.buffer = buf;
     if (e.env?.length) { // the score's dynamics (core.js): each note's level from its onset

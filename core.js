@@ -7,6 +7,47 @@ export const VOICES = {
   T: { name: "Tenor" },
   B: { name: "Bass" },
 };
+const SATB = ["S", "A", "T", "B"];
+/** Parts beyond S/A/T/B (a Soprano II, a second choir): a hymn names them in `parts`, e.g.
+ *  { "S2": { "base": "S", "name": "Soprano II" } }; each sings, reads its clef and takes its colour as its base
+ *  voice. Registered in VOICES while the hymn is open, so every voice lookup knows them. */
+export function registerParts(h) {
+  for (const k of Object.keys(VOICES)) if (!SATB.includes(k)) delete VOICES[k];
+  for (const k of Object.keys(h?.voices || {})) {
+    if (SATB.includes(k) || k === "R" || k === "L") continue;
+    const p = h.parts?.[k] || {};
+    const base = partBase(h, k);
+    VOICES[k] = { name: p.name || `${VOICES[base].name} ${k.slice(1) || "II"}`, base };
+  }
+}
+/** The S/A/T/B voice a part sings as (itself for S, A, T, B). */
+export const baseOf = (k) => VOICES[k]?.base || k;
+/** A hymn's sung parts in score order: each base voice, then the parts on it (S, S2, A, T, B). */
+export function partsOf(h) {
+  const ks = Object.keys(h?.voices || {}).filter((k) => k !== "R" && k !== "L" && h.voices[k]?.length);
+  return SATB.flatMap((b) => [...ks.filter((k) => k === b), ...ks.filter((k) => !SATB.includes(k) && partBase(h, k) === b)]);
+}
+/** A part's base voice from the hymn itself (no registry: for tools and workers too). */
+export const partBase = (h, k) => (SATB.includes(k) ? k : SATB.includes(h?.parts?.[k]?.base) ? h.parts[k].base : SATB.includes(k[0]) ? k[0] : "S");
+/** One character per part, for the app's singer (it keys voices by a letter): S, A, T, B themselves, any other
+ *  part the lower case of its base, else a free letter. */
+export function partLetters(keys, h = null) {
+  const used = new Set(keys.filter((k) => SATB.includes(k)));
+  const free = "sathbcdefgijklmnopqruvwxyz".split("");
+  return keys.map((k) => {
+    if (SATB.includes(k)) return k;
+    const want = (h ? partBase(h, k) : baseOf(k)).toLowerCase();
+    const c = !used.has(want) ? want : free.find((x) => !used.has(x));
+    used.add(c);
+    return c;
+  });
+}
+/** The live singer's noise part of each letter (as the app's engine, 18 Nov 2026): S A T B are 0-3 whatever
+ *  their order; any other letter 4 + its place among the pass's other letters. */
+export function noiseParts(letters) {
+  let extra = 0;
+  return [...letters].map((c) => (SATB.includes(c) ? SATB.indexOf(c) : 4 + extra++));
+}
 
 export const KIND_INTERVALS = {
   "": [0, 4, 7], m: [0, 3, 7], 7: [0, 4, 7, 10], dim: [0, 3, 6], "+": [0, 4, 8],
@@ -102,7 +143,7 @@ export function barAt(h, q) {
 export const trackKey = (voices) => voices.join("");
 // the piano accompaniment's two hands, shown as a grand staff under the voices
 export const PIANO_HANDS = { R: { name: "Piano, right hand" }, L: { name: "Piano, left hand" } };
-export const trackName = (voices) => voices.map((k) => (VOICES[k] || PIANO_HANDS[k]).name).join(" and ");
+export const trackName = (voices) => voices.map((k) => (VOICES[k] || PIANO_HANDS[k] || { name: k }).name).join(" and ");
 
 const DIV = 24; // divisions per quarter note (divisible by 3 for triplets)
 const FLAT_ORDER = "BEADGCF";
@@ -184,7 +225,7 @@ export const SCORE_FONT = '"AH Score Serif", Times, serif';
 export const SVG_CSS = `g.verse{visibility:visible}text{font-family:${SCORE_FONT}}`;
 
 export function clefFor(voices) {
-  if (voices.some((k) => k === "S" || k === "A" || k === "R")) return ["G", 2, 0];
+  if (voices.some((k) => k === "R" || baseOf(k) === "S" || baseOf(k) === "A")) return ["G", 2, 0];
   return ["F", 4, 0];
 }
 

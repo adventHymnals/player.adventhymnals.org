@@ -589,10 +589,16 @@ export function voiceFrames(h, voice, verse, tempo, T, transpose, lex) {
 export function passFrames(h, voices, verse, tempo, transpose, lex, speakers = SPEAKER) {
   let T = null;
   const out = [];
+  // a part beyond S/A/T/B (a Soprano II) sings with its base voice's singer, on a noise part of its own:
+  // S A T B are parts 0-3 whatever their order, any other part 4 + its place among them (as the app's engine)
+  const base = (v) => (SATB_ORDER.includes(v) ? v : SATB_ORDER.includes(h.parts?.[v]?.base) ? h.parts[v].base : SATB_ORDER.includes(v[0]) ? v[0] : "S");
+  let extra = 0;
   for (const v of voices) {
     const r = voiceFrames(h, v, verse, tempo, T, transpose, lex);
     T = r.T;
-    out.push({ voice: v, speaker: speakers[v] ?? SPEAKER[v], ph: r.ph, prog: r.prog, f0: r.f0 });
+    const b = base(v);
+    out.push({ voice: v, speaker: speakers[v] ?? SPEAKER[v] ?? speakers[b] ?? SPEAKER[b], part: SATB_ORDER.includes(v) ? SATB_ORDER.indexOf(v) : 4 + extra++, ph: r.ph, prog: r.prog, f0: r.f0 });
   }
   return { T, voices: out };
 }
+const SATB_ORDER = ["S", "A", "T", "B"];

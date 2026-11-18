@@ -1,4 +1,4 @@
-import { SVG_CSS } from "./core.js";
+import { SVG_CSS, baseOf } from "./core.js";
 import { alignPage } from "./align.js";
 // Renders the score with Verovio in "tracks" (one long system) or "page" (stacked systems) mode,
 // and knows where every staff, bar and note is, for headers, highlighting and the playhead.
@@ -61,7 +61,7 @@ export class ScoreView {
       const layer = Number(el.closest("g.layer")?.dataset.n) || 1;
       const track = tracks[staffN - 1] || [];
       const voice = track[layer - 1] ?? track[0];
-      for (const v of el.querySelectorAll("g.verse")) if (Number(v.dataset.n) > ownBase) v.classList.add(`own-${voice}`);
+      for (const v of el.querySelectorAll("g.verse")) if (Number(v.dataset.n) > ownBase) v.classList.add(`own-${baseOf(voice)}`); // a Soprano II in the sopranos' colour
       this.notes.push({ el, on: tm.on, off: tm.off, voice, staffN, system: el.closest("g.system") });
     }
     this.harms = [...this.content.querySelectorAll("g.harm")];
@@ -148,12 +148,12 @@ export class ScoreView {
     const now = new Set(this.notes.filter((n) => n.on <= q + 1e-6 && q < n.off - 1e-6));
     for (const n of this.active) {
       if (now.has(n)) continue;
-      n.el.classList.remove(`on-${n.voice}`);
+      n.el.classList.remove(`on-${baseOf(n.voice)}`);
       n.el.querySelectorAll("g.verse.sung").forEach((v) => v.classList.remove("sung"));
     }
     for (const n of now) {
       if (this.active.has(n)) continue;
-      n.el.classList.add(`on-${n.voice}`);
+      n.el.classList.add(`on-${baseOf(n.voice)}`);
       if (verseN === 0) n.el.querySelectorAll("g.verse").forEach((v) => v.classList.add("sung"));
       else n.el.querySelectorAll(`g.verse[data-n="${verseN}"], g.verse[data-n="${this.ownBase + verseN}"]`).forEach((v) => v.classList.add("sung"));
     }

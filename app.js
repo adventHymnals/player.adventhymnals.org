@@ -1,6 +1,7 @@
 import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, lyricLines, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
   trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds, countQ,
+  registerParts, partsOf, baseOf,
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
@@ -260,11 +261,22 @@ const singEngine = () => {
 const useWarble = () => isLive(singEngine()) && !!singingCfg.warble;
 const liveW = () => liveVoice(singEngine()) || singingCfg.warble; // the live voice that sings now
 
-const tracksOfHymn = () => state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
+const tracksOfHymn = () => {
+  const ts = state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
+  // a part beyond S/A/T/B (a Soprano II) goes on its base voice's staff, after it; its own when the base has none
+  for (const k of partsOf(hymn)) {
+    if (VOICES[k] && ["S", "A", "T", "B"].includes(k)) continue;
+    if (ts.some((t) => t.includes(k))) continue;
+    const t = ts.find((x) => x.includes(baseOf(k)));
+    if (t) t.splice(t.indexOf(baseOf(k)) + 1, 0, k); else ts.push([k]);
+  }
+  return ts;
+};
 const visibleTracks = () => tracksOfHymn().filter((t) => !state.hidden.includes(trackKey(t)));
 const visibleVoices = () => visibleTracks().flat();
 const singing = () => state.practice && state.practiceTab === "sing" && listener?.on;
-const heard = (ch) => !(state.mute[ch] || (CH.some((c) => state.solo[c]) && !state.solo[ch])
+const chans = () => [...new Set([...CH, ...partsOf(hymn)])]; // S A T B acc, and a hymn's other parts
+const heard = (ch) => !(state.mute[ch] || (chans().some((c) => state.solo[c]) && !state.solo[ch])
   || ((singing() || following()) && state.muteMine && ch === state.singVoice)); // you sing your own part
 // following your tempo, the voices are synthesised: recorded and live singers sing at one tempo only
 const following = () => swm.on && swm.joined && !!listener?.on; // Sing with me, once it has joined you
@@ -272,7 +284,7 @@ const baseSound = (k) => state.voiceSounds[k] || (manifest || useWarble() ? "sun
 // Sing with me: the piano plays the hymn for you, or the choir sings it with you (the recorded and live singers
 // sing at one tempo, so they can't follow you)
 const soundOf = (k) => (swm.on ? (swm.do === "piano" ? "piano" : "choir") : baseSound(k));
-const hymnVoices = () => "SATB".split("").filter((k) => hymn?.voices[k]);
+const hymnVoices = () => partsOf(hymn);
 const anySung = () => hymnVoices().some((k) => soundOf(k) === "sung");
 const anyPiano = () => hymnVoices().some((k) => soundOf(k) === "piano");
 const isScoreView = () => state.view === "tracks" || state.view === "page";
@@ -421,7 +433,7 @@ function resetKey() {
 
 function noteStemsTransposed() {
   if (useWarble()) return; // live singing sings any key
-  if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && !e.inst && "SATB".includes(e.ch) && e.pass >= 0)) {
+  if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && !e.inst && !!VOICES[e.ch] && e.pass >= 0)) {
     if (!noteStemsTransposed.shown) toast("The recorded singers sing in the key they were recorded in, so after a key change the synth sings. Live singing follows the key.", 6000);
     noteStemsTransposed.shown = true;
   }
@@ -1222,6 +1234,8 @@ async function loadHymn(entry) {
     const alt = chosenTune(hymn.id);
     if (alt) { try { hymn = await withTune(hymn, alt); } catch { /* the tune's music is missing: the printed tune */ } }
     hymnWritten = hymn;
+    registerParts(hymn); // its parts beyond S/A/T/B (a Soprano II), by name, for every voice lookup
+    for (const k of partsOf(hymn)) if (baseOf(k) !== k) document.documentElement.style.setProperty(`--${k}`, `var(--${baseOf(k)})`); // its base voice's colour
   } catch {
     $("score").innerHTML = `<p class="status">This hymn's file is missing: ${entry.path}. Run <code>python3 build_web.py</code>, then reload.</p>`;
     return;
@@ -1599,8 +1613,9 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
     for (let i = 0; i < bin.length; i += 0x8000) b64 += String.fromCharCode(...bin.subarray(i, i + 0x8000));
     const r = JSON.parse(native.load(key, btoa(b64), pass.letters) || "{}");
     if (!r.ok) { failed.push(`${v}: ${r.error || "not loaded"}`); continue; }
+    engine.nativeParts = pass.keys || [...pass.letters]; // the parts it sings, for their gains
     for (const k of hymnVoices()) {
-      if (!pass.letters.includes(k) || soundOf(k) !== "sung") continue;
+      if (!(pass.keys || [...pass.letters]).includes(k) || soundOf(k) !== "sung") continue;
       stemInfo.set(`${k}:${v}:${transpose}`, { offsetSec: -0.3, duration: (pass.T * 512) / 44100, native: key });
     }
   }
@@ -2050,12 +2065,12 @@ function buildLane() {
 // ---- playback ------------------------------------------------------------
 
 function applyMix() {
-  for (const ch of CH) {
+  for (const ch of chans()) {
     engine.setLevel(ch, state.levels[ch] ?? 0.8);
     engine.setMuted(ch, !heard(ch));
     engine.setPan(ch, state.pans[ch] ?? 0);
   }
-  engine.voiceSounds = Object.fromEntries("SATB".split("").map((k) => [k, soundOf(k) === "piano" ? "piano" : "choir"]));
+  engine.voiceSounds = Object.fromEntries(partsOf(hymn).map((k) => [k, soundOf(k) === "piano" ? "piano" : "choir"]));
 }
 
 function rebuild(keep = true, seamless = false) {
@@ -2592,7 +2607,7 @@ function allMelodies() {
 }
 /** This hymn's parts as tunes, for finding where in it someone sings (any part). */
 function hymnTunes(h) {
-  return { tunes: ["S", "A", "T", "B"].filter((k) => h.voices[k]?.length).map((k) => {
+  return { tunes: partsOf(h).map((k) => {
     const n = [];
     let prev = null;
     for (const x of h.voices[k]) {
@@ -4729,7 +4744,7 @@ window.AHStudio = {
       // instruments only: every voice on the piano instead of singing; off brings the voices back as they were
       const on = !!value;
       if (on === !!state.instrumental) return;
-      const chs = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length);
+      const chs = partsOf(hymn);
       if (on) {
         // only the sounds someone chose: a voice on its default (the singers, or the synth where there are
         // none) goes back to its default, not to whatever its menu showed on this hymn
@@ -4790,7 +4805,7 @@ window.AHStudio = {
   },
   state() {
     endIfDone();
-    const voices = ["S", "A", "T", "B"].filter((ch) => hymn?.voices?.[ch]?.length).map((ch) => {
+    const voices = partsOf(hymn).map((ch) => {
       const sel = document.querySelector(`select.vsound[data-sound="${ch}"]`);
       return {
         ch, name: VOICES[ch]?.name ?? ch, mute: !!state.mute[ch], solo: !!state.solo[ch], level: state.levels[ch] ?? 0.8, pan: state.pans[ch] ?? 0,

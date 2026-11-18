@@ -3,6 +3,7 @@
 // one pass per job, each worker with its own onnxruntime-web (WASM) session. The result is one
 // AudioBuffer per voice and pass, used exactly like a recorded stem (offsetSec -0.3).
 import { passFrames, SR, LEAD, unsung } from "./frontend.js";
+import { partsOf, partLetters } from "../core.js";
 import { writeBin } from "./bin.js";
 
 const IDB = "ah-warble", STORE = "models";
@@ -92,6 +93,9 @@ export class Warble {
     try { const n = window.AHNative?.warble; return n && typeof n.available === "function" && JSON.parse(n.available() || "null") ? n : null; } catch { return null; }
   }
 
+  /** The app's singer sings parts beyond S/A/T/B (a Soprano II). */
+  static nativeParts() { try { return !!JSON.parse(Warble.native()?.available() || "null")?.parts; } catch { return false; } }
+
   /** The words' pronunciations (sing/warble_lexicon.py). */
   async lexicon() {
     if (!this.lex) this.lex = fetch(new URL("./lexicon.json", import.meta.url)).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
@@ -167,14 +171,16 @@ export class Warble {
   /** The features for one pass (all the hymn's voices, SATB order). */
   async features(h, verse, tempo, transpose) {
     const lex = await this.lexicon();
-    const voices = "SATB".split("").filter((k) => h.voices[k]);
+    // every part the hymn has (S, S2, A, T, B…); the app's singer takes parts beyond S/A/T/B only when it says
+    // so ("parts" in AHNative.warble.available()): an older app gets the four
+    const voices = partsOf(h).filter((k) => ["S", "A", "T", "B"].includes(k) || !Warble.native() || Warble.nativeParts());
     unsung.clear();
     let pass = passFrames(h, voices, verse, tempo, transpose, lex, this.speakers);
     // a word this copy of the lexicon lacks: the hymn may be newer than the Studio it came with (the hymns
     // come from the store, the lexicon with the Studio): fetch the published lexicon once and try again;
     // a word still missing is sung on "aa" (frontend.js)
     if (unsung.size && (await Warble.refreshLexicon(lex, [...unsung]))) { unsung.clear(); pass = passFrames(h, voices, verse, tempo, transpose, lex, this.speakers); }
-    return { ...pass, letters: voices.join("") };
+    return { ...pass, keys: voices, letters: partLetters(voices, h).join("") };
   }
 
   /** The published lexicon (Warble.lexiconUrl, set by the player), merged into lex when it has any of the
@@ -243,7 +249,7 @@ export class Warble {
   render(T, v, gen, onFrames) {
     return new Promise((resolve, reject) => {
       const id = this.nextId++;
-      const job = { id, gen, msg: { type: "render", id, T, speaker: v.speaker, part: "SATB".indexOf(v.voice), ph: v.ph, prog: v.prog, f0: v.f0, chunk: 344 }, resolve, reject, onFrames, t0: 0 };
+      const job = { id, gen, msg: { type: "render", id, T, speaker: v.speaker, part: v.part ?? "SATB".indexOf(v.voice), ph: v.ph, prog: v.prog, f0: v.f0, chunk: 344 }, resolve, reject, onFrames, t0: 0 };
       this.jobs.set(id, job);
       this.queue.push(job);
       this.pump();
