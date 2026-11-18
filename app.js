@@ -477,6 +477,11 @@ const ICON = {
   grip: '<svg viewBox="0 0 24 8" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="2" r="1.4"/><circle cx="12" cy="2" r="1.4"/><circle cx="18" cy="2" r="1.4"/><circle cx="6" cy="6" r="1.4"/><circle cx="12" cy="6" r="1.4"/><circle cx="18" cy="6" r="1.4"/></g></svg>',
 };
 
+/** A failure said in plain words; the technical detail (an error's text) goes to the log only, never on screen. */
+function oops(words, detail, ms = 7000) {
+  if (detail) console.warn(`${words} [${detail?.message || detail}]`);
+  return toast(words, ms);
+}
 function toast(text, ms = 4200, action = null) {
   const el = $("toast");
   el.innerHTML = "";
@@ -1254,6 +1259,8 @@ async function loadHymn(entry) {
     const next = await hymnJson(entry);
     if (APP && appWant.id && appWant.id !== entry.id) return; // the app has asked for another hymn since: draw that one
     hymn = next;
+    // its verses at once (a singer prepared while the tune list loads must not take the last hymn's)
+    { const sv = store.get(`verses:${hymn.id}`, null); state.verses = sv && sv.every((v) => v <= hymn.verses.length) ? sv : hymn.verses.map((_, i) => i + 1); }
     await tunesReady;
     const alt = chosenTune(hymn.id);
     if (alt) { try { hymn = await withTune(hymn, alt); } catch { /* the tune's music is missing: the printed tune */ } }
@@ -1540,7 +1547,7 @@ async function prepareStems() {
     // the singers' voices must be credited (their licence); the code credit stays with the code
     $("credit").textContent = (manifest.credit || "").replace(/;\s*synthesis code.*$/i, "");
   } catch (err) {
-    toast(`The singers could not load: ${err.message}`, 7000);
+    oops("The singers could not load. Try again in a moment.", err, 7000);
   }
   rebuild();
 }
@@ -1554,7 +1561,9 @@ function warbleList() {
   const solfaWords = state.words === "solfa" || state.singSolfa;
   const out = [];
   const add = (v, transpose) => { if (!out.some((x) => x.v === v && x.transpose === transpose)) out.push({ v, verse: solfaWords ? "solfa" : v, transpose }); };
-  if (!liveChanges.length || !perf) { for (const v of state.verses) add(v, verseShift(v)); return out; }
+  // (only verses this hymn has: a list left from the hymn before must never reach the singer)
+  const has = (v) => Number.isInteger(v) && v >= 1 && v <= (hymn?.verses?.length || 0);
+  if (!liveChanges.length || !perf) { for (const v of state.verses) if (has(v)) add(v, verseShift(v)); return out; }
   const at = (engine.playing && locate(perf, engine.now())?.pass) || 0;
   const ks = perf.passes.map((p, k) => (p.kind === "verse" ? k : -1)).filter((k) => k >= 0);
   for (const k of [...ks.filter((k) => k >= at), ...ks.filter((k) => k < at)]) {
@@ -1621,7 +1630,7 @@ async function prepareWarble(keep = false) {
     console.info(`warble: ${mix.toFixed(1)} s of ${hymnVoices().length}-voice singing in ${secs.toFixed(1)} s with ${w.workers.length} workers${speed}`);
   } catch (err) {
     if (err?.cancelled || gen !== warbleGen) return;
-    toast(`Live singing could not start: ${err.message}. The synth sings instead.`, 8000);
+    oops("Live singing could not start, so instruments play instead.", err, 8000);
   }
 }
 
@@ -1641,7 +1650,11 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
     if (engine.playing) { engine.nativeStop(); }
     let r = {};
     try { r = JSON.parse(native.use(want) || "{}"); } catch { r = {}; }
-    if (r.ok === false) { toast(`${w.label} could not start: ${r.error || "not ready"}. Warble sings.`, 6000); if (want !== "warble") return; }
+    if (r.ok === false) {
+      console.warn(`live singer: use(${want}) refused: ${r.error || "not ready"}`);
+      toast(`${w.label} is not ready on this phone, so the other live singers sing.`, 6000);
+      if (want !== "warble") return;
+    }
     nativeUsing = want; nativeLoaded.clear(); nativeModel = null;
   }
   if (w.nativeEngine) {
@@ -1652,20 +1665,26 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
   } else if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
   const failed = [];
   let first = true;
+  const h = hymn; // the hymn these passes are for: another one opened meanwhile ends this loop
   for (const { v, verse, transpose } of warbleList()) {
+    if (gen !== warbleGen || hymn !== h) return;
     if (keep && [...stemInfo.keys()].some((x) => x.endsWith(`:${v}:${transpose}`))) continue; // already loaded
-    const key = w.passKey(hymn, verse, state.tempo, transpose);
+    const key = w.passKey(h, verse, state.tempo, transpose);
     // a pass the app already holds (same hymn, tune, verse, tempo and key) is not made and sent again
     let have = nativeLoaded.get(key);
     if (!have) {
       let pass;
-      try { pass = await w.features(hymn, verse, state.tempo, transpose); } catch (err) { failed.push(`${v}: ${err.message}`); continue; }
+      try { pass = await w.features(h, verse, state.tempo, transpose); } catch (err) {
+        if (gen !== warbleGen || hymn !== h) return;
+        console.warn(`live singer: verse ${v} of ${h.id}: ${err?.message || err}`); // the detail, for the log only
+        failed.push(v); continue;
+      }
       if (gen !== warbleGen) return;
       const bin = Warble.bin(pass);
       let b64 = "";
       for (let i = 0; i < bin.length; i += 0x8000) b64 += String.fromCharCode(...bin.subarray(i, i + 0x8000));
       const r = JSON.parse(native.load(key, btoa(b64), pass.letters) || "{}");
-      if (!r.ok) { failed.push(`${v}: ${r.error || "not loaded"}`); continue; }
+      if (!r.ok) { console.warn(`live singer: load ${key}: ${r.error || "not loaded"}`); failed.push(v); continue; }
       have = { keys: pass.keys || [...pass.letters], T: pass.T };
       nativeLoaded.set(key, have);
     }
@@ -1680,7 +1699,9 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
   }
   if (gen !== warbleGen) return;
   rebuild(true, true);
-  if (failed.length) toast(`Live singing could not sing verse ${failed.join("; ")}. The synth sings it.`, 8000);
+  // plain words only (the detail is in the log): never a program's error text
+  if (failed.length) toast(failed.length === 1 ? `The live singers could not sing verse ${failed[0]}, so instruments play it.`
+    : `The live singers could not sing verses ${failed.slice(0, -1).join(", ")} and ${failed.at(-1)}, so instruments play them.`, 8000);
 }
 
 /** Can the app's singer play a stretch of a pass (segs with from/to), for a key change inside a verse? */
@@ -1694,8 +1715,8 @@ function onNativeWarble(json) {
   if (m.type === "model" && m.state === "downloading") toast(`Downloading the singing model… ${Math.round((m.progress || 0) * 100)}% (once)`, 0);
   else if (m.type === "model" && m.state === "loading") toast("Starting the singers…", 0);
   else if (m.type === "model" && m.state === "ready") toast("Live singers ready.", 3000);
-  else if (m.type === "model" && m.state === "error") toast(`Live singing could not start: ${m.msg || "the model did not load"}.`, 8000);
-  else if (m.type === "error") toast(`Live singing: ${m.msg}`, 8000);
+  else if (m.type === "model" && m.state === "error") oops("Live singing could not start: its voices did not load. Check the connection and try again.", m.msg, 8000);
+  else if (m.type === "error") oops("Live singing stopped for a moment. Press play to go on.", m.msg, 8000);
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
     if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind briefly. They will catch up on their own.", 4000); }
@@ -2273,7 +2294,7 @@ async function togglePlay() {
   if (state.accomp !== "off" || anyPiano() || state.intro !== "none" || state.interlude !== "none") engine.loadPiano();
   await engine.play(from);
   setPlaying(true);
-  if (engine.nativeError) toast(`The live singers could not start: ${engine.nativeError}.`, 6000);
+  if (engine.nativeError) oops("The live singers could not start, so instruments play instead.", engine.nativeError, 6000);
 }
 
 function stopPlayback() {
@@ -4043,7 +4064,7 @@ async function makeTakeVideos(takeKeys) {
   if (loopWas) setLoop(state.loop.from, state.loop.to, false);
   const choir = hymnVoices().filter((k) => !state.mute[k]);
   let live = new Map();
-  try { live = await liveStemsForVideo(new Set(takeKeys.flatMap((t) => (t === "choir" ? choir : [t]))), (t) => toast(t, 0)); } catch (err) { toast(`The video could not be made: ${err.message}`, 8000); return; }
+  try { live = await liveStemsForVideo(new Set(takeKeys.flatMap((t) => (t === "choir" ? choir : [t]))), (t) => toast(t, 0)); } catch (err) { oops("The video could not be made. Try again, or choose fewer parts.", err, 8000); return; }
   // the live passes as recordings: their events lose "native" so the offline mix plays the buffers
   const liveEvents = (events) => (live.size ? events.map((e) => (e.native && live.has(e.stem) ? { ...e, native: undefined } : e)) : events);
   const withLive = async (fn) => {
@@ -4090,7 +4111,7 @@ async function makeTakeVideos(takeKeys) {
     if (APP) saveInApp(made); // the app keeps them with the phone's videos at once, and offers to share
     else showMadeVideos(made);
   } catch (err) {
-    toast(`The video could not be made: ${err.message}`, 8000);
+    oops("The video could not be made. Try again, or choose fewer parts.", err, 8000);
   } finally {
     making = false;
     state.introVoice = null;
@@ -4144,7 +4165,7 @@ function showMadeVideos(made) {
         await w.write(v.blob);
         await w.close();
         done(i, `Saved as ${fh.name}`);
-      } catch (err) { if (err.name !== "AbortError") toast(`Could not save it: ${err.message}`, 6000); }
+      } catch (err) { if (err.name !== "AbortError") oops("Could not save it. Try again.", err, 6000); }
       return;
     }
     // no save picker in this browser: it downloads, and the browser decides where (usually Downloads)
@@ -4166,7 +4187,7 @@ function showMadeVideos(made) {
         await w.close();
         if ($("vidList").children[i].querySelector("[data-save]")) done(i, `Saved in ${dir.name}`);
       }
-    } catch (err) { if (err.name !== "AbortError") toast(`Could not save them: ${err.message}`, 6000); }
+    } catch (err) { if (err.name !== "AbortError") oops("Could not save them. Try again.", err, 6000); }
   };
   $("vidClose").onclick = () => {
     const unsaved = $("vidList").querySelectorAll("[data-save]").length;
@@ -4239,7 +4260,7 @@ async function doExport() {
     const pages = await exportPdf(tk, buildMusicXML(scoreHymn(), opts), hymn, name, $("measureHost"), verovioTranspose(currentShift(null)));
     toast(`Saved ${name} (${pages} ${pages === 1 ? "page" : "pages"})`);
   } catch (err) {
-    toast(`The PDF could not be made: ${err.message}`);
+    oops("The PDF could not be made. Try again.", err);
   }
   presenter.key = ""; // the toolkit now holds the PDF layout
 }
