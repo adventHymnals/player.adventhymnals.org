@@ -101,6 +101,21 @@ New:
   `frontend.js` → `bin.js`) converted by the engine's C code give the same tokens, durations and f0 as
   `leap_hymn.py` FEEDS for the same dump (byte-identical), before any audio is compared.
 
+## Test path (no hosted files: 18 Nov 2026, until Brian approves publishing the weights)
+
+The model files are NOT on R2 and the live singing.json has no enabled new-voice entry (the repo copy carries
+it disabled). For Brian's comparison on his phone, the app's TEST build puts the files on the phone itself
+(adb or bundled) and supplies the voice entry through the bridge:
+
+- `AHNative.warble.voices()` → a JSON list of singing.json voice entries, e.g.
+  `[{"id": "leap", "engine": "leap", "label": "New voice (test)", "files": [], "tiers": []}]`.
+  The page adds them to the voices it offers (replacing a listed entry with the same id); only entries with
+  `"engine": "leap"` are taken. Empty `files`/`tiers`: the page calls no `model()` (the app has the files).
+- Offered only in a build that has `voices()` AND announces `engines.leap`; every other app and the browser
+  see nothing new (test: `web/warble/test/native-engines.test.mjs`).
+- When Brian approves hosting: the files go to R2 and the entry is enabled with `tools/publish/flip_leap.py`;
+  release builds then drop `voices()`.
+
 ## Also agreed
 
 - `AHStudio.set('next', id)`: the app sends the playlist's or queue's next hymn whenever it changes (null when

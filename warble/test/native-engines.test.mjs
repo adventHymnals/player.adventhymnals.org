@@ -52,4 +52,15 @@ assert.equal(b.letters, a.letters);
 assert.equal(canSing({ engine: "leap" }), true);
 globalThis.window = {};
 assert.equal(canSing({ engine: "leap" }), false, "never in the browser");
-console.log("ok: offered only where the app has it; Warble first; same pass bytes, keyed leap/…; readiness from the app");
+// a test build's own entry (AHNative.warble.voices()), with the hosted one disabled (as live): offered, no files to fetch
+singing.voices[1].enabled = false;
+const own = { id: "leap", engine: "leap", label: "New voice (test)", files: [], tiers: [] };
+globalThis.window = { AHNative: { warble: { available: () => JSON.stringify({ v: 1, cs: true, dyn: true, parts: true, engines: { warble: { ready: true }, leap: { ready: true, tier: "mixed2" } } }), cached: () => true, voices: () => JSON.stringify([own]) } } };
+c = await loadSinging(["https://player.test/data/singing.json"]);
+assert.deepEqual(c.voices.map((w) => `${w.engine}:${w.label}`), ["warble:Live singers", "leap:New voice (test)"]);
+assert.deepEqual([...c.voices[1].files, ...c.voices[1].tiers], []);
+// the same hosted-but-disabled list in an app without voices(): nothing new
+avail({ warble: { ready: true }, leap: { ready: true } });
+c = await loadSinging(["https://player.test/data/singing.json"]);
+assert.deepEqual(c.voices.map((w) => w.engine), ["warble"]);
+console.log("ok: offered only where the app has it; Warble first; same pass bytes, keyed leap/…; readiness from the app; a test build's own entry");

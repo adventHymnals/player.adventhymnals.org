@@ -8,7 +8,9 @@ import { readBin, writeBin } from "../bin.js";
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const web = path.resolve(here, "../..");
-const dir = process.argv[2] || "/home/i/big/AH/hymn-satb/sing/tiny-work/testvec";
+// testvec-2026-11-18: made by main's frontend.py on 18 Nov 2026 (after the pitch-join fix, the "aa" fallback,
+// the homographs); the older testvec/ keeps the bins its .ref.wav were rendered from (synth.test.mjs)
+const dir = process.argv[2] || "/home/i/big/AH/hymn-satb/sing/tiny-work/testvec-2026-11-18";
 const lex = JSON.parse(fs.readFileSync(path.join(web, "warble/lexicon.json"), "utf8"));
 const CASES = [["sdah108-v1-t96", "SDAH/108", 1, 96, 0], ["sdah108-v3-t72-k-2", "SDAH/108", 3, 72, -2],
   ["sdah73-v1-t96", "SDAH/73", 1, 96, 0], ["nzk1-v1-t96", "NZK/1", 1, 96, 0], ["wn15-v1-t96", "WN/15", 1, 96, 0]];

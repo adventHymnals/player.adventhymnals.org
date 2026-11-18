@@ -1646,7 +1646,7 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
   }
   if (w.nativeEngine) {
     // its model files, one per tier: the app fetches the tier it picks
-    const all = [...w.files, ...w.tiers];
+    const all = [...w.files, ...w.tiers]; // (none for a test build's own entry: its files are on the phone already)
     const k = JSON.stringify(all.map((t) => t.url));
     if (nativeModel !== k) { for (const t of all) native.model(t.url, t.sha256 || ""); nativeModel = k; }
   } else if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }

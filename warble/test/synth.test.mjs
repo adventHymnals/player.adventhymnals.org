@@ -12,7 +12,9 @@ const TV = process.env.TV || "/home/i/big/AH/hymn-satb/sing/tiny-work/testvec"; 
 const model = process.argv[2] || "/home/i/big/AH/hymn-satb/sing/tiny-work/models/current/warble.onnx";
 const cases = process.argv.slice(3).length ? process.argv.slice(3) : ["sdah108-v1-t96", "sdah108-v3-t72-k-2", "sdah73-v1-t96", "nzk1-v1-t96", "wn15-v1-t96"];
 const need = /int8/.test(model) ? 0.94 : 0.999;
-ort.env.wasm.numThreads = Number(process.env.THREADS || Math.min(4, os.cpus().length));
+// one thread by default: under node the threaded build's worker cannot be loaded from a file:// path ("no
+// available backend found ... fetch failed", node 22, 18 Nov 2026); THREADS=n to try more
+ort.env.wasm.numThreads = Number(process.env.THREADS || 1);
 // node's fetch can't read file:// URLs, so hand the engine its WebAssembly directly
 ort.env.wasm.wasmBinary = fs.readFileSync(new URL("../../vendor/onnxruntime-web-1.30.0/ort-wasm-simd-threaded.wasm", import.meta.url));
 

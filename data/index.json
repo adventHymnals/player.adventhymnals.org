@@ -1641,7 +1641,7 @@
   "number": "123",
   "title": "There Was One Who Was Willing",
   "path": "data/CH1941/123.json",
-  "v": "27612f0c3fab8577f69e0698fc6d81f969e5724865cb14a3ca8f6dcd46d015b0"
+  "v": "f686f3514372d5fa9ea01e7d6d508fadf587a30c370342841d7634a417f9fc0b"
  },
  {
   "id": "CH1941-124",
@@ -3145,7 +3145,7 @@
   "number": "312",
   "title": "Weeping Endures But for a Night",
   "path": "data/CH1941/312.json",
-  "v": "d687dcfd96148c8f55766975e90c7adabcdd72d98099519628810925638ea9cc"
+  "v": "78ce96fefc5cb99233a8a7d54d397b893a0b8d6e5031958b9553c64a3e87d465"
  },
  {
   "id": "CH1941-313",
@@ -3321,7 +3321,7 @@
   "number": "334",
   "title": "Calm Me, My God",
   "path": "data/CH1941/334.json",
-  "v": "92840b59f71bbd3e5abcbaa919c2ba9278efe5534135cc06b422dadb8c80425d"
+  "v": "1ade4ee1e6eb4b4a6d25aed78351dffc0ab96d0c5cef4e6343b02b19627d46c3"
  },
  {
   "id": "CH1941-335",
@@ -4673,7 +4673,7 @@
   "number": "513",
   "title": "Once to Every Man and Nation",
   "path": "data/CH1941/513.json",
-  "v": "db9814f7c3f98e4b217b306484ff653163a297b3c33efbec86050ca947079ffc"
+  "v": "f8bd28823c6c8e47f601de2b5b30ef0b09044974f50a92122be0e2b367016c46"
  },
  {
   "id": "CH1941-514",
@@ -5145,7 +5145,7 @@
   "number": "577",
   "title": "The Lord Is My Light",
   "path": "data/CH1941/577.json",
-  "v": "93e44ec1c1b907a0cd9c994bf7fbf3df5a4cb407ccd5e0915c92b5155bdfdf53"
+  "v": "48e1d5a5da75043ddc421361ada98cc25c5245d227b84712fd8dc6cffda2081f"
  },
  {
   "id": "CH1941-578",
@@ -5209,7 +5209,7 @@
   "number": "585",
   "title": "The Lord's Our Rock",
   "path": "data/CH1941/585.json",
-  "v": "611f71190fee2bd61ebbb9e2e36460e49faa6b1013bd49866ec82d5c5b1f11a6"
+  "v": "47e31ca5d3d79c25f55fe7643265546d4a4473d9675bdc4f396a812fe5b0b256"
  },
  {
   "id": "CH1941-586",
@@ -5355,7 +5355,7 @@
   "path": "data/CH1941/604.json",
   "sung": true,
   "sv": "c9e24da0ee39223124ea28268be71c80f9a3d5aa334ccdb18a69aa7ee4dc8e3e",
-  "v": "437e80e761c8937c52cb2f31ffd6984b8528a10551e45f6d4c35c0b26ad04bcc"
+  "v": "78d296f972ce4daf44cb6a76a07fd2415cac2379f11fd8f09919444b72451df9"
  },
  {
   "id": "CH1941-605",
@@ -5411,7 +5411,7 @@
   "number": "613",
   "title": "O Jesus, My Redeemer",
   "path": "data/CH1941/613.json",
-  "v": "3c29b4945d7223b575a85249886b5d93dd92d3aeda0acf07f0c76554d944f58b"
+  "v": "4519485775af5bf019a65477855d68129ed2efc2443b8bd3cfbef75cf2940e9d"
  },
  {
   "id": "CH1941-615",
@@ -5587,7 +5587,7 @@
   "number": "643",
   "title": "The Name of Jesus Is So Sweet",
   "path": "data/CH1941/643.json",
-  "v": "45e9ba309d7f0159c2a7a5256f5c4e856fb43bf5f745b6feef49066d0d513a8a"
+  "v": "fcf8ee8ef26e47ac76563039db8b49da9ceab3c0b858363da13122d7af3263a1"
  },
  {
   "id": "CH1941-644",
@@ -5627,7 +5627,7 @@
   "number": "649",
   "title": "Wake the Song",
   "path": "data/CH1941/649.json",
-  "v": "8b2020b72e4ebddc8cf535f5ed3cdc06e71130d1383fa4fbaed35bdb4d5a4123"
+  "v": "665954c32dba507efa5eccb7ffa4b48cced7c34f4a48fcd104beb094e8c58ec9"
  },
  {
   "id": "CH1941-650",
@@ -5779,7 +5779,7 @@
   "number": "669",
   "title": "How Sweet Are the Tidings",
   "path": "data/CH1941/669.json",
-  "v": "cc81a34575a6cfc13b3ef2d4861685aef2c3b02850ab21ec37a35ae6fac51366"
+  "v": "eb3baf29d63884fc47e78f34c9f098baa404691defc43b4b5686de0f6c645115"
  },
  {
   "id": "CH1941-670",
@@ -5795,7 +5795,7 @@
   "number": "671",
   "title": "Look for the Waymarks",
   "path": "data/CH1941/671.json",
-  "v": "d2e53008a0f7788ef747166190f02b9bf5d714e92762252e596a184c331d86c6"
+  "v": "cb8139d13ede8aadb2c0b9f8c436ac69c70bdb1d4c1f3e4026aa64c334b84e64"
  },
  {
   "id": "CH1941-672",
@@ -12953,7 +12953,7 @@
   "sung": true,
   "sv": "c5f104d4654dcf0a1ffecafcf8742d01d43c46850121a237aff6f7341c008059",
   "english": "A Shelter in the Time of Storm",
-  "v": "0fac8c213925e4d5a9bba9cff677d6a963014fbf6c8a0b26d84c8674d4d37d56"
+  "v": "15965d203daa9ff2c2a8f14eebd307d73ebc252387cc565b74b0da3f34c5c695"
  },
  {
   "id": "NZK-20b",
@@ -14533,7 +14533,7 @@
   "sung": true,
   "sv": "26e169f51a420edfddf1288f133a3fbe0b097caa4512309c02c8cfedf8872ee9",
   "english": "How Sweet Are the Tidings",
-  "v": "ae4fd17541c51bd125db1970700db4fccd8e2af7942114e3bd9195006ab47bbf"
+  "v": "2fabb0c9b9b9179d5e25dd0fbef11111635bc9a848bde5de9bd8d12f8b959bd2"
  },
  {
   "id": "NZK-160",
@@ -18880,7 +18880,7 @@
   "path": "data/SDAH/413.json",
   "sung": true,
   "sv": "0cf5e6a65bb8d74c2c8ca3b4a70e6f2555d8591ce32b8f4e85fe655a7e37629f",
-  "v": "90eb7b7bb5178b57c2491891c88604b90eca4b7522ff8cd958b5b98dc41e81de"
+  "v": "36cebb33ad3018948e3552afff5a2dbb0ba663e919e0bc0c3cf91feadead701d"
  },
  {
   "id": "SDAH-414",
@@ -19171,7 +19171,7 @@
   "path": "data/SDAH/442.json",
   "sung": true,
   "sv": "68ae23eec4dcb4ed79b3a451ffae5d1a4b803fe7e9653a63af4d0e67cdd0934f",
-  "v": "48df1c557f204689b94e53d099f91c6d3f65301c2a2ff39dab45ab6017218243"
+  "v": "90b769c3f5855010c500e3c3eda61500a62a9d48f33046167e012e483e7bb75b"
  },
  {
   "id": "SDAH-443",
@@ -19914,7 +19914,7 @@
   "sung": true,
   "sv": "f5a7cbdbbcc4f30d1278800ce278cae557a79b5379eaa6b2b163e852efc80379",
   "svc": "88286d6c323a541bd75f62b57867536784ad5df02dbb8f67bbdb0f6b0fe20e30",
-  "v": "cb531a9a193f7a39e4c55891cb95bb46c0e33e79e2358ec295294698c4f71583"
+  "v": "c50dfa3ebe7048ad0d758c8189300690679e004baac79bd3fdc30907680687dd"
  },
  {
   "id": "SDAH-516",
@@ -20048,7 +20048,7 @@
   "sung": true,
   "sv": "6a60069d01f8d769eac120921cae7dbca9b116157576104579cbc47d67bd64ca",
   "svc": "c955efc11dd5b9cb6d92a7fe5713daf8ab2f582132e3203d106d3c426b4e5a60",
-  "v": "ec6ef2fe94c5b04844f984e127d22971fa82fea04bb3921360c445b671562be8"
+  "v": "8ad44a479f3be6f0029bb557a44d493e82c4af7ea84bc01953625b5b6019c7b6"
  },
  {
   "id": "SDAH-529",
@@ -20731,7 +20731,7 @@
   "sung": true,
   "sv": "ab256953ebda425eff92cf1b7fbd899fd0816017688b5b2482231865d3fd3fe7",
   "svc": "2b8a9645bc882f5c7735afc74688b8fd670d43effab7c399aa6fc6d488cd8d42",
-  "v": "dd7065f04330ab0042caef53b0735044d3d0373fb38760c607fbdfbedac64a41"
+  "v": "231726537ab7ab79e0a05ba56f690cdf02ef1e2f9ba6fcb1141cc7022789b510"
  },
  {
   "id": "SDAH-597",
@@ -23109,7 +23109,7 @@
   "sung": true,
   "sv": "56a8e0d9910c269e88677394cfbd2eec143f6ca0b9d46fbe41bd9ac71f2166d1",
   "english": "How Sweet Are the Tidings",
-  "v": "406bf1587c91ae960b77e3156e1deacf1613094209b2000420b0dd1824daf82a"
+  "v": "94b8f938efa45a1e0d0f2f50095307eef4ddf158b4fceb28f592b7dd5992b25d"
  },
  {
   "id": "WN-238",
