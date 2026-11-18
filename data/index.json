@@ -11245,7 +11245,7 @@
   "number": "578",
   "title": "Beautiful Flowers",
   "path": "data/CS1908/578.json",
-  "v": "37838c6ca21c87c8ad136122c36c3bde845d500e23d67f985a63585558c67ab2"
+  "v": "2033e6f77cee63b5dde54db32222ea2ad553b96e417dc11ef0152feff61179e6"
  },
  {
   "id": "CS1908-579",
@@ -12543,8 +12543,8 @@
   "path": "data/NZK/1.json",
   "sung": true,
   "sv": "41eb82de52345eb1dba3ccdc0ebc6475aceb5b2423f5dabb0ae16f0f6516f589",
-  "v": "63ce0a246c02a6bdb4560de4a57a6cd5e9819735ad9d8a0e56ff2a957db0dc3a",
-  "english": "Holy, Holy, Holy"
+  "english": "Holy, Holy, Holy",
+  "v": "189c5c3701e1d0dded8f940e84e8ce0c7e4bc00c53da2ba735b718b662c0dcea"
  },
  {
   "id": "NZK-2",
@@ -12552,8 +12552,8 @@
   "number": "2",
   "title": "Twamsifu Mungu",
   "path": "data/NZK/2.json",
-  "v": "dca40eef0d4ad263a78fdb168d2e7ea127e1b5433607f8665fe074caa579e295",
-  "english": "We Praise Thee, O God"
+  "english": "We Praise Thee, O God",
+  "v": "440b5c0badb9559ce5fcdefbabc88c46826577c6e23ff4f06a0efeab74f632b0"
  },
  {
   "id": "NZK-3",
@@ -12563,8 +12563,8 @@
   "path": "data/NZK/3.json",
   "sung": true,
   "sv": "1f78bf8ca5d191b07c38b077ce2b9b5dfc3f027743ede519a13dffde1f10aaac",
-  "v": "854c04e723fcaaf7543584ce15aad60bbbc1a592efed12e17c4e92a0e040178f",
-  "english": "To God Be the Glory"
+  "english": "To God Be the Glory",
+  "v": "110b7129279967da42f9a6213fa97f4b31c5f41e0b41f5497d92d42a214ea8ad"
  },
  {
   "id": "NZK-3b",
@@ -12582,8 +12582,8 @@
   "path": "data/NZK/4.json",
   "sung": true,
   "sv": "4478b298818ae295c4a56ded96bcce00f30bfb1297dd24302b123e4d9314b12e",
-  "v": "4e172f90533ab58e9bad96a3e0bdb38a4103fae6729129706af825bb4478d4ef",
-  "english": "All Hail the Power of Jesus' Name"
+  "english": "All Hail the Power of Jesus' Name",
+  "v": "1ab44cab0c4097e396d1bb51c4300e912c10f6cfe2a1ebda44cacb6f4b71cc9c"
  },
  {
   "id": "NZK-5",
@@ -12593,8 +12593,8 @@
   "path": "data/NZK/5.json",
   "sung": true,
   "sv": "daa94ab90489976d992666c0254fc3ccc7cdbd1ecd3ce6e336f8a97722153279",
-  "v": "bc3f424e706633f4b6b1129bca820a1dd3e1313efba7eb84fa3c030d2d102641",
-  "english": "O Worship the King"
+  "english": "O Worship the King",
+  "v": "4b26b1df572d426226539bad04f20c8d67a345a6171b5d825fbb95c66b6ddd7b"
  },
  {
   "id": "NZK-5b",
@@ -12612,8 +12612,8 @@
   "path": "data/NZK/9.json",
   "sung": true,
   "sv": "7aad51c5194b564c995a499bf2756eb49473d1bc73332dc970aa02462b5567d7",
-  "v": "d46530cf4905702834386546bfe75ac81a9e9019debda70e1ace1e28c25d19cf",
-  "english": "My Maker and My King"
+  "english": "My Maker and My King",
+  "v": "6e6cdf354fc67f5144143c98d46f67d3a1c1689b670639772f77320de04c1efc"
  },
  {
   "id": "NZK-10",
@@ -12623,8 +12623,8 @@
   "path": "data/NZK/10.json",
   "sung": true,
   "sv": "3721e12633be06f80e82ba38e8d78cac015acf41f87df3c705a1ae3b6493170c",
-  "v": "a3b09304e2c742ed27ef8755910a0fdd0ab7afb4a07a22288917e50657e97d84",
-  "english": "Come, Thou Fount of Every Blessing"
+  "english": "Come, Thou Fount of Every Blessing",
+  "v": "5d7f974564cd0d12ce5a8337fdf586ec5e3bcfb087c588de14dc21c9d0cb7e4f"
  },
  {
   "id": "NZK-10b",
@@ -12642,8 +12642,8 @@
   "path": "data/NZK/11.json",
   "sung": true,
   "sv": "f2d1171086f4cd5041cf285a97186a6195cbf15f053cb790ea3a81a98a9293ab",
-  "v": "9e55ddff53a1696a63f8222125dc4a538d356588f4db6a2fb20c832e57508f43",
-  "english": "Blessed Be the Name"
+  "english": "Blessed Be the Name",
+  "v": "067a89aaecd489f01df30af936afd00228e1eb104eed6724e521231d4cf9d7ca"
  },
  {
   "id": "NZK-12",
@@ -12651,8 +12651,8 @@
   "number": "12",
   "title": "Msifu Mungu",
   "path": "data/NZK/12.json",
-  "v": "fff8eec8db71040553fe7e8c5ed3d74459b456aa765b4a81ba6d67e8e4d13052",
-  "english": "Praise God, From Whom All Blessings Flow"
+  "english": "Praise God, From Whom All Blessings Flow",
+  "v": "580b76c73db02a163114b02199983f86ab5ceac7eb024d7042ee49b7aba854bb"
  },
  {
   "id": "NZK-18",
@@ -12662,8 +12662,8 @@
   "path": "data/NZK/18.json",
   "sung": true,
   "sv": "598455d965733429cce85ac7579f589bff17ef2da9bace9f2e14c3b192b6ffca",
-  "v": "0c5b460a635332c4ea6d4e56181e8b91139b6abdf6270f1feeb39ad319c70d5a",
-  "english": "Savior, Like a Shepherd Lead Us"
+  "english": "Savior, Like a Shepherd Lead Us",
+  "v": "600388d960335b5c5cd3dfe1aadd66a9fec123d4b3d113526402de4fa903b5b4"
  },
  {
   "id": "NZK-19",
@@ -12673,8 +12673,8 @@
   "path": "data/NZK/19.json",
   "sung": true,
   "sv": "2a23377973f8c8da5bcfd08fb9044b76ee0d4e473cff5c5f2c6d60eab128958d",
-  "v": "f2890f4b64edcb6b4d79aea7ffbbbba1a3d38c19da772a3643f98074f27208e5",
-  "english": "Glory to His Name"
+  "english": "Glory to His Name",
+  "v": "bef2a8cbb0544ec6adb1780362553de1780974a9c2edb8f94882dae990afb072"
  },
  {
   "id": "NZK-20",
@@ -12684,8 +12684,8 @@
   "path": "data/NZK/20.json",
   "sung": true,
   "sv": "c5f104d4654dcf0a1ffecafcf8742d01d43c46850121a237aff6f7341c008059",
-  "v": "3f1261cea2eeab361d2670686e5238d65ba9dca53ef36862551e1be6e10ec7d4",
-  "english": "A Shelter in the Time of Storm"
+  "english": "A Shelter in the Time of Storm",
+  "v": "0fac8c213925e4d5a9bba9cff677d6a963014fbf6c8a0b26d84c8674d4d37d56"
  },
  {
   "id": "NZK-20b",
@@ -12703,8 +12703,8 @@
   "path": "data/NZK/22.json",
   "sung": true,
   "sv": "24f1617216cf03a48171ae08386adf0cccbb2f063ebcd5af5cf90e9ca3725cfa",
-  "v": "39253c9b10577a3ef1b8c2415b19765b3f4de9c7c3d79da8920efa50c5d4164d",
-  "english": "Pass Me Not, O Gentle Savior"
+  "english": "Pass Me Not, O Gentle Savior",
+  "v": "9d76134a8045bdf3b355e9e9fe379c57427fea3a8f9fbf25a80864736db49277"
  },
  {
   "id": "NZK-22b",
@@ -12722,8 +12722,8 @@
   "path": "data/NZK/23.json",
   "sung": true,
   "sv": "4635ecaad49486f344785162c2b5516ad6725e1dda01e6ef19bcc2ddf583abe9",
-  "v": "69cd7d2cd2ec0fd947104a9858789afe94fc31906c7724469ed22190d0411599",
-  "english": "Jesus, Thou Joy of Loving Hearts"
+  "english": "Jesus, Thou Joy of Loving Hearts",
+  "v": "ec23b27a6a4bbcde179979e21d6bc47421eaadce399421d3b850e809d4a10e94"
  },
  {
   "id": "NZK-23b",
@@ -12741,8 +12741,8 @@
   "path": "data/NZK/24.json",
   "sung": true,
   "sv": "876dc58b952b772ff379ba1f4432eb4f729e59873886c9b934e63b12203d9a42",
-  "v": "14b6f5a3204b3a0a2ec738824be90ab1c2200fa1d02d5e69f37c1f0951119e55",
-  "english": "How Sweet the Name of Jesus Sounds"
+  "english": "How Sweet the Name of Jesus Sounds",
+  "v": "e041303c886bd67b5745033fb8cf9fbd8d560d73748387d4ebc3828855dd5deb"
  },
  {
   "id": "NZK-24b",
@@ -12760,8 +12760,8 @@
   "path": "data/NZK/25.json",
   "sung": true,
   "sv": "bc1750ce44aa9358a6bfe350bbfefaf000a06c261dece5ada419a37ce29976d2",
-  "v": "8ac467c6ab61db967b703d3cf2264d49e30117d22579ef39cd0e0d15973bde24",
-  "english": "Crown Him With Many Crowns"
+  "english": "Crown Him With Many Crowns",
+  "v": "09c3507f9e00de324f16059ed5f05c6b9b861e14d98bc57510ec36b3492d2d88"
  },
  {
   "id": "NZK-25b",
@@ -12779,8 +12779,8 @@
   "path": "data/NZK/26.json",
   "sung": true,
   "sv": "bf9b48e2baede9a5e6ad7f94990836ac28840d084ffb63bb0e4f1c6ff9e3a499",
-  "v": "1adbcf8c3807a108b07e28ed49a8e1fb3f6260320abdabb3079a8be17ed68a66",
-  "english": "God the Omnipotent"
+  "english": "God the Omnipotent",
+  "v": "01184133f6b72a2fdb380378fa2d74b4f3ea9b07aeeec8cbb4b967285d9f6613"
  },
  {
   "id": "NZK-27",
@@ -12790,8 +12790,8 @@
   "path": "data/NZK/27.json",
   "sung": true,
   "sv": "0f4ab49bbedac002278b30b198f50be2329f7a0a9c0d3fc6058a283f432e3c33",
-  "v": "31c80ab5a6db66692c8dec64d8f559a12da12289ee09f583ec6c06303e360b6c",
-  "english": "Savior, Again to Thy Dear Name"
+  "english": "Savior, Again to Thy Dear Name",
+  "v": "1b28dbe0534b596efa56dcbc4463bfd84c472909c9736cdeea15a06a9754364e"
  },
  {
   "id": "NZK-27b",
@@ -12809,8 +12809,8 @@
   "path": "data/NZK/29.json",
   "sung": true,
   "sv": "952bf6426655db71f108c1c45f8825de71fba06ad09087d8ea5b1a2de950f840",
-  "v": "14f5020f0c269d43779a56a1297c0ee403b3e1971fa8c49f8ec5b96f1083b2ab",
-  "english": "My Jesus, I Love Thee"
+  "english": "My Jesus, I Love Thee",
+  "v": "dd6b7ff9bfacb7da5e97ea495b60ef301e6e1b4a2cd6648908ecd0b74c538f11"
  },
  {
   "id": "NZK-29b",
@@ -12828,8 +12828,8 @@
   "path": "data/NZK/30.json",
   "sung": true,
   "sv": "889fb11107740b1ae783fc0295d1408fa2fa3df23bafee7093d5283beab4aad2",
-  "v": "3f18e9e4d033d4723069881ea287fc58275f127185075a385b94e8a75311a0aa",
-  "english": "Jesus, Lover of My Soul"
+  "english": "Jesus, Lover of My Soul",
+  "v": "976a7314078f40556532170f18d91724800292509fab644b2b25eac4e1c89b73"
  },
  {
   "id": "NZK-31",
@@ -12839,8 +12839,8 @@
   "path": "data/NZK/31.json",
   "sung": true,
   "sv": "bc42bae8c86b568dbaf16077111ebd80a34e94d9679a5a3bc215f6574f1b07b8",
-  "v": "4754bb39eba8883b6f90692e2ed276cb938b77f8e5285aa2127430302f61f5d5",
-  "english": "I Will Sing of Jesus' Love"
+  "english": "I Will Sing of Jesus' Love",
+  "v": "b10a27b3e46539bd3fe795fd8b1fe268336d9996f5c1bd08a2898833a967d373"
  },
  {
   "id": "NZK-31b",
@@ -12858,8 +12858,8 @@
   "path": "data/NZK/34.json",
   "sung": true,
   "sv": "d4af22553de8dc2893d2077651d78c94a0ff3d59d29107ddfcb139739f19597f",
-  "v": "074c7bb74b7c4df474b525945816a16d0b0550493d9db13cd0df3cc484a6d367",
-  "english": "Tell Me the Story of Jesus"
+  "english": "Tell Me the Story of Jesus",
+  "v": "d3fefc98a3c328f8052da3c6559d853de15f6474cdebbd06f27b2598dc0164ee"
  },
  {
   "id": "NZK-34b",
@@ -12877,8 +12877,8 @@
   "path": "data/NZK/35.json",
   "sung": true,
   "sv": "0ef2f2b69d25f5f36fc14bfdd54e1728370edd32f77bd315c88034681c713fe8",
-  "v": "b554f0f9e6b7c4ef98d589241fb26fe88ab0767892982e1c4375df161fa3b517",
-  "english": "Redeemed! How I Love to Proclaim It"
+  "english": "Redeemed! How I Love to Proclaim It",
+  "v": "40b76ad9ace8bc2b2cdd2fb14bce809aaebc82ebcab6d52a59079948faf998cc"
  },
  {
   "id": "NZK-35b",
@@ -12896,8 +12896,8 @@
   "path": "data/NZK/36.json",
   "sung": true,
   "sv": "05008883087b8327fb4e4545f311f6706167e1c8d94069a3038f2a8b1b94b359",
-  "v": "0dd0d48eaf9235a6c167b330e6ead3d1ff63f753a59f167edcba2a59adde99f8",
-  "english": "O Happy Day"
+  "english": "O Happy Day",
+  "v": "ad38fd10912d83665b64a194ad36e908ae4d39e8b11c47f315a00725e5dd7485"
  },
  {
   "id": "NZK-37",
@@ -12907,8 +12907,8 @@
   "path": "data/NZK/37.json",
   "sung": true,
   "sv": "d0aad310ec4551fa973fe7edb7b86e657c17c92bcf5ebd3d8f9cc26640d0d21c",
-  "v": "2d2719018fcb16a6f751db794ab47ad74ed8dd04564721990d6ac92b04431c5b",
-  "english": "Love Divine, All Loves Excelling"
+  "english": "Love Divine, All Loves Excelling",
+  "v": "2d598c4cfe604cf080fd13f10f4df8abdfec1107ad2754c38c30d7766d95bebc"
  },
  {
   "id": "NZK-37b",
@@ -12926,8 +12926,8 @@
   "path": "data/NZK/38.json",
   "sung": true,
   "sv": "5e52651e85a709983ec3e8fc37f601e0fbbd2f2741104aed87d325de3d000165",
-  "v": "be5fdb8c531a9337d3d22db491fb6d470efe62cf5b28e773efc6f3e5d2775f93",
-  "english": "I Sing the Mighty Power of God"
+  "english": "I Sing the Mighty Power of God",
+  "v": "94af35a6f9e102517762a1a49a1ef86b044722ff162a1789f19b5dc4e924ad8f"
  },
  {
   "id": "NZK-38b",
@@ -12945,8 +12945,8 @@
   "path": "data/NZK/40.json",
   "sung": true,
   "sv": "476cd75c4d9267132567503e787ecc4d982e496c022128f5313774593e06ef58",
-  "v": "2eb5acd59920464f21ccbcef5c597bba9fe10c93396367be658c19e571cc95de",
-  "english": "Fill Me Now"
+  "english": "Fill Me Now",
+  "v": "ce93483a9f467b9019d022c42afb42d1793d6deb118939d117183f8d307e51c0"
  },
  {
   "id": "NZK-40b",
@@ -12964,8 +12964,8 @@
   "path": "data/NZK/41.json",
   "sung": true,
   "sv": "b2dfee7e11026ea52b23c5922309f22c80f1c2629f842f3e9209bc132b70f012",
-  "v": "75d70a30bc0ce69c83c69f4a71b42eddddc081fdd963cf3ed6fea3853dbe0de8",
-  "english": "Holy Spirit, Faithful Guide"
+  "english": "Holy Spirit, Faithful Guide",
+  "v": "a65f986e74fb7254ee0bc7ca4d3676647deba187c6baa134e497889829b06a81"
  },
  {
   "id": "NZK-43",
@@ -12975,8 +12975,8 @@
   "path": "data/NZK/43.json",
   "sung": true,
   "sv": "6e783a1447d2b3f855fd388c5fd17097bc035581f672a1bf526a0f9ac3ba09d0",
-  "v": "a189c1a2bdd130621a0a110c30a1b46700c62c7927cd725238410ca46a9f05be",
-  "english": "Leaning on the Everlasting Arms"
+  "english": "Leaning on the Everlasting Arms",
+  "v": "5ed56a0404cf9908dd06886be2621a0dd6ca7db600faf948af833aae16e70441"
  },
  {
   "id": "NZK-43b",
@@ -12994,8 +12994,8 @@
   "path": "data/NZK/44.json",
   "sung": true,
   "sv": "28c68922a4130cfa4190b84ef9245fd053e07cff0fc56faab5f5f03dc30b01b6",
-  "v": "2ea00e2afba5d84a13bd3baf762eb2e3af7aa0d1dda1c6079b2367bc578bb9ba",
-  "english": "No, Not One"
+  "english": "No, Not One",
+  "v": "c360f3496d123abb9edf58a325f02e61ff191729cac43979b2e93f97ef8fb432"
  },
  {
   "id": "NZK-45",
@@ -13005,8 +13005,8 @@
   "path": "data/NZK/45.json",
   "sung": true,
   "sv": "eae34dc468cbe97d7d23769be1b84f3df81519f05a6071b31819c3027d378cd3",
-  "v": "b2a8ccfabb36f8558cbb6c2faf80b0ab29a7dab78699507e6a5a8f54691c1a84",
-  "english": "Sunlight in the Heart"
+  "english": "Sunlight in the Heart",
+  "v": "dd47a0f0f9ba5f3cb269f75891742dedf206dabf3e2166d051c41fc90119e775"
  },
  {
   "id": "NZK-46",
@@ -13016,8 +13016,8 @@
   "path": "data/NZK/46.json",
   "sung": true,
   "sv": "dbcfabf27621ab1f4ccfcbb193b60af7a8e968cfa725979b660ae559619b6ea7",
-  "v": "8686d90f4563701fb908c698e5893da76e852ca6fe218673b2d6b40360a0d08f",
-  "english": "Sitting at the Feet of Jesus"
+  "english": "Sitting at the Feet of Jesus",
+  "v": "e750efcfcc240ede3eacbd1630751cdf314dcdc700f3db2b8f5c9df3a9562dc1"
  },
  {
   "id": "NZK-47",
@@ -13027,8 +13027,8 @@
   "path": "data/NZK/47.json",
   "sung": true,
   "sv": "2faa516907667a952e43181272c5787386f44c12e8ca84891a4ae8ccdce771c3",
-  "v": "11c54fc4d65a04b6e34ccd1f39acbfa7f6a4e05b19d260aa09fd537bf970de19",
-  "english": "Blest Be the Tie That Binds"
+  "english": "Blest Be the Tie That Binds",
+  "v": "4994921cb48dc78d91a87958cac20d51928a234a276c4b416db8b0c34d75836d"
  },
  {
   "id": "NZK-47b",
@@ -13046,8 +13046,8 @@
   "path": "data/NZK/49.json",
   "sung": true,
   "sv": "e5f99286f53e46921a5bd7f9d5502e086568c266dd8020fc396b50ada6d565ab",
-  "v": "23d70a279ffa57853dc7f6f1e775118d4ce31529346808234ac95b0faa0d3b34",
-  "english": "I've Found a Friend"
+  "english": "I've Found a Friend",
+  "v": "0668aeb3b43d8fd2ff34c5202d7fd1182def6c6debfa38417abd54be31e42f7a"
  },
  {
   "id": "NZK-49b",
@@ -13065,8 +13065,8 @@
   "path": "data/NZK/50.json",
   "sung": true,
   "sv": "7d70879e74556fef5e8ef12d3127a4eec0cb5c5a8f3980cd020e2d4b741d532d",
-  "v": "7a82568bf3cb22208deaa0f6f2e9ce4ab3511d9c348bc737ec251cd5fb916d75",
-  "english": "God Be With You"
+  "english": "God Be With You",
+  "v": "7ec13f9036d3e3ff9e7582ba4c42de6894f370d0686dd11978cc4da28ae011b3"
  },
  {
   "id": "NZK-50b",
@@ -13084,8 +13084,8 @@
   "path": "data/NZK/51.json",
   "sung": true,
   "sv": "05427b8a4566c1e4d446e6ebbd327f6d646e7cb5ec9dcd80e33f98e580081e35",
-  "v": "cab2757169a0dfe1902fd74f9d2fd596ca50b415a6239f7f283c9b2d78f53f17",
-  "english": "Blessed Assurance"
+  "english": "Blessed Assurance",
+  "v": "4c11938316cf64dbc6342e4bd406855c29c93fae74022616d780eed156468fc5"
  },
  {
   "id": "NZK-51b",
@@ -13103,8 +13103,8 @@
   "path": "data/NZK/52.json",
   "sung": true,
   "sv": "b6b7d22bf1970ea68b4fa1ab390bc8904370e297b5cc826370ab7ff7c9b5231f",
-  "v": "e8e4348d57d29720df4dcdb8a79006510a23193352801a5c45c94959f857b8b9",
-  "english": "Give Me the Bible"
+  "english": "Give Me the Bible",
+  "v": "a91b2561e94819d6d4b23056cd37a3840f16c50fb50f43e96cd51b1ccf336f2d"
  },
  {
   "id": "NZK-52b",
@@ -13122,8 +13122,8 @@
   "path": "data/NZK/53.json",
   "sung": true,
   "sv": "6cb52758c5df0f4f4cca521c9f4340fd725d05827da9b641c65a4420e8e9f2c8",
-  "v": "135afcf08b5931afede376f05a9b8a44a55ecc39b653789718d98de3cabf0d36",
-  "english": "I Love to Tell the Story"
+  "english": "I Love to Tell the Story",
+  "v": "8764801a326a824ff21a5b634e04185a4841642c522fee89a359638a512ccc79"
  },
  {
   "id": "NZK-53b",
@@ -13141,8 +13141,8 @@
   "path": "data/NZK/54.json",
   "sung": true,
   "sv": "5f6e80f0576ae7998313d7e6ded0ecc9290ec1c33bb0417a5942e9c22ff79aee",
-  "v": "69f2534b1ca3192771a68029d5944df29cbd1fd75b796b7a69bbb521f022f277",
-  "english": "More About Jesus"
+  "english": "More About Jesus",
+  "v": "588feb349c08fd8afeed63a503ec6b85db5547596be0e794a27b0e695ed47534"
  },
  {
   "id": "NZK-54b",
@@ -13160,8 +13160,8 @@
   "path": "data/NZK/55.json",
   "sung": true,
   "sv": "ba80f3ac9cee991d6c3242300b4fc51be7f11767695e8e5837cc9b6d8daffe74",
-  "v": "7a075d10f1baa74b998ae4a750fae10ff662d3f87e8848823014c690919eb814",
-  "english": "Bringing in the Sheaves"
+  "english": "Bringing in the Sheaves",
+  "v": "7f1defcf2daa5e3d8cd6cfd5fe2ed00b5cf67cba5e45d2e57a67a579c0c60fac"
  },
  {
   "id": "NZK-55b",
@@ -13179,8 +13179,8 @@
   "path": "data/NZK/56.json",
   "sung": true,
   "sv": "1c76a7c897c33b116da19019bed6dbae0b6b0f4382ead0053a7a199d0c1cac62",
-  "v": "c7dd0b8e935fc4273e571be8fcc4a56914b582a7f5a80746b8c104a5ace08ae4",
-  "english": "Rescue the Perishing"
+  "english": "Rescue the Perishing",
+  "v": "feab232571cb03dd1edfd5ece6199c45cdf3a4cab8d757254ae072b6b5570d9b"
  },
  {
   "id": "NZK-56b",
@@ -13198,8 +13198,8 @@
   "path": "data/NZK/58.json",
   "sung": true,
   "sv": "b4fb2c221a0480da5d9ef0de0d1e578561ee0ee8229de2eadd544ef3cd6acba8",
-  "v": "c840d25f93616933ca245f5696f06596dc24f76b0e94b1190d5947f44eaa9031",
-  "english": "Will There Be Any Stars in My Crown?"
+  "english": "Will There Be Any Stars in My Crown?",
+  "v": "f3b2f0075d4e9c9daabac81cc7606e7253a905a5abb73078c6cc94c9b00140b5"
  },
  {
   "id": "NZK-61",
@@ -13209,8 +13209,8 @@
   "path": "data/NZK/61.json",
   "sung": true,
   "sv": "51697e5c3992f5fce7715f479ebd717cc771d4e11f0a9b870f2cecc01bc74372",
-  "v": "e611785ffd92fa4db7f926889bf36d393669a0c7b7f702b992146d13f4339326",
-  "english": "My Lord and I"
+  "english": "My Lord and I",
+  "v": "de0545df0e71b74ef6554e49cb36edcdcf136de8e9807acd1ee8753cb1766a62"
  },
  {
   "id": "NZK-61b",
@@ -13228,8 +13228,8 @@
   "path": "data/NZK/64.json",
   "sung": true,
   "sv": "369ae136a4680bb4f1186f7da4da41cb2fa2cc25e4bd46a8b14f0bb4175bb242",
-  "v": "feb2eac10324a30eae06e49aa9d7d3150ecb4f6861179b6f972300b5429a7b63",
-  "english": "Watchman, Blow the Gospel Trumpet"
+  "english": "Watchman, Blow the Gospel Trumpet",
+  "v": "9d09bb157dd3be669b2fc1195fc738327266052a7d233f5b250fff3213b08a38"
  },
  {
   "id": "NZK-65",
@@ -13239,8 +13239,8 @@
   "path": "data/NZK/65.json",
   "sung": true,
   "sv": "aa3a0f8911313612cfc6dc96f741c9151dca8cf1878e3642430acb0505d6cc09",
-  "v": "ae068d48d37beebbb33926f6561fe6137610f452609c232f91fadec3e9fc24f8",
-  "english": "Onward, Christian Soldiers"
+  "english": "Onward, Christian Soldiers",
+  "v": "87772bb0dd91bceae299d133863ce590a597a668ae551faa33d7e30c7124d273"
  },
  {
   "id": "NZK-66",
@@ -13250,8 +13250,8 @@
   "path": "data/NZK/66.json",
   "sung": true,
   "sv": "5fb679e105f5f6907a407d3a81a97b15c85d6d4b8fc822f0a14d2dc1b6b4933b",
-  "v": "3588328a713a06310f4814bc4ae7cef315ff35310fbaadd1a25f80849bd04584",
-  "english": "Awake, My Soul"
+  "english": "Awake, My Soul",
+  "v": "084ee5a6c09bc716c2b54c5089db9618a4e598b47138709eeb5821ea26bb8c0a"
  },
  {
   "id": "NZK-66b",
@@ -13269,8 +13269,8 @@
   "path": "data/NZK/67.json",
   "sung": true,
   "sv": "5e99243e2775873a57a30caf2cfa3b5a199b276e0497d7a19f9b008ba2779a35",
-  "v": "245d203ed0b8704c5db3938c1519c8906e975ad9d10cb60ed86e8486446ee553",
-  "english": "My Soul, Be on Thy Guard"
+  "english": "My Soul, Be on Thy Guard",
+  "v": "e43213fe37df9dee48c70095db4863588aa4980f824e287924f89ceca92aeec0"
  },
  {
   "id": "NZK-69",
@@ -13280,8 +13280,8 @@
   "path": "data/NZK/69.json",
   "sung": true,
   "sv": "836518507bea590cf5aaead99fae0cf7cf82419bb33e130abfdc2c3132b66194",
-  "v": "f42010ed8d2b0998ac5a2fe6df524709f18fbd4b2ce287d1b0b78d3a33c14d02",
-  "english": "My Hope Is Built on Nothing Less"
+  "english": "My Hope Is Built on Nothing Less",
+  "v": "7e17d9568b8f3387067e47a75e22409a372993626cb3c6d2a2d53fa7e7fcaba5"
  },
  {
   "id": "NZK-69b",
@@ -13299,8 +13299,8 @@
   "path": "data/NZK/70.json",
   "sung": true,
   "sv": "2ff5a5b42603ac93f96a2e9cbe8d734738fd4519e466f93bb2e21dc451d51177",
-  "v": "2e6b39cd7ebaa6ad6bdbaa562ce42c2bf43310ac256639c56710c45d634191a4",
-  "english": "Marching to Zion"
+  "english": "Marching to Zion",
+  "v": "b4312d00b3b5662c57adb16a2d2946e091c5f46354af2e46ed4fd064739af35c"
  },
  {
   "id": "NZK-73",
@@ -13310,8 +13310,8 @@
   "path": "data/NZK/73.json",
   "sung": true,
   "sv": "52cbf4da6d47b68255038a23855662dce60ba63059ad98db86c946b15603aab0",
-  "v": "b96bfbe7dab6d1b3b3ecae4a75901c9c0db82b48c3fe3d916de84507ee444199",
-  "english": "Higher Ground"
+  "english": "Higher Ground",
+  "v": "7c983b9707aba637a9285a24d37e8a9dffcb106702f2031b145f5f17c062f2d3"
  },
  {
   "id": "NZK-73b",
@@ -13329,8 +13329,8 @@
   "path": "data/NZK/76.json",
   "sung": true,
   "sv": "8b9b69a1b3e3e878167a8ea5e1b80710e7d704ef0828359c694011a3b3dffdbf",
-  "v": "67116389fcdfca518e12f37cbd732d1d11f330ba1a911769d0717090acc7095c",
-  "english": "Heir of the Kingdom"
+  "english": "Heir of the Kingdom",
+  "v": "e6b3ab1d183df787167052bc974627084cea5cc9448de34d3a8fddc28c8a2702"
  },
  {
   "id": "NZK-78",
@@ -13340,8 +13340,8 @@
   "path": "data/NZK/78.json",
   "sung": true,
   "sv": "3515b6681f70735672b18bb70dbe922653e94d2949e22ab25463bc86268c16ec",
-  "v": "b518d90e822e8b0e3ce4b179c85c76ae6ebc90a09672f2110bcba68c986a9b8b",
-  "english": "How Long, O Lord Our Savior"
+  "english": "How Long, O Lord Our Savior",
+  "v": "ec03058c52bd63821c6654f13a43fcc6c9511fe9b39bedebf8eb6d8e6cda2602"
  },
  {
   "id": "NZK-80",
@@ -13351,8 +13351,8 @@
   "path": "data/NZK/80.json",
   "sung": true,
   "sv": "3661afa5a45de2a362fda1ed2825c5117f488f4954e6b93806d0b523bb09c7a5",
-  "v": "f641a289f4232a06987479fef55c01992ddfee04566a012d285750491a0e3276",
-  "english": "O for That Flame of Living Fire"
+  "english": "O for That Flame of Living Fire",
+  "v": "ddce02430d76d8d0979be8f6f21440f0d093a32dfc1d35022bcbfec7c6ca4e57"
  },
  {
   "id": "NZK-80b",
@@ -13370,8 +13370,8 @@
   "path": "data/NZK/81.json",
   "sung": true,
   "sv": "014ab468200f130ee87313ccf95a84fc036688b13663882254a0fdbd84080f49",
-  "v": "4aed2277620045af88152538d77b81efb4c6c2543e7527380fedd50a82cd50e4",
-  "english": "Another Six Days' Work Is Done"
+  "english": "Another Six Days' Work Is Done",
+  "v": "bc848370b1778dcd951e49e4cc2fe88eb85f7d89b785626ab9d5458efeacd0fa"
  },
  {
   "id": "NZK-82",
@@ -13381,8 +13381,8 @@
   "path": "data/NZK/82.json",
   "sung": true,
   "sv": "e5a1945e49cc875ba5daac9dcd47499138c7eff571b749021d0de5748897bbd0",
-  "v": "d522fdc687313700944311d2b7f1f0188e46149f1741faf9b822e7e72e354641",
-  "english": "O Day of Rest and Gladness"
+  "english": "O Day of Rest and Gladness",
+  "v": "35ac8e993d4b657b1edee06bbfa715f656e40b5f54abaddde6048eac52c1a59e"
  },
  {
   "id": "NZK-82b",
@@ -13408,8 +13408,8 @@
   "path": "data/NZK/84.json",
   "sung": true,
   "sv": "dd8081e7802fa8f068244c56282822e83df0285ae2a1c4538b4ab9f102e2da97",
-  "v": "ae3421a19e3e667630731d25ab9aa0c13fda902e7d0b5c6beed07c66b6ef3141",
-  "english": "Don't Forget the Sabbath"
+  "english": "Don't Forget the Sabbath",
+  "v": "020b653e21138a43898bd537a483cd6ed63a615eb0169cc031ed28eaaed7911a"
  },
  {
   "id": "NZK-84b",
@@ -13427,8 +13427,8 @@
   "path": "data/NZK/85.json",
   "sung": true,
   "sv": "f757b72eea530f08d5d152f2a3b462f0f14bd7f16b20e533ed46f33aba6b4d2c",
-  "v": "8d3c469a228f5d86d6c8ef1be1ad469cdda64408ec40fa57055d923c9afdbe57",
-  "english": "Safely Through Another Week"
+  "english": "Safely Through Another Week",
+  "v": "2433b182e651e245a35ecfa0dec2f65ff8924338377ae4840413bcab0c3a1cf0"
  },
  {
   "id": "NZK-85b",
@@ -13446,8 +13446,8 @@
   "path": "data/NZK/86.json",
   "sung": true,
   "sv": "2b7493085a743e50492da4221a268b0d11f9d3ffee56fef5fc49fd15614fc021",
-  "v": "5d4e59578cba160e75e4035eaacab7cfc3289dcf569570e704d333b6c597c589",
-  "english": "Welcome, Day of Sweet Repose / Welcome, Welcome, Day of Rest"
+  "english": "Welcome, Day of Sweet Repose / Welcome, Welcome, Day of Rest",
+  "v": "489c760a7c02c87921df944120bedeb38786f94e8bcf4cbd7dced7e6f0f209a4"
  },
  {
   "id": "NZK-89",
@@ -13457,8 +13457,8 @@
   "path": "data/NZK/89.json",
   "sung": true,
   "sv": "976b422e6fbd4f4b4e3cce0408d430bc3310030b555f672fc5711035dae0d299",
-  "v": "e4135a79bd84115f45c24459ee9fd32b5cfe475a3756163e4e6ceb94f24223b3",
-  "english": "Lord, in the Morning"
+  "english": "Lord, in the Morning",
+  "v": "0a050c471b54a96533c79cbc07b6f946a8940e1fe21ba9b88cda9640915295eb"
  },
  {
   "id": "NZK-91",
@@ -13468,8 +13468,8 @@
   "path": "data/NZK/91.json",
   "sung": true,
   "sv": "f234eb1c2504c6248e646a54bdf5e51dafa8a1a401cf0b66904f1a692040ce08",
-  "v": "4ab8eb53c899f2c5a6025d8fe7bb7f352bd67e78bbcdac6a71fe6dff382c53a8",
-  "english": "Abide With Me"
+  "english": "Abide With Me",
+  "v": "0ed034b40dee680ab94ca6e4b60688eadb3dc1c11343fe616c24a38d92a38142"
  },
  {
   "id": "NZK-92",
@@ -13479,8 +13479,8 @@
   "path": "data/NZK/92.json",
   "sung": true,
   "sv": "a8ebd22ef708fde01954c920e42b0ce9cc242e0841c517df5decd35f813c3209",
-  "v": "1a0aaad3604b3815587f8759638b480c5fa12354b56231846d3a3ddaddb551d1",
-  "english": "Day Is Dying in the West"
+  "english": "Day Is Dying in the West",
+  "v": "2c1d7ebe05b1de2e5c651e0f4a44868d444b051968d147e4a2231a421cabe3f9"
  },
  {
   "id": "NZK-92b",
@@ -13498,8 +13498,8 @@
   "path": "data/NZK/93.json",
   "sung": true,
   "sv": "1e152c4456205b3612e42738099ac154802e5b4d30641276846084a5d5917f2c",
-  "v": "cde24ed999722d46d0a856cee0d2104c25b47254830c5135f04386750a2f8fc6",
-  "english": "Sun of My Soul"
+  "english": "Sun of My Soul",
+  "v": "2ca08617a98490f17a451a5ee521cfaffc8cfde3714598d3ac305c503fc74012"
  },
  {
   "id": "NZK-94",
@@ -13509,8 +13509,8 @@
   "path": "data/NZK/94.json",
   "sung": true,
   "sv": "f7d810977cef9efcae0d5563c8c641407229503cf8064eaa1d10acca5505c2c2",
-  "v": "abecaa497b5929dcf54116cb925a39a3e8ce082b652702e5b828830818fb6bd9",
-  "english": "Far and Near the Fields Are Teeming"
+  "english": "Far and Near the Fields Are Teeming",
+  "v": "1aa6aabbacc7b194b892da13c555da5d027d7318f762e6de9bf4c92ee3328918"
  },
  {
   "id": "NZK-94b",
@@ -13528,8 +13528,8 @@
   "path": "data/NZK/95.json",
   "sung": true,
   "sv": "f01cb2da23e63d72e16ec5e191c66c335a571b3bccf451b6c994e8a66ccd9864",
-  "v": "d306e644a8899e2f59a6bacef36c6ecc58e61e62a1d0ec31249d74288c7e127a",
-  "english": "Bring Ye All the Tithes Into the Storehouse"
+  "english": "Bring Ye All the Tithes Into the Storehouse",
+  "v": "e708ce525d7dc703479bdc951f8961db4740fc1b8f682c227da4c7043153b669"
  },
  {
   "id": "NZK-96",
@@ -13537,8 +13537,8 @@
   "number": "96",
   "title": "Mali Yako Sasa",
   "path": "data/NZK/96.json",
-  "v": "fad65b40f01b45e710a83db7e9a178d0df64390fd357a1b4e0880f64d425e94d",
-  "english": "We Give Thee But Thine Own"
+  "english": "We Give Thee But Thine Own",
+  "v": "df1b1579781427d4f9f8f7524a8d9402d8ddbe54ad99faec8684bbb0f3b897b8"
  },
  {
   "id": "NZK-97",
@@ -13546,8 +13546,8 @@
   "number": "97",
   "title": "Sioshwi Dhambi Zangu",
   "path": "data/NZK/97.json",
-  "v": "6863bba13342d5d735a21cb13b326ba320f24a3079e3797372a2dab742e29c3b",
-  "english": "Nothing But the Blood"
+  "english": "Nothing But the Blood",
+  "v": "1817befc353234ed7e21e1a5bc2a8dcd5a8b00f2ad152efa67054af9abf5fc67"
  },
  {
   "id": "NZK-98",
@@ -13557,8 +13557,8 @@
   "path": "data/NZK/98.json",
   "sung": true,
   "sv": "d89f99906ac5e32ce52739da7f2573813f0c06ed5c5b7ec542ca5c0d7fb57d65",
-  "v": "d83bc96d7c32ed76fe1c4a9a6b76d116274e634d37586047658a41198febbdf6",
-  "english": "I Gave My Life for Thee"
+  "english": "I Gave My Life for Thee",
+  "v": "cb51026856ed025da28e2741dda0e63864e1b4c059ba73975bab5c0c9dc208b7"
  },
  {
   "id": "NZK-98b",
@@ -13576,8 +13576,8 @@
   "path": "data/NZK/101.json",
   "sung": true,
   "sv": "b37e9c0e345ed741485491d3486f0205600b9c7711efa06af46aa30eb3d64c1d",
-  "v": "ec9606c774fc6460b59b7b6beb2408a0b14f659fe175eb18d0bb7d9d8016a7ae",
-  "english": "Jesus Is Calling"
+  "english": "Jesus Is Calling",
+  "v": "3db7c00dfc90ff50a2467c3f9facd16913a930daa27094f708d409e434ebbdc5"
  },
  {
   "id": "NZK-103",
@@ -13587,8 +13587,8 @@
   "path": "data/NZK/103.json",
   "sung": true,
   "sv": "e72fdc14264f014f35ad8ae53511584bd37d71d33ecf0760539563780e8eeaa2",
-  "v": "f1d3090d122a835855a39fb62cef3de9e28a23463b5a8863935cb139c06b38dc",
-  "english": "Softly and Tenderly"
+  "english": "Softly and Tenderly",
+  "v": "4bbaf51759717707d97b5cc1028599df14bf59bdc7700fa09f6db3b53b4a09ac"
  },
  {
   "id": "NZK-103b",
@@ -13606,8 +13606,8 @@
   "path": "data/NZK/104.json",
   "sung": true,
   "sv": "941c4167209529bd45ba1d32f57f7de19e6a35235a4f1ae58b509e77fb180975",
-  "v": "dd94f0c104397334c1b4bc1ae4ebc92f029853e97ed406f66be569836a9b7c93",
-  "english": "I Heard the Voice of Jesus Say"
+  "english": "I Heard the Voice of Jesus Say",
+  "v": "35ad966079d5a364af75c25a4cc0be8b2309a9ae6456b8b09e4bb5889fda724e"
  },
  {
   "id": "NZK-107",
@@ -13617,8 +13617,8 @@
   "path": "data/NZK/107.json",
   "sung": true,
   "sv": "d7820306e8a09bf4c56f1b1e47b8109020c3f63a233daff929a92f8711d66fe5",
-  "v": "40737ab3ceb6ed71b217bc223995067a5600504dbba4f73956ae0c344ff34dd3",
-  "english": "Hark! the Voice of Jesus Calling"
+  "english": "Hark! the Voice of Jesus Calling",
+  "v": "883c964edd3b5ffbd18005d66ab852bd1ebdd4a44e74dba46e68deb1f2ebb3e9"
  },
  {
   "id": "NZK-108",
@@ -13628,8 +13628,8 @@
   "path": "data/NZK/108.json",
   "sung": true,
   "sv": "d42af23374beb12e4445ab36dd0cf31da8c83c91cececaedabea3cddd13b2725",
-  "v": "f60949953e9947b58cfc0abd25b8d040575947566d9912af20d222dbd9e7c3df",
-  "english": "Jesus Saves"
+  "english": "Jesus Saves",
+  "v": "ab7902789e2b9ab66f1712bdc3639c5c5d3fd5f3ddba6ec2bacd0f2bb5fb8b7e"
  },
  {
   "id": "NZK-108b",
@@ -13647,8 +13647,8 @@
   "path": "data/NZK/109.json",
   "sung": true,
   "sv": "c06531a26e58f0f08732662cbff40aefa9e7b40111b1b0dfe4bfd2307b84da0f",
-  "v": "a4ba56833b7a54f2ea9d4f24473c691e7e271a89a2eaf2e316317a5bf20f7004",
-  "english": "Whosoever Will"
+  "english": "Whosoever Will",
+  "v": "200f9858acf62bf33518acc8adcfebe4bba6a6105d5a135456665cdfe908928f"
  },
  {
   "id": "NZK-111",
@@ -13658,8 +13658,8 @@
   "path": "data/NZK/111.json",
   "sung": true,
   "sv": "40b07d031f095d0f273da57a65514259ac4496a2c8a01f215fc8b0f7f83feec5",
-  "v": "90ca979c43594706c4e7c283cf17a7d9452222aed304ddb452b6c5a61569e1ba",
-  "english": "The Great Physician"
+  "english": "The Great Physician",
+  "v": "e16ecf9769330535a514695ec9edd484e5740edb0303b874fd1b32489704ded1"
  },
  {
   "id": "NZK-111b",
@@ -13677,8 +13677,8 @@
   "path": "data/NZK/112.json",
   "sung": true,
   "sv": "024ae0c8f83c96e8f54e2b78a631bc6e91fdc627edbbc7e59fb99a560f6f541e",
-  "v": "eef801f63377b96cba735d54b2486f9ee127241cdab90086656fb8a83d295888",
-  "english": "Art Thou Weary, Art Thou Languid?"
+  "english": "Art Thou Weary, Art Thou Languid?",
+  "v": "3a5c5572a0f95d29e02768814940c47d37ef921114aa326529b7de39892c10b6"
  },
  {
   "id": "NZK-113",
@@ -13688,8 +13688,8 @@
   "path": "data/NZK/113.json",
   "sung": true,
   "sv": "550a0fbf54a2c6d5cf3cfd9a294f4fa3d91a0349732a1b6b4123015c83ef04b7",
-  "v": "f90f23e5c70bd22524694c3b530d567ea48a825b2524b8845dba6e30027c7d2d",
-  "english": "There Is a Fountain"
+  "english": "There Is a Fountain",
+  "v": "a1e2297e6007246a9810d239f8725fb624f7f8972a64f861edb9c9276906e78b"
  },
  {
   "id": "NZK-113b",
@@ -13707,8 +13707,8 @@
   "path": "data/NZK/114.json",
   "sung": true,
   "sv": "500060b6a4c9f24454dec5a7089ec4064a833259bd5398a7b51a45193dcc1d33",
-  "v": "c2718a3c61a1e66a3d462c6d79c4da419806d4945620c0f75a62338e08773e86",
-  "english": "Whiter Than Snow"
+  "english": "Whiter Than Snow",
+  "v": "161933000566a835247fe75bfbcfae18dfe8b9844efaf0d48da3495294f0c344"
  },
  {
   "id": "NZK-114b",
@@ -13726,8 +13726,8 @@
   "path": "data/NZK/115.json",
   "sung": true,
   "sv": "cb5589e993e00ea4c3395b250b4e887c0a2eac545c91505923a0f1035092018f",
-  "v": "c24eb7356a392112a4e48c5d1be9255cebcb79a5e28bcf304510e36803905af7",
-  "english": "I Am Coming to the Cross"
+  "english": "I Am Coming to the Cross",
+  "v": "e06e906e491ed4f4eab5f4799d5a0a4610636c4313681220a67a08739735051e"
  },
  {
   "id": "NZK-115b",
@@ -13745,8 +13745,8 @@
   "path": "data/NZK/118.json",
   "sung": true,
   "sv": "4d59874307bb289bfdc3be22f10cdbb24ff84a9003d3f6fa846c11cbbb6d5b1f",
-  "v": "ebbd3526230bd506c9fcf62ae44544a7adc3ba0e08a97e4de28820e7654711d6",
-  "english": "Lord, I'm Coming Home"
+  "english": "Lord, I'm Coming Home",
+  "v": "693f7318ff41d1b586969e4f1fe8f24004148c77d66674bfc96cc76fd47269e9"
  },
  {
   "id": "NZK-118b",
@@ -13764,8 +13764,8 @@
   "path": "data/NZK/119.json",
   "sung": true,
   "sv": "3f30b4a82cffa092051ce55ff93d175490b775acf42654b09de5cef34153f6e7",
-  "v": "ecd330d5d76fa97707d0f934c5b2bb8838a0377a342b7e8bbb2d09a08db59950",
-  "english": "Jesus Paid It All"
+  "english": "Jesus Paid It All",
+  "v": "599389d1fc886f2ccffbda7174086326cef6371fd05ac87a3b311c9eb15698b0"
  },
  {
   "id": "NZK-119b",
@@ -13783,8 +13783,8 @@
   "path": "data/NZK/120.json",
   "sung": true,
   "sv": "8d79c1d04c6036ba7050336fc197eade406962da8f51a351ffea6fe12e13b72d",
-  "v": "a9b1b634a4822330a4a094e46f695c8282612c34caf06e17d1c388965677e4c5",
-  "english": "Near the Cross"
+  "english": "Near the Cross",
+  "v": "aac62f99dfcb2d10eaf66a33def9fde9ecfd0a50748e40744e566cb76f312dd8"
  },
  {
   "id": "NZK-120b",
@@ -13802,8 +13802,8 @@
   "path": "data/NZK/121.json",
   "sung": true,
   "sv": "e91f4c19db21eacdb3cabb98926b3cb1d45977093bd371daa07dcd6e68486f6b",
-  "v": "a6f2ad5bd5b2a68a5f65eb0a14ef00be707c7b69d52fce3218b18786803213fc",
-  "english": "Chief of Sinners Though I Be"
+  "english": "Chief of Sinners Though I Be",
+  "v": "0e0ffaa8abc71374e83f14a9be85f15c31dc2f81734baf20818625f2202215ba"
  },
  {
   "id": "NZK-121b",
@@ -13821,8 +13821,8 @@
   "path": "data/NZK/122.json",
   "sung": true,
   "sv": "42fd28877dffb5028e0ed54b17ff9be71a3c21bbd3bf8e6c4575838a9f47df8c",
-  "v": "cf3d3b4fbfbdf699e92b5e75242793c7ac8c0c0ea8793c6a2f531d40b284463c",
-  "english": "I Surrender All"
+  "english": "I Surrender All",
+  "v": "aa82c039530093795c2a6a0d9660bc8b309dc5bd72b22f135fa45da7468e371c"
  },
  {
   "id": "NZK-122b",
@@ -13840,8 +13840,8 @@
   "path": "data/NZK/123.json",
   "sung": true,
   "sv": "2bc1a174d3dd440131b89069f686a1e96c8f5c5c11bc0ec5bafdfa4a63ff30ed",
-  "v": "f6602690e8b5fb9a48656429ed4c6ee21f39042104c29fb40ed7a2e57e71c44e",
-  "english": "My Faith Looks Up to Thee"
+  "english": "My Faith Looks Up to Thee",
+  "v": "8bd1e0b0190d64fd79594619c96f5540854aa96af5749a2f35e059e6f5f4fdd8"
  },
  {
   "id": "NZK-123b",
@@ -13859,8 +13859,8 @@
   "path": "data/NZK/124.json",
   "sung": true,
   "sv": "94ef5ea8d4e2390e58a1c017b56224c913c98f2f22271c11b9191173f4e1222c",
-  "v": "cde033adb8a1098d73be7944a715c50783255161cfb12e12ed92fce4c87b3400",
-  "english": "Tell It to Jesus"
+  "english": "Tell It to Jesus",
+  "v": "0b09c068d338f5bc7734e6f3dae8ea55091b15db3a75e18119f190f9bef8970b"
  },
  {
   "id": "NZK-126",
@@ -13870,8 +13870,8 @@
   "path": "data/NZK/126.json",
   "sung": true,
   "sv": "2c0bfa7106b7127d318bf8c836999e6aca4b88505da23d000c2167bbebc30f64",
-  "v": "1fad4403979d2e48833e40ce201cd74a3a0091dba0c8231793c14ae5dc2e70d0",
-  "english": "I Need Thee Every Hour"
+  "english": "I Need Thee Every Hour",
+  "v": "69635ebc4c5f0d45ce2b57d440aa855efd4ebf3d50940d827143325db5413b3c"
  },
  {
   "id": "NZK-126b",
@@ -13889,8 +13889,8 @@
   "path": "data/NZK/127.json",
   "sung": true,
   "sv": "24042b8585e8c44715c49a5cc79f905d94e6036e67f810de18cefe581ea9689b",
-  "v": "b0211af217de079e07ecc07c73c732e176509850ae79249b90553e3b380c6ef9",
-  "english": "It Is Well With My Soul"
+  "english": "It Is Well With My Soul",
+  "v": "dc214a7c26e10b686cf8af11ab6335c09765d8a7230e7c70953c99ebe8404ba3"
  },
  {
   "id": "NZK-127b",
@@ -13908,8 +13908,8 @@
   "path": "data/NZK/129.json",
   "sung": true,
   "sv": "e2a1ad1e23cfa1ed23f6f3ba7df9444c1dec5edf6b881762adc837d392c1c8f1",
-  "v": "98f18f05f57f5512fdc9939d06bba415c3ef66e30d7e6cf61577264f1831ace1",
-  "english": "'Tis So Sweet to Trust in Jesus"
+  "english": "'Tis So Sweet to Trust in Jesus",
+  "v": "6fa27ff1ec16138caaebae6dc2a81776b025eac182b9353ce194ae46a0b8860b"
  },
  {
   "id": "NZK-129b",
@@ -13927,8 +13927,8 @@
   "path": "data/NZK/130.json",
   "sung": true,
   "sv": "fd43ea2830e49a45bf57c0b53b86361d8f95442c481bef7a2adda0c293328f44",
-  "v": "d899febe1e45c560a4a9e1f1026c69dfce2c57ac2e575d753f000b185e17253f",
-  "english": "What a Friend We Have in Jesus"
+  "english": "What a Friend We Have in Jesus",
+  "v": "898068fb6a33074ebc774cdcb33bc6066aef1dd02fb10f284988f01a7144ff51"
  },
  {
   "id": "NZK-131",
@@ -13938,8 +13938,8 @@
   "path": "data/NZK/131.json",
   "sung": true,
   "sv": "296f9c805ddfe8aabc70b1c9087d378624d901bd0cc943b9e08449f3ca35f4e1",
-  "v": "5b156eee4c790be43c17a47374b57ecf352fe785d415aa942fe1555642e790cb",
-  "english": "Lord, for Tomorrow and Its Needs"
+  "english": "Lord, for Tomorrow and Its Needs",
+  "v": "97031c5f2bafba8aabaab61213b3a16bde767985ff9072adbb223e57bf9af289"
  },
  {
   "id": "NZK-133",
@@ -13949,8 +13949,8 @@
   "path": "data/NZK/133.json",
   "sung": true,
   "sv": "4a3c67e55e8c904d6ca02ffed230c61413f200992682ae07c5bda3164c913d05",
-  "v": "82b133d44cff294aea9753d219fdf378177637221ad586aeb105e676bca1d37d",
-  "english": "Anywhere With Jesus"
+  "english": "Anywhere With Jesus",
+  "v": "25041b911c96c71750fa5bd695a7ce024065a404943fe5b9e08ec2b0ddfec0df"
  },
  {
   "id": "NZK-133b",
@@ -13968,8 +13968,8 @@
   "path": "data/NZK/134.json",
   "sung": true,
   "sv": "e71a5983d95206c6c5e5b6c85d6bdbf849aeb8a4363f720daab6355ca42f73de",
-  "v": "e3ac0d9b76a583817f8144d4713c09d1d8b560a8820979c5b1166096a1249d08",
-  "english": "Take Time to Be Holy"
+  "english": "Take Time to Be Holy",
+  "v": "0c9a201607a27f170984caf9a2cbc97f8f8f409eccac21c1b159fbc47796cfc3"
  },
  {
   "id": "NZK-134b",
@@ -13987,8 +13987,8 @@
   "path": "data/NZK/135.json",
   "sung": true,
   "sv": "14c43843fac39a46561cf4f616f82d5e8b8fe4a4213777ea001d32802369167f",
-  "v": "6f893e275f5ebe38f0c0142972cfbb3bb15dfd0eb87f0241926a306bc162d44a",
-  "english": "Sweet Hour of Prayer"
+  "english": "Sweet Hour of Prayer",
+  "v": "3b6ff5c0b4a99d75db55d04ec88ae6264e70f8a2b85c23bfe5c14fd94a9f6f5c"
  },
  {
   "id": "NZK-136",
@@ -13998,8 +13998,8 @@
   "path": "data/NZK/136.json",
   "sung": true,
   "sv": "34588dd579f81beabb8635502a1876316d99a6dc420bbca60b688db254b7f739",
-  "v": "46022d59605e183339fcc1a39686f3d7183ca12ff02e6b9fb1c3d56b75d5e8de",
-  "english": "Like Jesus"
+  "english": "Like Jesus",
+  "v": "779fa571a2c6008ae20ad03fddede2554a4be3cd224c0c926591752b9c55de72"
  },
  {
   "id": "NZK-137",
@@ -14009,8 +14009,8 @@
   "path": "data/NZK/137.json",
   "sung": true,
   "sv": "996a1a66a6da2312a9b4bfc47cfe29bc2ff56295759742fdeae47e9e6544d848",
-  "v": "1d971081dfb56d4820df50c3f81a1b6674ea48407121ca8c3d747e037f6a7e4d",
-  "english": "'Tis the Blessed Hour of Prayer"
+  "english": "'Tis the Blessed Hour of Prayer",
+  "v": "c4de322ede90b10cdec5bc328331e8401b233ee9dc555ea425dd61199a421533"
  },
  {
   "id": "NZK-137b",
@@ -14028,8 +14028,8 @@
   "path": "data/NZK/138.json",
   "sung": true,
   "sv": "441858c18cc2e32b3d7268d0218ea2c801a004c280fc9892f99a85a3c4a39574",
-  "v": "218fca7c24835cf11b1ffad16aa0c365bc1addf1ce422975bbe5d2cb6841a892",
-  "english": "I Will Follow Thee"
+  "english": "I Will Follow Thee",
+  "v": "966ee01a84dfb6792e72c2d4e8c05c7b3a3f1d72f7210fa01367763141884372"
  },
  {
   "id": "NZK-138b",
@@ -14047,8 +14047,8 @@
   "path": "data/NZK/139.json",
   "sung": true,
   "sv": "3eea893dba8e083ad91fc778c6e40c618d09685cdb77da5e417afa5fd5acc2db",
-  "v": "c2c729aac4859f81a6a28321461d052f31fa048ea44cb171712cea7eee6be72a",
-  "english": "Wonderful Words of Life"
+  "english": "Wonderful Words of Life",
+  "v": "7c671686443743fdcd3a05cdd9e00d6946300076ba2d306dff91419f10ba275e"
  },
  {
   "id": "NZK-139b",
@@ -14066,8 +14066,8 @@
   "path": "data/NZK/141.json",
   "sung": true,
   "sv": "1db1b111ec39c3380db7c0b5918ddc738dc52fc3b000f2fcbccebfe24432645a",
-  "v": "b67af045bd74fab4ba2e963964d65aeb77750cfbe93c458b992268c2659dc86e",
-  "english": "Beneath the Cross of Jesus"
+  "english": "Beneath the Cross of Jesus",
+  "v": "d8644a3061fefd8dbdbbbc323b778a9f50c261f6710b23fa4cb1f32eb22d3aae"
  },
  {
   "id": "NZK-142",
@@ -14077,8 +14077,8 @@
   "path": "data/NZK/142.json",
   "sung": true,
   "sv": "f51239e3778667cde184f5ffed20ad1ad80ef47834ce907c6d79a73b66cfce14",
-  "v": "d09b1150bb0909dd87c3ee660f88680de2fc4c21f339acd68d6c374d2b13f5b0",
-  "english": "I Hear Thy Welcome Voice"
+  "english": "I Hear Thy Welcome Voice",
+  "v": "e5a84f7aabf6d8c7f30ce4afcf44f69ac85f1e523796929d442d3284211a9d1c"
  },
  {
   "id": "NZK-142b",
@@ -14096,8 +14096,8 @@
   "path": "data/NZK/143.json",
   "sung": true,
   "sv": "c62c6ede73174603e73f89d69d9ae6702e9e91678d7b5364aad9f5c1d67f07fe",
-  "v": "1149d4b189773a8653c62dff7747da7744fd234751a74dc152f38a0126f1b9b7",
-  "english": "I Do Believe"
+  "english": "I Do Believe",
+  "v": "abaaa45e33f52b7f34d8124edee755836cf8a7dc00c1740894cf77f6e5b145b3"
  },
  {
   "id": "NZK-144",
@@ -14107,8 +14107,8 @@
   "path": "data/NZK/144.json",
   "sung": true,
   "sv": "6d48dedf6331e22147859803cad640062e81eeb6e5c159e5f4d926a7d8747ebd",
-  "v": "7bb9320bbf4fe854a989c39c55c7163d870c06b61cac87225ec000e5e205b2c8",
-  "english": "Draw Me Nearer"
+  "english": "Draw Me Nearer",
+  "v": "a213618683d5991b102d2c8343719859d48c9fada7b99f341ed9c46842db26f5"
  },
  {
   "id": "NZK-144b",
@@ -14126,8 +14126,8 @@
   "path": "data/NZK/145.json",
   "sung": true,
   "sv": "d5480dfe6f076fcc564833b29da88b00cd6c3e5bf5f1fadba3d312718316cab7",
-  "v": "df56077f02e0bf949689070bedcf83a9b25b5245aab94ff668ed65c31e1e0c93",
-  "english": "Take the World, but Give Me Jesus"
+  "english": "Take the World, but Give Me Jesus",
+  "v": "36ffd44c5dfc6b6b68d73a3ae71d8beffef910bac5773bd693f8496f49bc07f4"
  },
  {
   "id": "NZK-145b",
@@ -14145,8 +14145,8 @@
   "path": "data/NZK/146.json",
   "sung": true,
   "sv": "1306a4daf7f8c13bd9b2d5ed867a2a33699c7019382303e0b5020f7030914f2c",
-  "v": "1468b5f2f740ca3514d8c64b1e6c9f7c07186102a95e1bb405fa1aaef67c76e1",
-  "english": "Take My Life and Let It Be"
+  "english": "Take My Life and Let It Be",
+  "v": "3487303c2bc30b703adaa068efcf6b7ccdeda643f147a9d5cb05743bf955548d"
  },
  {
   "id": "NZK-147",
@@ -14156,8 +14156,8 @@
   "path": "data/NZK/147.json",
   "sung": true,
   "sv": "c430dbd59f7ad8ffd309e4293ca45be867832894e731dea5d821a7c7dcc5ad05",
-  "v": "53d800d7cbfe6376454ad466cf6e200a6789845847172cd8c716a42e76f00112",
-  "english": "Live Out Thy Life Within Me"
+  "english": "Live Out Thy Life Within Me",
+  "v": "9d50cb7f724648d29d8c69108862ee20f2306b1e6eab84035bf558e02e010f2f"
  },
  {
   "id": "NZK-147b",
@@ -14175,8 +14175,8 @@
   "path": "data/NZK/150.json",
   "sung": true,
   "sv": "48f0853494d80e1b53c3da4093f728f23f2202423963b1113c2f9e16b788079e",
-  "v": "866ecb22b4fde018f042e42fffbedd8e43b0934b6a722fd43fbd1f2a45728212",
-  "english": "Angry Words! Oh, Let Them Never"
+  "english": "Angry Words! Oh, Let Them Never",
+  "v": "f40d2ef5a6d0c8b5cd978d08d9e5d0e18360de2705738f9c8488b374bf324024"
  },
  {
   "id": "NZK-151",
@@ -14186,8 +14186,8 @@
   "path": "data/NZK/151.json",
   "sung": true,
   "sv": "f13706d04cb2e42be8eb7b36115bd9ec34f28b371dde0173f84b32ae0bd0bfa6",
-  "v": "4faf38f48490eb9ba5d63e00c90ca594ad39814c227cfc51202d5d5e4793dc2f",
-  "english": "He Leadeth Me"
+  "english": "He Leadeth Me",
+  "v": "05f9a3c3d219ccb3e539708d09eb7bb56129b25d17f2275460ffa2976db66682"
  },
  {
   "id": "NZK-152",
@@ -14197,8 +14197,8 @@
   "path": "data/NZK/152.json",
   "sung": true,
   "sv": "63b52b43fa972a6f638c09201dc9a6c8ce51e591081cb816a5f5ce5744a14200",
-  "v": "d7334330bd3b0a906bc3c331f587b69d3f97f4161b4728ecc2f419f38ab9b184",
-  "english": "Nearer, My God, to Thee"
+  "english": "Nearer, My God, to Thee",
+  "v": "cc322b17ec0a82221807d0942ed82d145427f78709ca2086adc8052a233c66dd"
  },
  {
   "id": "NZK-153",
@@ -14208,8 +14208,8 @@
   "path": "data/NZK/153.json",
   "sung": true,
   "sv": "fc913e15a7da4d50e208b7663c66a3b5238b65efd2409e8c7cf9fea0ec36afea",
-  "v": "c13532016358fd230311b285a03d962677b24c48b04e7e4c5d8dc9e18b05f125",
-  "english": "One Sweetly Solemn Thought"
+  "english": "One Sweetly Solemn Thought",
+  "v": "7e190237c17e5105d8b0d1c9d28529618507b1463d52c93dc4718a3c15697e3a"
  },
  {
   "id": "NZK-153b",
@@ -14227,8 +14227,8 @@
   "path": "data/NZK/155.json",
   "sung": true,
   "sv": "e9302d0409243eb40c82ea7aceaaddb99d59bc84452c58a6dd0415da552bce83",
-  "v": "a2a7baa5ee0c2e9458620e1f83bd6b55aff071e7165b6b985d44facf252a7870",
-  "english": "All the Way My Savior Leads Me"
+  "english": "All the Way My Savior Leads Me",
+  "v": "3a2679b040db6980a49839a6652e2b2488a01ecbc78e1cbfe08f7d81136945ab"
  },
  {
   "id": "NZK-155b",
@@ -14246,8 +14246,8 @@
   "path": "data/NZK/156.json",
   "sung": true,
   "sv": "43efa3a8375eb1ad595bff36640dc5cd8e0e50ca0220822743b3dd48ca0d156c",
-  "v": "21c8cac1d58185c1206e68aa9b7fcfe20680187f3844ba96e5dff949b205a44e",
-  "english": "Guide Me, O Thou Great Jehovah"
+  "english": "Guide Me, O Thou Great Jehovah",
+  "v": "ef4e5a16935f24c90c240abe310ae7194633ad7b3159ad106f3be11e4f83e329"
  },
  {
   "id": "NZK-158",
@@ -14257,8 +14257,8 @@
   "path": "data/NZK/158.json",
   "sung": true,
   "sv": "3669bacf39311d480137d6a363c717500f0427a9ea8cdaa598ab4d235ec43327",
-  "v": "44b4f193015facfc406c97eb08c63106f2fbad19a9960e8c6bae7f19ecfe910d",
-  "english": "How Far From Home?"
+  "english": "How Far From Home?",
+  "v": "bd1d027fc8005718500102163af9154f1d417f0f9e8493972fd8ee56315ce220"
  },
  {
   "id": "NZK-159",
@@ -14268,8 +14268,8 @@
   "path": "data/NZK/159.json",
   "sung": true,
   "sv": "26e169f51a420edfddf1288f133a3fbe0b097caa4512309c02c8cfedf8872ee9",
-  "v": "8f2d6c83bd7dfa4fdcbf5b2d88140a9cf3d7559e175071e2516987a63bbb87c5",
-  "english": "How Sweet Are the Tidings"
+  "english": "How Sweet Are the Tidings",
+  "v": "ae4fd17541c51bd125db1970700db4fccd8e2af7942114e3bd9195006ab47bbf"
  },
  {
   "id": "NZK-160",
@@ -14279,8 +14279,8 @@
   "path": "data/NZK/160.json",
   "sung": true,
   "sv": "b3d83896a7f7497d2047a0634f488d021edf1934c626ea063b95f39a56d38d16",
-  "v": "8ed1b3b44bfefc44161fe597cbf5e2642ac3c24bb468354e727e6e10e3f3b311",
-  "english": "Watch, Ye Saints"
+  "english": "Watch, Ye Saints",
+  "v": "c7e7582c50237617c7abc87c61069af1ca362276efb8580f60935411681b04f1"
  },
  {
   "id": "NZK-161",
@@ -14290,8 +14290,8 @@
   "path": "data/NZK/161.json",
   "sung": true,
   "sv": "614f38cd7bbbb7ef7fc1a46c227792addbba65ea46c5d4da7586b1dbc3528f3e",
-  "v": "cc788dcfda13368df195d649622525cc508f63cf21f503fc48abd13911faae7c",
-  "english": "Jesus Is Coming Again"
+  "english": "Jesus Is Coming Again",
+  "v": "b25940826672dccab425cb0379835638693366e03a1e4f086f3b28e8b81f6b9a"
  },
  {
   "id": "NZK-163",
@@ -14301,8 +14301,8 @@
   "path": "data/NZK/163.json",
   "sung": true,
   "sv": "6afdb3f2869be3fdba839d0f692882e5b7eb30d1a332662279f886d048b6c285",
-  "v": "e938df502f3ba503c34b04e4f2624761ba4a015c68628448ff2025f21dbfe0ee",
-  "english": "It May Be at Morn"
+  "english": "It May Be at Morn",
+  "v": "19afa74a809ba6c1202a8e26ef229679d77ff41abe0caab501dfb82fb810dac8"
  },
  {
   "id": "NZK-164",
@@ -14312,8 +14312,8 @@
   "path": "data/NZK/164.json",
   "sung": true,
   "sv": "7fc9bb1f9b129d228a7d04de11c7d1c53793dd65a1eaf06afceddad064077e1f",
-  "v": "6c72514cae8df3a0ce958bf4ad1f6fc50978f1f90dc8cf388bf3c55f9f80b5a6",
-  "english": "Gleams of the Golden Morning"
+  "english": "Gleams of the Golden Morning",
+  "v": "288186ca6223e3847bde6494272d32c808bb4e47f7cb7321f60c215efa6217a1"
  },
  {
   "id": "NZK-167",
@@ -14323,8 +14323,8 @@
   "path": "data/NZK/167.json",
   "sung": true,
   "sv": "2e86c8934fca6886f8bf9a58d41ccd53d4caeef7f9ac53e6964647bb8d8f2adf",
-  "v": "80fd5ae412422f4ae440afdb7f7cf85c2614242e9bc818c75fb7b1670dd4d974",
-  "english": "He Lives"
+  "english": "He Lives",
+  "v": "9cb8187d6d0a473e5d89fb1bea59b5fc3e3b6e0da5ed565bae236c0071ff17b8"
  },
  {
   "id": "NZK-170",
@@ -14334,8 +14334,8 @@
   "path": "data/NZK/170.json",
   "sung": true,
   "sv": "435cb466e11e78b4bd485525762b1f868e938ad228c7c3c95f56b1cc7d755052",
-  "v": "0a33aa85f19e0246ca6728e7e1123e93005065288e330eee8d0501a41b62309a",
-  "english": "Is My Name Written There?"
+  "english": "Is My Name Written There?",
+  "v": "501b2dfbcdbf76825779722935cdf6d3795f7e2da08b4734ba3cb94cfc460c64"
  },
  {
   "id": "NZK-171",
@@ -14345,8 +14345,8 @@
   "path": "data/NZK/171.json",
   "sung": true,
   "sv": "bb805eeff59bf10badef483fb07b1b2329558377e81fdf7b3cf97a99362ee3b9",
-  "v": "65041f17c980e2e86d92228469bba01d864a1116fdaa7cb2f0cf0af0593f69a5",
-  "english": "The Judgment Has Set"
+  "english": "The Judgment Has Set",
+  "v": "632f8070574087b139f635a846d2598e4b4714bf22509013cd585460e98abb82"
  },
  {
   "id": "NZK-173",
@@ -14356,8 +14356,8 @@
   "path": "data/NZK/173.json",
   "sung": true,
   "sv": "443ae187773158663422b61f1bcd8bc613d56d4b3cc8709ab58a5e86e3e719dc",
-  "v": "392f353bb3a54cfa5dd8da24edefebad30e2bc8859031f5cf73635bb0a0441a4",
-  "english": "We Know Not the Hour"
+  "english": "We Know Not the Hour",
+  "v": "310edc7fec6c8ff754c9c7a74faf5b52ebeaf61313aedec61ba7498bdf2dec16"
  },
  {
   "id": "NZK-175",
@@ -14367,8 +14367,8 @@
   "path": "data/NZK/175.json",
   "sung": true,
   "sv": "52e5683d609efa96ded6ff2585b9fbc188b8c9bcb306b6c1916704c0e56cb486",
-  "v": "554f4bb9ab4e0159dc324be2a41daca3284745d56f12eda07647ac676616fce8",
-  "english": "Face to Face"
+  "english": "Face to Face",
+  "v": "443ef35b61e19cc1b5f01df01321d45b55ab1d239e2790a0f01856b72a8014cc"
  },
  {
   "id": "NZK-176",
@@ -14378,8 +14378,8 @@
   "path": "data/NZK/176.json",
   "sung": true,
   "sv": "660275ea62280f9431a01e0b3004eeccfa6678cb1e2e9545da179f9c41c77244",
-  "v": "b113a5f668d121115395b54750b5142581781a24dcb3be850fed450ed38abf5d",
-  "english": "Shall We Gather at the River"
+  "english": "Shall We Gather at the River",
+  "v": "f64db83c9f2a823176d0acda1543af3f89fdc22a7addb026b0775febbb9f5a63"
  },
  {
   "id": "NZK-179",
@@ -14389,8 +14389,8 @@
   "path": "data/NZK/179.json",
   "sung": true,
   "sv": "fccc63318c6647e6cfa6dc98bccf20212ad100b202d9ea462a97b3899cb03661",
-  "v": "f010cf92613eb3d0695d45c1c0f1826af68699a8cc81f32685fdc45748ac9db9",
-  "english": "Joy By and By"
+  "english": "Joy By and By",
+  "v": "bc83b612f7969623ee4fff03d8b825ada646ec5c1985a663a1f9c88cf8499a7c"
  },
  {
   "id": "NZK-184",
@@ -14400,8 +14400,8 @@
   "path": "data/NZK/184.json",
   "sung": true,
   "sv": "28f03f6c9dd5efe4f1bc48e520fadf30a2f7a7b60081e0f740b6d131e5ce3d83",
-  "v": "127d2a1b7ef36ea44bb74554843d52fc6e34ea53cd15837d251cc95f5483c2b8",
-  "english": "Love at Home"
+  "english": "Love at Home",
+  "v": "300f13f3492eb8be3ce91578ca7fc3d2ad1f014ee3234bd7e6828c580dc02c1f"
  },
  {
   "id": "NZK-184b",
@@ -14419,8 +14419,8 @@
   "path": "data/NZK/185.json",
   "sung": true,
   "sv": "51695021bf73b3699565479a41940124531904d7a6fa383be585ce895251fa74",
-  "v": "a1ae95b8153eadef712e1cce8a26b208fcddfaa32200759b5ab18814f1ffbc2b",
-  "english": "O Perfect Love"
+  "english": "O Perfect Love",
+  "v": "43e995c2c5b5cf6d7a5c64abbc4da319d928dde0ebdf569cc450d1a4ceafc9e2"
  },
  {
   "id": "NZK-188",
@@ -14430,8 +14430,8 @@
   "path": "data/NZK/188.json",
   "sung": true,
   "sv": "3afba2ec2ddba740fc11ebd602f31d1891b5f4f5bd166c6a79a567a7cbe5030f",
-  "v": "9551a862de39989d292ff89ba5b5d779571d5d5b17583645a8535ad56d81fc14",
-  "english": "The Cleansing Wave"
+  "english": "The Cleansing Wave",
+  "v": "b843fa43670c6fd8ac23cde9f3abfdcd0408e3ce4adf9ccc92977b2e2343ee09"
  },
  {
   "id": "NZK-188b",
@@ -14449,8 +14449,8 @@
   "path": "data/NZK/189.json",
   "sung": true,
   "sv": "d0f7faf973a20cd7b7536608cfb62f35841888b1d90953fd03593d48c73fe256",
-  "v": "b5b94edc678a3a834d4b88d3706d58bd3055f0810832fecca9f75fd2db75ded7",
-  "english": "Baptize Us Anew"
+  "english": "Baptize Us Anew",
+  "v": "73497db43d229ba20b2b0ce273a672caadc06168167beaddd05e39ab1690dd5c"
  },
  {
   "id": "NZK-189b",
@@ -14468,8 +14468,8 @@
   "path": "data/NZK/191.json",
   "sung": true,
   "sv": "a6a7b3589befc0aa48ed5ead78afde2fbf46422f50e4b45daf041235106533b0",
-  "v": "d079583a1ea195934051b9552d75e13d37f3c9ec992efcf532dad3f2677c5d63",
-  "english": "Break Thou the Bread of Life"
+  "english": "Break Thou the Bread of Life",
+  "v": "c31eb63095c4e3e9abed2ce1ce19ea2cef479d3f898557b3362215696a1bbd13"
  },
  {
   "id": "NZK-191b",
@@ -14487,8 +14487,8 @@
   "path": "data/NZK/192.json",
   "sung": true,
   "sv": "ba6e0239d3f7fe6fe4391244832eb6fe6afbdd180ae77670ca713cf37dbcd61b",
-  "v": "bc3d426d9be3a24e2e4a275121ed6be8b4a4f480ac41280fb6d86f67fd240bce",
-  "english": "Rock of Ages"
+  "english": "Rock of Ages",
+  "v": "aefff408f83bc6d3ade610262c0b999a7de0e1911ae129759ca546f2111f0526"
  },
  {
   "id": "NZK-193",
@@ -14498,8 +14498,8 @@
   "path": "data/NZK/193.json",
   "sung": true,
   "sv": "e7e057dc2fa8472d25c508228e5da50a60fdbabd84040dc7316a24053877d482",
-  "v": "dc0a327d790c5a825c462d5350ace969917ac0d76e15f08b0ed303219b8215f8",
-  "english": "Hark! 'Tis the Shepherd's Voice I Hear"
+  "english": "Hark! 'Tis the Shepherd's Voice I Hear",
+  "v": "98392575deda7fd59fbbeefd0f6cdf1b951e263724913140f16c57cc8e544fd8"
  },
  {
   "id": "NZK-195",
@@ -14509,8 +14509,8 @@
   "path": "data/NZK/195.json",
   "sung": true,
   "sv": "4f5ac6b8a16be69bd76b4ac0e885799d35233c7d871c06931640cd693d46fd84",
-  "v": "1ea79b76ccf923dfb727c96d215ad350d2a6d2b3ab77347bf5ce680e681dedea",
-  "english": "The Church Has One Foundation"
+  "english": "The Church Has One Foundation",
+  "v": "0a22bffe564cdc8af796ce3350dd39f24c0023449c3f9b5a912ada8862246b4d"
  },
  {
   "id": "NZK-196",
@@ -14520,8 +14520,8 @@
   "path": "data/NZK/196.json",
   "sung": true,
   "sv": "c0338cc6ffbcef8f707803056829289d28e22036c17db75d89be234c7694cb7b",
-  "v": "b19242d8f20938f0f15542135cf25157f3c709a0a7ee889e422ae155716f425b",
-  "english": "When He Cometh"
+  "english": "When He Cometh",
+  "v": "1e18cd45ec23d49364170cdc3afb0378725967df16207267f7443009d882bff3"
  },
  {
   "id": "NZK-197",
@@ -14531,8 +14531,8 @@
   "path": "data/NZK/197.json",
   "sung": true,
   "sv": "b5e66bee4133d4d3d4c28cf3851760fce07290542da8af9efd9276f165cc2cf1",
-  "v": "88e5fe584b48d33eb8756fcdd6a85a6926e12afc3e0f69d777033b863029e2aa",
-  "english": "Jesus Loves Me"
+  "english": "Jesus Loves Me",
+  "v": "99d69dd2bb2a07b62712f0af860bf855bd485837a3bacf2d6c1fa775b1215305"
  },
  {
   "id": "NZK-197b",
@@ -14550,8 +14550,8 @@
   "path": "data/NZK/199.json",
   "sung": true,
   "sv": "eb0d762013a57ff23f8a1b3a6c094c19898c698997f0551d9585599084a12bcf",
-  "v": "c90b8e7b0c251a7d6ec0742f815a0b340158a534b5030e48c46cad3a73f418ae",
-  "english": "'Tis Love That Makes Us Happy"
+  "english": "'Tis Love That Makes Us Happy",
+  "v": "9e7ae74a136af2774ce0f7948da0984a265b8eac2a3ba098a22099e7c95dc240"
  },
  {
   "id": "NZK-199b",
@@ -14569,8 +14569,8 @@
   "path": "data/NZK/202.json",
   "sung": true,
   "sv": "a20b1b8dd81025194fecb5813367de399aabc973df4ecc9b13173bacedead333",
-  "v": "3175850a1b257e4975dd083f5d3b81df3fe88db152780ab69a458d5de44e3b62",
-  "english": "Hear the Pennies Dropping"
+  "english": "Hear the Pennies Dropping",
+  "v": "fe62066a2ef38629207fc412525f170b3570e353f70c273958c670e5df349d62"
  },
  {
   "id": "NZK-212",
@@ -14580,8 +14580,8 @@
   "path": "data/NZK/212.json",
   "sung": true,
   "sv": "07bac374aec16d7355e291a5999bf69ccb615a836bd9cb3d336bfbaa3d8354b3",
-  "v": "20eeca9c7cbb73663551500bad5d5b04d76482ad02d955388dff5b1230153022",
-  "english": "Turn Your Eyes Upon Jesus"
+  "english": "Turn Your Eyes Upon Jesus",
+  "v": "c3316575e61690be256d54b0d0255ec19cd9d791f19934d3cf6d64fe24f4fd33"
  },
  {
   "id": "SDAH-1",
@@ -21594,8 +21594,8 @@
   "path": "data/WN/3.json",
   "sung": true,
   "sv": "f3425cf8eab2a48326a60c426ad8c44aa8cc512cf1d4e33c10578e34414eca76",
-  "v": "38a00db210696ac097c1c671b5f041cbfdef0a2d45c9639e863aa41fa029a564",
-  "english": "To God Be the Glory"
+  "english": "To God Be the Glory",
+  "v": "a07de9108eb500bdc077ff283f7cb1d56a67f8f95f44cbd864b6cc72ad28d082"
  },
  {
   "id": "WN-3b",
@@ -21613,8 +21613,8 @@
   "path": "data/WN/4.json",
   "sung": true,
   "sv": "6431f0a8590d491ec8075e3134c3313baa7b1284a06a2274b114558bcb3b90cf",
-  "v": "ddf6c90f2c7da712dd7c4a12583bdf17b5be8f603e49dd01868313c22cafca42",
-  "english": "All Hail the Power of Jesus' Name"
+  "english": "All Hail the Power of Jesus' Name",
+  "v": "79c351ad767bd740eaf6e4c66c6fe1a2fd7a2757e464e8957cd4299e6e57ad4c"
  },
  {
   "id": "WN-5",
@@ -21624,8 +21624,8 @@
   "path": "data/WN/5.json",
   "sung": true,
   "sv": "bf298164ac45623cd6da27aff977132b38f5d2d4379977a414079882a9b49413",
-  "v": "14c1e0e82b528330f21fe3c219282ec6fb159dcac85ab8a13c42110d1d7de7b4",
-  "english": "O Worship the King"
+  "english": "O Worship the King",
+  "v": "7f6c119ce630bbb12bff61f389c3c344454fd25f749b082d731eae05de0e8bd9"
  },
  {
   "id": "WN-9",
@@ -21635,8 +21635,8 @@
   "path": "data/WN/9.json",
   "sung": true,
   "sv": "86a5fcee10124702977c4929e1168b2089e0d6b9bf832f297647815b71669fa9",
-  "v": "ac7aaffa16b4c5d1a6f46a641238b3365a720946b44d6efdf97837faa2dce27c",
-  "english": "My Maker and My King"
+  "english": "My Maker and My King",
+  "v": "80418a9efd6f4dbfe1fcb8554e46030ea0bfa5cef3f589884f122a40db5ce824"
  },
  {
   "id": "WN-10",
@@ -21646,8 +21646,8 @@
   "path": "data/WN/10.json",
   "sung": true,
   "sv": "937e8ed822abeb7ef756194c67e19d03ebebf94574c7ca41249e14daaa43667d",
-  "v": "071f2394350306299fd7cbdd5eb7d41ccbfe93811c8051ea66b84f656e0ac6f7",
-  "english": "Come, Thou Fount of Every Blessing"
+  "english": "Come, Thou Fount of Every Blessing",
+  "v": "eb5a5c5ef59365c1f797e1682e00ebe84ee6eb5a1315122a965ef4f42af3756e"
  },
  {
   "id": "WN-12",
@@ -21657,8 +21657,8 @@
   "path": "data/WN/12.json",
   "sung": true,
   "sv": "a413c8a7e69fde45bcbd33dacf32bd1837c4919b34ba8cde3ad2a1e3600ec74f",
-  "v": "7b2d06aa2c46a18540d1803637a4f8364961b49ee793a3dc4e17a0b11cf035aa",
-  "english": "Blessed Be the Name"
+  "english": "Blessed Be the Name",
+  "v": "51e4e0910c95b3791135e5200d144ae1d8f51a76517c612ed45623575e62976f"
  },
  {
   "id": "WN-15",
@@ -21668,8 +21668,8 @@
   "path": "data/WN/15.json",
   "sung": true,
   "sv": "0e0e0f38c4450ddb1be1a434287d729b555588b4ce290b708eb5d5aa0ee1d222",
-  "v": "f11cc312efaea7f3a8fcde00cdedecbc05f3610d87e1a39867b1fe9bf81501dd",
-  "english": "Speak to My Soul, Dear Jesus"
+  "english": "Speak to My Soul, Dear Jesus",
+  "v": "9e7a4eff5d2aa133d960588d6a0d5f8910e220c259cddebdd76bad06d4cbeb20"
  },
  {
   "id": "WN-19",
@@ -21679,8 +21679,8 @@
   "path": "data/WN/19.json",
   "sung": true,
   "sv": "fae07362c9ddf1f1b86074ececdeb7d420bc71bb67f7f7172b2c30faa3b0a03c",
-  "v": "4871f42a507ee5b7969f7ab0b3bd3a199f7fd5e1a2955b486bd5ec12ca886589",
-  "english": "Glory to His Name"
+  "english": "Glory to His Name",
+  "v": "646a2f5cfb9d89f92d026893773c6c64a8934f8bfe91e69b6a2a2df96d6b8ba3"
  },
  {
   "id": "WN-21",
@@ -21700,8 +21700,8 @@
   "path": "data/WN/23.json",
   "sung": true,
   "sv": "0eb577607a1e366777c348fb30fffff875bb763e7cb8de0b84230b3f8190b922",
-  "v": "e1f0cb12425cc6a2007c195144968a1f4bc1dcd782bf62455f1141f02802010b",
-  "english": "I Love Thee"
+  "english": "I Love Thee",
+  "v": "0cb0b4f376e089765c4fc50c89a5b22c52031c4e9a2e64cc9b1f6224893b0934"
  },
  {
   "id": "WN-26",
@@ -21711,8 +21711,8 @@
   "path": "data/WN/26.json",
   "sung": true,
   "sv": "e387b58df1a2742ffddcb45f07df1b548fb44cbb34e3101508162d9bdf94fae6",
-  "v": "cce4388cf15992e2a62ed6567026b321788e78f4ddd1d49d1ea1b949ee0561dd",
-  "english": "O for a Thousand Tongues to Sing"
+  "english": "O for a Thousand Tongues to Sing",
+  "v": "774848ccdebef971318fa65044eb6daeb98540cc68ca906c9dd79f0f425d515d"
  },
  {
   "id": "WN-29",
@@ -21732,8 +21732,8 @@
   "path": "data/WN/33.json",
   "sung": true,
   "sv": "22ba4dd89662ccd051e49f051fb075ba37dec97e35307ae7f25c0cf89ec992fe",
-  "v": "91b44790a73cc4bf820d01641fd4fec49926c7fc860d285eb6ab2c508a648a0d",
-  "english": "Lord, Dismiss Us With Thy Blessing"
+  "english": "Lord, Dismiss Us With Thy Blessing",
+  "v": "a9604aa21b4df2cad0523f531a48369df84781f7127ffac8701f6dc84524496b"
  },
  {
   "id": "WN-33b",
@@ -21751,8 +21751,8 @@
   "path": "data/WN/36.json",
   "sung": true,
   "sv": "b4f99d80efa09f8371f72ef2e72d097a7627b3fdf390737706888549c97764aa",
-  "v": "748351901365e75167132a332a523e0aee3fb4b2d48791733f635daa8aa62037",
-  "english": "My Jesus, I Love Thee"
+  "english": "My Jesus, I Love Thee",
+  "v": "28619206a017ad9abfc17452e4a5789ea51222e9fe8e6e0cc90cd036458ae436"
  },
  {
   "id": "WN-36b",
@@ -21770,8 +21770,8 @@
   "path": "data/WN/38.json",
   "sung": true,
   "sv": "6ff26be3ae76b3bc257b250cbfd459aeda0b03b3dbcaae5a7fdddf57ca3ec369",
-  "v": "87aaf84d970925aa433ab77a2aa950f38140047a9eb08c79a3dfaa899b246716",
-  "english": "I Will Sing of Jesus' Love"
+  "english": "I Will Sing of Jesus' Love",
+  "v": "dfcf9273aef1b023932b19697203d3c019e59f8a1f06faf0a0b854cc81933732"
  },
  {
   "id": "WN-38b",
@@ -21789,8 +21789,8 @@
   "path": "data/WN/39.json",
   "sung": true,
   "sv": "f2d22cf6d60186ef2c689148b8d6b1589c1d6e748643ded7264e3924f143a7e2",
-  "v": "fbdacba5b89b99c5527956277f8ec55184ac1ba89198248a3ea38638e4cb5db3",
-  "english": "Since I Have Been Redeemed"
+  "english": "Since I Have Been Redeemed",
+  "v": "e1f195bf0e74726b49f5f67aeff91dd450cb24155578c96ceb82abf2e79d4e1b"
  },
  {
   "id": "WN-43",
@@ -21800,8 +21800,8 @@
   "path": "data/WN/43.json",
   "sung": true,
   "sv": "184fa21eef7cb78e0668e23684d790dd8415326744737221398822fd95728196",
-  "v": "7f6ea8a7a7c6431393d1bec8882d5e7e61e7d2ba21d7e48ffc152abf29388055",
-  "english": "Tell Me the Story of Jesus"
+  "english": "Tell Me the Story of Jesus",
+  "v": "18ad75c74a2439a68eb12feabb29796e5f362e47fa267d99bc314269190ee7e9"
  },
  {
   "id": "WN-44",
@@ -21811,8 +21811,8 @@
   "path": "data/WN/44.json",
   "sung": true,
   "sv": "b7b2bc4032bd9442227f2d27ebfb82a00d393bd9ca864ff8dc64e0da4c2bf61f",
-  "v": "e3362dc3cb933dd30c0d261fecbddeb86e1e3226ebaf786b20277face14aab35",
-  "english": "Redeemed! How I Love to Proclaim It"
+  "english": "Redeemed! How I Love to Proclaim It",
+  "v": "d9dfedec7a40eca8067854df4a2cc6ffc076072c28ba123cf7d97e4acc1ff7d2"
  },
  {
   "id": "WN-44b",
@@ -21830,8 +21830,8 @@
   "path": "data/WN/48.json",
   "sung": true,
   "sv": "dd44c30eafaa3dac60628c9cf89e392b380982bbc55df251808112159ba93c65",
-  "v": "5839daef55731f32ab12bd72971c8f649c95b4abdef5cac7ebdf0eae846c5f6a",
-  "english": "Jesus Is All the World to Me"
+  "english": "Jesus Is All the World to Me",
+  "v": "669009331b674db019e9977915d1c1786a50bbfb79c2326166503226d1a295fa"
  },
  {
   "id": "WN-50",
@@ -21841,8 +21841,8 @@
   "path": "data/WN/50.json",
   "sung": true,
   "sv": "a65bea8f316b0130e1a91c1318f4685bee4e5ad1746e39803b47cb3266cee0e5",
-  "v": "2c55612498a8096a16309ec2efad6076d01ba124b40667b1ab67ae9b8bc77f17",
-  "english": "What a Wonderful Savior!"
+  "english": "What a Wonderful Savior!",
+  "v": "d373387a9fc4161e935463efbdd9c843c77754ed334ac6448b1c9144b3112eb0"
  },
  {
   "id": "WN-55",
@@ -21852,8 +21852,8 @@
   "path": "data/WN/55.json",
   "sung": true,
   "sv": "63416d0d09b7b198bec4460701f89951822c1e4ec5ba4514c13ced3b3b299db1",
-  "v": "882689be19a4c4b8d97e460d3f44908721ed5e65bc57f1d9cee5085e40f73784",
-  "english": "I Sing the Mighty Power of God"
+  "english": "I Sing the Mighty Power of God",
+  "v": "664c176510671785e517559f0d2de8ef78f2c2acac9eb97f3c2a918f9d1c93ab"
  },
  {
   "id": "WN-56",
@@ -21863,8 +21863,8 @@
   "path": "data/WN/56.json",
   "sung": true,
   "sv": "b7626dbace64dae26b9b69ce1645ab33c9e2e6eb5b78e357b878958a21fbbb3d",
-  "v": "4acbd26a5f25e66b35453315e96055ef98460c8ab7939fe2d35ca8ce58280111",
-  "english": "Even Me"
+  "english": "Even Me",
+  "v": "e37f2991a2552011cabd9c28ef7823c0202a5006b2f0efa1f1100c32ff282fa4"
  },
  {
   "id": "WN-57",
@@ -21874,8 +21874,8 @@
   "path": "data/WN/57.json",
   "sung": true,
   "sv": "e20aab960537e9b9ab14a7a4a7f749075c84cdb3da0466d59c9349ab1e28772a",
-  "v": "43903d25d92cc4d266b8816ac793372c2472ea4f4a08c0b0b09f6d82d96cbdca",
-  "english": "Fill Me Now"
+  "english": "Fill Me Now",
+  "v": "e7fb2ed190fb712c14f84b516582ea7207579e076fde69a5c48eeb7e7672c88b"
  },
  {
   "id": "WN-57b",
@@ -21893,8 +21893,8 @@
   "path": "data/WN/58.json",
   "sung": true,
   "sv": "58f239bb20fb657c3ceb14437ee9593f8b94761522819e135ef2620cd1bf1195",
-  "v": "84f0bc6b1d9ad527fad13f32867e4a873f8a0754cdba1d831c5f9b3d86468997",
-  "english": "Holy Spirit, Faithful Guide"
+  "english": "Holy Spirit, Faithful Guide",
+  "v": "1110a495a5bbc612f661e99cfd3b10ba0515cd2ebea89f8fa4b26756634ac01e"
  },
  {
   "id": "WN-61",
@@ -21904,8 +21904,8 @@
   "path": "data/WN/61.json",
   "sung": true,
   "sv": "1492e998f6aacc50ba8abebf39da32c6b24f7b90045b50bab8f7610ba75f0f11",
-  "v": "8d029f776e10874001c0f979fb0e0b31cf8ac9d3abe31ef6aa4b0fda92ade7f4",
-  "english": "Leaning on the Everlasting Arms"
+  "english": "Leaning on the Everlasting Arms",
+  "v": "019285e709995a7b1c32f0058b5f46e4799691476861789ca8a2b1fd95df736d"
  },
  {
   "id": "WN-61b",
@@ -21923,8 +21923,8 @@
   "path": "data/WN/62.json",
   "sung": true,
   "sv": "7a47c56b2709d5eac520522f2bd34494f38b07628b9e0c279306a500383070e9",
-  "v": "08c280086d1dae7d085197d44ea6a9f65f19649a1a54d64dbdd3f34a07777261",
-  "english": "No, Not One"
+  "english": "No, Not One",
+  "v": "de8a9c1b8a8e35c6bb613ebf9e5c5443f01c72a68a97361ba530bbe416b5de5a"
  },
  {
   "id": "WN-64",
@@ -21934,8 +21934,8 @@
   "path": "data/WN/64.json",
   "sung": true,
   "sv": "f03d26be3aabd931d5b883eb5ede453c71f3c1c0910f7e6885ff59cb986b571e",
-  "v": "ded02aba5d232e08fc293147c37afbb9e50d52e1e40b6dd8837a7462776d2bb1",
-  "english": "Sitting at the Feet of Jesus"
+  "english": "Sitting at the Feet of Jesus",
+  "v": "c828fee77c9e5bd878ca842347e73c0e7540400d3e200f3d83fa63a1b83eaba4"
  },
  {
   "id": "WN-66",
@@ -21945,8 +21945,8 @@
   "path": "data/WN/66.json",
   "sung": true,
   "sv": "d58ac8b62b0b093a4b9ae6b355da50c3793dff5834e097b8c0d82c19ec0f0117",
-  "v": "48716c5baa519c77f3c7a8c93219ca2540a847f546e30c088a3f23cff701e757",
-  "english": "I've Found a Friend"
+  "english": "I've Found a Friend",
+  "v": "b0c5142d89eba3c1981c2b6d76f199fbfd3763aceacb63021b90d0a08e4b7ba0"
  },
  {
   "id": "WN-67",
@@ -21956,8 +21956,8 @@
   "path": "data/WN/67.json",
   "sung": true,
   "sv": "5ddcfd4b15f1cd3baa90dd768f53b7c188bb178939332dd4a7f4f8ac7768576f",
-  "v": "d8903d64081cecc55df33449ece5eaead7e8e360d6a323657dfd8d14b30a9371",
-  "english": "God Be With You"
+  "english": "God Be With You",
+  "v": "931506b918e5b063bea6cd726c173932e84ed2e7a99d9ea40c0b0e019b2ecaff"
  },
  {
   "id": "WN-67b",
@@ -21975,8 +21975,8 @@
   "path": "data/WN/69.json",
   "sung": true,
   "sv": "ead7993e00292571a3cc8063962466574794c888fa9a2dc97a7fb6d81ca44d89",
-  "v": "c4a80e6ee85314c548c6fdc3fbdbf652d555054fd0ebf0badf25c53b1e68613f",
-  "english": "Tell Me the Old, Old Story"
+  "english": "Tell Me the Old, Old Story",
+  "v": "527e6cf9755ccc6b85c8a836938662f07a70b5dd7725c9907e7170b40b1bedc5"
  },
  {
   "id": "WN-69b",
@@ -21994,8 +21994,8 @@
   "path": "data/WN/70.json",
   "sung": true,
   "sv": "a59344a024945cb5df878e78f2867f68e1ae2187d01a1bdc198c0d1adf6f1fe4",
-  "v": "1baa7f6d08855552c1c820dd606377852b57476ce88ce11c71df7fc97a6f5c99",
-  "english": "Blest Be the Tie That Binds"
+  "english": "Blest Be the Tie That Binds",
+  "v": "0da90084aeeb95edbb4f3ab511203869315fb91e7f0afa708060c39770956076"
  },
  {
   "id": "WN-70b",
@@ -22013,8 +22013,8 @@
   "path": "data/WN/71.json",
   "sung": true,
   "sv": "1af38785e75bc918eaca65ee8eff2613c3a839d26ae88773987b07d8b91acd98",
-  "v": "0ae6166b2241f43ba528c190783301f360d7d49d40a98210c775e437412e893b",
-  "english": "Give Me the Bible"
+  "english": "Give Me the Bible",
+  "v": "38fed3cc572b20d2c87070a3ce20812ef549b2319ce634c5382510364735f8ae"
  },
  {
   "id": "WN-71b",
@@ -22032,8 +22032,8 @@
   "path": "data/WN/73.json",
   "sung": true,
   "sv": "5d5b8bb1ffc8a61ae55f3947ed087b651084e451129e37239001f2f897746720",
-  "v": "777ca7a8756977eb423ca6754e743003d4ea70638f4d1d8cbdd150a025cfb533",
-  "english": "I Love to Tell the Story"
+  "english": "I Love to Tell the Story",
+  "v": "01568441685bf6068436e037c1d8f94f65fee65cb894eda0aeb284b754339517"
  },
  {
   "id": "WN-73b",
@@ -22051,8 +22051,8 @@
   "path": "data/WN/75.json",
   "sung": true,
   "sv": "9d025364ded0435c376de5a78788ef61bb8fd1cad4487f6bc140675a1316468e",
-  "v": "b08967b8fcde995725c55b7df9692c27a2e8dac1bf558c2b7d7dc06ad1cadf63",
-  "english": "More About Jesus"
+  "english": "More About Jesus",
+  "v": "019b6324711bbe7e5b4fa0fa91dd70a3e58eaf7529425f42f726fd2d6db436ff"
  },
  {
   "id": "WN-75b",
@@ -22070,8 +22070,8 @@
   "path": "data/WN/76.json",
   "sung": true,
   "sv": "24e456e733e85b3a64efc16cbc7422726f72961dd3a7bb54c6f1a17dfdd48624",
-  "v": "d7634b7905b0aedc1ec9f4eb92cf10c05723d7e4fbded79b38200c9d9a73770f",
-  "english": "Bringing in the Sheaves"
+  "english": "Bringing in the Sheaves",
+  "v": "de811e83ff8a52786305438163da89580e97fcd8a9bd3f42ac83abe4385af412"
  },
  {
   "id": "WN-76b",
@@ -22089,8 +22089,8 @@
   "path": "data/WN/77.json",
   "sung": true,
   "sv": "8f87713bf4a87dd768098b9f343d3ce1a9dd59d94bd7d385705a5099b5cd2041",
-  "v": "8f9122570221942f60ca7ed14ec92c6d6a8e11ef0102df3ea84ee48501319b36",
-  "english": "Rescue the Perishing"
+  "english": "Rescue the Perishing",
+  "v": "c2058ba1d9775de6320d7c412b8ad7e26ff1050f247009c544125bd7ed176c9e"
  },
  {
   "id": "WN-77b",
@@ -22108,8 +22108,8 @@
   "path": "data/WN/78.json",
   "sung": true,
   "sv": "5bdd07487404a9148b0b84fbda622487920f2ead2e9f5a3f6c732481132b3a05",
-  "v": "78c6e9f2540c67086907ef220bb76c43842339b87534817d2b86e4407b9c9d88",
-  "english": "Will There Be Any Stars in My Crown?"
+  "english": "Will There Be Any Stars in My Crown?",
+  "v": "a75d4b1146c239910da8eb1ef3482a28de5731d7597af48b86e087e01e0e9222"
  },
  {
   "id": "WN-83",
@@ -22119,8 +22119,8 @@
   "path": "data/WN/83.json",
   "sung": true,
   "sv": "510b32fcf46731ab5f717b77a32cf5a3a86bb66f1ce1abfe0a3807aa112c7e5d",
-  "v": "94472f52170e99d78556600467b8ca500244131fbb45199eab8ef333920eb771",
-  "english": "My Lord and I"
+  "english": "My Lord and I",
+  "v": "400f000c7eb8efa0be251a0503faa05622f41dc0b131b038ce4b9b5c9ff8c9d1"
  },
  {
   "id": "WN-83b",
@@ -22138,8 +22138,8 @@
   "path": "data/WN/87.json",
   "sung": true,
   "sv": "8ab158bf0e1228fa7da301603d73c9c04e87bf26b50c8931230fb1df4f1c8978",
-  "v": "05f97d093e4977059bb5b82197f3ceef4988f74ff56fa321218e7d73a61ddf7c",
-  "english": "O Where Are the Reapers?"
+  "english": "O Where Are the Reapers?",
+  "v": "a7689bc63faa122587e8aa311b301d86e19b68d6aa931fedbd6b5d39318c0e59"
  },
  {
   "id": "WN-87b",
@@ -22157,8 +22157,8 @@
   "path": "data/WN/95.json",
   "sung": true,
   "sv": "78a2c00daf94ee2bf9481bca97999a8ad9288b1927e7004beb48ac2612905f53",
-  "v": "93f006a124c9c0a7dde229164d3050a9b5c4db4b6ca3e5e91923a57525e8dfba",
-  "english": "Watchman, Blow the Gospel Trumpet"
+  "english": "Watchman, Blow the Gospel Trumpet",
+  "v": "cb8fce882af7eb1f081d72ade8d0ee73b1ac31f0a013646a2542975c85c8b9fb"
  },
  {
   "id": "WN-101",
@@ -22198,8 +22198,8 @@
   "path": "data/WN/111.json",
   "sung": true,
   "sv": "c986e4204ca71eebabba2308f9d5bb526bde242644c3b43a0496ebebcc152a97",
-  "v": "cd7bf71bd00c98bee82982c8f035955f4ea83355d3dde3c9ea5b51eafe9c269d",
-  "english": "O for That Flame of Living Fire"
+  "english": "O for That Flame of Living Fire",
+  "v": "d8ab9a459ba9ad09ddcb8458940c706cf00af68f0397d68876f1dd89c608f1cb"
  },
  {
   "id": "WN-111b",
@@ -22217,8 +22217,8 @@
   "path": "data/WN/112.json",
   "sung": true,
   "sv": "779a919b7b1fd2d036fbee14d48305318bdafe217f2eda5ec1f1001d4c4dd52d",
-  "v": "3a32fa9f3b150c15474ffee0298dbdb44babbfaf03156332e0b08aa1e899ea1c",
-  "english": "Soldiers of Christ, Arise"
+  "english": "Soldiers of Christ, Arise",
+  "v": "9c28b8f2320020aeceeefbb526a0c1d82278fec4d984e6628e1a5a00072ddec1"
  },
  {
   "id": "WN-116",
@@ -22226,8 +22226,8 @@
   "number": "116",
   "title": "Biuru, Jo Nyasaye",
   "path": "data/WN/116.json",
-  "v": "b0dbc756a9a5dbfeb28c4c3d9c8329b12d7c414bd96b875cb1861160dff47a1e",
-  "english": "Marching to Zion"
+  "english": "Marching to Zion",
+  "v": "6f59facaf1cdc51926074def44f2f0d114127bfcb417be679042dc272cab4b5d"
  },
  {
   "id": "WN-119",
@@ -22237,8 +22237,8 @@
   "path": "data/WN/119.json",
   "sung": true,
   "sv": "70492a0cfa5785637ca7819de6eda623f28a628edf0b784ac42ecfea96e89c18",
-  "v": "7580b3adbfe2318ad73896903790647a9e5e572c11530fc4cd8804355b032305",
-  "english": "We Love Thy Sabbath, Lord"
+  "english": "We Love Thy Sabbath, Lord",
+  "v": "d5cb9f2d82e10e22f2e88377df64b3c232c79d7f55391e08ed4f52f8c332b2c8"
  },
  {
   "id": "WN-123",
@@ -22258,8 +22258,8 @@
   "path": "data/WN/133.json",
   "sung": true,
   "sv": "b0264eb8944e00dee6f833889f3cc6fd3fbc51bf1490916ff15f8aa497f73e50",
-  "v": "32b500ae42060c455ba7e79f836024d24387416f4648fed5a21a15085122a6ca",
-  "english": "Abide With Me"
+  "english": "Abide With Me",
+  "v": "241eef669896a6b58762e20ca96c207d06a8edce5f4d1d69097bb3160902f569"
  },
  {
   "id": "WN-134",
@@ -22269,8 +22269,8 @@
   "path": "data/WN/134.json",
   "sung": true,
   "sv": "96c09b5b345b42ec4c8af559b1c01265706515a3f88d8634fd5c0f6929bdb3ac",
-  "v": "0dd6050495530a7f380e1de0522ad9241f96f4022dc5bcf43c839f7a353a95d7",
-  "english": "Day Is Dying in the West"
+  "english": "Day Is Dying in the West",
+  "v": "df08a9ba270132c63cdb9c845aa9e72db8e391a4df072eb909ce1e5862d9ac7a"
  },
  {
   "id": "WN-136",
@@ -22280,8 +22280,8 @@
   "path": "data/WN/136.json",
   "sung": true,
   "sv": "2fdfb92ccc02e8a70528e46051b7a3b8a6d0fbe44fa5ea64d756b48034b20e5c",
-  "v": "547e60117057e3b334c838a96d47512037d38d4fac47dfaf2cd95ddd09b7b064",
-  "english": "Far and Near the Fields Are Teeming"
+  "english": "Far and Near the Fields Are Teeming",
+  "v": "bb563d9033e5b559b7fd3edd0229318c59391858c8d5f589a3610292b15537a2"
  },
  {
   "id": "WN-136b",
@@ -22299,8 +22299,8 @@
   "path": "data/WN/137.json",
   "sung": true,
   "sv": "3ec329ceb6f3614ee82319ebe72a73dedc258443ad50c9280cce0ac65f3c4810",
-  "v": "d9ab963052900fcff160a607a4b2bfc2f2b8586318d0f3335cf760adcdc93b1b",
-  "english": "Bring Ye All the Tithes Into the Storehouse"
+  "english": "Bring Ye All the Tithes Into the Storehouse",
+  "v": "dc2778cb0ac56cc58c2eddaddaddddaea3a663c3ecae2271268e830625542c25"
  },
  {
   "id": "WN-139",
@@ -22310,8 +22310,8 @@
   "path": "data/WN/139.json",
   "sung": true,
   "sv": "76ffa3ea158cdf337bec54c5ea3cb36b851412c831a3c491965197654963c9e5",
-  "v": "66f72c1146a5854ba3a5d0004f60d448132ce514b5680b9d72ba54e40b90a3fb",
-  "english": "I Gave My Life for Thee"
+  "english": "I Gave My Life for Thee",
+  "v": "a05761235b9367de296bf49bceed12f1d5df9cae5621b0678e3c5f4d660472e9"
  },
  {
   "id": "WN-139b",
@@ -22329,8 +22329,8 @@
   "path": "data/WN/143.json",
   "sung": true,
   "sv": "753e3670fedce7ba4401b55f8fd5da48cc3d5ce28afda5b8bbeb14605f144dec",
-  "v": "b3068bc44a17391bd93f27e91df69c647aba19d5cacd20a6b5d4c800d430ef0a",
-  "english": "Softly and Tenderly"
+  "english": "Softly and Tenderly",
+  "v": "e1871358a46cf986f568185f64e804eccd8a6017c780d60465be6fd246a5427d"
  },
  {
   "id": "WN-143b",
@@ -22348,8 +22348,8 @@
   "path": "data/WN/144.json",
   "sung": true,
   "sv": "87fa07b45762ee7b3cfe5711038eda0c95236e652f0e048a20c2b2ea5413b0b6",
-  "v": "9a9968efe759786d1c64b822a04edcb2c8c1b561af9f88e01436a72d81d2039c",
-  "english": "I Heard the Voice of Jesus Say"
+  "english": "I Heard the Voice of Jesus Say",
+  "v": "b295fc86a527483d9fbc5f46328bca577019b5effb4d43239e8affb29c56549f"
  },
  {
   "id": "WN-144b",
@@ -22367,8 +22367,8 @@
   "path": "data/WN/146.json",
   "sung": true,
   "sv": "72e442d05b8946242cb7db55eafdc2cf4fa48f4207fd6fe6d667c84970232b3f",
-  "v": "baf312a4af1116ed65d4072c08614376899cf6c587fec64f08de0d408b55e226",
-  "english": "Hark! the Voice of Jesus Calling"
+  "english": "Hark! the Voice of Jesus Calling",
+  "v": "9ca2fb0b6828c656755d313617d6c65b1626f4865c59742a29795ead7dd9ab89"
  },
  {
   "id": "WN-147",
@@ -22378,8 +22378,8 @@
   "path": "data/WN/147.json",
   "sung": true,
   "sv": "41c48e02f19c9dfaea33f896f15a3c49993b3cf2d2f77fd482fe9f6cf70d4eb4",
-  "v": "d202967dc46e60a78e0ddc95daa88627f6496a2b884dbe44d39ecbc8f60bd1c4",
-  "english": "Jesus Saves"
+  "english": "Jesus Saves",
+  "v": "736df9bacd3a3c6c4f14c5998544389081663cf58c3dbcbb074d7a3a66694cf1"
  },
  {
   "id": "WN-147b",
@@ -22397,8 +22397,8 @@
   "path": "data/WN/150.json",
   "sung": true,
   "sv": "52a43b6990511ae72b2d329d4368b970e4b9876c8629deee446d3a081ce8378b",
-  "v": "ace0bf2c5d1e39c95c5e221594947ce9daaafb602a774fe6c10a0712c4ccb508",
-  "english": "The Great Physician"
+  "english": "The Great Physician",
+  "v": "0e3fe515891f1b3cc7bc8725dfac582c15218b8fb34df8e7a8c688e619affb45"
  },
  {
   "id": "WN-150b",
@@ -22416,8 +22416,8 @@
   "path": "data/WN/156.json",
   "sung": true,
   "sv": "90411b2a8a93f79a3c9db55ee0e59f7bb1910fc3370b052b4b355f2c61b12e63",
-  "v": "d480c931980cab2bebe0f0f325a5a5f84d619631fef1b104a20a2262153f4b86",
-  "english": "Come to Jesus"
+  "english": "Come to Jesus",
+  "v": "60b9c6e021be7f3fd4f0e5bef7c28a55f3d8f63cdbe8c5672a24ac8386d4fc8a"
  },
  {
   "id": "WN-160",
@@ -22427,8 +22427,8 @@
   "path": "data/WN/160.json",
   "sung": true,
   "sv": "8eed5c013ce6ea17dcf4cd2c2ab2d610e2cc95ccd6029323f4b74b19e5c14666",
-  "v": "4a48a6ee6df93be4a1e172e871be8c1b7b123607f936f6b6f070635b15c6390d",
-  "english": "There Is a Fountain"
+  "english": "There Is a Fountain",
+  "v": "05e023330291bbcc4dcbd9e6753254284964aff7cd917fcb58a60aa0777e74f0"
  },
  {
   "id": "WN-160b",
@@ -22446,8 +22446,8 @@
   "path": "data/WN/161.json",
   "sung": true,
   "sv": "c352c7999c50e63e61b3fba60ee41138b8b598e2489370114b63912f66f62821",
-  "v": "5ec44ae6c217557e68ab5ad81a8d654b8c60771cafa47b80c600e9ccd5b9fc49",
-  "english": "Whiter Than Snow"
+  "english": "Whiter Than Snow",
+  "v": "06b240c5a4be5311f60311de328641a312e50ce3210185864fa0e03173e368ab"
  },
  {
   "id": "WN-161b",
@@ -22465,8 +22465,8 @@
   "path": "data/WN/162.json",
   "sung": true,
   "sv": "b48e6957bd8227f2572e5dc1cc1ed9bd400613f63bdb48bb3bd2b3bd6adbacc5",
-  "v": "cbd6f6449d0415f85cd184c86c9ff88018d80235d3992047164cfe5efb1ff818",
-  "english": "I Am Coming to the Cross"
+  "english": "I Am Coming to the Cross",
+  "v": "5dffe94a5ec61a1701de6c2f1897fe60a27c88bacdde5e22cb797ee5591ef34e"
  },
  {
   "id": "WN-162b",
@@ -22484,8 +22484,8 @@
   "path": "data/WN/165.json",
   "sung": true,
   "sv": "42d6f9ba3134c630e79a1955051fc4681e1592c0e0eb4145ada65873a78cec71",
-  "v": "d66182975555a59218a65fd6369c8a7a507429bce0bec860317679d36636c7f8",
-  "english": "Lord, I'm Coming Home"
+  "english": "Lord, I'm Coming Home",
+  "v": "7881bbc0d30447baa70cbe3e89ede5e4b070c2bde5d07610b021ffb3e2e600d6"
  },
  {
   "id": "WN-165b",
@@ -22503,8 +22503,8 @@
   "path": "data/WN/166.json",
   "sung": true,
   "sv": "1e1862ea9862cf723a70c92070a9dc9ff900600881f4b75e66d6f9b217aa20c3",
-  "v": "ed14a06142af4e2cde5927c378c580054ff4e700ad613359b5b7cb2aabd0da5a",
-  "english": "Jesus Paid It All"
+  "english": "Jesus Paid It All",
+  "v": "5a7e1d201c7970b8d076f195440d0cd8467ac1ba34e95ad3eebe97535a2136c9"
  },
  {
   "id": "WN-166b",
@@ -22522,8 +22522,8 @@
   "path": "data/WN/167.json",
   "sung": true,
   "sv": "dd4211b4b9218d10a854755d09fec9fac5aaa0cb2c5de4b186c126bd0c5f9df6",
-  "v": "e438f7b4fdaa54b3620bf2d0f6ce0b06ebdb8fe6713a563b7c84f534e37e5bc3",
-  "english": "Near the Cross"
+  "english": "Near the Cross",
+  "v": "cf9b7500f11f8bc640d3738e3d96e08d23d84b50ca620aae9e68b561d279b3ef"
  },
  {
   "id": "WN-167b",
@@ -22541,8 +22541,8 @@
   "path": "data/WN/168.json",
   "sung": true,
   "sv": "1b9bcac483a3a3396dfc5e83f5a879a2a1cadad746776aecca1384b4f6046733",
-  "v": "84a6cef7b2153181f44fe2aa2ab083859b43bfa34c8048376fa3a6c3ce8fbf5e",
-  "english": "I Surrender All"
+  "english": "I Surrender All",
+  "v": "02338fea35b279bda9b3ec559f056afbccca8a6e50d91b63d4e787f6826c71df"
  },
  {
   "id": "WN-168b",
@@ -22560,8 +22560,8 @@
   "path": "data/WN/169.json",
   "sung": true,
   "sv": "5bec5d4905dc6288141ae662cfd55ddd4a2dfb2a1b9c6619790996e30902613b",
-  "v": "6e294edebe8a5f121a76941416ffd514aa5b3da5c1bb9ce78a858f718b9cc0a8",
-  "english": "There Is Power in the Blood"
+  "english": "There Is Power in the Blood",
+  "v": "f1511c8443cbab5ef787312dea9d50eaf98be1e49137d10323ead39ce36a3294"
  },
  {
   "id": "WN-169b",
@@ -22589,8 +22589,8 @@
   "path": "data/WN/171.json",
   "sung": true,
   "sv": "ca625db1e4b84306880ff64efe7a289d8106d5ccd1eb69da746c1778e78f8b08",
-  "v": "eed885c1b6a69de76bb245c52ffaed59d9ad715ddd05a9a4020fa04fa6678b5a",
-  "english": "Tell It to Jesus"
+  "english": "Tell It to Jesus",
+  "v": "ee4b40ee1a654ac0b676875f44a9fa8a075bbcc5de5fc582168a3330a934bfbe"
  },
  {
   "id": "WN-175",
@@ -22610,8 +22610,8 @@
   "path": "data/WN/176.json",
   "sung": true,
   "sv": "d4d1dc96218c8aaa679d8ee96dbccd4e27881186b4c9b942e8487d718a918f75",
-  "v": "398941c20015dcff010e1ddff652d1adbe7d0dde4cc7fbeb0c37a48960a54f26",
-  "english": "Showers of Blessing"
+  "english": "Showers of Blessing",
+  "v": "1311347c5acfa727bdd4a793c562f536b16453d46330de48de6ba333682dad8c"
  },
  {
   "id": "WN-182",
@@ -22621,8 +22621,8 @@
   "path": "data/WN/182.json",
   "sung": true,
   "sv": "76c707f22932e36e00b5f88f384f461d3b03b51f55c236e41f8f7214bc203eeb",
-  "v": "0ad2ae40f87a063600a254519b2978209adf520a00f3b5842d61d296b7d604cb",
-  "english": "My Faith Looks Up to Thee"
+  "english": "My Faith Looks Up to Thee",
+  "v": "4645ed375616e64ef03afe041aa0adbd55b80b123f5cb9fffdf2ccd862566452"
  },
  {
   "id": "WN-182b",
@@ -22640,8 +22640,8 @@
   "path": "data/WN/184.json",
   "sung": true,
   "sv": "2892cef11d1dc53347b3dde0e06b0d3fa2f58f24a00bf3d04e6a6ed7ce059e55",
-  "v": "92594279f10557aaff0a13ae0198ad215e672d2608d678b738d25c15b43f7f4f",
-  "english": "Chief of Sinners Though I Be"
+  "english": "Chief of Sinners Though I Be",
+  "v": "3b1bd9b76721e196a54798085a22449fad397562776b8d7f3a967210c2edab96"
  },
  {
   "id": "WN-184b",
@@ -22659,8 +22659,8 @@
   "path": "data/WN/189.json",
   "sung": true,
   "sv": "46efdf7a65b75f308083abd836feaede8d860c31bec5cf43a8e48b7ca9e09e0f",
-  "v": "2107d729b17fd844112e6f2e41aea0775ac844bc4cefc9c871f9289736752944",
-  "english": "What a Friend We Have in Jesus"
+  "english": "What a Friend We Have in Jesus",
+  "v": "64b6a4f9a0fbbc2b1997310d603ef1c95b9531f1f611295deb2c16cf1b7eff03"
  },
  {
   "id": "WN-192",
@@ -22670,8 +22670,8 @@
   "path": "data/WN/192.json",
   "sung": true,
   "sv": "63e054e8357aa1859924d4db71f6827f856d2d97a5318b74591caa85eaa7ed81",
-  "v": "f3b2b497f9487abc4c2e2c02303d6910f4c87c22fdcaf183c46fa083e507c3f6",
-  "english": "Take Time to Be Holy"
+  "english": "Take Time to Be Holy",
+  "v": "9d573466751164de45002806b82c59906c13f4f35d47b5724f9f8bf58eb7f991"
  },
  {
   "id": "WN-192b",
@@ -22689,8 +22689,8 @@
   "path": "data/WN/195.json",
   "sung": true,
   "sv": "522d7f009d86d10a3dce53282123763962c9b978f990a89686d268abb2c8b2dd",
-  "v": "bf60c3af9fe9e824fa19e677dd89e44c23cbf3180fdf962a1f3ee380e8417ccc",
-  "english": "Anywhere With Jesus"
+  "english": "Anywhere With Jesus",
+  "v": "41bc526d84f157b3f4f3e7b49c6972e4abe0bd094c4ac001045fa75718c6553e"
  },
  {
   "id": "WN-195b",
@@ -22708,8 +22708,8 @@
   "path": "data/WN/201.json",
   "sung": true,
   "sv": "9e5c68d5688442b2a6764550aa939b8a9dba71c8bbccc3fc1b31b866884840a3",
-  "v": "852cc32b76e0f354e0623fee2fe30ec7e2c12cd60067a0af32d096a469bf0d77",
-  "english": "I Will Follow Thee"
+  "english": "I Will Follow Thee",
+  "v": "fc0c5885e305abbe7994fc4e6661bad1bf94c3351bb783234d38c0c8b56a0a71"
  },
  {
   "id": "WN-201b",
@@ -22727,8 +22727,8 @@
   "path": "data/WN/205.json",
   "sung": true,
   "sv": "82b4d40ee5c59e4e283ce197dd725b601751d9319703a25e0a788524020dffc9",
-  "v": "296c338a5ca3a222b5794258b90e1947b73cb5035095b858f389a75467c7864e",
-  "english": "Draw Me Nearer"
+  "english": "Draw Me Nearer",
+  "v": "597b7545a0e36444ecaf6158fdd73dc3aa2b63f046ebdde5113c76f75b6dc693"
  },
  {
   "id": "WN-205b",
@@ -22746,8 +22746,8 @@
   "path": "data/WN/206.json",
   "sung": true,
   "sv": "8c4ead97f2539749dee97a89bcded49f69f7bec60f40f232c36cd3def233107d",
-  "v": "67630514d7490fce061e7e3bb862cd8244d8694943a287163f8114a6a14adc06",
-  "english": "Take the World, but Give Me Jesus"
+  "english": "Take the World, but Give Me Jesus",
+  "v": "73bdb1d807e5f18e0b2c943d7cb0141ac5de8919f7d2a27b3289732ec3172158"
  },
  {
   "id": "WN-206b",
@@ -22765,8 +22765,8 @@
   "path": "data/WN/208.json",
   "sung": true,
   "sv": "340867471d53ee8f99d7b55a261afc1705c02621a282ce861b71d56e06492535",
-  "v": "c9b2bc91dd6af1c5fc412ee647d90eff02f30c12b310ea099b328434cac985d4",
-  "english": "Live Out Thy Life Within Me"
+  "english": "Live Out Thy Life Within Me",
+  "v": "bda3878a67b8e8b1989cca607365c88d4b8a1369bb67d8dd9badc12cfa762602"
  },
  {
   "id": "WN-208b",
@@ -22794,8 +22794,8 @@
   "path": "data/WN/211.json",
   "sung": true,
   "sv": "f8fd97eb42f4bdf6aeeba827c954dbec550093f287fb63c543ac7c2d025734da",
-  "v": "e6328c3b73cc7c267ed9d7972729a2bebf32e821ec05f2e74281d7303e902e67",
-  "english": "Jesus, I My Cross Have Taken"
+  "english": "Jesus, I My Cross Have Taken",
+  "v": "5fd8474388fde6b663c449d94ce5d81ef8522f7725659d835d83f6d1cfa79744"
  },
  {
   "id": "WN-211b",
@@ -22813,8 +22813,8 @@
   "path": "data/WN/212.json",
   "sung": true,
   "sv": "1a55d739929832732d0a18d69085f7e2a99a1635c059c7e3a1584cae07fdace1",
-  "v": "201aab2c2971c5869cd1ad18f1b0aef09e78e3f2c90e5d66730c7ec4a5c167c4",
-  "english": "Wholly Thine"
+  "english": "Wholly Thine",
+  "v": "211a70f6685da59b5e6e33e5ea1752628b5b03955eaa3355d6ac20075c04af4c"
  },
  {
   "id": "WN-212b",
@@ -22842,8 +22842,8 @@
   "path": "data/WN/218.json",
   "sung": true,
   "sv": "1f48c3d2447baf17e4ba1a99c02738da792f9c8d5959c0c0a4e7de3b2e29c167",
-  "v": "4854ac2cd7f33f1e7632305344743e7e28a559a66379bde95b508b8f6a4ca536",
-  "english": "O Jesus, I Have Promised"
+  "english": "O Jesus, I Have Promised",
+  "v": "ad1fd3a92107d0971c7a159d33c500c9cc36d4e051ec1f8f6548ec06b7cbb8d1"
  },
  {
   "id": "WN-218b",
@@ -22861,8 +22861,8 @@
   "path": "data/WN/219.json",
   "sung": true,
   "sv": "0da6536aab7dcd285cdb9e89c689fbebdc2055786ee478a8691fa138aaf19f7b",
-  "v": "8e7aa0e7c5c540b1f8020fb14b29904d0f2ec14ce5ba7922be4de1c384ddeaa9",
-  "english": "Angry Words! Oh, Let Them Never"
+  "english": "Angry Words! Oh, Let Them Never",
+  "v": "57059bf32c6e0bc9b63240570884c6364acca6c5c5668b43e997336b79286c9c"
  },
  {
   "id": "WN-220",
@@ -22872,8 +22872,8 @@
   "path": "data/WN/220.json",
   "sung": true,
   "sv": "a9eebe223ef0d6d7d88624576349791acd9869fadd4c7c2eec6892d49fa17f39",
-  "v": "c99212ce49b2ce1e23be67398cb9dd2f97b87080b3bd55d594ae2ac309a434e4",
-  "english": "He Leadeth Me"
+  "english": "He Leadeth Me",
+  "v": "4b655ca47b29b03ba5ab8c89069adacee2aa9e8c0becb63bedeb79e74102bd18"
  },
  {
   "id": "WN-222",
@@ -22883,8 +22883,8 @@
   "path": "data/WN/222.json",
   "sung": true,
   "sv": "1a9f01e15f39a0d3c90d30da7b33ae7c5d0dbd6e46d40879b77c44d2bc3c2e04",
-  "v": "1562e46cf65eabe57ae6f28101c6e95518b797290a74a50137316d3148f419f7",
-  "english": "One Sweetly Solemn Thought"
+  "english": "One Sweetly Solemn Thought",
+  "v": "06df3a826dad904877f11f6ad72e3c13656c82f5fb028a351766d97f79fd191c"
  },
  {
   "id": "WN-223",
@@ -22894,8 +22894,8 @@
   "path": "data/WN/223.json",
   "sung": true,
   "sv": "42a87f1a1415b24741e22b9ee16e3e50f163dd576b311d327c65dcaa7f3fabaa",
-  "v": "53f0c93fb89d730cf556f896e0a9bcc67a1cb86e6b46ff19adf4c78cfbcf2ff1",
-  "english": "I Must Have the Savior With Me"
+  "english": "I Must Have the Savior With Me",
+  "v": "b0c606e90cc132a5a0e0b2591b17ff625f997e0c2f09da2c87e33119c93a6c58"
  },
  {
   "id": "WN-226",
@@ -22905,8 +22905,8 @@
   "path": "data/WN/226.json",
   "sung": true,
   "sv": "9050b65d9e7013a6a6d9442e42f1bbb168ab1c9261a5c872bac29e58dbda7df9",
-  "v": "5cdeee333cab8b6642c8bf69a95f926e2f9f8fe8497550fc9db26cd619980764",
-  "english": "Safe in the Arms of Jesus"
+  "english": "Safe in the Arms of Jesus",
+  "v": "24cb35d12c5baa4b9e80e88cba17f1677428e3cffa80b2e24831f7bfef9dc9bf"
  },
  {
   "id": "WN-227",
@@ -22916,8 +22916,8 @@
   "path": "data/WN/227.json",
   "sung": true,
   "sv": "a09b7dbf41e21fb5cba3c2909e80222eaccfda7b5ea041f153bd417ae476c5b3",
-  "v": "f506af4af3cee15904f202ec4bee7c58dd51e67c9a1431d53db2452d921b3ce2",
-  "english": "Does Jesus Care?"
+  "english": "Does Jesus Care?",
+  "v": "fd4e415db772a2a259f1583c31b5f22884d6dfe4438a22df259058b52ad22efe"
  },
  {
   "id": "WN-227b",
@@ -22935,8 +22935,8 @@
   "path": "data/WN/231.json",
   "sung": true,
   "sv": "8fbf4b0237d866a976bc40504e6c8983860061cbccb400a34974253ca8193803",
-  "v": "79e7624e6a61d2ea8cbc2f16bc2b148d680c821d7ef2a5f99374ebe9fbd8e828",
-  "english": "Where He Leads Me"
+  "english": "Where He Leads Me",
+  "v": "afce5942b45a20d2073576e22a9844b5675a21a4b41695fa739f38d57558a082"
  },
  {
   "id": "WN-235",
@@ -22946,8 +22946,8 @@
   "path": "data/WN/235.json",
   "sung": true,
   "sv": "d7dad9b6b293ef3a7d5cecb8f3e64fdfb4465a08395258ddfc786e6fe70cbb9d",
-  "v": "b1cfd4b320dd50fc348b0dd6b8ecf2121cac82f8f8136cc54d410dd669293949",
-  "english": "How Far From Home?"
+  "english": "How Far From Home?",
+  "v": "1f9dc73a184f2f5b2abc541562e0b7e04a969a57cba4c39162d8cb7bd74d879b"
  },
  {
   "id": "WN-236",
@@ -22957,8 +22957,8 @@
   "path": "data/WN/236.json",
   "sung": true,
   "sv": "56a8e0d9910c269e88677394cfbd2eec143f6ca0b9d46fbe41bd9ac71f2166d1",
-  "v": "63b4e26acb408ab1c02c0af3bf50fd1d9566a7032b70fb5c447654a7a1f85291",
-  "english": "How Sweet Are the Tidings"
+  "english": "How Sweet Are the Tidings",
+  "v": "406bf1587c91ae960b77e3156e1deacf1613094209b2000420b0dd1824daf82a"
  },
  {
   "id": "WN-238",
@@ -22968,8 +22968,8 @@
   "path": "data/WN/238.json",
   "sung": true,
   "sv": "b71322eed8dda36e22e569ffd007645b7a6da3adba5de95402ac8c3679b5f67f",
-  "v": "821da7229772ca1350684482389ab1022547f5901d98b36a2e07895b0ee25c7a",
-  "english": "Jesus Is Coming Again"
+  "english": "Jesus Is Coming Again",
+  "v": "3bac2bd1d6f4c299279a3f0190ed727a2cbc5f58ed1ef67cfe146f4b32663e3d"
  },
  {
   "id": "WN-249",
@@ -22979,8 +22979,8 @@
   "path": "data/WN/249.json",
   "sung": true,
   "sv": "8c11f055337293b959fd3487d6f89ab32d26568efade5be4a3a44e05daa5146d",
-  "v": "09244562ad0d6aab3c26a19559888fc44cc583afc39457f517017ca1b9be27de",
-  "english": "Is My Name Written There?"
+  "english": "Is My Name Written There?",
+  "v": "6b73783d664ad06048925d31793f6c281c9c4969dc8e98b484356d30280f20e1"
  },
  {
   "id": "WN-251",
@@ -22990,8 +22990,8 @@
   "path": "data/WN/251.json",
   "sung": true,
   "sv": "2f080540dcb6470080fea9c50d6ea2168c6b3b03aab85ec22072d9bdd1cb2f81",
-  "v": "13cc30ba3d19f096d32228314ad0191620cc5c312017e3eca850c3b1eb7b3c14",
-  "english": "Weighed and Wanting"
+  "english": "Weighed and Wanting",
+  "v": "7360275aab83699a6c8f542cd7819cd4c8990d7628682f561e3296eb7c1bbb0f"
  },
  {
   "id": "WN-253",
@@ -23001,8 +23001,8 @@
   "path": "data/WN/253.json",
   "sung": true,
   "sv": "36546d45090bc916b22f8b1603158697990863a4b4c2fe4ec1708a003aab89be",
-  "v": "dd69d9a9042c148d30d82ad6a60ad63a7caa0a5263cc2dbb8e01b1c63f458cad",
-  "english": "The Judgment Has Set"
+  "english": "The Judgment Has Set",
+  "v": "dcb4ef80f309b0e29771384985c19e1e32541eca6ee9e5d501b493bcad07db79"
  },
  {
   "id": "WN-258",
@@ -23022,8 +23022,8 @@
   "path": "data/WN/259.json",
   "sung": true,
   "sv": "172cdb8beaf1325b68c506dc2fabb0f6d216438fc05f3bdd3f8d8cfc3691d6a2",
-  "v": "e39fe31808efe80f43e53f08f927abbacfd6886c1aa3ed0520a34276c5692b2b",
-  "english": "Shall We Gather at the River"
+  "english": "Shall We Gather at the River",
+  "v": "be775de2327e29b4d49838008bc2e091457a86c29624659c9d1d1460d47864c9"
  },
  {
   "id": "WN-263",
@@ -23033,8 +23033,8 @@
   "path": "data/WN/263.json",
   "sung": true,
   "sv": "83395125ccda960b49a945ff711104a815adde9ec310534ef2cab323565fb227",
-  "v": "21a6a7ec77acb8e0943aa242c952580819f67bb847b24f3bef2a52bf63069dea",
-  "english": "Joy By and By"
+  "english": "Joy By and By",
+  "v": "7f73018e3d23a25db71bde811bda101db77152425a11b1a375fd0be7906db801"
  },
  {
   "id": "WN-267",
@@ -23044,8 +23044,8 @@
   "path": "data/WN/267.json",
   "sung": true,
   "sv": "28dd69ec5f2239cefc096e5a53469baced01c04f3e85e58b5e4b31b7a8739714",
-  "v": "4c68254772add86841e7545862fdbd7351435d2651b493afc63d12ef6c1de874",
-  "english": "The Glory Song"
+  "english": "The Glory Song",
+  "v": "fd592020a67823b59caddfae42639a6d38592f15cb4494820c0796a313f10ee2"
  },
  {
   "id": "WN-268",
@@ -23055,8 +23055,8 @@
   "path": "data/WN/268.json",
   "sung": true,
   "sv": "cb150872f8027093a8fa136a8afa9467472e7449d5ac26f6ed3b5ecfaf086068",
-  "v": "990385c691c2a5913c2e529f13df3b778a002edb0c3e802c42ab857d4bccec13",
-  "english": "We Speak of the Realms"
+  "english": "We Speak of the Realms",
+  "v": "aa95d5d51cfbe8fcab8195ed3c6d8f127e710524b8293960a2a3916a6d9f4315"
  },
  {
   "id": "WN-281",
@@ -23066,8 +23066,8 @@
   "path": "data/WN/281.json",
   "sung": true,
   "sv": "8c31ebbbd3ad3b9f76fc84017603280daeea910aed79adba9b46d5ffd57c5f68",
-  "v": "cbdb0b612561806a65e3f5cd1ff3ec08f4baa7d20f73e1bfff7a817052d90221",
-  "english": "Asleep in Jesus"
+  "english": "Asleep in Jesus",
+  "v": "20601a1045775a0af7ac0dd731cc5d5421c9da99798df61d7eb498964c4ee441"
  },
  {
   "id": "WN-283",
@@ -23077,8 +23077,8 @@
   "path": "data/WN/283.json",
   "sung": true,
   "sv": "cc98c94f82183c93e1d2487fa2c368a9260b0aaa59eaaa56d0444afd69cd2140",
-  "v": "c521571fa68324290e82cdf2dceebe7c614b8fd6f571fac364c9b0fa839b382f",
-  "english": "Baptize Us Anew"
+  "english": "Baptize Us Anew",
+  "v": "b038c1cfd552de67a086ba60c315c863bc3bc28d3ec12366d4128b88c85a9ec0"
  },
  {
   "id": "WN-283b",
@@ -23096,8 +23096,8 @@
   "path": "data/WN/284.json",
   "sung": true,
   "sv": "6444ceebbb85fab88f0249d405a271e4cd5fd8a6eeb12798312ec14284b52d51",
-  "v": "54a2b5144c27e7283d777b59fd1ad9588171506fb3f2bb71a6d0c1dbdbf4337f",
-  "english": "Break Thou the Bread of Life"
+  "english": "Break Thou the Bread of Life",
+  "v": "8332d2292834980c5acfc95a3aa8e2727296d77c60c98dffedb0e23f7cf097c6"
  },
  {
   "id": "WN-284b",
@@ -23115,8 +23115,8 @@
   "path": "data/WN/285.json",
   "sung": true,
   "sv": "c8ff5b5fe00abbf209d6f5a28263b31ff52fdbc0c425d4462b8fc067b2e6ebd2",
-  "v": "ccaa845c0afff228ec0b032fbb6311f442775c2d83bc6e25a589bd577723299a",
-  "english": "Rock of Ages"
+  "english": "Rock of Ages",
+  "v": "7c532712ad6353a5a360b8ca7178b0f239c1e0d69f0a6984b98e00920388ee47"
  },
  {
   "id": "WN-286",
@@ -23126,8 +23126,8 @@
   "path": "data/WN/286.json",
   "sung": true,
   "sv": "4dc9698d7d00ed0cecc724eef464987d045a08bb519b19fd580948fb379e4b46",
-  "v": "141712979ac95e4c83a1a1b7b2f6f9bb4f3343e465f3f84129bb31f3f4e0e54b",
-  "english": "Hark! 'Tis the Shepherd's Voice I Hear"
+  "english": "Hark! 'Tis the Shepherd's Voice I Hear",
+  "v": "d153b01ba655febb1607ae5d485d0717b755303b7b62d401b96c8a37d8a5581d"
  },
  {
   "id": "WN-291",
@@ -23147,8 +23147,8 @@
   "path": "data/WN/301.json",
   "sung": true,
   "sv": "a97703155d1680c1e292211aca045124b0777ee4e33ac7b54b45d22d1fdc398c",
-  "v": "c703996220cc8c15dce95e2610ff135a083ec0bc16df423d6eeb655ba734cbf1",
-  "english": "Jesus Loves Me"
+  "english": "Jesus Loves Me",
+  "v": "2ab4fea246e06c2c1566ace3cd1c8263832a95169602b314a75d3fce6cf405a6"
  },
  {
   "id": "WN-301b",
@@ -23166,8 +23166,8 @@
   "path": "data/WN/302.json",
   "sung": true,
   "sv": "b6c21d44ea709922439344ac0e4c600e560a8c4b2e4b66ec7fe127fc061dd928",
-  "v": "5f8fa250da509ecdbb09dc6525089f47987a155e839f9ddcd16a0256f5f12e06",
-  "english": "When He Cometh"
+  "english": "When He Cometh",
+  "v": "a84e498d1b7d3e43446016d2cb9f3fc8cbda98402cdb69758b603493809bb822"
  },
  {
   "id": "WN-308",
@@ -23177,8 +23177,8 @@
   "path": "data/WN/308.json",
   "sung": true,
   "sv": "7b6bbe8602b4faa8bc186f120e92f20c14e622ef46af9eeabd610289698e9d71",
-  "v": "c00edf67081be2d397f591ca878659fdef6ec2a60c16845f1b0330137f948394",
-  "english": "He Brought Me Out"
+  "english": "He Brought Me Out",
+  "v": "4cd3cef79532281908da328118e7d92c1090e47a8935f8867b1e640bd136db27"
  },
  {
   "id": "WN-311",
@@ -23188,8 +23188,8 @@
   "path": "data/WN/311.json",
   "sung": true,
   "sv": "97642b3a1936b404512e9ecbc90fb53464bb57cb1e21777e4f29c4c496b1c16d",
-  "v": "c7242862e58f36e02de16bbec851154bda4125899bb97187b536493fff690d42",
-  "english": "How Great Thou Art"
+  "english": "How Great Thou Art",
+  "v": "1ae16277858ab24e14419a4d8dbb24fd447af6364705c172b17db533d1d0c9f5"
  },
  {
   "id": "WN-315",
@@ -23209,8 +23209,8 @@
   "path": "data/WN/316.json",
   "sung": true,
   "sv": "e27fcead1ed8f6f7f54ed7d2915f4d8ef4bb41377eeabaaf2aaf5122e0bbb780",
-  "v": "7ba10275f20ce5309d85bdc170c5da9589d4e56d0516b999802f5cd221e0b824",
-  "english": "Christ the Lord Is Risen Today"
+  "english": "Christ the Lord Is Risen Today",
+  "v": "e56b3150ef49ccdde99f8a0667229b04bc4a0136bfa45d0e9db88e4e2791534f"
  },
  {
   "id": "WN-317",
@@ -23220,8 +23220,8 @@
   "path": "data/WN/317.json",
   "sung": true,
   "sv": "1264243e5bf604556b33f5bcc02ac20c102cf7c0fc1b781ff1e561599a4e530a",
-  "v": "0b1ad0cb0261afb93fced0f434885d27d5f0e0801302e36adef226ffb56afeae",
-  "english": "God Will Take Care of You"
+  "english": "God Will Take Care of You",
+  "v": "416a004a68f63654ac58f5aa7a0bf72e44d2e03e93215ca8b7758c2bed1378a8"
  },
  {
   "id": "WN-318",
@@ -23231,7 +23231,7 @@
   "path": "data/WN/318.json",
   "sung": true,
   "sv": "3822a91531ad7c393fe3578c35274a9e6dd52b9b4e121571f1c30d3f64bda1ee",
-  "v": "8c6139d13ce11e52cd7c6b8439e4df3be0aad300be5e96913ed7896a15edfc04",
-  "english": "Faith of Our Fathers"
+  "english": "Faith of Our Fathers",
+  "v": "eee2f6a8b5970eadd7b1be9346572fc5946b6d5e63a6001b788cd3dc5386eb8e"
  }
 ]

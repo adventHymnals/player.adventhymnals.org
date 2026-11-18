@@ -157,13 +157,39 @@ function splitSyllables(phones, n, parts) {
   return sylls;
 }
 
+/** Words met with no pronunciation (sung on "aa"), for the app to note quietly. */
+export const unsung = new Set();
+/** A word with no pronunciation is sung on the open vowel "aa" over all its notes, as a melisma, and the
+ *  rest of the verse is sung as written (Brian, 18 Nov 2026: never skip the verse for one word). */
+function openVowel(word, n) {
+  const w = cleanWord(word);
+  if (w && !unsung.has(w)) { unsung.add(w); console.info(`Warble: no pronunciation for "${w}", sung on "aa"`); }
+  return Array.from({ length: Math.max(1, n) }, () => syl([], "A"));
+}
+function orOpen(f, word, n) {
+  try { return f(); } catch (e) { if (e instanceof MissingWord) return openVowel(word, n); throw e; }
+}
+
+// words after which a homograph with a "<word>@noun" lexicon entry is read as the noun ("our lives"); as singer/phonemes.py
+const NOUN_CUES = new Set("our their my your his her its thy whose the these those".split(" "));
+
 function phonemizeWords(words, lang, lex) {
   const out = [];
+  const seen = []; // each word's clean form, for the homograph rule
   for (const parts of words) {
+    const wholeWord = parts.map(cleanWord).join("");
+    if (lang.startsWith("en") && lex && seen.length && NOUN_CUES.has(seen[seen.length - 1])
+      && Object.prototype.hasOwnProperty.call(lex, wholeWord + "@noun")) {
+      seen.push(wholeWord);
+      out.push(splitSyllables(lex[wholeWord + "@noun"].split(" "), parts.length, parts));
+      continue;
+    }
+    seen.push(wholeWord);
     if (parts.length === 1 && parts[0].trim().includes(" ")) {
       let subs = [];
       for (const w of parts[0].trim().split(/\s+/)) {
-        const ph = wordPhonemes(w, lang, lex);
+        let ph;
+        try { ph = wordPhonemes(w, lang, lex); } catch (e) { if (!(e instanceof MissingWord)) throw e; subs = subs.concat(openVowel(w, 1)); continue; }
         if (ph.length) subs = subs.concat(splitSyllables(ph, Math.max(1, ph.filter((p) => VOWELS.has(p)).length), [w]));
       }
       const first = subs.length ? subs[0] : syl([], "@");
@@ -173,12 +199,11 @@ function phonemizeWords(words, lang, lex) {
     }
     if (syllabic(lang)) { out.push(parts.map((p) => splitSyllables(wordPhonemes(p, lang, lex), 1, [p])[0])); continue; }
     const whole = parts.map(cleanWord).join("");
-    const phones = parts.length > 1 ? wordPhonemes(whole, lang, lex) : wordPhonemes(parts[0], lang, lex);
     if (parts.length > 1 && parts.every((p) => inScat(cleanWord(p)))) {
       out.push(parts.map((p) => splitSyllables(SCAT[cleanWord(p)].split(" "), 1, [p])[0]));
       continue;
     }
-    out.push(splitSyllables(phones, parts.length, parts));
+    out.push(orOpen(() => splitSyllables(parts.length > 1 ? wordPhonemes(whole, lang, lex) : wordPhonemes(parts[0], lang, lex), parts.length, parts), whole, parts.length));
   }
   if (lang.startsWith("en")) {
     for (let i = 0; i < out.length - 1; i++) {

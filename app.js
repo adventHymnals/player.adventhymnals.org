@@ -3186,6 +3186,7 @@ function clearSweep() {
   if (sweep.el) sweep.el.hidden = true;
   sweep.i = -1;
   sweep.next = undefined;
+  sweep.join = "";
 }
 
 function setupSweep() {
@@ -3233,13 +3234,14 @@ function sweepTo(ph, wipe = true) {
     sheet.style.clipPath = sweepClip(sys, -50);
     if (engine.playing) viewport.scrollLeft = 0;
     sweep.el.hidden = true;
+    wordsBack();
   }
   const a = sys.anchors;
-  if (!a.length || !wipe || !engine.playing) { sweep.el.hidden = true; return; }
+  if (!a.length || !wipe || !engine.playing) { sweep.el.hidden = true; if (sweep.join) wordsBack(); return; }
   // peeled in two steps, not continuously: at three quarters of the line, its first half; at nine
   // tenths, up to three quarters; the rest when the singing goes back to the left. Each edge is the
   // barline at or before that point.
-  if (ph.x < (sweep.lastX ?? 0) - 30) { sweep.x = 0; sweep.next = undefined; sweep.el.hidden = true; } // went back on this line
+  if (ph.x < (sweep.lastX ?? 0) - 30) { sweep.x = 0; sweep.next = undefined; sweep.el.hidden = true; wordsBack(); } // went back on this line
   sweep.lastX = ph.x;
   const end = a[a.length - 1].x;
   const at = (ph.x - a[0].x) / Math.max(1, end - a[0].x);
@@ -3249,15 +3251,65 @@ function sweepTo(ph, wipe = true) {
     sweep.next = upcomingSystem(i);
   }
   const next = view.systems[sweep.next];
-  if (!next) { sweep.el.hidden = true; return; }
+  if (!next) { sweep.el.hidden = true; if (sweep.join) wordsBack(); return; }
   const upTo = sys.box.x + sys.box.w * (at >= 0.9 ? 0.75 : 0.5);
   const ends = (el) => view.measures.filter((m) => m.system === el).map((m) => m.box.x + m.box.w);
   const mine = ends(sys.el).filter((x) => x <= upTo + 1);
   const edge = mine.length ? Math.max(...mine) : upTo;
   peel(sweep, edge);
+  if (!sweep.el.hidden) wordsAtJoin(sys, next);
   sweep.inner.querySelectorAll("g.system").forEach((el, k) => el.classList.toggle("sw-on", k === sweep.next));
   sweep.inner.style.transform = `translateY(${sweepShift(next)}px)`;
   sweep.inner.style.clipPath = sweepClip(next, -50);
+}
+
+/** The syllables of line s (content coordinates, with their hyphens), measured when first needed. */
+const sylBoxes = (s) => (s.syls ??= [...s.el.querySelectorAll("g.verse > g.syl")].map((el) => ({
+  el, ...view.rel(el), line: `${el.closest("g.staff")?.dataset.n}:${el.parentNode.dataset.n}`, pos: el.dataset.wordpos || "",
+})));
+function wordsBack() { sheet.querySelectorAll(".sw-gone").forEach((el) => el.classList.remove("sw-gone")); sweep.join = ""; }
+/** No word cut in two where the two lines meet (Brian, 18 Nov 2026): a word of the next line that the
+ *  edge would cut is shown whole (the edge steps round it), and a word of this line (already sung) that
+ *  runs under the edge or under such a step is hidden, not cut. */
+function wordsAtJoin(sys, next) {
+  const x = sweep.x;
+  const key = `${sweep.next}:${x}`;
+  if (sweep.join === key) { if (sweep.joinClip) sweep.el.style.clipPath = sweep.joinClip; return; }
+  wordsBack();
+  sweep.join = key;
+  sweep.joinClip = "";
+  const dn = sweepShift(next), dc = sweepShift(sys);
+  const steps = [];
+  for (const b of sylBoxes(next)) {
+    if (!(b.x < x && b.x + b.w > x + 1)) continue;
+    const st = { y0: b.y + dn - 1, y1: b.y + b.h + dn + 1, x1: b.x + b.w + 2 };
+    const o = steps.find((t) => st.y0 < t.y1 && st.y1 > t.y0);
+    if (o) { o.y0 = Math.min(o.y0, st.y0); o.y1 = Math.max(o.y1, st.y1); o.x1 = Math.max(o.x1, st.x1); } else steps.push(st);
+  }
+  steps.sort((a, b) => a.y0 - b.y0);
+  const lines = new Map();
+  for (const b of sylBoxes(sys)) {
+    const y0 = b.y + dc, y1 = b.y + b.h + dc;
+    b.gone = (b.x < x && b.x + b.w > x) || steps.some((t) => y0 < t.y1 && y1 > t.y0 && b.x < t.x1 && b.x + b.w > x);
+    if (!lines.has(b.line)) lines.set(b.line, []);
+    lines.get(b.line).push(b);
+  }
+  // the rest of a word whose start is hidden goes too: no "-eth" left on its own
+  for (const l of lines.values()) {
+    l.sort((a, b) => a.x - b.x);
+    let rest = false;
+    for (const b of l) {
+      if (rest && b.x >= x) b.gone = true;
+      if (b.gone) rest = b.pos === "i" || b.pos === "m";
+      else if (b.pos !== "m") rest = false;
+      if (b.gone) b.el.classList.add("sw-gone");
+    }
+  }
+  if (!steps.length) return;
+  const pts = ["0 0", `${x}px 0`];
+  for (const t of steps) pts.push(`${x}px ${t.y0}px`, `${t.x1}px ${t.y0}px`, `${t.x1}px ${t.y1}px`, `${x}px ${t.y1}px`);
+  pts.push(`${x}px 100%`, "0 100%");
+  sweep.el.style.clipPath = sweep.joinClip = `polygon(${pts.join(", ")})`;
 }
 
 /** The line being sung lies on top of the next one; behind the singer it is peeled away in steps.

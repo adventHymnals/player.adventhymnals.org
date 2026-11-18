@@ -1,8 +1,9 @@
 import { SVG_CSS } from "./core.js";
+import { alignPage } from "./align.js";
 // Renders the score with Verovio in "tracks" (one long system) or "page" (stacked systems) mode,
 // and knows where every staff, bar and note is, for headers, highlighting and the playhead.
 
-const SVG_ATTRS = ["staff@n", "layer@n", "verse@n", "measure@n"];
+const SVG_ATTRS = ["staff@n", "layer@n", "verse@n", "measure@n", "syl@wordpos"];
 
 export class ScoreView {
   constructor(tk, content) {
@@ -34,6 +35,8 @@ export class ScoreView {
     let svg = "";
     for (let p = 1; p <= this.tk.getPageCount(); p++) svg += this.tk.renderToSVG(p);
     this.content.innerHTML = svg;
+    // every line with its staves and words at the same heights (the next line is shown beside this one)
+    if (mode !== "tracks") alignPage([...this.content.querySelectorAll(":scope > svg")]);
     if (mode === "tracks") {
       // one long system at its natural size; the viewport scrolls sideways
       for (const s of this.content.querySelectorAll(":scope > svg")) {

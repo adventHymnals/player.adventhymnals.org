@@ -1,4 +1,5 @@
 import { SVG_CSS } from "./core.js";
+import { alignPages } from "./align.js";
 // Presenter stage (also the video source): one system at a time on a fixed 1920x1080 canvas.
 // The playhead sweeps left to right; behind it the next system is uncovered, so when the eye
 // returns to the left edge the next line is already there.
@@ -42,10 +43,14 @@ export class Presenter {
     // this one synchronous pass; images are made afterwards, when other renders may run.
     const pages = [];
     this.host.style.width = `${W - 2 * MARGIN}px`;
-    for (let p = 1; p <= tk.getPageCount(); p++) {
-      const svg = tk.renderToSVG(p);
-      this.host.innerHTML = svg;
-      const root = this.host.querySelector("svg");
+    // all the lines first, lined up with one another (the same heights for every staff and line of
+    // words, and the same frame), so each line lies where the one before it lay
+    let all = "";
+    for (let p = 1; p <= tk.getPageCount(); p++) all += tk.renderToSVG(p);
+    this.host.innerHTML = all;
+    const roots = [...this.host.querySelectorAll(":scope > svg")];
+    alignPages(roots);
+    for (const root of roots) {
       const base = root.getBoundingClientRect();
       const rel = (el) => { const r = el.getBoundingClientRect(); return { x: r.left - base.left, y: r.top - base.top, w: r.width, h: r.height }; };
       const notes = [];

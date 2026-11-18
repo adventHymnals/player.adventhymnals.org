@@ -715,6 +715,7 @@ body.app .viewport { touch-action: pan-x pan-y; }
 .viewport.sweeping { overflow: hidden; padding-bottom: 0 !important; }
 .viewport.sweeping .sheet { will-change: transform; }
 .viewport.sweeping .sheet g.system:not(.sw-on), .sweep-next g.system:not(.sw-on) { visibility: hidden; }
+.viewport.sweeping .sheet .sw-gone { visibility: hidden; } /* a sung word under the next line's edge */
 .sweep-next { position: absolute; top: 0; overflow: hidden; background: var(--paper, #fbf8f2); pointer-events: none; z-index: 4; }
 .sweep-next .score svg { display: block; width: 100%; height: auto; }
 
