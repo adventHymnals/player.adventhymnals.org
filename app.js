@@ -1228,6 +1228,7 @@ async function setTune(key) {
   const entry = hymnList.find((e) => e.id === hymn.id);
   if (!entry || (hymn.tune?.key || "") === (key || "")) return;
   store.set(`tune:${hymn.id}`, key || "");
+  if (APP) { state.zoom = APP_ZOOM; save("zoom"); } // another tune opens at the smallest size, as another hymn does
   engine.dropStems(); // the old tune's singers are no use now
   for (const w of singingCfg.voices) w.drop();
   try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
@@ -3249,8 +3250,11 @@ function setupSweep() {
     viewport.append(sweep.el);
   }
   // a copy of the score, unlit, from which the next line is shown
-  sweep.el.innerHTML = `<div class="score">${$("score").innerHTML}</div>`;
+  // it holds a copy of only the line it shows (made when that line is known): a copy of the whole score
+  // doubled the page's memory on a long hymn, on phones already short of it (18 Nov 2026)
+  sweep.el.innerHTML = `<div class="score"></div>`;
   sweep.inner = sweep.el.firstChild;
+  sweep.copied = -1;
   sweep.el.hidden = true;
   sweep.next = undefined;
   sweep.head = Math.max(...view.systems.map((s) => staffTop(s) - s.box.y));
@@ -3307,8 +3311,8 @@ function sweepTo(ph, wipe = true) {
   const ends = (el) => view.measures.filter((m) => m.system === el).map((m) => m.box.x + m.box.w);
   const mine = ends(sys.el).filter((x) => x <= upTo + 1);
   const edge = mine.length ? Math.max(...mine) : upTo;
+  if (sweep.copied !== sweep.next) copyLine(sweep.next);
   peel(sweep, edge);
-  sweep.inner.querySelectorAll("g.system").forEach((el, k) => el.classList.toggle("sw-on", k === sweep.next));
   sweep.inner.style.transform = `translateY(${sweepShift(next)}px)`;
   sweep.inner.style.clipPath = sweepClip(next, -50);
   if (!sweep.el.hidden) wordsAtJoin(sys, next); // measured where the next line now lies
@@ -3354,7 +3358,7 @@ function wordsAtJoin(sys, next) {
   sweep.join = key;
   sweep.joinClip = "";
   const E = sweep.el.getBoundingClientRect();
-  const nextEl = sweep.inner.querySelectorAll("g.system")[sweep.next];
+  const nextEl = sweep.inner.querySelector("g.system.sw-on");
   const steps = [];
   for (const w of nextEl ? wordBoxes(nextEl, E) : []) {
     if (!(w.x0 < x && w.x1 > x + 1)) continue;
@@ -3373,6 +3377,36 @@ function wordsAtJoin(sys, next) {
   for (const t of steps) pts.push(`${x}px ${t.y0}px`, `${t.x1}px ${t.y0}px`, `${t.x1}px ${t.y1}px`, `${x}px ${t.y1}px`);
   pts.push(`${x}px 100%`, "0 100%");
   sweep.el.style.clipPath = sweep.joinClip = `polygon(${pts.join(", ")})`;
+}
+
+/** The next line's layer: the score's svg with only line k in it (each level above it copied bare, with
+ *  what holds no line, the symbols and styles, copied whole), so it lies exactly where it lies in the score.
+ *  A score of several svg pages is copied whole, as before. */
+function copyLine(k) {
+  sweep.copied = k;
+  const src = view.systems[k]?.el;
+  const pages = $("score").querySelectorAll(":scope > svg");
+  if (!src || pages.length !== 1) {
+    sweep.inner.innerHTML = $("score").innerHTML;
+    sweep.inner.querySelectorAll("g.system").forEach((el, j) => el.classList.toggle("sw-on", j === k));
+    return;
+  }
+  const chain = [];
+  for (let n = src; n && n !== $("score"); n = n.parentNode) chain.unshift(n);
+  let top = null, at = null;
+  for (let i = 0; i < chain.length; i++) {
+    const node = chain[i];
+    const c = i === chain.length - 1 ? node.cloneNode(true) : node.cloneNode(false);
+    if (at) at.append(c); else top = c;
+    if (i === chain.length - 1) { c.classList.add("sw-on"); break; }
+    for (const ch of node.childNodes) {
+      if (ch === chain[i + 1]) continue; // the next level: appended after its siblings, below
+      if (ch.nodeType === 1 && (ch.matches("g.system") || ch.querySelector("g.system"))) continue; // other lines
+      c.append(ch.cloneNode(true));
+    }
+    at = c;
+  }
+  sweep.inner.replaceChildren(top);
 }
 
 /** The line being sung lies on top of the next one; behind the singer it is peeled away in steps.

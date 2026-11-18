@@ -12,11 +12,10 @@
 // the app's native Verovio and the WebAssembly copy write the same SVG), so it costs a few milliseconds.
 
 const NUM = /-?\d+(?:\.\d+)?/g;
-/** Off where the app draws with its native Verovio: there the staff came out giant (18 Nov 2026, being
- *  looked into); the WebAssembly copy keeps it. */
-const nativeVerovio = () => { try { return !!window.AHNative?.verovio?.available?.() && !alignForced(); } catch { return false; } };
-// to test it there: ?align=1, or localStorage "hymn2:alignNative" = "true"
-const alignForced = () => { try { return new URLSearchParams(location.search).get("align") === "1" || localStorage.getItem("hymn2:alignNative") === "true"; } catch { return false; } };
+/** On everywhere again (18 Nov 2026): the giant staff on the phone was a pinch (zoom 2), not this; a
+ *  switch to leave it off: ?align=0, or localStorage "hymn2:alignNative" = "false" (the app's own Verovio). */
+const nativeVerovio = () => { try { return !!window.AHNative?.verovio?.available?.() && alignOff(); } catch { return false; } };
+const alignOff = () => { try { return new URLSearchParams(location.search).get("align") === "0" || localStorage.getItem("hymn2:alignNative") === "false"; } catch { return false; } };
 const nums = (s) => (s ? (s.match(NUM) || []).map(Number) : []);
 const SHAPES = "text, path, use, rect, ellipse, polygon, polyline";
 
