@@ -138,7 +138,9 @@ export class Engine {
       pan: Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.pans?.[k] ?? PAN[k]])) });
     if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
     this.nativeG = g;
-    try { this.native.gains(g); } catch { /* not singing */ }
+    // in the app's log (logcat, tag chromium): what the singer is told, as it changes (the dynamics too)
+    if (this.nativeOn || force) console.info(`AHDyn t=${this.playing ? this.now().toFixed(2) : "-"} gains ${g.slice(0, 60)}`);
+    try { this.native.gains(g); } catch (e) { console.warn(`AHDyn gains failed: ${e?.message || e}`); }
   }
 
   loadPiano() {

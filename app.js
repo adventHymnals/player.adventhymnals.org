@@ -34,6 +34,7 @@ singers.on = APP; // the app keeps the singers it has played (and lets them be c
 // ?remote=<url>: this copy is bundled in the app; hymn data and recordings come from that site
 // (the live list and new hymns when online, the bundled copy when not)
 const REMOTE = new URLSearchParams(location.search).get("remote") || "";
+console.info(`AHStudio build ${document.querySelector('meta[name="ah-build"]')?.content || "local"}`);
 // the published lexicon (the app's Studio copy can be older than a hymn it opens): warble.js fetches it
 // when a word is missing, before singing that word on "aa"
 try { Warble.lexiconUrl = new URL("warble/lexicon.json", REMOTE || location.href).href; } catch { /* no URL */ }
