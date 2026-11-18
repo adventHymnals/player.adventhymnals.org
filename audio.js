@@ -100,10 +100,33 @@ export class Engine {
   nativePlay(fromT) {
     const segs = this.native ? this.nativeSegs() : [];
     if (!segs.length) { this.nativeStop(); return; }
+    this.nativeDyn = {};
+    // the phone has no limiter after the singer: the loudest mark of the hymn sings at the level used so
+    // far (never louder than before), the softer ones below it in the same steps
+    this.nativeTop = Math.max(1, ...(this.stemEvents || []).filter((e) => e.native && e.env?.length).flatMap((e) => e.env.map(([, g]) => g)));
+    this.nativeLevels(fromT);
     this.nativeGains(true);
     try { this.native.play(JSON.stringify({ from: fromT, segs })); this.nativeOn = true; } catch { this.nativeOn = false; }
+    // the score's dynamics: the app sings each voice at one level, so the page moves that level with the
+    // marks as the singing goes (in the browser startStem's gain envelope does it)
+    clearInterval(this.nativeDynTimer);
+    if (this.nativeOn && (this.stemEvents || []).some((e) => e.native && e.env?.length)) {
+      this.nativeDynTimer = setInterval(() => { if (this.nativeOn) { this.nativeLevels(this.now()); this.nativeGains(); } }, 40);
+    }
+  }
+  /** Each voice's dynamics level at time t, from its sung pass's envelope (1 where it has none). */
+  nativeLevels(t) {
+    const out = {};
+    for (const e of this.stemEvents || []) {
+      if (!e.native || !e.env?.length || t < e.t - 0.05 || t > e.t + e.dur) continue;
+      let v = e.env[0][1];
+      for (const [T, g] of e.env) { if (T <= t + 0.03) v = g; else break; } // a touch early: the change lands on the note
+      out[e.ch] = v / (this.nativeTop || 1);
+    }
+    this.nativeDyn = out;
   }
   nativeStop() {
+    clearInterval(this.nativeDynTimer);
     clearTimeout(this.nativeWrap);
     if (this.nativeOn) { try { this.native.stop(); } catch { /* the app went away */ } }
     this.nativeOn = false;
@@ -111,7 +134,7 @@ export class Engine {
   nativeGains(force = false) {
     if (!this.native) return;
     // with each voice's place between the ears (the app sings them in stereo; older apps read only the letters)
-    const g = JSON.stringify({ ...Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.muted[k] ? 0 : this.levels[k] ?? 0.8])),
+    const g = JSON.stringify({ ...Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.muted[k] ? 0 : Math.round((this.levels[k] ?? 0.8) * (this.nativeDyn?.[k] ?? 1) * 1000) / 1000])),
       pan: Object.fromEntries(["S", "A", "T", "B"].map((k) => [k, this.pans?.[k] ?? PAN[k]])) });
     if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
     this.nativeG = g;

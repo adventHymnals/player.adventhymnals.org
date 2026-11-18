@@ -22,6 +22,21 @@ const KIND_XML = {
 
 // loudness of each printed dynamic, as a gain multiplier
 export const DYNAMIC_LEVEL = { ppp: 0.3, pp: 0.4, p: 0.52, mp: 0.66, mf: 0.8, f: 0.95, ff: 1.08, fff: 1.18, sf: 1.0, sfz: 1.0, fp: 0.6 };
+/** The singers (recorded or live) follow the marks in steps of about 3 dB from mf (Brian, 18 Nov 2026: the
+ *  old steps of 1.5-2 dB were not heard): a level of DYNAMIC_LEVEL's scale (ramps between marks included)
+ *  as a gain against mf. */
+const SING_DB = [[0.3, -12], [0.4, -9], [0.52, -6], [0.66, -3], [0.8, 0], [0.95, 3], [1.08, 5], [1.18, 7]];
+export function singGain(level) {
+  let db;
+  if (level <= SING_DB[0][0]) db = SING_DB[0][1];
+  else if (level >= SING_DB[SING_DB.length - 1][0]) db = SING_DB[SING_DB.length - 1][1];
+  else for (let i = 1; i < SING_DB.length; i++) if (level <= SING_DB[i][0]) {
+    const [a, da] = SING_DB[i - 1], [b, d2] = SING_DB[i];
+    db = da + ((d2 - da) * (level - a)) / (b - a);
+    break;
+  }
+  return Math.round(10 ** (db / 20) * 1000) / 1000;
+}
 
 export const prettyChord = (name) => name.replace(/b/g, "♭").replace(/#/g, "♯");
 
@@ -942,7 +957,7 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
         const a = j ? t0 + tm.qToT(r.q) - 0.06 - XF / 2 : s0;
         const b = j < runs.length - 1 ? t0 + tm.qToT(runs[j + 1].q) - 0.06 + XF / 2 : s0 + stem.duration;
         if (b <= a) return null;
-        const env = !marked[key] ? null : h.voices[key].map((n, i) => [t0 + tm.qToT(n.q), levels[key][i] / DYNAMIC_LEVEL.mf]).filter(([x]) => x >= a - 2 && x <= b);
+        const env = !marked[key] ? null : h.voices[key].map((n, i) => [t0 + tm.qToT(n.q), singGain(levels[key][i])]).filter(([x]) => x >= a - 2 && x <= b);
         events.push({ t: a, dur: b - a, off: a - s0, cut: j < runs.length - 1, ch: key, stem: `${key}:${verse}:${r.s}`, native: stem.native, v: 1, env, pass: k, q: r.q, p: 0 });
         return true;
       });
@@ -950,7 +965,7 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
         const tn = t0 + tm.qToT(n.q);
         let j = runs.length - 1;
         while (j > 0 && runs[j].q > n.q + 1e-6) j--;
-        events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: levels[key][i], pass: k, q: n.q, i, silent: !!sung[j] });
+        events.push({ t: tn, dur: t0 + tm.qToT(n.q + n.d) - tn, p: n.p + shiftAt(k, pass, n.q), ch: key, v: DYNAMIC_LEVEL.mf * singGain(levels[key][i]), pass: k, q: n.q, i, silent: !!sung[j] });
       });
     }
     for (const n of acc) {
