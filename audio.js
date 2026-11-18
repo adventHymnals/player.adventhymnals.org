@@ -298,7 +298,17 @@ export class Engine {
     g.connect(this.channels[e.ch]);
     const src = c.createBufferSource();
     src.buffer = buf;
-    src.connect(g);
+    if (e.env?.length) { // the score's dynamics (core.js): each note's level from its onset
+      const eg = c.createGain();
+      const t0 = Math.max(at, c.currentTime);
+      const ctxOf = (T) => at + (T - e.t - offset);
+      let first = 1;
+      for (const [T, v] of e.env) if (ctxOf(T) <= t0) first = v;
+      eg.gain.setValueAtTime(first, t0);
+      for (const [T, v] of e.env) { const x = ctxOf(T); if (x > t0) eg.gain.setTargetAtTime(v, x - 0.02, 0.025); }
+      src.connect(eg);
+      eg.connect(g);
+    } else src.connect(g);
     // a stem may begin before the pass (pickup consonants); start partway in if so
     const now = c.currentTime;
     if (at < now) { offset += now - at; at = now; }

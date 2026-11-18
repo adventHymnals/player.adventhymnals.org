@@ -298,7 +298,7 @@ export function buildMusicXML(h, opts) {
           // rests fill every silence, so each note sits at its own time (Verovio places notes one after another)
           const inBar = h.voices[k].filter((x) => x.m === m);
           let at = barStart(h, m);
-          if (!inBar.length) mx += restXml(barEnd(h, m) - at, vi + 1, true);
+          if (!inBar.length) mx += restXml(barEnd(h, m) - at, vi + 1, !pickupBar); // a whole-bar rest in a short pickup bar would be drawn (and timed) as a full bar
           for (const n of inBar) {
             if (n.q > at + 1e-6) mx += restXml(n.q - at, vi + 1);
             at = n.q + n.d;
@@ -513,28 +513,33 @@ export function syncopate(h, from, to) {
 
 // ---- dynamics --------------------------------------------------------------
 
-/** Loudness multiplier for every note of a voice, following marks and hairpins. */
+/** Loudness multiplier for every note of a voice, following marks and hairpins.
+ *  A hairpin that leads to a printed dynamic ramps to it. One with no dynamic after it is a swell or a
+ *  fading of a phrase: it moves a step from the printed level and the music goes back to that level after
+ *  it (hymns write many short ones; letting each one move the level for good faded whole refrains out). */
 export function dynamicLevels(notes) {
+  const STEP = 0.14, LO = 0.25, HI = 1.2;
   const levels = new Array(notes.length);
-  let level = DYNAMIC_LEVEL.mf;
-  let ramp = null; // { from, startQ, dir }
+  let base = DYNAMIC_LEVEL.mf; // the printed level in force
+  let ramp = null; // { from, to, a, b, keep } keep: the level stays at `to` after it (a printed dynamic ends it)
   for (let i = 0; i < notes.length; i++) {
     const n = notes[i];
-    if (n.dyn && DYNAMIC_LEVEL[n.dyn] !== undefined) { level = DYNAMIC_LEVEL[n.dyn]; ramp = null; }
+    if (n.dyn && DYNAMIC_LEVEL[n.dyn] !== undefined) { base = DYNAMIC_LEVEL[n.dyn]; ramp = null; }
     if (n.hp === "<" || n.hp === ">") {
-      // ramp to the next printed dynamic, or by a step if none follows before the hairpin stops
       let j = i + 1;
-      while (j < notes.length && !notes[j].dyn && notes[j].hp !== "!") j++;
-      const target = notes[j]?.dyn ? DYNAMIC_LEVEL[notes[j].dyn] : level + (n.hp === "<" ? 0.15 : -0.15);
-      ramp = { from: level, to: target, a: n.q, b: notes[j] ? notes[j].q : n.q + n.d };
+      while (j < notes.length && !notes[j].dyn && notes[j].hp !== "!" && notes[j].hp !== "<" && notes[j].hp !== ">") j++;
+      const end = notes[j];
+      const mark = end?.dyn && DYNAMIC_LEVEL[end.dyn] !== undefined ? DYNAMIC_LEVEL[end.dyn] : null;
+      const to = mark ?? base + (n.hp === "<" ? STEP : -STEP);
+      ramp = { from: base, to, a: n.q, b: end ? end.q : n.q + n.d, keep: mark !== null };
     }
-    let v = level;
+    let v = base;
     if (ramp) {
-      const f = ramp.b > ramp.a ? Math.min(1, (n.q - ramp.a) / (ramp.b - ramp.a)) : 1;
+      const f = ramp.b > ramp.a ? Math.min(1, Math.max(0, (n.q - ramp.a) / (ramp.b - ramp.a))) : 1;
       v = ramp.from + (ramp.to - ramp.from) * f;
-      if (n.hp === "!" || f >= 1) { level = ramp.to; ramp = n.hp === "!" ? null : ramp; }
+      if (n.hp === "!" || f >= 1) { if (ramp.keep) base = ramp.to; ramp = null; }
     }
-    levels[i] = v;
+    levels[i] = Math.min(HI, Math.max(LO, v));
   }
   return levels;
 }
@@ -869,6 +874,9 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
   // instrumental sections use the chosen accompaniment, or the hymn's own parts on piano
   const interR = instrumentalRange(h, interlude);
   const levels = Object.fromEntries(Object.keys(h.voices).map((k) => [k, dynamicLevels(h.voices[k])]));
+  // the singers' recordings (and live singing) are sung at one level: where the score marks dynamics they
+  // follow them by a gain envelope, each note's level against mf (none where the voice has no marks)
+  const marked = Object.fromEntries(Object.keys(h.voices).map((k) => [k, h.voices[k].some((n) => n.dyn || n.hp)]));
   const accLevel = dynamicLevels(h.voices[h.lyricVoice]);
   const lv = h.voices[h.lyricVoice];
   const levelAt = (q) => { let v = accLevel[0] ?? 0.8; lv.forEach((n, i) => { if (n.q <= q + 1e-6) v = accLevel[i]; }); return v / DYNAMIC_LEVEL.mf; };
@@ -934,7 +942,8 @@ export function performance(h, { tempo, verses, accomp, countIn, countAt = "star
         const a = j ? t0 + tm.qToT(r.q) - 0.06 - XF / 2 : s0;
         const b = j < runs.length - 1 ? t0 + tm.qToT(runs[j + 1].q) - 0.06 + XF / 2 : s0 + stem.duration;
         if (b <= a) return null;
-        events.push({ t: a, dur: b - a, off: a - s0, cut: j < runs.length - 1, ch: key, stem: `${key}:${verse}:${r.s}`, native: stem.native, v: 1, pass: k, q: r.q, p: 0 });
+        const env = !marked[key] ? null : h.voices[key].map((n, i) => [t0 + tm.qToT(n.q), levels[key][i] / DYNAMIC_LEVEL.mf]).filter(([x]) => x >= a - 2 && x <= b);
+        events.push({ t: a, dur: b - a, off: a - s0, cut: j < runs.length - 1, ch: key, stem: `${key}:${verse}:${r.s}`, native: stem.native, v: 1, env, pass: k, q: r.q, p: 0 });
         return true;
       });
       h.voices[key].forEach((n, i) => {

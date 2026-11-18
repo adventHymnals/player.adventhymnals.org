@@ -85,7 +85,7 @@ const state = {
   verses: [1],
   transpose: 0,       // semitones for the whole hymn (saved per hymn)
   lastVerseUp: store.get("lastVerseUp", 0), // modulate the last verse up 0, 1 or 2 semitones
-  verseLayout: store.get("verseLayout", "stack"), // "stack": verses under one another; "unfold": written out, each verse starting where the last ends (a score several times longer: a phone draws it slowly)
+  verseLayout: store.get("verseLayout", "unfold"), // "unfold": written out, each verse starting where the last ends on its line (Brian 16-17 Nov); "stack": verses under one another
   presenterShows: store.get("presenterShows", "score"), // or "words" for projection
   showSync: store.get("showSync", false),
   headsCollapsed: store.get("headsCollapsed", false),
@@ -653,9 +653,10 @@ function fillPicker() {
 const BOOK_NAMES = {
   SDAH: "Seventh-day Adventist Hymnal", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", CH1941: "Church Hymnal 1941",
   CS1900: "Christ in Song 1900", CS1908: "Christ in Song 1908", HT1876: "Hymns and Tunes 1876", AHC: "Advent Hymnals Collection",
+  ANTHEMS: "Anthems", CLUBS: "Club Songs",
   RECORDED: "Recorded",
 };
-const BOOK_ORDER = ["SDAH", "NZK", "WN", "CH1941", "CS1908", "CS1900", "HT1876", "AHC"]; // the hymnals in use first, then the older ones
+const BOOK_ORDER = ["SDAH", "NZK", "WN", "CH1941", "CS1908", "CS1900", "HT1876", "AHC", "ANTHEMS", "CLUBS"]; // the hymnals in use first, then the older ones
 const bookRank = (b) => (BOOK_ORDER.indexOf(b) + 1) || 99;
 const bookCodes = () => [...new Set(hymnList.map((x) => x.book))].sort((a, b) => bookRank(a) - bookRank(b) || a.localeCompare(b));
 const bookName = (b) => BOOK_NAMES[b] || b;
@@ -3224,6 +3225,10 @@ function sweepTo(ph, wipe = true) {
     sweep.x = 0;
     sweep.next = undefined;
     lastSystem = sys.el;
+    // only this line is drawn: what the line below has above its staff (a bar number, a dynamic, a
+    // hairpin) sits inside this line's box and showed through the clip
+    sheet.querySelectorAll("g.system.sw-on").forEach((el) => el.classList.remove("sw-on"));
+    sys.el.classList.add("sw-on");
     sheet.style.transform = `translateY(${sweepShift(sys)}px)`;
     sheet.style.clipPath = sweepClip(sys, -50);
     if (engine.playing) viewport.scrollLeft = 0;
@@ -3250,6 +3255,7 @@ function sweepTo(ph, wipe = true) {
   const mine = ends(sys.el).filter((x) => x <= upTo + 1);
   const edge = mine.length ? Math.max(...mine) : upTo;
   peel(sweep, edge);
+  sweep.inner.querySelectorAll("g.system").forEach((el, k) => el.classList.toggle("sw-on", k === sweep.next));
   sweep.inner.style.transform = `translateY(${sweepShift(next)}px)`;
   sweep.inner.style.clipPath = sweepClip(next, -50);
 }
@@ -3588,6 +3594,12 @@ function openRecordDialog() {
   chips("recVerses", hymn.verses.map((_, i) => [i + 1, String(i + 1)]), (v) => state.verses.includes(Number(v)));
   chips("recVoices", hymnVoices().map((k) => [k, VOICES[k].name]), (k) => !state.mute[k]);
   $("recShows").value = state.presenterShows;
+  // who sings in the video: asked here (the app's "ask at Play" never asked, so the synth sang)
+  const singOpts = [...(singingCfg.warble ? singingCfg.voices.map((w) => [w.engine, w.label]) : []),
+    ...RECORDED.filter((r) => manifests[r.engine]).map((r) => [r.engine, r.label]), ["instrumental", "Instruments only"]];
+  $("recSing").innerHTML = singOpts.map(([v, l]) => `<option value="${v}">${escHtml(l)}</option>`).join("");
+  const nowSings = whoSings();
+  $("recSing").value = singOpts.some(([v]) => v === nowSings) ? nowSings : singOpts[0][0];
   $("recAccomp").innerHTML = Object.entries(ACCOMP_STYLES).map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
   $("recAccomp").value = state.accomp;
   for (const [id, key] of [["recIntro", "intro"], ["recInterlude", "interlude"]]) {
@@ -3599,7 +3611,7 @@ function openRecordDialog() {
   chips("recTakes", [["choir", "Choir"], ...hymnVoices().map((k) => [k, VOICES[k].name])], (v) => v === "choir");
   const summary = () => {
     const vs = [...$("recVerses").querySelectorAll("input:checked")].map((x) => x.value);
-    const voices = [...$("recVoices").querySelectorAll("input:checked")].map((x) => VOICES[x.value].name);
+    const voices = $("recSing").value === "instrumental" ? [] : [...$("recVoices").querySelectorAll("input:checked")].map((x) => VOICES[x.value].name);
     const takes = [...$("recTakes").querySelectorAll("input:checked")].length;
     $("recSummary").textContent = `${hymn.number} ${hymn.title}: verse${vs.length === 1 ? "" : "s"} ${vs.join(", ") || "none"}; `
       + `${voices.length ? voices.join(", ") : "no voices"}; at ${state.tempo} a minute; `
@@ -3612,7 +3624,18 @@ function openRecordDialog() {
     const vs = [...$("recVerses").querySelectorAll("input:checked")].map((x) => Number(x.value));
     if (!vs.length) return toast("Choose at least one verse.");
     const on = new Set([...$("recVoices").querySelectorAll("input:checked")].map((x) => x.value));
-    state.verses = vs; store.set(`verses:${hymn.id}`, vs);
+    const takes = [...$("recTakes").querySelectorAll("input:checked")].map((x) => x.value);
+    if (!takes.length) return toast("Choose at least one video.");
+    // the video's choices are for the video only: the player goes back to its own after it (nothing is saved)
+    const snap = recordSnapshot();
+    const sing = $("recSing").value;
+    appAnswered = true;
+    state.instrumental = sing === "instrumental";
+    if (!state.instrumental) state.singEngine = sing;
+    // the video's voices: all on the piano for instruments only, else everyone sings
+    state.voiceSounds = state.instrumental ? Object.fromEntries(hymnVoices().map((k) => [k, "piano"])) : {};
+    state.verses = vs;
+    state.mute = { ...state.mute };
     for (const k of hymnVoices()) state.mute[k] = !on.has(k);
     state.presenterShows = $("recShows").value;
     state.accomp = $("recAccomp").value;
@@ -3620,33 +3643,84 @@ function openRecordDialog() {
     state.interlude = $("recInterlude").value;
     state.countIn = $("recCountIn").value !== "off";
     if (state.countIn) state.countAt = $("recCountIn").value;
-    const takes = [...$("recTakes").querySelectorAll("input:checked")].map((x) => x.value);
-    if (!takes.length) return toast("Choose at least one video.");
-    save("mute", "presenterShows", "accomp", "intro", "interlude", "countIn", "countAt");
-    // keep the rest of the page in step with what was chosen
-    $("presenterShows").value = state.presenterShows; $("intro").value = state.intro; $("interlude").value = state.interlude;
-    $("countIn").checked = state.countIn; $("countAt").value = state.countAt; buildVerseChips();
     d.close();
     if (state.accomp !== "off" || state.intro !== "none" || state.interlude !== "none") await engine.loadPiano();
     if (anySung()) await prepareStems(); else rebuild();
     buildHeaders();
     applyMix();
-    if (canMakeVideo()) await makeTakeVideos(takes);
-    else await startRecording(); // an older browser: film the stage live
+    if (canMakeVideo()) {
+      try { await makeTakeVideos(takes); } finally { await restoreSnapshot(snap); }
+    } else await startRecording(snap); // an older browser: film the stage live (put back when it stops)
   };
   d.showModal();
+}
+
+/** What the record dialog changes, to put the player back as it was after the video. */
+function recordSnapshot() {
+  return { verses: [...state.verses], mute: { ...state.mute }, presenterShows: state.presenterShows, accomp: state.accomp,
+    intro: state.intro, interlude: state.interlude, countIn: state.countIn, countAt: state.countAt, view: state.view,
+    singEngine: state.singEngine, instrumental: state.instrumental, voiceSounds: { ...state.voiceSounds }, appAnswered };
+}
+async function restoreSnapshot(s) {
+  if (!s || !hymn) return;
+  const reload = JSON.stringify(s.verses) !== JSON.stringify(state.verses) || s.singEngine !== state.singEngine || s.instrumental !== state.instrumental
+    || JSON.stringify(s.voiceSounds) !== JSON.stringify(state.voiceSounds);
+  const { appAnswered: answered, ...rest } = s;
+  Object.assign(state, rest);
+  appAnswered = answered;
+  if (reload) await prepareStems(); else rebuild();
+  syncSingersBtn();
+  buildHeaders();
+  applyMix();
+  buildVerseChips();
+  if (state.view !== "presenter") await renderAll();
+  else paint(true);
+}
+
+// The app's live singers sing straight to the phone's speaker (AudioTrack), which a video cannot hear: for a
+// video each voice of each pass is sung whole by the app (/warble-render/) and mixed like a recording.
+async function liveStemsForVideo(voices, progress) {
+  const out = new Map();
+  const want = [...stemInfo.entries()].filter(([k, x]) => x.native && voices.has(k[0]));
+  if (!want.length) return out;
+  engine.ensure();
+  let i = 0;
+  for (const [k, x] of want) {
+    progress(`Getting the live singers into the video… ${++i} of ${want.length}`);
+    const b64 = btoa(unescape(encodeURIComponent(x.native))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    let r = null;
+    for (const until = Date.now() + 120000; ;) { // the first time, the singing model may still be loading
+      r = await fetch(`https://appassets.androidplatform.net/warble-render/${k[0]}/${b64}.wav`).catch(() => null);
+      if (r?.ok || Date.now() > until) break;
+      progress("Starting the live singers for the video…");
+      await new Promise((ok) => setTimeout(ok, 1500));
+    }
+    if (!r?.ok) throw new Error(`the live singers could not sing ${VOICES[k[0]]?.name || k[0]} for the video`);
+    out.set(k, await engine.ctx.decodeAudioData(await r.arrayBuffer()));
+  }
+  return out;
 }
 
 // Every video is made ahead of time (see videomaker.js): smooth whatever the browser is doing, and the
 // takes after the first reuse the frames after the introduction.
 async function makeTakeVideos(takeKeys) {
-  if (state.view !== "presenter") { state.view = "presenter"; save("view"); await renderAll(); }
+  if (state.view !== "presenter") { state.view = "presenter"; await renderAll(); }
   stopPlayback();
   engine.ensure();
   await engine.loadPiano();
   const loopWas = state.loop.on;
   if (loopWas) setLoop(state.loop.from, state.loop.to, false);
   const choir = hymnVoices().filter((k) => !state.mute[k]);
+  let live = new Map();
+  try { live = await liveStemsForVideo(new Set(takeKeys.flatMap((t) => (t === "choir" ? choir : [t]))), (t) => toast(t, 0)); } catch (err) { toast(`The video could not be made: ${err.message}`, 8000); return; }
+  // the live passes as recordings: their events lose "native" so the offline mix plays the buffers
+  const liveEvents = (events) => (live.size ? events.map((e) => (e.native && live.has(e.stem) ? { ...e, native: undefined } : e)) : events);
+  const withLive = async (fn) => {
+    if (!live.size) return fn();
+    const was = engine.stemBuffers;
+    engine.setStemBuffers(new Map([...(was || []), ...live]));
+    try { return await fn(); } finally { engine.setStemBuffers(was); }
+  };
   making = true;
   state.watermark = true;
   const takes = takeKeys.map((key) => ({
@@ -3664,7 +3738,7 @@ async function makeTakeVideos(takeKeys) {
       return { total: perf.total + 1, splitT };
     },
     drawAt: (t) => paint(true, t),
-    audio: () => engine.renderOffline(perf.events, perf.total + 1.5),
+    audio: () => withLive(() => engine.renderOffline(liveEvents(perf.events), perf.total + 1.5)),
   }));
   const made = [];
   try {
@@ -3772,9 +3846,9 @@ function showMadeVideos(made) {
   d.showModal();
 }
 
-async function startRecording() {
+async function startRecording(snap = null) {
   if (recording) { finishRecording(); return; }
-  if (state.view !== "presenter") { state.view = "presenter"; save("view"); await renderAll(); }
+  if (state.view !== "presenter") { state.view = "presenter"; await renderAll(); }
   engine.ensure();
   applyMix();
   await engine.loadPiano();
@@ -3799,7 +3873,7 @@ async function startRecording() {
     setTimeout(() => URL.revokeObjectURL(a.href), 60000);
     toast(`Video saved as ${a.download}`);
   });
-  recording = { rec, loopWas };
+  recording = { rec, loopWas, snap };
   $("recordBtn").classList.add("recording");
   $("recordBtn").setAttribute("aria-label", "Stop recording");
   $("recordBtn").querySelector("span").textContent = "Stop recording and save the video";
@@ -3820,6 +3894,7 @@ function finishRecording() {
   $("recordBtn").querySelector("span").textContent = "Record the presenter to a video";
   document.querySelector("#moreMenu > summary").classList.remove("recording");
   if (r.loopWas) setLoop(state.loop.from, state.loop.to, true);
+  if (r.snap) { stopPlayback(); restoreSnapshot(r.snap); }
 }
 
 async function doExport() {
@@ -3904,7 +3979,7 @@ async function doImportAudio(file) {
 // this page only and never saved, so the same URL always makes the same videos. The spec is
 // social/SPEC-player.md.
 
-const HYMNAL_NAMES = { SDAH: "SDA Hymnal", CS1900: "Christ in Song", CS1908: "Christ in Song", HT1876: "Hymns and Tunes", CH1941: "Church Hymnal 1941", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", AHC: "Advent Hymnals Collection" };
+const HYMNAL_NAMES = { SDAH: "SDA Hymnal", CS1900: "Christ in Song", CS1908: "Christ in Song", HT1876: "Hymns and Tunes", CH1941: "Church Hymnal 1941", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", AHC: "Advent Hymnals Collection", ANTHEMS: "Anthems", CLUBS: "Club Songs" };
 const hymnBadge = () => `${HYMNAL_NAMES[hymn.book] || hymn.book} ${hymn.number}`;
 const LOGO = "brand/logo.svg"; // the one place the logo comes from
 const END_VOICE = "audio/endcard/cta.wav"; // spoken: "Which hymn should we sing next? Tell us in the comments."

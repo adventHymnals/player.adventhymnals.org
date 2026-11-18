@@ -8,6 +8,198 @@
   "v": "bf6f5b8544e6c69b2eb5b53708dcfec973baf3480b5230723807c66ee7562b85"
  },
  {
+  "id": "AHC-2",
+  "book": "AHC",
+  "number": "2",
+  "title": "And the Glory of the Lord",
+  "path": "data/AHC/2.json",
+  "v": "116998ab22721512d9d669b330a92461e4f34cead8444f9b715186950d9cddad"
+ },
+ {
+  "id": "AHC-3",
+  "book": "AHC",
+  "number": "3",
+  "title": "And He Shall Purify",
+  "path": "data/AHC/3.json",
+  "v": "09a5cf893ebd2b86989574a7e6711d849f772a8b7eace05296f4e60beca3200f"
+ },
+ {
+  "id": "AHC-4",
+  "book": "AHC",
+  "number": "4",
+  "title": "O Thou That Tellest Good Tidings to Zion",
+  "path": "data/AHC/4.json",
+  "v": "0af8a99c8534a90457c90249c848e6c7c06e40e71832aa11a521b92c428f36c1"
+ },
+ {
+  "id": "AHC-5",
+  "book": "AHC",
+  "number": "5",
+  "title": "For unto Us a Child Is Born",
+  "path": "data/AHC/5.json",
+  "v": "cff2ca2625178e8bdc93aea5f0e65e93340656f030b6cbf14a95ce98c087dc81"
+ },
+ {
+  "id": "AHC-6",
+  "book": "AHC",
+  "number": "6",
+  "title": "Glory to God",
+  "path": "data/AHC/6.json",
+  "v": "fa52321138c37d1d09d0bf58ea81adc98707e8798a2c2ea70776e3d111f7fd70"
+ },
+ {
+  "id": "AHC-7",
+  "book": "AHC",
+  "number": "7",
+  "title": "His Yoke Is Easy",
+  "path": "data/AHC/7.json",
+  "v": "a6e2e0261158b63769abca70678849fff1b31ab328b9b40328d54049f4af3aa4"
+ },
+ {
+  "id": "AHC-8",
+  "book": "AHC",
+  "number": "8",
+  "title": "Behold the Lamb of God",
+  "path": "data/AHC/8.json",
+  "v": "a3bb44a70636650727a9f59612f6b812de0b2f0ee52d03126db5a2c1f72ba880"
+ },
+ {
+  "id": "AHC-9",
+  "book": "AHC",
+  "number": "9",
+  "title": "Surely He Hath Borne Our Griefs",
+  "path": "data/AHC/9.json",
+  "v": "6b19e1898de6937ed47b3bad8002098009dae0854e25acc762bfc50942cd0946"
+ },
+ {
+  "id": "AHC-10",
+  "book": "AHC",
+  "number": "10",
+  "title": "And with His Stripes We Are Healed",
+  "path": "data/AHC/10.json",
+  "v": "c9180f4dd6b3dc4055f1096dfe4d3f59659cfc59732a9389f74705cc259fbf30"
+ },
+ {
+  "id": "AHC-11",
+  "book": "AHC",
+  "number": "11",
+  "title": "All We Like Sheep",
+  "path": "data/AHC/11.json",
+  "v": "c4bd088772b52be0180792eb24343ab875285e1ebd2e18440b40b6ae3a7a1952"
+ },
+ {
+  "id": "AHC-12",
+  "book": "AHC",
+  "number": "12",
+  "title": "He Trusted in God",
+  "path": "data/AHC/12.json",
+  "v": "696dc4261a7f94d7a0ffe5af3c926d00cf55e0929a293710de6669d9b7132525"
+ },
+ {
+  "id": "AHC-13",
+  "book": "AHC",
+  "number": "13",
+  "title": "Lift Up Your Heads",
+  "path": "data/AHC/13.json",
+  "v": "6b276e26459c4d62c3b54d168f3abfdd49dad5959ef8756f914fcdce6e1d5b9c"
+ },
+ {
+  "id": "AHC-14",
+  "book": "AHC",
+  "number": "14",
+  "title": "Let All the Angels of God Worship Him",
+  "path": "data/AHC/14.json",
+  "v": "6b0274eaa0df89f604d6b56bb80da21a184980edac5721bca569cf58bda7f21b"
+ },
+ {
+  "id": "AHC-15",
+  "book": "AHC",
+  "number": "15",
+  "title": "The Lord Gave the Word",
+  "path": "data/AHC/15.json",
+  "v": "36030e52379f4b0f5a5fbd5268c888a37afcc8b19c00987378ec28d6e14540bc"
+ },
+ {
+  "id": "AHC-16",
+  "book": "AHC",
+  "number": "16",
+  "title": "Their Sound Is Gone Out",
+  "path": "data/AHC/16.json",
+  "v": "29c65bc0f53efd962a54d9d6f467e429ba71a3dd38d04fc023d2ad356c105446"
+ },
+ {
+  "id": "AHC-17",
+  "book": "AHC",
+  "number": "17",
+  "title": "Let Us Break Their Bonds Asunder",
+  "path": "data/AHC/17.json",
+  "v": "8d86fb3158325f133d4869b26f10f0901431d5fb0f969121b7a1053d71aead41"
+ },
+ {
+  "id": "AHC-18",
+  "book": "AHC",
+  "number": "18",
+  "title": "Hallelujah",
+  "path": "data/AHC/18.json",
+  "v": "93d096a06c64c7b9a8b9a652542394bea1d071c46d0046a45905e47305f61cc3"
+ },
+ {
+  "id": "AHC-19",
+  "book": "AHC",
+  "number": "19",
+  "title": "Since by Man Came Death",
+  "path": "data/AHC/19.json",
+  "v": "cd039ffcebffc3c2da29156219bef227b8f6e66a2806fa503cf19971d85138b2"
+ },
+ {
+  "id": "AHC-20",
+  "book": "AHC",
+  "number": "20",
+  "title": "But Thanks Be to God",
+  "path": "data/AHC/20.json",
+  "v": "70d6ef67bbcc4e13102d89636c606fef3b67216db71cf965050847feec29ca80"
+ },
+ {
+  "id": "AHC-21",
+  "book": "AHC",
+  "number": "21",
+  "title": "Worthy Is the Lamb",
+  "path": "data/AHC/21.json",
+  "v": "6c4e6033b66fd0759920916b9da4a35e59a910304f1eabe0287d605f9efcf211"
+ },
+ {
+  "id": "AHC-22",
+  "book": "AHC",
+  "number": "22",
+  "title": "Amen",
+  "path": "data/AHC/22.json",
+  "v": "d1ae635273ce425cadc9f0c2a1f604d701973f2d2e3e94f4a0f38de36294374c"
+ },
+ {
+  "id": "ANTHEMS-1",
+  "book": "ANTHEMS",
+  "number": "1",
+  "title": "Ee Mungu Nguvu Yetu",
+  "path": "data/ANTHEMS/1.json",
+  "v": "1d2690364e19ae67bac902e5366323d70325cd6b855936114d4b7b77c1f88cc7"
+ },
+ {
+  "id": "ANTHEMS-2",
+  "book": "ANTHEMS",
+  "number": "2",
+  "title": "Oh Uganda, Land of Beauty",
+  "path": "data/ANTHEMS/2.json",
+  "v": "ea0ccad4a3877f21ad8367e69ff48f3fb8d8d6516ec424ac3bb88c097c39a2bd"
+ },
+ {
+  "id": "ANTHEMS-3",
+  "book": "ANTHEMS",
+  "number": "3",
+  "title": "Mungu Ibariki Afrika",
+  "path": "data/ANTHEMS/3.json",
+  "v": "9a48d8ae7caa4ba28304cce22732720446dafa0422fd8cfad798bdc2cb1c2147"
+ },
+ {
   "id": "CH1941-1",
   "book": "CH1941",
   "number": "1",
