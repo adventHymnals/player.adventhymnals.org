@@ -21559,6 +21559,14 @@
   "v": "88d0d095f800e3f725bdf7f9bdbe98449b98ec8076f95eb9b4dc7a93519ca35f"
  },
  {
+  "id": "SPIRITUALS-1",
+  "book": "SPIRITUALS",
+  "number": "1",
+  "title": "Didn't My Lord Deliver Daniel",
+  "path": "data/SPIRITUALS/1.json",
+  "v": "996557b140373b738e088c675043f15351a36ad01efe4eec56085ae676c4f175"
+ },
+ {
   "id": "WN-1",
   "book": "WN",
   "number": "1",
