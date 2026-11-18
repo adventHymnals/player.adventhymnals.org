@@ -1868,11 +1868,45 @@ async function renderAll() {
     drawLoopBoxes();
     drawSyncMarks();
     if (quick) wholeLater(gen, wholeXml, wholeKey, ro);
+    else prewarmSoon(gen);
   }
   lastLineKey = "";
   paint(true);
 }
 let drawnWhole = ""; // the hymn (and tune) whose staff was last drawn whole
+/** The next hymn in the list, engraved in the background into the device's cache while this one sits
+ *  idle (not playing, the page on screen), so opening it next is instant. Only where its first drawing is
+ *  certain to match (nothing of its own saved: verses, key, tune; no parts beyond S/A/T/B; no piano staff);
+ *  never while singing (the app's singer needs the phone's time). */
+let prewarmTimer = 0;
+function prewarmSoon(gen) {
+  clearTimeout(prewarmTimer);
+  prewarmTimer = setTimeout(() => prewarmNext(gen).catch(() => {}), 4000);
+}
+async function prewarmNext(gen) {
+  if (gen !== drawGen || engine.playing || document.hidden || !isScoreView() || MAKE || pianoShown() || state.words === "current") return;
+  const i = hymnList.findIndex((x) => x.id === hymn?.id);
+  const entry = i >= 0 ? hymnList[i + 1] : null;
+  if (!entry || entry.book !== hymn.book) return;
+  const id = entry.id;
+  if (store.get(`verses:${id}`, null) || store.get(`transpose:${id}`, 0) || store.get(`tune:${id}`, "")) return;
+  const h = await hymnJson(entry);
+  if (gen !== drawGen || engine.playing || !h?.voices || h.parts) return;
+  const verses = h.verses.map((_, k) => k + 1);
+  const tracks = state.tracks.map((t) => t.filter((k) => h.voices[k])).filter((t) => t.length).filter((t) => !state.hidden.includes(trackKey(t)));
+  const opts = { tracks, trackWords: tracks.map((t) => state.trackWords[trackKey(t)] !== false), words: state.words, verse: verses[0], chords: state.chords, unfold: unfolded() ? verses : null };
+  const ro = { mode: state.view, zoom: APP ? APP_ZOOM : state.zoom, width: (viewport.clientWidth - 8) * (APP ? 1 : appWide(state.zoom)), tracks: opts.tracks, barOffset: h.pickup > 0 ? 1 : 0, transpose: "", ownBase: lyricLines(h, opts) };
+  const xml = buildMusicXML(h, opts);
+  const key = engraveKey(xml, ScoreView.engraveOptions(ro));
+  if (await getEngraved(key)) return; // kept already
+  // the last check just before the work: still idle
+  if (gen !== drawGen || engine.playing || document.hidden) return;
+  const t0 = Date.now();
+  const e = view.engrave(xml, ro);
+  if (DEBUG_TIMES) console.info(`AHTime staff ${id} (next, in the background): engraved ${Date.now() - t0} ms`);
+  await putEngraved(key, e);
+}
+
 let wholeReady = null; // { key, e }: the whole score, engraved after its first part was shown
 let wholePending = false; // shown at the next line while playing
 /** Engrave the whole score after its first part is on the screen, then show it: at once when stopped, at
