@@ -33,6 +33,11 @@ export const COPY = {
   keyRecorded: "Singers v1 and Singers v4 stay in the key they were recorded in. If you change the key, instruments take over. Singers v2, Singers v3, Singers v5 and Singers v6 can sing in any key.",
   tuneRecorded: (tune) => `Sung to ${tune}. Recorded singers only sing the printed tune, so the singers on your phone or instruments play this one.`,
   noRecording: (label) => `This hymn has no recording yet. ${label} can sing it.`,
+  // Round 4 (ChatGPT, 18 Nov): Singers v6 on the phone
+  v6Preparing: (label, instead, pct) => `${label} is getting ready on your phone… ${pct}%. ${instead} will sing for now.`,
+  v6Ready: (label) => `${label} is ready.`,
+  v6Headstart: (label, pct) => `${label} is getting ready to sing… ${pct}%`,
+  v6Catchup: (label) => `${label} is catching up. Singing will continue shortly.`,
   videoSingers: (i, n) => `Adding the singers to the video… ${i} of ${n}`,
 };
 /** A choice's entry: by singing.json id, or recorded engine; null when unknown (the caller's own label). */

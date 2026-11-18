@@ -1747,7 +1747,7 @@ function onNativeWarble(json) {
   else if (m.type === "model" && m.state === "error") oops(COPY.noModel, m.msg, 8000);
   else if (m.type === "error") oops(COPY.stopped, m.msg, 8000);
   else if (m.type === "engines") enginesChanged();
-  else if (m.type === "leap") console.info(`singers v6: ${m.state}${m.progress != null ? ` ${Math.round(m.progress * 100)}%` : ""}`); // (its engines event follows)
+  else if (m.type === "leap") leapEvent(m);
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
     if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind briefly. They will catch up on their own.", 4000); }
@@ -1758,6 +1758,20 @@ function onNativeWarble(json) {
  *  this phone (its files gone, a failed benchmark), Warble sings from the next play: the passes are made again
  *  for it, at once when stopped, else when play is next pressed; said quietly, once. */
 let engineSwitchPending = false;
+/** Singers v6's own events (app 0.9.43): its first-use setup (v5 sings meanwhile), ready, the head start
+ *  before the first sound with Full quality, and catching up (Full holds the audio: never a fall back to v5, he
+ *  chose Full). "ready" and "unavailable" are acted on by the {"type": "engines"} event that follows. */
+function leapEvent(m) {
+  const pct = Math.round((m.progress || 0) * 100);
+  console.info(`singers v6: ${m.state}${m.progress != null ? ` ${pct}%` : ""}`);
+  const v6 = liveVoice(singEngine());
+  if (v6?.nativeEngine !== "leap") return; // not chosen: nothing on screen
+  const v5 = singingCfg.warble?.label || COPY.singers;
+  if (m.state === "preparing") toast(COPY.v6Preparing(v6.label, v5, pct), 0);
+  else if (m.state === "ready") toast(COPY.v6Ready(v6.label), 3000);
+  else if (m.state === "headstart") toast(COPY.v6Headstart(v6.label, pct), pct >= 100 ? 1500 : 0);
+  else if (m.state === "catchup" && Date.now() - (leapEvent.said || 0) > 5000) { leapEvent.said = Date.now(); toast(COPY.v6Catchup(v6.label), 4000); }
+}
 /** The app's plain-words reason why its engine cannot sing on this phone (Round 3 wording, the app's). */
 const leapReason = () => Warble.nativeEngines()?.leap?.reason || "";
 function enginesChanged() {
