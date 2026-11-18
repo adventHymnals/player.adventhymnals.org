@@ -490,7 +490,9 @@ function segmentsOf(units, t0) {
 }
 
 /** synth._pitch_curve */
-function pitchCurve(notes, start, end, vibrato, seed, scoop) {
+/** Vowels sung straight after the last one (no consonant between), and those of them on another note. */
+export const pitchStats = { joined: 0, moves: 0 };
+function pitchCurve(notes, start, end, vibrato, seed, scoop, fromMidi = null) {
   const rng = new Rng(seed);
   const pts = [];
   notes.forEach((n, i) => {
@@ -498,7 +500,9 @@ function pitchCurve(notes, start, end, vibrato, seed, scoop) {
     if (b <= a) return;
     const f = hz(n.midi);
     const glide = Math.min(0.045, (b - a) / 3);
-    if (i > 0) { pts.push([a, hz(notes[i - 1].midi)]); pts.push([a + glide, f]); } else {
+    // from the note before: within the syllable, or the last syllable's when this vowel follows its vowel
+    // with no consonant between (it held that note up to here, so the glide starts there)
+    if (i > 0 || fromMidi !== null) { pts.push([a, hz(i > 0 ? notes[i - 1].midi : fromMidi)]); pts.push([a + glide, f]); } else {
       pts.push([a, f * 2 ** ((scoop ? -0.35 : 0) / 12)]);
       pts.push([a + glide, f]);
     }
@@ -576,8 +580,16 @@ export function voiceFrames(h, voice, verse, tempo, T, transpose, lex) {
   all.forEach((u, k) => {
     const ns = u.notes;
     const [a, b] = u.v;
-    pts = pts.concat(pitchCurve(ns, a, b, true, 7 + k, k === 0));
-    pts.push([b + 0.03, hz(ns[ns.length - 1].midi)]);
+    // a vowel straight after the last one (no consonant between) glides from its note; the hold into the
+    // coda never lands after the next vowel's start (it pulled the pitch back to the old note for 30 ms:
+    // the "scratch" at vowel-to-vowel note changes, 18 Nov 2026)
+    const prev = k > 0 ? all[k - 1] : null;
+    const joined = !!prev && a < prev.v[1] + 0.03;
+    if (joined) { pitchStats.joined++; if (prev.notes[prev.notes.length - 1].midi !== ns[0].midi) pitchStats.moves++; }
+    pts = pts.concat(pitchCurve(ns, a, b, true, 7 + k, k === 0, joined ? prev.notes[prev.notes.length - 1].midi : null));
+    const nb = k + 1 < all.length ? all[k + 1].v[0] : Infinity;
+    const hold = Math.min(b + 0.03, nb);
+    if (hold > b) pts.push([hold, hz(ns[ns.length - 1].midi)]);
   });
   pts.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
   const ts = pts.map((p) => p[0]), fs = pts.map((p) => p[1]);

@@ -1,7 +1,7 @@
 import {
   VOICES, ACCOMP_STYLES, INSTRUMENTAL, buildMusicXML, lyricLines, performance, locate, barSpan, passTime, chordIndexAt, prettyChord,
   trackKey, trackName, pianoVoices, barAt, barEnd, keyAfter, transposeChordName, syncopations, syncopate, phraseBounds, countQ,
-  registerParts, partsOf, baseOf, retune,
+  registerParts, partsOf, baseOf, retune, firstBars,
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
@@ -1828,37 +1828,68 @@ async function renderAll() {
     drawWordsLoop();
     positionHeaders(null);
   } else {
-    let opts = withPiano(xmlOptions());
-    // verses one after another: a hymn's first drawing shows its first verse at once and the whole
-    // written-out hymn a moment later (engraving every verse first kept the staff blank for seconds on a
-    // phone; Brian asked for load speed); later drawings (a resize, an option) draw it whole at once
+    const opts = withPiano(xmlOptions());
+    // A hymn's first drawing, when this device has not kept its engraving: a short part first (the first
+    // verse of verses one after another, the first bars of a long chorus), shown at once; the whole is
+    // engraved after it and swapped in, at once when stopped, at the next line while playing (Brian asked
+    // for load speed; engraving everything first kept the staff blank for seconds on a phone).
     const drawKey = `${hymn.id}@${hymn.tune?.key || ""}`;
-    const quick = opts.unfold?.length > 1 && drawnWhole !== drawKey && !MAKE;
+    const first = drawnWhole !== drawKey && !MAKE;
     drawnWhole = drawKey;
-    if (quick) opts = { ...opts, unfold: opts.unfold.slice(0, 1) };
     // pinched bigger in the app: the sheet itself is wider than the screen, and scrolls sideways
     sheet.style.width = state.view === "page" && appWide(state.zoom) > 1 ? `${Math.floor((viewport.clientWidth - 8) * appWide(state.zoom))}px` : "";
-    const xml = buildMusicXML(scoreHymn(), opts);
     const ro = { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose, ownBase: lyricLines(scoreHymn(), opts) };
-    // an engraving kept on this device from an earlier open (engravecache.js): shown without engraving
-    const key = engraveKey(xml, ScoreView.engraveOptions(ro));
+    const wholeXml = buildMusicXML(scoreHymn(), opts);
+    const wholeKey = engraveKey(wholeXml, ScoreView.engraveOptions(ro));
     const gen = ++drawGen, t0 = Date.now();
-    const pre = await getEngraved(key);
+    // the whole, kept on this device (engravecache.js) or just engraved in the background
+    let pre = wholeReady?.key === wholeKey ? wholeReady.e : await getEngraved(wholeKey);
     if (gen !== drawGen) return; // a newer drawing has begun
-    view.render(xml, { ...ro, pre });
-    if (DEBUG_TIMES) console.info(`AHTime staff ${hymn.id}${quick ? " (first verse)" : ""}: ${pre ? "kept" : "engraved"} ${Date.now() - t0} ms, ${Math.round(Date.now() - window.performance.timing.navigationStart)} ms since start`);
+    let xml = wholeXml, key = wholeKey, roNow = ro, quick = false;
+    if (!pre && first) {
+      const h0 = scoreHymn();
+      const part = opts.unfold?.length > 1 ? { h: h0, o: { ...opts, unfold: opts.unfold.slice(0, 1) } } : ((fb) => (fb ? { h: fb, o: opts } : null))(firstBars(h0, 12));
+      if (part) {
+        quick = true;
+        xml = buildMusicXML(part.h, part.o);
+        roNow = { ...ro, ownBase: lyricLines(part.h, part.o) };
+        key = engraveKey(xml, ScoreView.engraveOptions(roNow));
+        pre = await getEngraved(key);
+        if (gen !== drawGen) return;
+      }
+    }
+    view.render(xml, { ...roNow, pre });
+    if (DEBUG_TIMES) console.info(`AHTime staff ${hymn.id}${quick ? " (first part)" : ""}: ${pre ? "kept" : "engraved"} ${Date.now() - t0} ms, ${Math.round(Date.now() - window.performance.timing.navigationStart)} ms since start`);
     if (!pre) putEngraved(key, view.engraved).catch(() => {});
+    if (!quick && wholeReady?.key === wholeKey) wholeReady = null;
     buildLane();
     setupSweep();
     positionHeaders(view.systems[0]);
     drawLoopBoxes();
     drawSyncMarks();
-    if (quick) { const h = hymn; setTimeout(() => { if (hymn === h && isScoreView()) renderAll(); }, 30); }
+    if (quick) wholeLater(gen, wholeXml, wholeKey, ro);
   }
   lastLineKey = "";
   paint(true);
 }
 let drawnWhole = ""; // the hymn (and tune) whose staff was last drawn whole
+let wholeReady = null; // { key, e }: the whole score, engraved after its first part was shown
+let wholePending = false; // shown at the next line while playing
+/** Engrave the whole score after its first part is on the screen, then show it: at once when stopped, at
+ *  the next line while playing (a few pixels' shift at that moment, from the common alignment, is hidden
+ *  in the line change). */
+function wholeLater(gen, xml, key, ro) {
+  setTimeout(() => {
+    if (gen !== drawGen || !isScoreView()) return;
+    const t0 = Date.now();
+    const e = view.engrave(xml, ro);
+    if (DEBUG_TIMES) console.info(`AHTime staff ${hymn.id} (whole, in the background): engraved ${Date.now() - t0} ms`);
+    putEngraved(key, e).catch(() => {});
+    if (gen !== drawGen) return;
+    wholeReady = { key, e };
+    if (engine.playing && sweeping()) wholePending = true; else renderAll();
+  }, 30);
+}
 let drawGen = 0;
 const DEBUG_TIMES = new URLSearchParams(location.search).has("debug");
 
@@ -3314,7 +3345,11 @@ function upcomingSystem(i) { return lineAfter(engine.now(), i, systemOf); }
 function sweepTo(ph, wipe = true) {
   const sys = ph.system;
   const i = view.systems.indexOf(sys);
+  // the first part's last line: the whole comes in now, or the singing would run off the end
+  if (wholePending && i === view.systems.length - 1) { wholePending = false; setTimeout(renderAll, 0); }
   if (i !== sweep.i) {
+    // the whole score, engraved while its first part was showing, comes in at a line change
+    if (wholePending && sweep.i >= 0) { wholePending = false; setTimeout(renderAll, 0); return; }
     // following the singers line by line, a pinched-bigger line runs off the screen: the next line comes at fit
     if (APP && engine.playing && sweep.i >= 0 && state.zoom > APP_ZOOM + 1e-6) { setTimeout(fitStaff, 0); return; }
     sweep.i = i;

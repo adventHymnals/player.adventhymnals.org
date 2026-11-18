@@ -1111,3 +1111,25 @@ export function retune(x, y, alt) {
   if (x.language) out.language = x.language; else delete out.language;
   return out;
 }
+
+/**
+ * The first `bars` bars of a hymn of one stanza (a long chorus), to draw its first lines at once while the
+ * whole is engraved: every note-indexed list (words, lower parts' own words, sol-fa) cut to the notes kept.
+ * Null when there is nothing to gain (short, or verses or a refrain that run on).
+ */
+export function firstBars(h, bars) {
+  if (!h || h.measures <= bars + 4 || (h.verses?.length || 0) > 1 || h.refrain?.length || h.refrains?.some?.((r) => r?.length)) return null;
+  const cut = h.measureStarts?.[bars];
+  if (!(cut > 0)) return null;
+  const keep = (ns) => ns.filter((n) => n.q < cut - 1e-9).map((n) => (n.q + n.d > cut + 1e-9 || (n.tie && n.q + n.d >= cut - 1e-9) ? { ...n, d: Math.min(n.d, cut - n.q), tie: undefined } : n));
+  const voices = Object.fromEntries(Object.entries(h.voices).map(([k, ns]) => [k, keep(ns)]));
+  const count = (k) => voices[k]?.length ?? 0;
+  const out = {
+    ...h, voices, totalQ: cut, measures: bars, measureStarts: h.measureStarts.slice(0, bars),
+    verses: h.verses.map((v) => v.slice(0, count(h.lyricVoice))),
+    marks: (h.marks || []).filter((m) => m.q < cut), chords: (h.chords || []).filter((c) => c.q < cut),
+  };
+  if (h.voiceWords) out.voiceWords = Object.fromEntries(Object.entries(h.voiceWords).map(([k, ls]) => [k, ls.map((l) => (Array.isArray(l) ? l.slice(0, count(k)) : l))]));
+  if (h.solfa) out.solfa = Object.fromEntries(Object.entries(h.solfa).map(([k, ns]) => [k, Array.isArray(ns) ? ns.slice(0, count(k)) : ns]));
+  return out;
+}

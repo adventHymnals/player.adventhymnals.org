@@ -21,11 +21,8 @@ export class ScoreView {
     return { mode, scale: Math.round(46 * zoom), pageWidth: mode === "tracks" ? 60000 : Math.round((Math.max(320, width) * 100) / Math.round(46 * zoom)), transpose };
   }
 
-  /** pre: a kept engraving ({ pages, timemap }, engravecache.js) to show without engraving; this.engraved is
-   *  the one shown (to keep). */
-  render(xml, { mode, zoom, width, tracks, barOffset = 0, transpose = "", ownBase = Infinity, pre = null }) {
-    this.ownBase = ownBase; // lines of words after this many are a lower voice's own (lyricLines in core.js)
-    this.barOffset = barOffset; // printed bar numbers start at 0 when there is a pickup
+  /** Verovio's engraving of a score ({ pages: [svg], timemap }), the page untouched. */
+  engrave(xml, { mode, zoom, width, transpose = "" }) {
     const scale = Math.round(46 * zoom);
     const base = {
       scale, header: "none", footer: "none", svgHtml5: true, svgViewBox: true, svgAdditionalAttribute: SVG_ATTRS,
@@ -33,19 +30,23 @@ export class ScoreView {
       spacingStaff: 14, adjustPageHeight: true, svgCss: SVG_CSS,
       transpose, // the toolkit keeps options between calls, so always set it
     };
-    let pages, timemap;
-    if (pre) ({ pages, timemap } = pre);
-    else {
-      if (mode === "tracks") {
-        this.tk.setOptions({ ...base, breaks: "none", adjustPageWidth: true, pageWidth: 60000, pageHeight: 60000 });
-      } else {
-        this.tk.setOptions({ ...base, breaks: "auto", adjustPageWidth: false, pageWidth: Math.round((Math.max(320, width) * 100) / scale), pageHeight: 60000 });
-      }
-      this.tk.loadData(xml);
-      pages = [];
-      for (let p = 1; p <= this.tk.getPageCount(); p++) pages.push(this.tk.renderToSVG(p));
-      timemap = this.tk.renderToTimemap({ includeMeasures: true });
+    if (mode === "tracks") {
+      this.tk.setOptions({ ...base, breaks: "none", adjustPageWidth: true, pageWidth: 60000, pageHeight: 60000 });
+    } else {
+      this.tk.setOptions({ ...base, breaks: "auto", adjustPageWidth: false, pageWidth: Math.round((Math.max(320, width) * 100) / scale), pageHeight: 60000 });
     }
+    this.tk.loadData(xml);
+    const pages = [];
+    for (let p = 1; p <= this.tk.getPageCount(); p++) pages.push(this.tk.renderToSVG(p));
+    return { pages, timemap: this.tk.renderToTimemap({ includeMeasures: true }) };
+  }
+
+  /** pre: a kept engraving ({ pages, timemap }, engravecache.js) to show without engraving; this.engraved is
+   *  the one shown (to keep). */
+  render(xml, { mode, zoom, width, tracks, barOffset = 0, transpose = "", ownBase = Infinity, pre = null }) {
+    this.ownBase = ownBase; // lines of words after this many are a lower voice's own (lyricLines in core.js)
+    this.barOffset = barOffset; // printed bar numbers start at 0 when there is a pickup
+    const { pages, timemap } = pre || this.engrave(xml, { mode, zoom, width, transpose });
     this.engraved = { pages, timemap };
     const svg = pages.join("");
     this.content.innerHTML = svg;

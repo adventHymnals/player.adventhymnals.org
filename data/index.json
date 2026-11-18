@@ -5185,7 +5185,7 @@
   "number": "582",
   "title": "When We Walk With the Lord",
   "path": "data/CH1941/582.json",
-  "v": "f3c73730825f8a53d4430a526b68d9048e134f8e03827f69a8c09a41eb59c432"
+  "v": "39025588c30220fd721c0f2fc5ae2bdc71f003fb6123f48aadf88be7ffd3076a"
  },
  {
   "id": "CH1941-583",
@@ -5201,7 +5201,7 @@
   "number": "584",
   "title": "Will Your Anchor Hold?",
   "path": "data/CH1941/584.json",
-  "v": "c79888ff43e79d905d9067a2d7350df31d474bc4591b87cd3fd7f1be49340ca3"
+  "v": "7455a7d1bc55430f6e25324133bbaf061b5daf53adbae528be1a10630740aa13"
  },
  {
   "id": "CH1941-585",
@@ -5547,7 +5547,7 @@
   "number": "636",
   "title": "O Who Is This That Cometh?",
   "path": "data/CH1941/636.json",
-  "v": "16420c7a08f93d5392fcaf8f2ce294bc538d8d2f2f6f8cee4c43098e6f055f91"
+  "v": "8d21f0641fc4d25bdce464f3c278d3fe22d12c287651b986fa397aac8f94cae7"
  },
  {
   "id": "CH1941-637",
@@ -15915,9 +15915,7 @@
   "number": "111",
   "title": "It Took a Miracle",
   "path": "data/SDAH/111.json",
-  "sung": true,
-  "sv": "d791488f8d0228f764520773b3fa8c98852c7fd7be36204c34cff705826a56fa",
-  "v": "fd51c901201ecb0e71f82c314e5f0e5576ba54f8966b92d201fc1bcdabd3ba54"
+  "v": "21e2da605a9da879aa1df9a5bc0811cef63223f98146da99b2207f10fb62b100"
  },
  {
   "id": "SDAH-112",
@@ -16084,7 +16082,7 @@
   "number": "130",
   "title": "It Came Upon the Midnight Clear",
   "path": "data/SDAH/130.json",
-  "v": "9da5c6e60a7404fb820f9f3e741d6fa626593e90c389f72fa6aae10109b69181"
+  "v": "2003c8d47816936b532984a62a2cf122647984185a21f831b0b76ca5b40ef240"
  },
  {
   "id": "SDAH-131",
@@ -16188,7 +16186,7 @@
   "path": "data/SDAH/141.json",
   "sung": true,
   "sv": "4fabdbaa306d7a25dc31a5b6d43596c830f72b631a0383cba71967ed12bb0a97",
-  "v": "6f852b683f10347577064afb6711f316d91732c8d3c4e84cb571ebd4c24b8e5a"
+  "v": "8016c6e000628cc3821f3885eb1dbe8b07568465f37ab1192f6be44ff3e0a277"
  },
  {
   "id": "SDAH-142",
@@ -16584,7 +16582,7 @@
   "path": "data/SDAH/182.json",
   "sung": true,
   "sv": "8bbb5694b5c3294b0548ade23d7fe08be709f7dc65af95ab24b5816327dfb513",
-  "v": "a8487b41489078905d8bd9a0d49869e1675f2b9bfd4ed63700b7aa4125c61d5d"
+  "v": "a919bc6dcd3f6d07e7fc25fecf220608d0fc216d9190940c2c4228ff23c1868a"
  },
  {
   "id": "SDAH-183",
@@ -17099,7 +17097,7 @@
   "number": "235",
   "title": "Christ Is Made the Sure Foundation",
   "path": "data/SDAH/235.json",
-  "v": "45b3d9e7287e483beacabeffbdad71b791ae3271735e4bc4c2abe32f4e09d8a9"
+  "v": "ae73e0cd29f67697ccfcdc7418b071d26310168aead61a8cc286e6dfd877c6ef"
  },
  {
   "id": "SDAH-236",
@@ -19736,9 +19734,7 @@
   "number": "497",
   "title": "O Gracious Father of Mankind",
   "path": "data/SDAH/497.json",
-  "sung": true,
-  "sv": "92d1c3ddffd3a08b660cefb2f67f20b0a0d9756db25a96fbf0bce26052c62361",
-  "v": "51d967f2d285e0d42643295c433d58f00cb6c40f34c079398f388ff3f020a417"
+  "v": "451706df57f106034e39f66df91d8bf496524c50295c882b116a0132ce81876c"
  },
  {
   "id": "SDAH-498",
@@ -20114,7 +20110,7 @@
   "path": "data/SDAH/534.json",
   "sung": true,
   "sv": "ad3b55da992f7b79852a15c45f6e0ca2d7e8ac57f44e26ccf76c25577607550b",
-  "v": "bef76c9990b021472342fc7d175601169c171f80fcdfaca5f2521505d0dd1f94"
+  "v": "e8cbc6827781e1aecffbcca4a942898cfef609a8e8f8b152b73699414769a1bf"
  },
  {
   "id": "SDAH-535",
@@ -20675,7 +20671,7 @@
   "path": "data/SDAH/590.json",
   "sung": true,
   "sv": "4a0f419fd4a00ee0ae3fa534aff30473c224324eaf6cc3d4d0ab92d6647ce351",
-  "v": "f53f4d01b190c44037ac041055d8cdb8f13519a2ec6422e7e2b477ee42751462"
+  "v": "37d6e6a816f0957a27ce98a4ed8a25a0d0425242b59e45f0d3ea9ed0c098b74b"
  },
  {
   "id": "SDAH-591",
