@@ -200,6 +200,14 @@
   "v": "9a48d8ae7caa4ba28304cce22732720446dafa0422fd8cfad798bdc2cb1c2147"
  },
  {
+  "id": "ANTHEMS-9",
+  "book": "ANTHEMS",
+  "number": "9",
+  "title": "Wimbo wa Jumuiya Afrika Mashariki",
+  "path": "data/ANTHEMS/9.json",
+  "v": "eb927a03520ba73bc6c653b31452a3f356cc5c41878f20d0f11a3692b57ecbe5"
+ },
+ {
   "id": "CH1941-1",
   "book": "CH1941",
   "number": "1",
@@ -5734,6 +5742,30 @@
   "title": "The Lord Is in His Holy Temple",
   "path": "data/CH1941/703.json",
   "v": "ca5d334db6f8b5d629a7d5dd3b10824098e24b9c55729d724978f5bcb8f32048"
+ },
+ {
+  "id": "CLUBS-1",
+  "book": "CLUBS",
+  "number": "1",
+  "title": "Oh, We Are the Pathfinders Strong",
+  "path": "data/CLUBS/1.json",
+  "v": "49a7b0ab2f379c8b62cacfe846765953c24ca93ac8f3f21d949a10a7a4e0faa3"
+ },
+ {
+  "id": "CLUBS-2",
+  "book": "CLUBS",
+  "number": "2",
+  "title": "We Are Adventurers!",
+  "path": "data/CLUBS/2.json",
+  "v": "45528027f18db4a5393047e3ce66db1a64500c036be3236f112fbc5537b5188d"
+ },
+ {
+  "id": "CLUBS-3",
+  "book": "CLUBS",
+  "number": "3",
+  "title": "Adventurer's Song",
+  "path": "data/CLUBS/3.json",
+  "v": "297374be37823a0b29ee95c7d37628b85280a0cf2932564292475dcb923972b8"
  },
  {
   "id": "CS1900-1",
