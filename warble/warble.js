@@ -80,7 +80,8 @@ export class Warble {
     this.engine = this.id ? `warble-${this.id}` : "warble"; // the first live voice is plain "warble"
     // the name on screen: the page's table by id ("Singers vN"), never an internal name; an unknown voice
     // keeps singing.json's label (an old singing.json's one "warble" is the first model, Singers v2)
-    const known = singerCopy(cfg.copyId || this.id || (cfg.engine === "leap" ? "leap" : String(cfg.sha256 || "").startsWith("11cedb94") ? "v1" : ""));
+    this.copyId = cfg.copyId || this.id || (cfg.engine === "leap" ? "leap" : String(cfg.sha256 || "").startsWith("11cedb94") ? "v1" : "");
+    const known = singerCopy(this.copyId);
     this.line = known?.line || "";
     this.n = known?.n || 99; // its place in the pickers
     this.label = known?.label || cfg.label || COPY.singers;
@@ -307,7 +308,7 @@ export class Warble {
   /** The app's engines (available().engines), or null for an app with Warble only / no app. */
   static nativeEngines() { try { return JSON.parse(Warble.native()?.available() || "null")?.engines || null; } catch { return null; } }
 
-  credits() { return COPY.credit(this.label, this.nativeEngine); } // the dataset's attribution, under the choice's own name
+  credits() { return COPY.credit(this.nativeEngine ? "leap" : this.copyId, this.label); } // the dataset's attribution, under the choice's own name
 }
 
 /** data/singing.json -> { default, warble, voices }: voices are the live singers offered (singing.json's

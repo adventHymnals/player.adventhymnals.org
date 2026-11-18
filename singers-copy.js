@@ -11,15 +11,18 @@ export const SINGERS = {
   v3: { n: 5, label: "Singers v5", line: "Sung on your phone; any hymn, key or speed" },
   leap: { n: 6, label: "Singers v6", line: "Fuller singing on your phone; needs a stronger phone" },
 };
-export const DATASETS = {
-  warble: "GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
-  // the voice peer's HANDOFF.md wording (no M4Singer data in the shipped model), until the final credit lines
-  leap: "LeapSinger and NHVSing by wavtechyukky; singers from GTSinger (CC BY-NC-SA 4.0); hymn lines after LUNAI.",
+// the credit line under the score, one per singer group (final, approved 18 Nov from the voice peer's facts; the
+// app's Settings carry the same lines; no LUNAI link exists, so none is given)
+const CREDIT_V23 = "Singers v2 and v3: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.";
+export const CREDITS = {
+  v1: CREDIT_V23, v2: CREDIT_V23,
+  v3: "Singers v5: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; hymn lines after the LUNAI singing voices, used with permission.",
+  leap: "Singers v6: LeapSinger and NHVSing by wavtechyukky (NHVSing weights: non-commercial use only); singers from GTSinger (Zhang et al., NeurIPS 2024, CC BY-NC-SA 4.0); hymn lines after the LUNAI singing voices, used with permission. Runs on ONNX Runtime (MIT).",
 };
 export const COPY = {
   firstUse: (mb) => (mb ? `Downloads ${mb} MB the first time only` : ""),
   instruments: "Instruments", instrumentsLine: "No singing; every part played on the piano", ask: "Ask me", singers: "Singers",
-  credit: (label, engine) => `${label}: ${DATASETS[engine === "leap" ? "leap" : "warble"]}`,
+  credit: (id, label) => CREDITS[id] || `${label}: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.`,
   preparing: (pct) => `Getting the singers ready… ${pct}%. You can press play now. Instruments will play each verse until the singers are ready.`,
   newKey: (pct) => `Getting the singers ready in the new key… ${pct}%. Instruments will play until they're ready.`,
   ready: "The singers are ready.",
