@@ -8865,7 +8865,7 @@
   "number": "249",
   "title": "Our God Is a God of Love",
   "path": "data/CS1908/249.json",
-  "v": "14454fd41d2e6c6a67281c7fbe166d371378c35df42e3cb57ffa2f6821491ba2"
+  "v": "c0fbb3552b0b90278f97eb5ba8c63ec045862b811bf44e433560a0028ff96a21"
  },
  {
   "id": "CS1908-250",
@@ -11299,7 +11299,7 @@
   "path": "data/CS1908/552.json",
   "sung": true,
   "sv": "d2c1ac993c2a06b58655438689052588758e33fc37bf8faf253e48621aaeb286",
-  "v": "a6f972da57da4da28fe2eed484c3cd65423dda79bab575850cb87b20575fe988"
+  "v": "eaefd9fc0e415db628794f98301a7f05d6a694dfb3bf28b31c65344cd33e2e71"
  },
  {
   "id": "CS1908-553",
@@ -11645,7 +11645,7 @@
   "number": "594",
   "title": "Give of Your Best",
   "path": "data/CS1908/594.json",
-  "v": "fd70cb9f26402c81a292e1057cecb3885e289b595e05ca5edd491afbfb4b97b3"
+  "v": "5a154a1852db49a45f35365e3e63943bdc0f3d17fd469e6cbf394e72c37ae731"
  },
  {
   "id": "CS1908-595",
@@ -13446,7 +13446,7 @@
   "sung": true,
   "sv": "1c76a7c897c33b116da19019bed6dbae0b6b0f4382ead0053a7a199d0c1cac62",
   "english": "Rescue the Perishing",
-  "v": "feab232571cb03dd1edfd5ece6199c45cdf3a4cab8d757254ae072b6b5570d9b"
+  "v": "de082bc2ec4b01a611ca67ddf3f258968452a5f71a44843a56b4fc52e4e676f6"
  },
  {
   "id": "NZK-56b",
@@ -13465,7 +13465,7 @@
   "sung": true,
   "sv": "b4fb2c221a0480da5d9ef0de0d1e578561ee0ee8229de2eadd544ef3cd6acba8",
   "english": "Will There Be Any Stars in My Crown?",
-  "v": "f3b2f0075d4e9c9daabac81cc7606e7253a905a5abb73078c6cc94c9b00140b5"
+  "v": "56f4454ac86eab549c6f5c71d5ae1b0c428fb05f21a304ae29446a675722a8f6"
  },
  {
   "id": "NZK-61",
@@ -13711,7 +13711,7 @@
   "sung": true,
   "sv": "2b7493085a743e50492da4221a268b0d11f9d3ffee56fef5fc49fd15614fc021",
   "english": "Welcome, Day of Sweet Repose / Welcome, Welcome, Day of Rest",
-  "v": "489c760a7c02c87921df944120bedeb38786f94e8bcf4cbd7dced7e6f0f209a4"
+  "v": "64f5ef4845b1d2faeb4c808a560f9848ffb967583eb3a75394569dcc99eba98b"
  },
  {
   "id": "NZK-89",
@@ -14654,7 +14654,7 @@
   "sung": true,
   "sv": "fccc63318c6647e6cfa6dc98bccf20212ad100b202d9ea462a97b3899cb03661",
   "english": "Joy By and By",
-  "v": "bc83b612f7969623ee4fff03d8b825ada646ec5c1985a663a1f9c88cf8499a7c"
+  "v": "68a7aab606d39749e24587314456d9bdc060fe0c1c22d5885aa247c50c44a13e"
  },
  {
   "id": "NZK-184",
@@ -15995,7 +15995,7 @@
   "path": "data/SDAH/120.json",
   "sung": true,
   "sv": "0a49311651a355fc868caca7743cf01ab84bd0a110ad1a60a4d6257cf5283afb",
-  "v": "b2993614893f7ab1a1dad6c5c48839b461c75160e2e09bdd1081033536b12cae"
+  "v": "ab2a31919ba23bc6d292304cc060d10afbe640bdaa327ab6d9bd5d71cca60283"
  },
  {
   "id": "SDAH-121",
@@ -17255,7 +17255,7 @@
   "path": "data/SDAH/251.json",
   "sung": true,
   "sv": "c27c9d881da1debcceda7b7540578f74ea42120e3fda48dd3d9e19853043838a",
-  "v": "027d440a58f15c078cd3be2d8ec6026589b5f0a66adf4d9f90cc3f2eadcbf5af"
+  "v": "3db308d3ed94772e012443e816ecb29e61f61c884c3e2ea4d2f23c97a630ebff"
  },
  {
   "id": "SDAH-252",
@@ -17293,7 +17293,7 @@
   "number": "255",
   "title": "I Cannot Tell Why",
   "path": "data/SDAH/255.json",
-  "v": "28ec36c59537125d223a3e4a79f356c9f5c876d1c7ac4491f3b4d63b08d9d9ba"
+  "v": "f2dcc317620ab5b8d207de819d50d15a9c73967c15fa553ab470a04879cffc6f"
  },
  {
   "id": "SDAH-256",
@@ -17360,7 +17360,7 @@
   "path": "data/SDAH/262.json",
   "sung": true,
   "sv": "25d00da6493044c0f5b082029c093b117807dbcd2370e020b78da7d02d434a1a",
-  "v": "90337980077b6cc07c276d170f78996abf1bbf994887e28c879821ad5d372405"
+  "v": "3456f25fd3c8281e2df2ca280d312264eeb2c3d9f4bcf5242630e93c22a1548b"
  },
  {
   "id": "SDAH-263",
@@ -17390,7 +17390,7 @@
   "path": "data/SDAH/265.json",
   "sung": true,
   "sv": "89b129da83e9d4d26d78a101cd37829802dd64837a27691374e41a937cf23aa6",
-  "v": "482df99806b91f20c1d79565364ada96480617317e87150e93f9ea140991d6ed"
+  "v": "7cb881154d9ecff2e8b01edf143538b309f3f67aa267e33839c9b8efdc83030b"
  },
  {
   "id": "SDAH-266",
@@ -17514,7 +17514,7 @@
   "path": "data/SDAH/277.json",
   "sung": true,
   "sv": "0de18ee80ce36abf6cdbb9e19d8c66d57be1b9df9d304310fb813143a86e16c6",
-  "v": "3aeb0ffe1210bcd33524ce6d38619e5237fde77c4ae16f7e68589a39d86093b1"
+  "v": "e60a6dab4728e1b21c1e64dc26188cc624aab0a0222a28126f343755f995e246"
  },
  {
   "id": "SDAH-278",
@@ -17642,7 +17642,7 @@
   "path": "data/SDAH/290.json",
   "sung": true,
   "sv": "2f246b5271c3588f889c3f401a6075134a768115de325947ddfa65de0e99e698",
-  "v": "85160b36f6f45a634bd51d6da88b893a5529ae1848639dacee16f13cd72dc8b8"
+  "v": "3a522032144a276807bf6a02eed8047e02dd2c3e82716296b76b503c3c50df29"
  },
  {
   "id": "SDAH-291",
@@ -17682,7 +17682,7 @@
   "path": "data/SDAH/294.json",
   "sung": true,
   "sv": "fd3ea1493c67369bee91ccf7df2059185a46329c5bc00dcdedf9fbe3a6f234aa",
-  "v": "a70470cbe9802ff1d8a71bc11c5526de5a7ce53e6f209b3d8bf6021284d41b4f"
+  "v": "4f89365a23cb03b123977186a87640584bd634a5a0d9ceab6f0b2c3cab94b88c"
  },
  {
   "id": "SDAH-295",
@@ -17723,7 +17723,7 @@
   "sung": true,
   "sv": "644d6f90f33eb5a716b8462b5a720a6afc0bb59d5b22dd25734918d69721dcbd",
   "svc": "f8dfb1428f7b3e843c27609ac0e5b136a9a879ed6a96835148e68cfea470833a",
-  "v": "87259466b48a6d1ae053a2f7b9f8e84f89b3322112920c69c3de4650faab5aed"
+  "v": "e190df75b409126e85e23ce52b2de3c7feff095db3c3adf7600459d5969a4da0"
  },
  {
   "id": "SDAH-299",
@@ -17794,7 +17794,7 @@
   "sung": true,
   "sv": "e01e7a412982ef3e03489f97411d6ea0882c4766e274a600c70d4f631c4ccbfd",
   "svc": "ad1d9131ea07ad71d18312b422d01368a31e8e28efc61051ed9173cd116020ed",
-  "v": "a1752c91d08f9421133e2a6144ee39d30d78f328711341cbb609a5c4691cedcb"
+  "v": "dcb7dde8b26f1311ce44bab25ba47a807154c24cf5b67f6fb5b0fadc3a56fd8e"
  },
  {
   "id": "SDAH-306",
@@ -17855,7 +17855,7 @@
   "path": "data/SDAH/311.json",
   "sung": true,
   "sv": "6171d6470acb36fb4ae362d8d6d1299e57b300a674a31bd34a2ada62c73f5ec4",
-  "v": "4e2a58c1aa5fbee401e620b8a097c7bae44c69cdd4bce25a82b2f9271419e177"
+  "v": "cb86bf8e3ffaaab58ebff7de2f104e7137369a5afbb3311f30c82453a96e0ba3"
  },
  {
   "id": "SDAH-312",
@@ -17915,7 +17915,7 @@
   "path": "data/SDAH/317.json",
   "sung": true,
   "sv": "736b74c022b402511fbac781a0f9f3cbaacd71bffa39ff405b57ed4c2303eca5",
-  "v": "107ca18c8372187579563f7b69c8836e37c99a21581b39db459f663af2ba7116"
+  "v": "28d7517ed39b0e75bf39640573abee058f28baeed82126133e8e86d9101a575b"
  },
  {
   "id": "SDAH-318",
@@ -17965,7 +17965,7 @@
   "path": "data/SDAH/322.json",
   "sung": true,
   "sv": "220d1ba3b9ddc0e2a4e5fb55af26447f2cb3778fd96a4871d8b9a86adb99fffc",
-  "v": "49354e19b56aa2fa0c80fd86ee0f00ce78decdaf1e981ce7724312dc5f5f1dc0"
+  "v": "43dc235fc8d75639d431552dea7e426555c44d897c70e43bfb607a0b51212380"
  },
  {
   "id": "SDAH-323",
@@ -17985,7 +17985,7 @@
   "path": "data/SDAH/324.json",
   "sung": true,
   "sv": "639abe403b0247cf322df0c3d56bc924eefed09dd38f7592acc7419b933c3a61",
-  "v": "e9f9153457f8b067abbfd8ddf6a5e6d1a3329a19721d5131339f6a30515a36ab"
+  "v": "1696f95ce61e0733e5c4b4cf7fb3b7dc63a6b57d2383cfa8e368e5a1e99d72e2"
  },
  {
   "id": "SDAH-325",
@@ -18006,7 +18006,7 @@
   "sung": true,
   "sv": "ad0a54a2ae0e05b13cec826d52b8e0233ae608c61d8a80b93045d112d2f1b5c4",
   "svc": "72f9ef81f3b1c4dcabf0e902b1ec2430fd0a904bc5f15043fb940f0467a80880",
-  "v": "36da37c8099ed6ec3f2f03f3432a550b1a65c2cd24f4494701af771f07502391"
+  "v": "848bfb835d2fe200ddeb734fb25553c01593a9643cb57bf4c14ca57c1905ea1a"
  },
  {
   "id": "SDAH-327",
@@ -18126,7 +18126,7 @@
   "path": "data/SDAH/338.json",
   "sung": true,
   "sv": "58dfda072f52e9db4a6273a03390eb64de0fb0db528a50050c524bea2e3cf6d8",
-  "v": "d7d13c65395349c774dd0e15111b56ad749499751bb76d430f49f48b090af2cd"
+  "v": "6a860de408a8fbb42a3a8dca0977c8164d6f80637d80e39fa5879085005f5336"
  },
  {
   "id": "SDAH-339",
@@ -18197,7 +18197,7 @@
   "sung": true,
   "sv": "d4b2a294462049553545f568ce665240cb57fbcf133566df6913dda0758d2ffb",
   "svc": "003aa1ad211a7c4d38cdf7a55eb0c02941860fe27978574fc695fd93c59378eb",
-  "v": "92ef165991847271313964854ade41b60512e7ef629a10a4a59e871d77c319d7"
+  "v": "94d9a821f722068ad9dcd8828bf574309718403b10312f119861bd628bd2ab45"
  },
  {
   "id": "SDAH-346",
@@ -18277,7 +18277,7 @@
   "path": "data/SDAH/353.json",
   "sung": true,
   "sv": "c2a4245a02bca44991b26da604997fd0f8821012c2a5076633305756cd5b4758",
-  "v": "dcfc36bb0d20a279c28b8cbe3a5c1b3cd24f2b6c13e7210ccfa5520dc03e61e4"
+  "v": "26e5340bd818096e2887e119bc0872a213e7fd69d01dfebc933f1721706b42ff"
  },
  {
   "id": "SDAH-354",
@@ -18420,7 +18420,7 @@
   "path": "data/SDAH/367.json",
   "sung": true,
   "sv": "bcda63ed548709aebaf32884ce3f908ba13ad4ca4d5a6f717c69425158062135",
-  "v": "a06be019b7210b54da11c19f23d894aea46cd7816fdb62afbb2354991d981b20"
+  "v": "df33264d262fd2da4a248cf12b7a6e32c4f539aa1c68342b171a44ab4a156d18"
  },
  {
   "id": "SDAH-368",
@@ -18508,7 +18508,7 @@
   "path": "data/SDAH/376.json",
   "sung": true,
   "sv": "a6b7f26a53ce0bed7dffe7d27edd730e1af01d271f2f8a63f19e1c8ddf17bfe4",
-  "v": "c6515433e164e92ada4e52bab550f6b74192b684085c6885c2991cf32173edbc"
+  "v": "6bf39f7a4876c61a8b46354399c4ca54fa0af56125be1dc5e8f875cc44d23090"
  },
  {
   "id": "SDAH-377",
@@ -18548,7 +18548,7 @@
   "path": "data/SDAH/380.json",
   "sung": true,
   "sv": "fb6e37c8a736ce3ee089399403b58aa1aa0f7d6d766621e11b6e5ed7b971e3ec",
-  "v": "f256946a1ab6a2eb85b205449b03c28acc52f9425d4d53c4be4b26a8fa713084"
+  "v": "8dfc45a1a30a24da8642927aef3c987d095d74fbea1dea64b3441ceb9ffc37e7"
  },
  {
   "id": "SDAH-381",
@@ -18599,7 +18599,7 @@
   "sung": true,
   "sv": "4828b97f82ac3e15a83d72f95d4ec302e1c7d4931f5b2693fd23cdd8d68d6245",
   "svc": "eee1678f4e71ef182d635cbd43283582c430ce0c9b6e136274b1e9a933e14882",
-  "v": "d4e6974694cb3824a6108c33e7ad727eefcce8872d8ab8d53fc1d19fb94fa606"
+  "v": "51f5c25bced9128c890bbcf83815a2d16ba676b199d5d11e2be615d6245acd90"
  },
  {
   "id": "SDAH-386",
@@ -18609,7 +18609,7 @@
   "path": "data/SDAH/386.json",
   "sung": true,
   "sv": "b12f2103ce480014233f12ce0fd4196f6deebce320d75d36bb7130304ef250e2",
-  "v": "7bffa0ac2fb55b68f2d2af5cc1cadf73564c32985ae9a5b94ef58abf4ad3a435"
+  "v": "2694049b9d1a935d2dcdaec237b8abb3be24d275e8238c23903507a1224d6c28"
  },
  {
   "id": "SDAH-387",
@@ -18619,7 +18619,7 @@
   "path": "data/SDAH/387.json",
   "sung": true,
   "sv": "1c2fcb9faa0aa6fa5c9c3e398eb5217182437d32c712933384d41d0011ea814e",
-  "v": "b6b22716416275e4dd2d1a241374c9659c33c98e2f6bbe44907f4da0dc416230"
+  "v": "806d03d22683f5da705af00f5420a98995d2716e869ca2b446eb42f0bc57d03c"
  },
  {
   "id": "SDAH-388",
@@ -18639,7 +18639,7 @@
   "path": "data/SDAH/389.json",
   "sung": true,
   "sv": "b162605ebfc5c436cc64c7a5f4ede15e74b4ec614b874bc4168b9d446cc185fd",
-  "v": "f1897bcb6d9186c8c4e8476a7912fb3b425f48c8d3325c1346eef02e0549363a"
+  "v": "48bf84431e3ce6795948ba28d12229a55a69f5db8f19c1735eba713e0b6b8012"
  },
  {
   "id": "SDAH-390",
@@ -18768,7 +18768,7 @@
   "path": "data/SDAH/402.json",
   "sung": true,
   "sv": "f7c9ac772b74d3d835b2ab75dc2dc75221cf76526f05cde8a2b1731e6558debe",
-  "v": "fae30e62c9edeaab87a5eaea5421c279a074adbd732255c4ddecffc8c34f56b6"
+  "v": "eb26b665e82775f2280275966be2355b51aaff1547f79ee7a9ddc3512e9d7099"
  },
  {
   "id": "SDAH-403",
@@ -18799,7 +18799,7 @@
   "sung": true,
   "sv": "1cf645fa41e6837756481a9bca513e5972aa42647c713803be60c5ec13013605",
   "svc": "9855837b63a5d9790b6882233274ba3efaaf8693255285cc859b48c68a9c73ed",
-  "v": "cb49d81c87d767c72093f07b0a8f596e026e70c2e7a7b7fe4c7a2a68b21fa9f2"
+  "v": "424dabd618c952862ac6d576810d4bdcb9bea07de5ae7811b2390e7197ca7757"
  },
  {
   "id": "SDAH-406",
@@ -18850,7 +18850,7 @@
   "path": "data/SDAH/410.json",
   "sung": true,
   "sv": "200fe7bc39ac5379eba966add9350a2dc6acf479da4b7d851c067b1824c548c2",
-  "v": "a8a6dfe0f472132045fb78483c97882a1c9ab7f2b74bb7065cdb93157de62410"
+  "v": "998ce7c649baea701e2aa6e473834476cf3a39d74e610d20c608211e6864d048"
  },
  {
   "id": "SDAH-411",
@@ -18868,9 +18868,7 @@
   "number": "412",
   "title": "Cover With His Life",
   "path": "data/SDAH/412.json",
-  "sung": true,
-  "sv": "2f72964304bc8861b5f1d20f4971735392d1bdbe24617e6e86595f7fe9cedc86",
-  "v": "dacf093d7b7aa33b9650e2fb525ab8e4921ccd9a3d117992181f0f49de13faec"
+  "v": "720765e85613012d907d1d525857d462badf9bd11c931a8c32a23d3f37ff7985"
  },
  {
   "id": "SDAH-413",
@@ -19048,7 +19046,7 @@
   "sung": true,
   "sv": "7f294d7db1da84916d9ecc3b884ad0e762f074693b1efdf9339351f8f0a4e13b",
   "svc": "ca4ab3a61c30f2c6a015a9b649554ea93e038229b833876e210ff90f9bbf74d1",
-  "v": "2b083d9b6101a43886552200aaf6ee7612537aadbd1c17585252dd7cd35bfd07"
+  "v": "bda7f1768092e0dea6aebdef6a9d07d5fd788e7e8fc1528a8ff9aa573bb74e40"
  },
  {
   "id": "SDAH-431",
@@ -19059,7 +19057,7 @@
   "sung": true,
   "sv": "210428852900323b2dc466b73df6cf3ece88f1c35edcdfc8e643269c3bd3d813",
   "svc": "e45a15c9b5faa6193a1bdd68eb04fa41fa311e4e5ec6dad9264e00662de55a5b",
-  "v": "ad0ac4e17219faa8f4ddaccc9a02c22c39853eac6e01ce35293b46b3e7852038"
+  "v": "4fbc07e356d1bc018c5c699564b2f00b077d92ec335564a9ee19ad63d4b29f33"
  },
  {
   "id": "SDAH-432",
@@ -19102,7 +19100,7 @@
   "sung": true,
   "sv": "907e23b89c3842f5f7d7df1be8fefd435a0d3dde2a408347150d2e706dea140e",
   "svc": "2f0835528439c882ecc3ef1a4bd1d347aaa3dab8313792ff8d55dd2637dc871b",
-  "v": "36c0fd9eba242ae4e694480c58ea8b6396bd63db5d7dd852c8177d3e77f38ed1"
+  "v": "f997e6c3d117a1f184103e82d93047250f7f1763dfc1282c864c469d68dcfdc8"
  },
  {
   "id": "SDAH-436",
@@ -19284,7 +19282,7 @@
   "path": "data/SDAH/453.json",
   "sung": true,
   "sv": "68418dd6915baac846a95e3e8762346b4c334ef59b29ea8d3519d3f08528e7f9",
-  "v": "0435ca3b6a684f50726096e4a0d60cd59c445271fce0dd6c6dec7fb98c837717"
+  "v": "d21531b7b4e5010beaa812aefd5340d76f3d1ff8ecc693b391b81ec3c57cf2ea"
  },
  {
   "id": "SDAH-454",
@@ -19477,7 +19475,7 @@
   "path": "data/SDAH/472.json",
   "sung": true,
   "sv": "3eee6515f4385387552c7a97060bad00d3cf8083bc97220a2483cfd425862b77",
-  "v": "a255f0a557b0bac82394de83591adc2319dc7d0766f2736e9c33f68a0258a180"
+  "v": "40f0882ca2d0dbb2fb1c2ab3255ceed70ae0b848a20565f69e06f926171fed91"
  },
  {
   "id": "SDAH-473",
@@ -19570,7 +19568,7 @@
   "path": "data/SDAH/481.json",
   "sung": true,
   "sv": "f09767ff29310e885aa1f6826b04cc6ef3288e634783c6869a58b4e4f1874ee5",
-  "v": "0367e89d5cc2e7d6f6224cc548316bebb6805fb66566751af3319d3d7f657f8a"
+  "v": "ae838942ef0f9d7714d3a3d552b5867487dc38895e077a84266c9c802731c9dd"
  },
  {
   "id": "SDAH-482",
@@ -19632,7 +19630,7 @@
   "sung": true,
   "sv": "5caf1f53fa63a85e4dc349d013c9472a70b0c3645b6182ebb406495b3f292deb",
   "svc": "6015a9306e7c9622732026d0f5760fdc6ab6a5979c499a466e3bfc235e61013d",
-  "v": "27bab631a42cd455bb24a5924a5e612dda62f4fe679d11a673d742b77145fdb0"
+  "v": "5a92fddcc1a3db2afb74062d204068eef7f7063392e56b8a0c180b5c4d0d7c8b"
  },
  {
   "id": "SDAH-488",
@@ -19790,9 +19788,7 @@
   "number": "503",
   "title": "A Quiet Place",
   "path": "data/SDAH/503.json",
-  "sung": true,
-  "sv": "362dae92a879f8ab19366da754fef6db08a5a5f91ac2810dc05396c551e634f7",
-  "v": "9dff15d9ed113a593d9e66eeee500290269614550e9d41739066461b7fe3433a"
+  "v": "768a8b1c881b8b3bbae633a076476cc87e4f2726706afa6d65ead8c870e6a8f3"
  },
  {
   "id": "SDAH-504",
@@ -20088,7 +20084,7 @@
   "path": "data/SDAH/532.json",
   "sung": true,
   "sv": "9c0d65d8d115462688369c3a61170be855718a3fa0163038869f71d6e52d9a5d",
-  "v": "fe106616dc4735520a6f536a57c1ca7d7e7e3081bd4dd979b71cab7ffcc82212"
+  "v": "4234193ad10964a8bdb48641c9121a639761d10276bb17285877543bce38d802"
  },
  {
   "id": "SDAH-533",
@@ -20128,7 +20124,7 @@
   "path": "data/SDAH/536.json",
   "sung": true,
   "sv": "9743b1e33cf1d3a653f792cfd08b4632c4ad821a1bc36a5e0f2db69bade89547",
-  "v": "e60babdc1478c2e69e330ea94f9904452e95f874272dda18fe4c81b264bf7cfb"
+  "v": "86d726a2411e3b1f5897718a688cda4276f5019ba3a20df538c59ff5f4b8e077"
  },
  {
   "id": "SDAH-537",
@@ -20309,7 +20305,7 @@
   "path": "data/SDAH/554.json",
   "sung": true,
   "sv": "a5f104c818b95099e5fec4391d24404245c8f86cd2d82145aef43881c68e9a1c",
-  "v": "6e21d472d5f0c828d7bc11a2bd2fbf047345dd2edac2a58ea9de09e99fb08665"
+  "v": "fe039b4cd9392be3ace8d7695017c5ae85da21d04a0fbb44ad4830b902c2532e"
  },
  {
   "id": "SDAH-555",
@@ -20319,7 +20315,7 @@
   "path": "data/SDAH/555.json",
   "sung": true,
   "sv": "395157e84957ad29c033f5ee5130537c226ef0e7cb9bd2cbadfc7806992452df",
-  "v": "cf0c16cd79d47a983b3eaf65e22b9feb4c1f49b4bd55603ee27d5f0cb00f3837"
+  "v": "51e34f9a5dffb6c5371abe9e3690773799ae5ad15bfd7c7b4b997bf4c824df79"
  },
  {
   "id": "SDAH-556",
@@ -20349,7 +20345,7 @@
   "path": "data/SDAH/558.json",
   "sung": true,
   "sv": "07da197cbc9ae639f96ddb7f96c9c121bec353cde9cae024652ee1891a45893e",
-  "v": "0e711baae0e9a71c7413bf0b78d81a03d3cab475cf0f5c693ea3951f665b43b9"
+  "v": "fe737986e151fefd0ec1a3ab29648fc94a6d2fed309cff8c6fb399e01aa72699"
  },
  {
   "id": "SDAH-559",
@@ -20437,7 +20433,7 @@
   "path": "data/SDAH/567.json",
   "sung": true,
   "sv": "3235053db7223d96e912b2c133ef91d6ae711be3324e87eb8ad5c0bfff683ac0",
-  "v": "c840c7c0ba210d84b8a01a590b0d17c79cf43dca1789e0d9bb5ffd4e17e246f7"
+  "v": "73d1e886f0b7a10ed478af453b0bdb0dc0d385abccd95581f929851956686130"
  },
  {
   "id": "SDAH-568",
@@ -20487,7 +20483,7 @@
   "path": "data/SDAH/572.json",
   "sung": true,
   "sv": "b11b00d5bac6c060573826449c428c2e800712780f738a23ec3f93aec1f274a0",
-  "v": "38a7b05a4084f930e8a5edcd1fbf71e27dacaca186561d531ad47bbeb51f997b"
+  "v": "1c34f72d958dd3fecdeadf80da4d411ace821f2fd19ef1388ddac37299d509eb"
  },
  {
   "id": "SDAH-573",
@@ -20539,7 +20535,7 @@
   "sung": true,
   "sv": "eb3e90241fde4e549b2d91a713c3de926afa8736c7af19d2079b1b422c255ce1",
   "svc": "33302cf55a179206205f71ee04117e912d2d744e17f290194de531c055715741",
-  "v": "217d5820ded09c4eb7781a40ee3b966952b7ea74a0674cba2fb98269f1c5e1d0"
+  "v": "4c328ff3d0aa9336b61de3e9f952995d1850f5f4d3bb26903a1399968152eb17"
  },
  {
   "id": "SDAH-578",
@@ -20549,7 +20545,7 @@
   "path": "data/SDAH/578.json",
   "sung": true,
   "sv": "2f6901605f3f06ee8d744592521e9b926af49f8518c0bec35cf38dc30858a5e4",
-  "v": "9faa2a7f7cfc9a90876bf188b68b38916885141fa4d46d6c3cb52065db80da86"
+  "v": "bdf14e10d5d2fac7f34ca68704f4a0322121723578b6de92a68f8b8aeed06451"
  },
  {
   "id": "SDAH-579",
@@ -20599,7 +20595,7 @@
   "path": "data/SDAH/583.json",
   "sung": true,
   "sv": "468e87c59d93919c92ca44fe65b9a3ba6881c81ed3062839db394bd8bf496bee",
-  "v": "8f837929d7d3c3611d3f5c9345385ae3aac302eff089b174d412708ebae665fb"
+  "v": "8b400b7de2ec2b4f51942882675f9d206fda162efbd0b832645d8d5decf206d5"
  },
  {
   "id": "SDAH-584",
@@ -20609,7 +20605,7 @@
   "path": "data/SDAH/584.json",
   "sung": true,
   "sv": "3f8242ba4adb95b362299d480dc0e7f8df000413b640ed675a9eb8ee4233cfbd",
-  "v": "199e34bad2a2b7308427be8071c79eecc2b34b382213478f61f213a65258fbd3"
+  "v": "0da1cf318b07e4a8d26460fc58bf8f72360f7840ceaa1d7184fc4427fdca02ea"
  },
  {
   "id": "SDAH-585",
@@ -20842,7 +20838,7 @@
   "path": "data/SDAH/607.json",
   "sung": true,
   "sv": "a308b69a386f22a4131972af1f8600d0e7c0ace53adc2fbe814553734d6fecd1",
-  "v": "a3fa4c2992b1ec7cd62792b0d50ba8cf676b20fb5d4bc008c47b2e4335bb3707"
+  "v": "2a9d87a6658944d096150b52c6b4d687d5d72b54b426a88f63e478e6efa09f99"
  },
  {
   "id": "SDAH-608",
@@ -21012,7 +21008,7 @@
   "path": "data/SDAH/624.json",
   "sung": true,
   "sv": "aec1efd5a84cb0878d45d0ea1420e1aac3f3a90d06796baaf8031d1e2a4efe99",
-  "v": "33f7cf9c21554dd4c396464541bc24db7f71b809a01efb6c245a6c13801b8f24"
+  "v": "955f1105d39b83e62bad2c0c8d3c888b173f82e76fc71194d008f5a1ac9f26e2"
  },
  {
   "id": "SDAH-625",
@@ -21092,7 +21088,7 @@
   "path": "data/SDAH/632.json",
   "sung": true,
   "sv": "02d5c70f6c874d24bca21555c381e4f57b8c7a9ac8810ad7a73d1e9489a7f03f",
-  "v": "9a90274bf3d3f4a7efaa7328770b6a7d5c8def605530089462e972ebc982a6e3"
+  "v": "c21a5d0ffa6d90364aa0a7521c65e43e727ef0cddd3f2e311f99625d6929e46f"
  },
  {
   "id": "SDAH-633",
@@ -21102,7 +21098,7 @@
   "path": "data/SDAH/633.json",
   "sung": true,
   "sv": "b2e17c8020ce9b101b6a0f181aace054a2820977b407c4bedf829fa0c75e6d8f",
-  "v": "e09bcc8289e168f32a970cf696a7228f829da4eaf6262369bbc04dd5ac219dd3"
+  "v": "ab9d8b475e92ee781234cd7b791b28d5afa7406635b2ddc6c54e1984398da558"
  },
  {
   "id": "SDAH-634",
@@ -21540,7 +21536,7 @@
   "path": "data/SDAH/677.json",
   "sung": true,
   "sv": "7161b4f32adf6978933b74ca396e755f92cb9ffead8c25b95d94e0abaeca4858",
-  "v": "767f8255e1baea4aa4e299398a421b87848c7d18f10d982c35f3823fab43e159"
+  "v": "7953d471364613a9fb7b8891ba070db4d594984728f99260011612b5eb3eb6e3"
  },
  {
   "id": "SDAH-678",
@@ -21560,7 +21556,7 @@
   "path": "data/SDAH/679.json",
   "sung": true,
   "sv": "5b06963594b8e1704e86b84615bffebcdb60471234ca5430aa319bd5a8700f1e",
-  "v": "56d113c4a4a498a4a75d4e48bf08db60999d3fdc9b54982addd1450e02fe61e0"
+  "v": "ee4eae371c9aa473967d8a3330fff41fdac440944592da1e8ae67c3f72ecbc40"
  },
  {
   "id": "SDAH-680",
@@ -22245,7 +22241,7 @@
   "sung": true,
   "sv": "8f87713bf4a87dd768098b9f343d3ce1a9dd59d94bd7d385705a5099b5cd2041",
   "english": "Rescue the Perishing",
-  "v": "c2058ba1d9775de6320d7c412b8ad7e26ff1050f247009c544125bd7ed176c9e"
+  "v": "7e2944ded3f9bd2361f57c22f2da25042c6878c1caf1ef2af6fc8432741a71be"
  },
  {
   "id": "WN-77b",
@@ -22264,7 +22260,7 @@
   "sung": true,
   "sv": "5bdd07487404a9148b0b84fbda622487920f2ead2e9f5a3f6c732481132b3a05",
   "english": "Will There Be Any Stars in My Crown?",
-  "v": "a75d4b1146c239910da8eb1ef3482a28de5731d7597af48b86e087e01e0e9222"
+  "v": "98650783ef34d1eaa5fa3b0965a020510eea742983a4318fd190a0e2a6072de8"
  },
  {
   "id": "WN-83",
@@ -22714,7 +22710,7 @@
   "sung": true,
   "sv": "5bec5d4905dc6288141ae662cfd55ddd4a2dfb2a1b9c6619790996e30902613b",
   "english": "There Is Power in the Blood",
-  "v": "f1511c8443cbab5ef787312dea9d50eaf98be1e49137d10323ead39ce36a3294"
+  "v": "3b30cdc6fc744569e014c28f2322d0ebd9f5b8f8924656fdc4810a4f13698cdb"
  },
  {
   "id": "WN-169b",
@@ -23185,7 +23181,7 @@
   "sung": true,
   "sv": "83395125ccda960b49a945ff711104a815adde9ec310534ef2cab323565fb227",
   "english": "Joy By and By",
-  "v": "7f73018e3d23a25db71bde811bda101db77152425a11b1a375fd0be7906db801"
+  "v": "9f2a7106fad876ad49606b0ea31380aa9553b51592c8756f562d7d394a13c1ee"
  },
  {
   "id": "WN-267",
@@ -23196,7 +23192,7 @@
   "sung": true,
   "sv": "28dd69ec5f2239cefc096e5a53469baced01c04f3e85e58b5e4b31b7a8739714",
   "english": "The Glory Song",
-  "v": "1830e6e68365fa599b7466d1522376e60c5b75904ae53d5f4d407f780c46a3ca"
+  "v": "23c3f3a066020d73b4a0b8e3a6a1a395df337b46f415ab51e678980536d05ef9"
  },
  {
   "id": "WN-268",
