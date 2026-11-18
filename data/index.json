@@ -18806,7 +18806,7 @@
   "number": "422",
   "title": "Marching to Zion",
   "path": "data/SDAH/422.json",
-  "v": "c4cc10e4dda9f4d2b626dac5c974126e4c698cafca9978a43c839421cae3dcaa"
+  "v": "e78a65054b861ec4c20293eba4090f350d57a818b4aa5628098dfafbe3203e32"
  },
  {
   "id": "SDAH-423",
@@ -18988,7 +18988,7 @@
   "number": "440",
   "title": "How Cheering Is the Christian's Hope",
   "path": "data/SDAH/440.json",
-  "v": "48c5ae7759bb29670499136d2f7a930ee9fa3ee30eb9c5e453933a5244813644"
+  "v": "30c781d29703a0d0b3a3e0efc8b4cb423fb26f0c59b41ee5546c283910bd16ee"
  },
  {
   "id": "SDAH-441",
@@ -21567,6 +21567,14 @@
   "title": "Didn't My Lord Deliver Daniel",
   "path": "data/SPIRITUALS/1.json",
   "v": "996557b140373b738e088c675043f15351a36ad01efe4eec56085ae676c4f175"
+ },
+ {
+  "id": "SPIRITUALS-2",
+  "book": "SPIRITUALS",
+  "number": "2",
+  "title": "My Lord Delivered Daniel",
+  "path": "data/SPIRITUALS/2.json",
+  "v": "caeb838c4a317407bd9490e475234b0c2bd75cec7c38d2eb83043b287ecba5e3"
  },
  {
   "id": "WN-1",
