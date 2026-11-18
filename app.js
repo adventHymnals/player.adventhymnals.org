@@ -259,8 +259,6 @@ async function refreshSinging() {
     // saved only once it works, so a start offline never opens from a list it can't sing
     await c.put(SINGING_SAVED, new Response(text, { headers: { "Content-Type": "application/json" } }));
     // the live voices offered before go; the new list's are offered (the first keeps its place as "warble")
-    document.querySelectorAll('#singDialog [data-engine^="warble-"]').forEach((b) => b.remove());
-    document.querySelectorAll('#singEngine option[value^="warble-"]').forEach((o) => o.remove());
     for (const w of singingCfg.voices) if (!fresh.voices.some((f) => f.cfg?.sha256 === w.cfg?.sha256)) w.cancelAll?.();
     singingCfg = fresh;
     offerLiveVoices();
@@ -1345,46 +1343,39 @@ async function loadManifest() {
 }
 
 /** Each live voice after the first gets its own choice in "Who sings?" and in the settings' list. */
-function offerLiveVoices() {
-  const first = document.querySelector('#singDialog [data-engine="warble"]');
-  const opt = document.querySelector('#singEngine option[value="warble"]');
-  singingCfg.voices.forEach((w, i) => {
-    if (i === 0) {
-      if (first) { first.querySelector("strong").textContent = w.label; }
-      if (opt) opt.textContent = w.label;
-      return;
-    }
-    if (first && !document.querySelector(`#singDialog [data-engine="${w.engine}"]`)) {
-      const b = first.cloneNode(true);
-      b.dataset.engine = w.engine;
-      b.querySelector("strong").textContent = w.label;
-      b.querySelector("small").removeAttribute("id");
-      [...document.querySelectorAll('#singDialog [data-engine^="warble"]')].pop().after(b);
-    }
-    if (opt && !document.querySelector(`#singEngine option[value="${w.engine}"]`)) {
-      const o = new Option(w.label, w.engine);
-      [...document.querySelectorAll('#singEngine option[value^="warble"]')].pop().after(o);
-    }
+/** Every singing choice, in version order: { engine, short, label, line, group, n, ok (this hymn has it), w }. */
+function singerChoices() {
+  pickManifest();
+  const rec = RECORDED.map((r) => {
+    const c = singerCopy(r.engine);
+    return { engine: r.engine, short: c.short, label: c.label, line: c.line, group: "recorded", n: c.n,
+      ok: r.engine === "stems" ? !!manifests.stems?.stems?.length : !!manifests[r.engine] };
   });
-  orderSingers();
+  const live = singingCfg.voices.map((w) => {
+    // the app's engine for a version: getting ready (choosable: v5 sings meanwhile), or one this phone can't run
+    const e = w.nativeEngine ? Warble.nativeEngines()?.[w.nativeEngine] : null;
+    const state = !e || e.ready ? "" : e.preparing ? COPY.gettingReady(Math.round((e.progress || 0) * 100)) : COPY.needsStronger;
+    return { engine: w.engine, short: w.short, label: w.label, line: w.line, group: "phone", n: w.n, ok: !e || e.ready || !!e.preparing, state, w };
+  });
+  return [...rec, ...live].sort((a, b) => a.n - b.n);
 }
-/** The choices in their order, Singers v1 … v6 (as they came into being), then Instruments; "Ask me" first. */
-function orderSingers() {
-  const ins = document.querySelector('#singDialog [data-engine="instrumental"]');
-  if (ins) { ins.querySelector("strong").textContent = COPY.instruments; ins.querySelector("small").textContent = COPY.instrumentsLine; }
-  const ask = document.querySelector('#singEngine option[value="ask"]'), io = document.querySelector('#singEngine option[value="instrumental"]');
-  if (ask) ask.textContent = COPY.ask;
-  if (io) io.textContent = COPY.instruments;
-  const st = document.querySelector('#singDialog [data-engine="stems"] strong'), so = document.querySelector('#singEngine option[value="stems"]');
-  if (st) st.textContent = singerCopy("stems").label;
-  if (so) so.textContent = singerCopy("stems").label;
-  const nOf = (e) => (e === "instrumental" ? 1000 : e === "ask" ? -1 : singerCopy(e)?.n || singingCfg.voices.find((w) => w.engine === e)?.n || 99);
-  for (const [box, sel, attr] of [[document.querySelector("#singDialog .sing-choices"), ".sing-choice", "engine"], [$("singEngine"), "option", null]]) {
-    if (!box) continue;
-    const items = [...box.querySelectorAll(sel)];
-    items.sort((a, b) => nOf(attr ? a.dataset.engine : a.value) - nOf(attr ? b.dataset.engine : b.value)).forEach((x) => box.append(x));
+/** Settings → Who sings: "Ask me", the versions ("v1" …), "Instruments"; a recording this hymn lacks is dimmed. */
+function offerLiveVoices() {
+  const sel = $("singEngine");
+  if (!sel) return;
+  const keep = sel.value;
+  sel.replaceChildren(new Option(COPY.ask, "ask"));
+  for (const c of singerChoices()) {
+    const o = new Option(c.short, c.engine);
+    o.disabled = !c.ok;
+    const what = c.group === "recorded" && !c.ok ? COPY.noRecordingChip : c.state || c.line;
+    o.title = what; o.setAttribute("aria-label", COPY.chipAria(c.n, what));
+    sel.append(o);
   }
+  sel.append(new Option(COPY.instruments, "instrumental"));
+  if ([...sel.options].some((o) => o.value === keep)) sel.value = keep;
 }
+const offerRecordedV2 = offerLiveVoices; // (the recorded choices follow the hymn)
 
 /** Who sings? Live singers, recorded singers or instruments only, each with what it costs. Asked at Play
  *  once for each hymn opened (unless "Don't ask again"), and whenever the Singers button is clicked.
@@ -1393,61 +1384,55 @@ function chooseSingers(from, always = false) {
   const d = $("singDialog");
   if (!d || !singingCfg.warble || APP || MAKE) return Promise.resolve(true);
   if (!always && (appAnswered || !asksAtPlay() || following())) return Promise.resolve(true); // following you: the choir sings
-  pickManifest();
-  const recorded = !!manifests.stems?.stems?.length;
-  offerRecordedV2();
-  const stemsNote = $("singStemsNote");
-  stemsNote.textContent = recorded ? singerCopy("stems").line : "No singers available for this hymn yet";
-  d.querySelector('[data-engine="stems"]').classList.toggle("unavailable", !recorded);
-  // no hymn recorded at all: the recorded singers are not offered (the live singers sing every hymn)
-  for (const c of d.querySelectorAll('[data-engine^="stems"]')) c.hidden = !anyRecorded() || (c.dataset.engine === "stems-v2" && !manifests["stems-v2"]);
-  if (recorded) updateStemsCost().then(() => {
+  const choices = singerChoices();
+  // one choice: a version, "instrumental" or "ask" (ask at Play; the singers stay as they are). It starts on the
+  // singers who sing now; one this hymn lacks starts on the phone's first singers instead (what Done would give)
+  const now = whoSings();
+  let pick = now === "instrumental" || choices.some((c) => c.engine === now && c.ok) ? now : singingCfg.warble.engine;
+  if (choices.some((c) => c.engine === "stems" && c.ok)) updateStemsCost().then(() => {
     if (stemsCost.bytes) console.info(`singers v1: ${(stemsCost.bytes / 1e6).toFixed(1)} MB for this hymn`);
   });
-  for (const w of singingCfg.voices) {
-    const liveNote = d.querySelector(`[data-engine="${w.engine}"] small`);
-    if (!liveNote) continue;
-    liveNote.textContent = w.line || "";
-    w.saved().then((has) => {
-      if (has) return;
-      const mb = w.nativeEngine ? Math.round((Warble.nativeEngines()?.[w.nativeEngine]?.size || 0) / 1e6) : 17; // the app says how big its tier is
-      if (COPY.firstUse(mb)) liveNote.textContent += `${w.line ? " · " : ""}${COPY.firstUse(mb)}`;
-    });
-  }
-  const now = whoSings();
-  for (const b of d.querySelectorAll(".sing-choice")) b.classList.toggle("current", b.dataset.engine === now);
-  $("singNoAsk").checked = state.singAsk === false;
+  const esc = (t) => String(t).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
+  // what a chip is, in words: its line, or why it can't be chosen here
+  const what = (c) => (c.group === "recorded" && !c.ok ? COPY.noRecordingChip : c.state || c.line);
+  const chip = (c) => `<button type="button" class="ver-chip" role="radio" data-engine="${esc(c.engine)}" aria-label="${esc(COPY.chipAria(c.n, what(c)))}" title="${esc(what(c))}"${c.ok ? "" : ' aria-disabled="true"'}>${esc(c.short)}</button>`;
+  const group = (g, title) => {
+    const cs = choices.filter((c) => c.group === g).reverse(); // newest first
+    return cs.length ? `<div class="ver-group"><h3>${title}</h3><div class="ver-chips" role="radiogroup" aria-label="${title}">${cs.map(chip).join("")}</div></div>` : "";
+  };
+  // the version grids (a third of the sheet at most, scrolling inside), the detail line, then the other choices
+  $("singGrid").innerHTML = group("recorded", COPY.recorded) + group("phone", COPY.phone);
+  $("singOther").innerHTML = `<button type="button" class="ver-chip wide" role="radio" data-engine="instrumental">${COPY.instruments}</button>`
+    + `<button type="button" class="ver-chip wide" role="radio" data-engine="ask">${COPY.ask}</button>`;
+  const detail = async () => {
+    const c = choices.find((x) => x.engine === pick);
+    const el = $("singDetail");
+    // the selection in words too: "v1: Recorded singers; …"
+    el.textContent = pick === "instrumental" ? `${COPY.instruments}: ${COPY.instrumentsLine}` : pick === "ask" ? `${COPY.ask}: ${COPY.askLine}` : c ? `${c.short}: ${c.state || c.line}` : "";
+    if (c?.w && !(await c.w.saved())) {
+      const mb = c.w.nativeEngine ? Math.round((Warble.nativeEngines()?.[c.w.nativeEngine]?.size || 0) / 1e6) : 17; // the app says how big its tier is
+      if (pick === c.engine && COPY.firstUse(mb)) el.textContent += `${el.textContent ? " · " : ""}${COPY.firstUse(mb)}`;
+    }
+  };
+  const show = () => {
+    for (const b of d.querySelectorAll(".ver-chip[data-engine]")) b.setAttribute("aria-checked", String(b.dataset.engine === pick));
+    detail();
+  };
+  show();
   return new Promise((resolve) => {
     const done = (v) => { d.onclose = null; d.close(); resolve(v); };
-    for (const b of d.querySelectorAll(".sing-choice")) b.onclick = () => {
-      state.singAsk = !$("singNoAsk").checked; save("singAsk");
-      chooseWhoSings(b.dataset.engine);
-      done(true);
-    };
+    // as in Settings: "Ask me" asks at each Play (the singers stay); a fixed choice is used without asking
+    const apply = () => { state.singAsk = pick === "ask"; save("singAsk"); if (pick !== "ask") chooseWhoSings(pick); else appAnswered = true; done(true); };
+    for (const b of d.querySelectorAll(".ver-chip[data-engine]")) {
+      b.onclick = () => { if (b.getAttribute("aria-disabled") === "true") return; pick = b.dataset.engine; show(); };
+      b.ondblclick = () => { if (b.getAttribute("aria-disabled") !== "true") apply(); };
+    }
+    $("singDone").onclick = apply;
     $("singCancel").onclick = () => done(false);
     d.onclose = () => resolve(false);
     d.showModal();
-    d.querySelector(".sing-choice.current")?.focus(); // Enter or Space keeps the same singers
+    (d.querySelector('.ver-chip[aria-checked="true"]') || $("singDone")).focus();
   });
-}
-
-/** "Recorded singers v2" in "Who sings?" and the settings, for hymns that have converted singers. */
-function offerRecordedV2() {
-  const has = !!manifests["stems-v2"];
-  const first = document.querySelector('#singDialog [data-engine="stems"]');
-  let b = document.querySelector('#singDialog [data-engine="stems-v2"]');
-  if (first && !b && has) {
-    b = first.cloneNode(true);
-    b.dataset.engine = "stems-v2";
-    b.querySelector("strong").textContent = singerCopy("stems-v2").label;
-    const n = b.querySelector("small"); n.removeAttribute("id");
-    n.textContent = singerCopy("stems-v2").line;
-    first.after(b);
-  }
-  if (b) b.hidden = !has;
-  const opt = document.querySelector('#singEngine option[value="stems"]');
-  if (opt && !document.querySelector('#singEngine option[value="stems-v2"]')) opt.after(new Option(singerCopy("stems-v2").label, "stems-v2"));
-  orderSingers();
 }
 
 /** Live singers ("warble"), recorded singers ("stems", "stems-v2") or instruments only ("instrumental"). */
@@ -1469,10 +1454,14 @@ function syncSingersBtn() {
   const b = headersEl.querySelector(".singers-btn");
   if (!b) return;
   const v = whoSings();
-  const label = isLive(v) ? liveVoice(v)?.label || COPY.singers : RECORDED.find((r) => r.engine === v)?.label || { instrumental: COPY.instruments }[v] || COPY.singers;
-  if (!SINGER_ICONS[v]) SINGER_ICONS[v] = document.querySelector(`#singDialog [data-engine="${v === "stems-v2" ? "stems" : v}"] .sing-ico`)?.innerHTML || "";
-  b.innerHTML = `${SINGER_ICONS[v]}<span>${label}</span>`;
-  b.title = `${label}: click to choose who sings`;
+  // the version, short ("v5"): never cut; the long name for screen readers and the tooltip
+  const short = isLive(v) ? liveVoice(v)?.short || COPY.singers : singerCopy(v)?.short || { instrumental: COPY.instruments }[v] || COPY.singers;
+  const label = isLive(v) ? liveVoice(v)?.label || COPY.singers : singerCopy(v)?.label || { instrumental: COPY.instruments }[v] || COPY.singers;
+  const kind = isLive(v) ? "warble" : isRecorded(v) ? "stems" : "instrumental";
+  if (!SINGER_ICONS[kind]) SINGER_ICONS[kind] = document.querySelector(`#singIcons [data-icon="${kind}"]`)?.innerHTML || "";
+  b.innerHTML = `${SINGER_ICONS[kind]}<span>${short}</span>`;
+  b.title = label;
+  b.setAttribute("aria-label", `${COPY.heading}: ${label}`);
 }
 
 const stemTempos = () => [...new Set((manifest?.stems || []).map((s) => s.tempo))].sort((a, b) => a - b);
@@ -1483,7 +1472,6 @@ function syncSungControls() {
   const live = useWarble();
   $("sungRow").hidden = !manifest && !anySung() && !singingCfg.warble;
   $("singEngineRow").hidden = !singingCfg.warble && !manifests["stems-v2"];
-  for (const o of document.querySelectorAll('#singEngine option[value^="stems"]')) o.hidden = o.disabled = !anyRecorded();
   $("singEngine").value = APP || state.singAsk !== false ? (APP ? singEngine() : "ask") : whoSings();
   $("renderSingers").hidden = live;
   const tempos = stemTempos();

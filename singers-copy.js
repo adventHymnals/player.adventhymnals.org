@@ -1,15 +1,17 @@
 // The singing choices' names and the messages about them, in one place (Brian, 18 Nov 2026: the choices are
 // "Singers v1" … "Singers v6", numbered in the order they came into being; never an internal name on screen).
+// short: the name in every chip, button and row ("v5", never cut); label: for sentences and screen readers;
+// group: "recorded" or "phone" (the picker's two headings); line: the one detail line under the picker.
 // Keyed by singing.json voice id (the phone models) or the recorded engine. The page's own table wins over a
 // singing.json label, so the names are the same whatever copy of singing.json a device holds.
 // Wording: ChatGPT pass, Round 3 (review/ROUND3-PAGE-STRINGS.md).
 export const SINGERS = {
-  stems: { n: 1, label: "Singers v1", line: "Recorded singers; downloads for hymns that have them" },
-  v1: { n: 2, label: "Singers v2", line: "An earlier version of singing on your phone; any hymn" },
-  v2: { n: 3, label: "Singers v3", line: "An earlier version of singing on your phone; any hymn" },
-  "stems-v2": { n: 4, label: "Singers v4", line: "Recordings that sound like real singers; downloads for some hymns" },
-  v3: { n: 5, label: "Singers v5", line: "Sung on your phone; any hymn, key or speed" },
-  leap: { n: 6, label: "Singers v6", line: "Fuller singing on your phone; needs a stronger phone" },
+  stems: { n: 1, short: "v1", group: "recorded", label: "Singers v1", line: "Recorded singers; downloads for hymns that have them" },
+  v1: { n: 2, short: "v2", group: "phone", label: "Singers v2", line: "An earlier version of singing on your phone; any hymn" },
+  v2: { n: 3, short: "v3", group: "phone", label: "Singers v3", line: "An earlier version of singing on your phone; any hymn" },
+  "stems-v2": { n: 4, short: "v4", group: "recorded", label: "Singers v4", line: "Recordings that sound like real singers; downloads for some hymns" },
+  v3: { n: 5, short: "v5", group: "phone", label: "Singers v5", line: "Sung on your phone; any hymn, key or speed" },
+  leap: { n: 6, short: "v6", group: "phone", label: "Singers v6", line: "Fuller singing on your phone; needs a stronger phone" },
 };
 // the credit line under the score, one per singer group (final, approved 18 Nov from the voice peer's facts; the
 // app's Settings carry the same lines; no LUNAI link exists, so none is given)
@@ -21,7 +23,11 @@ export const CREDITS = {
 };
 export const COPY = {
   firstUse: (mb) => (mb ? `Downloads ${mb} MB the first time only` : ""),
-  instruments: "Instruments", instrumentsLine: "No singing; every part played on the piano", ask: "Ask me", singers: "Singers",
+  heading: "Singers", recorded: "Recorded", phone: "On your phone", done: "Done",
+  // the picker's states (ChatGPT, agreed with the app, 18 Nov)
+  noRecordingChip: "No recording for this hymn", gettingReady: (pct) => `Getting ready on your phone (${pct}%)`,
+  needsStronger: "This version needs a stronger phone", chipAria: (n, what) => `Version ${n}. ${what}`,
+  instruments: "Instruments", instrumentsLine: "No singing; every part played on the piano", ask: "Ask me", askLine: "Ask when I press Play", singers: "Singers",
   credit: (id, label) => CREDITS[id] || `${label}: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.`,
   preparing: (pct) => `Getting the singers ready… ${pct}%. You can press play now. Instruments will play each verse until the singers are ready.`,
   newKey: (pct) => `Getting the singers ready in the new key… ${pct}%. Instruments will play until they're ready.`,
