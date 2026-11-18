@@ -5571,7 +5571,7 @@
   "number": "639",
   "title": "The Homeland!",
   "path": "data/CH1941/639.json",
-  "v": "5d413f865e43bb62b0cc94dca00edfc445b838275691e316591fa9dc0dca7f90"
+  "v": "ef05e5bbd7e5ed32c6a48b98adda93e58a44d8c11d66f7a049f84b84bbd54f14"
  },
  {
   "id": "CH1941-640",
@@ -17714,7 +17714,7 @@
   "path": "data/SDAH/297.json",
   "sung": true,
   "sv": "3f21caca039dbb82b2a1c1a099718332a3c343d2cee8f76ab7f5fdf7326a9861",
-  "v": "6775d6118fcea1892a841d557fe5255441c1cb59067571cf0322a46c45b4c9c5"
+  "v": "9e560c5f1e31341c350702bb422489cca597efbcca494136f9f38f07c1dd5a72"
  },
  {
   "id": "SDAH-298",
@@ -18402,7 +18402,7 @@
   "path": "data/SDAH/365.json",
   "sung": true,
   "sv": "b48d96117a1f09faa5556fa44bf0310d854ab3c3b5e3ffe7479eb828e78fbc89",
-  "v": "546a181141663a96baa08c8bcdaedc4f7d1dd6abbe69c2b5fc6f0b8bbef6dbfd"
+  "v": "33084e42b8fda5f62805f3ac372575344b436eebcfd8b1504ed4d2e8f0aa16aa"
  },
  {
   "id": "SDAH-366",
@@ -18682,7 +18682,7 @@
   "path": "data/SDAH/393.json",
   "sung": true,
   "sv": "39093c90ca88e3475b5b4f9cc1e0fd0c13ebcbf2ec5a2a367193e89f070b36e3",
-  "v": "6c67acd138a630cfce059edd1d9c7e9aff0cec9537abe59571e649b8d2605448"
+  "v": "2bd4a29eec65f61708db11370f0df7f6ec688b714933932ae7798b2d963e16ec"
  },
  {
   "id": "SDAH-394",
@@ -18921,9 +18921,7 @@
   "number": "417",
   "title": "O Solemn Thought",
   "path": "data/SDAH/417.json",
-  "sung": true,
-  "sv": "8645f10299c07e1342c011011c31af2da844f3c6933351ea1153ea1e8df873c1",
-  "v": "7e9b3e887ce61b049d8a7a95ca2cef8aaec61e412c926e8e62d3a400d891eeff"
+  "v": "f048e1b89eb1ddf7a87802d1256b0f7a7f9c1844b0f259b0d0c537ab9f97fb97"
  },
  {
   "id": "SDAH-418",
@@ -19083,7 +19081,7 @@
   "sung": true,
   "sv": "ae19734430521a8d07248c149e8fc06bee5dfc78706206ec10fc3398746c8054",
   "svc": "08451488fce736ada47a9be38a74c568d1a512b98cca43262393b11b2226ae4d",
-  "v": "cb75745d9660327f91673caa40d29d885559219d2edd755104007787a1340f4b"
+  "v": "e3cfdd6b846b0cb8921845ced4cc0f8345181f7489672ac9c269cc1e884dd34f"
  },
  {
   "id": "SDAH-434",
@@ -19104,7 +19102,7 @@
   "sung": true,
   "sv": "907e23b89c3842f5f7d7df1be8fefd435a0d3dde2a408347150d2e706dea140e",
   "svc": "2f0835528439c882ecc3ef1a4bd1d347aaa3dab8313792ff8d55dd2637dc871b",
-  "v": "efc0e51032e7ac8acf1b919d12c4c171609480f96a393fe626d3cc038e834409"
+  "v": "36c0fd9eba242ae4e694480c58ea8b6396bd63db5d7dd852c8177d3e77f38ed1"
  },
  {
   "id": "SDAH-436",
@@ -20379,7 +20377,7 @@
   "path": "data/SDAH/561.json",
   "sung": true,
   "sv": "261e171245b56e7cbe90410d4c4dd9fa60cc618fc2e8ee08ec985d30513ffad2",
-  "v": "6aff787f8ef11c09bf8f6483a367ba2c571ce7a3e8b80c113bbe94e5331f859b"
+  "v": "102762b495a75ca177f2e841e7799c2d01248c4fdf487a6f53d86b3f26494f72"
  },
  {
   "id": "SDAH-562",
@@ -20651,7 +20649,7 @@
   "path": "data/SDAH/588.json",
   "sung": true,
   "sv": "41099d8c0bff943d8c7c14d7801d7ee9deecbd1b0c658a999a957020224bfe39",
-  "v": "0e8d9f22edd0aa7ef1008ac45ab99c1427a546932966e49b4f3ae86157fd4558"
+  "v": "4a43e35c6a563c1158a69d8d0f5f556372b4fdad3076a3eab3421684929f0837"
  },
  {
   "id": "SDAH-589",
@@ -20692,7 +20690,7 @@
   "sung": true,
   "sv": "be41430d7edd5baa73c47085ac6ae503174e7110d3a5d01110a0d6e875e3db83",
   "svc": "e583000c9b3a97ea7090cd55501f963a31c2a02e44afdbbaf61695b971654bd9",
-  "v": "61f2aba2b1ea959dfb5abdbdf1020f66282b838429d765de1da6a28e0c942070"
+  "v": "6e5759bd7bcbc189b8ca9528e3d8d0dacf00d3baa8754c1892f3ec2bcca36e1a"
  },
  {
   "id": "SDAH-593",
@@ -20964,7 +20962,7 @@
   "path": "data/SDAH/619.json",
   "sung": true,
   "sv": "a8890124d4e4768f330a2199c00f31c228a0d1134ec7c90cdb07a46c710a9180",
-  "v": "7ab5cbb3bbbaa4474fe91c2075217f9d30fd2928d463b92fb9f99750111ea473"
+  "v": "42f5b5ae5026b8a6c80cdacaa33542a601288b566eccd838d926943319247bd4"
  },
  {
   "id": "SDAH-620",
@@ -21174,7 +21172,7 @@
   "path": "data/SDAH/640.json",
   "sung": true,
   "sv": "0dfa66510c829fed0b9f7b2059172f17b5975ef611040c1c59e9b7d4fb1f8afe",
-  "v": "c8808beea227121f2ade33d05054c62a261cfdaca2b1dc043c6ee58b2292abdc"
+  "v": "9b53b0800c54b6c0aae40c6727815f6e65af304043a0add1ac927faa29b6064d"
  },
  {
   "id": "SDAH-641",

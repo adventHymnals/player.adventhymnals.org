@@ -1859,6 +1859,7 @@ async function renderAll() {
       }
     }
     view.render(xml, { ...roNow, pre });
+    if (!pre && !quick) store.set(`engraveMs:${hymn.id}`, Date.now() - t0); // how long it takes here: the background engraving skips slow ones
     if (DEBUG_TIMES) console.info(`AHTime staff ${hymn.id}${quick ? " (first part)" : ""}: ${pre ? "kept" : "engraved"} ${Date.now() - t0} ms, ${Math.round(Date.now() - window.performance.timing.navigationStart)} ms since start`);
     if (!pre) putEngraved(key, view.engraved).catch(() => {});
     if (!quick && wholeReady?.key === wholeKey) wholeReady = null;
@@ -1890,9 +1891,13 @@ async function prewarmNext(gen) {
   if (!entry || entry.book !== hymn.book) return;
   const id = entry.id;
   if (store.get(`verses:${id}`, null) || store.get(`transpose:${id}`, 0) || store.get(`tune:${id}`, "")) return;
+  // ordinary hymns only, so a tap on Play is never kept waiting by a long engraving: not when it is
+  // long (bars x verses written out) or took over 1.5 s to engrave the last time on this device
+  if (store.get(`engraveMs:${id}`, 0) > 1500) return;
   const h = await hymnJson(entry);
   if (gen !== drawGen || engine.playing || !h?.voices || h.parts) return;
   const verses = h.verses.map((_, k) => k + 1);
+  if ((h.measures || 0) * (unfolded() ? verses.length : 1) > 80) return;
   const tracks = state.tracks.map((t) => t.filter((k) => h.voices[k])).filter((t) => t.length).filter((t) => !state.hidden.includes(trackKey(t)));
   const opts = { tracks, trackWords: tracks.map((t) => state.trackWords[trackKey(t)] !== false), words: state.words, verse: verses[0], chords: state.chords, unfold: unfolded() ? verses : null };
   const ro = { mode: state.view, zoom: APP ? APP_ZOOM : state.zoom, width: (viewport.clientWidth - 8) * (APP ? 1 : appWide(state.zoom)), tracks: opts.tracks, barOffset: h.pickup > 0 ? 1 : 0, transpose: "", ownBase: lyricLines(h, opts) };
@@ -1903,6 +1908,7 @@ async function prewarmNext(gen) {
   if (gen !== drawGen || engine.playing || document.hidden) return;
   const t0 = Date.now();
   const e = view.engrave(xml, ro);
+  store.set(`engraveMs:${id}`, Date.now() - t0);
   if (DEBUG_TIMES) console.info(`AHTime staff ${id} (next, in the background): engraved ${Date.now() - t0} ms`);
   await putEngraved(key, e);
 }
@@ -1917,6 +1923,7 @@ function wholeLater(gen, xml, key, ro) {
     if (gen !== drawGen || !isScoreView()) return;
     const t0 = Date.now();
     const e = view.engrave(xml, ro);
+    store.set(`engraveMs:${hymn.id}`, Date.now() - t0);
     if (DEBUG_TIMES) console.info(`AHTime staff ${hymn.id} (whole, in the background): engraved ${Date.now() - t0} ms`);
     putEngraved(key, e).catch(() => {});
     if (gen !== drawGen) return;
