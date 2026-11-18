@@ -1717,10 +1717,23 @@ function onNativeWarble(json) {
   else if (m.type === "model" && m.state === "ready") toast("Live singers ready.", 3000);
   else if (m.type === "model" && m.state === "error") oops("Live singing could not start: its voices did not load. Check the connection and try again.", m.msg, 8000);
   else if (m.type === "error") oops("Live singing stopped for a moment. Press play to go on.", m.msg, 8000);
+  else if (m.type === "engines") enginesChanged();
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
     if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind briefly. They will catch up on their own.", 4000); }
   }
+}
+
+/** The app's engines changed (its {"type": "engines"} event): if the new voice is chosen but no longer ready on
+ *  this phone (its files gone, a failed benchmark), Warble sings from the next play: the passes are made again
+ *  for it, at once when stopped, else when play is next pressed; said quietly, once. */
+let engineSwitchPending = false;
+function enginesChanged() {
+  const lw = liveW();
+  if (!lw?.nativeEngine || Warble.nativeEngines()?.[lw.nativeEngine]?.ready) return;
+  state.singEngine = "warble"; // for now (not saved: the app keeps its own choice)
+  toast(`${lw.label} is not ready on this phone just now, so the live singers sing.`, 4000);
+  if (engine.playing) engineSwitchPending = true; else prepareStems();
 }
 
 /** What the recorded singers of this hymn cost at the current tempo, key and verses, for the app's
@@ -2289,6 +2302,7 @@ async function togglePlay() {
   engine.ensure(); // inside the click, so the browser lets the sound start
   let from = engine.pausedAt ?? 0;
   if (from >= perf.total - 0.05) from = 0;
+  if (engineSwitchPending) { engineSwitchPending = false; await prepareStems(); } // the other engine's passes, first
   if (!(await chooseSingers(from))) return;
   applyMix();
   if (state.accomp !== "off" || anyPiano() || state.intro !== "none" || state.interlude !== "none") engine.loadPiano();
