@@ -209,6 +209,9 @@ const RECORDED = [
   { engine: "stems-v2", label: "Recorded singers v2", dir: "audio-svc", has: (x) => x?.svc },
 ];
 const isRecorded = (v) => RECORDED.some((r) => r.engine === v);
+/** Some hymn has recorded singers (none since 18 Nov 2026: the live singers sing every hymn). The recorded
+ *  singers' filter, badges and choices show only then: back by themselves if recordings return. */
+const anyRecorded = () => hymnList.some((x) => x.sung);
 let manifests = {};
 /** The list the chosen recorded singers sing from (v2 where the hymn has it, else the first). */
 const pickManifest = () => { manifest = (singEngine() === "stems-v2" && manifests["stems-v2"]) || manifests.stems || null; };
@@ -271,7 +274,8 @@ const asksAtPlay = () => !!singingCfg.warble && !APP && !MAKE && state.singAsk !
 const awaitingApp = () => !appAnswered && (APP ? nativeEngineRaw() === "ask" : asksAtPlay());
 const whoSings = () => (state.instrumental ? "instrumental" : singEngine());
 const singEngine = () => {
-  const e = state.singEngine || nativeEngine() || singingCfg.default;
+  let e = state.singEngine || nativeEngine() || singingCfg.default;
+  if (isRecorded(e) && singingCfg.warble && hymnList.length && !anyRecorded()) e = "warble"; // a saved "recorded" with none left
   if (!singingCfg.warble && !isRecorded(e)) return "stems";
   if (e === "stems-v2" && !manifests["stems-v2"]) return "stems"; // this hymn has no converted singers
   return isLive(e) && !liveVoice(e) ? "warble" : e; // a live voice no longer offered: the first
@@ -1053,6 +1057,8 @@ function renderFinder(scrollToCurrent = false) {
     + (n > PICKED_MAX ? `<button type="button" class="more" data-more aria-label="All ${n} chosen hymnals">+${n - PICKED_MAX} more</button>` : "");
   // the sound counts follow the chosen hymnals, so they say what clicking would show
   const inBooks = finderMatches("", { books: finder.books, sound: "all", sort: "auto" });
+  $("finderSound").hidden = !anyRecorded();
+  if (!anyRecorded()) finder.sound = "all";
   $("finderSound").innerHTML = SOUNDS.map(([k, label]) => {
     const c = k === "all" ? inBooks.length : inBooks.filter((x) => (k === "sung" ? x.sung : !x.sung)).length;
     return `<button type="button" role="radio" data-sound="${k}" aria-checked="${finder.sound === k}">${label}<small>${c}</small></button>`;
@@ -1091,7 +1097,7 @@ function renderFinder(scrollToCurrent = false) {
       <span class="f-num"><small>${escHtml(x.book)}</small>${escHtml(x.number)}</span>
       <span class="f-title">${isIdea.has(x.id) ? `${escHtml(x.title)}<span class="f-snip">${escHtml(idea.lines.get(x.id) || "")}</span>`
         : `${markMatch(x.title, finder.q)}${finder.q && search.ms ? ((sn) => (sn ? `<span class="f-snip">${sn}</span>` : ""))(snippetFor(x.id, finder.q)) : ""}`}</span>
-      <span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>
+      ${anyRecorded() ? `<span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>` : ""}
     </li>`).join("")
     : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try all hymnals or all sounds." : "."}</li>`;
   highlight(true, scrollToCurrent);
@@ -1361,6 +1367,8 @@ function chooseSingers(from, always = false) {
   const stemsNote = $("singStemsNote");
   stemsNote.textContent = recorded ? "Real voices · downloads the singers of this hymn" : "Not recorded for this hymn yet";
   d.querySelector('[data-engine="stems"]').classList.toggle("unavailable", !recorded);
+  // no hymn recorded at all: the recorded singers are not offered (the live singers sing every hymn)
+  for (const c of d.querySelectorAll('[data-engine^="stems"]')) c.hidden = !anyRecorded() || (c.dataset.engine === "stems-v2" && !manifests["stems-v2"]);
   if (recorded) updateStemsCost().then(() => {
     if (stemsCost.bytes) stemsNote.textContent = `Real voices · downloads ${(stemsCost.bytes / 1e6).toFixed(stemsCost.bytes < 1e7 ? 1 : 0)} MB for this hymn`;
   });
@@ -1438,6 +1446,7 @@ function syncSungControls() {
   const live = useWarble();
   $("sungRow").hidden = !manifest && !anySung() && !singingCfg.warble;
   $("singEngineRow").hidden = !singingCfg.warble && !manifests["stems-v2"];
+  for (const o of document.querySelectorAll('#singEngine option[value^="stems"]')) o.hidden = o.disabled = !anyRecorded();
   $("singEngine").value = APP || state.singAsk !== false ? (APP ? singEngine() : "ask") : whoSings();
   $("renderSingers").hidden = live;
   const tempos = stemTempos();
