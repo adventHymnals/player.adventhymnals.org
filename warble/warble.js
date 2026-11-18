@@ -327,7 +327,9 @@ export async function loadSinging(urls, page = location.href) {
       // an app's test build may bring its own voice entries (AHNative.warble.voices(): the new voice with its
       // files put on the phone by hand, nothing hosted; NATIVE-ENGINES.md "Test path"): added to the list here
       let own = [];
-      try { own = JSON.parse(Warble.native()?.voices?.() || "[]").filter((c) => c?.engine === "leap" && c.id); } catch { own = []; }
+      // (also a Warble voice the app carries itself, "engine": "warble" with a "model" the app resolves, e.g. "app:v7")
+      try { own = JSON.parse(Warble.native()?.voices?.() || "[]").filter((c) => c?.id && (c.engine === "leap" || (c.engine === "warble" && c.model)))
+        .map((c) => (c.engine === "warble" ? { ...c, fromApp: true } : c)); } catch { own = []; }
       // or it announces the engine as local (its files carried in the APK): the voice from that alone
       const le = Warble.nativeEngines()?.leap;
       if (!own.length && le?.local) own = [{ id: "leap", engine: "leap", label: singerCopy("leap").label, files: [], tiers: [] }];
@@ -342,7 +344,7 @@ export async function loadSinging(urls, page = location.href) {
       const voices = [];
       for (const [i, c] of list.entries()) {
         const w = new Warble(i === 0 && c.engine !== "leap" ? { ...c, id: "", copyId: c.id } : c, base); // (its name by its real id)
-        if (w.nativeEngine) { voices.push(w); continue; } // the app fetches its files itself
+        if (w.nativeEngine || c.fromApp) { voices.push(w); continue; } // the app fetches (or carries) its files itself
         // offered only where it can sing: the model saved on this device, or reachable
         const sha = (c.sha256 || "").toLowerCase();
         const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };

@@ -12,6 +12,8 @@ export const SINGERS = {
   "stems-v2": { n: 4, short: "v4", group: "recorded", label: "Singers v4", line: "Recordings that sound like real singers; downloads for some hymns" },
   v3: { n: 5, short: "v5", group: "phone", label: "Singers v5", line: "Sung on your phone; any hymn, key or speed" },
   leap: { n: 6, short: "v6", group: "phone", label: "Singers v6", line: "Fuller singing on your phone; needs a stronger phone" },
+  // a test build's own voice (the app's voices(), 19 Nov): the line is v5's until its own passes ChatGPT
+  v7: { n: 7, short: "v7", group: "phone", label: "Singers v7", line: "Sung on your phone; any hymn, key or speed" },
 };
 // the credit line under the score, one per singer group (final, approved 18 Nov from the voice peer's facts; the
 // app's Settings carry the same lines; no LUNAI link exists, so none is given)
