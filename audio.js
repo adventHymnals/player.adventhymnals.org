@@ -130,7 +130,13 @@ export class Engine {
     const engineDyn = this.nativeEngineDyn();
     if (engineDyn) { this.nativeDyn = {}; this.nativeSendSchedules(); } else this.nativeLevels(fromT);
     this.nativeGains(true);
-    try { this.native.play(JSON.stringify({ from: fromT, segs })); this.nativeOn = true; } catch { this.nativeOn = false; }
+    // the app answers {"ok": false, "error"} when it cannot sing (e.g. its model is not loaded): said, not ignored
+    this.nativeError = null;
+    try {
+      const r = JSON.parse(this.native.play(JSON.stringify({ from: fromT, segs })) || "{}");
+      if (r && r.ok === false) { this.nativeOn = false; this.nativeError = r.error || "the app's singer did not start"; console.warn(`live singer: ${this.nativeError}`); }
+      else this.nativeOn = true;
+    } catch (e) { this.nativeOn = false; this.nativeError = String(e?.message || e); }
     clearTimeout(this.nativeDynTimer);
     if (this.nativeOn && !engineDyn) this.nativeDynNext(fromT);
   }

@@ -2273,6 +2273,7 @@ async function togglePlay() {
   if (state.accomp !== "off" || anyPiano() || state.intro !== "none" || state.interlude !== "none") engine.loadPiano();
   await engine.play(from);
   setPlaying(true);
+  if (engine.nativeError) toast(`The live singers could not start: ${engine.nativeError}.`, 6000);
 }
 
 function stopPlayback() {
