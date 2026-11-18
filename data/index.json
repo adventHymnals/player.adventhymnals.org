@@ -911,9 +911,7 @@
   "number": "71",
   "title": "My Maker and My King",
   "path": "data/CH1941/71.json",
-  "sung": true,
-  "sv": "d0c04fe87675082db9e7e188590e5e4f4560a9f0e85d00d2001fc9fe7851ae9b",
-  "v": "a8a1ad24fe63e457ad651fcbafce5979b89f579a4a3801edaf65cfa051ec627b"
+  "v": "e19a4409831151ae9b0bf25b1e404043b6a0a3315c43ab1b894576782b97a8da"
  },
  {
   "id": "CH1941-72",
@@ -3187,7 +3185,7 @@
   "number": "351",
   "title": "Ye Servants of the Lord",
   "path": "data/CH1941/351.json",
-  "v": "22f07e6beeccbaef6f1967b61154ed41de9ddaca24e534f4bbc1c34e78a7540e"
+  "v": "577ad21952413dee07647f976bc1139c845add7793781ded799c99ca27ae6cd9"
  },
  {
   "id": "CH1941-352",
@@ -5173,7 +5171,7 @@
   "number": "619",
   "title": "Watchman, Blow the Gospel Trumpet",
   "path": "data/CH1941/619.json",
-  "v": "498f7c9f3163d11895977dff632bbae92dc1cce32236099aea61c5852fe9a71f"
+  "v": "c625f733ad8a799b765ba984c15ddb5f4036ab483b5c559a26ddd90e92fa2360"
  },
  {
   "id": "CH1941-620",
@@ -5309,7 +5307,7 @@
   "number": "640",
   "title": "Come, We That Love the Lord",
   "path": "data/CH1941/640.json",
-  "v": "29a3f6d214d1b13d4a7f674443c1071bc0c0bfb818a3b079f34b1a3812d0991e"
+  "v": "b697d8b7bbf14a41b14b41601580408122b5f5600ec16d4e00d7d590b7e349cb"
  },
  {
   "id": "CH1941-643",
@@ -5685,7 +5683,7 @@
   "number": "695",
   "title": "The Lord Bless You and Keep You",
   "path": "data/CH1941/695.json",
-  "v": "fc131324073f3d2e79176e6294189e64b98f03e8c7ae2ffa318bd60c4059d4f8"
+  "v": "be22ea49d5de07a15df792a0cb74c2b813c971451bb742319a7ffec90c632d60"
  },
  {
   "id": "CH1941-696",
@@ -12610,10 +12608,8 @@
   "number": "9",
   "title": "Mwumbaji, Mfalme",
   "path": "data/NZK/9.json",
-  "sung": true,
-  "sv": "7aad51c5194b564c995a499bf2756eb49473d1bc73332dc970aa02462b5567d7",
   "english": "My Maker and My King",
-  "v": "6e6cdf354fc67f5144143c98d46f67d3a1c1689b670639772f77320de04c1efc"
+  "v": "c0040c450be44c2acf054488a46dde0fa83ffadb30c200b1e671fc85767eb65f"
  },
  {
   "id": "NZK-10",
@@ -13297,10 +13293,8 @@
   "number": "70",
   "title": "Wapenzi Wa Bwana",
   "path": "data/NZK/70.json",
-  "sung": true,
-  "sv": "2ff5a5b42603ac93f96a2e9cbe8d734738fd4519e466f93bb2e21dc451d51177",
   "english": "Marching to Zion",
-  "v": "b4312d00b3b5662c57adb16a2d2946e091c5f46354af2e46ed4fd064739af35c"
+  "v": "d8d224c40deed4ed2ddf9234947aa0ef71543be3e70106518b15cf638d4ca0b7"
  },
  {
   "id": "NZK-73",
@@ -14733,9 +14727,7 @@
   "number": "15",
   "title": "My Maker and My King",
   "path": "data/SDAH/15.json",
-  "sung": true,
-  "sv": "615885add06f6d4e049e620e48680202ff55f129e835be469706913e4a94680a",
-  "v": "82fb6545b7aa29ed72aa093a67a5192ba73c1cd7ef639b7a8f5cd1cabb806b05"
+  "v": "c0ab3c21464dd5e1c6c3b6d25a3b29d614b84b5aa24df832090d2a84a073fca2"
  },
  {
   "id": "SDAH-16",
@@ -18259,9 +18251,7 @@
   "number": "368",
   "title": "Watchman, Blow the Gospel Trumpet",
   "path": "data/SDAH/368.json",
-  "sung": true,
-  "sv": "ce45cacb4256fd7152b2adb8e4286827152b8e9db73c3805b65cd96fe3ff2c30",
-  "v": "6f92cf99f2c25f74dc723630a74ae649f2b3097fc1f4cbdaf4023c2c5d892e69"
+  "v": "616ac3dc2ec531f3c6d82f133d609d2cc4f12cfc2a5c60ed07bc62d4cbba4403"
  },
  {
   "id": "SDAH-369",
@@ -21299,9 +21289,7 @@
   "number": "669",
   "title": "The Lord Bless You and Keep You",
   "path": "data/SDAH/669.json",
-  "sung": true,
-  "sv": "3a800ade182b196d0db4a4d802eb974db20920a975972ffee060081e3390d5b0",
-  "v": "c4fb084f7f106576110a607d0b58c165d145e21b8269546e5a7d62b329748366"
+  "v": "9f82ca0ca1aa3baca6fd9494887ffaea3dfd8f784952505db3e96f4b944a81e5"
  },
  {
   "id": "SDAH-670",
@@ -21574,7 +21562,7 @@
   "number": "2",
   "title": "My Lord Delivered Daniel",
   "path": "data/SPIRITUALS/2.json",
-  "v": "caeb838c4a317407bd9490e475234b0c2bd75cec7c38d2eb83043b287ecba5e3"
+  "v": "0ecfecf841f21dcccfa81630e14286d37f40efcd29fd13611bf832c0ef5f0c49"
  },
  {
   "id": "WN-1",
@@ -21633,10 +21621,8 @@
   "number": "9",
   "title": "Jachwechna gi Ruodha",
   "path": "data/WN/9.json",
-  "sung": true,
-  "sv": "86a5fcee10124702977c4929e1168b2089e0d6b9bf832f297647815b71669fa9",
   "english": "My Maker and My King",
-  "v": "80418a9efd6f4dbfe1fcb8554e46030ea0bfa5cef3f589884f122a40db5ce824"
+  "v": "0d9f96cd9de10157a0a6d72dbd45921c3615cdb49b3b1d11cbeea9248e5bed06"
  },
  {
   "id": "WN-10",
@@ -22155,10 +22141,8 @@
   "number": "95",
   "title": "Jarit Go Tung' Mar Injili",
   "path": "data/WN/95.json",
-  "sung": true,
-  "sv": "78a2c00daf94ee2bf9481bca97999a8ad9288b1927e7004beb48ac2612905f53",
   "english": "Watchman, Blow the Gospel Trumpet",
-  "v": "cb8fce882af7eb1f081d72ade8d0ee73b1ac31f0a013646a2542975c85c8b9fb"
+  "v": "bb246db500d57d0ce8b37d7d00774f482131f2d68b1de7498527bcec7b48b2c9"
  },
  {
   "id": "WN-101",
@@ -22227,7 +22211,7 @@
   "title": "Biuru, Jo Nyasaye",
   "path": "data/WN/116.json",
   "english": "Marching to Zion",
-  "v": "6f59facaf1cdc51926074def44f2f0d114127bfcb417be679042dc272cab4b5d"
+  "v": "f53d8112acbdb845ebb4bc6f4620532ffc862f156a9778afbfeb9918a464c491"
  },
  {
   "id": "WN-119",
