@@ -22,6 +22,8 @@ export const CREDITS = {
   v1: CREDIT_V23, v2: CREDIT_V23,
   v3: "Singers v5: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; hymn lines after the LUNAI singing voices, used with permission.",
   leap: "Singers v6: LeapSinger and NHVSing by wavtechyukky (NHVSing weights: non-commercial use only); singers from GTSinger (Zhang et al., NeurIPS 2024, CC BY-NC-SA 4.0); hymn lines after the LUNAI singing voices, used with permission. Runs on ONNX Runtime (MIT).",
+  // TEST build wording (the coordinator, 19 Nov; not final: facts from the voice peer, then ChatGPT)
+  v7: "Singers v7: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; taught by Singers v6 (LeapSinger by wavtechyukky); hymn lines after the LUNAI singing voices, used with permission; sung through NHVSing by wavtechyukky (NHVSing weights: non-commercial use only). Runs on ONNX Runtime (MIT).",
 };
 export const COPY = {
   firstUse: (mb) => (mb ? `Downloads ${mb} MB the first time only` : ""),
