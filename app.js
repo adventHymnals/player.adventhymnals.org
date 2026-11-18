@@ -325,7 +325,7 @@ const stageWanted = () => state.view === "presenter" || projectorOpen();
 function openProjector() {
   if (projectorOpen()) { projector.focus(); return; }
   projector = window.open("", "hymn-projector", "popup=yes,resizable=yes,width=1280,height=720");
-  if (!projector) { toast("The browser blocked the new window. Allow pop-ups for this page and try again."); return; }
+  if (!projector) { toast("Your browser blocked the new window. Allow pop-ups for this page and try again."); return; }
   const d = projector.document;
   d.title = `${hymn.number} ${hymn.title}`;
   d.body.style.cssText = "margin:0;background:#000;height:100vh;display:grid;place-items:center;overflow:hidden";
@@ -373,7 +373,7 @@ function mirrorProjector() {
 function enterFullPage() {
   if (state.view !== "presenter") { state.view = "presenter"; save("view"); renderAll(); }
   document.body.classList.add("full-page");
-  toast("Press Esc to leave full page.", 2500);
+  toast("Press Esc to leave full screen.", 2500);
 }
 const leaveFullPage = () => document.body.classList.remove("full-page");
 
@@ -422,7 +422,7 @@ const chordLabel = (name, shift = renderedShift) => prettyChord(transposeChordNa
 function syncKeyLabel(shift = renderedShift) {
   const k = keyFor(shift);
   $("keyLabel").textContent = prettyChord(k.name) + (hymn.key.mode === "minor" ? "m" : "");
-  $("keyLabel").title = shift ? `Transposed ${shift > 0 ? "up" : "down"} ${Math.abs(shift)} semitone${Math.abs(shift) === 1 ? "" : "s"} from ${prettyChord(keyFor(0).name)}. Click to go back to the written key.` : "The written key";
+  $("keyLabel").title = shift ? `Transposed ${shift > 0 ? "up" : "down"} ${Math.abs(shift)} semitone${Math.abs(shift) === 1 ? "" : "s"} from ${prettyChord(keyFor(0).name)}. Click to go back to the written key.` : "Original key";
   $("keyLabel").classList.toggle("moved", !!shift);
 }
 
@@ -460,7 +460,7 @@ function resetKey() {
 function noteStemsTransposed() {
   if (useWarble()) return; // live singing sings any key
   if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && !e.inst && !!VOICES[e.ch] && e.pass >= 0)) {
-    if (!noteStemsTransposed.shown) toast("The recorded singers sing in the key they were recorded in, so after a key change the synth sings. Live singing follows the key.", 6000);
+    if (!noteStemsTransposed.shown) toast("Singers use the key they were recorded in. If you change the key, instruments take over. Live singing follows the new key.", 6000);
     noteStemsTransposed.shown = true;
   }
 }
@@ -939,7 +939,7 @@ function setupFinder() {
   const setQ = (v, from) => {
     finder.q = v;
     askIdea(v.trim());
-    if (/[a-z]/i.test(v) && !search.ms) ensureSearch().then(() => { if (finder.q) renderFinder(); }).catch(() => toast("The search could not load the words; titles and numbers still work.", 5000));
+    if (/[a-z]/i.test(v) && !search.ms) ensureSearch().then(() => { if (finder.q) renderFinder(); }).catch(() => toast("Could not load the hymn words. You can still search by title or number.", 5000));
     if (from !== top) top.value = v;
     if (from !== query) query.value = v;
     finder.active = 0;
@@ -1102,7 +1102,7 @@ function renderFinder(scrollToCurrent = false) {
       <span class="f-num"><small>${escHtml(x.book)}</small>${escHtml(x.number)}</span>
       <span class="f-title">${isIdea.has(x.id) ? `${escHtml(x.title)}<span class="f-snip">${escHtml(idea.lines.get(x.id) || "")}</span>`
         : `${markMatch(x.title, finder.q)}${finder.q && search.ms ? ((sn) => (sn ? `<span class="f-snip">${sn}</span>` : ""))(snippetFor(x.id, finder.q)) : ""}`}</span>
-      ${anyRecorded() ? `<span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played on the synth (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>` : ""}
+      ${anyRecorded() ? `<span class="f-sound ${x.sung ? "sung" : "midi"}" title="${x.sung ? "Recorded singers" : "Played by instruments (MIDI)"}">${x.sung ? "Singers" : "MIDI"}</span>` : ""}
     </li>`).join("")
     : `<li class="finder-empty">No hymn matches${finder.q ? ` “${escHtml(finder.q.trim())}”` : ""}${filtered ? " in these filters. Try all hymnals or all sounds." : "."}</li>`;
   highlight(true, scrollToCurrent);
@@ -1167,14 +1167,14 @@ function notInStudio(id) {
   const [book, num] = id.split("-");
   document.title = `${book} ${num || ""} · not in the Studio yet`;
   $("hymnNumber").textContent = num || "";
-  $("hymnTitle").textContent = "Not in the Studio yet";
+  $("hymnTitle").textContent = "Not yet available in Studio";
   $("hymnCredits").textContent = `${book} ${num || ""}`;
   document.body.classList.add("missing");
   const ready = hymnList.filter((x) => x.book !== "RECORDED");
   $("workspace").insertAdjacentHTML("beforebegin", `<div class="missing-note">
     <h2>This hymn's music is still being prepared</h2>
     <p>Each hymn is checked note by note before it goes in the Studio, so they are being added one at a time.
-    ${EMBED ? "" : "You can still read all the words on the hymn's page."}</p>
+    ${EMBED ? "" : "You can still read the words on the hymn page."}</p>
     ${ready.length ? `<p>Ready to play now:</p><ul>${ready.map((x) => `<li><a href="${EMBED ? "?embed=1" : "./"}#${x.id}">${x.book} ${x.number}, ${x.title}</a></li>`).join("")}</ul>` : ""}
   </div>`);
   const picker = $("hymnPicker");
@@ -1364,7 +1364,7 @@ function chooseSingers(from, always = false) {
   const recorded = !!manifests.stems?.stems?.length;
   offerRecordedV2();
   const stemsNote = $("singStemsNote");
-  stemsNote.textContent = recorded ? "Real voices · downloads the singers of this hymn" : "Not recorded for this hymn yet";
+  stemsNote.textContent = recorded ? "Singers · downloads the voices for this hymn" : "No singers available for this hymn yet";
   d.querySelector('[data-engine="stems"]').classList.toggle("unavailable", !recorded);
   // no hymn recorded at all: the recorded singers are not offered (the live singers sing every hymn)
   for (const c of d.querySelectorAll('[data-engine^="stems"]')) c.hidden = !anyRecorded() || (c.dataset.engine === "stems-v2" && !manifests["stems-v2"]);
@@ -1374,7 +1374,7 @@ function chooseSingers(from, always = false) {
   for (const w of singingCfg.voices) {
     const liveNote = d.querySelector(`[data-engine="${w.engine}"] small`);
     if (!liveNote) continue;
-    liveNote.textContent = "Sung on this device · nothing to download for each hymn · any tempo or key";
+    liveNote.textContent = "Sung live on this device · no download needed for each hymn · any tempo or key";
     w.saved().then((has) => { if (!has) liveNote.textContent += " (the first time: the singers, 17 MB, once)"; });
   }
   const now = whoSings();
@@ -1404,12 +1404,12 @@ function offerRecordedV2() {
     b.dataset.engine = "stems-v2";
     b.querySelector("strong").textContent = "Recorded singers v2";
     const n = b.querySelector("small"); n.removeAttribute("id");
-    n.textContent = "The recorded singers in real singers' voices · downloads the singers of this hymn";
+    n.textContent = "Singers · downloads the voices for this hymn";
     first.after(b);
   }
   if (b) b.hidden = !has;
   const opt = document.querySelector('#singEngine option[value="stems"]');
-  if (opt && !document.querySelector('#singEngine option[value="stems-v2"]')) opt.after(new Option("Recorded singers v2 (where there are)", "stems-v2"));
+  if (opt && !document.querySelector('#singEngine option[value="stems-v2"]')) opt.after(new Option("Recorded singers v2 (where available)", "stems-v2"));
 }
 
 /** Live singers ("warble"), recorded singers ("stems", "stems-v2") or instruments only ("instrumental"). */
@@ -1449,9 +1449,9 @@ function syncSungControls() {
   $("singEngine").value = APP || state.singAsk !== false ? (APP ? singEngine() : "ask") : whoSings();
   $("renderSingers").hidden = live;
   const tempos = stemTempos();
-  $("sungStatus").textContent = live ? "Sung live on this device, at any tempo and key. The first time, it downloads the singers (17 MB)."
-    : !manifest ? (singingCfg.warble ? "No recording of this hymn yet. Live singing can sing it." : "No sung recording yet.")
-    : tempos.length ? `Recorded at ${tempos.join(", ")} a minute.` : "No sung recording yet.";
+  $("sungStatus").textContent = live ? "Sung live on this device at any tempo or key. The first time, the singers need a 17 MB download."
+    : !manifest ? (singingCfg.warble ? "No recording is available for this hymn yet. You can use live singing." : "No recording available yet.")
+    : tempos.length ? `Recorded at ${tempos.join(", ")} a minute.` : "No recording available yet.";
 }
 
 /** Choosing who sings (recorded or live singers) means the voices sing: one left on the synth's "aah"
@@ -1489,7 +1489,7 @@ async function prepareStems() {
   $("credit").textContent = "";
   if (!anySung() || !manifest) { rebuild(); return; }
   if (hymn.variant) { // the recordings follow the written rhythm
-    toast("The singers are recorded in the written rhythm, so the synth sings the changed rhythm.", 6000);
+    toast("Singers follow the original rhythm. If you change it, instruments take over.", 6000);
     engine.setStemBuffers(new Map());
     rebuild();
     return;
@@ -1510,10 +1510,10 @@ async function prepareStems() {
       else if (!solfaWords || v === state.verses[0]) missing.push(solfaWords ? VOICES[k].name : `${VOICES[k].name} ${v}`);
     }
   }
-  toast("Loading the singers…", 0);
+  toast("Loading singers…", 0);
   try {
     const bufs = await engine.loadStems(wanted, (done, total) => {
-      if (total) toast(`Loading the singers… ${done} of ${total}. You can press play now; the synth sings until they arrive.`, 0);
+      if (total) toast(`Loading singers… ${done} of ${total}. You can press play now; the synth sings until they arrive.`, 0);
     });
     if (bufs.stale) return; // a newer request (another hymn) has taken over
     // recorded at another tempo: stretch to the slider's tempo, keeping the pitch (everything scales by one ratio)
@@ -1611,7 +1611,7 @@ async function prepareWarble(keep = false) {
     const secs = (Date.now() - t0) / 1000;
     const mix = total / Math.max(1, hymnVoices().length); // seconds of music, all voices together
     const speed = total && secs > 0.5 ? ` (${(mix / secs).toFixed(1)}× real time)` : "";
-    if (keep) { if (shown) toast("The live singers are in the new key.", 3000); }
+    if (keep) { if (shown) toast("The singers now follow the new key.", 3000); }
     else toast(`Live singers ready${speed}.`, 4000);
     console.info(`warble: ${mix.toFixed(1)} s of ${hymnVoices().length}-voice singing in ${secs.toFixed(1)} s with ${w.workers.length} workers${speed}`);
   } catch (err) {
@@ -1677,7 +1677,7 @@ function onNativeWarble(json) {
   else if (m.type === "error") toast(`Live singing: ${m.msg}`, 8000);
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
-    if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind for a moment (is the screen locked?). They catch up by themselves.", 4000); }
+    if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind briefly. They will catch up on their own.", 4000); }
   }
 }
 
@@ -1722,15 +1722,15 @@ async function renderSingers() {
   // one recording run per key the chosen verses are sung in (e.g. a raised last verse)
   const byShift = new Map();
   for (const v of state.verses) byShift.set(verseShift(v), [...(byShift.get(verseShift(v)) || []), v]);
-  if ([...byShift.keys()].some((s) => Math.abs(s) > 6)) { toast("The singers can be recorded up to six semitones from the written key."); return; }
+  if ([...byShift.keys()].some((s) => Math.abs(s) > 6)) { toast("Singers can be recorded within six semitones of the original key."); return; }
   for (const [shift, verses] of byShift) {
-    toast("Asking the server to record the singers…", 0);
+    toast("Requesting a recording of the singers…", 0);
     let res;
     try {
       const what = state.words === "solfa" || state.singSolfa ? "&words=solfa" : `&verses=${verses.join(",")}`;
       res = await fetch(`api/sing?hymn=${hymn.id}&tempo=${state.tempo}${what}&transpose=${shift}`, { method: "POST" });
     } catch {
-      toast("Recording the singers needs the hymn server. Start it with python3 server.py in the hymn-satb folder.");
+      toast("Recording singers requires the hymn server. Start it with python3 server.py in the hymn-satb folder.");
       return;
     }
     const job = await res.json().catch(() => ({}));
@@ -1884,7 +1884,7 @@ function buildHeaders() {
   workspace.classList.toggle("heads-collapsed", state.headsCollapsed);
   const fold = document.createElement("button");
   fold.className = "heads-toggle";
-  fold.setAttribute("aria-label", state.headsCollapsed ? "Show the track controls" : "Hide the track controls");
+  fold.setAttribute("aria-label", state.headsCollapsed ? "Show part controls" : "Hide part controls");
   fold.title = fold.getAttribute("aria-label");
   fold.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${state.headsCollapsed ? "M9 6l6 6-6 6" : "M15 6l-6 6 6 6"}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   fold.onclick = () => { state.headsCollapsed = !state.headsCollapsed; save("headsCollapsed"); renderAll(); };
@@ -1959,7 +1959,7 @@ function buildHeaders() {
       c.onclick = () => { state.trackWords[key] = state.trackWords[key] === false; save("trackWords"); renderAll(); };
     } else if (act === "hide") {
       c.onclick = () => {
-        if (visibleTracks().length === 1) return toast("At least one staff stays on the page.");
+        if (visibleTracks().length === 1) return toast("Keep at least one staff visible.");
         state.hidden.push(key);
         save("hidden");
         renderAll();
@@ -2210,7 +2210,7 @@ function drawSyncMarks() {
 
 function syncSummary() {
   const found = syncopations(hymn);
-  if (!found.length) return "No syncopation here: every note starts on the beat, or ends before the next stronger beat.";
+  if (!found.length) return "There is no syncopation here. Each note starts on the beat or ends before the next stronger beat.";
   const bars = [...new Set(found.map((x) => x.m))].sort((a, b) => a - b);
   return `${found.length} syncopated note${found.length === 1 ? "" : "s"}, in bar${bars.length === 1 ? "" : "s"} ${bars.join(", ")}.`;
 }
@@ -2242,7 +2242,7 @@ function restoreRhythm() {
   syncRhythmButtons();
   if (anySung()) prepareStems(); else rebuild();
   renderAll();
-  toast("Back to the written rhythm.", 3000);
+  toast("Return to the original rhythm.", 3000);
 }
 
 // ---- loop ------------------------------------------------------------------
@@ -2296,8 +2296,8 @@ function drawLoopBoxes(pending) {
       const x = document.createElement("button");
       x.className = "loop-clear";
       x.textContent = "×";
-      x.title = "Clear the selection (Esc)";
-      x.setAttribute("aria-label", "Clear the selection");
+      x.title = "Clear selection (Esc)";
+      x.setAttribute("aria-label", "Clear selection");
       x.style.left = `${b.x + b.w - 11}px`;
       x.style.top = `${b.y - 22}px`;
       x.addEventListener("pointerdown", (e) => e.stopPropagation());
@@ -2308,7 +2308,7 @@ function drawLoopBoxes(pending) {
     for (const edge of [i === 0 ? "from" : null, i === boxes.length - 1 ? "to" : null].filter(Boolean)) {
       const hnd = document.createElement("div");
       hnd.className = `loop-edge ${edge}`;
-      hnd.title = edge === "from" ? "Drag to move the start of the loop" : "Drag to move the end of the loop";
+      hnd.title = edge === "from" ? "Drag to change where the repeat starts" : "Drag to change where the repeat ends";
       hnd.style.top = `${b.y - 10}px`;
       hnd.style.height = `${b.h + 20}px`;
       hnd.style.left = `${edge === "from" ? b.x - 7 : b.x + b.w - 7}px`;
@@ -2425,7 +2425,7 @@ function drawWordsLoop() {
   const x = document.createElement("button");
   x.className = "w-loop-clear";
   x.textContent = "Stop repeating";
-  x.title = "Stop repeating; the music plays on (Esc)";
+  x.title = "Stop repeating and continue playing (Esc)";
   x.setAttribute("aria-label", "Stop repeating");
   x.addEventListener("pointerdown", (e) => e.stopPropagation());
   x.onclick = (e) => { e.stopPropagation(); stopRepeat(); };
@@ -2686,7 +2686,7 @@ async function swmStart({ do: what = "piano", find = false } = {}) {
     await engine.ctx.resume();
     if (!listener.on) await listener.start(engine.ctx);
   } catch {
-    toast("Sing with me needs the microphone. Allow it for this page and try again.", 6000);
+    toast("Sing with me needs microphone access. Allow it for this page and try again.", 6000);
     return;
   }
   Object.assign(swm, { on: true, do: what === "sing" ? "sing" : "piano", find: !!find, joined: false, joining: false, searched: 0, candidates: [], idx: null, hymnIdx: null, reSearched: 0, checkedAt: 0, prev: null, lost: false, away: null });
@@ -2695,9 +2695,9 @@ async function swmStart({ do: what = "piano", find = false } = {}) {
   clearInterval(swm.timer);
   swm.timer = setInterval(() => { if (swm.on) swmTick(); }, 30);
   $("swmBtn").setAttribute("aria-pressed", "true");
-  swmSay(find ? "Sing a line or two of any hymn. I'm listening…" : `Start singing ${hymn.title}, anywhere, any part. I'm listening…`);
+  swmSay(find ? "Sing a line or two from any hymn. I'm listening…" : `Start singing ${hymn.title}, anywhere, any part. I'm listening…`);
   if (find) {
-    try { swm.idx = await allMelodies(); } catch { swmSay("The hymn tunes could not load. Check the connection and try again."); }
+    try { swm.idx = await allMelodies(); } catch { swmSay("The hymn tunes could not load. Check your internet connection and try again."); }
   } else swm.idx = new MelodyIndex(hymnTunes(hymn));
 }
 
@@ -2903,7 +2903,7 @@ function swmRelocate(now) {
         swm.away = null;
         engine.pause();
         swm.lost = true;
-        swmSay("Finding where you are… sing on");
+        swmSay("Finding your place in the hymn… Keep singing.");
       }
     }
     return;
@@ -2966,7 +2966,7 @@ async function startListening() {
     await engine.ctx.resume(); // the audio engine sleeps until something wakes it
     await listener.start(engine.ctx);
   } catch {
-    toast("The microphone is not available. Allow it for this page and try again.", 6000);
+    toast("The microphone is not available. Allow microphone access and try again.", 6000);
     return;
   }
   $("micBtn").textContent = "Stop listening";
@@ -2998,12 +2998,12 @@ function tap() {
     t = engine.now();
     grid = perf.beats;
   }
-  if (!grid) { $("tapFeedback").textContent = "Press play first, then tap on every beat."; return; }
+  if (!grid) { $("tapFeedback").textContent = "Play the music first, then tap along with the beat."; return; }
   const near = grid.reduce((a, b) => (Math.abs(b.t - t) < Math.abs(a.t - t) ? b : a));
   const ms = Math.round((t - near.t) * 1000);
   taps = [...taps.slice(-7), Math.abs(ms)];
   const avg = Math.round(taps.reduce((a, b) => a + b, 0) / taps.length);
-  const when = Math.abs(ms) <= 40 ? "Right on the beat" : ms > 0 ? `${ms} ms late` : `${-ms} ms early`;
+  const when = Math.abs(ms) <= 40 ? "You kept the beat" : ms > 0 ? `${ms} ms late` : `${-ms} ms early`;
   const which = quiz && quiz.engine.playing && !quiz.answered ? "" : near.beat === 0 ? " That was beat 1, the strong beat." : ` That was beat ${near.beat + 1}.`;
   $("tapFeedback").textContent = `${when}.${which} Average over your last ${taps.length}: ${avg} ms.`;
 }
@@ -3020,9 +3020,9 @@ async function playQuiz() {
   qe.load(tune.events);
   quiz = { tune, engine: qe, answered: false, beats: Array.from({ length: Math.round(tune.length / tune.beatSec) }, (_, i) => ({ t: i * tune.beatSec, beat: i % tune.beats })) };
   $("quizChoices").querySelectorAll("button").forEach((b) => b.classList.remove("right", "wrong"));
-  $("quizFeedback").textContent = "Listen for the strong beat, then choose. You can tap along to help.";
+  $("quizFeedback").textContent = "Listen for the strong beat, then choose your answer. You can tap along.";
   workspace.classList.add("quiz-hidden"); // no peeking at the score
-  $("quizPlay").textContent = "Play it again";
+  $("quizPlay").textContent = "Play again";
   qe.play(0);
 }
 
@@ -3912,7 +3912,7 @@ async function liveStemsForVideo(voices, progress) {
     for (const until = Date.now() + 120000; ;) { // the first time, the singing model may still be loading
       r = await fetch(`https://appassets.androidplatform.net/warble-render/${k[0]}/${b64}.wav`).catch(() => null);
       if (r?.ok || Date.now() > until) break;
-      progress("Starting the live singers for the video…");
+      progress("Preparing the singers for your video…");
       await new Promise((ok) => setTimeout(ok, 1500));
     }
     if (!r?.ok) throw new Error(`the live singers could not sing ${VOICES[k[0]]?.name || k[0]} for the video`);
@@ -4016,7 +4016,7 @@ function showMadeVideos(made) {
   const d = $("vidDialog");
   const picker = "showSaveFilePicker" in window;
   $("vidTitle").textContent = made.length === 1 ? "Your video is ready" : `Your ${made.length} videos are ready`;
-  $("vidNote").textContent = made.length === 1 ? "It is not saved yet. Choose where to keep it." : "They are not saved yet. Choose where to keep each one.";
+  $("vidNote").textContent = made.length === 1 ? "It is not saved yet. Choose where to keep it." : "The videos have not been saved yet. Choose where to save each one.";
   const mb = (b) => `${(b.size / 1e6).toFixed(1)} MB`;
   $("vidList").innerHTML = made.map((v, i) => `<li><span class="vname">${v.file}</span><span class="vsize">${mb(v.blob)}</span>`
     + `<button class="play-text" data-save="${i}">Save…</button></li>`).join("");
@@ -4079,7 +4079,7 @@ async function startRecording(snap = null) {
   const rec = presenter.record(engine.recordStream(), async (blob) => {
     // a webm recording is turned into a standard mp4 by the server when it can (players, phones, social sites)
     if (!blob.type.includes("avc1") && !blob.type.includes("mp4")) {
-      toast("Making the video into an mp4…", 0);
+      toast("Preparing the MP4 video…", 0);
       try {
         const r = await fetch("api/to-mp4", { method: "POST", body: blob });
         if (r.ok) blob = new Blob([await r.arrayBuffer()], { type: "video/mp4" });
@@ -4098,7 +4098,7 @@ async function startRecording(snap = null) {
   $("recordBtn").setAttribute("aria-label", "Stop recording");
   $("recordBtn").querySelector("span").textContent = "Stop recording and save the video";
   document.querySelector("#moreMenu > summary").classList.add("recording");
-  toast("Recording. It stops by itself at the end of the last verse.", 3000);
+  toast("Recording… It will stop after the last verse.", 3000);
   await engine.play(0);
   setPlaying(true);
 }
@@ -4119,10 +4119,10 @@ function finishRecording() {
 
 async function doExport() {
   if (!hymn) return;
-  try { await ensureVerovio(); } catch { toast("The score engine could not load. Check the internet connection."); return; }
+  try { await ensureVerovio(); } catch { toast("The music could not load. Check your internet connection."); return; }
   const tracks = visibleTracks();
   const name = `${hymn.id}-${tracks.map(trackKey).join("-")}.pdf`;
-  toast("Making the PDF…", 0);
+  toast("Preparing the PDF…", 0);
   try {
     const opts = withPiano(xmlOptions({ header: true, words: state.words === "current" ? "all" : state.words }));
     const pages = await exportPdf(tk, buildMusicXML(scoreHymn(), opts), hymn, name, $("measureHost"), verovioTranspose(currentShift(null)));
@@ -4139,10 +4139,10 @@ async function doImport(file) {
   try {
     res = await fetch(`api/import?name=${encodeURIComponent(file.name)}`, { method: "POST", body: file, headers: { "Content-Type": file.type || "application/pdf" } });
   } catch {
-    toast("Import needs the hymn server. Start it with python3 server.py in the hymn-satb folder.");
+    toast("To import, start the hymn server in the hymn-satb folder using python3 server.py.");
     return;
   }
-  if (res.status === 404 || res.status === 501) { toast("Import needs the hymn server. Start it with python3 server.py in the hymn-satb folder."); return; }
+  if (res.status === 404 || res.status === 501) { toast("To import, start the hymn server in the hymn-satb folder using python3 server.py."); return; }
   const job = await res.json().catch(() => ({}));
   if (!res.ok) { toast(job.error || "The import could not start.", 9000); return; }
   for (;;) {
@@ -4168,10 +4168,10 @@ async function doImportAudio(file) {
   try {
     res = await fetch(`api/import-audio?name=${encodeURIComponent(file.name)}`, { method: "POST", body: file });
   } catch {
-    toast("Importing a recording needs the hymn server on this computer (python3 server.py).", 7000);
+    toast("To import a recording, start the hymn server on this computer using python3 server.py.", 7000);
     return;
   }
-  if (res.status === 404 || res.status === 405 || res.status === 501) { toast("Importing a recording needs the hymn server on this computer (python3 server.py).", 7000); return; }
+  if (res.status === 404 || res.status === 405 || res.status === 501) { toast("To import a recording, start the hymn server on this computer using python3 server.py.", 7000); return; }
   const job = await res.json().catch(() => ({}));
   if (!res.ok) { toast(job.error || "The recording could not be sent.", 8000); return; }
   for (;;) {
@@ -4183,11 +4183,11 @@ async function doImportAudio(file) {
       $("hymnPicker").value = s.hymn;
       location.hash = s.hymn;
       await loadHymn(hymnList.find((x) => x.id === s.hymn));
-      toast("Transcribed. Listen and compare with the recording; expect to correct some notes and words.", 9000);
+      toast("The transcription is ready. Listen to the recording and check the notes and words. Some may need correcting.", 9000);
       return;
     }
     if (s.status === "error") { toast(`The recording could not be transcribed: ${s.error}`, 10000); return; }
-    toast(s.message || "Transcribing the recording…", 0);
+    toast(s.message || "Writing out the notes and words from the recording…", 0);
   }
 }
 
@@ -4202,15 +4202,15 @@ async function doImportAudio(file) {
 const HYMNAL_NAMES = { SDAH: "SDA Hymnal", CS1900: "Christ in Song", CS1908: "Christ in Song", HT1876: "Hymns and Tunes", CH1941: "Church Hymnal 1941", NZK: "Nyimbo za Kristo", WN: "Wende Nyasaye", AHC: "Advent Hymnals Collection", ANTHEMS: "Anthems", CLUBS: "Club Songs", SPIRITUALS: "Negro Spirituals" };
 const hymnBadge = () => `${HYMNAL_NAMES[hymn.book] || hymn.book} ${hymn.number}`;
 const LOGO = "brand/logo.svg"; // the one place the logo comes from
-const END_VOICE = "audio/endcard/cta.wav"; // spoken: "Which hymn should we sing next? Tell us in the comments."
+const END_VOICE = "audio/endcard/cta.wav"; // spoken: "Which hymn would you like us to sing next? Tell us in the comments."
 const END_CARD = {
-  landscape: { secs: 10, voiceAt: 0.8, lines: ["Which hymn should we sing next?", "Tell us in the comments", "Learn your part · player.adventhymnals.org"] },
-  vertical: { secs: 4, voiceAt: 0.4, lines: ["Full hymn ▶ on our channel", "Which hymn next? Comment below"] },
+  landscape: { secs: 10, voiceAt: 0.8, lines: ["Which hymn should we sing next?", "Tell us in the comments", "Practise your part · player.adventhymnals.org"] },
+  vertical: { secs: 4, voiceAt: 0.4, lines: ["Watch the full hymn on our channel", "Which hymn next? Tell us below"] },
 };
 const SHORT_MAX = 58; // seconds: one file fits YouTube Shorts, Reels and TikTok
 const MAKE_TAKES = ["choir", "soprano", "alto", "tenor", "bass", "rehearsal", "short"];
 const voiceOfTake = (take) => Object.keys(VOICES).find((k) => VOICES[k].name.toLowerCase() === take);
-const takeLabel = (take) => (take === "choir" ? "SATB Choir" : take === "rehearsal" ? "All Parts Rehearsal" : `${VOICES[voiceOfTake(take)]?.name} Part`);
+const takeLabel = (take) => (take === "choir" ? "SATB Choir" : take === "rehearsal" ? "Rehearsal for all parts" : `${VOICES[voiceOfTake(take)]?.name} Part`);
 const refrainAt = () => hymn.marks.find((m) => /refrain|chorus/i.test(m.text))?.q ?? null;
 
 function makeFailed(id, message) {
@@ -4515,7 +4515,7 @@ async function runMake() {
     state.lastVerseUp = 0;
     state.view = "presenter";
 
-    window.AH_MAKE.progress = "Loading the singers";
+    window.AH_MAKE.progress = "Loading the singers…";
     await loadMakeAssets();
     engine.ensure();
     await engine.loadPiano();
@@ -4656,10 +4656,10 @@ function bindControls() {
   $("studioReset").onclick = () => studio.reset();
 
   const WORDS_HINT = {
-    all: "Every verse under the music, as in the hymnal.",
-    current: "Only the verse being sung, in the staff and sol-fa; it changes as you go. The Words view shows every verse.",
-    solfa: "Each voice's own note names (doh, re, mi) in the key being sung, for sight-singing.",
-    none: "Plain staves. The line being sung still shows in the bar below. The Words view shows every verse.",
+    all: "Show all verses below the music, as they appear in the hymnal.",
+    current: "Show only the verse being sung on the staff and in sol-fa. See all verses in Words.",
+    solfa: "Show the sol-fa notes (doh, re, mi) for each part in the current key.",
+    none: "Show the music without words. The current line appears below, and all verses are in Words.",
   };
   $("wordsHint").textContent = WORDS_HINT[state.words];
   document.querySelectorAll('input[name="wordsMode"]').forEach((r) => {
@@ -4678,7 +4678,7 @@ function bindControls() {
   $("presenterShows").onchange = (e) => { state.presenterShows = e.target.value; save("presenterShows"); paint(true); };
   $("fullBtn").onclick = async () => {
     if (state.view !== "presenter") { state.view = "presenter"; save("view"); await renderAll(); }
-    $("stageWrap").requestFullscreen?.().catch(() => toast("This browser would not go full screen."));
+    $("stageWrap").requestFullscreen?.().catch(() => toast("Full screen is not available in this browser."));
   };
   $("pageBtn").onclick = enterFullPage;
   $("pageExit").onclick = leaveFullPage;
