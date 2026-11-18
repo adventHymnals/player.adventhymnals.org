@@ -35,6 +35,24 @@ singers.on = APP; // the app keeps the singers it has played (and lets them be c
 // ?remote=<url>: this copy is bundled in the app; hymn data and recordings come from that site
 // (the live list and new hymns when online, the bundled copy when not)
 const REMOTE = new URLSearchParams(location.search).get("remote") || "";
+// what CSS once read with body:has(): kept as body classes (a :has() on body restyled the whole score on
+// every change on the page, the playhead's each frame); watches only these three elements
+{
+  const sync = () => {
+    const b = document.body, pr = document.getElementById("practicePanel"), pi = document.getElementById("pianoPanel"), tp = document.getElementById("tunePick");
+    if (!b) return;
+    b.classList.toggle("has-practice", !!pr && !pr.hidden);
+    b.classList.toggle("has-piano", !!pi && !pi.hidden);
+    b.classList.toggle("piano-open", !!pi && !pi.hidden && pi.classList.contains("open"));
+    b.classList.toggle("has-tunepick", !!tp && !tp.hidden);
+  };
+  const watch = () => {
+    const mo = new MutationObserver(sync);
+    for (const id of ["practicePanel", "pianoPanel", "tunePick"]) { const el = document.getElementById(id); if (el) mo.observe(el, { attributes: true, attributeFilter: ["hidden", "class"] }); }
+    sync();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", watch); else watch();
+}
 console.info(`AHStudio build ${document.querySelector('meta[name="ah-build"]')?.content || "local"}`);
 // the published lexicon (the app's Studio copy can be older than a hymn it opens): warble.js fetches it
 // when a word is missing, before singing that word on "aa"
@@ -2458,9 +2476,15 @@ $("altView").addEventListener("click", (e) => {
 
 let lastT = -1;
 let making = false; // a video is being made: its frames are drawn by the maker, not by the clock
-function frame() {
+// In the app, while its own singer sings, the moving place is drawn about 20 times a second, not 60: the
+// singer needs the phone's time (Brian's phone fell behind on CS1908 1, 18 Nov 2026)
+const APP_FPS = 20;
+let lastPaintAt = 0;
+function frame(now = performance.now()) {
   requestAnimationFrame(frame);
   if (making) return;
+  if (APP && engine.nativeOn && now - lastPaintAt < 1000 / APP_FPS - 4) return;
+  lastPaintAt = now;
   paint(false);
   if (state.practice) drawPractice();
 }
@@ -3001,6 +3025,8 @@ function endIfDone() {
   if (recording) setTimeout(finishRecording, 1200);
   return true;
 }
+/** The "where" line, written only when it changes (each paint used to rewrite it). */
+function setWhere(text) { const el = $("where"); if (el.textContent !== text) el.textContent = text; }
 function paint(force, tAt) {
   if (!perf || !hymn) return;
   const t = tAt ?? engine.now();
@@ -3027,10 +3053,10 @@ function paint(force, tAt) {
   const copy = unfolded() && loc ? verseOrdinal(loc) ?? 0 : 0;
   const ci = loc ? chordIndexAt(hymn, q) : -1;
 
-  if (!loc) $("where").textContent = engine.playing ? "Counting in" : "Ready";
+  if (!loc) setWhere(engine.playing ? "Counting in" : "Ready");
   else {
     const part = loc.kind === "intro" ? "Introduction" : loc.kind === "interlude" ? "Interlude" : q >= refrainQ ? "Refrain" : `Verse ${loc.verse}`;
-    $("where").textContent = `${part}, bar ${barAt(hymn, q)} of ${hymn.measures}`;
+    setWhere(`${part}, bar ${barAt(hymn, q)} of ${hymn.measures}`);
   }
   const lines = currentLines(loc);
   updateNowbar(loc, ci, lines);
@@ -3101,11 +3127,15 @@ function paint(force, tAt) {
   if (state.piano) drawPianoPanel(t);
 }
 
+// moved by a transform (the compositor moves it: no layout, no restyle of the page each frame); its
+// height only when the line changes
+let ribbonH = -1;
 function placeRibbon(ph) {
-  ribbon.hidden = false;
-  ribbon.style.left = `${ph.x}px`;
-  ribbon.style.top = `${ph.top - 8}px`;
-  ribbon.style.height = `${ph.height + 16}px`;
+  if (ribbon.hidden) ribbon.hidden = false;
+  if (ribbon.style.left !== "0px") { ribbon.style.left = "0px"; ribbon.style.top = "0px"; ribbon.style.willChange = "transform"; }
+  ribbon.style.transform = `translate(${ph.x.toFixed(1)}px, ${(ph.top - 8).toFixed(1)}px)`;
+  const h = Math.round(ph.height + 16);
+  if (h !== ribbonH) { ribbonH = h; ribbon.style.height = `${h}px`; }
 }
 
 // Drag the playhead to where playing should continue. While playing, it pauses during the

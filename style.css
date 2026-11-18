@@ -510,7 +510,9 @@ body.full-page .stage-wrap:hover .stage-exit, body.full-page .stage-exit:focus-v
   position: fixed; left: 0; right: 0; bottom: var(--nowbar-h, 74px); z-index: 25; max-height: 52vh; overflow: auto;
   border-top: 1px solid var(--rule); background: var(--paper); box-shadow: 0 -10px 28px rgba(30, 42, 71, 0.12);
 }
-body:has(#practicePanel:not([hidden])) .workspace { padding-bottom: 46vh; }
+/* body classes, not body:has(): a :has() on body made every change on the page (the playhead,
+   each frame) restyle the whole score (Brian's phone fell behind, 18 Nov 2026); app.js keeps them in step */
+body.has-practice .workspace { padding-bottom: 46vh; }
 .pr-close { margin-left: auto; border: 0; background: none; font: 400 26px/1 var(--sans); color: var(--muted); cursor: pointer; padding: 0 6px; }
 .pr-close:hover { color: var(--cloth); }
 .pr-tabs { display: flex; gap: 0; padding: 8px clamp(12px, 3vw, 32px) 0; border-bottom: 1px solid var(--rule); }
@@ -553,7 +555,7 @@ body:has(#practicePanel:not([hidden])) .workspace { padding-bottom: 46vh; }
 .workspace.quiz-hidden .viewport, .workspace.quiz-hidden .stage-wrap { filter: blur(9px); pointer-events: none; }
 
 /* messages stay clear of the docked practice panel */
-body:has(#practicePanel:not([hidden])) .toast { bottom: calc(var(--nowbar-h, 74px) + 54vh); }
+body.has-practice .toast { bottom: calc(var(--nowbar-h, 74px) + 54vh); }
 .pr-conduct-hint { grid-column: 1; max-width: 300px; margin-top: -6px; }
 
 /* A hymn the site asked for that has no score yet */
@@ -573,7 +575,7 @@ body.embed .toolbar { flex-wrap: wrap; gap: 8px; }
 .embed-out:hover { opacity: 1; }
 /* framed in a hymn page, whose own bar names the hymn: the masthead keeps only the tune choice */
 body.embed.framed .masthead .number, body.embed.framed .masthead h1, body.embed.framed .masthead .english { display: none; }
-body.embed.framed .masthead:not(:has(#tunePick:not([hidden]))) { display: none; }
+body.embed.framed:not(.has-tunepick) .masthead { display: none; }
 
 /* ?app: inside the Android app, which draws its own controls (sheet, views, voices) */
 body.app > .masthead, body.app > .toolbar, body.app .headers, body.app #nowbar,
@@ -620,11 +622,11 @@ body.app { background: var(--paper, #fbf8f2); }
 .piano-panel.open .sheet-handle .chev { transform: rotate(180deg); }
 .piano-panel canvas { display: block; width: 100%; height: min(260px, 42vh); }
 .piano-panel:not(.open) canvas { display: none; }
-body:has(#pianoPanel:not([hidden])) .nowbar { bottom: 30px; }
-body:has(#pianoPanel.open:not([hidden])) .nowbar { bottom: calc(min(260px, 42vh) + 30px); }
+body.has-piano .nowbar { bottom: 30px; }
+body.has-piano.piano-open .nowbar { bottom: calc(min(260px, 42vh) + 30px); }
 /* the page scrolls far enough that nothing stays hidden behind the docked piano roll */
-body:has(#pianoPanel:not([hidden])) { padding-bottom: 30px; }
-body:has(#pianoPanel.open:not([hidden])) { padding-bottom: calc(min(260px, 42vh) + 30px); }
+body.has-piano { padding-bottom: 30px; }
+body.has-piano.piano-open { padding-bottom: calc(min(260px, 42vh) + 30px); }
 #moreMenu > summary.recording { color: var(--paper); background: var(--S); border-color: var(--S); }
 
 /* Staves menu: the four ways of putting the voices on staves */
