@@ -15027,10 +15027,7 @@
   "number": "18",
   "title": "O Morning Star, How Fair and Bright",
   "path": "data/SDAH/18.json",
-  "sung": true,
-  "sv": "39f2558b1d7a0e19c64267504c556eafbbafce5a1c2d4d73828004598de7d98e",
-  "svc": "58f6f9c58ce463d96f78e23b0039278d3d0cf4efe66673792197e3cd3e901511",
-  "v": "5118caccef1fa8ca37cdb80a8bd990d06a8ced56a1482b854ad5e31dcd1e8ebc"
+  "v": "a14795de490f04646c70ff2cac7bd9faa99603137c739f089a5c2abb8234bf65"
  },
  {
   "id": "SDAH-19",
@@ -15186,7 +15183,7 @@
   "number": "34",
   "title": "Wake the Song",
   "path": "data/SDAH/34.json",
-  "v": "1638171642ee4f4817c8188eb3d9f41ec37311ed66a9e7cc03d1653e4cae9434"
+  "v": "a8865cfd72fd82fa09fa67d6185488006143d466db212838a61923c79bfff2c8"
  },
  {
   "id": "SDAH-35",
@@ -15256,7 +15253,7 @@
   "number": "41",
   "title": "O Splendor of God's Glory Bright",
   "path": "data/SDAH/41.json",
-  "v": "4b291c8b4911beeca3065e35d2a8068e133cb82e8ae501bd31015c913a9d14e0"
+  "v": "8c6ffcd7f95f0f51e2b7fcd9cac2695fbdf7e05edb35d657324e4cc77b02b624"
  },
  {
   "id": "SDAH-42",

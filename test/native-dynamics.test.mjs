@@ -40,6 +40,9 @@ assert.ok(Math.max(...sent.map((g) => g.S)) <= 0.8 + 1e-9, "never louder than th
 // p is 3 dB under mp, mp 3 dB under mf
 const db = (k) => 20 * Math.log10(singGain(DYNAMIC_LEVEL[k]));
 assert.ok(Math.abs(db("mp") - db("p") - 3) < 0.1 && Math.abs(db("mf") - db("mp") - 3) < 0.1);
+// gains are sent only where a level changes: a handful per verse, timed from the timeline (no polling)
+const changes = e.nativeChanges();
+assert.ok(changes.length > 0 && changes.length <= 8 * e.stemEvents.filter((x) => x.ch === "S").length, `few changes (${changes.length})`);
 // the phone's steps: about 5 dB a mark (p 5 dB under mp, mp 5 under mf)
 assert.ok(Math.abs(phoneDb(DYNAMIC_LEVEL.mp) - phoneDb(DYNAMIC_LEVEL.p) - 5) < 0.1 && Math.abs(phoneDb(DYNAMIC_LEVEL.mf) - phoneDb(DYNAMIC_LEVEL.mp) - 5) < 0.1);
 e.nativeStop();

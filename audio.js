@@ -9,6 +9,7 @@ const FORMANTS = { // "ah", lowered for deeper voices
   T: [[650, 1], [1080, 0.45], [2650, 0.2]],
   B: [[600, 1], [1040, 0.4], [2250, 0.16]],
 };
+const DEBUG = (() => { try { return new URLSearchParams(location.search).has("debug"); } catch { return false; } })();
 const PAN = { S: -0.35, A: -0.12, T: 0.12, B: 0.35, acc: 0, click: 0 };
 const PIANO_URL = "https://tonejs.github.io/audio/salamander/";
 const SAMPLE_NAMES = ["C", "Ds", "Fs", "A"];
@@ -116,6 +117,7 @@ export class Engine {
     const segs = this.native ? this.nativeSegs() : [];
     if (!segs.length) { this.nativeStop(); return; }
     this.nativeDyn = {};
+    this.nativeChangeList = null;
     // the phone has no limiter after the singer: the loudest mark of the hymn sings at the level used so
     // far (never louder than before), the softer ones below it in the same steps
     // (a hymn with one mark only, nothing to contrast, sings at that level: no quieter than before)
@@ -126,11 +128,29 @@ export class Engine {
     this.nativeGains(true);
     try { this.native.play(JSON.stringify({ from: fromT, segs })); this.nativeOn = true; } catch { this.nativeOn = false; }
     // the score's dynamics: the app sings each voice at one level, so the page moves that level with the
-    // marks as the singing goes (in the browser startStem's gain envelope does it)
-    clearInterval(this.nativeDynTimer);
-    if (this.nativeOn && (this.stemEvents || []).some((e) => e.native && e.env?.length)) {
-      this.nativeDynTimer = setInterval(() => { if (this.nativeOn) { this.nativeLevels(this.now()); this.nativeGains(); } }, 40);
+    // marks: only where a voice's level changes (a mark, the notes of a hairpin), each change timed ahead
+    // from the timeline (no polling: the app's singer needs the phone's time, Brian 18 Nov 2026)
+    clearTimeout(this.nativeDynTimer);
+    if (this.nativeOn) this.nativeDynNext(fromT);
+  }
+  /** Timeline times where some voice's dynamics level changes, after t. */
+  nativeChanges() {
+    if (this.nativeChangeList) return this.nativeChangeList;
+    const ts = new Set();
+    for (const e of this.stemEvents || []) {
+      if (!e.native || !e.env?.length) continue;
+      let prev = null;
+      for (const x of e.env) { const lv = x[2] ?? 0.8; if (prev !== null && lv !== prev && x[0] >= e.t && x[0] <= e.t + e.dur) ts.add(Math.round(x[0] * 1000) / 1000); prev = lv; }
     }
+    return (this.nativeChangeList = [...ts].sort((a, b) => a - b));
+  }
+  /** Give the singer the levels at t, and wake at the next change (a touch early: it lands on the note). */
+  nativeDynNext(t) {
+    this.nativeLevels(t);
+    this.nativeGains();
+    const next = this.nativeChanges().find((x) => x > t + 0.02);
+    if (next === undefined) return;
+    this.nativeDynTimer = setTimeout(() => { if (this.nativeOn) this.nativeDynNext(Math.max(next, this.now())); }, Math.max(10, (next - t) * 1000 / (this.rate || 1) - 40));
   }
   /** Each voice's dynamics level at time t, from its sung pass's envelope (1 where it has none). */
   nativeLevels(t) {
@@ -144,7 +164,7 @@ export class Engine {
     this.nativeDyn = out;
   }
   nativeStop() {
-    clearInterval(this.nativeDynTimer);
+    clearTimeout(this.nativeDynTimer);
     clearTimeout(this.nativeWrap);
     if (this.nativeOn) { try { this.native.stop(); } catch { /* the app went away */ } }
     this.nativeOn = false;
@@ -160,7 +180,7 @@ export class Engine {
     if (g === this.nativeG && !force) return; // only changes (the mixer sets every channel at once)
     this.nativeG = g;
     // in the app's log (logcat, tag chromium): what the singer is told, as it changes (the dynamics too)
-    if (this.nativeOn || force) console.info(`AHDyn t=${this.nativeOn ? this.now().toFixed(2) : "-"} gains ${g.slice(0, 60)}`);
+    if (DEBUG && (this.nativeOn || force)) console.info(`AHDyn t=${this.nativeOn ? this.now().toFixed(2) : "-"} gains ${g.slice(0, 60)}`);
     try { this.native.gains(g); } catch (e) { console.warn(`AHDyn gains failed: ${e?.message || e}`); }
   }
 
