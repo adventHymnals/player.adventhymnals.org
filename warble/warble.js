@@ -85,6 +85,7 @@ export class Warble {
     if (this.nativeEngine) { this.id = cfg.id || "leap"; this.engine = "leap"; this.label = cfg.label || "New voice"; }
     this.modelUrl = cfg.model ? new URL(cfg.model, base).href : null;
     this.tiers = (cfg.tiers || []).map((t) => ({ ...t, url: new URL(t.url, base).href }));
+    this.files = (cfg.files || []).map((t) => ({ ...t, url: new URL(t.url, base).href })); // needed by every tier
     this.workers = [];
     this.ready = null;
     this.lex = null;

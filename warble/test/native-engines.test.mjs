@@ -11,7 +11,7 @@ const singing = {
   default: "warble",
   voices: [
     { id: "", label: "Live singers", model: "m/warble.onnx", sha256: "a".repeat(64) },
-    { id: "leap", engine: "leap", label: "New voice", tiers: [{ tier: "int8", url: "m/leap-int8.bin", sha256: "b".repeat(64), size: 28.8e6 }, { tier: "mixed", url: "m/leap-mixed.bin", sha256: "c".repeat(64), size: 40.5e6 }] },
+    { id: "leap", engine: "leap", label: "New voice", files: [{ url: "m/nhv_convs.onnx", sha256: "d".repeat(64), size: 1916539 }], tiers: [{ tier: "int8", url: "m/leap-int8.bin", sha256: "b".repeat(64), size: 28.8e6 }, { tier: "mixed", url: "m/leap-mixed.bin", sha256: "c".repeat(64), size: 40.5e6 }] },
   ],
 };
 globalThis.location = { href: "https://player.test/index.html" };
@@ -36,6 +36,7 @@ const leap = c.voices[1];
 assert.equal(leap.nativeEngine, "leap");
 assert.equal(leap.label, "New voice");
 assert.deepEqual(leap.tiers.map((t) => t.url), ["https://player.test/data/m/leap-int8.bin", "https://player.test/data/m/leap-mixed.bin"]);
+assert.deepEqual(leap.files.map((t) => t.url), ["https://player.test/data/m/nhv_convs.onnx"]);
 assert.equal(await leap.saved(), false, "not ready until the app says so");
 avail({ warble: { ready: true }, leap: { ready: true, tier: "mixed" } });
 assert.equal(await leap.saved(), true);

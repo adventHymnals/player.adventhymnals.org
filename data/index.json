@@ -4993,7 +4993,7 @@
   "number": "558",
   "title": "No Night There",
   "path": "data/CH1941/558.json",
-  "v": "a93ddb3780e23a098cc8a3d9611a9bf88c57cf41bbc3ff3bc926e5845d2c63b4"
+  "v": "1275ace6812939494055d220a92a322a329acb7803052a30935718d5af453d9c"
  },
  {
   "id": "CH1941-559",
@@ -5129,7 +5129,7 @@
   "number": "575",
   "title": "I Have a Saviour",
   "path": "data/CH1941/575.json",
-  "v": "036e27b0ded3cf52c20bf3c92d070c41b78ba9d73300c89c645d88804be8cca9"
+  "v": "e41ae8a1d950f52d55963f602dcf02f816698885dd3a09c16ae74bf768f5055f"
  },
  {
   "id": "CH1941-576",
@@ -5193,7 +5193,7 @@
   "number": "583",
   "title": "Dying With Jesus, by Death Reckoned Mine",
   "path": "data/CH1941/583.json",
-  "v": "26998207e1515e038eaa87da43eeb7dad82780be72241961df845177a9248062"
+  "v": "142ca8c0520dea06ed3b2d2cc588fc7fc1bca21960ce488064add2f4efeeda6f"
  },
  {
   "id": "CH1941-584",
@@ -5363,7 +5363,7 @@
   "number": "605",
   "title": "I Need Thee, Precious Jesus",
   "path": "data/CH1941/605.json",
-  "v": "c30581d27f521119378682d8f32edf403c2aedbdfd06f4bd3b2aea5cf12674b6"
+  "v": "e9c39b6cb9fbb35557ea5cd2b890302d1318686d043989aa8e1ccb943324e0b7"
  },
  {
   "id": "CH1941-607",
@@ -5443,7 +5443,7 @@
   "number": "619",
   "title": "Watchman, Blow the Gospel Trumpet",
   "path": "data/CH1941/619.json",
-  "v": "c625f733ad8a799b765ba984c15ddb5f4036ab483b5c559a26ddd90e92fa2360"
+  "v": "16d4fd04e60578003291f406b07c6d11c29a91bb5267915f78e878862552ce71"
  },
  {
   "id": "CH1941-620",
@@ -5571,7 +5571,7 @@
   "number": "639",
   "title": "The Homeland!",
   "path": "data/CH1941/639.json",
-  "v": "ef05e5bbd7e5ed32c6a48b98adda93e58a44d8c11d66f7a049f84b84bbd54f14"
+  "v": "2db6f2d72c49f3cb7d3a7ac708314088123b0e657983567240d87ebca4b70529"
  },
  {
   "id": "CH1941-640",
@@ -5819,7 +5819,7 @@
   "number": "676",
   "title": "Jesus, Still Lead On",
   "path": "data/CH1941/676.json",
-  "v": "487e5a71f40d7c6014528d69afab8bf460fd077685221cb8d27a90469c8fbd46"
+  "v": "ef8d1907bfe178b5f9f56ee972b55895cdbdd5c4677b6570a5996a7b5fcdfe96"
  },
  {
   "id": "CH1941-679",
@@ -5891,7 +5891,7 @@
   "number": "687",
   "title": "Almighty Father",
   "path": "data/CH1941/687.json",
-  "v": "468656a56928158fd4909f1aae5144b24636fcf90ec228795447628d58e42b9f"
+  "v": "371c41b8b9a35d5f9cdfc8501e5a34f59e7155af13d81062394e69317879c82d"
  },
  {
   "id": "CH1941-688",
@@ -5915,7 +5915,7 @@
   "number": "690",
   "title": "The Lord Is in His Holy Temple",
   "path": "data/CH1941/690.json",
-  "v": "cb6f365366823135035316ab5f4d4a04591f7296794bea32328c25652da0c531"
+  "v": "df00baa1e78fb66f8b9a51b1776259d3e18af8d49dc70087b2c01763f9cb483c"
  },
  {
   "id": "CH1941-691",
@@ -6319,7 +6319,7 @@
   "number": "33",
   "title": "Mighty to Save",
   "path": "data/CS1900/33.json",
-  "v": "40874fb9a5db3f2d53f5d6e2be89c6aff911345d989df6ff9eacba036be54421"
+  "v": "5e0cdab14dad97b0f95f4072b9821f9d129572d69904afc020ee31fc98217d89"
  },
  {
   "id": "CS1900-34",
@@ -13495,7 +13495,7 @@
   "sung": true,
   "sv": "369ae136a4680bb4f1186f7da4da41cb2fa2cc25e4bd46a8b14f0bb4175bb242",
   "english": "Watchman, Blow the Gospel Trumpet",
-  "v": "9d09bb157dd3be669b2fc1195fc738327266052a7d233f5b250fff3213b08a38"
+  "v": "b01b402d1be270b807f09ad75157c9de5b5d459b6b4a5d4206ebdf11757fbff5"
  },
  {
   "id": "NZK-65",
@@ -16123,6 +16123,8 @@
   "number": "135",
   "title": "O Little Town of Bethlehem",
   "path": "data/SDAH/135.json",
+  "sung": true,
+  "sv": "c07faecb34aceeb5879f14d00d00627703e3529356f74332171138f07fe57a73",
   "v": "a7fcf4bebd71afec3357480e7ad6f9fb023c28a5795c1daa4cff71b97a5ccd52"
  },
  {
@@ -16538,6 +16540,8 @@
   "number": "178",
   "title": "The Unveiled Christ",
   "path": "data/SDAH/178.json",
+  "sung": true,
+  "sv": "276635c64df1dbefa28f70937b911c09f5c44f12b89535f54233ab982a0b60f5",
   "v": "daec2a9d7fb41ec407c543410c5d4a15fb0636c96fdf489c9824b1b2c66fe4f1"
  },
  {
@@ -17580,7 +17584,7 @@
   "path": "data/SDAH/284.json",
   "sung": true,
   "sv": "bcbec4c24ede6faeae5a3edac3d852952ab581e065ae94c9d378be188e8adbbb",
-  "v": "8c2076403fe2f1a98e876017cfbd14ce718eb81f1b075ca4b393014d1ae4ea4e"
+  "v": "6d4ff90d02e9a5b7f19dc2e0be8209da903fb943ea351cc2dd2cae636301c434"
  },
  {
   "id": "SDAH-285",
@@ -18424,7 +18428,7 @@
   "number": "368",
   "title": "Watchman, Blow the Gospel Trumpet",
   "path": "data/SDAH/368.json",
-  "v": "616ac3dc2ec531f3c6d82f133d609d2cc4f12cfc2a5c60ed07bc62d4cbba4403"
+  "v": "5e258a84f7da58287af12463eb70a2ce568afe44bd72bc03a42e47696e9a9bf8"
  },
  {
   "id": "SDAH-369",
@@ -18915,6 +18919,8 @@
   "number": "417",
   "title": "O Solemn Thought",
   "path": "data/SDAH/417.json",
+  "sung": true,
+  "sv": "8645f10299c07e1342c011011c31af2da844f3c6933351ea1153ea1e8df873c1",
   "v": "f048e1b89eb1ddf7a87802d1256b0f7a7f9c1844b0f259b0d0c537ab9f97fb97"
  },
  {
@@ -19013,7 +19019,7 @@
   "sung": true,
   "sv": "03e1298822990b9ce7267da6bbf8d0a99acc82b5fe90c83ad75f107a25d69012",
   "svc": "c720fbdba55e3449e55fe69fbc53c1df67aa438db9cdd29679e97fe22a34c6f6",
-  "v": "36abc3151eeeaa02cba78f3a3675bbdffdb59299e055ae2670906c31ee959258"
+  "v": "a2cdc8bd0126672125b8878e2e3239c26a4a7c36a8cc2e44e482494b3e1abf5f"
  },
  {
   "id": "SDAH-428",
@@ -19106,7 +19112,7 @@
   "path": "data/SDAH/436.json",
   "sung": true,
   "sv": "7c88f10c0e32292b4570b2ef99321e92fa1d4ba02577230a1f2a2c49f73d9adb",
-  "v": "88a7e34130ddd42028739533edacdd3d025d512fb70e1314deef4aa0516480db"
+  "v": "7c63b7e95872d1eee2b4516f5b4d57c91939a3a44810e67511fe09f8ed1c01e1"
  },
  {
   "id": "SDAH-437",
@@ -19595,7 +19601,7 @@
   "path": "data/SDAH/484.json",
   "sung": true,
   "sv": "4e99b897cee74fecb01886d1a783e390da2d79cae1e73b738ba890a1988d5927",
-  "v": "0a5574955506941d26854b5ca67faab7fd0e3c2d0a1bcdc4bca44974b1265e7f"
+  "v": "11d44eaf8f2d683e8a63b69363dde21b9b2bbfa7303e47d725c12cd5af68a700"
  },
  {
   "id": "SDAH-485",
@@ -19827,7 +19833,7 @@
   "sung": true,
   "sv": "d2eeb8d169765f91a8775816a9b1abfa388517238b2053ec896d9efcef69722d",
   "svc": "bdf944a5d3e2b1b170457b8e1df360ddfa9965afcc5e1559bb0d0c17655eb8b8",
-  "v": "beb89d2b4da9fee4e8dadb0c5468ae9461b4586f1a45c8bd0a1c9252e08dc48c"
+  "v": "7e2bb29a3e3db8bc87c4e5272efb2dbcb9f973c3f168d21ab5e649b2f5ec6bf4"
  },
  {
   "id": "SDAH-508",
@@ -20293,7 +20299,7 @@
   "sung": true,
   "sv": "fe0c6db2a81c21d482ce0c0b6d83b7be64d82ac63c394488894afb6c4021aeda",
   "svc": "ba4046d01bcecdfa371cd1d5e01c1866f5432dcedcf6bc3e8f435807d3228e66",
-  "v": "f723287ccaf2e0ec1bdbbc02efbeab73b34c956cf0bc190f9e3609d3a433b31a"
+  "v": "2924a4ef79ab48a6dd91ac34ad5718f4db889adcf7ac0f481e16e5254495e131"
  },
  {
   "id": "SDAH-554",
@@ -21685,7 +21691,7 @@
   "path": "data/SDAH/692.json",
   "sung": true,
   "sv": "18611ac2dab542a482c42cfc654ff45ab5c36671b226c2a8885813aab10444c7",
-  "v": "7db518352ec261ec162aaf9d4e681b3b70c110179269a4c40ab05c0ae83e1018"
+  "v": "e1069213efc8a0e830644f6895b24a5cf9ce6d6696cbded7f55e54898f7eebc6"
  },
  {
   "id": "SDAH-693",
@@ -21695,7 +21701,7 @@
   "path": "data/SDAH/693.json",
   "sung": true,
   "sv": "b19cf2d29482f757bd9b05e02249041f9f005b6442382c989414d841e1a2a246",
-  "v": "81d7af07aedb01fddb121fdf4e870e32f6f8591cdb123f342f6f701a4e39e185"
+  "v": "0ca9b7de5882d0d14aab70934906b7f954e8b17c749839446e3db644cc70b924"
  },
  {
   "id": "SDAH-694",
@@ -21873,7 +21879,7 @@
   "path": "data/WN/29.json",
   "sung": true,
   "sv": "1e4c5ac0c7297a0e47d07ae1e65ee329782b697debed421d491150dee83ff9c3",
-  "v": "9ff05da7f2ec2fe7e9e0c6a827f7ed4511e0d76bca0f3c0838c7e0a87a54498d"
+  "v": "a9dd406968f20a780bb85add0c3d59388fd3e2dc442eeeb3b46280e16f05e23d"
  },
  {
   "id": "WN-33",
@@ -22125,7 +22131,7 @@
   "sung": true,
   "sv": "ead7993e00292571a3cc8063962466574794c888fa9a2dc97a7fb6d81ca44d89",
   "english": "Tell Me the Old, Old Story",
-  "v": "527e6cf9755ccc6b85c8a836938662f07a70b5dd7725c9907e7170b40b1bedc5"
+  "v": "774b2cd5f70adeffd7782c5ee237a3e708e36340b6c0ebfdb6496b73d79583be"
  },
  {
   "id": "WN-69b",
@@ -22305,7 +22311,7 @@
   "title": "Jarit Go Tung' Mar Injili",
   "path": "data/WN/95.json",
   "english": "Watchman, Blow the Gospel Trumpet",
-  "v": "bb246db500d57d0ce8b37d7d00774f482131f2d68b1de7498527bcec7b48b2c9"
+  "v": "32d18192aeaf0a82b382bf1053899a020acd2790d88dad2931d3d2d0e9506dbd"
  },
  {
   "id": "WN-101",
@@ -23190,7 +23196,7 @@
   "sung": true,
   "sv": "28dd69ec5f2239cefc096e5a53469baced01c04f3e85e58b5e4b31b7a8739714",
   "english": "The Glory Song",
-  "v": "fd592020a67823b59caddfae42639a6d38592f15cb4494820c0796a313f10ee2"
+  "v": "1830e6e68365fa599b7466d1522376e60c5b75904ae53d5f4d407f780c46a3ca"
  },
  {
   "id": "WN-268",

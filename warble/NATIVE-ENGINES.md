@@ -19,8 +19,16 @@ same binary to whichever engine sings. The new engine converts it itself, as the
   AW, OW); ids below 3 are pauses (`pau`);
 - pitch: the pass's f0 per frame (Hz, 0 = unvoiced) is used as given (the rule pitch, which Brian
   prefers for the choir); voicing as the pass has it;
-- phrases: cut in the middle of pauses of 0.25 s or more; long phrases chunked (about 6 s, with 0.5 s
-  context each side, joins cross-faded in phase, `phone/hymnbin.py` / `sing4.c`);
+- phrases: cut in the middle of pauses of 0.25 s or more (each phrase longer than 1 s). Two layouts inside the
+  engine (voice peer, 18 Nov 18:05: cutting a phrase into chunks dulls the tone, the network looks far to each
+  side): short chunks only for the phrase where playback starts or lands after a seek (sound within ~1.5 s),
+  whole phrases for everything rendered ahead (a 22.7 s phrase, four voices, ~8 s on the G99); the first
+  phrase after a start may sound slightly duller than the rest. Nothing of this reaches the page;
+- ids 0-2 (`<pad>`, `<SP>`, `<AP>`) become the pause token, every other id `id - 2` (the model's table is
+  `pau` then PHONES_V2 without the three specials); the model gets a continuous pitch (log-linear through
+  unvoiced gaps, made inside), the vocoder the voicing (f0 > 1 Hz); `prog` is not used; the front end keeps
+  splitting long diphthongs (DIPH_SPLIT) for both engines;
+- output: 44.1 kHz mono float per voice, on the pass's time base (frames of 512 samples);
 - the cast (which singer sings which part) is the engine's (below); the pass's per-voice speaker field is
   Warble's and is ignored by the new engine.
 
@@ -39,15 +47,18 @@ New:
    ```json
    {"v":1, "windows":true, "cs":true, "parts":true, "dyn":true,
     "engines": {"warble": {"label": "Live singers", "ready": true},
-                "leap":   {"label": "New voice", "ready": true, "tier": "mixed", "tiers": ["int8", "mixed", "full"]}}}
+                "leap":   {"label": "New voice", "ready": true, "tier": "mixed2", "tiers": ["int8", "mixed2", "full"]}}}
    ```
    `ready`: the engine's model file is on the phone and its first-use benchmark passed; before that
    `"ready": false` with `"size"` (bytes to download), which the page shows. An app without `engines` has
    Warble only (the page behaves exactly as today).
    Model files: singing.json's new-voice entry is `{"id": "leap", "engine": "leap", "label": "New voice",
-   "tiers": [{"tier", "url", "sha256", "size"}, …]}`; after `use("leap")` the page calls `model(url, sha256)`
-   once per tier file and the app fetches the tier it picks (the existing model() path). The label is the
-   page's (singing.json), not the app's.
+   "files": [{"url", "sha256", "size"}, …], "tiers": [{"tier", "url", "sha256", "size"}, …]}`; after
+   `use("leap")` the page calls `model(url, sha256)` once per file (the shared ones, then the tiers) and the app
+   fetches the shared files and the tier it picks (the existing model() path). The label is the page's
+   (singing.json), not the app's. Files (voice peer, tiers.json in its handoff): shared `nhv_convs.onnx`
+   (1,916,539 bytes) and `leap_aux.bin` (545,296); tiers `ac_mixed2.onnx` (34,970,130: the live tier Brian
+   chose), `ac_int8.onnx` (28,820,742: slower phones), `ac_full.onnx` (60,174,660: on demand, video).
 2. `use(engine)`: `"warble"` or `"leap"`; the engine that the following `load`/`play` go to. Returns
    `{"ok":true}` or `{"ok":false,"error":"…"}` (not ready). Pages that never call it get Warble (as today).
    ONE engine at a time (agreed): `use(x)` stops play, unloads the other engine's passes and model and loads
@@ -55,7 +66,9 @@ New:
    stopped (if playing, the app stops first). The page calls it before loading passes, only when it changes,
    and forgets the passes it had loaded.
 3. `engine()` (the phone's saved choice, as today) may also return `"leap"`.
-4. Cast: `cast(json)` optional, `{"S":"de_soprano_1","A":"en_alto_2","T":"en_alto_1","B":"it_bass_1"}`;
+4. Cast: `cast(json)` optional (by name or id), default `{"S":"de_soprano_1","A":"en_alto_2","T":"en_alto_1","B":"it_bass_1"}`
+   (ids 0, 3, 2, 9: indexes in the model's 20 sorted singer names; the cast Brian judged on 18 Nov). Not offered
+   in the page's settings yet (other singers are untested on hymns);
    an extra part's letter (lower case of its base: `s` Soprano II) takes its base voice's singer with a
    noise/seed of its own (as Warble's parts). Without a call, the engine's own default cast.
 5. Tiers are the app's business (benchmark at first use, drop a tier on underrun or heat); `stats()`
@@ -93,7 +106,14 @@ New:
 - `AHStudio.set('next', id)`: the app sends the playlist's or queue's next hymn whenever it changes (null when
   none); the page engraves that hymn in the background (while idle and stopped) instead of the next in the list.
 
-## Open questions (voice peer)
+## Confirmed by the voice peer (18 Nov)
+
+The conversion is in its C library (review/voice/phone/lib/leapvoc.c) and checked on SDAH 100 v1 t96 from a
+pass written by the published frontend.js + bin.js: 12 phrases, tokens, durations, phrase starts and voicing
+identical to leap_hymn.py, pitch within 0.0007 Hz. Audio is checked by level and spectrum against a
+reference (8-bit tiers round differently across devices), not by bytes.
+
+## Earlier open questions (all answered)
 
 1. Voice peer: is the conversion above exactly what the shipping model wants (diphthong rule, pause ids,
    phrase cut, chunk size, context), and the default cast after today's bass runs?
