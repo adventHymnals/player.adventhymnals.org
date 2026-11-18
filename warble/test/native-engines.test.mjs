@@ -34,7 +34,8 @@ c = await loadSinging(["https://player.test/data/singing.json"]);
 assert.deepEqual(c.voices.map((w) => w.engine), ["warble", "leap"]);
 const leap = c.voices[1];
 assert.equal(leap.nativeEngine, "leap");
-assert.equal(leap.label, "New voice");
+// the name on screen is the page's ("Singers v6"), whatever label singing.json or the app gives
+assert.equal(leap.label, "Singers v6");
 assert.deepEqual(leap.tiers.map((t) => t.url), ["https://player.test/data/m/leap-int8.bin", "https://player.test/data/m/leap-mixed.bin"]);
 assert.deepEqual(leap.files.map((t) => t.url), ["https://player.test/data/m/nhv_convs.onnx"]);
 assert.equal(await leap.saved(), false, "not ready until the app says so");
@@ -57,7 +58,7 @@ singing.voices[1].enabled = false;
 const own = { id: "leap", engine: "leap", label: "New voice (test)", files: [], tiers: [] };
 globalThis.window = { AHNative: { warble: { available: () => JSON.stringify({ v: 1, cs: true, dyn: true, parts: true, engines: { warble: { ready: true }, leap: { ready: true, tier: "mixed2" } } }), cached: () => true, voices: () => JSON.stringify([own]) } } };
 c = await loadSinging(["https://player.test/data/singing.json"]);
-assert.deepEqual(c.voices.map((w) => `${w.engine}:${w.label}`), ["warble:Live singers", "leap:New voice (test)"]);
+assert.deepEqual(c.voices.map((w) => `${w.engine}:${w.label}`), ["warble:Live singers", "leap:Singers v6"]);
 assert.deepEqual([...c.voices[1].files, ...c.voices[1].tiers], []);
 // the same hosted-but-disabled list in an app without voices(): nothing new
 avail({ warble: { ready: true }, leap: { ready: true } });
@@ -66,6 +67,6 @@ assert.deepEqual(c.voices.map((w) => w.engine), ["warble"]);
 // a test build that only announces the engine as local (its files in the APK): offered by its label, nothing fetched
 avail({ warble: { ready: true }, leap: { label: "New voice", ready: true, tier: "mixed2", tiers: ["mixed2", "int8"], local: true } });
 c = await loadSinging(["https://player.test/data/singing.json"]);
-assert.deepEqual(c.voices.map((w) => `${w.engine}:${w.label}`), ["warble:Live singers", "leap:New voice"]);
+assert.deepEqual(c.voices.map((w) => `${w.engine}:${w.label}`), ["warble:Live singers", "leap:Singers v6"]);
 assert.deepEqual([...c.voices[1].files, ...c.voices[1].tiers], []);
 console.log("ok: offered only where the app has it; Warble first; same pass bytes, keyed leap/…; readiness from the app; a test build's own entry; a local engine");

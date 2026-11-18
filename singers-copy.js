@@ -1,0 +1,39 @@
+// The singing choices' names and the messages about them, in one place (Brian, 18 Nov 2026: the choices are
+// "Singers v1" … "Singers v6", numbered in the order they came into being; never an internal name on screen).
+// Keyed by singing.json voice id (the phone models) or the recorded engine. The page's own table wins over a
+// singing.json label, so the names are the same whatever copy of singing.json a device holds.
+// Wording: ChatGPT pass, Round 3 (review/ROUND3-PAGE-STRINGS.md).
+export const SINGERS = {
+  stems: { n: 1, label: "Singers v1", line: "Recorded singers; downloads for hymns that have them" },
+  v1: { n: 2, label: "Singers v2", line: "An earlier version of singing on your phone; any hymn" },
+  v2: { n: 3, label: "Singers v3", line: "An earlier version of singing on your phone; any hymn" },
+  "stems-v2": { n: 4, label: "Singers v4", line: "Recordings that sound like real singers; downloads for some hymns" },
+  v3: { n: 5, label: "Singers v5", line: "Sung on your phone; any hymn, key or speed" },
+  leap: { n: 6, label: "Singers v6", line: "Fuller singing on your phone; needs a stronger phone" },
+};
+export const DATASETS = {
+  warble: "GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
+  leap: "GTSinger (Zhang et al., NeurIPS 2024) and M4Singer (Zhang et al., NeurIPS 2022), CC BY-NC-SA 4.0.",
+};
+export const COPY = {
+  firstUse: (mb) => (mb ? `Downloads ${mb} MB the first time only` : ""),
+  instruments: "Instruments", instrumentsLine: "No singing; every part played on the piano", ask: "Ask me", singers: "Singers",
+  credit: (label, engine) => `${label}: ${DATASETS[engine === "leap" ? "leap" : "warble"]}`,
+  preparing: (pct) => `Getting the singers ready… ${pct}%. You can press play now. Instruments will play each verse until the singers are ready.`,
+  newKey: (pct) => `Getting the singers ready in the new key… ${pct}%. Instruments will play until they're ready.`,
+  ready: "The singers are ready.",
+  noStart: "The singers couldn't start, so instruments play instead.",
+  noModel: "The singers couldn't start because their voices didn't download. Check your connection and try again.",
+  stopped: "The singers stopped. Press play to continue.",
+  verseFailed: (vs) => (vs.length === 1 ? `The singers couldn't sing verse ${vs[0]}, so instruments play it.`
+    : `The singers couldn't sing verses ${vs.slice(0, -1).join(", ")} and ${vs.at(-1)}, so instruments play them.`),
+  notReadyYet: (label, instead) => `${label} isn't ready on this phone yet, so ${instead} sing instead.`, // B11
+  notReadyNow: (label, instead) => `${label} isn't ready on this phone right now, so ${instead} sing instead.`, // B12
+  noLoad: "The singers couldn't load. Try again in a moment.",
+  keyRecorded: "Singers v1 and Singers v4 stay in the key they were recorded in. If you change the key, instruments take over. Singers v2, Singers v3, Singers v5 and Singers v6 can sing in any key.",
+  tuneRecorded: (tune) => `Sung to ${tune}. Recorded singers only sing the printed tune, so the singers on your phone or instruments play this one.`,
+  noRecording: (label) => `This hymn has no recording yet. ${label} can sing it.`,
+  videoSingers: (i, n) => `Adding the singers to the video… ${i} of ${n}`,
+};
+/** A choice's entry: by singing.json id, or recorded engine; null when unknown (the caller's own label). */
+export const singerCopy = (id) => SINGERS[id] || null;

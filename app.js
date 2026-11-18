@@ -5,6 +5,7 @@ import {
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
+import { COPY, singerCopy } from "./singers-copy.js";
 import { ScoreView } from "./scoreview.js";
 import { engraveKey, getEngraved, putEngraved } from "./engravecache.js";
 import { SolfaView, WordsView } from "./solfa.js";
@@ -206,8 +207,8 @@ let manifest = null; // sung stems for this hymn, if rendered: the chosen record
 // the recorded singers: "stems" (LUNAI's voices, audio/) and "stems-v2" (the same converted to real singers'
 // voices, audio-svc/: "Recorded singers v2"); each hymn's lists as loaded, by engine
 const RECORDED = [
-  { engine: "stems", label: "Recorded singers", dir: "audio", has: (x) => x?.sung },
-  { engine: "stems-v2", label: "Recorded singers v2", dir: "audio-svc", has: (x) => x?.svc },
+  { engine: "stems", label: singerCopy("stems").label, dir: "audio", has: (x) => x?.sung },
+  { engine: "stems-v2", label: singerCopy("stems-v2").label, dir: "audio-svc", has: (x) => x?.svc },
 ];
 const isRecorded = (v) => RECORDED.some((r) => r.engine === v);
 /** Some hymn has recorded singers (none since 18 Nov 2026: the live singers sing every hymn). The recorded
@@ -461,7 +462,7 @@ function resetKey() {
 function noteStemsTransposed() {
   if (useWarble()) return; // live singing sings any key
   if (anySung() && stemInfo.size && perf.events.some((e) => !e.silent && !e.inst && !!VOICES[e.ch] && e.pass >= 0)) {
-    if (!noteStemsTransposed.shown) toast("Singers use the key they were recorded in. If you change the key, instruments take over. Live singing follows the new key.", 6000);
+    if (!noteStemsTransposed.shown) toast(COPY.keyRecorded, 6000);
     noteStemsTransposed.shown = true;
   }
 }
@@ -1244,7 +1245,7 @@ async function setTune(key) {
   for (const w of singingCfg.voices) w.drop();
   try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); nativeLoaded.clear(); } } catch { /* the app went away */ }
   await loadHymn(entry);
-  toast(hymn.tune ? `Sung to ${hymn.tune.name}. Recorded singers only sing the printed tune, so live singing or the synth sings this one.` : "The printed tune.", 5000);
+  toast(hymn.tune ? COPY.tuneRecorded(hymn.tune.name) : "The printed tune.", 5000);
 }
 
 async function loadHymn(entry) {
@@ -1343,22 +1344,40 @@ function offerLiveVoices() {
   const opt = document.querySelector('#singEngine option[value="warble"]');
   singingCfg.voices.forEach((w, i) => {
     if (i === 0) {
-      if (first) first.querySelector("strong").firstChild.textContent = `${w.label} `;
-      if (opt) opt.textContent = `${w.label} (beta)`;
+      if (first) { first.querySelector("strong").textContent = w.label; }
+      if (opt) opt.textContent = w.label;
       return;
     }
     if (first && !document.querySelector(`#singDialog [data-engine="${w.engine}"]`)) {
       const b = first.cloneNode(true);
       b.dataset.engine = w.engine;
-      b.querySelector("strong").firstChild.textContent = `${w.label} `;
+      b.querySelector("strong").textContent = w.label;
       b.querySelector("small").removeAttribute("id");
       [...document.querySelectorAll('#singDialog [data-engine^="warble"]')].pop().after(b);
     }
     if (opt && !document.querySelector(`#singEngine option[value="${w.engine}"]`)) {
-      const o = new Option(`${w.label} (beta)`, w.engine);
+      const o = new Option(w.label, w.engine);
       [...document.querySelectorAll('#singEngine option[value^="warble"]')].pop().after(o);
     }
   });
+  orderSingers();
+}
+/** The choices in their order, Singers v1 … v6 (as they came into being), then Instruments; "Ask me" first. */
+function orderSingers() {
+  const ins = document.querySelector('#singDialog [data-engine="instrumental"]');
+  if (ins) { ins.querySelector("strong").textContent = COPY.instruments; ins.querySelector("small").textContent = COPY.instrumentsLine; }
+  const ask = document.querySelector('#singEngine option[value="ask"]'), io = document.querySelector('#singEngine option[value="instrumental"]');
+  if (ask) ask.textContent = COPY.ask;
+  if (io) io.textContent = COPY.instruments;
+  const st = document.querySelector('#singDialog [data-engine="stems"] strong'), so = document.querySelector('#singEngine option[value="stems"]');
+  if (st) st.textContent = singerCopy("stems").label;
+  if (so) so.textContent = singerCopy("stems").label;
+  const nOf = (e) => (e === "instrumental" ? 1000 : e === "ask" ? -1 : singerCopy(e)?.n || singingCfg.voices.find((w) => w.engine === e)?.n || 99);
+  for (const [box, sel, attr] of [[document.querySelector("#singDialog .sing-choices"), ".sing-choice", "engine"], [$("singEngine"), "option", null]]) {
+    if (!box) continue;
+    const items = [...box.querySelectorAll(sel)];
+    items.sort((a, b) => nOf(attr ? a.dataset.engine : a.value) - nOf(attr ? b.dataset.engine : b.value)).forEach((x) => box.append(x));
+  }
 }
 
 /** Who sings? Live singers, recorded singers or instruments only, each with what it costs. Asked at Play
@@ -1372,21 +1391,21 @@ function chooseSingers(from, always = false) {
   const recorded = !!manifests.stems?.stems?.length;
   offerRecordedV2();
   const stemsNote = $("singStemsNote");
-  stemsNote.textContent = recorded ? "Singers · downloads the voices for this hymn" : "No singers available for this hymn yet";
+  stemsNote.textContent = recorded ? singerCopy("stems").line : "No singers available for this hymn yet";
   d.querySelector('[data-engine="stems"]').classList.toggle("unavailable", !recorded);
   // no hymn recorded at all: the recorded singers are not offered (the live singers sing every hymn)
   for (const c of d.querySelectorAll('[data-engine^="stems"]')) c.hidden = !anyRecorded() || (c.dataset.engine === "stems-v2" && !manifests["stems-v2"]);
   if (recorded) updateStemsCost().then(() => {
-    if (stemsCost.bytes) stemsNote.textContent = `Real voices · downloads ${(stemsCost.bytes / 1e6).toFixed(stemsCost.bytes < 1e7 ? 1 : 0)} MB for this hymn`;
+    if (stemsCost.bytes) console.info(`singers v1: ${(stemsCost.bytes / 1e6).toFixed(1)} MB for this hymn`);
   });
   for (const w of singingCfg.voices) {
     const liveNote = d.querySelector(`[data-engine="${w.engine}"] small`);
     if (!liveNote) continue;
-    liveNote.textContent = "Sung live on this device · no download needed for each hymn · any tempo or key";
+    liveNote.textContent = w.line || "";
     w.saved().then((has) => {
       if (has) return;
       const mb = w.nativeEngine ? Math.round((Warble.nativeEngines()?.[w.nativeEngine]?.size || 0) / 1e6) : 17; // the app says how big its tier is
-      liveNote.textContent += mb ? ` (the first time: the singers, ${mb} MB, once)` : " (the first time: the singers, once)";
+      if (COPY.firstUse(mb)) liveNote.textContent += `${w.line ? " · " : ""}${COPY.firstUse(mb)}`;
     });
   }
   const now = whoSings();
@@ -1414,14 +1433,15 @@ function offerRecordedV2() {
   if (first && !b && has) {
     b = first.cloneNode(true);
     b.dataset.engine = "stems-v2";
-    b.querySelector("strong").textContent = "Recorded singers v2";
+    b.querySelector("strong").textContent = singerCopy("stems-v2").label;
     const n = b.querySelector("small"); n.removeAttribute("id");
-    n.textContent = "Singers · downloads the voices for this hymn";
+    n.textContent = singerCopy("stems-v2").line;
     first.after(b);
   }
   if (b) b.hidden = !has;
   const opt = document.querySelector('#singEngine option[value="stems"]');
-  if (opt && !document.querySelector('#singEngine option[value="stems-v2"]')) opt.after(new Option("Recorded singers v2 (where available)", "stems-v2"));
+  if (opt && !document.querySelector('#singEngine option[value="stems-v2"]')) opt.after(new Option(singerCopy("stems-v2").label, "stems-v2"));
+  orderSingers();
 }
 
 /** Live singers ("warble"), recorded singers ("stems", "stems-v2") or instruments only ("instrumental"). */
@@ -1443,7 +1463,7 @@ function syncSingersBtn() {
   const b = headersEl.querySelector(".singers-btn");
   if (!b) return;
   const v = whoSings();
-  const label = isLive(v) ? liveVoice(v)?.label || "Live singers" : RECORDED.find((r) => r.engine === v)?.label || { instrumental: "Instruments only" }[v] || "Singers";
+  const label = isLive(v) ? liveVoice(v)?.label || COPY.singers : RECORDED.find((r) => r.engine === v)?.label || { instrumental: COPY.instruments }[v] || COPY.singers;
   if (!SINGER_ICONS[v]) SINGER_ICONS[v] = document.querySelector(`#singDialog [data-engine="${v === "stems-v2" ? "stems" : v}"] .sing-ico`)?.innerHTML || "";
   b.innerHTML = `${SINGER_ICONS[v]}<span>${label}</span>`;
   b.title = `${label}: click to choose who sings`;
@@ -1462,7 +1482,7 @@ function syncSungControls() {
   $("renderSingers").hidden = live;
   const tempos = stemTempos();
   $("sungStatus").textContent = live ? "Sung live on this device at any tempo or key. The first time, the singers need a 17 MB download."
-    : !manifest ? (singingCfg.warble ? "No recording is available for this hymn yet. You can use live singing." : "No recording available yet.")
+    : !manifest ? (singingCfg.warble ? COPY.noRecording(singingCfg.warble.label) : "No recording available yet.")
     : tempos.length ? `Recorded at ${tempos.join(", ")} a minute.` : "No recording available yet.";
 }
 
@@ -1547,7 +1567,7 @@ async function prepareStems() {
     // the singers' voices must be credited (their licence); the code credit stays with the code
     $("credit").textContent = (manifest.credit || "").replace(/;\s*synthesis code.*$/i, "");
   } catch (err) {
-    oops("The singers could not load. Try again in a moment.", err, 7000);
+    oops(COPY.noLoad, err, 7000);
   }
   rebuild();
 }
@@ -1606,7 +1626,7 @@ async function prepareWarble(keep = false) {
         const pct = all ? Math.floor((100 * done) / all) : 100;
         if (pct === shown) return;
         shown = pct;
-        toast(keep ? `Live singing: learning the new key… ${pct}%. The synth sings until then.` : `Live singing: preparing the singers… ${pct}%. You can press play now; the synth sings each verse until its singers are ready.`, 0);
+        toast(keep ? COPY.newKey(pct) : COPY.preparing(pct), 0);
       },
       onPass: (key, voices) => {
         if (gen !== warbleGen) return;
@@ -1626,11 +1646,11 @@ async function prepareWarble(keep = false) {
     const mix = total / Math.max(1, hymnVoices().length); // seconds of music, all voices together
     const speed = total && secs > 0.5 ? ` (${(mix / secs).toFixed(1)}× real time)` : "";
     if (keep) { if (shown) toast("The singers now follow the new key.", 3000); }
-    else toast(`Live singers ready${speed}.`, 4000);
+    else { toast(COPY.ready, 4000); if (speed) console.info(`singers ready${speed}`); }
     console.info(`warble: ${mix.toFixed(1)} s of ${hymnVoices().length}-voice singing in ${secs.toFixed(1)} s with ${w.workers.length} workers${speed}`);
   } catch (err) {
     if (err?.cancelled || gen !== warbleGen) return;
-    oops("Live singing could not start, so instruments play instead.", err, 8000);
+    oops(COPY.noStart, err, 8000);
   }
 }
 
@@ -1652,7 +1672,7 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
     try { r = JSON.parse(native.use(want) || "{}"); } catch { r = {}; }
     if (r.ok === false) {
       console.warn(`live singer: use(${want}) refused: ${r.error || "not ready"}`);
-      toast(`${w.label} is not ready on this phone, so the other live singers sing.`, 6000);
+      toast(COPY.notReadyYet(w.label, singingCfg.warble?.label || COPY.singers), 6000);
       if (want !== "warble") return;
     }
     nativeUsing = want; nativeLoaded.clear(); nativeModel = null;
@@ -1700,8 +1720,7 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
   if (gen !== warbleGen) return;
   rebuild(true, true);
   // plain words only (the detail is in the log): never a program's error text
-  if (failed.length) toast(failed.length === 1 ? `The live singers could not sing verse ${failed[0]}, so instruments play it.`
-    : `The live singers could not sing verses ${failed.slice(0, -1).join(", ")} and ${failed.at(-1)}, so instruments play them.`, 8000);
+  if (failed.length) toast(COPY.verseFailed(failed), 8000);
 }
 
 /** Can the app's singer play a stretch of a pass (segs with from/to), for a key change inside a verse? */
@@ -1714,9 +1733,9 @@ function onNativeWarble(json) {
   try { m = JSON.parse(json); } catch { return; }
   if (m.type === "model" && m.state === "downloading") toast(`Downloading the singing model… ${Math.round((m.progress || 0) * 100)}% (once)`, 0);
   else if (m.type === "model" && m.state === "loading") toast("Starting the singers…", 0);
-  else if (m.type === "model" && m.state === "ready") toast("Live singers ready.", 3000);
-  else if (m.type === "model" && m.state === "error") oops("Live singing could not start: its voices did not load. Check the connection and try again.", m.msg, 8000);
-  else if (m.type === "error") oops("Live singing stopped for a moment. Press play to go on.", m.msg, 8000);
+  else if (m.type === "model" && m.state === "ready") toast(COPY.ready, 3000);
+  else if (m.type === "model" && m.state === "error") oops(COPY.noModel, m.msg, 8000);
+  else if (m.type === "error") oops(COPY.stopped, m.msg, 8000);
   else if (m.type === "engines") enginesChanged();
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
@@ -1732,7 +1751,7 @@ function enginesChanged() {
   const lw = liveW();
   if (!lw?.nativeEngine || Warble.nativeEngines()?.[lw.nativeEngine]?.ready) return;
   state.singEngine = "warble"; // for now (not saved: the app keeps its own choice)
-  toast(`${lw.label} is not ready on this phone just now, so the live singers sing.`, 4000);
+  toast(COPY.notReadyNow(lw.label, singingCfg.warble?.label || COPY.singers), 4000);
   if (engine.playing) engineSwitchPending = true; else prepareStems();
 }
 
@@ -2308,7 +2327,7 @@ async function togglePlay() {
   if (state.accomp !== "off" || anyPiano() || state.intro !== "none" || state.interlude !== "none") engine.loadPiano();
   await engine.play(from);
   setPlaying(true);
-  if (engine.nativeError) oops("The live singers could not start, so instruments play instead.", engine.nativeError, 6000);
+  if (engine.nativeError) oops(COPY.noStart, engine.nativeError, 6000);
 }
 
 function stopPlayback() {
@@ -3962,7 +3981,7 @@ function openRecordDialog() {
   $("recShows").value = state.presenterShows;
   // who sings in the video: asked here (the app's "ask at Play" never asked, so the synth sang)
   const singOpts = [...(singingCfg.warble ? singingCfg.voices.map((w) => [w.engine, w.label]) : []),
-    ...RECORDED.filter((r) => manifests[r.engine]).map((r) => [r.engine, r.label]), ["instrumental", "Instruments only"]];
+    ...RECORDED.filter((r) => manifests[r.engine]).map((r) => [r.engine, r.label]), ["instrumental", COPY.instruments]];
   $("recSing").innerHTML = singOpts.map(([v, l]) => `<option value="${v}">${escHtml(l)}</option>`).join("");
   const nowSings = whoSings();
   $("recSing").value = singOpts.some(([v]) => v === nowSings) ? nowSings : singOpts[0][0];
@@ -4052,7 +4071,7 @@ async function liveStemsForVideo(voices, progress) {
   engine.ensure();
   let i = 0;
   for (const [k, x] of want) {
-    progress(`Getting the live singers into the video… ${++i} of ${want.length}`);
+    progress(COPY.videoSingers(++i, want.length));
     const b64 = btoa(unescape(encodeURIComponent(x.native))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
     let r = null;
     for (const until = Date.now() + 120000; ;) { // the first time, the singing model may still be loading
