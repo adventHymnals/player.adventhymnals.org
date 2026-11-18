@@ -3257,20 +3257,44 @@ function sweepTo(ph, wipe = true) {
   const mine = ends(sys.el).filter((x) => x <= upTo + 1);
   const edge = mine.length ? Math.max(...mine) : upTo;
   peel(sweep, edge);
-  if (!sweep.el.hidden) wordsAtJoin(sys, next);
   sweep.inner.querySelectorAll("g.system").forEach((el, k) => el.classList.toggle("sw-on", k === sweep.next));
   sweep.inner.style.transform = `translateY(${sweepShift(next)}px)`;
   sweep.inner.style.clipPath = sweepClip(next, -50);
+  if (!sweep.el.hidden) wordsAtJoin(sys, next); // measured where the next line now lies
 }
 
-/** The syllables of line s (content coordinates, with their hyphens), measured when first needed. */
-const sylBoxes = (s) => (s.syls ??= [...s.el.querySelectorAll("g.verse > g.syl")].map((el) => ({
-  el, ...view.rel(el), line: `${el.closest("g.staff")?.dataset.n}:${el.parentNode.dataset.n}`, pos: el.dataset.wordpos || "",
-})));
+/** The words of one drawn line (g.system): its syllables (with their hyphens) grouped into words, a word's
+ *  syllables being one unit at the join; boxes in the frame of `E` (the next line's layer), as drawn now. */
+function wordBoxes(sysEl, E) {
+  const lines = new Map();
+  for (const el of sysEl.querySelectorAll("g.verse > g.syl")) {
+    const r = el.getBoundingClientRect();
+    if (!r.width) continue;
+    const key = `${el.closest("g.staff")?.dataset.n}:${el.parentNode.dataset.n}`;
+    if (!lines.has(key)) lines.set(key, []);
+    lines.get(key).push({ el, x: r.left - E.left, y: r.top - E.top, w: r.width, h: r.height, pos: el.dataset.wordpos || "" });
+  }
+  const words = [];
+  for (const l of lines.values()) {
+    l.sort((a, b) => a.x - b.x);
+    let w = null;
+    for (const b of l) {
+      // a word starts at its first syllable (wordpos i) or is one syllable; m and t continue it
+      if (!w || !(b.pos === "m" || b.pos === "t") || w.done) { w = { syls: [], done: false }; words.push(w); }
+      w.syls.push(b);
+      if (b.pos !== "i" && b.pos !== "m") w.done = true;
+    }
+  }
+  for (const w of words) {
+    w.x0 = Math.min(...w.syls.map((b) => b.x)); w.x1 = Math.max(...w.syls.map((b) => b.x + b.w));
+    w.y0 = Math.min(...w.syls.map((b) => b.y)); w.y1 = Math.max(...w.syls.map((b) => b.y + b.h));
+  }
+  return words;
+}
 function wordsBack() { sheet.querySelectorAll(".sw-gone").forEach((el) => el.classList.remove("sw-gone")); sweep.join = ""; }
 /** No word cut in two where the two lines meet (Brian, 18 Nov 2026): a word of the next line that the
  *  edge would cut is shown whole (the edge steps round it), and a word of this line (already sung) that
- *  runs under the edge or under such a step is hidden, not cut. */
+ *  runs under the edge or under such a step is hidden whole, not cut: never half a word, nor its tail. */
 function wordsAtJoin(sys, next) {
   const x = sweep.x;
   const key = `${sweep.next}:${x}`;
@@ -3278,32 +3302,20 @@ function wordsAtJoin(sys, next) {
   wordsBack();
   sweep.join = key;
   sweep.joinClip = "";
-  const dn = sweepShift(next), dc = sweepShift(sys);
+  const E = sweep.el.getBoundingClientRect();
+  const nextEl = sweep.inner.querySelectorAll("g.system")[sweep.next];
   const steps = [];
-  for (const b of sylBoxes(next)) {
-    if (!(b.x < x && b.x + b.w > x + 1)) continue;
-    const st = { y0: b.y + dn - 1, y1: b.y + b.h + dn + 1, x1: b.x + b.w + 2 };
+  for (const w of nextEl ? wordBoxes(nextEl, E) : []) {
+    if (!(w.x0 < x && w.x1 > x + 1)) continue;
+    // text boxes of lines of words touch: the band is the box less a pixel each side (the ink is inside)
+    const st = { y0: w.y0 + 1, y1: w.y1 - 1, x1: w.x1 + 0.5 };
     const o = steps.find((t) => st.y0 < t.y1 && st.y1 > t.y0);
     if (o) { o.y0 = Math.min(o.y0, st.y0); o.y1 = Math.max(o.y1, st.y1); o.x1 = Math.max(o.x1, st.x1); } else steps.push(st);
   }
   steps.sort((a, b) => a.y0 - b.y0);
-  const lines = new Map();
-  for (const b of sylBoxes(sys)) {
-    const y0 = b.y + dc, y1 = b.y + b.h + dc;
-    b.gone = (b.x < x && b.x + b.w > x) || steps.some((t) => y0 < t.y1 && y1 > t.y0 && b.x < t.x1 && b.x + b.w > x);
-    if (!lines.has(b.line)) lines.set(b.line, []);
-    lines.get(b.line).push(b);
-  }
-  // the rest of a word whose start is hidden goes too: no "-eth" left on its own
-  for (const l of lines.values()) {
-    l.sort((a, b) => a.x - b.x);
-    let rest = false;
-    for (const b of l) {
-      if (rest && b.x >= x) b.gone = true;
-      if (b.gone) rest = b.pos === "i" || b.pos === "m";
-      else if (b.pos !== "m") rest = false;
-      if (b.gone) b.el.classList.add("sw-gone");
-    }
+  for (const w of wordBoxes(sys.el, E)) {
+    if (w.x1 <= x) continue; // all under the next line already
+    if (w.x0 < x || steps.some((t) => w.y0 < t.y1 && w.y1 > t.y0 && w.x0 < t.x1)) for (const b of w.syls) b.el.classList.add("sw-gone");
   }
   if (!steps.length) return;
   const pts = ["0 0", `${x}px 0`];

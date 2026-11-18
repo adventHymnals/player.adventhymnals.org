@@ -70,6 +70,8 @@ function measureSystem(sys) {
  */
 export function alignSystems(systems) {
   const ms = systems.map(measureSystem).filter((m) => m.staves.size);
+  // said aloud: a score whose staves it cannot read would otherwise just stay unaligned
+  if (systems.length > 1 && ms.length < systems.length) console.warn(`align: staff lines found in ${ms.length} of ${systems.length} lines; ${ms.length < 2 ? "nothing lined up" : "the rest left as drawn"}`);
   if (ms.length < 2) return systems.map(() => 0);
   const order = [...new Set(ms.flatMap((m) => [...m.staves.keys()]))].sort((a, b) => a - b);
   // each line of words, as far below its staff as the line that has it lowest
