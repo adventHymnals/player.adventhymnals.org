@@ -181,7 +181,7 @@
   "number": "1",
   "title": "Ee Mungu Nguvu Yetu",
   "path": "data/ANTHEMS/1.json",
-  "v": "1d2690364e19ae67bac902e5366323d70325cd6b855936114d4b7b77c1f88cc7"
+  "v": "9c476b087aae08bb439a6d8143d8b0203c9a695b352a1f16094abeb8a7749cdd"
  },
  {
   "id": "ANTHEMS-2",
@@ -189,7 +189,7 @@
   "number": "2",
   "title": "Oh Uganda, Land of Beauty",
   "path": "data/ANTHEMS/2.json",
-  "v": "ea0ccad4a3877f21ad8367e69ff48f3fb8d8d6516ec424ac3bb88c097c39a2bd"
+  "v": "eadd7865c286c6b24d0a0d6489e2cde25e30b639ed44ea4c84f86a48ce7ddd2f"
  },
  {
   "id": "ANTHEMS-3",
@@ -206,6 +206,14 @@
   "title": "Wimbo wa Jumuiya Afrika Mashariki",
   "path": "data/ANTHEMS/9.json",
   "v": "eb927a03520ba73bc6c653b31452a3f356cc5c41878f20d0f11a3692b57ecbe5"
+ },
+ {
+  "id": "ANTHEMS-10",
+  "book": "ANTHEMS",
+  "number": "10",
+  "title": "O God of All Creation",
+  "path": "data/ANTHEMS/10.json",
+  "v": "0d32e8b8cbf30c40d6316a87fe6e364b212ef97c125daa781003206745b7587b"
  },
  {
   "id": "CH1941-1",
