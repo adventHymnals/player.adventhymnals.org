@@ -111,7 +111,10 @@ it disabled). For Brian's comparison on his phone, the app's TEST build puts the
   `[{"id": "leap", "engine": "leap", "label": "New voice (test)", "files": [], "tiers": []}]`.
   The page adds them to the voices it offers (replacing a listed entry with the same id); only entries with
   `"engine": "leap"` are taken. Empty `files`/`tiers`: the page calls no `model()` (the app has the files).
-- Offered only in a build that has `voices()` AND announces `engines.leap`; every other app and the browser
+- Or, simpler (the app peer's test build): `available().engines.leap` with `"local": true` (the files carried in
+  the APK, copied into the app's files and sha256-checked; `"ready"` once the benchmark picked a tier). The page
+  then offers the voice from that alone, by its `label`, with no singing.json entry and no `model()` calls.
+- Offered only in a build that has `voices()` or a local `engines.leap`; every other app and the browser
   see nothing new (test: `web/warble/test/native-engines.test.mjs`).
 - When Brian approves hosting: the files go to R2 and the entry is enabled with `tools/publish/flip_leap.py`;
   release builds then drop `voices()`.

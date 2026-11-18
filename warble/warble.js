@@ -319,6 +319,9 @@ export async function loadSinging(urls, page = location.href) {
       // files put on the phone by hand, nothing hosted; NATIVE-ENGINES.md "Test path"): added to the list here
       let own = [];
       try { own = JSON.parse(Warble.native()?.voices?.() || "[]").filter((c) => c?.engine === "leap" && c.id); } catch { own = []; }
+      // or it announces the engine as local (its files carried in the APK): the voice from that alone
+      const le = Warble.nativeEngines()?.leap;
+      if (!own.length && le?.local) own = [{ id: "leap", engine: "leap", label: le.label || "New voice", files: [], tiers: [] }];
       const listed = [...(Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble])].filter((c) => !own.some((o) => o.id === c?.id));
       const all = [...listed, ...own].filter((c) => (c?.model || c?.engine === "leap") && canSing(c))
         .sort((a, b) => (a.engine === "leap") - (b.engine === "leap")); // Warble's voices first: the first is plain "warble"

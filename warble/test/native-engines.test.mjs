@@ -63,4 +63,9 @@ assert.deepEqual([...c.voices[1].files, ...c.voices[1].tiers], []);
 avail({ warble: { ready: true }, leap: { ready: true } });
 c = await loadSinging(["https://player.test/data/singing.json"]);
 assert.deepEqual(c.voices.map((w) => w.engine), ["warble"]);
-console.log("ok: offered only where the app has it; Warble first; same pass bytes, keyed leap/…; readiness from the app; a test build's own entry");
+// a test build that only announces the engine as local (its files in the APK): offered by its label, nothing fetched
+avail({ warble: { ready: true }, leap: { label: "New voice", ready: true, tier: "mixed2", tiers: ["mixed2", "int8"], local: true } });
+c = await loadSinging(["https://player.test/data/singing.json"]);
+assert.deepEqual(c.voices.map((w) => `${w.engine}:${w.label}`), ["warble:Live singers", "leap:New voice"]);
+assert.deepEqual([...c.voices[1].files, ...c.voices[1].tiers], []);
+console.log("ok: offered only where the app has it; Warble first; same pass bytes, keyed leap/…; readiness from the app; a test build's own entry; a local engine");
