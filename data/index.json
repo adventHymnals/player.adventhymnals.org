@@ -5955,7 +5955,7 @@
   "number": "695",
   "title": "The Lord Bless You and Keep You",
   "path": "data/CH1941/695.json",
-  "v": "be22ea49d5de07a15df792a0cb74c2b813c971451bb742319a7ffec90c632d60"
+  "v": "c869446fcf1e6b809330b12163bf4c62ff43861e3341ffe82919c20565fb789b"
  },
  {
   "id": "CH1941-696",
@@ -6715,7 +6715,7 @@
   "path": "data/CS1908/6.json",
   "sung": true,
   "sv": "1824a5ea0f7ae71acf1de7125f395999347b0dba0a5ee8b4023a5676da2259d2",
-  "v": "554b08fa26ca9c369a44476b2e3c07988fa2c164b0655bbfd0f5534695efcae8"
+  "v": "4f69ed5fe7fee3961c6e76a408802552bdad9f70f37f2069579924cafeedd9b8"
  },
  {
   "id": "CS1908-7",
@@ -8583,7 +8583,7 @@
   "number": "215",
   "title": "The Name of Jesus",
   "path": "data/CS1908/215.json",
-  "v": "b70d0921490d66c38c7eb8392902b3336245af36c76990a6f3da85ca8ba447b9"
+  "v": "7bb84dda9f6f2fba76a5aeb0b85e8fd07b11a8646a0d890e148c06ddb6f24e07"
  },
  {
   "id": "CS1908-216",
@@ -8681,7 +8681,7 @@
   "number": "227",
   "title": "Wake the Song of Joy and Gladness",
   "path": "data/CS1908/227.json",
-  "v": "0a222cb777bf14f2ae9e07fc1e3a6181e5e781ee5dcf0820980b2d203be388dc"
+  "v": "b43cfde06eb2d936ba312a629a1a351283a74975d7a3e584a8672f8398fccd14"
  },
  {
   "id": "CS1908-228",
@@ -14203,7 +14203,7 @@
   "sung": true,
   "sv": "296f9c805ddfe8aabc70b1c9087d378624d901bd0cc943b9e08449f3ca35f4e1",
   "english": "Lord, for Tomorrow and Its Needs",
-  "v": "97031c5f2bafba8aabaab61213b3a16bde767985ff9072adbb223e57bf9af289"
+  "v": "e60b536c7396f38e8f3ac2957cabdc85b151833122763195bc3f4f72fdc87cb7"
  },
  {
   "id": "NZK-133",
@@ -16778,7 +16778,7 @@
   "path": "data/SDAH/202.json",
   "sung": true,
   "sv": "e4ca8188fe409101291bbbf69f09ac5ad2dfd19a2d9e9bb809fb8963ebc71032",
-  "v": "8237c86366879fd390882dc742b0e9ed623dc17b9f3488c609f868c0f0554a4e"
+  "v": "f62e09219e018d18d28fc328a234356124ddb116c53d55ac9f656f12878ac5cc"
  },
  {
   "id": "SDAH-203",
@@ -16819,7 +16819,7 @@
   "sung": true,
   "sv": "6987c1c99ed86e1d6711bf883654adf371a5b4c6083b646f789ee8bb9b0594e9",
   "svc": "3f0a2023168c16f93ca1d2e0a3370c1fb9aebaf731d93fa1a1fbbde5548fd526",
-  "v": "4fc1b962c45433b58ab0ee530cbc275d458b219c41a796806271107374b4a776"
+  "v": "6faaac71091d0c227b5e8020dc3447ac1784f71f6fd5ef23e1b871b2911eac9a"
  },
  {
   "id": "SDAH-207",
@@ -17420,7 +17420,7 @@
   "path": "data/SDAH/268.json",
   "sung": true,
   "sv": "182f6fe9eb4dce389a0cbde955a44dcc2a30b46747317ee4fa48f1258e910fa1",
-  "v": "67f87f63e478519ba121e46193d0aeed7665d05c3be50e32ac6b41d0ea8fc503"
+  "v": "084bace2afc9d6f8701c4ece35521fdaaf6f2e70419f8520f570c4fca20101f2"
  },
  {
   "id": "SDAH-269",
@@ -17574,7 +17574,7 @@
   "path": "data/SDAH/283.json",
   "sung": true,
   "sv": "fe227df9c4a26c22f4db7d8e5d6e8c0295d1394e393748eeaca84e8a66b4ab4f",
-  "v": "e43826efc426643ba0f9c07f01e0987cbadbfebc57e020915618c8aeb7ae0bcf"
+  "v": "0d1e6d83513a46156691633dbe5932d71b4c85164ba572a39e49cc5a8fa790ab"
  },
  {
   "id": "SDAH-284",
@@ -17652,7 +17652,7 @@
   "path": "data/SDAH/291.json",
   "sung": true,
   "sv": "33a82c0b82e705715cc8b494962cf6ca89f0e0513acc82437bf4563c9f4b67cd",
-  "v": "91af32e86f98424a43910e3c31b0ab9aaccdfc7cd8105c9761fe224003c6f8d1"
+  "v": "cbdf8e18c32b11553609d52ac5e8550b9b021105026df7f4d79a7912cc5628d8"
  },
  {
   "id": "SDAH-292",
@@ -17753,7 +17753,7 @@
   "path": "data/SDAH/301.json",
   "sung": true,
   "sv": "f0726765ec1a0503c0f75983877ed2b2afd7990a66405efc3e5dfa5cf998ce94",
-  "v": "9aff17f184a105a4f0ae13093dc5720055f2f05fd0fe31b68c508a9008449ccf"
+  "v": "bed0aa0435f309193877c6dd2d62da03d37663821fca0abe0eec2b856de54b4c"
  },
  {
   "id": "SDAH-302",
@@ -17773,7 +17773,7 @@
   "path": "data/SDAH/303.json",
   "sung": true,
   "sv": "e46ee324ab704de40797ea69e1f3b35cdae678a1088d6eb889c9dfec368c798d",
-  "v": "5053c11df7a2d141f07b6e2fc77bd1ffb18476539bf6fe432fab93ce12d1e75c"
+  "v": "1f6c1c946540b4ebf4866b02ed461d6af01584581d7074ddde21a63d254b7d11"
  },
  {
   "id": "SDAH-304",
@@ -17783,7 +17783,7 @@
   "path": "data/SDAH/304.json",
   "sung": true,
   "sv": "d7b79b5343efc6d00f0d17b44b2a1b3e029b3b758fdf3642c84d24ee579da905",
-  "v": "4ed4eb663a12423d8058515ef33d1f1162aa6978d4925069240bfe6943b65d55"
+  "v": "2aff29d1a4caa79477ce123aeba30f26621ba9840ca85c7cf3da7a17e3e59dde"
  },
  {
   "id": "SDAH-305",
@@ -17905,7 +17905,7 @@
   "path": "data/SDAH/316.json",
   "sung": true,
   "sv": "85453e43ca012fba9f4e667f89c24b3b40d0f23dc75aa85386c3420067760c95",
-  "v": "07ad16182fb1b3646d73635aca7f2fb00212eaddc152b87e024ecfd0dfc378f1"
+  "v": "65f0bfa62b30c0c0edfb1fce3f7885794c2f571ffc0a9c1eebbb4eb094cb13b8"
  },
  {
   "id": "SDAH-317",
@@ -17975,7 +17975,7 @@
   "path": "data/SDAH/323.json",
   "sung": true,
   "sv": "63fb0edf8d64d661849c739f9b1491274418307d6aad8ab0782d64be294650d9",
-  "v": "bfabd2ddfc0fb0a574b1e4a3f9574ed7bc784b5b16acf5a90e3f92ac08425249"
+  "v": "2e5476a7203b840659e97bb021b6451bc4ccca0df6a273f975b805f55ab002dd"
  },
  {
   "id": "SDAH-324",
@@ -18056,7 +18056,7 @@
   "path": "data/SDAH/331.json",
   "sung": true,
   "sv": "5f10d543c46db2fa3a49466e1f0e912f17ee6d44cfe3a3310c393dbf5fb5af05",
-  "v": "f077693452179c82e42dfcdba3f986aa0257487a4711a889a319c260a5f2be6e"
+  "v": "d85a1ef4560f1519ff97c65362b8df15d732b289111f8bb14064e54a8c9263cc"
  },
  {
   "id": "SDAH-332",
@@ -18226,7 +18226,7 @@
   "path": "data/SDAH/348.json",
   "sung": true,
   "sv": "64c96192d0c31c1a4922dda98124a6fd79e93968a3e94f34a2c0b5da1a9d972e",
-  "v": "d167d87159c9915962b8feb0f477493baf9c5ceb57f3b00596fa4686df8739ec"
+  "v": "ce9685f0eb9585944ad7525c6cf5b912417cb40f9115a16bbce7d1a502cc5a98"
  },
  {
   "id": "SDAH-349",
@@ -18297,7 +18297,7 @@
   "path": "data/SDAH/355.json",
   "sung": true,
   "sv": "8297d997e2d3cd2b0f8780e29c3a5f908a4bdfefce9c277e5f7514b3b182774a",
-  "v": "e4ece3a8ae9abfbf4a8c71090035a66289d2618d454cf8b9b58940545a799d68"
+  "v": "1479e0b4166ce48cb31a6c132e8443396865468b368478620c46687efeab518c"
  },
  {
   "id": "SDAH-356",
@@ -18400,7 +18400,7 @@
   "path": "data/SDAH/365.json",
   "sung": true,
   "sv": "b48d96117a1f09faa5556fa44bf0310d854ab3c3b5e3ffe7479eb828e78fbc89",
-  "v": "33084e42b8fda5f62805f3ac372575344b436eebcfd8b1504ed4d2e8f0aa16aa"
+  "v": "2178288f2091e06f523cd03db23411e079930d4d1bf3fac845e802722f0712ff"
  },
  {
   "id": "SDAH-366",
@@ -18459,7 +18459,7 @@
   "path": "data/SDAH/371.json",
   "sung": true,
   "sv": "7602d2d946fc0d58b5205dca3e3e7c61b4f7a097d49dc817f0f94ce06e44d762",
-  "v": "a4fdb27da9def01a19fd8d16dfa7197dfa31a1debbbce635439ecc4c433459b1"
+  "v": "dfe07655574068b81d8550c799b562d539a533f52ae4dbff7b27dcf5b56c7e3f"
  },
  {
   "id": "SDAH-372",
@@ -18690,7 +18690,7 @@
   "path": "data/SDAH/394.json",
   "sung": true,
   "sv": "a1317d8e9dc829230d6ea4661db671dd7c3863891c5e9f43b21da85c34d31bab",
-  "v": "0fd6d50dfef3a61ed7d7a2343cf434b421c53c699e20cb5ad3c91b930e835468"
+  "v": "f5ad8bdb92215d8d8a8655356699aa4830865991368bafd026a34304264504ef"
  },
  {
   "id": "SDAH-395",
@@ -18730,7 +18730,7 @@
   "path": "data/SDAH/398.json",
   "sung": true,
   "sv": "2cc47ed45e35aec246c2beddd82a579cb13621e624255eea1d64f24e303a91f7",
-  "v": "848977027e563035a1d23aad270e9b66ffd4b2654b3d2f079b65fc2e776d2f9a"
+  "v": "ccd8fb50ae753aa5dda70fa8c8cc388b26895a782507e13a85d3b68df0e26f6d"
  },
  {
   "id": "SDAH-399",
@@ -19324,7 +19324,7 @@
   "path": "data/SDAH/457.json",
   "sung": true,
   "sv": "40bff3e3f2b31d691c98562a48ae891aaf0700044e38fbd7aa8378b214670237",
-  "v": "c10f0e298093009cdf5bb8e7f28c1626b30d68870a9ffc9c65a4c1a2a554410d"
+  "v": "cb5a0c19b104e2af5484fc847e96a0f3e9a41c6a1f4da45a49cf71cdfd942a46"
  },
  {
   "id": "SDAH-458",
@@ -19550,7 +19550,7 @@
   "sung": true,
   "sv": "69fe2cd6e6c8221d56062164d17b388bd4b1efa11435844a034da0a7a916d785",
   "svc": "c87eb675d8ae1a08dd711af182a1b07939ccba0c27795bc4ec31a9d8341e91cb",
-  "v": "c4d8dd6b687b89775ab44a1db27f7ae0e5364b1456f2662869c5f77057b3c363"
+  "v": "8a526b4d9fd93a6fe6b430cf895293817cf731abd8dc8c5ec8a1626e257c0cdc"
  },
  {
   "id": "SDAH-480",
@@ -19672,7 +19672,7 @@
   "path": "data/SDAH/491.json",
   "sung": true,
   "sv": "6f82e2faeeab8566a98968c71f43a5360cd22da33c7b119d87b4f0e19c64e9cc",
-  "v": "2b16eb3dc68075c1aa3aa19d1e489919a6b566f268e0325e363f23f3924954ff"
+  "v": "9edd73da1e6cccb7d7868cb94fdf30be66b1755308559072534b343e6312e694"
  },
  {
   "id": "SDAH-492",
@@ -19903,7 +19903,7 @@
   "path": "data/SDAH/514.json",
   "sung": true,
   "sv": "fcf8f2d660093936909e8576ed8dd048cd8291a119bbe9891f2b35747f3b3dfa",
-  "v": "57bb851b416cfa92d2c3e0ffafb2eee6e97f2e0967ba375212af403adbca185f"
+  "v": "bc338b50d147f8f7e10612161e8df6cfee5efb71e0a1f4dafb958615a94b2d11"
  },
  {
   "id": "SDAH-515",
@@ -19924,7 +19924,7 @@
   "path": "data/SDAH/516.json",
   "sung": true,
   "sv": "d33fa017c351afcf7667538d6f02875da512abaa5151407063654ca960882ff8",
-  "v": "c9e1d1aa4285692742b71073cc37d02c074e6afd0f8f857966eafc9f87f0b4a8"
+  "v": "86bb23d2f65297eda93cff6b0bb14b1c704b2a27e3756e43f1eddc14a538b7c5"
  },
  {
   "id": "SDAH-517",
@@ -20078,7 +20078,7 @@
   "path": "data/SDAH/531.json",
   "sung": true,
   "sv": "d3c7828b133b280e670ea47c2640acb7ffe070aa0f6f15ed2abaaf4530a602b5",
-  "v": "42b6b33d5274d8ea8429b5388778d37624222a978b58c18a4f87b8146eeb5fb4"
+  "v": "99bfe108b92d9caab258746cff4c8672678e487f6a785751f14949940b373599"
  },
  {
   "id": "SDAH-532",
@@ -20118,7 +20118,7 @@
   "path": "data/SDAH/535.json",
   "sung": true,
   "sv": "02a362d2cfdb9bef149cd220bf23d031d8d5468bdf0d2b9e777ff4d2aa4081fe",
-  "v": "7db30c9197b845845b08ba670156b381a7c212394b80e992d786a28ac9c68a70"
+  "v": "f3d008d9b395139b743fadc8d62401361d1486a8e78c60b7628a1522f604191a"
  },
  {
   "id": "SDAH-536",
@@ -20357,7 +20357,7 @@
   "number": "559",
   "title": "Now Thank We All Our God",
   "path": "data/SDAH/559.json",
-  "v": "eacf0e76a78cd92a83f9dacac3802968e5916c83085b7b58c1f48d8f7e635cdc"
+  "v": "042a70e8cded1eb8b87cb704e00f442584605e53e56a3aef6b4b2624d6f9d049"
  },
  {
   "id": "SDAH-560",
@@ -20447,7 +20447,7 @@
   "path": "data/SDAH/568.json",
   "sung": true,
   "sv": "a61aeccd2de153b962a79953e0927679ce496d4359e798a2b49bdfd3c19c846f",
-  "v": "e97794b8cc3785553a6e160e1240d750485f5b08a0628947083374428c11264b"
+  "v": "24823d828d8d0cfed283316ece8c7c4cc93c3c02fcdab18dc5b66e3295264ed9"
  },
  {
   "id": "SDAH-569",
@@ -20589,7 +20589,7 @@
   "path": "data/SDAH/582.json",
   "sung": true,
   "sv": "cabbeb70be3764153f8296e08c840dcc2faab820b009d63e5441e88478f04e5d",
-  "v": "c871a1c3259368b023b8d5993c0b486d2a4c2501aa2b6449263cccf1f3aabc78"
+  "v": "9337d2bd623802d7685bf909fca28b87fdf75064be223cb7027d31a31fcc906a"
  },
  {
   "id": "SDAH-583",
@@ -21460,7 +21460,7 @@
   "number": "669",
   "title": "The Lord Bless You and Keep You",
   "path": "data/SDAH/669.json",
-  "v": "9f82ca0ca1aa3baca6fd9494887ffaea3dfd8f784952505db3e96f4b944a81e5"
+  "v": "7228500f572579bdc2c1e6395a58ff8a702b9188a43660326049a00644b9486f"
  },
  {
   "id": "SDAH-670",
@@ -22732,7 +22732,7 @@
   "path": "data/WN/170.json",
   "sung": true,
   "sv": "bd34e64b7726aafc8d2b87417ebae8561d0f9d79f0d4a845454416bf3567f764",
-  "v": "3bcfb0d14b01f773a2606d6aac70e2e0f46d25b5410f8194a2878056b242bdb5"
+  "v": "ab9aa48dde6ea52a57b223245fa44f4d220990b4d4e2790d1c807bd0651cee5f"
  },
  {
   "id": "WN-171",
