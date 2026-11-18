@@ -211,7 +211,11 @@ const RECORDED = [
 const isRecorded = (v) => RECORDED.some((r) => r.engine === v);
 /** Some hymn has recorded singers (none since 18 Nov 2026: the live singers sing every hymn). The recorded
  *  singers' filter, badges and choices show only then: back by themselves if recordings return. */
-const anyRecorded = () => hymnList.some((x) => x.sung);
+let anyRecMemo = null;
+const anyRecorded = () => {
+  if (anyRecMemo?.list !== hymnList) anyRecMemo = { list: hymnList, v: hymnList.some((x) => x.sung) }; // once per list (the finder asks per row)
+  return anyRecMemo.v;
+};
 let manifests = {};
 /** The list the chosen recorded singers sing from (v2 where the hymn has it, else the first). */
 const pickManifest = () => { manifest = (singEngine() === "stems-v2" && manifests["stems-v2"]) || manifests.stems || null; };
@@ -529,7 +533,7 @@ function overlaySite(site) {
   for (const x of site) {
     const remote = new URL(x.path, DATA).href;
     const mine = have.get(x.id);
-    if (mine) Object.assign(mine, { remote, siteV: x.v, sung: x.sung, sv: x.sv, svc: x.svc, title: x.title });
+    if (mine) { Object.assign(mine, { remote, siteV: x.v, sung: x.sung, sv: x.sv, svc: x.svc, title: x.title }); anyRecMemo = null; }
     else { hymnList.push({ ...x, path: null, remote, siteV: x.v }); added = true; }
   }
   return added;
@@ -1047,6 +1051,7 @@ function syncFinderLabel() {
 }
 
 function renderFinder(scrollToCurrent = false) {
+  if (APP) return; // the app hides the masthead and has its own search: building 2600 rows only slowed its start
   if (!finder.ready) return;
   const n = finder.books.length;
   $("finderBooksVal").textContent = !n ? "All hymnals" : n === 1 ? bookName(finder.books[0]) : `${n} hymnals`;
@@ -1231,7 +1236,7 @@ async function setTune(key) {
   if (APP) { state.zoom = APP_ZOOM; save("zoom"); } // another tune opens at the smallest size, as another hymn does
   engine.dropStems(); // the old tune's singers are no use now
   for (const w of singingCfg.voices) w.drop();
-  try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
+  try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); nativeLoaded.clear(); } } catch { /* the app went away */ }
   await loadHymn(entry);
   toast(hymn.tune ? `Sung to ${hymn.tune.name}. Recorded singers only sing the printed tune, so live singing or the synth sings this one.` : "The printed tune.", 5000);
 }
@@ -1242,7 +1247,7 @@ async function loadHymn(entry) {
   if (hymn && hymn.id !== entry.id) { // the last hymn's singers leave memory
     engine.dropStems();
     for (const w of singingCfg.voices) w.drop();
-    try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); } } catch { /* the app went away */ }
+    try { if (engine.native) { engine.nativeStop(); engine.native.unload("*"); nativeLoaded.clear(); } } catch { /* the app went away */ }
   }
   try {
     const next = await hymnJson(entry);
@@ -1618,27 +1623,39 @@ async function prepareWarble(keep = false) {
 /** Inside the Android app: its native engine sings (faster than WASM). The page makes the features
  * and hands each pass over (AHNative.warble.load); the engine plays them on the player's timeline. */
 let nativeModel = null;
+/** The passes the app's singer holds now: key -> { keys, T } (forgotten when they are unloaded). */
+const nativeLoaded = new Map();
 async function prepareNativeWarble(native, w, gen, keep = false) {
   engine.setNative(native);
   window.AHWarble = { onEvent: onNativeWarble };
   if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
   const failed = [];
+  let first = true;
   for (const { v, verse, transpose } of warbleList()) {
     if (keep && [...stemInfo.keys()].some((x) => x.endsWith(`:${v}:${transpose}`))) continue; // already loaded
     const key = w.passKey(hymn, verse, state.tempo, transpose);
-    let pass;
-    try { pass = await w.features(hymn, verse, state.tempo, transpose); } catch (err) { failed.push(`${v}: ${err.message}`); continue; }
-    if (gen !== warbleGen) return;
-    const bin = Warble.bin(pass);
-    let b64 = "";
-    for (let i = 0; i < bin.length; i += 0x8000) b64 += String.fromCharCode(...bin.subarray(i, i + 0x8000));
-    const r = JSON.parse(native.load(key, btoa(b64), pass.letters) || "{}");
-    if (!r.ok) { failed.push(`${v}: ${r.error || "not loaded"}`); continue; }
-    engine.nativeParts = pass.keys || [...pass.letters]; // the parts it sings, for their gains
-    for (const k of hymnVoices()) {
-      if (!(pass.keys || [...pass.letters]).includes(k) || soundOf(k) !== "sung") continue;
-      stemInfo.set(`${k}:${v}:${transpose}`, { offsetSec: -0.3, duration: (pass.T * 512) / 44100, native: key });
+    // a pass the app already holds (same hymn, tune, verse, tempo and key) is not made and sent again
+    let have = nativeLoaded.get(key);
+    if (!have) {
+      let pass;
+      try { pass = await w.features(hymn, verse, state.tempo, transpose); } catch (err) { failed.push(`${v}: ${err.message}`); continue; }
+      if (gen !== warbleGen) return;
+      const bin = Warble.bin(pass);
+      let b64 = "";
+      for (let i = 0; i < bin.length; i += 0x8000) b64 += String.fromCharCode(...bin.subarray(i, i + 0x8000));
+      const r = JSON.parse(native.load(key, btoa(b64), pass.letters) || "{}");
+      if (!r.ok) { failed.push(`${v}: ${r.error || "not loaded"}`); continue; }
+      have = { keys: pass.keys || [...pass.letters], T: pass.T };
+      nativeLoaded.set(key, have);
     }
+    engine.nativeParts = have.keys; // the parts it sings, for their gains
+    for (const k of hymnVoices()) {
+      if (!have.keys.includes(k) || soundOf(k) !== "sung") continue;
+      stemInfo.set(`${k}:${v}:${transpose}`, { offsetSec: -0.3, duration: (have.T * 512) / 44100, native: key });
+    }
+    // the first verse sings as soon as it is in; the others follow while it sings
+    if (first) { first = false; if (gen !== warbleGen) return; rebuild(true, true); }
+    await new Promise((r) => setTimeout(r, 0)); // the page stays responsive between passes
   }
   if (gen !== warbleGen) return;
   rebuild(true, true);
@@ -1810,7 +1827,14 @@ async function renderAll() {
     drawWordsLoop();
     positionHeaders(null);
   } else {
-    const opts = withPiano(xmlOptions());
+    let opts = withPiano(xmlOptions());
+    // verses one after another: a hymn's first drawing shows its first verse at once and the whole
+    // written-out hymn a moment later (engraving every verse first kept the staff blank for seconds on a
+    // phone; Brian asked for load speed); later drawings (a resize, an option) draw it whole at once
+    const drawKey = `${hymn.id}@${hymn.tune?.key || ""}`;
+    const quick = opts.unfold?.length > 1 && drawnWhole !== drawKey && !MAKE;
+    drawnWhole = drawKey;
+    if (quick) opts = { ...opts, unfold: opts.unfold.slice(0, 1) };
     // pinched bigger in the app: the sheet itself is wider than the screen, and scrolls sideways
     sheet.style.width = state.view === "page" && appWide(state.zoom) > 1 ? `${Math.floor((viewport.clientWidth - 8) * appWide(state.zoom))}px` : "";
     view.render(buildMusicXML(scoreHymn(), opts), { mode: state.view, zoom: state.zoom, width: (viewport.clientWidth - 8) * appWide(state.zoom), tracks: opts.tracks, barOffset: hymn.pickup > 0 ? 1 : 0, transpose, ownBase: lyricLines(scoreHymn(), opts) });
@@ -1819,10 +1843,12 @@ async function renderAll() {
     positionHeaders(view.systems[0]);
     drawLoopBoxes();
     drawSyncMarks();
+    if (quick) { const h = hymn; setTimeout(() => { if (hymn === h && isScoreView()) renderAll(); }, 30); }
   }
   lastLineKey = "";
   paint(true);
 }
+let drawnWhole = ""; // the hymn (and tune) whose staff was last drawn whole
 
 async function prepareStage() {
   const opts = xmlOptions();

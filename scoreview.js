@@ -38,12 +38,15 @@ export class ScoreView {
     // every line with its staves and words at the same heights (the next line is shown beside this one);
     // guarded: if the lined-up score is not drawn at the same width (scale) as Verovio's, within 1%, the
     // score is put back as Verovio drew it (said in the log)
+    // (read from the viewBoxes, which set the drawn width and scale: measuring the drawing itself made the
+    // phone lay out the whole score twice more)
     if (mode !== "tracks") {
       const roots = [...this.content.querySelectorAll(":scope > svg")];
-      const w0 = roots.map((r) => r.getBoundingClientRect().width);
+      const vbw = (r) => Number((r.getAttribute("viewBox") || "").split(/\s+/)[2]) || 0;
+      const w0 = roots.map(vbw);
       alignPage(roots);
-      const bad = roots.findIndex((r, i) => w0[i] > 0 && Math.abs(r.getBoundingClientRect().width - w0[i]) > 0.01 * w0[i]);
-      if (bad >= 0) { console.warn(`align: the score's width changed (${w0[bad]} -> ${roots[bad].getBoundingClientRect().width}); drawn unaligned`); this.content.innerHTML = svg; }
+      const bad = roots.findIndex((r, i) => w0[i] > 0 && Math.abs(vbw(r) - w0[i]) > 0.01 * w0[i]);
+      if (bad >= 0) { console.warn(`align: the score's width changed (${w0[bad]} -> ${vbw(roots[bad])}); drawn unaligned`); this.content.innerHTML = svg; }
     }
     if (mode === "tracks") {
       // one long system at its natural size; the viewport scrolls sideways
