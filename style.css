@@ -688,7 +688,7 @@ body.has-piano.piano-open { padding-bottom: calc(min(260px, 42vh) + 30px); }
 /* Every dialog fits the window it is shown in (in the app the Studio is a short sheet above the play bar): taller
    content scrolls inside the dialog, a drag never passes through to the page behind, and the buttons stay in view
    at the bottom. Before this, on a 411x914 phone the Record dialog's Make/Cancel sat below the sheet, out of reach. */
-dialog.recdlg, dialog.studio { box-sizing: border-box; max-height: calc(100dvh - 16px); overflow-y: auto; overscroll-behavior: contain; padding-bottom: 0; }
+dialog.recdlg, dialog.studio { box-sizing: border-box; max-height: calc(100% - 16px); overflow-y: auto; overscroll-behavior: contain; padding-bottom: 0; }
 dialog.recdlg > .studio-actions, dialog.recdlg > .dlg-row, dialog.studio > .studio-actions {
   position: sticky; bottom: 0; z-index: 1; background: var(--paper); margin-top: 8px; padding: 10px 0 14px; }
 .rec-grid .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--paper-2); }
