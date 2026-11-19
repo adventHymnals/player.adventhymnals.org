@@ -132,3 +132,56 @@ export async function makeVideos(canvas, takes, { onVideo, progress }) {
     await onVideo(take.name, mux(vc, ac, video, audio), ac.mux, vc.mux);
   }
 }
+
+// ── Sound only (Brian, 19 Nov): the same takes as the videos, no pictures. AAC in an .m4a where the browser can
+// encode AAC (Android's WebView and Chrome on Windows/macOS can: phones play it and WhatsApp takes it), else a WAV
+// (16-bit PCM: plays everywhere, larger). The phone's singers are in it exactly as in a video (take.audio()).
+export const canMakeAudio = () => typeof OfflineAudioContext !== "undefined";
+
+async function aacConfig(sampleRate) {
+  if (typeof AudioEncoder === "undefined") return null;
+  const cfg = { codec: "mp4a.40.2", sampleRate, numberOfChannels: 2, bitrate: 160_000 };
+  try { return (await AudioEncoder.isConfigSupported(cfg)).supported ? { cfg, mux: "aac" } : null; } catch { return null; }
+}
+
+function wav(buf) {
+  const n = buf.length, ch = 2, rate = buf.sampleRate;
+  const L = buf.getChannelData(0), R = buf.getChannelData(buf.numberOfChannels > 1 ? 1 : 0);
+  const out = new DataView(new ArrayBuffer(44 + n * ch * 2));
+  const str = (o, t) => { for (let i = 0; i < t.length; i++) out.setUint8(o + i, t.charCodeAt(i)); };
+  str(0, "RIFF"); out.setUint32(4, 36 + n * ch * 2, true); str(8, "WAVE"); str(12, "fmt ");
+  out.setUint32(16, 16, true); out.setUint16(20, 1, true); out.setUint16(22, ch, true); out.setUint32(24, rate, true);
+  out.setUint32(28, rate * ch * 2, true); out.setUint16(32, ch * 2, true); out.setUint16(34, 16, true); str(36, "data"); out.setUint32(40, n * ch * 2, true);
+  for (let i = 0, o = 44; i < n; i++, o += 4) {
+    out.setInt16(o, Math.max(-1, Math.min(1, L[i])) * 0x7fff, true);
+    out.setInt16(o + 2, Math.max(-1, Math.min(1, R[i])) * 0x7fff, true);
+  }
+  return new Blob([out.buffer], { type: "audio/wav" });
+}
+
+/**
+ * Make one sound file per take. takes: as makeVideos (only setup() and audio() are used).
+ * onAudio(name, blob, ext) for each finished take; progress(name, pct) while working.
+ */
+export async function makeAudios(takes, { onAudio, progress }) {
+  for (const take of takes) {
+    progress(take.name, 0);
+    await take.setup();
+    const buf = await take.audio();
+    progress(take.name, 50);
+    await breathe();
+    const ac = await aacConfig(buf.sampleRate);
+    if (ac) {
+      const chunks = await encodeAudio(buf, ac);
+      const muxer = new Muxer({ target: new ArrayBufferTarget(), audio: { codec: "aac", numberOfChannels: 2, sampleRate: buf.sampleRate },
+        fastStart: "in-memory", firstTimestampBehavior: "offset" });
+      for (const { chunk, meta } of chunks) muxer.addAudioChunk(chunk, meta);
+      muxer.finalize();
+      progress(take.name, 100);
+      await onAudio(take.name, new Blob([muxer.target.buffer], { type: "audio/mp4" }), "m4a");
+    } else {
+      progress(take.name, 100);
+      await onAudio(take.name, wav(buf), "wav");
+    }
+  }
+}

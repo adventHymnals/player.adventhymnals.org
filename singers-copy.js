@@ -1,36 +1,45 @@
-// The singing choices' names and the messages about them, in one place (Brian, 18 Nov 2026: the choices are
-// "Singers v1" … "Singers v6", numbered in the order they came into being; never an internal name on screen).
-// short: the name in every chip, button and row ("v5", never cut); label: for sentences and screen readers;
-// group: "recorded" or "phone" (the picker's two headings); line: the one detail line under the picker.
+// The singing choices' names and the messages about them, in one place. Brian, 19 Nov 2026: three sections, in
+// this order: Warble (the Warble voices, live on the phone), Weaver (the live voice that is not Warble) and Recorded,
+// each numbered from v1. Old -> new: v1 = Recorded v1, v2 = Warble v1, v3 = Warble v2, v4 = Recorded v2,
+// v5 = Warble v3, v6 = Weaver v1 (v6 at full quality, the app's, = Weaver v1f), v7 = Warble v4. The ids never change.
+// chip: the name inside its section ("v3"); short: the name everywhere else, never cut ("Warble v3"); label: for
+// sentences and screen readers (the same); group: the section; n: the order in the pickers (section, then number);
+// line: the one detail line under the picker.
 // Keyed by singing.json voice id (the phone models) or the recorded engine. The page's own table wins over a
 // singing.json label, so the names are the same whatever copy of singing.json a device holds.
-// Wording: ChatGPT pass, Round 3 (review/ROUND3-PAGE-STRINGS.md).
+// Wording: ChatGPT, Round 5 (19 Nov; the app's copy-proposal.md).
+const entry = (group, name, k, n, line) => ({ group, chip: `v${k}`, short: `${name} v${k}`, label: `${name} v${k}`, n, line });
+export const SECTIONS = [
+  { group: "warble", name: "Warble", live: true, info: "Warble sings live on your phone as the hymn plays. It works on most phones, starts quickly and needs no further downloads. It can sing any hymn, in any key or at any speed. v4 is the newest, with clearer, steadier high notes." },
+  { group: "weaver", name: "Weaver", live: true, info: "Weaver sings live on your phone, with fuller, more natural voices. It can sing any hymn, in any key or at any speed. It needs a stronger phone and takes a few minutes to get ready the first time. No further downloads are needed, unless you choose the optional full-quality v1f." },
+  { group: "recorded", name: "Recorded", live: false, info: "These are real recordings of singers, available for some hymns. Each hymn's recording is downloaded the first time you play it and kept for offline use. Downloads average 6 MB per hymn (usually 3–9 MB). The singers stay in the key and tune they were recorded in." },
+];
 export const SINGERS = {
-  stems: { n: 1, short: "v1", group: "recorded", label: "Singers v1", line: "Recorded singers; downloads for hymns that have them" },
-  v1: { n: 2, short: "v2", group: "phone", label: "Singers v2", line: "An earlier version of singing on your phone; any hymn" },
-  v2: { n: 3, short: "v3", group: "phone", label: "Singers v3", line: "An earlier version of singing on your phone; any hymn" },
-  "stems-v2": { n: 4, short: "v4", group: "recorded", label: "Singers v4", line: "Recordings that sound like real singers; downloads for some hymns" },
-  v3: { n: 5, short: "v5", group: "phone", label: "Singers v5", line: "Sung on your phone; any hymn, key or speed" },
-  leap: { n: 6, short: "v6", group: "phone", label: "Singers v6", line: "Fuller singing on your phone; needs a stronger phone" },
-  // a test build's own voice (the app's voices(), 19 Nov): the line is v5's until its own passes ChatGPT
-  v7: { n: 7, short: "v7", group: "phone", label: "Singers v7", line: "Sung on your phone; any hymn, key or speed" },
+  v1: entry("warble", "Warble", 1, 11, "Earlier version; sings any hymn"),
+  v2: entry("warble", "Warble", 2, 12, "Earlier version; sings any hymn"),
+  v3: entry("warble", "Warble", 3, 13, "Usual choice; any hymn, key or speed"),
+  // a test build's own voice (the app's voices(), 19 Nov): Warble's network with the app's own singing of it
+  v7: entry("warble", "Warble", 4, 14, "Newest; clearer, steadier high notes"),
+  leap: entry("weaver", "Weaver", 1, 21, "Fuller voices; needs a stronger phone"),
+  stems: entry("recorded", "Recorded", 1, 31, "Original recordings; available for some hymns"),
+  "stems-v2": entry("recorded", "Recorded", 2, 32, "Same recordings, sounding like other singers; fewer hymns"),
 };
 // the credit line under the score, one per singer group (final, approved 18 Nov from the voice peer's facts; the
 // app's Settings carry the same lines; no LUNAI link exists, so none is given)
-const CREDIT_V23 = "Singers v2 and v3: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.";
+const CREDIT_V23 = "Warble v1 and v2: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.";
 export const CREDITS = {
   v1: CREDIT_V23, v2: CREDIT_V23,
-  v3: "Singers v5: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; hymn lines after the LUNAI singing voices, used with permission.",
-  leap: "Singers v6: LeapSinger and NHVSing by wavtechyukky (NHVSing weights: non-commercial use only); singers from GTSinger (Zhang et al., NeurIPS 2024, CC BY-NC-SA 4.0); hymn lines after the LUNAI singing voices, used with permission. Runs on ONNX Runtime (MIT).",
+  v3: "Warble v3: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; hymn lines after the LUNAI singing voices, used with permission.",
+  leap: "Weaver v1: LeapSinger and NHVSing by wavtechyukky (NHVSing weights: non-commercial use only); singers from GTSinger (Zhang et al., NeurIPS 2024, CC BY-NC-SA 4.0); hymn lines after the LUNAI singing voices, used with permission. Runs on ONNX Runtime (MIT).",
   // TEST build wording (the coordinator, 19 Nov; not final: facts from the voice peer, then ChatGPT)
-  v7: "Singers v7: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; taught by Singers v6 (LeapSinger by wavtechyukky); hymn lines after the LUNAI singing voices, used with permission; sung through NHVSing by wavtechyukky (NHVSing weights: non-commercial use only). Runs on ONNX Runtime (MIT).",
+  v7: "Warble v4: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0; taught by Weaver v1 (LeapSinger by wavtechyukky); hymn lines after the LUNAI singing voices, used with permission; sung through NHVSing by wavtechyukky (NHVSing weights: non-commercial use only). Runs on ONNX Runtime (MIT).",
 };
 export const COPY = {
   firstUse: (mb) => (mb ? `Downloads ${mb} MB the first time only` : ""),
-  heading: "Singers", recorded: "Recorded", phone: "On your phone", done: "Done",
+  heading: "Singers", recorded: "Recorded", phone: "Live", live: "Live", done: "Done", infoAria: (name) => `About ${name}`, infoClose: "OK",
   // the picker's states (ChatGPT, agreed with the app, 18 Nov)
   noRecordingChip: "No recording for this hymn", gettingReady: (pct) => `Getting ready on your phone (${pct}%)`,
-  needsStronger: "This version needs a stronger phone", chipAria: (n, what) => `Version ${n}. ${what}`,
+  needsStronger: "This version needs a stronger phone", chipAria: (name, what) => `${name}. ${what}`,
   instruments: "Instruments", instrumentsLine: "No singing; every part played on the piano", ask: "Ask me", askLine: "Ask when I press Play", singers: "Singers",
   credit: (id, label) => CREDITS[id] || `${label}: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.`,
   preparing: (pct) => `Getting the singers ready… ${pct}%. You can press play now. Instruments will play each verse until the singers are ready.`,
@@ -41,10 +50,10 @@ export const COPY = {
   stopped: "The singers stopped. Press play to continue.",
   verseFailed: (vs) => (vs.length === 1 ? `The singers couldn't sing verse ${vs[0]}, so instruments play it.`
     : `The singers couldn't sing verses ${vs.slice(0, -1).join(", ")} and ${vs.at(-1)}, so instruments play them.`),
-  notReadyYet: (label, instead) => `${label} isn't ready on this phone yet, so ${instead} sing instead.`, // B11
-  notReadyNow: (label, instead) => `${label} isn't ready on this phone right now, so ${instead} sing instead.`, // B12
+  notReadyYet: (label, instead) => `${label} isn't ready on this phone yet, so ${instead} will sing for now.`, // B11 (Round 5)
+  notReadyNow: (label, instead) => `${label} isn't ready on this phone right now, so ${instead} will sing for now.`, // B12 (as B11, Round 5)
   noLoad: "The singers couldn't load. Try again in a moment.",
-  keyRecorded: "Singers v1 and Singers v4 stay in the key they were recorded in. If you change the key, instruments take over. Singers v2, Singers v3, Singers v5 and Singers v6 can sing in any key.",
+  keyRecorded: "Recorded singers stay in their original key. If you change the key, the instruments take over. Warble and Weaver can sing in any key.",
   tuneRecorded: (tune) => `Sung to ${tune}. Recorded singers only sing the printed tune, so the singers on your phone or instruments play this one.`,
   noRecording: (label) => `This hymn has no recording yet. ${label} can sing it.`,
   // Round 4 (ChatGPT, 18 Nov): Singers v6 on the phone
@@ -53,6 +62,12 @@ export const COPY = {
   v6Headstart: (label, pct) => `${label} is getting ready to sing… ${pct}%`,
   v6Catchup: (label) => `${label} is catching up. Singing will continue shortly.`,
   videoSingers: (i, n) => `Adding the singers to the video… ${i} of ${n}`,
+  // Round 5 (ChatGPT, 19 Nov): a sound-only recording from the record dialog
+  recKind: "Make", recKindVideo: "A video", recKindAudio: "Sound only", recTitleVideo: "Record a video", recTitleAudio: "Record the singing",
+  recStartVideo: "Make the video", recStartAudio: "Make the recording",
+  audioProgress: (name, pct) => `Making the ${name} recording… ${pct}%`, audioSingers: (i, n) => `Adding the singers… ${i} of ${n}`,
+  audioReady: (count) => (count === 1 ? "Your recording is ready" : `Your ${count} recordings are ready`), audioSaving: "Saving the recording to your phone\u2026", audioFailed: "The recording couldn't be made. Try again, or choose fewer parts.",
+  audioSummary: (count) => (count === 1 ? "one sound file" : `${count} sound files`),
 };
 /** A choice's entry: by singing.json id, or recorded engine; null when unknown (the caller's own label). */
 export const singerCopy = (id) => SINGERS[id] || null;

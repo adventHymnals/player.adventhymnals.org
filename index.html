@@ -5,7 +5,7 @@
 <meta name="ah-audio" content="https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/">
 <meta name="ah-data" content="https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/">
 <meta name="ah-idea" content="https://adventhymnals.org/api/search/idea">
-  <meta name="ah-build" content="675cacc2 2026-11-18T21:36Z">
+  <meta name="ah-build" content="ae9625aa 2026-11-19T04:51Z">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hymn Practice</title>
 <link rel="icon" href="icons/ah-logo.svg" type="image/svg+xml">
@@ -166,7 +166,7 @@
         <div class="row"><span>Verses to sing</span><div class="chips" id="verses"></div></div>
         <p class="hint">Choose how each voice sounds in its row on the left: a singer, a choir aah, or piano.</p>
         <label class="row" id="singEngineRow" hidden><span>Who sings</span>
-          <select id="singEngine"><option value="ask">Ask me</option><option value="stems">Singers v1</option><option value="warble">Singers</option><option value="instrumental">Instruments</option></select>
+          <select id="singEngine"><option value="ask">Ask me</option><option value="stems">Recorded v1</option><option value="warble">Singers</option><option value="instrumental">Instruments</option></select>
         </label>
         <div class="row sung-row" id="sungRow"><span id="sungStatus"></span><button class="ghost" id="renderSingers" title="Record the singers at the current tempo, key and verses (about 1½ minutes per voice and verse)">Record at this tempo</button></div>
         <label class="switch-row"><span><strong>Count in</strong><small>One bar of clicks before the music starts.</small></span><input type="checkbox" class="switch" id="countIn" checked></label>
@@ -335,7 +335,10 @@
 <dialog class="recdlg" id="recDialog" aria-labelledby="recTitle">
   <h2 id="recTitle">Record a video</h2>
   <div class="rec-grid">
-    <label class="row"><span>Show</span>
+    <div class="row"><span id="recKindLabel">Make</span><div class="chips" id="recKind" role="radiogroup" aria-labelledby="recKindLabel">
+      <label><input type="radio" name="recKind" value="video" checked><span id="recKindVideo">A video</span></label>
+      <label><input type="radio" name="recKind" value="audio"><span id="recKindAudio">Sound only</span></label></div></div>
+    <label class="row" id="recShowsRow"><span>Show</span>
       <select id="recShows"><option value="score">The score</option><option value="words">Words, a line at a time</option><option value="stanza">Words, the whole stanza</option></select></label>
     <label class="row"><span>Singers</span><select id="recSing"></select></label>
     <div class="row"><span>Verses</span><div class="chips" id="recVerses"></div></div>
@@ -345,7 +348,7 @@
     <label class="row"><span>Interlude</span><select id="recInterlude"></select></label>
     <label class="row"><span>Count-in</span>
       <select id="recCountIn"><option value="off">None</option><option value="start">Before the introduction</option><option value="verse">After the introduction</option></select></label>
-    <div class="row"><span>Videos</span><div class="chips" id="recTakes"></div></div>
+    <div class="row"><span id="recTakesLabel">Videos</span><div class="chips" id="recTakes"></div></div>
     <p class="rec-sum" id="recSummary"></p>
   </div>
   <div class="studio-actions">

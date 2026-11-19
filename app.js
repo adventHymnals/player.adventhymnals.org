@@ -5,7 +5,7 @@ import {
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
-import { COPY, singerCopy } from "./singers-copy.js";
+import { COPY, SECTIONS, singerCopy } from "./singers-copy.js";
 import { ScoreView } from "./scoreview.js";
 import { engraveKey, getEngraved, putEngraved } from "./engravecache.js";
 import { SolfaView, WordsView } from "./solfa.js";
@@ -13,7 +13,7 @@ import { Waterfall } from "./waterfall.js";
 import { Presenter } from "./presenter.js";
 import { Studio } from "./studio.js";
 import { exportPdf } from "./pdfexport.js";
-import { canMakeVideo, makeVideos } from "./videomaker.js";
+import { canMakeAudio, makeAudios, canMakeVideo, makeVideos } from "./videomaker.js";
 import { Conductor, feel, mysteryTune, meterHint, PitchListener, centsOff, drawLane, noteName } from "./practice.js";
 import { TempoFollower } from "./follow.js";
 import { MelodyIndex, NoteTracker, decide } from "./melody.js";
@@ -285,7 +285,7 @@ const singEngine = () => {
   return isLive(e) && !liveVoice(e) ? "warble" : e; // a live voice no longer offered: the first
 };
 const useWarble = () => isLive(singEngine()) && !!singingCfg.warble;
-// the voice that sings now: the chosen one, or Singers v5 standing in while the app's engine for it is getting
+// the voice that sings now: the chosen one, or Warble v3 (old v5) standing in while the app's engine for it is getting
 // ready on this phone (its first-use setup takes minutes) or unavailable; the choice itself stays
 let standIn = null; // the app engine stood in for ("leap"), or null
 const liveW = () => {
@@ -1348,14 +1348,14 @@ function singerChoices() {
   pickManifest();
   const rec = RECORDED.map((r) => {
     const c = singerCopy(r.engine);
-    return { engine: r.engine, short: c.short, label: c.label, line: c.line, group: "recorded", n: c.n,
+    return { engine: r.engine, short: c.short, chip: c.chip, label: c.label, line: c.line, group: "recorded", n: c.n,
       ok: r.engine === "stems" ? !!manifests.stems?.stems?.length : !!manifests[r.engine] };
   });
   const live = singingCfg.voices.map((w) => {
     // the app's engine for a version: getting ready (choosable: v5 sings meanwhile), or one this phone can't run
     const e = w.nativeEngine ? Warble.nativeEngines()?.[w.nativeEngine] : null;
     const state = !e || e.ready ? "" : e.preparing ? COPY.gettingReady(Math.round((e.progress || 0) * 100)) : COPY.needsStronger;
-    return { engine: w.engine, short: w.short, label: w.label, line: w.line, group: "phone", n: w.n, ok: !e || e.ready || !!e.preparing, state, w };
+    return { engine: w.engine, short: w.short, chip: w.chip, label: w.label, line: w.line, group: w.group, n: w.n, ok: !e || e.ready || !!e.preparing, state, w };
   });
   return [...rec, ...live].sort((a, b) => a.n - b.n);
 }
@@ -1369,7 +1369,7 @@ function offerLiveVoices() {
     const o = new Option(c.short, c.engine);
     o.disabled = !c.ok;
     const what = c.group === "recorded" && !c.ok ? COPY.noRecordingChip : c.state || c.line;
-    o.title = what; o.setAttribute("aria-label", COPY.chipAria(c.n, what));
+    o.title = what; o.setAttribute("aria-label", COPY.chipAria(c.short, what));
     sel.append(o);
   }
   sel.append(new Option(COPY.instruments, "instrumental"));
@@ -1395,13 +1395,21 @@ function chooseSingers(from, always = false) {
   const esc = (t) => String(t).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
   // what a chip is, in words: its line, or why it can't be chosen here
   const what = (c) => (c.group === "recorded" && !c.ok ? COPY.noRecordingChip : c.state || c.line);
-  const chip = (c) => `<button type="button" class="ver-chip" role="radio" data-engine="${esc(c.engine)}" aria-label="${esc(COPY.chipAria(c.n, what(c)))}" title="${esc(what(c))}"${c.ok ? "" : ' aria-disabled="true"'}>${esc(c.short)}</button>`;
-  const group = (g, title) => {
+  const chip = (c) => `<button type="button" class="ver-chip" role="radio" data-engine="${esc(c.engine)}" aria-label="${esc(COPY.chipAria(c.short, what(c)))}" title="${esc(what(c))}"${c.ok ? "" : ' aria-disabled="true"'}>${esc(c.chip || c.short)}</button>`;
+  // the three sections (Warble, Weaver, Recorded): a heading with "Live" and an (i) that opens a note, then one row
+  const group = ({ group: g, name, live, info }) => {
     const cs = choices.filter((c) => c.group === g).reverse(); // newest first
-    return cs.length ? `<div class="ver-group"><h3>${title}</h3><div class="ver-chips" role="radiogroup" aria-label="${title}">${cs.map(chip).join("")}</div></div>` : "";
+    return cs.length ? `<div class="ver-group"><h3><span>${name}</span>${live ? `<span class="ver-live">${COPY.live}</span>` : ""}`
+      + `<button type="button" class="ver-info" aria-expanded="false" aria-controls="singNote-${g}" aria-label="${esc(COPY.infoAria(name))}">i</button></h3>`
+      + `<p class="ver-note" id="singNote-${g}" hidden>${esc(info)}</p>`
+      + `<div class="ver-chips" role="radiogroup" aria-label="${name}">${cs.map(chip).join("")}</div></div>` : "";
   };
-  // the version grids (a third of the sheet at most, scrolling inside), the detail line, then the other choices
-  $("singGrid").innerHTML = group("recorded", COPY.recorded) + group("phone", COPY.phone);
+  $("singGrid").innerHTML = SECTIONS.map(group).join("");
+  for (const b of $("singGrid").querySelectorAll(".ver-info")) b.onclick = () => {
+    const open = b.getAttribute("aria-expanded") !== "true";
+    b.setAttribute("aria-expanded", String(open));
+    $(b.getAttribute("aria-controls")).hidden = !open;
+  };
   $("singOther").innerHTML = `<button type="button" class="ver-chip wide" role="radio" data-engine="instrumental">${COPY.instruments}</button>`
     + `<button type="button" class="ver-chip wide" role="radio" data-engine="ask">${COPY.ask}</button>`;
   const detail = async () => {
@@ -1431,6 +1439,8 @@ function chooseSingers(from, always = false) {
     $("singCancel").onclick = () => done(false);
     d.onclose = () => resolve(false);
     d.showModal();
+    // the chosen version in view in its row (the rows scroll sideways)
+    for (const b of d.querySelectorAll('.ver-chips .ver-chip[aria-checked="true"]')) b.scrollIntoView({ block: "nearest", inline: "center" });
     (d.querySelector('.ver-chip[aria-checked="true"]') || $("singDone")).focus();
   });
 }
@@ -1667,7 +1677,7 @@ async function prepareNativeWarble(native, w, gen, keep = false) {
     if (r.ok === false) {
       console.warn(`live singer: use(${want}) refused: ${r.error || "not ready"}${r.preparing ? ` (preparing, ${Math.round((r.progress || 0) * 100)}%)` : ""}`);
       if (want === "warble") { toast(COPY.noStart, 6000); return; }
-      // the chosen voice stays chosen; Singers v5 sing until the app says it is ready ({"type": "engines"})
+      // the chosen voice stays chosen; Warble v3 sings until the app says it is ready ({"type": "engines"})
       standIn = want;
       toast(r.preparing ? COPY.notReadyYet(w.label, singingCfg.warble.label) : leapReason() || COPY.notReadyNow(w.label, singingCfg.warble.label), 6000);
       $("credit").textContent = singingCfg.warble.credits();
@@ -1746,7 +1756,7 @@ function onNativeWarble(json) {
  *  this phone (its files gone, a failed benchmark), Warble sings from the next play: the passes are made again
  *  for it, at once when stopped, else when play is next pressed; said quietly, once. */
 let engineSwitchPending = false;
-/** Singers v6's own events (app 0.9.43): its first-use setup (v5 sings meanwhile), ready, the head start
+/** Weaver v1's (old v6) own events (app 0.9.43): its first-use setup (Warble v3 sings meanwhile), ready, the head start
  *  before the first sound with Full quality, and catching up (Full holds the audio: never a fall back to v5, he
  *  chose Full). "ready" and "unavailable" are acted on by the {"type": "engines"} event that follows. */
 function leapEvent(m) {
@@ -4019,13 +4029,24 @@ function openRecordDialog() {
   $("recCountIn").value = state.countIn ? state.countAt : "off";
   // one video of the choir, and/or one per voice (each voice alone, its introduction playing its own line)
   chips("recTakes", [["choir", "Choir"], ...hymnVoices().map((k) => [k, VOICES[k].name])], (v) => v === "choir");
+  // a video, or the sound only (the same choices; no picture, so "Show" does not apply)
+  $("recKindLabel").textContent = COPY.recKind; $("recKindVideo").textContent = COPY.recKindVideo; $("recKindAudio").textContent = COPY.recKindAudio;
+  const audioOnly = () => d.querySelector('input[name="recKind"]:checked')?.value === "audio";
+  const kind = () => {
+    const a = audioOnly();
+    $("recTitle").textContent = a ? COPY.recTitleAudio : COPY.recTitleVideo;
+    $("recStart").textContent = a ? COPY.recStartAudio : COPY.recStartVideo;
+    $("recShowsRow").hidden = a;
+    $("recTakesLabel").textContent = a ? "Recordings" : "Videos";
+  };
   const summary = () => {
+    kind();
     const vs = [...$("recVerses").querySelectorAll("input:checked")].map((x) => x.value);
     const voices = $("recSing").value === "instrumental" ? [] : [...$("recVoices").querySelectorAll("input:checked")].map((x) => VOICES[x.value].name);
     const takes = [...$("recTakes").querySelectorAll("input:checked")].length;
     $("recSummary").textContent = `${hymn.number} ${hymn.title}: verse${vs.length === 1 ? "" : "s"} ${vs.join(", ") || "none"}; `
       + `${voices.length ? voices.join(", ") : "no voices"}; at ${state.tempo} a minute; `
-      + `${takes === 1 ? "one mp4" : `${takes} mp4s`}.`;
+      + `${audioOnly() ? COPY.audioSummary(takes) : takes === 1 ? "one mp4" : `${takes} mp4s`}.`;
   };
   d.querySelectorAll("input, select").forEach((el) => { el.onchange = summary; });
   summary();
@@ -4035,7 +4056,8 @@ function openRecordDialog() {
     if (!vs.length) return toast("Choose at least one verse.");
     const on = new Set([...$("recVoices").querySelectorAll("input:checked")].map((x) => x.value));
     const takes = [...$("recTakes").querySelectorAll("input:checked")].map((x) => x.value);
-    if (!takes.length) return toast("Choose at least one video.");
+    if (!takes.length) return toast(audioOnly() ? "Choose at least one recording." : "Choose at least one video.");
+    const audio = audioOnly();
     // the video's choices are for the video only: the player goes back to its own after it (nothing is saved)
     const snap = recordSnapshot();
     const sing = $("recSing").value;
@@ -4058,9 +4080,12 @@ function openRecordDialog() {
     if (anySung()) await prepareStems(); else rebuild();
     buildHeaders();
     applyMix();
-    if (canMakeVideo()) {
+    if (audio && canMakeAudio()) {
+      try { await makeTakeVideos(takes, true); } finally { await restoreSnapshot(snap); }
+    } else if (canMakeVideo() && !audio) {
       try { await makeTakeVideos(takes); } finally { await restoreSnapshot(snap); }
-    } else await startRecording(snap); // an older browser: film the stage live (put back when it stops)
+    } else if (audio) { await restoreSnapshot(snap); toast(COPY.audioFailed, 6000); } // (every browser has OfflineAudioContext)
+    else await startRecording(snap); // an older browser: film the stage live (put back when it stops)
   };
   d.showModal();
 }
@@ -4089,20 +4114,20 @@ async function restoreSnapshot(s) {
 
 // The app's live singers sing straight to the phone's speaker (AudioTrack), which a video cannot hear: for a
 // video each voice of each pass is sung whole by the app (/warble-render/) and mixed like a recording.
-async function liveStemsForVideo(voices, progress) {
+async function liveStemsForVideo(voices, progress, audio = false) {
   const out = new Map();
   const want = [...stemInfo.entries()].filter(([k, x]) => x.native && voices.has(k[0]));
   if (!want.length) return out;
   engine.ensure();
   let i = 0;
   for (const [k, x] of want) {
-    progress(COPY.videoSingers(++i, want.length));
+    progress(audio ? COPY.audioSingers(++i, want.length) : COPY.videoSingers(++i, want.length));
     const b64 = btoa(unescape(encodeURIComponent(x.native))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
     let r = null;
     for (const until = Date.now() + 120000; ;) { // the first time, the singing model may still be loading
       r = await fetch(`https://appassets.androidplatform.net/warble-render/${k[0]}/${b64}.wav`).catch(() => null);
       if (r?.ok || Date.now() > until) break;
-      progress("Preparing the singers for your video…");
+      progress(audio ? COPY.audioSingers(i, want.length) : "Preparing the singers for your video…");
       await new Promise((ok) => setTimeout(ok, 1500));
     }
     if (!r?.ok) throw new Error(`the live singers could not sing ${VOICES[k[0]]?.name || k[0]} for the video`);
@@ -4113,8 +4138,9 @@ async function liveStemsForVideo(voices, progress) {
 
 // Every video is made ahead of time (see videomaker.js): smooth whatever the browser is doing, and the
 // takes after the first reuse the frames after the introduction.
-async function makeTakeVideos(takeKeys) {
-  if (state.view !== "presenter") { state.view = "presenter"; await renderAll(); }
+// audio: the sound only (makeAudios), from the same takes: no stage, no pictures.
+async function makeTakeVideos(takeKeys, audio = false) {
+  if (!audio && state.view !== "presenter") { state.view = "presenter"; await renderAll(); }
   stopPlayback();
   engine.ensure();
   await engine.loadPiano();
@@ -4122,7 +4148,8 @@ async function makeTakeVideos(takeKeys) {
   if (loopWas) setLoop(state.loop.from, state.loop.to, false);
   const choir = hymnVoices().filter((k) => !state.mute[k]);
   let live = new Map();
-  try { live = await liveStemsForVideo(new Set(takeKeys.flatMap((t) => (t === "choir" ? choir : [t]))), (t) => toast(t, 0)); } catch (err) { oops("The video could not be made. Try again, or choose fewer parts.", err, 8000); return; }
+  const failed = audio ? COPY.audioFailed : "The video could not be made. Try again, or choose fewer parts.";
+  try { live = await liveStemsForVideo(new Set(takeKeys.flatMap((t) => (t === "choir" ? choir : [t]))), (t) => toast(t, 0), audio); } catch (err) { oops(failed, err, 8000); return; }
   // the live passes as recordings: their events lose "native" so the offline mix plays the buffers
   const liveEvents = (events) => (live.size ? events.map((e) => (e.native && live.has(e.stem) ? { ...e, native: undefined } : e)) : events);
   const withLive = async (fn) => {
@@ -4132,13 +4159,13 @@ async function makeTakeVideos(takeKeys) {
     try { return await fn(); } finally { engine.setStemBuffers(was); }
   };
   making = true;
-  state.watermark = true;
+  state.watermark = !audio;
   const takes = takeKeys.map((key) => ({
     name: key === "choir" ? "Choir" : VOICES[key].name,
     setup: async () => {
       state.introVoice = key === "choir" ? null : key;
       rebuild(false);
-      await prepareStage();
+      if (!audio) await prepareStage();
       const voices = key === "choir" ? choir : [key];
       for (const k of hymnVoices()) engine.setMuted(k, !voices.includes(k));
       // the takes differ only up to the first verse (the count-in after an introduction is the same in all)
@@ -4152,6 +4179,16 @@ async function makeTakeVideos(takeKeys) {
   }));
   const made = [];
   try {
+    if (audio) {
+      await makeAudios(takes, {
+        progress: (name, pct) => toast(COPY.audioProgress(name, pct), 0),
+        onAudio: async (name, blob, ext) => { made.push({ file: `${hymn.id}-${name}.${ext}`, blob }); },
+      });
+      console.info(`sound only: ${made.map((m) => `${m.file} ${m.blob.type} ${(m.blob.size / 1e6).toFixed(1)} MB`).join(", ")}`);
+      $("toast").hidden = true;
+      if (APP) saveInApp(made, true); else showMadeVideos(made, true);
+      return;
+    }
     await makeVideos($("stage"), takes, {
       progress: (text) => toast(text, 0),
       onVideo: async (name, blob, audioCodec) => {
@@ -4169,7 +4206,7 @@ async function makeTakeVideos(takeKeys) {
     if (APP) saveInApp(made); // the app keeps them with the phone's videos at once, and offers to share
     else showMadeVideos(made);
   } catch (err) {
-    oops("The video could not be made. Try again, or choose fewer parts.", err, 8000);
+    oops(failed, err, 8000);
   } finally {
     making = false;
     state.introVoice = null;
@@ -4183,7 +4220,7 @@ async function makeTakeVideos(takeKeys) {
 
 // In the app: each video goes straight to the phone (Movies/Advent Hymnals); the app copies it out of the page
 // and says when it is saved (then offers to share it). Its progress shows here while it copies.
-function saveInApp(made) {
+function saveInApp(made, audio = false) {
   for (const v of made) {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(v.blob);
@@ -4191,7 +4228,7 @@ function saveInApp(made) {
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 10 * 60000);
   }
-  toast(made.length === 1 ? "Saving the video to your phone…" : `Saving ${made.length} videos to your phone…`, 0);
+  toast(audio ? COPY.audioSaving : made.length === 1 ? "Saving the video to your phone…" : `Saving ${made.length} videos to your phone…`, 0);
 }
 // the app's copy reports how far it is (StudioSaver)
 window.addEventListener("ah-save-progress", (e) => {
@@ -4202,11 +4239,11 @@ window.addEventListener("ah-save-progress", (e) => {
 });
 
 // Finished videos are kept until the user saves them: nothing says "saved" before a file is really written.
-function showMadeVideos(made) {
+function showMadeVideos(made, audio = false) {
   const d = $("vidDialog");
   const picker = "showSaveFilePicker" in window;
-  $("vidTitle").textContent = made.length === 1 ? "Your video is ready" : `Your ${made.length} videos are ready`;
-  $("vidNote").textContent = made.length === 1 ? "It is not saved yet. Choose where to keep it." : "The videos have not been saved yet. Choose where to save each one.";
+  $("vidTitle").textContent = audio ? COPY.audioReady(made.length) : made.length === 1 ? "Your video is ready" : `Your ${made.length} videos are ready`;
+  $("vidNote").textContent = made.length === 1 ? "It is not saved yet. Choose where to keep it." : audio ? "They have not been saved yet. Choose where to save each one." : "The videos have not been saved yet. Choose where to save each one.";
   const mb = (b) => `${(b.size / 1e6).toFixed(1)} MB`;
   $("vidList").innerHTML = made.map((v, i) => `<li><span class="vname">${v.file}</span><span class="vsize">${mb(v.blob)}</span>`
     + `<button class="play-text" data-save="${i}">Save…</button></li>`).join("");
@@ -4218,7 +4255,11 @@ function showMadeVideos(made) {
     const v = made[i];
     if (picker) {
       try {
-        const fh = await window.showSaveFilePicker({ suggestedName: v.file, types: [{ description: "MP4 video", accept: { "video/mp4": [".mp4"] } }] });
+        const type = v.file.endsWith(".m4a") ? { description: "M4A audio", accept: { "audio/mp4": [".m4a"] } }
+          : v.file.endsWith(".wav") ? { description: "WAV audio", accept: { "audio/wav": [".wav"] } }
+          : v.file.endsWith(".webm") ? { description: "WebM audio", accept: { "audio/webm": [".webm"] } }
+          : { description: "MP4 video", accept: { "video/mp4": [".mp4"] } };
+        const fh = await window.showSaveFilePicker({ suggestedName: v.file, types: [type] });
         const w = await fh.createWritable();
         await w.write(v.blob);
         await w.close();
@@ -4249,7 +4290,8 @@ function showMadeVideos(made) {
   };
   $("vidClose").onclick = () => {
     const unsaved = $("vidList").querySelectorAll("[data-save]").length;
-    if (unsaved && !confirm(`${unsaved === 1 ? "A video is" : `${unsaved} videos are`} not saved and will be lost. Close anyway?`)) return;
+    if (unsaved && !confirm(audio ? `${unsaved === 1 ? "A recording is" : `${unsaved} recordings are`} not saved and will be lost. Close anyway?`
+      : `${unsaved === 1 ? "A video is" : `${unsaved} videos are`} not saved and will be lost. Close anyway?`)) return;
     d.close();
   };
   d.oncancel = (e) => { e.preventDefault(); $("vidClose").onclick(); }; // Escape asks too

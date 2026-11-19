@@ -84,14 +84,16 @@ export class Warble {
     const known = singerCopy(this.copyId);
     this.line = known?.line || "";
     this.n = known?.n || cfg.n || 99; // its place in the pickers
-    this.short = known?.short || cfg.short || (cfg.n ? `v${cfg.n}` : this.label); // the name in chips and buttons
+    this.short = known?.short || cfg.short || (cfg.n ? `v${cfg.n}` : this.label); // the name in buttons and lists ("Warble v3")
+    this.chip = known?.chip || cfg.chip || this.short; // the name inside its section ("v3")
+    this.group = known?.group || (cfg.engine === "leap" ? "weaver" : "warble"); // the picker's section
     if (!known && cfg.line) this.line = cfg.line;
     this.label = known?.label || cfg.label || COPY.singers;
     this.speakers = cfg.speakers || undefined; // { S, A, T, B } singer numbers; the frontend's default when absent
     // a voice sung by the app's own engine (the new voice): its model files are the app's to fetch (by tier);
     // the page only passes their addresses (NATIVE-ENGINES.md)
     this.nativeEngine = cfg.engine === "leap" ? "leap" : null;
-    if (this.nativeEngine) { this.id = cfg.id || "leap"; this.engine = "leap"; this.label = singerCopy("leap").label; this.line = singerCopy("leap").line; this.n = singerCopy("leap").n; this.short = singerCopy("leap").short; }
+    if (this.nativeEngine) { this.id = cfg.id || "leap"; this.engine = "leap"; this.label = singerCopy("leap").label; this.line = singerCopy("leap").line; this.n = singerCopy("leap").n; this.short = singerCopy("leap").short; this.chip = singerCopy("leap").chip; this.group = "weaver"; }
     this.modelUrl = cfg.model ? new URL(cfg.model, base).href : null;
     this.tiers = (cfg.tiers || []).map((t) => ({ ...t, url: new URL(t.url, base).href }));
     this.files = (cfg.files || []).map((t) => ({ ...t, url: new URL(t.url, base).href })); // needed by every tier
