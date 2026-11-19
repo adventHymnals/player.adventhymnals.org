@@ -135,7 +135,7 @@ export class Engine {
     try {
       const r = JSON.parse(this.native.play(JSON.stringify({ from: fromT, segs })) || "{}");
       if (r && r.ok === false) { this.nativeOn = false; this.nativeError = r.error || "the app's singer did not start"; console.warn(`live singer: ${this.nativeError}`); }
-      else this.nativeOn = true;
+      else { this.nativeOn = true; this.nativeWaits = !!r?.waits; } // (app 0.9.48: it holds its start until the singing is ready)
     } catch (e) { this.nativeOn = false; this.nativeError = String(e?.message || e); }
     clearTimeout(this.nativeDynTimer);
     if (this.nativeOn && !engineDyn) this.nativeDynNext(fromT);
@@ -511,6 +511,7 @@ export class Engine {
   // after currentTime (0.1-0.3 s on Bluetooth and phones), so without this the score runs ahead.
   now() {
     if (!this.playing) return this.pausedAt ?? 0;
+    if (this.holdFrom != null) return this.holdFrom; // still getting ready: the playhead waits too
     if (this.nativeOn) { // the app's singer is the clock while it sings
       const p = Number(this.native.pos());
       if (p >= 0) return p;
@@ -558,13 +559,41 @@ export class Engine {
     this.startAt = this.ctx.currentTime + 0.12 - fromT / this.rate;
     this.clock = [{ from: -Infinity, startAt: this.startAt, rate: this.rate }];
     this.next = this.indexAt(fromT);
-    this.resumeStems(fromT, this.ctxAt(fromT));
+    this.nativeWaits = false;
     this.nativePlay(fromT);
     this.playing = true;
+    clearInterval(this.timer);
+    clearTimeout(this.holdTimer);
+    // Brian, 19 Nov: a heavier singer (Weaver) that is not ready yet: the app says it waits, gets the singing ready
+    // first (its own "getting ready" strip), and only then starts; the introduction waits with it, so the singing
+    // follows the introduction with no pause. Its {"type": "started"} event (nativeStarted) starts the instruments.
+    if (this.nativeOn && this.nativeWaits) {
+      this.holdFrom = fromT;
+      this.holdTimer = setTimeout(() => this.nativeStarted(), 90000); // never wait for ever
+      return;
+    }
+    this.holdFrom = null;
+    this.resumeStems(fromT, this.ctxAt(fromT));
+    this.timer = setInterval(() => this.pump(), 25);
+    this.pump();
+  }
+
+  /** The app's singer has started (after holding for the singing): the instruments start from the same point now. */
+  nativeStarted() {
+    if (this.holdFrom == null || !this.playing) return;
+    const fromT = this.holdFrom;
+    this.holdFrom = null;
+    clearTimeout(this.holdTimer);
+    this.startAt = this.ctx.currentTime + 0.05 - fromT / this.rate;
+    this.clock = [{ from: -Infinity, startAt: this.startAt, rate: this.rate }];
+    this.next = this.indexAt(fromT);
+    this.resumeStems(fromT, this.ctxAt(fromT));
     clearInterval(this.timer);
     this.timer = setInterval(() => this.pump(), 25);
     this.pump();
   }
+  /** Waiting for the app's singer to get ready (Play pressed, nothing sounding yet). */
+  get holding() { return this.holdFrom != null && this.playing; }
 
   pump() {
     const horizon = this.ctx.currentTime + 0.2;
@@ -639,6 +668,8 @@ export class Engine {
   pause() {
     if (!this.playing) return;
     this.pausedAt = this.now();
+    clearTimeout(this.holdTimer);
+    this.holdFrom = null;
     this.nativeStop();
     this.playing = false;
     clearInterval(this.timer);
