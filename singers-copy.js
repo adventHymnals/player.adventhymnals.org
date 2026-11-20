@@ -7,12 +7,15 @@
 // line: the one detail line under the picker.
 // Keyed by singing.json voice id (the phone models) or the recorded engine. The page's own table wins over a
 // singing.json label, so the names are the same whatever copy of singing.json a device holds.
-// Wording: ChatGPT, Round 5 (19 Nov; the app's copy-proposal.md).
+// Wording: ChatGPT, Round 5 (19 Nov) and Round 7 (20 Nov: Weaver downloads once, Warble v3/v4 inside the app, Recorded
+// is computer-made singing; the app's copy-proposal.md).
 const entry = (group, name, k, n, line) => ({ group, chip: `v${k}`, short: `${name} v${k}`, label: `${name} v${k}`, n, line });
 export const SECTIONS = [
-  { group: "warble", name: "Warble", live: true, info: "Warble sings live on your phone as the hymn plays. It works on most phones, starts quickly and needs no further downloads. It can sing any hymn, in any key or at any speed. v4 is the newest, with clearer, steadier high notes." },
-  { group: "weaver", name: "Weaver", live: true, info: "Weaver sings live on your phone, with fuller, more natural voices. It can sing any hymn, in any key or at any speed. It needs a stronger phone and takes a few minutes to get ready the first time. No further downloads are needed, unless you choose the optional full-quality v1f." },
-  { group: "recorded", name: "Recorded", live: false, info: "These are real recordings of singers, available for some hymns. Each hymn's recording is downloaded the first time you play it and kept for offline use. Downloads average 6 MB per hymn (usually 3–9 MB). The singers stay in the key and tune they were recorded in." },
+  { group: "warble", name: "Warble", live: true,
+    // in the app (v3 and v4 inside it); a browser fetches the voice once, so only the first two sentences hold there
+    info: "Warble sings live on your phone as the hymn plays. It can sing any hymn, in any key or at any speed. v3 and v4 are ready to use, even without internet. Earlier versions download once when first chosen. v4 has clearer, steadier high notes.", webInfo: "Warble sings live on your phone as the hymn plays. It can sing any hymn, in any key or at any speed." },
+  { group: "weaver", name: "Weaver", live: true, info: "Weaver sings live on your phone, with fuller, more natural voices. It can sing any hymn, in any key or at any speed. It needs a stronger phone and may not work on some phones. Weaver v1 downloads once (64 MB), then takes a few minutes to get ready. Weaver v1f gives the best sound and is an optional extra download (60 MB)." },
+  { group: "recorded", name: "Recorded", live: false, info: "These are computer-made singing voices, recorded in advance for some hymns. Recorded v2 uses the same recordings, made to sound like different singers. Each hymn's recording downloads the first time you play it and stays on your phone for listening without internet. Downloads average 6 MB per hymn (usually 3–9 MB). The key and tune cannot be changed." },
 ];
 export const SINGERS = {
   v1: entry("warble", "Warble", 1, 11, "Earlier version; sings any hymn"),
@@ -21,7 +24,7 @@ export const SINGERS = {
   // a test build's own voice (the app's voices(), 19 Nov): Warble's network with the app's own singing of it
   v7: entry("warble", "Warble", 4, 14, "Newest; clearer, steadier high notes"),
   leap: entry("weaver", "Weaver", 1, 21, "Fuller voices; needs a stronger phone"),
-  stems: entry("recorded", "Recorded", 1, 31, "Original recordings; available for some hymns"),
+  stems: entry("recorded", "Recorded", 1, 31, "Computer-made singing; available for some hymns"),
   "stems-v2": entry("recorded", "Recorded", 2, 32, "Same recordings, sounding like other singers; fewer hymns"),
 };
 // the credit line under the score, one per singer group (final, approved 18 Nov from the voice peer's facts; the

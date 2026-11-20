@@ -1397,7 +1397,8 @@ function chooseSingers(from, always = false) {
   const what = (c) => (c.group === "recorded" && !c.ok ? COPY.noRecordingChip : c.state || c.line);
   const chip = (c) => `<button type="button" class="ver-chip" role="radio" data-engine="${esc(c.engine)}" aria-label="${esc(COPY.chipAria(c.short, what(c)))}" title="${esc(what(c))}"${c.ok ? "" : ' aria-disabled="true"'}>${esc(c.chip || c.short)}</button>`;
   // the three sections (Warble, Weaver, Recorded): a heading with "Live" and an (i) that opens a note, then one row
-  const group = ({ group: g, name, live, info }) => {
+  const group = ({ group: g, name, live, info: appInfo, webInfo }) => {
+    const info = (!APP && webInfo) || appInfo;
     const cs = choices.filter((c) => c.group === g).reverse(); // newest first
     return cs.length ? `<div class="ver-group"><h3><span>${name}</span>${live ? `<span class="ver-live">${COPY.live}</span>` : ""}`
       + `<button type="button" class="ver-info" aria-expanded="false" aria-controls="singNote-${g}" aria-label="${esc(COPY.infoAria(name))}">i</button></h3>`
