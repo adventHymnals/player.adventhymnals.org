@@ -11,7 +11,12 @@ const IDB = "ah-warble", STORE = "models";
 const VOICE_GAIN = 0.5; // the reference mix: 2 / 4 voices
 // what this page's own synthesis (synth.js) can sing; a singing.json voice with "requires" is offered
 // only where the engine that will sing it has that ("cs": consistent-source models, RUNTIME.md 4b)
-const WEB_CAN = new Set(["cs"]);
+// "v5": this page's singers table (singers-copy.js) has Warble v5 and its engine sings it from the part files ("models")
+const WEB_CAN = new Set(["cs", "v5"]);
+// a voice may carry "models": { S: { model, sha256 }, A: …, T: …, B: … } beside its one "model": the same voice as one
+// file per part. The browser's engine sings from those (one worker per part; a file with all four parts behind a switch
+// takes about 700 MB a worker in WebAssembly, a part's own file what Warble v3 takes); the app's native engine takes "model".
+const shasOf = (c, parts) => (parts && c?.models ? Object.values(c.models).map((m) => m?.sha256) : [c?.sha256]).map((x) => (x || "").toLowerCase()).filter(Boolean);
 
 /** Can the engine that sings here (the app's native one if any, else synth.js) sing voice config c? */
 export function canSing(c) {
@@ -95,6 +100,8 @@ export class Warble {
     this.nativeEngine = cfg.engine === "leap" ? "leap" : null;
     if (this.nativeEngine) { this.id = cfg.id || "leap"; this.engine = "leap"; this.label = singerCopy("leap").label; this.line = singerCopy("leap").line; this.n = singerCopy("leap").n; this.short = singerCopy("leap").short; this.chip = singerCopy("leap").chip; this.group = "weaver"; }
     this.modelUrl = cfg.model ? new URL(cfg.model, base).href : null;
+    // in a browser, one model per part when the voice has them: { S: { url, sha256 }, … }; a part without its own (a Soprano II) sings with its base part's
+    this.partModels = cfg.models && !Warble.native() ? Object.fromEntries(Object.entries(cfg.models).map(([k, m]) => [k, { url: new URL(m.model, base).href, sha256: (m.sha256 || "").toLowerCase() }])) : null;
     this.tiers = (cfg.tiers || []).map((t) => ({ ...t, url: new URL(t.url, base).href }));
     this.files = (cfg.files || []).map((t) => ({ ...t, url: new URL(t.url, base).href })); // needed by every tier
     this.workers = [];
@@ -130,11 +137,11 @@ export class Warble {
     return this.ready;
   }
 
-  async boot(onProgress) {
-    const want = (this.cfg.sha256 || "").toLowerCase();
+  /** One model's bytes: from IndexedDB by its sha256, else downloaded (and saved). */
+  async fetchModel(url, want, onProgress) {
     let bytes = want ? await idbGet(want) : null;
     if (!bytes) {
-      const r = await fetch(this.modelUrl);
+      const r = await fetch(url);
       if (!r.ok) throw new Error(`the singing model could not be downloaded (${r.status})`);
       const total = Number(r.headers.get("content-length")) || 0;
       const parts = [];
@@ -152,19 +159,34 @@ export class Warble {
       bytes = all.buffer;
       const sum = await sha256(bytes);
       if (want && sum && sum !== want) throw new Error("the singing model arrived damaged (checksum); try again");
-      if (want) idbPutOnly(want, bytes);
+      if (want) await idbPutOnly(want, bytes);
+    }
+    return bytes;
+  }
+
+  async boot(onProgress) {
+    const cores = navigator.hardwareConcurrency || 4;
+    let plan; // one { key, bytes } per worker
+    if (this.partModels) {
+      const ks = Object.keys(this.partModels);
+      plan = [];
+      for (const [i, k] of ks.entries()) {
+        const m = this.partModels[k];
+        plan.push({ key: k, bytes: await this.fetchModel(m.url, m.sha256, (f, text) => onProgress((i + f) / ks.length, text)) });
+      }
+    } else {
+      const bytes = await this.fetchModel(this.modelUrl, (this.cfg.sha256 || "").toLowerCase(), onProgress);
+      plan = Array.from({ length: Math.max(1, Math.min(4, cores - 1)) }, () => ({ key: null, bytes }));
     }
     onProgress(1, "Starting the singers…");
-    const cores = navigator.hardwareConcurrency || 4;
-    const n = Math.max(1, Math.min(4, cores - 1));
     const t0 = performance.now();
-    this.workers = await Promise.all(Array.from({ length: n }, () => new Promise((res, rej) => {
+    this.workers = await Promise.all(plan.map(({ key, bytes }) => new Promise((res, rej) => {
       const w = new Worker(new URL("./worker.js", import.meta.url), { type: "module" });
       w.onmessage = (ev) => {
-        if (ev.data.type === "ready") { w.onmessage = (e) => this.onMessage(w, e.data); res(w); } else if (ev.data.type === "error") rej(new Error(ev.data.message));
+        if (ev.data.type === "ready") { w.key = key; w.onmessage = (e) => this.onMessage(w, e.data); res(w); } else if (ev.data.type === "error") rej(new Error(ev.data.message));
       };
       w.onerror = (e) => rej(new Error(e.message || "the singing worker failed to start"));
-      w.postMessage({ type: "init", bytes: bytes.slice(0), threads: 1 }, []);
+      w.postMessage({ type: "init", bytes: key ? bytes : bytes.slice(0), threads: 1 }, []);
     })));
     this.busy = new Map(this.workers.map((w) => [w, null]));
     this.queue = [];
@@ -269,7 +291,9 @@ export class Warble {
   render(T, v, gen, onFrames) {
     return new Promise((resolve, reject) => {
       const id = this.nextId++;
-      const job = { id, gen, msg: { type: "render", id, T, speaker: v.speaker, part: v.part ?? "SATB".indexOf(v.voice), ph: v.ph, prog: v.prog, f0: v.f0, chunk: 344 }, resolve, reject, onFrames, t0: 0 };
+      // with a model per part: the part's own, else its base part's (S2 -> S), else the first
+      const key = this.partModels ? [v.voice, String(v.voice || "")[0]].find((k) => this.partModels[k]) || Object.keys(this.partModels)[0] : null;
+      const job = { id, gen, key, msg: { type: "render", id, T, speaker: v.speaker, part: v.part ?? "SATB".indexOf(v.voice), ph: v.ph, prog: v.prog, f0: v.f0, chunk: 344 }, resolve, reject, onFrames, t0: 0 };
       this.jobs.set(id, job);
       this.queue.push(job);
       this.pump();
@@ -279,7 +303,9 @@ export class Warble {
   pump() {
     for (const [w, cur] of this.busy) {
       if (cur || !this.queue.length) continue;
-      const job = this.queue.shift();
+      const qi = this.queue.findIndex((j) => (j.key || null) === (w.key || null)); // a part's job goes to the worker with its model
+      if (qi < 0) continue;
+      const job = this.queue.splice(qi, 1)[0];
       this.busy.set(w, job);
       job.t0 = performance.now();
       w.postMessage(job.msg);
@@ -307,7 +333,10 @@ export class Warble {
   /** Is the singing model saved on this device (no download needed)? */
   async saved() {
     if (this.nativeEngine) return !!Warble.nativeEngines()?.[this.nativeEngine]?.ready;
-    const sha = (this.cfg.sha256 || "").toLowerCase(); return !!sha && idbHas(sha);
+    const shas = shasOf(this.cfg, !!this.partModels);
+    if (!shas.length || (this.partModels && shas.length < Object.keys(this.partModels).length)) return false;
+    for (const sha of shas) if (!(await idbHas(sha))) return false;
+    return true;
   }
   /** The app's engines (available().engines), or null for an app with Warble only / no app. */
   static nativeEngines() { try { return JSON.parse(Warble.native()?.available() || "null")?.engines || null; } catch { return null; } }
@@ -342,7 +371,7 @@ export async function loadSinging(urls, page = location.href) {
       // voices (an older engine) still gets the first voice it can sing, so it never loses live singing
       let list = all.filter((c) => c.enabled !== false);
       if (!list.length && all.length) list = [all[0]];
-      Warble.keep = new Set(list.map((c) => (c.sha256 || "").toLowerCase()).filter(Boolean));
+      Warble.keep = new Set(list.flatMap((c) => shasOf(c, !Warble.native())));
       const voices = [];
       for (const [i, c] of list.entries()) {
         const w = new Warble(i === 0 && c.engine !== "leap" ? { ...c, id: "", copyId: c.id } : c, base); // (its name by its real id)
@@ -350,8 +379,8 @@ export async function loadSinging(urls, page = location.href) {
         // offered only where it can sing: the model saved on this device, or reachable
         const sha = (c.sha256 || "").toLowerCase();
         const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };
-        if (!(sha && (appHas() || (await idbHas(sha))))) {
-          const ok = await fetch(w.modelUrl, { method: "HEAD", signal: within(8000) }).then((x) => x.ok, () => false);
+        if (!(sha && (appHas() || (await idbHas(sha)))) && !(w.partModels && (await w.saved()))) {
+          const ok = await fetch(w.partModels ? Object.values(w.partModels)[0].url : w.modelUrl, { method: "HEAD", signal: within(8000) }).then((x) => x.ok, () => false);
           if (!ok) continue;
         }
         voices.push(w);

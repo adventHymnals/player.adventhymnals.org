@@ -242,7 +242,15 @@ const singingReady = (async () => {
     } catch { /* nothing saved */ }
   }
   return loadSinging([...new Set([...urls, `${DATA}data/singing.json`, "data/singing.json"])], location.href);
-})().then((c) => { singingCfg = c; offerLiveVoices(); if (DATA) refreshSinging(); });
+})().then((c) => { singingCfg = c; moveToV5(); offerLiveVoices(); if (DATA) refreshSinging(); });
+/** Warble v5 is the main live voice (23 Nov 2026): once per browser, a listener who never chose a singer, or whose choice
+ *  was the earlier usual live voice (Warble v3, "warble"), gets it; every other choice is kept. Not in the app: it keeps
+ *  its own choice and makes this move itself. */
+function moveToV5() {
+  if (APP || store.get("movedV5", false) || !liveVoice("warble-v5")) return;
+  store.set("movedV5", true);
+  if (!state.singEngine || state.singEngine === "warble") { state.singEngine = "warble-v5"; save("singEngine"); }
+}
 /** The app: the saved list of singers opened the player at once; the site's is fetched straight after, on
  *  every start (not only by the 6-hourly check), and when it differs it takes over at once and is saved.
  *  (A changed list of live voices took up to 6 hours to reach a phone.) */
@@ -260,7 +268,7 @@ async function refreshSinging() {
     await c.put(SINGING_SAVED, new Response(text, { headers: { "Content-Type": "application/json" } }));
     // the live voices offered before go; the new list's are offered (the first keeps its place as "warble")
     for (const w of singingCfg.voices) if (!fresh.voices.some((f) => f.cfg?.sha256 === w.cfg?.sha256)) w.cancelAll?.();
-    singingCfg = fresh;
+    singingCfg = fresh; moveToV5();
     offerLiveVoices();
     syncSungControls();
     syncSingersBtn();
@@ -1419,7 +1427,7 @@ function chooseSingers(from, always = false) {
     // the selection in words too: "v1: Recorded singers; …"
     el.textContent = pick === "instrumental" ? `${COPY.instruments}: ${COPY.instrumentsLine}` : pick === "ask" ? `${COPY.ask}: ${COPY.askLine}` : c ? `${c.short}: ${c.state || c.line}` : "";
     if (c?.w && !(await c.w.saved())) {
-      const mb = c.w.nativeEngine ? Math.round((Warble.nativeEngines()?.[c.w.nativeEngine]?.size || 0) / 1e6) : 17; // the app says how big its tier is
+      const mb = c.w.nativeEngine ? Math.round((Warble.nativeEngines()?.[c.w.nativeEngine]?.size || 0) / 1e6) : c.w.partModels ? 16 * Object.keys(c.w.partModels).length : 17; // the app says how big its tier is; a voice sung from one 16 MB file per part
       if (pick === c.engine && COPY.firstUse(mb)) el.textContent += `${el.textContent ? " · " : ""}${COPY.firstUse(mb)}`;
     }
   };

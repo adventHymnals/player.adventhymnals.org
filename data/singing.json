@@ -24,6 +24,42 @@
    "enabled": true
   },
   {
+   "id": "v5",
+   "label": "Warble v5",
+   "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-b6c6bf542792.onnx",
+   "sha256": "b6c6bf542792d84105b8a0e7451dd37e0ca37fdae73d3bf715353cc130ee4946",
+   "version": "warble-v5 2026-11-23",
+   "speakers": {
+    "S": 1,
+    "A": 2,
+    "T": 3,
+    "B": 4
+   },
+   "models": {
+    "S": {
+     "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-91600ccca9c7.onnx",
+     "sha256": "91600ccca9c7cb42ba685303cbe2b55eca46fa057ed63fa67f6d24c4247e7b48"
+    },
+    "A": {
+     "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-acaa019592e7.onnx",
+     "sha256": "acaa019592e7e54ed118e8ea3da5755e7febea45adaf9cdfdf5738f7b2c6922c"
+    },
+    "T": {
+     "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-66c5fbdfbbc4.onnx",
+     "sha256": "66c5fbdfbbc4318a2a5b6c918fc40a887cd5a362e1052af9b04bcb372dbc49ba"
+    },
+    "B": {
+     "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-e65b0daa028b.onnx",
+     "sha256": "e65b0daa028bc9cb14a03a7a31134e470a12295a821c025c29e738fd8e2d99bf"
+    }
+   },
+   "requires": [
+    "cs",
+    "v5"
+   ],
+   "enabled": true
+  },
+  {
    "id": "v2",
    "label": "Live singers v2",
    "model": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/warble/warble-int8-e1155fc4dc1f.onnx",

@@ -23,6 +23,8 @@ export const SINGERS = {
   v3: entry("warble", "Warble", 3, 13, "Usual choice; any hymn, key or speed"),
   // a test build's own voice (the app's voices(), 19 Nov): Warble's network with the app's own singing of it
   v7: entry("warble", "Warble", 4, 14, "Newest; clearer, steadier high notes"),
+  // the main live voice (23 Nov 2026; line: ChatGPT with the copy rules, 23 Nov)
+  v5: entry("warble", "Warble", 5, 15, "Main voice; more natural, distinct voices"),
   leap: entry("weaver", "Weaver", 1, 21, "Fuller voices; needs a stronger phone"),
   stems: entry("recorded", "Recorded", 1, 31, "Computer-made singing; available for some hymns"),
   "stems-v2": entry("recorded", "Recorded", 2, 32, "Same recordings, sounding like other singers; fewer hymns"),
