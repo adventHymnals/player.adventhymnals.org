@@ -29,6 +29,11 @@ export const SINGERS = {
 };
 // the credit line under the score, one per singer group (final, approved 18 Nov from the voice peer's facts; the
 // app's Settings carry the same lines; no LUNAI link exists, so none is given)
+// ONE switch for every voice credit the page shows (the line under the score, in a made video's details). Off during
+// closed testing (Brian, 23 Nov 2026): after the hymn's own copyright notice the line shows the voice's NAME only
+// ("Warble v5", "Weaver v1", "Recorded v1"), no dataset, licence, paper or source for any voice. true brings the
+// full credit lines back. The hymn's copyright notice (#copyright) is not a voice credit and always shows.
+export const SHOW_VOICE_CREDITS = false;
 const CREDIT_V23 = "Warble v1 and v2: singers from GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.";
 export const CREDITS = {
   v1: CREDIT_V23, v2: CREDIT_V23,

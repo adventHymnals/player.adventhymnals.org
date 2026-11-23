@@ -21789,6 +21789,15 @@
   "v": "7f6c119ce630bbb12bff61f389c3c344454fd25f749b082d731eae05de0e8bd9"
  },
  {
+  "id": "WN-8",
+  "book": "WN",
+  "number": "8",
+  "title": "Winji Yuakna Inyisa Ngwononi",
+  "path": "data/WN/8.json",
+  "english": "Come, Great Deliverer, Come",
+  "v": "0486015633011755c06d444d580b79997bf8740ed7479f9431ab1fef8b2eacdc"
+ },
+ {
   "id": "WN-9",
   "book": "WN",
   "number": "9",
@@ -21807,6 +21816,15 @@
   "sv": "937e8ed822abeb7ef756194c67e19d03ebebf94574c7ca41249e14daaa43667d",
   "english": "Come, Thou Fount of Every Blessing",
   "v": "eb5a5c5ef59365c1f797e1682e00ebe84ee6eb5a1315122a965ef4f42af3756e"
+ },
+ {
+  "id": "WN-11",
+  "book": "WN",
+  "number": "11",
+  "title": "Yesu Isesingo",
+  "path": "data/WN/11.json",
+  "english": "Jesus, Thou Hast Promised",
+  "v": "88157f9c6e949f20a0d991b35de148f62608060b60b2abc4c76f93887a10c7e4"
  },
  {
   "id": "WN-12",
@@ -21829,6 +21847,15 @@
   "sv": "0e0e0f38c4450ddb1be1a434287d729b555588b4ce290b708eb5d5aa0ee1d222",
   "english": "Speak to My Soul, Dear Jesus",
   "v": "6201ff30e2583353ffa0aff209125b8e45c963e1fbf7ae0e11726fd5dc377fc8"
+ },
+ {
+  "id": "WN-16",
+  "book": "WN",
+  "number": "16",
+  "title": "Ruoth Maler, Adwari Pile",
+  "path": "data/WN/16.json",
+  "english": "Blessed Lord, How Much I Need Thee!",
+  "v": "8e32476f41525bc9f3835806f06b082f64245ae87ebd73d8f931e29164b37276"
  },
  {
   "id": "WN-19",
@@ -21863,6 +21890,15 @@
   "v": "0cb0b4f376e089765c4fc50c89a5b22c52031c4e9a2e64cc9b1f6224893b0934"
  },
  {
+  "id": "WN-24",
+  "book": "WN",
+  "number": "24",
+  "title": "Jawarna To Ni Yesu",
+  "path": "data/WN/24.json",
+  "english": "O Jesus, My Redeemer",
+  "v": "73f67872cbe591d681344bddadac4b0167a1a956664acdc0e1ef980e86e3e8f9"
+ },
+ {
   "id": "WN-26",
   "book": "WN",
   "number": "26",
@@ -21882,6 +21918,15 @@
   "sung": true,
   "sv": "1e4c5ac0c7297a0e47d07ae1e65ee329782b697debed421d491150dee83ff9c3",
   "v": "a9dd406968f20a780bb85add0c3d59388fd3e2dc442eeeb3b46280e16f05e23d"
+ },
+ {
+  "id": "WN-30",
+  "book": "WN",
+  "number": "30",
+  "title": "Apako Hera Nyasaye Wuora",
+  "path": "data/WN/30.json",
+  "english": "Beauty for Ashes",
+  "v": "3ef2a58d3f67949c35f5d81c45c749d8f327356ecd55fdb686216f2a4aaeec7a"
  },
  {
   "id": "WN-33",
@@ -22054,6 +22099,15 @@
   "sv": "58f239bb20fb657c3ceb14437ee9593f8b94761522819e135ef2620cd1bf1195",
   "english": "Holy Spirit, Faithful Guide",
   "v": "1110a495a5bbc612f661e99cfd3b10ba0515cd2ebea89f8fa4b26756634ac01e"
+ },
+ {
+  "id": "WN-59",
+  "book": "WN",
+  "number": "59",
+  "title": "Muya Maler, Winj Alamwa",
+  "path": "data/WN/59.json",
+  "english": "Spirit Divine",
+  "v": "baaad11a1d4ede4e990c190a402826091d4c9a0c3820495cbe92bd05ddb0293e"
  },
  {
   "id": "WN-61",
@@ -22269,6 +22323,24 @@
   "v": "98650783ef34d1eaa5fa3b0965a020510eea742983a4318fd190a0e2a6072de8"
  },
  {
+  "id": "WN-79",
+  "book": "WN",
+  "number": "79",
+  "title": "Kik Ibadhri Ni Tich",
+  "path": "data/WN/79.json",
+  "english": "Ask Not to Be Excused",
+  "v": "a084196f6d6756b4300c2e0a3d5a79d7126ed35c56aa38df72e26ea9348318fb"
+ },
+ {
+  "id": "WN-81",
+  "book": "WN",
+  "number": "81",
+  "title": "Tiuru, Yesu'iro",
+  "path": "data/WN/81.json",
+  "english": "Work, for the Night Is Coming",
+  "v": "7fc2c69e5e24b1ec0a0cbd3f1ba4c5c6ea6f6d08efe4e1c13da35539dc9eef0b"
+ },
+ {
   "id": "WN-83",
   "book": "WN",
   "number": "83",
@@ -22307,6 +22379,15 @@
   "v": "a7e1e5f37346fbeb398aa0dc8f43600eaeea8b3d8607f5a1d089d6fbe8a650b2"
  },
  {
+  "id": "WN-89",
+  "book": "WN",
+  "number": "89",
+  "title": "En Madhiyo Tich Gi Chandruok",
+  "path": "data/WN/89.json",
+  "english": "He That Goeth Forth",
+  "v": "d39f3e45f05adbd533a66688bc0297932a728ce4a7efdfea8ef0e4f95df90f61"
+ },
+ {
   "id": "WN-95",
   "book": "WN",
   "number": "95",
@@ -22334,6 +22415,15 @@
   "sung": true,
   "sv": "146743543830f3d5cb25814a148e09ac1cf99502f798ba31851d586f87b499ed",
   "v": "658c3a8d21e6387bfbc001ab9f24d16b6fa72192085ab0d0fd2ff6404df1d4ac"
+ },
+ {
+  "id": "WN-103",
+  "book": "WN",
+  "number": "103",
+  "title": "Chungi Jakristo",
+  "path": "data/WN/103.json",
+  "english": "Sound the Battle Cry",
+  "v": "baa3dcdcaa9819454a36d490d76883794e7ba6f802ad594801e97c5f8e7c8430"
  },
  {
   "id": "WN-110",
@@ -22372,8 +22462,8 @@
   "path": "data/WN/112.json",
   "sung": true,
   "sv": "779a919b7b1fd2d036fbee14d48305318bdafe217f2eda5ec1f1001d4c4dd52d",
-  "english": "Soldiers of Christ, Arise",
-  "v": "9c28b8f2320020aeceeefbb526a0c1d82278fec4d984e6628e1a5a00072ddec1"
+  "english": "Stand Up! Stand Up for Jesus",
+  "v": "7f762314c98750dc2fb6a9361b2da66a66c8a5afab88d88c568bdd11f33bad2c"
  },
  {
   "id": "WN-116",
@@ -22404,6 +22494,15 @@
   "sung": true,
   "sv": "362b5f1a9ef7bd9d7c237f38112ae64b6ccb2981b5f3019ccebd8398d5e056f1",
   "v": "2891b24cb9d00a9d6b353d8c0248019c00beebc6cf0f94dcafef3a72b2c9c069"
+ },
+ {
+  "id": "WN-129",
+  "book": "WN",
+  "number": "129",
+  "title": "In Odira Mar Nyasaye",
+  "path": "data/WN/129.json",
+  "english": "Welcome, Welcome, Day of Rest",
+  "v": "e1a935cf53f09c0b5c7f3ed6582208449e8d4aa9e984cc5df0f536e53c92507a"
  },
  {
   "id": "WN-133",
@@ -22543,6 +22642,15 @@
   "title": "Wasewinjo Wach Maber",
   "path": "data/WN/147b.json",
   "v": "24fd9549bbdf77140b1d040fb9431c036c1584a68bb120f04c8cfba1d8c950e4"
+ },
+ {
+  "id": "WN-149",
+  "book": "WN",
+  "number": "149",
+  "title": "Dhoranga Polo Yawore",
+  "path": "data/WN/149.json",
+  "english": "There Is a Gate That Stands Ajar",
+  "v": "d582a89bf0d4ec87d373e0700d2760119fa8c552467670e5242269e050853a77"
  },
  {
   "id": "WN-150",
@@ -22765,6 +22873,15 @@
   "sv": "d4d1dc96218c8aaa679d8ee96dbccd4e27881186b4c9b942e8487d718a918f75",
   "english": "Showers of Blessing",
   "v": "1311347c5acfa727bdd4a793c562f536b16453d46330de48de6ba333682dad8c"
+ },
+ {
+  "id": "WN-180",
+  "book": "WN",
+  "number": "180",
+  "title": "Un Muhero Ruoth Polo",
+  "path": "data/WN/180.json",
+  "english": "Sweet the Time",
+  "v": "1360ccfa78e928b7e130d305e04b48d452973207958afbe0d4102fc9a31e32c6"
  },
  {
   "id": "WN-182",
@@ -23092,6 +23209,15 @@
   "v": "afce5942b45a20d2073576e22a9844b5675a21a4b41695fa739f38d57558a082"
  },
  {
+  "id": "WN-232",
+  "book": "WN",
+  "number": "232",
+  "title": "In Wang Yorwa",
+  "path": "data/WN/232.json",
+  "english": "Thou Art the Way",
+  "v": "38f862cc985959752c4084c3b103930bf0feeb9972281fa62151720b949e22dc"
+ },
+ {
   "id": "WN-235",
   "book": "WN",
   "number": "235",
@@ -23125,6 +23251,15 @@
   "v": "3bac2bd1d6f4c299279a3f0190ed727a2cbc5f58ed1ef67cfe146f4b32663e3d"
  },
  {
+  "id": "WN-247",
+  "book": "WN",
+  "number": "247",
+  "title": "Keyo Mar Pinyni",
+  "path": "data/WN/247.json",
+  "english": "Hasten On, Glad Day",
+  "v": "77a53632543c7eebee9a33ffe9c90cd3e914902086c5d5f236e2b7346ddd2b93"
+ },
+ {
   "id": "WN-249",
   "book": "WN",
   "number": "249",
@@ -23134,6 +23269,15 @@
   "sv": "8c11f055337293b959fd3487d6f89ab32d26568efade5be4a3a44e05daa5146d",
   "english": "Is My Name Written There?",
   "v": "6b73783d664ad06048925d31793f6c281c9c4969dc8e98b484356d30280f20e1"
+ },
+ {
+  "id": "WN-250",
+  "book": "WN",
+  "number": "250",
+  "title": "Ruodhwa Yesu Oseluongowa",
+  "path": "data/WN/250.json",
+  "english": "Called to the Feast",
+  "v": "9e1d29b496e0575d1b25c64d491054e17938c10d72b8acc034de7d0a792efd76"
  },
  {
   "id": "WN-251",
@@ -23221,6 +23365,15 @@
   "v": "20601a1045775a0af7ac0dd731cc5d5421c9da99798df61d7eb498964c4ee441"
  },
  {
+  "id": "WN-282",
+  "book": "WN",
+  "number": "282",
+  "title": "Yesu, Rembi Ma Nosechwer",
+  "path": "data/WN/282.json",
+  "english": "The Cleansing Wave",
+  "v": "9da2fc49a64e84e532b3a0a30c922617f94c2ee8512565ea63f0beca416e8302"
+ },
+ {
   "id": "WN-283",
   "book": "WN",
   "number": "283",
@@ -23281,6 +23434,15 @@
   "v": "d153b01ba655febb1607ae5d485d0717b755303b7b62d401b96c8a37d8a5581d"
  },
  {
+  "id": "WN-289",
+  "book": "WN",
+  "number": "289",
+  "title": "An Amor Ngang",
+  "path": "data/WN/289.json",
+  "english": "Jesus Loves Even Me",
+  "v": "99be7ff50f2adce16c5a1f73de6b6e843b4da8b33429f9688fba1400f09e9be8"
+ },
+ {
   "id": "WN-291",
   "book": "WN",
   "number": "291",
@@ -23289,6 +23451,51 @@
   "sung": true,
   "sv": "da51120f1c7c5adc9104d549059475994e417f1623e22dc6d6a83f895ec3cf3e",
   "v": "eb1cfc23abb069ef34c87792fd1e82159f5d2073b9c919ffb107eacf888455e3"
+ },
+ {
+  "id": "WN-294",
+  "book": "WN",
+  "number": "294",
+  "title": "Wan Nyithind Ruoth Yesu",
+  "path": "data/WN/294.json",
+  "english": "Singing as We Journey",
+  "v": "1bb805a959fd6b3cc234fc7011e7fbfbea26494beae7b1853e6ad0aecdf2f72c"
+ },
+ {
+  "id": "WN-295",
+  "book": "WN",
+  "number": "295",
+  "title": "Luetega Noti Tich Mar Ruoth Yesu",
+  "path": "data/WN/295.json",
+  "english": "Two Little Hands",
+  "v": "d6cb5fadc896d312d6688d5400a22e1dac5c15b69a04d89b25b165349094c869"
+ },
+ {
+  "id": "WN-296",
+  "book": "WN",
+  "number": "296",
+  "title": "Chon Nyithindo Nower Mamit",
+  "path": "data/WN/296.json",
+  "english": "Happy Songs",
+  "v": "74f9ee879581bf7b8924daef1ae56c55191b2ce980966d5d061f939e250031bb"
+ },
+ {
+  "id": "WN-297",
+  "book": "WN",
+  "number": "297",
+  "title": "Ruodha Dak Imiya Tich",
+  "path": "data/WN/297.json",
+  "english": "Master, Hast Thou Work for Me",
+  "v": "b5e8f3110dfd79465ee6125d0c177924f9aa26f8e12e76fd838179ad38e96e20"
+ },
+ {
+  "id": "WN-300",
+  "book": "WN",
+  "number": "300",
+  "title": "Yesu Analu Bang'i",
+  "path": "data/WN/300.json",
+  "english": "Jesus, I Will Follow Thee",
+  "v": "f84639b51bceec2503e95239c0c00c61fe5066091fc73aa79b721459aa4f79f7"
  },
  {
   "id": "WN-301",
@@ -23319,6 +23526,15 @@
   "sv": "b6c21d44ea709922439344ac0e4c600e560a8c4b2e4b66ec7fe127fc061dd928",
   "english": "When He Cometh",
   "v": "a84e498d1b7d3e43446016d2cb9f3fc8cbda98402cdb69758b603493809bb822"
+ },
+ {
+  "id": "WN-303",
+  "book": "WN",
+  "number": "303",
+  "title": "Nyasaye Oneno Ka Winyo Odwaro Gore Piny",
+  "path": "data/WN/303.json",
+  "english": "He Loves Me, Too",
+  "v": "b4a6e6c408b40d275d5ea07c90fdb198ecfa58f7706b24faa5121e73f74531f5"
  },
  {
   "id": "WN-308",
@@ -23384,5 +23600,14 @@
   "sv": "3822a91531ad7c393fe3578c35274a9e6dd52b9b4e121571f1c30d3f64bda1ee",
   "english": "Faith of Our Fathers",
   "v": "390c13d5b63ea86b829abcee34521c4191b2fdf7ed7a6a59c7eb5f79982de6eb"
+ },
+ {
+  "id": "WN-328",
+  "book": "WN",
+  "number": "328",
+  "title": "Nyasaye Gotienoni",
+  "path": "data/WN/328.json",
+  "english": "Lord, Keep Us Safe This Night",
+  "v": "afcbd0bc66429372a9c3097c04c44719705216758e933e9eddf9fa0f9a21af72"
  }
 ]

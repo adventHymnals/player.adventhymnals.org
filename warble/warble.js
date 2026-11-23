@@ -2,7 +2,7 @@
 // features here (frontend.js, cheap); the singing is made by a pool of Web Workers, one voice of
 // one pass per job, each worker with its own onnxruntime-web (WASM) session. The result is one
 // AudioBuffer per voice and pass, used exactly like a recorded stem (offsetSec -0.3).
-import { COPY, singerCopy } from "../singers-copy.js";
+import { COPY, CREDITS, SHOW_VOICE_CREDITS, singerCopy } from "../singers-copy.js";
 import { passFrames, SR, LEAD, unsung } from "./frontend.js";
 import { partsOf, partLetters } from "../core.js";
 import { writeBin } from "./bin.js";
@@ -312,7 +312,7 @@ export class Warble {
   /** The app's engines (available().engines), or null for an app with Warble only / no app. */
   static nativeEngines() { try { return JSON.parse(Warble.native()?.available() || "null")?.engines || null; } catch { return null; } }
 
-  credits() { return COPY.credit(this.nativeEngine ? "leap" : this.copyId, this.label); } // the dataset's attribution, under the choice's own name
+  credits() { if (!SHOW_VOICE_CREDITS) return this.label; const id = this.nativeEngine ? "leap" : this.copyId; return !CREDITS[id] && this.cfg.credits ? this.cfg.credits : COPY.credit(id, this.label); } // the dataset's attribution, under the choice's own name
 }
 
 /** data/singing.json -> { default, warble, voices }: voices are the live singers offered (singing.json's

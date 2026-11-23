@@ -5,7 +5,7 @@ import {
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
-import { COPY, SECTIONS, singerCopy } from "./singers-copy.js";
+import { COPY, SECTIONS, SHOW_VOICE_CREDITS, singerCopy } from "./singers-copy.js";
 import { ScoreView } from "./scoreview.js";
 import { engraveKey, getEngraved, putEngraved } from "./engravecache.js";
 import { SolfaView, WordsView } from "./solfa.js";
@@ -1569,8 +1569,9 @@ async function prepareStems() {
     const what = solfaWords ? "singing sol-fa" : "in this key and tempo";
     const far = Math.abs(recTempo / state.tempo - 1) > 0.25 ? ` Recorded at ${recTempo}; this far from it the voices can sound smeared.` : "";
     toast((missing.length ? `Singers ready. Synth until recorded ${what}: ${missing.join(", ")}.` : "Singers ready.") + far, far ? 9000 : 7000, missing.length ? { label: "Record them", fn: renderSingers } : null);
-    // the singers' voices must be credited (their licence); the code credit stays with the code
-    $("credit").textContent = (manifest.credit || "").replace(/;\s*synthesis code.*$/i, "");
+    // the singers' voices must be credited (their licence); the code credit stays with the code. While the switch
+    // in singers-copy.js is off, the voice's name alone ("Recorded v1")
+    $("credit").textContent = SHOW_VOICE_CREDITS ? (manifest.credit || "").replace(/;\s*synthesis code.*$/i, "") : singerCopy(singEngine())?.label || "";
   } catch (err) {
     oops(COPY.noLoad, err, 7000);
   }
