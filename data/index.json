@@ -3868,6 +3868,14 @@
   "v": "9b4f49689645fa4a39548d1754f3d8bce69e874cb49503e13481888280ea3f35"
  },
  {
+  "id": "CH1941-405",
+  "book": "CH1941",
+  "number": "405",
+  "title": "The Lord Is My Shepherd",
+  "path": "data/CH1941/405.json",
+  "v": "03ff178511810fc1db3ca7793de93268f812ea818a184b11da4e4fd27a2e9144"
+ },
+ {
   "id": "CH1941-406",
   "book": "CH1941",
   "number": "406",
@@ -4924,6 +4932,14 @@
   "v": "4993127ce97ac133d20cdd3b4badb6433f0dcafb9b43b8294a35636d508bf9fd"
  },
  {
+  "id": "CH1941-546",
+  "book": "CH1941",
+  "number": "546",
+  "title": "The Coming King Is at the Door",
+  "path": "data/CH1941/546.json",
+  "v": "ece7b8fd3a0c36f29e8d36181857be2214cd46b06d99381a137e6997febded78"
+ },
+ {
   "id": "CH1941-547",
   "book": "CH1941",
   "number": "547",
@@ -5540,6 +5556,14 @@
   "title": "Closer to Thee, My Father, Draw Me",
   "path": "data/CH1941/632.json",
   "v": "1281e258ad0ca35a554eb91d7a1f7e51fb17c8d654d6605ae81c92535c4df7ce"
+ },
+ {
+  "id": "CH1941-634",
+  "book": "CH1941",
+  "number": "634",
+  "title": "One Thing I of the Lord Desire",
+  "path": "data/CH1941/634.json",
+  "v": "e5fbeda955fcc0532c4d5f10eb0513c4baa4069972616c4f6363146ffc4f13e9"
  },
  {
   "id": "CH1941-635",
@@ -11892,6 +11916,22 @@
   "v": "021fa6878f7ef7214bcaa894d8a0cd371a91f4c55f38a1edf41e4151aa795534"
  },
  {
+  "id": "CS1908-787",
+  "book": "CS1908",
+  "number": "787",
+  "title": "Thine Own",
+  "path": "data/CS1908/787.json",
+  "v": "f1dd0a06e378522c931b35beb98e60dccc234441def4d2bc45ad53f13002a995"
+ },
+ {
+  "id": "CS1908-794",
+  "book": "CS1908",
+  "number": "794",
+  "title": "New Every Morning",
+  "path": "data/CS1908/794.json",
+  "v": "05ca58cf5ab822a3e0ce10a4a0c14da50e176848050dbd1c8719f398a728df00"
+ },
+ {
   "id": "CS1908-800",
   "book": "CS1908",
   "number": "800",
@@ -11940,6 +11980,14 @@
   "v": "94c3061c28dedf9042f5ff987965d8fe3ff581d04bfe01a8421ded6a62d35d1d"
  },
  {
+  "id": "CS1908-866",
+  "book": "CS1908",
+  "number": "866",
+  "title": "We'll Never Say Good-By",
+  "path": "data/CS1908/866.json",
+  "v": "71185f44efefc71ce5b8a86687e87a3e3e250a3e3aa78b04e312cc2ab32adaf7"
+ },
+ {
   "id": "CS1908-882",
   "book": "CS1908",
   "number": "882",
@@ -11948,6 +11996,14 @@
   "sung": true,
   "sv": "d5089e0141de5e3619b3894a7a5c2a6599b1290daad535b0b0fb59099d2d07a4",
   "v": "fbcc84e127ea2e754705ad06db5c659f2a52b49f43970e3088cd96c53e366b3d"
+ },
+ {
+  "id": "CS1908-930",
+  "book": "CS1908",
+  "number": "930",
+  "title": "Even at the Door",
+  "path": "data/CS1908/930.json",
+  "v": "21fe10dc4ceb99a79750e8020e556dfd7d91a84c623a52556c67b0843c2e4182"
  },
  {
   "id": "HT1876-1",
@@ -12819,10 +12875,16 @@
   "number": "1",
   "title": "Mtakatifu, Mtakatifu, Mtakatifu",
   "path": "data/NZK/1.json",
-  "sung": true,
-  "sv": "41eb82de52345eb1dba3ccdc0ebc6475aceb5b2423f5dabb0ae16f0f6516f589",
   "english": "Holy, Holy, Holy",
-  "v": "189c5c3701e1d0dded8f940e84e8ce0c7e4bc00c53da2ba735b718b662c0dcea"
+  "v": "fd1bc6f220bfc7a4b20f59846fd36e360a6ca7df68013395802c0f8be89cf7f6"
+ },
+ {
+  "id": "NZK-1b",
+  "book": "NZK",
+  "number": "1b",
+  "title": "Mtakatifu, Mtakatifu, Mtakatifu",
+  "path": "data/NZK/1b.json",
+  "v": "f7aa0d83ac5f43fd9e8ce040660440264812acae2ee3d02a9f77c190d08e5285"
  },
  {
   "id": "NZK-2",
@@ -12831,7 +12893,7 @@
   "title": "Twamsifu Mungu",
   "path": "data/NZK/2.json",
   "english": "We Praise Thee, O God",
-  "v": "440b5c0badb9559ce5fcdefbabc88c46826577c6e23ff4f06a0efeab74f632b0"
+  "v": "443c3b40c677ddcfa12468093c5f120dbce11a34c026e419fb9cb813bf083bf5"
  },
  {
   "id": "NZK-3",
@@ -12853,15 +12915,29 @@
   "v": "4a3f25f611a05d79331ba33c17ac1b93e8189bff6b3ede942ffbf365c9236705"
  },
  {
+  "id": "NZK-3c",
+  "book": "NZK",
+  "number": "3c",
+  "title": "Mungu Atukuzwe",
+  "path": "data/NZK/3c.json",
+  "v": "9fce601e01caf455afc211a3d9494c0859e75f01889094f22987f7b92b01555c"
+ },
+ {
   "id": "NZK-4",
   "book": "NZK",
   "number": "4",
   "title": "Jina La Yesu Salamu",
   "path": "data/NZK/4.json",
-  "sung": true,
-  "sv": "4478b298818ae295c4a56ded96bcce00f30bfb1297dd24302b123e4d9314b12e",
   "english": "All Hail the Power of Jesus' Name",
-  "v": "1ab44cab0c4097e396d1bb51c4300e912c10f6cfe2a1ebda44cacb6f4b71cc9c"
+  "v": "2fa5bdb76208819faa972cb0f199fbfe2e935bbb1d7933f4c8abfaf71df0503c"
+ },
+ {
+  "id": "NZK-4b",
+  "book": "NZK",
+  "number": "4b",
+  "title": "Jina La Yesu Salamu",
+  "path": "data/NZK/4b.json",
+  "v": "ac025a51b899145383e454137cc48f786b3a3b336b8f34191d4cef948e14570e"
  },
  {
   "id": "NZK-5",
@@ -12869,10 +12945,8 @@
   "number": "5",
   "title": "Na Tumwabudu Mfalme Mtukufu",
   "path": "data/NZK/5.json",
-  "sung": true,
-  "sv": "daa94ab90489976d992666c0254fc3ccc7cdbd1ecd3ce6e336f8a97722153279",
   "english": "O Worship the King",
-  "v": "4b26b1df572d426226539bad04f20c8d67a345a6171b5d825fbb95c66b6ddd7b"
+  "v": "f697d4e0977815cc9e0a35e24c4903a377c669f1ba52c7f79eb2962ac0f71a73"
  },
  {
   "id": "NZK-5b",
@@ -12880,7 +12954,15 @@
   "number": "5b",
   "title": "Na Tumwabudu Mfalme Mtukufu",
   "path": "data/NZK/5b.json",
-  "v": "ea32426a8361e9aeb709300186dd49ed91f87d10260eec92955e8dbd75e424dc"
+  "v": "8bc8eb8171ab9c53a798b8ceee030ebf2942aad0b5fc4eccb25c59cfa42d3e48"
+ },
+ {
+  "id": "NZK-5c",
+  "book": "NZK",
+  "number": "5c",
+  "title": "Na Tumwabudu Mfalme Mtukufu",
+  "path": "data/NZK/5c.json",
+  "v": "0cc03fcd008049c7369a69a364bbcc79b0430ca966814e1b8933b966e4eae7b0"
  },
  {
   "id": "NZK-9",
@@ -12895,20 +12977,26 @@
   "id": "NZK-10",
   "book": "NZK",
   "number": "10",
-  "title": "Kristo Wa Neema Zote",
+  "title": "Kristo Wa Neema Yote",
   "path": "data/NZK/10.json",
-  "sung": true,
-  "sv": "3721e12633be06f80e82ba38e8d78cac015acf41f87df3c705a1ae3b6493170c",
   "english": "Come, Thou Fount of Every Blessing",
-  "v": "5d7f974564cd0d12ce5a8337fdf586ec5e3bcfb087c588de14dc21c9d0cb7e4f"
+  "v": "8fbfbb9b3dd2d111ef098716d7a8493d09fba6883b6c531683580b49ab15d8bc"
  },
  {
   "id": "NZK-10b",
   "book": "NZK",
   "number": "10b",
-  "title": "Kristo Wa Neema Zote",
+  "title": "Kristo Wa Neema Yote",
   "path": "data/NZK/10b.json",
-  "v": "10dcaddc54db9ae59fb4c778db2be9832c11ed2cba31f5377ec45f1df9121cb8"
+  "v": "bf1c307a4a29638be3533b482ce259fb5148691546632c72c2125b6c744f4012"
+ },
+ {
+  "id": "NZK-10c",
+  "book": "NZK",
+  "number": "10c",
+  "title": "Kristo Wa Neema Yote",
+  "path": "data/NZK/10c.json",
+  "v": "846e0428a358557457d8e5c767a1e8d02343ee881e46004ecee9af047936d4d4"
  },
  {
   "id": "NZK-11",
@@ -12916,10 +13004,8 @@
   "number": "11",
   "title": "Jina La Bwana Li Heri",
   "path": "data/NZK/11.json",
-  "sung": true,
-  "sv": "f2d1171086f4cd5041cf285a97186a6195cbf15f053cb790ea3a81a98a9293ab",
   "english": "Blessed Be the Name",
-  "v": "067a89aaecd489f01df30af936afd00228e1eb104eed6724e521231d4cf9d7ca"
+  "v": "c1a0c0463abcca93c9280f4d1d975fa14ce35537b6472d031b63502833a67049"
  },
  {
   "id": "NZK-12",
@@ -12928,7 +13014,15 @@
   "title": "Msifu Mungu",
   "path": "data/NZK/12.json",
   "english": "Praise God, From Whom All Blessings Flow",
-  "v": "580b76c73db02a163114b02199983f86ab5ceac7eb024d7042ee49b7aba854bb"
+  "v": "23e8c33c8cab82560494a482e64ff5b53b25fd3a6c48cf6bc319776d97927759"
+ },
+ {
+  "id": "NZK-12b",
+  "book": "NZK",
+  "number": "12b",
+  "title": "Msifu Mungu",
+  "path": "data/NZK/12b.json",
+  "v": "727b824b15da28744a99e2c19c38af95609d6c946b0acfc9a6f23b7cf71493ae"
  },
  {
   "id": "NZK-18",
@@ -12950,7 +13044,7 @@
   "sung": true,
   "sv": "2a23377973f8c8da5bcfd08fb9044b76ee0d4e473cff5c5f2c6d60eab128958d",
   "english": "Glory to His Name",
-  "v": "bef2a8cbb0544ec6adb1780362553de1780974a9c2edb8f94882dae990afb072"
+  "v": "411753b815353f64628eb4c300c0aa44b2af5de3613306b62fca55e2c41f1730"
  },
  {
   "id": "NZK-20",
@@ -12991,15 +13085,21 @@
   "v": "0ec8a8fede7e130fbe9d88007c9f5dfee7aea7fa346d0f2a8e9d6e7fddc82be7"
  },
  {
+  "id": "NZK-22c",
+  "book": "NZK",
+  "number": "22c",
+  "title": "Usinipite Mwokozi",
+  "path": "data/NZK/22c.json",
+  "v": "8f27563b8c64083999d814bc2c31e60dc13fa4260436adf96ec0b3686404fd16"
+ },
+ {
   "id": "NZK-23",
   "book": "NZK",
   "number": "23",
   "title": "Yesu Furaha Ya Moyo",
   "path": "data/NZK/23.json",
-  "sung": true,
-  "sv": "4635ecaad49486f344785162c2b5516ad6725e1dda01e6ef19bcc2ddf583abe9",
   "english": "Jesus, Thou Joy of Loving Hearts",
-  "v": "ec23b27a6a4bbcde179979e21d6bc47421eaadce399421d3b850e809d4a10e94"
+  "v": "c4ed8cd147ef7352317639c3f73d4648683586d762dbc192fb2cd198e775c4ea"
  },
  {
   "id": "NZK-23b",
@@ -13010,15 +13110,21 @@
   "v": "c7014f4233595944e5238970b049b9e17ac9994e593bfb86463d96f3878b9b68"
  },
  {
+  "id": "NZK-23c",
+  "book": "NZK",
+  "number": "23c",
+  "title": "Yesu Furaha Ya Moyo",
+  "path": "data/NZK/23c.json",
+  "v": "0de39c70804d2f83e0a182d21600b97afeb52898ce3f1de3d5f3dd7b6b1444b4"
+ },
+ {
   "id": "NZK-24",
   "book": "NZK",
   "number": "24",
   "title": "Jina Lake Yesu Tamu",
   "path": "data/NZK/24.json",
-  "sung": true,
-  "sv": "876dc58b952b772ff379ba1f4432eb4f729e59873886c9b934e63b12203d9a42",
   "english": "How Sweet the Name of Jesus Sounds",
-  "v": "e041303c886bd67b5745033fb8cf9fbd8d560d73748387d4ebc3828855dd5deb"
+  "v": "e7b016bb9e6110d4c7d14af66bbb31cc01ad9d69d9a97fd3f6710af059e59f2d"
  },
  {
   "id": "NZK-24b",
@@ -13026,7 +13132,15 @@
   "number": "24b",
   "title": "Jina Lake Yesu Tamu",
   "path": "data/NZK/24b.json",
-  "v": "5879a58a578bb2103a54db74d418e2075b38e38d788492c754d67bb61d231f6f"
+  "v": "4928c2008718d02f1a39959e73d01c8de70218fc352e6310033d02029913fd16"
+ },
+ {
+  "id": "NZK-24c",
+  "book": "NZK",
+  "number": "24c",
+  "title": "Jina Lake Yesu Tamu",
+  "path": "data/NZK/24c.json",
+  "v": "1fd3475ecf76f5df526f0f56cceb7ae5b9b7e885205aacb5e556d704e0174672"
  },
  {
   "id": "NZK-25",
@@ -13037,7 +13151,7 @@
   "sung": true,
   "sv": "bc1750ce44aa9358a6bfe350bbfefaf000a06c261dece5ada419a37ce29976d2",
   "english": "Crown Him With Many Crowns",
-  "v": "09c3507f9e00de324f16059ed5f05c6b9b861e14d98bc57510ec36b3492d2d88"
+  "v": "3e9ca389429862e246d1d67dd0e321846365cc610a14c52cd5319a3a2c5c5958"
  },
  {
   "id": "NZK-25b",
@@ -13045,7 +13159,7 @@
   "number": "25b",
   "title": "Taji Mvikeni",
   "path": "data/NZK/25b.json",
-  "v": "121ed3bf139419f901afdd88eafffa939d1e7fb6b20087d7fc38bc269ba2b0e6"
+  "v": "a78534e687d9ef2b4696e5507be74d88d9dda57e94002256455717001e26fe3d"
  },
  {
   "id": "NZK-26",
@@ -13053,10 +13167,16 @@
   "number": "26",
   "title": "Tupe Amani",
   "path": "data/NZK/26.json",
-  "sung": true,
-  "sv": "bf9b48e2baede9a5e6ad7f94990836ac28840d084ffb63bb0e4f1c6ff9e3a499",
   "english": "God the Omnipotent",
-  "v": "01184133f6b72a2fdb380378fa2d74b4f3ea9b07aeeec8cbb4b967285d9f6613"
+  "v": "078446196cf5d6a05775e39bc2275ce46aa1068ddbae54af5e0a3a8a7a97f226"
+ },
+ {
+  "id": "NZK-26b",
+  "book": "NZK",
+  "number": "26b",
+  "title": "Tupe Amani",
+  "path": "data/NZK/26b.json",
+  "v": "c15309d81dc9671bcd8cad617f605c31da6f93b40089eb9e050561254d8fd946"
  },
  {
   "id": "NZK-27",
@@ -13064,10 +13184,8 @@
   "number": "27",
   "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
   "path": "data/NZK/27.json",
-  "sung": true,
-  "sv": "0f4ab49bbedac002278b30b198f50be2329f7a0a9c0d3fc6058a283f432e3c33",
   "english": "Savior, Again to Thy Dear Name",
-  "v": "1b28dbe0534b596efa56dcbc4463bfd84c472909c9736cdeea15a06a9754364e"
+  "v": "2b445dca8182a09ee6de80733c13c3db443bcae07cebf469fcd6af14bbe3479a"
  },
  {
   "id": "NZK-27b",
@@ -13075,7 +13193,7 @@
   "number": "27b",
   "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
   "path": "data/NZK/27b.json",
-  "v": "a5de1a33cb59dce1019ee759ad18e02e6220ad48811102016ebad47e6c82d646"
+  "v": "fd0d9eb4ecaa3efa15c57eb791d49eb5c29244f729c9e8fcfddaf4476c2a16f9"
  },
  {
   "id": "NZK-29",
@@ -13102,10 +13220,16 @@
   "number": "30",
   "title": "Yesu Unipendaye",
   "path": "data/NZK/30.json",
-  "sung": true,
-  "sv": "889fb11107740b1ae783fc0295d1408fa2fa3df23bafee7093d5283beab4aad2",
   "english": "Jesus, Lover of My Soul",
-  "v": "976a7314078f40556532170f18d91724800292509fab644b2b25eac4e1c89b73"
+  "v": "b76ede4f8c93e0e1afafca86d9b7d3055ff49f753be6679c0202b3066fb9ce68"
+ },
+ {
+  "id": "NZK-30b",
+  "book": "NZK",
+  "number": "30b",
+  "title": "Yesu Unipendaye",
+  "path": "data/NZK/30b.json",
+  "v": "0a3bd6051a7128a028618a04b0c96f7ec65d4850c5f821061fb07d24f8531393"
  },
  {
   "id": "NZK-31",
@@ -13170,10 +13294,16 @@
   "number": "36",
   "title": "Siku Kuu",
   "path": "data/NZK/36.json",
-  "sung": true,
-  "sv": "05008883087b8327fb4e4545f311f6706167e1c8d94069a3038f2a8b1b94b359",
   "english": "O Happy Day",
-  "v": "ad38fd10912d83665b64a194ad36e908ae4d39e8b11c47f315a00725e5dd7485"
+  "v": "0013a2166c51704691616b49f602519c3f3dde58a132209d8518249e0ea222a6"
+ },
+ {
+  "id": "NZK-36b",
+  "book": "NZK",
+  "number": "36b",
+  "title": "Siku Kuu",
+  "path": "data/NZK/36b.json",
+  "v": "c9463c315dfe34e2ffb15e903059f8d1f43a77cc0b29b0b0919cfdbf1f4fe468"
  },
  {
   "id": "NZK-37",
@@ -13200,10 +13330,8 @@
   "number": "38",
   "title": "Nasifu Shani ya Mungu",
   "path": "data/NZK/38.json",
-  "sung": true,
-  "sv": "5e52651e85a709983ec3e8fc37f601e0fbbd2f2741104aed87d325de3d000165",
   "english": "I Sing the Mighty Power of God",
-  "v": "94af35a6f9e102517762a1a49a1ef86b044722ff162a1789f19b5dc4e924ad8f"
+  "v": "702e1d20e13cdf0e86b46252fcde37392776cd17e00a72d9ff34d2b268391d87"
  },
  {
   "id": "NZK-38b",
@@ -13211,7 +13339,15 @@
   "number": "38b",
   "title": "Nasifu Shani ya Mungu",
   "path": "data/NZK/38b.json",
-  "v": "9bb1b34805922219931da5d8629c0eeabab0968f4b0c29da5ad167af58790707"
+  "v": "b366a6a392b331cb70f5c003c1226556b9dcbc60b215313ff8c9139fd006ddfe"
+ },
+ {
+  "id": "NZK-38c",
+  "book": "NZK",
+  "number": "38c",
+  "title": "Nasifu Shani ya Mungu",
+  "path": "data/NZK/38c.json",
+  "v": "06374d45e1afb566faa18f90e8b394d74c11d464e235c36646d7d4156cae2fba"
  },
  {
   "id": "NZK-40",
@@ -13233,15 +13369,21 @@
   "v": "b58979702985ebe6e018422f3444fecbf08609fd836035dfb6e93fbc0eed6f8d"
  },
  {
+  "id": "NZK-40c",
+  "book": "NZK",
+  "number": "40c",
+  "title": "Nijaze Sasa",
+  "path": "data/NZK/40c.json",
+  "v": "a1dbd2dba54aaaae7d277274fbd6c34de5f9bc873da6f33c53adc7ca98131380"
+ },
+ {
   "id": "NZK-41",
   "book": "NZK",
   "number": "41",
   "title": "Roho Mtakatifu",
   "path": "data/NZK/41.json",
-  "sung": true,
-  "sv": "b2dfee7e11026ea52b23c5922309f22c80f1c2629f842f3e9209bc132b70f012",
   "english": "Holy Spirit, Faithful Guide",
-  "v": "a65f986e74fb7254ee0bc7ca4d3676647deba187c6baa134e497889829b06a81"
+  "v": "69c4f7f74a63045cf1eefa069f77a8b4c8858cfa7104cb421c44ac70982babdf"
  },
  {
   "id": "NZK-43",
@@ -13279,10 +13421,16 @@
   "number": "45",
   "title": "Mwanga Umo Moyoni",
   "path": "data/NZK/45.json",
-  "sung": true,
-  "sv": "eae34dc468cbe97d7d23769be1b84f3df81519f05a6071b31819c3027d378cd3",
   "english": "Sunlight in the Heart",
-  "v": "dd47a0f0f9ba5f3cb269f75891742dedf206dabf3e2166d051c41fc90119e775"
+  "v": "4cafba08990d48f7147d44209e68af0b859264fea209cb5d3876792499a3dba3"
+ },
+ {
+  "id": "NZK-45b",
+  "book": "NZK",
+  "number": "45b",
+  "title": "Mwanga Umo Moyoni",
+  "path": "data/NZK/45b.json",
+  "v": "31ef9c6e802697d5d8077e2a8dd0f571a665f522797dc23a0c1109c1f08ba584"
  },
  {
   "id": "NZK-46",
@@ -13290,10 +13438,8 @@
   "number": "46",
   "title": "Miguuni Pake Yesu",
   "path": "data/NZK/46.json",
-  "sung": true,
-  "sv": "dbcfabf27621ab1f4ccfcbb193b60af7a8e968cfa725979b660ae559619b6ea7",
   "english": "Sitting at the Feet of Jesus",
-  "v": "e750efcfcc240ede3eacbd1630751cdf314dcdc700f3db2b8f5c9df3a9562dc1"
+  "v": "abd82a5a495d4dfdc28e8147e3ab02154431707ca95c00cfd52e0ad1ca64f973"
  },
  {
   "id": "NZK-47",
@@ -13301,10 +13447,8 @@
   "number": "47",
   "title": "Ni Heri Kifungo",
   "path": "data/NZK/47.json",
-  "sung": true,
-  "sv": "2faa516907667a952e43181272c5787386f44c12e8ca84891a4ae8ccdce771c3",
   "english": "Blest Be the Tie That Binds",
-  "v": "4994921cb48dc78d91a87958cac20d51928a234a276c4b416db8b0c34d75836d"
+  "v": "6cc7fa31d918b83fed507e13f8fcfdb4beda987bd2e8c6606c85ad1e1de96afd"
  },
  {
   "id": "NZK-47b",
@@ -13312,7 +13456,15 @@
   "number": "47b",
   "title": "Ni Heri Kifungo",
   "path": "data/NZK/47b.json",
-  "v": "744cb04c7dbcb43f5074f95b1dfe40a3bf68bd45e1eb4cbbec7c43eb586d31b5"
+  "v": "d7f9c398d58cefeadc143c274a209a4edded31312f54f3ad5d581f5ed0ab6d47"
+ },
+ {
+  "id": "NZK-47c",
+  "book": "NZK",
+  "number": "47c",
+  "title": "Ni Heri Kifungo",
+  "path": "data/NZK/47c.json",
+  "v": "b0fb835810c49bcc822dd3563a61350ed8392ac26b2e29ae2720f7dd3dd247a3"
  },
  {
   "id": "NZK-49",
@@ -13354,20 +13506,26 @@
   "id": "NZK-51",
   "book": "NZK",
   "number": "51",
-  "title": "Kuwa Na Yesu Mwokozi",
+  "title": "Kuwa Na Yesu",
   "path": "data/NZK/51.json",
-  "sung": true,
-  "sv": "05427b8a4566c1e4d446e6ebbd327f6d646e7cb5ec9dcd80e33f98e580081e35",
   "english": "Blessed Assurance",
-  "v": "4c11938316cf64dbc6342e4bd406855c29c93fae74022616d780eed156468fc5"
+  "v": "4015464d7bb7fc12d1d25087b86c27345e4f332738a0bc0bf56b4b5300e0863c"
  },
  {
   "id": "NZK-51b",
   "book": "NZK",
   "number": "51b",
-  "title": "Kuwa Na Yesu Mwokozi",
+  "title": "Kuwa Na Yesu",
   "path": "data/NZK/51b.json",
-  "v": "168f34140c45d79eea2d2980e419f8dbb14d55d34ff7147da1f7b4f526512e44"
+  "v": "fc3b94aa283edc9f74e72b9fefb5bb1458c6c90b7892cde065a377f52abc72e5"
+ },
+ {
+  "id": "NZK-51c",
+  "book": "NZK",
+  "number": "51c",
+  "title": "Kuwa Na Yesu",
+  "path": "data/NZK/51c.json",
+  "v": "782d5dbc70db4c78d4142769118f1cf252647c6a078eb6261aec80b066aff1d6"
  },
  {
   "id": "NZK-52",
@@ -13389,15 +13547,21 @@
   "v": "a26579a193050ab30ca17c0bbfd0e9c5a01829e9c0a27a41b9eae5f4e3f2defa"
  },
  {
+  "id": "NZK-52c",
+  "book": "NZK",
+  "number": "52c",
+  "title": "Nipe Biblia",
+  "path": "data/NZK/52c.json",
+  "v": "29ce1766d120ea7edafce8cd4bc1c48211a7e8ef4b8e4512ed30f54f321fc90a"
+ },
+ {
   "id": "NZK-53",
   "book": "NZK",
   "number": "53",
   "title": "Napenda Kuhubiri",
   "path": "data/NZK/53.json",
-  "sung": true,
-  "sv": "6cb52758c5df0f4f4cca521c9f4340fd725d05827da9b641c65a4420e8e9f2c8",
   "english": "I Love to Tell the Story",
-  "v": "4bc35bb496b56ae78a2f2e89a4a9c70a5a67662376b92ae3b8a294b8b8c14589"
+  "v": "f82e0a5d8f2b152e5a2259e02a299c0cc1cfa741d0331b569c366450ae73480d"
  },
  {
   "id": "NZK-53b",
@@ -13405,7 +13569,7 @@
   "number": "53b",
   "title": "Napenda Kuhubiri",
   "path": "data/NZK/53b.json",
-  "v": "19cdca2ee20eb9692bb81938799bf2f0f1d9fe89ca7fd5a9c5e57c157977d559"
+  "v": "20c4f5949c05c7c5e823538805969fbe9934cf216db6d3566d02c7818c50fd47"
  },
  {
   "id": "NZK-54",
@@ -13427,6 +13591,14 @@
   "v": "af8b6e171ae04ac0c734856931034703c57a18c6f1488a75d7545ff8b72def53"
  },
  {
+  "id": "NZK-54c",
+  "book": "NZK",
+  "number": "54c",
+  "title": "Nataka Nimjue Yesu",
+  "path": "data/NZK/54c.json",
+  "v": "636f2cc4db690c6d67550c9527b5b4dbef748b939b56a84b8d8b48467e22bffb"
+ },
+ {
   "id": "NZK-55",
   "book": "NZK",
   "number": "55",
@@ -13446,23 +13618,37 @@
   "v": "130ec2dd1f03ae76fb3e2fc72bf2d826e0ed01b4511b78bcb1f713df44393845"
  },
  {
+  "id": "NZK-55c",
+  "book": "NZK",
+  "number": "55c",
+  "title": "Twapanda Mapema",
+  "path": "data/NZK/55c.json",
+  "v": "6546b4afa97e00cf68815d5506520c2e8338af26ed0a894453c13fa1829847d9"
+ },
+ {
   "id": "NZK-56",
   "book": "NZK",
   "number": "56",
-  "title": "Waponye Watu",
+  "title": "Waponyeni Watu",
   "path": "data/NZK/56.json",
-  "sung": true,
-  "sv": "1c76a7c897c33b116da19019bed6dbae0b6b0f4382ead0053a7a199d0c1cac62",
   "english": "Rescue the Perishing",
-  "v": "de082bc2ec4b01a611ca67ddf3f258968452a5f71a44843a56b4fc52e4e676f6"
+  "v": "494cc39652daa930df716e50edf2c490bde1c320c345817208bd4dd2fadb782b"
  },
  {
   "id": "NZK-56b",
   "book": "NZK",
   "number": "56b",
-  "title": "Waponye Watu",
+  "title": "Waponyeni Watu",
   "path": "data/NZK/56b.json",
-  "v": "8d745d2daf35f4b31559b81f65a040bdeb8ebc2f7e7e51fdc166dbdc374b09e7"
+  "v": "1cc26852c756fecb46f24c2d3c48bafade17cd4f7b4d066c6eb5841dbfd7bef9"
+ },
+ {
+  "id": "NZK-56c",
+  "book": "NZK",
+  "number": "56c",
+  "title": "Waponyeni Watu",
+  "path": "data/NZK/56c.json",
+  "v": "18f43f206870451499463c9e00d924429a490fd5e0fde8096c6631f8a4696273"
  },
  {
   "id": "NZK-58",
@@ -13473,7 +13659,7 @@
   "sung": true,
   "sv": "b4fb2c221a0480da5d9ef0de0d1e578561ee0ee8229de2eadd544ef3cd6acba8",
   "english": "Will There Be Any Stars in My Crown?",
-  "v": "56f4454ac86eab549c6f5c71d5ae1b0c428fb05f21a304ae29446a675722a8f6"
+  "v": "50f5411a2ab05ed392614e52b230120e919816180e78f9b0699a2e43a05d3715"
  },
  {
   "id": "NZK-61",
@@ -13481,10 +13667,8 @@
   "number": "61",
   "title": "Bwana Nami",
   "path": "data/NZK/61.json",
-  "sung": true,
-  "sv": "51697e5c3992f5fce7715f479ebd717cc771d4e11f0a9b870f2cecc01bc74372",
   "english": "My Lord and I",
-  "v": "de0545df0e71b74ef6554e49cb36edcdcf136de8e9807acd1ee8753cb1766a62"
+  "v": "ca61af2f6e6089f61c1a7d61d2475c3fcabb6269d2ae7c0c1204e97f18b640fb"
  },
  {
   "id": "NZK-61b",
@@ -13492,7 +13676,15 @@
   "number": "61b",
   "title": "Bwana Nami",
   "path": "data/NZK/61b.json",
-  "v": "7c455171cc33f8ccbe5c21ce7e785ab0d5f2c7202ca0462d23049de7c721474f"
+  "v": "24c8b5b09bc28b6acad71a6dddf8d47e1cc0248ac04bd0afd8851705ce7c638a"
+ },
+ {
+  "id": "NZK-61c",
+  "book": "NZK",
+  "number": "61c",
+  "title": "Bwana Nami",
+  "path": "data/NZK/61c.json",
+  "v": "61ca867c55803919b479cebef0b3431eba101f647e21a0244a7cd34cc16a7ebc"
  },
  {
   "id": "NZK-64",
@@ -13511,10 +13703,16 @@
   "number": "65",
   "title": "Twendeni Askari",
   "path": "data/NZK/65.json",
-  "sung": true,
-  "sv": "aa3a0f8911313612cfc6dc96f741c9151dca8cf1878e3642430acb0505d6cc09",
   "english": "Onward, Christian Soldiers",
-  "v": "87772bb0dd91bceae299d133863ce590a597a668ae551faa33d7e30c7124d273"
+  "v": "301183097315372811484c8409d23f60b7e44b1748d84bccef6fdbfd2ae97642"
+ },
+ {
+  "id": "NZK-65b",
+  "book": "NZK",
+  "number": "65b",
+  "title": "Twendeni Askari",
+  "path": "data/NZK/65b.json",
+  "v": "158b401057606d2508cde0436dcfad917e946e95e49d00b9a641b2ee5c95e962"
  },
  {
   "id": "NZK-66",
@@ -13522,10 +13720,8 @@
   "number": "66",
   "title": "Roho Yangu Amka Sasa",
   "path": "data/NZK/66.json",
-  "sung": true,
-  "sv": "5fb679e105f5f6907a407d3a81a97b15c85d6d4b8fc822f0a14d2dc1b6b4933b",
   "english": "Awake, My Soul",
-  "v": "084ee5a6c09bc716c2b54c5089db9618a4e598b47138709eeb5821ea26bb8c0a"
+  "v": "0ed71f7876ecffc362352ab1e280fd8a2f69beb7d61e6203f61fed8fa53af042"
  },
  {
   "id": "NZK-66b",
@@ -13533,7 +13729,7 @@
   "number": "66b",
   "title": "Roho Yangu Amka Sasa",
   "path": "data/NZK/66b.json",
-  "v": "d224d87e57a3dac01cbe0e13a4f1dd7f22fd022f38b1fa61aa26ccd53f92fb34"
+  "v": "ba4932c34d5a56a9dc1cdb474c9b9aea3a2a3e2bcd1cb9ccc38b6a5894c5930a"
  },
  {
   "id": "NZK-67",
@@ -13564,6 +13760,14 @@
   "title": "Cha Kutumaini Sina",
   "path": "data/NZK/69b.json",
   "v": "73c85c1f0602a1324f96d9a1b32f1de5767afbbf2dce5ac7b1a4d7aff6c1fb92"
+ },
+ {
+  "id": "NZK-69c",
+  "book": "NZK",
+  "number": "69c",
+  "title": "Cha Kutumaini Sina",
+  "path": "data/NZK/69c.json",
+  "v": "5e1c0efbfda117b8a15e7d5b5582b1b1c855a7acfddb60ed6a21a696c6ede42a"
  },
  {
   "id": "NZK-70",
@@ -13599,10 +13803,16 @@
   "number": "76",
   "title": "Mrithi Ufalme",
   "path": "data/NZK/76.json",
-  "sung": true,
-  "sv": "8b9b69a1b3e3e878167a8ea5e1b80710e7d704ef0828359c694011a3b3dffdbf",
   "english": "Heir of the Kingdom",
-  "v": "e6b3ab1d183df787167052bc974627084cea5cc9448de34d3a8fddc28c8a2702"
+  "v": "8934f8892a61129a3fc5677bbcd04b8cc305fd65a7cfc1b574489f24ede9ad32"
+ },
+ {
+  "id": "NZK-76b",
+  "book": "NZK",
+  "number": "76b",
+  "title": "Mrithi Ufalme",
+  "path": "data/NZK/76b.json",
+  "v": "64b1b23ef8f9e85994a19b6c27d786e92fddb7537fbaf3eb29b9851a0e871bf7"
  },
  {
   "id": "NZK-78",
@@ -13610,29 +13820,35 @@
   "number": "78",
   "title": "Mpaka Lini Bwana",
   "path": "data/NZK/78.json",
-  "sung": true,
-  "sv": "3515b6681f70735672b18bb70dbe922653e94d2949e22ab25463bc86268c16ec",
   "english": "How Long, O Lord Our Savior",
-  "v": "ec03058c52bd63821c6654f13a43fcc6c9511fe9b39bedebf8eb6d8e6cda2602"
+  "v": "2fe4143dbcaebfba5482870f2da2304192dc5e04d3ea81ccc5bd0625f99d49d8"
  },
  {
   "id": "NZK-80",
   "book": "NZK",
   "number": "80",
-  "title": "Tupe Moto Wa Injili",
+  "title": "Tupe Moto wa Uhai",
   "path": "data/NZK/80.json",
   "sung": true,
   "sv": "3661afa5a45de2a362fda1ed2825c5117f488f4954e6b93806d0b523bb09c7a5",
   "english": "O for That Flame of Living Fire",
-  "v": "ddce02430d76d8d0979be8f6f21440f0d093a32dfc1d35022bcbfec7c6ca4e57"
+  "v": "73a4c740623156630e0cecd31a184a95df0c362b916e5c3cd6e45aa65b08937b"
  },
  {
   "id": "NZK-80b",
   "book": "NZK",
   "number": "80b",
-  "title": "Tupe Moto Wa Injili",
+  "title": "Tupe Moto wa Uhai",
   "path": "data/NZK/80b.json",
-  "v": "139cf80f932fc78ffa96ac104d88b796c485544561da5f67812f677de0e7c87a"
+  "v": "191f6b89c05abbb07fe0d41a758c71bff9b3a5cb754783256fee6460480f75f4"
+ },
+ {
+  "id": "NZK-80c",
+  "book": "NZK",
+  "number": "80c",
+  "title": "Tupe Moto wa Uhai",
+  "path": "data/NZK/80c.json",
+  "v": "b3d0f2ca9f828677e12aa4ac33215bf87dbd86c386c12e78f47b1145f3367ea4"
  },
  {
   "id": "NZK-81",
@@ -13640,10 +13856,16 @@
   "number": "81",
   "title": "Siku Sita Zimepita",
   "path": "data/NZK/81.json",
-  "sung": true,
-  "sv": "014ab468200f130ee87313ccf95a84fc036688b13663882254a0fdbd84080f49",
   "english": "Another Six Days' Work Is Done",
-  "v": "bc848370b1778dcd951e49e4cc2fe88eb85f7d89b785626ab9d5458efeacd0fa"
+  "v": "e3c45f109410f12052919fe1153bce63a4f88dd53bc3ae281488a4ae0e92461c"
+ },
+ {
+  "id": "NZK-81b",
+  "book": "NZK",
+  "number": "81b",
+  "title": "Siku Sita Zimepita",
+  "path": "data/NZK/81b.json",
+  "v": "8379030734db88cadd43366fd1010581f3087eb5c91d96352b20ab5eb08f7e52"
  },
  {
   "id": "NZK-82",
@@ -13651,10 +13873,8 @@
   "number": "82",
   "title": "Ni Siku Ya Furaha",
   "path": "data/NZK/82.json",
-  "sung": true,
-  "sv": "e5a1945e49cc875ba5daac9dcd47499138c7eff571b749021d0de5748897bbd0",
   "english": "O Day of Rest and Gladness",
-  "v": "35ac8e993d4b657b1edee06bbfa715f656e40b5f54abaddde6048eac52c1a59e"
+  "v": "770a32f09446eb40d57ec1873642a0a9af8c8810746d2000b2620e19a9862a72"
  },
  {
   "id": "NZK-82b",
@@ -13673,15 +13893,21 @@
   "v": "6201286e542d27934297cfcee454d33c27931c30b433cdadd342fc0de89ad137"
  },
  {
+  "id": "NZK-82d",
+  "book": "NZK",
+  "number": "82d",
+  "title": "Ni Siku Ya Furaha",
+  "path": "data/NZK/82d.json",
+  "v": "bf20c9ca4a6e1007565f897c68a4ce4787d8908e09efa3cb8b447cc5fa5c072e"
+ },
+ {
   "id": "NZK-84",
   "book": "NZK",
   "number": "84",
   "title": "Ikumbuke Sabato",
   "path": "data/NZK/84.json",
-  "sung": true,
-  "sv": "dd8081e7802fa8f068244c56282822e83df0285ae2a1c4538b4ab9f102e2da97",
   "english": "Don't Forget the Sabbath",
-  "v": "020b653e21138a43898bd537a483cd6ed63a615eb0169cc031ed28eaaed7911a"
+  "v": "ebd76f5125a9735ead62a71b32a9ad3c7b4d3c6755ff7bf478c7134af0fd6511"
  },
  {
   "id": "NZK-84b",
@@ -13690,6 +13916,14 @@
   "title": "Ikumbuke Sabato",
   "path": "data/NZK/84b.json",
   "v": "c5885059d590c20af3288db58c755552580f5ae84a921b4ae26ae235fb62a2e5"
+ },
+ {
+  "id": "NZK-84c",
+  "book": "NZK",
+  "number": "84c",
+  "title": "Ikumbuke Sabato",
+  "path": "data/NZK/84c.json",
+  "v": "5b6b9e4b9d55d0dc88d64208d441170e48c003d4544c4e826e5c418cc33aa202"
  },
  {
   "id": "NZK-85",
@@ -13711,15 +13945,29 @@
   "v": "3b870d6195a29f078b0fea661bf76d27e00b78d355eabf5e587a856ea7896f6c"
  },
  {
+  "id": "NZK-85c",
+  "book": "NZK",
+  "number": "85c",
+  "title": "Salama Tumepita",
+  "path": "data/NZK/85c.json",
+  "v": "d14709b594080079b92a48d494fc58011642a07c5e9971b94f08e0592f112b67"
+ },
+ {
   "id": "NZK-86",
   "book": "NZK",
   "number": "86",
   "title": "Ukaribie Tena",
   "path": "data/NZK/86.json",
-  "sung": true,
-  "sv": "2b7493085a743e50492da4221a268b0d11f9d3ffee56fef5fc49fd15614fc021",
   "english": "Welcome, Day of Sweet Repose / Welcome, Welcome, Day of Rest",
-  "v": "64f5ef4845b1d2faeb4c808a560f9848ffb967583eb3a75394569dcc99eba98b"
+  "v": "97b1be4bc185453495a744a682f53e0443e1c0d7f931f498afc4f1eca8b30972"
+ },
+ {
+  "id": "NZK-86b",
+  "book": "NZK",
+  "number": "86b",
+  "title": "Ukaribie Tena",
+  "path": "data/NZK/86b.json",
+  "v": "a95d2a43fe170546e7ced4dcb25a894aa576da7e8d9e888c93f28896f8a9bdac"
  },
  {
   "id": "NZK-89",
@@ -13733,15 +13981,29 @@
   "v": "0a050c471b54a96533c79cbc07b6f946a8940e1fe21ba9b88cda9640915295eb"
  },
  {
+  "id": "NZK-89b",
+  "book": "NZK",
+  "number": "89b",
+  "title": "Asubuhi",
+  "path": "data/NZK/89b.json",
+  "v": "66d56bd32ff856063467df636cb2e712c00e02033bdfc64161152539ed27b459"
+ },
+ {
   "id": "NZK-91",
   "book": "NZK",
   "number": "91",
   "title": "Kaa Nami",
   "path": "data/NZK/91.json",
-  "sung": true,
-  "sv": "f234eb1c2504c6248e646a54bdf5e51dafa8a1a401cf0b66904f1a692040ce08",
   "english": "Abide With Me",
-  "v": "0ed034b40dee680ab94ca6e4b60688eadb3dc1c11343fe616c24a38d92a38142"
+  "v": "51b580d33eeb3a82aa2d6c28dc0cb67f80996a4a4dabf427875d4771f66159ba"
+ },
+ {
+  "id": "NZK-91b",
+  "book": "NZK",
+  "number": "91b",
+  "title": "Kaa Nami",
+  "path": "data/NZK/91b.json",
+  "v": "0e938cda19351a38a70ac19bbe5594ad755dbf86a50882a4a1e8794381bb4705"
  },
  {
   "id": "NZK-92",
@@ -13749,10 +14011,8 @@
   "number": "92",
   "title": "Magharibi Jua",
   "path": "data/NZK/92.json",
-  "sung": true,
-  "sv": "a8ebd22ef708fde01954c920e42b0ce9cc242e0841c517df5decd35f813c3209",
   "english": "Day Is Dying in the West",
-  "v": "2c1d7ebe05b1de2e5c651e0f4a44868d444b051968d147e4a2231a421cabe3f9"
+  "v": "d471c76515f0dc64aeae0370892bcee3f1b61be92d198607c52646445c565bc8"
  },
  {
   "id": "NZK-92b",
@@ -13760,7 +14020,7 @@
   "number": "92b",
   "title": "Magharibi Jua",
   "path": "data/NZK/92b.json",
-  "v": "bd1081fb077f4234d28ef85aa85e7397032a4e9c778aa2aebd02c8e201a3a357"
+  "v": "2c570664d8bc40c7b893a4806cad89bc876ca78ebf70e46beb37797ab0415614"
  },
  {
   "id": "NZK-93",
@@ -13772,6 +14032,14 @@
   "sv": "1e152c4456205b3612e42738099ac154802e5b4d30641276846084a5d5917f2c",
   "english": "Sun of My Soul",
   "v": "2ca08617a98490f17a451a5ee521cfaffc8cfde3714598d3ac305c503fc74012"
+ },
+ {
+  "id": "NZK-93b",
+  "book": "NZK",
+  "number": "93b",
+  "title": "Jua La Rohoni Mwangu",
+  "path": "data/NZK/93b.json",
+  "v": "dd48f0f65ab1c31ab8b9f550f92bba1473ce70499a13b9bcdb13d25c02b31ab1"
  },
  {
   "id": "NZK-94",
@@ -13793,15 +14061,21 @@
   "v": "113df45849a8481508269ffa01933207db70294b7c22ca85ace5b3f726b9415c"
  },
  {
+  "id": "NZK-94c",
+  "book": "NZK",
+  "number": "94c",
+  "title": "Po Pote Mashamba Yajaa",
+  "path": "data/NZK/94c.json",
+  "v": "f37a7f244ba908c4cb31b21c8d3b674f13ecb7771419f6138b4b0ed3bb5f1d23"
+ },
+ {
   "id": "NZK-95",
   "book": "NZK",
   "number": "95",
   "title": "Zileteni Zaka Kwa Hazina",
   "path": "data/NZK/95.json",
-  "sung": true,
-  "sv": "f01cb2da23e63d72e16ec5e191c66c335a571b3bccf451b6c994e8a66ccd9864",
   "english": "Bring Ye All the Tithes Into the Storehouse",
-  "v": "e708ce525d7dc703479bdc951f8961db4740fc1b8f682c227da4c7043153b669"
+  "v": "a15c6200ae9e464d83e9544aedf68541971248fda4949f0621b733a4e2438845"
  },
  {
   "id": "NZK-96",
@@ -13846,10 +14120,8 @@
   "number": "101",
   "title": "Yesu Akwita",
   "path": "data/NZK/101.json",
-  "sung": true,
-  "sv": "b37e9c0e345ed741485491d3486f0205600b9c7711efa06af46aa30eb3d64c1d",
   "english": "Jesus Is Calling",
-  "v": "3db7c00dfc90ff50a2467c3f9facd16913a930daa27094f708d409e434ebbdc5"
+  "v": "9a88da7c5d4b65e2a78ba6c9d1fd9187c6eeaafb570ed81d642204f4e6acc5d3"
  },
  {
   "id": "NZK-103",
@@ -13857,10 +14129,8 @@
   "number": "103",
   "title": "Njoni Kwangu",
   "path": "data/NZK/103.json",
-  "sung": true,
-  "sv": "e72fdc14264f014f35ad8ae53511584bd37d71d33ecf0760539563780e8eeaa2",
   "english": "Softly and Tenderly",
-  "v": "4bbaf51759717707d97b5cc1028599df14bf59bdc7700fa09f6db3b53b4a09ac"
+  "v": "9844a86844c30c17dae3078e8171924e283e911d9ae43e6a9f8b5fe31c6b2d96"
  },
  {
   "id": "NZK-103b",
@@ -13868,7 +14138,7 @@
   "number": "103b",
   "title": "Njoni Kwangu",
   "path": "data/NZK/103b.json",
-  "v": "6e7055c2ad8117f9a3c308bda29ddef17222d86411d26b7558b75bac8b711557"
+  "v": "50fcb887590dda4084b1136bab257eaaccbf40ba1ea13706343fdb3631d9e95f"
  },
  {
   "id": "NZK-104",
@@ -13876,21 +14146,35 @@
   "number": "104",
   "title": "Yesu Aliniita, Njoo",
   "path": "data/NZK/104.json",
-  "sung": true,
-  "sv": "941c4167209529bd45ba1d32f57f7de19e6a35235a4f1ae58b509e77fb180975",
   "english": "I Heard the Voice of Jesus Say",
-  "v": "35ad966079d5a364af75c25a4cc0be8b2309a9ae6456b8b09e4bb5889fda724e"
+  "v": "21348bdd96e16f92ae0ae9acd0c60d2ae016b9cf5f1e340a66c02fc6577bc6a4"
+ },
+ {
+  "id": "NZK-104b",
+  "book": "NZK",
+  "number": "104b",
+  "title": "Yesu Aliniita, Njoo",
+  "path": "data/NZK/104b.json",
+  "v": "0d38ff9c66da0fb507e0eb5532d8dcb145fa0f5841cf0513f892d6c4071953dc"
  },
  {
   "id": "NZK-107",
   "book": "NZK",
   "number": "107",
-  "title": "Sauti Ni Yake Bwana",
+  "title": "Nipo Bwana, Nitume",
   "path": "data/NZK/107.json",
   "sung": true,
   "sv": "d7820306e8a09bf4c56f1b1e47b8109020c3f63a233daff929a92f8711d66fe5",
   "english": "Hark! the Voice of Jesus Calling",
-  "v": "883c964edd3b5ffbd18005d66ab852bd1ebdd4a44e74dba46e68deb1f2ebb3e9"
+  "v": "40b181f5347f850c912b1df7f50dd6cea462463726d3fc5ba23f04a9a5a42bfa"
+ },
+ {
+  "id": "NZK-107b",
+  "book": "NZK",
+  "number": "107b",
+  "title": "Nipo Bwana, Nitume",
+  "path": "data/NZK/107b.json",
+  "v": "0f734be6c6d8ab3a49afdc826852159d334625a80c084fc0a30395d1fd6621fa"
  },
  {
   "id": "NZK-108",
@@ -13912,6 +14196,14 @@
   "v": "988fb59f8e37a802c1a0cf0cddb54dfba4a6adfad16b02100663a35286ceea0e"
  },
  {
+  "id": "NZK-108c",
+  "book": "NZK",
+  "number": "108c",
+  "title": "Tumesikia Mbiu",
+  "path": "data/NZK/108c.json",
+  "v": "7a4d91e92386d5fe0388995743f9597cd7d0ce8cb1c06ff45215ea1f5f2d38a4"
+ },
+ {
   "id": "NZK-109",
   "book": "NZK",
   "number": "109",
@@ -13928,10 +14220,8 @@
   "number": "111",
   "title": "Tabibu Mkuu",
   "path": "data/NZK/111.json",
-  "sung": true,
-  "sv": "40b07d031f095d0f273da57a65514259ac4496a2c8a01f215fc8b0f7f83feec5",
   "english": "The Great Physician",
-  "v": "e16ecf9769330535a514695ec9edd484e5740edb0303b874fd1b32489704ded1"
+  "v": "d71716b5a48962df5be57f88cdd4a502749efb055ed5ba323908af8bcef6eedf"
  },
  {
   "id": "NZK-111b",
@@ -13939,18 +14229,18 @@
   "number": "111b",
   "title": "Tabibu Mkuu",
   "path": "data/NZK/111b.json",
-  "v": "4e34724dea3da1796b83d968b3d35fc2ee57fc220d3e45aa369b9c34eb4bc44d"
+  "v": "9dea2eebd8ad91026ac6a22740bf438e8905a88572c150d390d1f646d5431d45"
  },
  {
   "id": "NZK-112",
   "book": "NZK",
   "number": "112",
-  "title": "Wewe Umechoka Sana",
+  "title": "Wewe Umechoka Sana?",
   "path": "data/NZK/112.json",
   "sung": true,
   "sv": "024ae0c8f83c96e8f54e2b78a631bc6e91fdc627edbbc7e59fb99a560f6f541e",
   "english": "Art Thou Weary, Art Thou Languid?",
-  "v": "3a5c5572a0f95d29e02768814940c47d37ef921114aa326529b7de39892c10b6"
+  "v": "3bbe43110d9bfe949fdc5e4b1e84796a3a1a215ee6b09a6ecfe3b420a61004b1"
  },
  {
   "id": "NZK-113",
@@ -13972,15 +14262,21 @@
   "v": "b0f2b0e2c4ecb1d1dcda7044e8c7b98af52e310e8ebb8fda1fce13e858b28ce0"
  },
  {
+  "id": "NZK-113c",
+  "book": "NZK",
+  "number": "113c",
+  "title": "Bubujiko",
+  "path": "data/NZK/113c.json",
+  "v": "0b6654f53b79d543ce0662e3391b7a65f31bb7881b7a1ab6876ddfb38eb80d32"
+ },
+ {
   "id": "NZK-114",
   "book": "NZK",
   "number": "114",
   "title": "Yesu Nataka Kutakaswa Sana",
   "path": "data/NZK/114.json",
-  "sung": true,
-  "sv": "500060b6a4c9f24454dec5a7089ec4064a833259bd5398a7b51a45193dcc1d33",
   "english": "Whiter Than Snow",
-  "v": "161933000566a835247fe75bfbcfae18dfe8b9844efaf0d48da3495294f0c344"
+  "v": "e9bfa80d5c35da98ebd38dd18205d5f858b031c2e26335d2d2b573dac87143a6"
  },
  {
   "id": "NZK-114b",
@@ -13988,7 +14284,7 @@
   "number": "114b",
   "title": "Yesu Nataka Kutakaswa Sana",
   "path": "data/NZK/114b.json",
-  "v": "1641c1189237e1a5ac18548930380ed7417e46b0f5d27348565d23d955c3a04f"
+  "v": "a84f7c2ef15347ac190f4aaa851b32e04059ce32f7b746be030d7adab9561728"
  },
  {
   "id": "NZK-115",
@@ -14008,6 +14304,14 @@
   "title": "Naendea Msalaba",
   "path": "data/NZK/115b.json",
   "v": "f599d7dd8b4c1ceccbe3c51cf4ec715b9e429b0e2b4998bdf78005aae049c5de"
+ },
+ {
+  "id": "NZK-115c",
+  "book": "NZK",
+  "number": "115c",
+  "title": "Naendea Msalaba",
+  "path": "data/NZK/115c.json",
+  "v": "e9b135ca27fc0d31d1c826ddbd435d61916358669b7fd4750f88ffeb91e05296"
  },
  {
   "id": "NZK-118",
@@ -14037,7 +14341,7 @@
   "sung": true,
   "sv": "3f30b4a82cffa092051ce55ff93d175490b775acf42654b09de5cef34153f6e7",
   "english": "Jesus Paid It All",
-  "v": "599389d1fc886f2ccffbda7174086326cef6371fd05ac87a3b311c9eb15698b0"
+  "v": "723f24e8f01cc44f8b90e74459617195f0d02c90abab11d18e4a66e5331d4b91"
  },
  {
   "id": "NZK-119b",
@@ -14045,7 +14349,7 @@
   "number": "119b",
   "title": "Alilipa Bei",
   "path": "data/NZK/119b.json",
-  "v": "4974dab334b4219c283a292ecf7ecbf8748943c193faa6628d4a79d522a670a6"
+  "v": "881f69f00d9b172d16510047294ebf22238f8fd24b384828b7c566e3ee4337b0"
  },
  {
   "id": "NZK-120",
@@ -14067,6 +14371,14 @@
   "v": "ed197fcab032078ec6cef50c567f42725af9528eac71f5d05cb043ee57466320"
  },
  {
+  "id": "NZK-120c",
+  "book": "NZK",
+  "number": "120c",
+  "title": "Msalaba Wa Yesu",
+  "path": "data/NZK/120c.json",
+  "v": "52f6bf0106ff614ab16095372c466bb498180be54cd1d83ddcf3b9f71f805b70"
+ },
+ {
   "id": "NZK-121",
   "book": "NZK",
   "number": "121",
@@ -14084,6 +14396,14 @@
   "title": "Katika Wenye Dhambi",
   "path": "data/NZK/121b.json",
   "v": "eea7c826c5fb9fd44372e18efd3d8ae4149f809c58891eb19d81a82b5ccf2dca"
+ },
+ {
+  "id": "NZK-121c",
+  "book": "NZK",
+  "number": "121c",
+  "title": "Katika Wenye Dhambi",
+  "path": "data/NZK/121c.json",
+  "v": "249592404ecb680b22a6cfdfdb254bc8339c1ae3cb0a1ad54335f2ea965b6a53"
  },
  {
   "id": "NZK-122",
@@ -14110,10 +14430,8 @@
   "number": "123",
   "title": "Yesu Kwa Imani",
   "path": "data/NZK/123.json",
-  "sung": true,
-  "sv": "2bc1a174d3dd440131b89069f686a1e96c8f5c5c11bc0ec5bafdfa4a63ff30ed",
   "english": "My Faith Looks Up to Thee",
-  "v": "8bd1e0b0190d64fd79594619c96f5540854aa96af5749a2f35e059e6f5f4fdd8"
+  "v": "5f39c3fce6a2bec82a2a15adbab1345a2acf719d92b15b82cec3401fa04271d9"
  },
  {
   "id": "NZK-123b",
@@ -14121,7 +14439,15 @@
   "number": "123b",
   "title": "Yesu Kwa Imani",
   "path": "data/NZK/123b.json",
-  "v": "8826da7faeba5f7ada4ab4b1e6e66c50fd542d0f48ae4f565d811b672157abb0"
+  "v": "526fc07279885e2154d1b88f09e843cca441e373382f76848f0390740a428680"
+ },
+ {
+  "id": "NZK-123c",
+  "book": "NZK",
+  "number": "123c",
+  "title": "Yesu Kwa Imani",
+  "path": "data/NZK/123c.json",
+  "v": "adabe49dc42c9475fc2fcfd8a5208b924209b05d679d01aa726a3a8dca454f77"
  },
  {
   "id": "NZK-124",
@@ -14129,10 +14455,8 @@
   "number": "124",
   "title": "Umechoka, Je Umesumbuka",
   "path": "data/NZK/124.json",
-  "sung": true,
-  "sv": "94ef5ea8d4e2390e58a1c017b56224c913c98f2f22271c11b9191173f4e1222c",
   "english": "Tell It to Jesus",
-  "v": "0b09c068d338f5bc7734e6f3dae8ea55091b15db3a75e18119f190f9bef8970b"
+  "v": "9b1a7c44d4aa8c57a352929fc151077622676f5a11f0a8fdcbed373dc32719ab"
  },
  {
   "id": "NZK-126",
@@ -14152,6 +14476,14 @@
   "title": "Nina Haja Nawe",
   "path": "data/NZK/126b.json",
   "v": "b9273cd0bbfd00817f3d1b2af583161a66fba552f67d87ceaa53a2c66b6e7c32"
+ },
+ {
+  "id": "NZK-126c",
+  "book": "NZK",
+  "number": "126c",
+  "title": "Nina Haja Nawe",
+  "path": "data/NZK/126c.json",
+  "v": "323a05a8c6a4abad536f033b4051569b56d485d06eb7aff70ba5012bfd772e2b"
  },
  {
   "id": "NZK-127",
@@ -14178,10 +14510,8 @@
   "number": "129",
   "title": "Kumtegemea Mwokozi",
   "path": "data/NZK/129.json",
-  "sung": true,
-  "sv": "e2a1ad1e23cfa1ed23f6f3ba7df9444c1dec5edf6b881762adc837d392c1c8f1",
   "english": "'Tis So Sweet to Trust in Jesus",
-  "v": "6fa27ff1ec16138caaebae6dc2a81776b025eac182b9353ce194ae46a0b8860b"
+  "v": "1f868192eaea55c4fc9236ae93898c64fa943ec173664928fbe8ec090aac60f6"
  },
  {
   "id": "NZK-129b",
@@ -14189,7 +14519,15 @@
   "number": "129b",
   "title": "Kumtegemea Mwokozi",
   "path": "data/NZK/129b.json",
-  "v": "38181513832e130228b3933a70384b55868e2d7c90442a7ff46015036654f762"
+  "v": "c12a34eb073234428026486d3da5a4ad44f47794474f561220f57da185f84177"
+ },
+ {
+  "id": "NZK-129c",
+  "book": "NZK",
+  "number": "129c",
+  "title": "Kumtegemea Mwokozi",
+  "path": "data/NZK/129c.json",
+  "v": "b86901205f44642522c5ca5056692d673a90042386eb621475d1339e93f41bea"
  },
  {
   "id": "NZK-130",
@@ -14200,7 +14538,15 @@
   "sung": true,
   "sv": "fd43ea2830e49a45bf57c0b53b86361d8f95442c481bef7a2adda0c293328f44",
   "english": "What a Friend We Have in Jesus",
-  "v": "898068fb6a33074ebc774cdcb33bc6066aef1dd02fb10f284988f01a7144ff51"
+  "v": "16b9dd4521503736b34b7777719ba8046883a0c0412adfdf211ae444d5d0f96a"
+ },
+ {
+  "id": "NZK-130b",
+  "book": "NZK",
+  "number": "130b",
+  "title": "Yesu Kwetu Ni Rafiki",
+  "path": "data/NZK/130b.json",
+  "v": "3b70eb1261bdf40a2efce8b2ca286ee0593870936f8c0b22b9fa7dfc2bd3c934"
  },
  {
   "id": "NZK-131",
@@ -14208,10 +14554,8 @@
   "number": "131",
   "title": "Kwa Mahitaji Ya Kesho",
   "path": "data/NZK/131.json",
-  "sung": true,
-  "sv": "296f9c805ddfe8aabc70b1c9087d378624d901bd0cc943b9e08449f3ca35f4e1",
   "english": "Lord, for Tomorrow and Its Needs",
-  "v": "e60b536c7396f38e8f3ac2957cabdc85b151833122763195bc3f4f72fdc87cb7"
+  "v": "c6e431aa762e4d554f1664d2fdc5dec15a059411a6902638e7d38bac40d7bddb"
  },
  {
   "id": "NZK-133",
@@ -14219,10 +14563,8 @@
   "number": "133",
   "title": "Popote Na Yesu",
   "path": "data/NZK/133.json",
-  "sung": true,
-  "sv": "4a3c67e55e8c904d6ca02ffed230c61413f200992682ae07c5bda3164c913d05",
   "english": "Anywhere With Jesus",
-  "v": "25041b911c96c71750fa5bd695a7ce024065a404943fe5b9e08ec2b0ddfec0df"
+  "v": "64d329314f46b30a3046fcafe124f52277efad58c9f97a4db75e7d5962912286"
  },
  {
   "id": "NZK-133b",
@@ -14233,15 +14575,21 @@
   "v": "73ca61a4d022813a3f493f082de4400419c25a3329b27269d008c735dc267ecd"
  },
  {
+  "id": "NZK-133c",
+  "book": "NZK",
+  "number": "133c",
+  "title": "Popote Na Yesu",
+  "path": "data/NZK/133c.json",
+  "v": "32cbcbcd99b803c49d0246b997c9778ca96c92a3eaf7302263378cbb638c09e0"
+ },
+ {
   "id": "NZK-134",
   "book": "NZK",
   "number": "134",
   "title": "Tafuta Daima Utakatifu",
   "path": "data/NZK/134.json",
-  "sung": true,
-  "sv": "e71a5983d95206c6c5e5b6c85d6bdbf849aeb8a4363f720daab6355ca42f73de",
   "english": "Take Time to Be Holy",
-  "v": "0c9a201607a27f170984caf9a2cbc97f8f8f409eccac21c1b159fbc47796cfc3"
+  "v": "d899cd28e415343d2accb02b6b9b0f59f50e4afc52e5693ffd45fd7e8d887c51"
  },
  {
   "id": "NZK-134b",
@@ -14252,15 +14600,29 @@
   "v": "1b2e880cfc09cfd97e82d26f9ca3b2a0cd7ad151853f0109934b945457bf03ae"
  },
  {
+  "id": "NZK-134c",
+  "book": "NZK",
+  "number": "134c",
+  "title": "Tafuta Daima Utakatifu",
+  "path": "data/NZK/134c.json",
+  "v": "b2059c52dfd963259f11468ef6d306f5a970df1601be854d026a29900c3a6a95"
+ },
+ {
   "id": "NZK-135",
   "book": "NZK",
   "number": "135",
   "title": "Kwa Maombi Nachangamka",
   "path": "data/NZK/135.json",
-  "sung": true,
-  "sv": "14c43843fac39a46561cf4f616f82d5e8b8fe4a4213777ea001d32802369167f",
   "english": "Sweet Hour of Prayer",
-  "v": "3b6ff5c0b4a99d75db55d04ec88ae6264e70f8a2b85c23bfe5c14fd94a9f6f5c"
+  "v": "63bdf5552e7105620abfa0c3ce9d4c21cd64e69bea95664b155b0bd7c240d596"
+ },
+ {
+  "id": "NZK-135b",
+  "book": "NZK",
+  "number": "135b",
+  "title": "Kwa Maombi Nachangamka",
+  "path": "data/NZK/135b.json",
+  "v": "b7647d29706156383022f97a1d9d65ac4c35e446f1d30101dfb82abef07aaa17"
  },
  {
   "id": "NZK-136",
@@ -14293,15 +14655,21 @@
   "v": "940ad25c31e62b7a33f61692df4871716f490b3aefd4fc981f1105b13b5e5974"
  },
  {
+  "id": "NZK-137c",
+  "book": "NZK",
+  "number": "137c",
+  "title": "Saa Heri Ya Sala",
+  "path": "data/NZK/137c.json",
+  "v": "538ad87d1410d5ea9288a7e6aaf2305195eba13f7a44bd90373a4587008712a4"
+ },
+ {
   "id": "NZK-138",
   "book": "NZK",
   "number": "138",
   "title": "Nitakuandama Kote",
   "path": "data/NZK/138.json",
-  "sung": true,
-  "sv": "441858c18cc2e32b3d7268d0218ea2c801a004c280fc9892f99a85a3c4a39574",
   "english": "I Will Follow Thee",
-  "v": "966ee01a84dfb6792e72c2d4e8c05c7b3a3f1d72f7210fa01367763141884372"
+  "v": "bdaef3f74ed79fcd83515071b8252f64b1eea2bb2bf227cef2bfed3b9c3fc404"
  },
  {
   "id": "NZK-138b",
@@ -14309,7 +14677,15 @@
   "number": "138b",
   "title": "Nitakuandama Kote",
   "path": "data/NZK/138b.json",
-  "v": "c3e06a517af0df28dc8b3d1d935942598cb58f8382380124bd438b23e2570199"
+  "v": "d75150cdf57c2f90c3f6f6455305ad498c9621bcb544ec2d7d6dffba4a47495d"
+ },
+ {
+  "id": "NZK-138c",
+  "book": "NZK",
+  "number": "138c",
+  "title": "Nitakuandama Kote",
+  "path": "data/NZK/138c.json",
+  "v": "14b3dac3a41bf226093faea555dcc10a027755352df1056f4fffeb73ea159ac9"
  },
  {
   "id": "NZK-139",
@@ -14317,10 +14693,8 @@
   "number": "139",
   "title": "Uniimbie Tena",
   "path": "data/NZK/139.json",
-  "sung": true,
-  "sv": "3eea893dba8e083ad91fc778c6e40c618d09685cdb77da5e417afa5fd5acc2db",
   "english": "Wonderful Words of Life",
-  "v": "7c671686443743fdcd3a05cdd9e00d6946300076ba2d306dff91419f10ba275e"
+  "v": "c294fd929edd04344380a5dc28d9c6cbfdcbec70fe0bb8958fd4dae17281df27"
  },
  {
   "id": "NZK-139b",
@@ -14328,7 +14702,7 @@
   "number": "139b",
   "title": "Uniimbie Tena",
   "path": "data/NZK/139b.json",
-  "v": "0df68e935463e97046d219451937d33c647b1d2e6d759b879b7f6cd61c805a70"
+  "v": "edf91612ff548db9a2fe5fcfc70adda5fb3e4adfd416bfaebc7b092534891bd4"
  },
  {
   "id": "NZK-141",
@@ -14347,10 +14721,8 @@
   "number": "142",
   "title": "Nasikia Sauti Yako",
   "path": "data/NZK/142.json",
-  "sung": true,
-  "sv": "f51239e3778667cde184f5ffed20ad1ad80ef47834ce907c6d79a73b66cfce14",
   "english": "I Hear Thy Welcome Voice",
-  "v": "e5a84f7aabf6d8c7f30ce4afcf44f69ac85f1e523796929d442d3284211a9d1c"
+  "v": "e25a62201a6b8af4c933c507d8115fe6842b2d67658b3cf6db67df37f9a59925"
  },
  {
   "id": "NZK-142b",
@@ -14358,7 +14730,15 @@
   "number": "142b",
   "title": "Nasikia Sauti Yako",
   "path": "data/NZK/142b.json",
-  "v": "58de49194e36b9e2f7584876192f775655cacff2d6d3a825be88c12c37296559"
+  "v": "e554586b60c4031a807f9e6e023ceb2df2961b846ee3c1efee96e4ef44fd4300"
+ },
+ {
+  "id": "NZK-142c",
+  "book": "NZK",
+  "number": "142c",
+  "title": "Nasikia Sauti Yako",
+  "path": "data/NZK/142c.json",
+  "v": "34d9156c23f8eae0df74c7aced5380f6cdb958a417ee14e8361482fea2b93dfe"
  },
  {
   "id": "NZK-143",
@@ -14366,10 +14746,16 @@
   "number": "143",
   "title": "Naamini",
   "path": "data/NZK/143.json",
-  "sung": true,
-  "sv": "c62c6ede73174603e73f89d69d9ae6702e9e91678d7b5364aad9f5c1d67f07fe",
   "english": "I Do Believe",
-  "v": "abaaa45e33f52b7f34d8124edee755836cf8a7dc00c1740894cf77f6e5b145b3"
+  "v": "e8857517689b2b10371ff4ae2e70ebc5214bb0b237f4721d8b23fe1e9cdc4204"
+ },
+ {
+  "id": "NZK-143b",
+  "book": "NZK",
+  "number": "143b",
+  "title": "Naamini",
+  "path": "data/NZK/143b.json",
+  "v": "5c3fa7fa0e9dc2bdd335047d4355e339799baa0d38ca65725f9f2f8916af5bde"
  },
  {
   "id": "NZK-144",
@@ -14410,6 +14796,14 @@
   "v": "3b59b1229a425af3bbe3c668a96c5e786d1603b41cfa2c70f39b27f739b38435"
  },
  {
+  "id": "NZK-145c",
+  "book": "NZK",
+  "number": "145c",
+  "title": "Namtaka Bwana Yesu",
+  "path": "data/NZK/145c.json",
+  "v": "92f9c50e2350f230b2faa27839ce46336faad75dfe132e584b3ed8a57b2152a6"
+ },
+ {
   "id": "NZK-146",
   "book": "NZK",
   "number": "146",
@@ -14426,10 +14820,8 @@
   "number": "147",
   "title": "Uishi Ndani Yangu",
   "path": "data/NZK/147.json",
-  "sung": true,
-  "sv": "c430dbd59f7ad8ffd309e4293ca45be867832894e731dea5d821a7c7dcc5ad05",
   "english": "Live Out Thy Life Within Me",
-  "v": "13c648099409ee37c2d487c36810705db9717f59c58321d9c4124ca3f363d934"
+  "v": "93ef0c5cee16b381014ad4e46230c00206bcbd067cf7132be8b4ac84c15250c7"
  },
  {
   "id": "NZK-147b",
@@ -14437,18 +14829,16 @@
   "number": "147b",
   "title": "Uishi Ndani Yangu",
   "path": "data/NZK/147b.json",
-  "v": "db283d281661873a9613eb1e3827be6eea7a05aeccdf6a3496a823286655cd7a"
+  "v": "c37dac87d43f9c518454144c26cfb71368a83617817b1d18e149738c2559318f"
  },
  {
   "id": "NZK-150",
   "book": "NZK",
   "number": "150",
-  "title": "Hacha, Maneno Mabaya",
+  "title": "Hasha, Maneno Mabaya Yasitoke",
   "path": "data/NZK/150.json",
-  "sung": true,
-  "sv": "48f0853494d80e1b53c3da4093f728f23f2202423963b1113c2f9e16b788079e",
   "english": "Angry Words! Oh, Let Them Never",
-  "v": "f40d2ef5a6d0c8b5cd978d08d9e5d0e18360de2705738f9c8488b374bf324024"
+  "v": "916b359afcd99dd6f2eec1218f306b2a85553e4abee10d5ea752fb0603883a33"
  },
  {
   "id": "NZK-151",
@@ -14459,7 +14849,15 @@
   "sung": true,
   "sv": "f13706d04cb2e42be8eb7b36115bd9ec34f28b371dde0173f84b32ae0bd0bfa6",
   "english": "He Leadeth Me",
-  "v": "05f9a3c3d219ccb3e539708d09eb7bb56129b25d17f2275460ffa2976db66682"
+  "v": "0d9e506fc409337879660b2788082daf79c786f2fdb109274cf798ac183aee65"
+ },
+ {
+  "id": "NZK-151b",
+  "book": "NZK",
+  "number": "151b",
+  "title": "Huniongoza Mwokozi",
+  "path": "data/NZK/151b.json",
+  "v": "49a288bd61b6a01f17c8297f1ce8b544a322c2a41770b22d7e20b7847e61a2b6"
  },
  {
   "id": "NZK-152",
@@ -14471,6 +14869,14 @@
   "sv": "63b52b43fa972a6f638c09201dc9a6c8ce51e591081cb816a5f5ce5744a14200",
   "english": "Nearer, My God, to Thee",
   "v": "cc322b17ec0a82221807d0942ed82d145427f78709ca2086adc8052a233c66dd"
+ },
+ {
+  "id": "NZK-152b",
+  "book": "NZK",
+  "number": "152b",
+  "title": "Karibu Na Wewe, Mungu Wangu",
+  "path": "data/NZK/152b.json",
+  "v": "3ef97879f2b4b66921ac7f381492a4b9730d23045e8e147f6c23f107c4564e71"
  },
  {
   "id": "NZK-153",
@@ -14514,12 +14920,10 @@
   "id": "NZK-156",
   "book": "NZK",
   "number": "156",
-  "title": "Uniongoze Jehova",
+  "title": "Uniongoze, Yehova",
   "path": "data/NZK/156.json",
-  "sung": true,
-  "sv": "43efa3a8375eb1ad595bff36640dc5cd8e0e50ca0220822743b3dd48ca0d156c",
   "english": "Guide Me, O Thou Great Jehovah",
-  "v": "ef4e5a16935f24c90c240abe310ae7194633ad7b3159ad106f3be11e4f83e329"
+  "v": "45f0b338412769bd7f03673d7bf93ba2cf69baac85426f03d05858746311b34b"
  },
  {
   "id": "NZK-158",
@@ -14527,10 +14931,8 @@
   "number": "158",
   "title": "U Mwendo Gani Nyumbani?",
   "path": "data/NZK/158.json",
-  "sung": true,
-  "sv": "3669bacf39311d480137d6a363c717500f0427a9ea8cdaa598ab4d235ec43327",
   "english": "How Far From Home?",
-  "v": "bd1d027fc8005718500102163af9154f1d417f0f9e8493972fd8ee56315ce220"
+  "v": "6ff7cadd21a669e3c8c26ae7bf4cc708d6aa84761d9baa2d0e2cfec3137d901b"
  },
  {
   "id": "NZK-159",
@@ -14541,7 +14943,7 @@
   "sung": true,
   "sv": "26e169f51a420edfddf1288f133a3fbe0b097caa4512309c02c8cfedf8872ee9",
   "english": "How Sweet Are the Tidings",
-  "v": "2fabb0c9b9b9179d5e25dd0fbef11111635bc9a848bde5de9bd8d12f8b959bd2"
+  "v": "2ab906da837cdeae1ed34ea7e5e1389337e44bfb0b1d8c5d2b508316390d41cb"
  },
  {
   "id": "NZK-160",
@@ -14549,10 +14951,16 @@
   "number": "160",
   "title": "Watakatifu Kesheni",
   "path": "data/NZK/160.json",
-  "sung": true,
-  "sv": "b3d83896a7f7497d2047a0634f488d021edf1934c626ea063b95f39a56d38d16",
   "english": "Watch, Ye Saints",
-  "v": "c7e7582c50237617c7abc87c61069af1ca362276efb8580f60935411681b04f1"
+  "v": "e185f39a573ac8d0314c518c4e17e2379553b5369cf45b7ebfab552088748afe"
+ },
+ {
+  "id": "NZK-160b",
+  "book": "NZK",
+  "number": "160b",
+  "title": "Watakatifu Kesheni",
+  "path": "data/NZK/160b.json",
+  "v": "ff268a1003bdf99b447bda95ebe2c7df15a1167eb91c0dbc26351c7b208b31d2"
  },
  {
   "id": "NZK-161",
@@ -14566,15 +14974,21 @@
   "v": "b25940826672dccab425cb0379835638693366e03a1e4f086f3b28e8b81f6b9a"
  },
  {
+  "id": "NZK-161b",
+  "book": "NZK",
+  "number": "161b",
+  "title": "Piga Panda",
+  "path": "data/NZK/161b.json",
+  "v": "41ff0dac8bb8e563cb0f364a3e2cfbc411499c7b062899bb3471a173a4f648c8"
+ },
+ {
   "id": "NZK-163",
   "book": "NZK",
   "number": "163",
   "title": "Anakuja Bwana Yesu",
   "path": "data/NZK/163.json",
-  "sung": true,
-  "sv": "6afdb3f2869be3fdba839d0f692882e5b7eb30d1a332662279f886d048b6c285",
   "english": "It May Be at Morn",
-  "v": "19afa74a809ba6c1202a8e26ef229679d77ff41abe0caab501dfb82fb810dac8"
+  "v": "51696ca8653d3127845e2fba04255ad6b228e989398649ba1c374ed5cdc604be"
  },
  {
   "id": "NZK-164",
@@ -14588,13 +15002,21 @@
   "v": "288186ca6223e3847bde6494272d32c808bb4e47f7cb7321f60c215efa6217a1"
  },
  {
+  "id": "NZK-164b",
+  "book": "NZK",
+  "number": "164b",
+  "title": "Mishale Ya Nuru",
+  "path": "data/NZK/164b.json",
+  "v": "44d31a1009f6fc6926a9cc2acc9c35be2c692840febed2a653cbcec5169e691c"
+ },
+ {
   "id": "NZK-167",
   "book": "NZK",
   "number": "167",
   "title": "Yu Hai, Yu Hai",
   "path": "data/NZK/167.json",
   "english": "He Lives",
-  "v": "cf4d54b98b3d6f9a36e865d0918077bf301001c95ea5c808b65d449a94ca1917"
+  "v": "eed260eea42c05368f800567ddaf49f4f9b015c20c83dca4c2a29961bfce7e5b"
  },
  {
   "id": "NZK-170",
@@ -14605,7 +15027,7 @@
   "sung": true,
   "sv": "435cb466e11e78b4bd485525762b1f868e938ad228c7c3c95f56b1cc7d755052",
   "english": "Is My Name Written There?",
-  "v": "501b2dfbcdbf76825779722935cdf6d3795f7e2da08b4734ba3cb94cfc460c64"
+  "v": "6f7a4507c834de7cebc77383c12d91d4d9445b5ac9265368a1a787843e466d33"
  },
  {
   "id": "NZK-171",
@@ -14624,10 +15046,8 @@
   "number": "173",
   "title": "Hatujui Saa",
   "path": "data/NZK/173.json",
-  "sung": true,
-  "sv": "443ae187773158663422b61f1bcd8bc613d56d4b3cc8709ab58a5e86e3e719dc",
   "english": "We Know Not the Hour",
-  "v": "310edc7fec6c8ff754c9c7a74faf5b52ebeaf61313aedec61ba7498bdf2dec16"
+  "v": "c206f8234886b9368d04067db3eacf488f0cac55b3056a2f373a4a48af8459b4"
  },
  {
   "id": "NZK-175",
@@ -14635,10 +15055,16 @@
   "number": "175",
   "title": "Uso Kwa Uso",
   "path": "data/NZK/175.json",
-  "sung": true,
-  "sv": "52e5683d609efa96ded6ff2585b9fbc188b8c9bcb306b6c1916704c0e56cb486",
   "english": "Face to Face",
-  "v": "e17923d1aec75b706854503319917904bd69f1843b5ee6c12e9ed0459d106802"
+  "v": "895ce697c0a384256faae1fd4bb7e402ed442fcf982d1422581424e9afca0114"
+ },
+ {
+  "id": "NZK-175b",
+  "book": "NZK",
+  "number": "175b",
+  "title": "Uso Kwa Uso",
+  "path": "data/NZK/175b.json",
+  "v": "39ab86d7e87887426e47bf0aed979fbe1bc369680e4930cf5df395dae9af8574"
  },
  {
   "id": "NZK-176",
@@ -14657,10 +15083,8 @@
   "number": "179",
   "title": "Watafurahi",
   "path": "data/NZK/179.json",
-  "sung": true,
-  "sv": "fccc63318c6647e6cfa6dc98bccf20212ad100b202d9ea462a97b3899cb03661",
   "english": "Joy By and By",
-  "v": "68a7aab606d39749e24587314456d9bdc060fe0c1c22d5885aa247c50c44a13e"
+  "v": "05d25df6f08867837441777b1e0b14fb0afb36c3091c73cccfd0e149c0e041b0"
  },
  {
   "id": "NZK-184",
@@ -14693,6 +15117,14 @@
   "v": "43e995c2c5b5cf6d7a5c64abbc4da319d928dde0ebdf569cc450d1a4ceafc9e2"
  },
  {
+  "id": "NZK-185b",
+  "book": "NZK",
+  "number": "185b",
+  "title": "Mungu, Mapenzi Makamilifu",
+  "path": "data/NZK/185b.json",
+  "v": "4c9980fced1ddac3ed436a3db344703991002b43107e7de66241201112e3d7fd"
+ },
+ {
   "id": "NZK-188",
   "book": "NZK",
   "number": "188",
@@ -14710,6 +15142,14 @@
   "title": "Wimbi Litakasalo",
   "path": "data/NZK/188b.json",
   "v": "1220292060f0cf3e703de073626fd0708042bacb121d74d5ddc32b4e3d12894c"
+ },
+ {
+  "id": "NZK-188c",
+  "book": "NZK",
+  "number": "188c",
+  "title": "Wimbi Litakasalo",
+  "path": "data/NZK/188c.json",
+  "v": "b7541d4015d8fd29d878fb47c023560fe41a82f14f4b8f248991281d996c3b9f"
  },
  {
   "id": "NZK-189",
@@ -14731,6 +15171,14 @@
   "v": "37a0686c6e626bf5903414fdd69eaccbc39de840bfa7264254204fcc61a40390"
  },
  {
+  "id": "NZK-189c",
+  "book": "NZK",
+  "number": "189c",
+  "title": "Tubatize Upya",
+  "path": "data/NZK/189c.json",
+  "v": "b6f3ade5cfd065d352aff210818102b9f63208ec2d89ea339c188524faf8a2b7"
+ },
+ {
   "id": "NZK-191",
   "book": "NZK",
   "number": "191",
@@ -14750,6 +15198,14 @@
   "v": "1a2858b888f4aed38e4fcab719ec946c1dc7d5b2fa093bead1c150e5c891e4bd"
  },
  {
+  "id": "NZK-191c",
+  "book": "NZK",
+  "number": "191c",
+  "title": "Mkate Wa Mbingu",
+  "path": "data/NZK/191c.json",
+  "v": "9983d057fcee2aca16e68f43e92d2000741543f2c1a1b101def7d00496d09ec9"
+ },
+ {
   "id": "NZK-192",
   "book": "NZK",
   "number": "192",
@@ -14759,6 +15215,14 @@
   "sv": "ba6e0239d3f7fe6fe4391244832eb6fe6afbdd180ae77670ca713cf37dbcd61b",
   "english": "Rock of Ages",
   "v": "aefff408f83bc6d3ade610262c0b999a7de0e1911ae129759ca546f2111f0526"
+ },
+ {
+  "id": "NZK-192b",
+  "book": "NZK",
+  "number": "192b",
+  "title": "Mwamba Wenye Imara",
+  "path": "data/NZK/192b.json",
+  "v": "3bb8c1daf12082549a9c2238d523520388c3422156986949ae0b71723d6991ee"
  },
  {
   "id": "NZK-193",
@@ -14772,15 +15236,21 @@
   "v": "98392575deda7fd59fbbeefd0f6cdf1b951e263724913140f16c57cc8e544fd8"
  },
  {
+  "id": "NZK-193b",
+  "book": "NZK",
+  "number": "193b",
+  "title": "Sauti Yake Mchungaji",
+  "path": "data/NZK/193b.json",
+  "v": "717d6f07c08803a61d43d75a78a00cf293b4a5e12b8342c6acb83bf23de29a5c"
+ },
+ {
   "id": "NZK-195",
   "book": "NZK",
   "number": "195",
   "title": "Msingi Wa Kanisa",
   "path": "data/NZK/195.json",
-  "sung": true,
-  "sv": "4f5ac6b8a16be69bd76b4ac0e885799d35233c7d871c06931640cd693d46fd84",
   "english": "The Church Has One Foundation",
-  "v": "7d48f058ae97f3b770b5795db97bd68c93a49e1f654509f9f19b7744ca9f1ad8"
+  "v": "f13a98789c670966eb2597c0932e170c6a8cd1bd9ca9bea9f0bc8be80e58e1ec"
  },
  {
   "id": "NZK-196",
@@ -14788,10 +15258,8 @@
   "number": "196",
   "title": "Vito Vya Thamani",
   "path": "data/NZK/196.json",
-  "sung": true,
-  "sv": "c0338cc6ffbcef8f707803056829289d28e22036c17db75d89be234c7694cb7b",
   "english": "When He Cometh",
-  "v": "1e18cd45ec23d49364170cdc3afb0378725967df16207267f7443009d882bff3"
+  "v": "6ae76bea7343fb119b1a600b8172fe77887fe277a39d3b6f6a7b22e985d6f60e"
  },
  {
   "id": "NZK-197",
@@ -14813,15 +15281,21 @@
   "v": "f34b32d7ce720c89ce3388ae16dfb8667c201af493429de3eb6d7dfbb0424340"
  },
  {
+  "id": "NZK-197c",
+  "book": "NZK",
+  "number": "197c",
+  "title": "Anipenda Ni Kweli",
+  "path": "data/NZK/197c.json",
+  "v": "388b3a09c2da122615f34cb862cb9be45bef4e2dad311a959a562d192bc90955"
+ },
+ {
   "id": "NZK-199",
   "book": "NZK",
   "number": "199",
   "title": "Upendo Ni Furaha",
   "path": "data/NZK/199.json",
-  "sung": true,
-  "sv": "eb0d762013a57ff23f8a1b3a6c094c19898c698997f0551d9585599084a12bcf",
   "english": "'Tis Love That Makes Us Happy",
-  "v": "9e7ae74a136af2774ce0f7948da0984a265b8eac2a3ba098a22099e7c95dc240"
+  "v": "efb75e0ef36d8371cde198321e4da0b41019a8a43132c81a73e9dc1010ba84b4"
  },
  {
   "id": "NZK-199b",
@@ -14829,7 +15303,15 @@
   "number": "199b",
   "title": "Upendo Ni Furaha",
   "path": "data/NZK/199b.json",
-  "v": "92618a967b3c107ae2254881af59d47f8a03d70f92cd6527fc15616152cd2f6d"
+  "v": "a5e968f7fde4471476f0b7e976647bf10b9bb5b82cf6e4aa242dd9e339a52495"
+ },
+ {
+  "id": "NZK-199c",
+  "book": "NZK",
+  "number": "199c",
+  "title": "Upendo Ni Furaha",
+  "path": "data/NZK/199c.json",
+  "v": "3a6ab47c4c1124200ade70a678bf7cf709f2aed47bb7417e917023c1d4af1d16"
  },
  {
   "id": "NZK-202",
