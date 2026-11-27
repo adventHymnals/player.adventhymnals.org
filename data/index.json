@@ -13266,18 +13266,34 @@
   "id": "NZK-26",
   "book": "NZK",
   "number": "26",
-  "title": "Tupe Amani",
+  "title": "Tutokapo Tubariki",
   "path": "data/NZK/26.json",
   "english": "God the Omnipotent",
-  "v": "078446196cf5d6a05775e39bc2275ce46aa1068ddbae54af5e0a3a8a7a97f226"
+  "v": "45b29628aed6053d605155af00b66cd18b811b8b26f0ac30a02a10364af5d721"
+ },
+ {
+  "id": "NZK-26a",
+  "book": "NZK",
+  "number": "26a",
+  "title": "Tupe Amani",
+  "path": "data/NZK/26a.json",
+  "v": "629ce042006f74b8f56043c5343df44dd30a4095d732c019d6ee1b749ea01ba5"
+ },
+ {
+  "id": "NZK-26ab",
+  "book": "NZK",
+  "number": "26ab",
+  "title": "Tupe Amani",
+  "path": "data/NZK/26ab.json",
+  "v": "94866d14fe57e1758150637ecca16e1955dec72729038e9cd59fbbb173f74ef0"
  },
  {
   "id": "NZK-26b",
   "book": "NZK",
   "number": "26b",
-  "title": "Tupe Amani",
+  "title": "Tutokapo Tubariki",
   "path": "data/NZK/26b.json",
-  "v": "c15309d81dc9671bcd8cad617f605c31da6f93b40089eb9e050561254d8fd946"
+  "v": "aee66941bc6804a175e3217c1120e7da4b5b7f062e176cd7914c21b03b688e24"
  },
  {
   "id": "NZK-27",
@@ -13295,6 +13311,15 @@
   "title": "Tena, Mwokozi, Twalitukuza Jina Lako",
   "path": "data/NZK/27b.json",
   "v": "fd0d9eb4ecaa3efa15c57eb791d49eb5c29244f729c9e8fcfddaf4476c2a16f9"
+ },
+ {
+  "id": "NZK-28",
+  "book": "NZK",
+  "number": "28",
+  "title": "Jina La Thamani",
+  "path": "data/NZK/28.json",
+  "english": "Take the Name of Jesus With You",
+  "v": "30af81f0a2eb6825f69c76d77f3797dda6f8a63fefc9e98deca12820b4f5cd78"
  },
  {
   "id": "NZK-29",
@@ -13350,6 +13375,15 @@
   "title": "Niimbe Pendo Lake",
   "path": "data/NZK/31b.json",
   "v": "095e41b71ef49d4a8d376d4b476fd8209270c63660532b46bf42ac3f313db4f0"
+ },
+ {
+  "id": "NZK-32",
+  "book": "NZK",
+  "number": "32",
+  "title": "Tangu Kuamini",
+  "path": "data/NZK/32.json",
+  "english": "Since I Have Been Redeemed",
+  "v": "7e0e452116dedb6aa03851a9b1d4fa4d4fccca7d35877a89320144a49a540121"
  },
  {
   "id": "NZK-33",
@@ -14010,6 +14044,15 @@
   "v": "93c7b5f2dd131bb9ffa99f7f5836e3a110bc2b2541de622702b644bef080f2b5"
  },
  {
+  "id": "NZK-75",
+  "book": "NZK",
+  "number": "75",
+  "title": "Msini Imara, Ninyi Wa Bwana",
+  "path": "data/NZK/75.json",
+  "english": "How Firm a Foundation",
+  "v": "d0bd5cee664e4e11f59e274968e0d3f8ea305dfcdbddca15453dfc7c4682b1c5"
+ },
+ {
   "id": "NZK-76",
   "book": "NZK",
   "number": "76",
@@ -14129,6 +14172,14 @@
   "title": "Ni Siku Ya Furaha",
   "path": "data/NZK/82d.json",
   "v": "bf20c9ca4a6e1007565f897c68a4ce4787d8908e09efa3cb8b447cc5fa5c072e"
+ },
+ {
+  "id": "NZK-83",
+  "book": "NZK",
+  "number": "83",
+  "title": "Ewe Skuli ya Sabato",
+  "path": "data/NZK/83.json",
+  "v": "42f9658fdef52b7b3c06831fba9e84fd5bffe15962a2ce235a060023e7e28962"
  },
  {
   "id": "NZK-84",
@@ -14377,6 +14428,15 @@
   "title": "Twende Kwa Yesu",
   "path": "data/NZK/99.json",
   "v": "e33a8734ee72571107c6f4d2c4ce68f2f630c9537d7932ff3dbc5840933708f3"
+ },
+ {
+  "id": "NZK-100",
+  "book": "NZK",
+  "number": "100",
+  "title": "Kuwatafuta Wasioweza",
+  "path": "data/NZK/100.json",
+  "english": "Seeking the Lost",
+  "v": "5f9f11af5ae51b659a41b6348995b9fd9a76d8b5eaffcadb03c16c75159e2584"
  },
  {
   "id": "NZK-101",
@@ -14775,6 +14835,15 @@
   "v": "9b1a7c44d4aa8c57a352929fc151077622676f5a11f0a8fdcbed373dc32719ab"
  },
  {
+  "id": "NZK-125",
+  "book": "NZK",
+  "number": "125",
+  "title": "Uniangalie",
+  "path": "data/NZK/125.json",
+  "english": "Look and Live / Life in a Look",
+  "v": "8b01f664fc3fab1b18be18621d53c322586532091867c8a1472f9804d614ebf7"
+ },
+ {
   "id": "NZK-126",
   "book": "NZK",
   "number": "126",
@@ -15152,8 +15221,6 @@
   "number": "146",
   "title": "Twae Wangu Uzima",
   "path": "data/NZK/146.json",
-  "sung": true,
-  "sv": "1306a4daf7f8c13bd9b2d5ed867a2a33699c7019382303e0b5020f7030914f2c",
   "english": "Take My Life and Let It Be",
   "v": "f70a2eac34460bbb825eaaca1932556dd4ee249665a334b955202c7963b77f09"
  },
@@ -15163,7 +15230,7 @@
   "number": "146b",
   "title": "Twae Wangu Uzima",
   "path": "data/NZK/146b.json",
-  "v": "88e54342c68b49fdf43c7aeb78922f6e933d8842412cbb169dc5b72e71b88335"
+  "v": "1d8c70b5d48124469cae45230523a3af55bd5f048ce379384e5fdac643672bc4"
  },
  {
   "id": "NZK-147",
@@ -15189,6 +15256,14 @@
   "title": "Univute Karibu",
   "path": "data/NZK/148.json",
   "v": "7460d824e59e7cc515c895f8f333e3967d916253ae875e27e7b65629396e5cb3"
+ },
+ {
+  "id": "NZK-149",
+  "book": "NZK",
+  "number": "149",
+  "title": "Kuwa Wake Yesu",
+  "path": "data/NZK/149.json",
+  "v": "0d1f8db8f39c931f2d2ad4e82f091ed815c36a496be980c315bf3718e48c6147"
  },
  {
   "id": "NZK-150",
@@ -15255,6 +15330,15 @@
   "title": "Fikira Moja Tu",
   "path": "data/NZK/153b.json",
   "v": "d94a91746a423be09aeb3be87c158c1d68a9318130db4b970317d1844ef8511e"
+ },
+ {
+  "id": "NZK-154",
+  "book": "NZK",
+  "number": "154",
+  "title": "Yanipasa Kuwa Naye",
+  "path": "data/NZK/154.json",
+  "english": "I Must Have the Savior With Me",
+  "v": "410afa9fbe482bffc7b161c246ff09bdedcd3df5dceae7aaf9bdef7bcd32ef08"
  },
  {
   "id": "NZK-155",
@@ -15421,6 +15505,15 @@
   "v": "1f82144cb9b0427b4fba7269888796376c747f9e298a0ed9f72321620b268e8e"
  },
  {
+  "id": "NZK-169",
+  "book": "NZK",
+  "number": "169",
+  "title": "Tutashindaje Hukumuni?",
+  "path": "data/NZK/169.json",
+  "english": "How Shall We Stand in the Judgment?",
+  "v": "9943cc828738304802004fa0112fd1d061caddf9a520c58337d9d4e71d86dc97"
+ },
+ {
   "id": "NZK-170",
   "book": "NZK",
   "number": "170",
@@ -15458,6 +15551,14 @@
   "path": "data/NZK/173.json",
   "english": "We Know Not the Hour",
   "v": "c206f8234886b9368d04067db3eacf488f0cac55b3056a2f373a4a48af8459b4"
+ },
+ {
+  "id": "NZK-174",
+  "book": "NZK",
+  "number": "174",
+  "title": "Tukimngojea",
+  "path": "data/NZK/174.json",
+  "v": "4921341626582da7575281d32354aeefc34052f2ea89c597807a4040f9280d27"
  },
  {
   "id": "NZK-175",
@@ -15657,6 +15758,14 @@
   "title": "Tubatize Upya",
   "path": "data/NZK/189c.json",
   "v": "b6f3ade5cfd065d352aff210818102b9f63208ec2d89ea339c188524faf8a2b7"
+ },
+ {
+  "id": "NZK-190",
+  "book": "NZK",
+  "number": "190",
+  "title": "Raha Yangu Yote, Bwana",
+  "path": "data/NZK/190.json",
+  "v": "b2161454ed9b2a8c9436e27ccae2dfb0214dab4100c181f77b4c9c786adc6db5"
  },
  {
   "id": "NZK-191",
@@ -22754,8 +22863,6 @@
   "number": "1",
   "title": "Nyasachwa Man Malo",
   "path": "data/WN/1.json",
-  "sung": true,
-  "sv": "087e1ca1e6c3dee25bea4ead8e3652d14b7c66da6e0d8836d0446d1ce4a9a8ed",
   "v": "ae74a675a31bdb2a0d17238b0dd081e2dd0637b1c479cfafcf610c71a4a1218e"
  },
  {
@@ -22783,8 +22890,6 @@
   "number": "4",
   "title": "Nying Yesu Mondo Yudi Pak",
   "path": "data/WN/4.json",
-  "sung": true,
-  "sv": "6431f0a8590d491ec8075e3134c3313baa7b1284a06a2274b114558bcb3b90cf",
   "english": "All Hail the Power of Jesus' Name",
   "v": "d371514ca4f5644972269b6cbc96add9a94ca7ceb33bcb81f2db5e3f90fa026b"
  },
@@ -22794,8 +22899,6 @@
   "number": "5",
   "title": "To Pakuru Ruoth",
   "path": "data/WN/5.json",
-  "sung": true,
-  "sv": "bf298164ac45623cd6da27aff977132b38f5d2d4379977a414079882a9b49413",
   "english": "O Worship the King",
   "v": "ba57ad77129d9b7a55ea1b716a5be975cc44129f7fb9cec900f1bb26922e2281"
  },
@@ -22840,8 +22943,6 @@
   "number": "10",
   "title": "Kristo In Wuon Ng'wono Duto",
   "path": "data/WN/10.json",
-  "sung": true,
-  "sv": "937e8ed822abeb7ef756194c67e19d03ebebf94574c7ca41249e14daaa43667d",
   "english": "Come, Thou Fount of Every Blessing",
   "v": "2c9d79f479f6addfe6e86b9e2202ba2962b314a5c5b0f78e1f787292817aef99"
  },
@@ -22860,8 +22961,6 @@
   "number": "12",
   "title": "Ji Duto Mondo Wer Wendni",
   "path": "data/WN/12.json",
-  "sung": true,
-  "sv": "a413c8a7e69fde45bcbd33dacf32bd1837c4919b34ba8cde3ad2a1e3600ec74f",
   "english": "Blessed Be the Name",
   "v": "fe0801810e523ffe61dfd5c19f21ca7da6662e6eff1d6a62e28138803c046842"
  },
@@ -22880,8 +22979,6 @@
   "number": "15",
   "title": "Wuo Gi Chunya, Ruoth Yesu",
   "path": "data/WN/15.json",
-  "sung": true,
-  "sv": "0e0e0f38c4450ddb1be1a434287d729b555588b4ce290b708eb5d5aa0ee1d222",
   "english": "Speak to My Soul, Dear Jesus",
   "v": "4a127850c79360d9942a54105abea5104321930706c019adf9a63158303784c4"
  },
@@ -22918,8 +23015,6 @@
   "number": "19",
   "title": "Ka ma Yesu Chon Notho E Yath",
   "path": "data/WN/19.json",
-  "sung": true,
-  "sv": "fae07362c9ddf1f1b86074ececdeb7d420bc71bb67f7f7172b2c30faa3b0a03c",
   "english": "Glory to His Name",
   "v": "76d32877c97892cbd1483c3da62a6af15ac6d5bb6e7d91e4675c4847c1144317"
  },
@@ -22938,8 +23033,6 @@
   "number": "21",
   "title": "Adwaro Ket Kod Yesu",
   "path": "data/WN/21.json",
-  "sung": true,
-  "sv": "8b63753744177363fad951dbb2669db45516e43ce9f256d2e4e0e703aca9fa50",
   "v": "a39648f55c2c1accc847b06e65528657195615ff3127677f9bebb721c9504e61"
  },
  {
@@ -22957,8 +23050,6 @@
   "number": "23",
   "title": "Aheri, Aheri",
   "path": "data/WN/23.json",
-  "sung": true,
-  "sv": "0eb577607a1e366777c348fb30fffff875bb763e7cb8de0b84230b3f8190b922",
   "english": "I Love Thee",
   "v": "9ed1394dec2af1836c49ee75881c2cb1b3ad58519dfcb92bd5073a088085f21f"
  },
@@ -22977,7 +23068,7 @@
   "title": "Jawarna To Ni Yesu",
   "path": "data/WN/24.json",
   "english": "O Jesus, My Redeemer",
-  "v": "44beb90152fb5736448fb5054bf31d105915c003a4e3864353616fd6192bf5e0"
+  "v": "d07098c74fd626789c04d4334ad73e23cda98a656ce4fd096f2989dd232ae3c0"
  },
  {
   "id": "WN-25",
@@ -22994,8 +23085,6 @@
   "number": "26",
   "title": "Ji Duto Te Mondo Giwer",
   "path": "data/WN/26.json",
-  "sung": true,
-  "sv": "e387b58df1a2742ffddcb45f07df1b548fb44cbb34e3101508162d9bdf94fae6",
   "english": "O for a Thousand Tongues to Sing",
   "v": "4ab61bfede4a25912b8c60bb6bd969dfcc0bb8ac4eb1950c332a6cad218fd5df"
  },
@@ -23022,9 +23111,7 @@
   "number": "29",
   "title": "Yesu Jakwath Moheroa",
   "path": "data/WN/29.json",
-  "sung": true,
-  "sv": "1e4c5ac0c7297a0e47d07ae1e65ee329782b697debed421d491150dee83ff9c3",
-  "v": "d781e6b280740ad56f8abd0233ce994d1e3d1a39136ef53a11d591f9de5279fb"
+  "v": "e34f5c6afa97f715c34b3dda585d842778108e6336df4128e92dc64ede26a871"
  },
  {
   "id": "WN-30",
@@ -23049,8 +23136,6 @@
   "number": "33",
   "title": "Wuonwa, Gonywa Gi Gweth Mari",
   "path": "data/WN/33.json",
-  "sung": true,
-  "sv": "22ba4dd89662ccd051e49f051fb075ba37dec97e35307ae7f25c0cf89ec992fe",
   "english": "Lord, Dismiss Us With Thy Blessing",
   "v": "2112da1bec3100361a849c11322fef31ad748e0594f9b85b3d44654042d3051c"
  },
@@ -23124,8 +23209,6 @@
   "number": "39",
   "title": "Nitie Wer Mamit E Dhoga",
   "path": "data/WN/39.json",
-  "sung": true,
-  "sv": "f2d22cf6d60186ef2c689148b8d6b1589c1d6e748643ded7264e3924f143a7e2",
   "english": "Since I Have Been Redeemed",
   "v": "4a44c403a61360d53f27506051add48868a209a931559206de708a01aaa1a223"
  },
@@ -23146,8 +23229,6 @@
   "number": "44",
   "title": "Ang'eyo Yesu Osewara",
   "path": "data/WN/44.json",
-  "sung": true,
-  "sv": "b7b2bc4032bd9442227f2d27ebfb82a00d393bd9ca864ff8dc64e0da4c2bf61f",
   "english": "Redeemed! How I Love to Proclaim It",
   "v": "b9187da4b890d2b22edc471abe0813e12b647a2fd119e9e2564dcd69945cadd3"
  },
@@ -23165,8 +23246,6 @@
   "number": "48",
   "title": "Yesu Kristo Oberna Ngang'",
   "path": "data/WN/48.json",
-  "sung": true,
-  "sv": "dd44c30eafaa3dac60628c9cf89e392b380982bbc55df251808112159ba93c65",
   "english": "Jesus Is All the World to Me",
   "v": "eabe216496ad06094c940174b697e919a2789c1dd162363f4a542a29cc0bd7cf"
  },
@@ -23176,8 +23255,6 @@
   "number": "50",
   "title": "Kristo Obedo Misango Mar Golo Richo",
   "path": "data/WN/50.json",
-  "sung": true,
-  "sv": "a65bea8f316b0130e1a91c1318f4685bee4e5ad1746e39803b47cb3266cee0e5",
   "english": "What a Wonderful Savior!",
   "v": "47fc2e92ac4d9d8d7d023db672d299a1c4b84f7d438c0ff07ee9d24ab241b995"
  },
@@ -23187,8 +23264,6 @@
   "number": "55",
   "title": "Awero Teko mar Nyasaye",
   "path": "data/WN/55.json",
-  "sung": true,
-  "sv": "63416d0d09b7b198bec4460701f89951822c1e4ec5ba4514c13ced3b3b299db1",
   "english": "I Sing the Mighty Power of God",
   "v": "aab4661580dc91febaf19e02c59d5d412828fe299a519d4ddcf28143bf6d2bbf"
  },
@@ -23198,8 +23273,6 @@
   "number": "56",
   "title": "Ruoth Awinjo Wach Mar Gwethni",
   "path": "data/WN/56.json",
-  "sung": true,
-  "sv": "b7626dbace64dae26b9b69ce1645ab33c9e2e6eb5b78e357b878958a21fbbb3d",
   "english": "Even Me",
   "v": "e607446577ff0a7a3715f334eec98c01a2325b09681fe5b0d9b289481d74f610"
  },
@@ -23209,8 +23282,6 @@
   "number": "57",
   "title": "Roho Mar Nyasaye Ibina",
   "path": "data/WN/57.json",
-  "sung": true,
-  "sv": "e20aab960537e9b9ab14a7a4a7f749075c84cdb3da0466d59c9349ab1e28772a",
   "english": "Fill Me Now",
   "v": "13971768a24e0aa0d6f3c9b35d746c2308d46e501e74d022fc1da9a0458c827f"
  },
@@ -23228,8 +23299,6 @@
   "number": "58",
   "title": "Muya Maler Jatendwa",
   "path": "data/WN/58.json",
-  "sung": true,
-  "sv": "58f239bb20fb657c3ceb14437ee9593f8b94761522819e135ef2620cd1bf1195",
   "english": "Holy Spirit, Faithful Guide",
   "v": "d8237329452ba468115d6798f975a48ee97809e1dc3e81386ed8edac29f00c7e"
  },
@@ -23248,8 +23317,6 @@
   "number": "61",
   "title": "Osiep Manade En Mor Manade",
   "path": "data/WN/61.json",
-  "sung": true,
-  "sv": "1492e998f6aacc50ba8abebf39da32c6b24f7b90045b50bab8f7610ba75f0f11",
   "english": "Leaning on the Everlasting Arms",
   "v": "6945d008f7325dee5292b6ac1c09590c1c8f5b5a2ce53ac2c4efcb11013901a6"
  },
@@ -23317,8 +23384,6 @@
   "number": "69",
   "title": "Puonja Injili Lilo",
   "path": "data/WN/69.json",
-  "sung": true,
-  "sv": "ead7993e00292571a3cc8063962466574794c888fa9a2dc97a7fb6d81ca44d89",
   "english": "Tell Me the Old, Old Story",
   "v": "d47e3ff0c44c12e359c77484e9fdc7a6e4215164755d04d52f14f65210c4af77"
  },
@@ -23336,8 +23401,6 @@
   "number": "70",
   "title": "Nyasaye Wachokore",
   "path": "data/WN/70.json",
-  "sung": true,
-  "sv": "a59344a024945cb5df878e78f2867f68e1ae2187d01a1bdc198c0d1adf6f1fe4",
   "english": "Blest Be the Tie That Binds",
   "v": "ab193a11ced94bd0a9d96739d2b95d87de477dd455d51c1c9c0f95731d40c4f3"
  },
@@ -23374,8 +23437,6 @@
   "number": "73",
   "title": "Ahero Nyiso Weche",
   "path": "data/WN/73.json",
-  "sung": true,
-  "sv": "5d5b8bb1ffc8a61ae55f3947ed087b651084e451129e37239001f2f897746720",
   "english": "I Love to Tell the Story",
   "v": "6c426df68848ec4c11c8b8e4b8b5a207e9931e099206f8991f07ec7ff607c071"
  },
@@ -23393,8 +23454,6 @@
   "number": "75",
   "title": "Adwaro Ng'eyo Wach Yesu",
   "path": "data/WN/75.json",
-  "sung": true,
-  "sv": "9d025364ded0435c376de5a78788ef61bb8fd1cad4487f6bc140675a1316468e",
   "english": "More About Jesus",
   "v": "ac4286fbe2da1abe12779031adfbf0de8f17cdfb6ed5c3e2b0c1134461065b54"
  },
@@ -23431,8 +23490,6 @@
   "number": "77",
   "title": "Kony Jo Madwaro Tho",
   "path": "data/WN/77.json",
-  "sung": true,
-  "sv": "8f87713bf4a87dd768098b9f343d3ce1a9dd59d94bd7d385705a5099b5cd2041",
   "english": "Rescue the Perishing",
   "v": "f6d3c1863ea3c4f987f9009cf8c094325476b86e6ac0d3a2951173ccd244fd93"
  },
@@ -23450,8 +23507,6 @@
   "number": "78",
   "title": "Aparo Tinende Kuom Pinyno",
   "path": "data/WN/78.json",
-  "sung": true,
-  "sv": "5bdd07487404a9148b0b84fbda622487920f2ead2e9f5a3f6c732481132b3a05",
   "english": "Will There Be Any Stars in My Crown?",
   "v": "34cba807113a7201cab8180a3f88693fe6624cccaf2164fd662a833dde964744"
  },
@@ -23479,8 +23534,6 @@
   "number": "83",
   "title": "Yesu Osiep Malong'o",
   "path": "data/WN/83.json",
-  "sung": true,
-  "sv": "510b32fcf46731ab5f717b77a32cf5a3a86bb66f1ce1abfe0a3807aa112c7e5d",
   "english": "My Lord and I",
   "v": "7fc60cb56e2775913b0ba51da54be8224232b8ef18167714e6e47c380a528df2"
  },
@@ -23498,8 +23551,6 @@
   "number": "87",
   "title": "Jokeyo Ni Kanye",
   "path": "data/WN/87.json",
-  "sung": true,
-  "sv": "8ab158bf0e1228fa7da301603d73c9c04e87bf26b50c8931230fb1df4f1c8978",
   "english": "O Where Are the Reapers?",
   "v": "3262779157f05361f23d66c629a8c8e0739505de17a74e10106198d5ad7ad78f"
  },
@@ -23535,8 +23586,6 @@
   "number": "101",
   "title": "Chunguru Matek Kuom Ruoth",
   "path": "data/WN/101.json",
-  "sung": true,
-  "sv": "020a74e7c18719f5db9598c889be7130f26992a181af85b209dc9c79e0628606",
   "v": "e4caba84a3b6b0961776aae13d99052aae04f8c08a38453ea0fdc419030804f5"
  },
  {
@@ -23545,8 +23594,6 @@
   "number": "102",
   "title": "Rituru, Lemuru",
   "path": "data/WN/102.json",
-  "sung": true,
-  "sv": "146743543830f3d5cb25814a148e09ac1cf99502f798ba31851d586f87b499ed",
   "v": "9fbac03cac054ceb19b523d6ee45fd0bd44564a9cfc0354d75edb904e2a186d1"
  },
  {
@@ -23564,8 +23611,6 @@
   "number": "110",
   "title": "Kristo En Jatelowa",
   "path": "data/WN/110.json",
-  "sung": true,
-  "sv": "76c46b841a01b052236f868044d62e410d8b7b9fc0e2dfe33bd725db0db1f056",
   "v": "1fbc88c13a07089b81a98a4c4993f3e7f6ab01a957978e8ff850b57bd5b268c3"
  },
  {
@@ -23574,8 +23619,6 @@
   "number": "111",
   "title": "Wakwayi, Ruoth, Kuom Tekoni",
   "path": "data/WN/111.json",
-  "sung": true,
-  "sv": "c986e4204ca71eebabba2308f9d5bb526bde242644c3b43a0496ebebcc152a97",
   "english": "O for That Flame of Living Fire",
   "v": "529e3f2808d7f298bb216c8523243b75db20e2f5b8a4abd305d68e9c41b45aae"
  },
@@ -23593,8 +23636,6 @@
   "number": "112",
   "title": "Keduru Jo Ka Yesu",
   "path": "data/WN/112.json",
-  "sung": true,
-  "sv": "779a919b7b1fd2d036fbee14d48305318bdafe217f2eda5ec1f1001d4c4dd52d",
   "english": "Stand Up! Stand Up for Jesus",
   "v": "0d51f60e2d09358b1ff0943f049f69f66e99014ab81674d4be09eeeed3a115da"
  },
@@ -23613,8 +23654,6 @@
   "number": "119",
   "title": "Sabato Mari, Ruoth",
   "path": "data/WN/119.json",
-  "sung": true,
-  "sv": "70492a0cfa5785637ca7819de6eda623f28a628edf0b784ac42ecfea96e89c18",
   "english": "We Love Thy Sabbath, Lord",
   "v": "c4e561d258b6131d7efd83f45509dbd178cc6938bca6278d64ad70afaf1963a0"
  },
@@ -23624,8 +23663,6 @@
   "number": "123",
   "title": "In Skul Marwa Mar Sabato",
   "path": "data/WN/123.json",
-  "sung": true,
-  "sv": "362b5f1a9ef7bd9d7c237f38112ae64b6ccb2981b5f3019ccebd8398d5e056f1",
   "v": "4ce1c850129ec114614f66c593b1700d17133f9c18e2c2078b59e2ad44b857c0"
  },
  {
@@ -23643,8 +23680,6 @@
   "number": "133",
   "title": "Bedi Kod An",
   "path": "data/WN/133.json",
-  "sung": true,
-  "sv": "b0264eb8944e00dee6f833889f3cc6fd3fbc51bf1490916ff15f8aa497f73e50",
   "english": "Abide With Me",
   "v": "730c7c0bb00ba2e310212812598525158bc0de961fd3388386b4d09ab73d84d0"
  },
@@ -23654,8 +23689,6 @@
   "number": "134",
   "title": "Wang' Chieng Koro Podhonwa",
   "path": "data/WN/134.json",
-  "sung": true,
-  "sv": "96c09b5b345b42ec4c8af559b1c01265706515a3f88d8634fd5c0f6929bdb3ac",
   "english": "Day Is Dying in the West",
   "v": "790a327dab42f21137032e0d1320f54587f8660a68c982135dd7f5555dba5cf0"
  },
@@ -23665,8 +23698,6 @@
   "number": "136",
   "title": "Puothe Chiek E Pinje Duto",
   "path": "data/WN/136.json",
-  "sung": true,
-  "sv": "2fdfb92ccc02e8a70528e46051b7a3b8a6d0fbe44fa5ea64d756b48034b20e5c",
   "english": "Far and Near the Fields Are Teeming",
   "v": "84e5133e2207051d60a78f7c396fd527dd349b3d7af331221d6ff0e580b8a575"
  },
@@ -23684,8 +23715,6 @@
   "number": "137",
   "title": "Winji Weche Ma Nondiki",
   "path": "data/WN/137.json",
-  "sung": true,
-  "sv": "3ec329ceb6f3614ee82319ebe72a73dedc258443ad50c9280cce0ac65f3c4810",
   "english": "Bring Ye All the Tithes Into the Storehouse",
   "v": "beca2b06023fecc2a945e8643a9ba12bed7e3646d32459214549cee23e85332a"
  },
@@ -23695,8 +23724,6 @@
   "number": "139",
   "title": "Ringra Namiyo In",
   "path": "data/WN/139.json",
-  "sung": true,
-  "sv": "76ffa3ea158cdf337bec54c5ea3cb36b851412c831a3c491965197654963c9e5",
   "english": "I Gave My Life for Thee",
   "v": "5d21c2d4970b6069d304f0c63122eaf490a86d6e08806cdc06e747c99f27d39b"
  },
@@ -23714,8 +23741,6 @@
   "number": "143",
   "title": "Yesu Oluongowa Koro",
   "path": "data/WN/143.json",
-  "sung": true,
-  "sv": "753e3670fedce7ba4401b55f8fd5da48cc3d5ce28afda5b8bbeb14605f144dec",
   "english": "Softly and Tenderly",
   "v": "0b1578c5937d1b606975cc6e1fce19c84397ee00aaaf845d78fc7be20a4a2ff1"
  },
@@ -23733,8 +23758,6 @@
   "number": "144",
   "title": "Nawinjo Yesu Kowacho",
   "path": "data/WN/144.json",
-  "sung": true,
-  "sv": "87fa07b45762ee7b3cfe5711038eda0c95236e652f0e048a20c2b2ea5413b0b6",
   "english": "I Heard the Voice of Jesus Say",
   "v": "ee8c98ad3ca9f32a8ff8258d4c86206a7216593e599bb3511e77636b2572a1e3"
  },
@@ -23752,8 +23775,6 @@
   "number": "146",
   "title": "Winji Dwond Yesu Kawuono",
   "path": "data/WN/146.json",
-  "sung": true,
-  "sv": "72e442d05b8946242cb7db55eafdc2cf4fa48f4207fd6fe6d667c84970232b3f",
   "english": "Hark! the Voice of Jesus Calling",
   "v": "2706bc35b05bd3ce1cf4fd49bc4aa7f2410e8d95f8079d7d8ea4a46dc18e9e7a"
  },
@@ -23763,8 +23784,6 @@
   "number": "147",
   "title": "Wasewinjo Wach Maber",
   "path": "data/WN/147.json",
-  "sung": true,
-  "sv": "41c48e02f19c9dfaea33f896f15a3c49993b3cf2d2f77fd482fe9f6cf70d4eb4",
   "english": "Jesus Saves",
   "v": "6572ebf2e73876cc0becf41ca8cfbf57d3595bb0925586741b606110b249af56"
  },
@@ -23791,8 +23810,6 @@
   "number": "150",
   "title": "Jathieth Maduong' Osudo Ka",
   "path": "data/WN/150.json",
-  "sung": true,
-  "sv": "52a43b6990511ae72b2d329d4368b970e4b9876c8629deee446d3a081ce8378b",
   "english": "The Great Physician",
   "v": "4a176a147d1e54995689aae8c4ba2cf1b3ce32723711dff527e959f2538b6bc0"
  },
@@ -23840,8 +23857,6 @@
   "number": "161",
   "title": "Ruoth Yesu, Agomobo Bedo Ng'ati",
   "path": "data/WN/161.json",
-  "sung": true,
-  "sv": "c352c7999c50e63e61b3fba60ee41138b8b598e2489370114b63912f66f62821",
   "english": "Whiter Than Snow",
   "v": "6a2e9a5667d6c505a53f77e42878b44cd32a8fd861d7bb0b3ebd75e2aa8091e3"
  },
@@ -23859,8 +23874,6 @@
   "number": "162",
   "title": "Abiro Ni Msalaba",
   "path": "data/WN/162.json",
-  "sung": true,
-  "sv": "b48e6957bd8227f2572e5dc1cc1ed9bd400613f63bdb48bb3bd2b3bd6adbacc5",
   "english": "I Am Coming to the Cross",
   "v": "3868ce19a3418a303387d0355ff6bc4d240d05afd02fe05aabd92c19b628a60d"
  },
@@ -23878,8 +23891,6 @@
   "number": "165",
   "title": "Asebayo Mabor Kod Ruoth",
   "path": "data/WN/165.json",
-  "sung": true,
-  "sv": "42d6f9ba3134c630e79a1955051fc4681e1592c0e0eb4145ada65873a78cec71",
   "english": "Lord, I'm Coming Home",
   "v": "c7defc17d432538d6df8a682d809e47cb6f0333c880a61f70bbacbb3a5df7f48"
  },
@@ -23897,8 +23908,6 @@
   "number": "166",
   "title": "Jawar Owachona",
   "path": "data/WN/166.json",
-  "sung": true,
-  "sv": "1e1862ea9862cf723a70c92070a9dc9ff900600881f4b75e66d6f9b217aa20c3",
   "english": "Jesus Paid It All",
   "v": "fa24e169972f000ce2defae5f7b0695c594bc9026413a5f62739db5e73df0895"
  },
@@ -23916,8 +23925,6 @@
   "number": "167",
   "title": "Yesu, Kar Msalabani",
   "path": "data/WN/167.json",
-  "sung": true,
-  "sv": "dd4211b4b9218d10a854755d09fec9fac5aaa0cb2c5de4b186c126bd0c5f9df6",
   "english": "Near the Cross",
   "v": "5c9fc5c0b1bf2153e91605dd2b40e68e576ca40a97b9cc206e1ffd53b51c1ce2"
  },
@@ -23935,8 +23942,6 @@
   "number": "168",
   "title": "Duto Amiyo Ruoth Yesu",
   "path": "data/WN/168.json",
-  "sung": true,
-  "sv": "1b9bcac483a3a3396dfc5e83f5a879a2a1cadad746776aecca1384b4f6046733",
   "english": "I Surrender All",
   "v": "0c3bb04efc0020cdb0a1b343b1ae3e0ea816ea377dec5f063d26541addd2d4b1"
  },
@@ -23954,8 +23959,6 @@
   "number": "169",
   "title": "Yesu Luongi, We Ting'ni Mar Richo",
   "path": "data/WN/169.json",
-  "sung": true,
-  "sv": "5bec5d4905dc6288141ae662cfd55ddd4a2dfb2a1b9c6619790996e30902613b",
   "english": "There Is Power in the Blood",
   "v": "e48028b7d3a94c76b5acac9827c8b7dbd7569c901ac360a11bd64f0839164795"
  },
@@ -23973,8 +23976,6 @@
   "number": "170",
   "title": "Richona Osegur",
   "path": "data/WN/170.json",
-  "sung": true,
-  "sv": "bd34e64b7726aafc8d2b87417ebae8561d0f9d79f0d4a845454416bf3567f764",
   "v": "01fb8c1204a489f33f4bcc05532dfdcab19442726b0332009b4ee8e7902ff494"
  },
  {
@@ -23983,8 +23984,6 @@
   "number": "171",
   "title": "In Kiol Nikech Chandruok",
   "path": "data/WN/171.json",
-  "sung": true,
-  "sv": "ca625db1e4b84306880ff64efe7a289d8106d5ccd1eb69da746c1778e78f8b08",
   "english": "Tell It to Jesus",
   "v": "0ac2f62405d23e240603324be425bce46feed52e2952f294681ab3413d4fe500"
  },
@@ -24002,8 +24001,6 @@
   "number": "176",
   "title": "Nyasaye Noolnwa Gweth Polo",
   "path": "data/WN/176.json",
-  "sung": true,
-  "sv": "d4d1dc96218c8aaa679d8ee96dbccd4e27881186b4c9b942e8487d718a918f75",
   "english": "Showers of Blessing",
   "v": "0a29e9a5726e40c7922181a2062f161937cf4cc26daf4595c5267dd974a12d07"
  },
@@ -24022,8 +24019,6 @@
   "number": "182",
   "title": "Koro Wagenoi",
   "path": "data/WN/182.json",
-  "sung": true,
-  "sv": "76c707f22932e36e00b5f88f384f461d3b03b51f55c236e41f8f7214bc203eeb",
   "english": "My Faith Looks Up to Thee",
   "v": "b8b32993fd4743d71dde4458074e2b2caa12d490f42eb5211dedf7cc5311cfb1"
  },
@@ -24041,8 +24036,6 @@
   "number": "184",
   "title": "Kat' Abed Jaketh Maduong'",
   "path": "data/WN/184.json",
-  "sung": true,
-  "sv": "2892cef11d1dc53347b3dde0e06b0d3fa2f58f24a00bf3d04e6a6ed7ce059e55",
   "english": "Chief of Sinners Though I Be",
   "v": "dbc2ede89e00ccdbe86ac61c79ec7f9f5e87387fce0700b3eb07bf5d1c99f236"
  },
@@ -24060,8 +24053,6 @@
   "number": "189",
   "title": "Yesu Kristo En Osiepwa",
   "path": "data/WN/189.json",
-  "sung": true,
-  "sv": "46efdf7a65b75f308083abd836feaede8d860c31bec5cf43a8e48b7ca9e09e0f",
   "english": "What a Friend We Have in Jesus",
   "v": "8062913090717aac9dd432c4526628d852d483e77d4eada643dc078cc397a927"
  },
@@ -24071,8 +24062,6 @@
   "number": "192",
   "title": "Tim Kinda Mar Lemo",
   "path": "data/WN/192.json",
-  "sung": true,
-  "sv": "63e054e8357aa1859924d4db71f6827f856d2d97a5318b74591caa85eaa7ed81",
   "english": "Take Time to Be Holy",
   "v": "1a52dcb62c11ca9b6fd37a87fcf0d4106f5978fbdfe9b23fc306648c6a508412"
  },
@@ -24128,8 +24117,6 @@
   "number": "205",
   "title": "An Ni Mari Ruoth",
   "path": "data/WN/205.json",
-  "sung": true,
-  "sv": "82b4d40ee5c59e4e283ce197dd725b601751d9319703a25e0a788524020dffc9",
   "english": "Draw Me Nearer",
   "v": "d4d7cd5068d9da1e9a1996b166513a719fae47b0a332f15fd05bb3272255d4e1"
  },
@@ -24147,8 +24134,6 @@
   "number": "206",
   "title": "Kaw Piny Duto Miya Yesu",
   "path": "data/WN/206.json",
-  "sung": true,
-  "sv": "8c4ead97f2539749dee97a89bcded49f69f7bec60f40f232c36cd3def233107d",
   "english": "Take the World, but Give Me Jesus",
   "v": "66590465fcbdb68d2aaa8917faa24e90346e9c498476ac9079284cf6300db35b"
  },
@@ -24166,8 +24151,6 @@
   "number": "208",
   "title": "Bedi Mangima Kuoma",
   "path": "data/WN/208.json",
-  "sung": true,
-  "sv": "340867471d53ee8f99d7b55a261afc1705c02621a282ce861b71d56e06492535",
   "english": "Live Out Thy Life Within Me",
   "v": "1f36a6a3cdacf652de3f2601eb9df993cd0ad8c866166265491a7b589ef4a6a4"
  },
@@ -24195,8 +24178,6 @@
   "number": "211",
   "title": "Aseweyo Tich Maricho",
   "path": "data/WN/211.json",
-  "sung": true,
-  "sv": "f8fd97eb42f4bdf6aeeba827c954dbec550093f287fb63c543ac7c2d025734da",
   "english": "Jesus, I My Cross Have Taken",
   "v": "be3bb049d2935ea725e2359211f43e12ccbffb3f09fb90a4deade7f28c3c644f"
  },
@@ -24214,8 +24195,6 @@
   "number": "212",
   "title": "Adwaro Bedo Nyathi Yesu",
   "path": "data/WN/212.json",
-  "sung": true,
-  "sv": "1a55d739929832732d0a18d69085f7e2a99a1635c059c7e3a1584cae07fdace1",
   "english": "Wholly Thine",
   "v": "463f9a86eddaf7191ca675dbc0d717ff4c0b5781e9e4a06d55465f23c32c839b"
  },
@@ -24233,8 +24212,6 @@
   "number": "213",
   "title": "Teko Nyasaye Orita",
   "path": "data/WN/213.json",
-  "sung": true,
-  "sv": "ef2d4b976150b323f51d2a2ce45d8f370e9994434503d642e1845028f1338f5a",
   "v": "39a4b10d55d457ebb837d7d439edd1cc2472661c015894306680c7f912e41ce3"
  },
  {
@@ -24243,8 +24220,6 @@
   "number": "218",
   "title": "O Yesu, An Adwaro",
   "path": "data/WN/218.json",
-  "sung": true,
-  "sv": "1f48c3d2447baf17e4ba1a99c02738da792f9c8d5959c0c0a4e7de3b2e29c167",
   "english": "O Jesus, I Have Promised",
   "v": "bdbe1c6084f395865cd820c8bbe1a97eba278c45079e9183669f4c6a79ccbdc9"
  },
@@ -24262,8 +24237,6 @@
   "number": "219",
   "title": "Weche Mag Mirima",
   "path": "data/WN/219.json",
-  "sung": true,
-  "sv": "0da6536aab7dcd285cdb9e89c689fbebdc2055786ee478a8691fa138aaf19f7b",
   "english": "Angry Words! Oh, Let Them Never",
   "v": "52f63885f474da78320815e2f5a8b242c43470868d27ef27c72dd39da76d7620"
  },
@@ -24273,8 +24246,6 @@
   "number": "220",
   "title": "Otelona",
   "path": "data/WN/220.json",
-  "sung": true,
-  "sv": "a9eebe223ef0d6d7d88624576349791acd9869fadd4c7c2eec6892d49fa17f39",
   "english": "He Leadeth Me",
   "v": "3fcdade7b06343ca83ca4d7769a3055596d952234ac6f3180ce830de357c8116"
  },
@@ -24295,8 +24266,6 @@
   "number": "223",
   "title": "Onego Abed Gi Yesu",
   "path": "data/WN/223.json",
-  "sung": true,
-  "sv": "42a87f1a1415b24741e22b9ee16e3e50f163dd576b311d327c65dcaa7f3fabaa",
   "english": "I Must Have the Savior With Me",
   "v": "7df378975021d1bc82cadc7bcba7dfa11b7fbcf03355b0f03a87181c64b55575"
  },
@@ -24306,8 +24275,6 @@
   "number": "226",
   "title": "Yesu Kotaya Pile",
   "path": "data/WN/226.json",
-  "sung": true,
-  "sv": "9050b65d9e7013a6a6d9442e42f1bbb168ab1c9261a5c872bac29e58dbda7df9",
   "english": "Safe in the Arms of Jesus",
   "v": "5d5fb7e83899b855f105ce6d4fbade0cc911e72e088ddd9e1819785483d39f48"
  },
@@ -24356,8 +24323,6 @@
   "number": "235",
   "title": "Wuoth Pod Odong' Marom Nade?",
   "path": "data/WN/235.json",
-  "sung": true,
-  "sv": "d7dad9b6b293ef3a7d5cecb8f3e64fdfb4465a08395258ddfc786e6fe70cbb9d",
   "english": "How Far From Home?",
   "v": "75850945f42bc553488a141874bbf152a5c9afd10327f0688864d6b24d8eef75"
  },
@@ -24367,8 +24332,6 @@
   "number": "236",
   "title": "Gin Weche Mamit",
   "path": "data/WN/236.json",
-  "sung": true,
-  "sv": "56a8e0d9910c269e88677394cfbd2eec143f6ca0b9d46fbe41bd9ac71f2166d1",
   "english": "How Sweet Are the Tidings",
   "v": "11d6edd543368f66cc3faf6cb25c380a864a2ac0d0aff208ca52b5872c3cbd2d"
  },
@@ -24378,8 +24341,6 @@
   "number": "238",
   "title": "Gouru Bu, Goyeuru Matek",
   "path": "data/WN/238.json",
-  "sung": true,
-  "sv": "b71322eed8dda36e22e569ffd007645b7a6da3adba5de95402ac8c3679b5f67f",
   "english": "Jesus Is Coming Again",
   "v": "4e52871697e15865323f04c072f18633bd7d1e385325d3e8f7d9b74b0d187b46"
  },
@@ -24398,8 +24359,6 @@
   "number": "249",
   "title": "Ruodha Ok Agomb Moko",
   "path": "data/WN/249.json",
-  "sung": true,
-  "sv": "8c11f055337293b959fd3487d6f89ab32d26568efade5be4a3a44e05daa5146d",
   "english": "Is My Name Written There?",
   "v": "9cf18127c2c6c6e5ead96a5a323d0988a4c57845c19deddcd598ecc38f1040d3"
  },
@@ -24418,8 +24377,6 @@
   "number": "251",
   "title": "Ka Jabura Nong'ad Buchwa",
   "path": "data/WN/251.json",
-  "sung": true,
-  "sv": "2f080540dcb6470080fea9c50d6ea2168c6b3b03aab85ec22072d9bdd1cb2f81",
   "english": "Weighed and Wanting",
   "v": "4f1e6a5830116aba399c5b2fbaf4cc1479097774f8631c2dd19de6cdfde466f3"
  },
@@ -24429,8 +24386,6 @@
   "number": "253",
   "title": "Koro Kawuono Ruodhwa Man E Polo",
   "path": "data/WN/253.json",
-  "sung": true,
-  "sv": "36546d45090bc916b22f8b1603158697990863a4b4c2fe4ec1708a003aab89be",
   "english": "The Judgment Has Set",
   "v": "d724c9513b3f38814bb5e0796c8f57ac95c5deb2fa0625c322162a9184d2ca4c"
  },
@@ -24440,8 +24395,6 @@
   "number": "258",
   "title": "Anane Wang' Yesu Kristo",
   "path": "data/WN/258.json",
-  "sung": true,
-  "sv": "f355ba43842e42b3af5dbdd27934bdab638fb667654ee829d846f5c605b2a9ff",
   "v": "ed61c1451e0dc91736f0cb3e4208d3213df94abe933c8fd5eeb627a90c9c42cf"
  },
  {
@@ -24450,8 +24403,6 @@
   "number": "259",
   "title": "Wanachokre E Aora",
   "path": "data/WN/259.json",
-  "sung": true,
-  "sv": "172cdb8beaf1325b68c506dc2fabb0f6d216438fc05f3bdd3f8d8cfc3691d6a2",
   "english": "Shall We Gather at the River",
   "v": "4780719a71b3aa331d9cf9103e8af9c041f83fc0cf2cb5cc01167472d9fce179"
  },
@@ -24461,8 +24412,6 @@
   "number": "263",
   "title": "Ji Noyud Mor Ka Tich Orumo",
   "path": "data/WN/263.json",
-  "sung": true,
-  "sv": "83395125ccda960b49a945ff711104a815adde9ec310534ef2cab323565fb227",
   "english": "Joy By and By",
   "v": "78a6519248a6b578a9f19653027e5d9718490bf6c51c7df8d23766d0f34275c7"
  },
@@ -24481,8 +24430,6 @@
   "number": "268",
   "title": "Wawinjo Mar Dala Maler",
   "path": "data/WN/268.json",
-  "sung": true,
-  "sv": "cb150872f8027093a8fa136a8afa9467472e7449d5ac26f6ed3b5ecfaf086068",
   "english": "We Speak of the Realms",
   "v": "dcb00e0eec466e9c0461ab665541f4634aea90a1b042bd243d4a43d28dc4474e"
  },
@@ -24492,8 +24439,6 @@
   "number": "281",
   "title": "Nindo Kuom Yesu",
   "path": "data/WN/281.json",
-  "sung": true,
-  "sv": "8c31ebbbd3ad3b9f76fc84017603280daeea910aed79adba9b46d5ffd57c5f68",
   "english": "Asleep in Jesus",
   "v": "9455900d884b05e1cde87079c682d8ab3bbde8db91e422bf78cd9d920c50c587"
  },
@@ -24512,8 +24457,6 @@
   "number": "283",
   "title": "Yesu Wabiro Iri",
   "path": "data/WN/283.json",
-  "sung": true,
-  "sv": "cc98c94f82183c93e1d2487fa2c368a9260b0aaa59eaaa56d0444afd69cd2140",
   "english": "Baptize Us Anew",
   "v": "1c62c817b7d540e085185e0311949505423a530682210ec2fa68bde257fd6fa8"
  },
@@ -24550,8 +24493,6 @@
   "number": "285",
   "title": "Yesu Ruoth Nisethona",
   "path": "data/WN/285.json",
-  "sung": true,
-  "sv": "c8ff5b5fe00abbf209d6f5a28263b31ff52fdbc0c425d4462b8fc067b2e6ebd2",
   "english": "Rock of Ages",
   "v": "76835fe3595777da02d1e03f05c8002c889651ff9a2c3369717f4145894e1d9c"
  },
@@ -24561,8 +24502,6 @@
   "number": "286",
   "title": "Winjuru Tinde Dwond Jakwath",
   "path": "data/WN/286.json",
-  "sung": true,
-  "sv": "4dc9698d7d00ed0cecc724eef464987d045a08bb519b19fd580948fb379e4b46",
   "english": "Hark! 'Tis the Shepherd's Voice I Hear",
   "v": "94d38ff5bde0bbf180e83467f57716e9a625c5c9141cb401709e598d4cc3210b"
  },
@@ -24581,8 +24520,6 @@
   "number": "291",
   "title": "An Ayie Ruoth Yesu Koro",
   "path": "data/WN/291.json",
-  "sung": true,
-  "sv": "da51120f1c7c5adc9104d549059475994e417f1623e22dc6d6a83f895ec3cf3e",
   "v": "3ce2057d50da8e84d436b6ee274e7169a999c7c3ddf28d78640475c110ab5563"
  },
  {
@@ -24636,8 +24573,6 @@
   "number": "301",
   "title": "Yesu 'Hera Ang'eyo",
   "path": "data/WN/301.json",
-  "sung": true,
-  "sv": "a97703155d1680c1e292211aca045124b0777ee4e33ac7b54b45d22d1fdc398c",
   "english": "Jesus Loves Me",
   "v": "35cad2e8b8dac8a4b4630390f0327f21e3086f09f4c9e00658dad3c4cc350c90"
  },
@@ -24655,8 +24590,6 @@
   "number": "302",
   "title": "Yesu 'Biro",
   "path": "data/WN/302.json",
-  "sung": true,
-  "sv": "b6c21d44ea709922439344ac0e4c600e560a8c4b2e4b66ec7fe127fc061dd928",
   "english": "When He Cometh",
   "v": "4c827d4ff2b19193c96501f5c8b06ab2a46e7b4bc23873c15e53d5f5b162c5b1"
  },
@@ -24675,8 +24608,6 @@
   "number": "308",
   "title": "Nogola E Bugo",
   "path": "data/WN/308.json",
-  "sung": true,
-  "sv": "7b6bbe8602b4faa8bc186f120e92f20c14e622ef46af9eeabd610289698e9d71",
   "english": "He Brought Me Out",
   "v": "fbebbeb6d78dfa09821ac3848ad6e5c53baf59a305f3760031b97998f1cc80c9"
  },
@@ -24686,8 +24617,6 @@
   "number": "311",
   "title": "Ruoth Nyasacha",
   "path": "data/WN/311.json",
-  "sung": true,
-  "sv": "97642b3a1936b404512e9ecbc90fb53464bb57cb1e21777e4f29c4c496b1c16d",
   "english": "How Great Thou Art",
   "v": "0f1711d7fff94e7f758eb2870b185b5a1979532640572865fd8c200c559363f0"
  },
@@ -24697,8 +24626,6 @@
   "number": "315",
   "title": "In Koso An?",
   "path": "data/WN/315.json",
-  "sung": true,
-  "sv": "28dadfb8a83b693eecbedab4f3d0d958085038fd23f250a9d5929b2b97b54644",
   "v": "baeacf321756fa984351460aa49f72393bf8b834562625769d27cef456d549b8"
  },
  {
@@ -24707,8 +24634,6 @@
   "number": "316",
   "title": "Yesu Kristo Osechier",
   "path": "data/WN/316.json",
-  "sung": true,
-  "sv": "e27fcead1ed8f6f7f54ed7d2915f4d8ef4bb41377eeabaaf2aaf5122e0bbb780",
   "english": "Christ the Lord Is Risen Today",
   "v": "7be10e52f85d8bad012ded041d1ff45237525db1d5a9d3ee9bc725fc6c676233"
  },
@@ -24718,8 +24643,6 @@
   "number": "317",
   "title": "Kik Chunyi A Kat' E Chandruok",
   "path": "data/WN/317.json",
-  "sung": true,
-  "sv": "1264243e5bf604556b33f5bcc02ac20c102cf7c0fc1b781ff1e561599a4e530a",
   "english": "God Will Take Care of You",
   "v": "761e0dc8ffb5d0b651dfd3271911a05999262b9abf1e9e8f15cecb8a4cbfba15"
  },
@@ -24729,8 +24652,6 @@
   "number": "318",
   "title": "Yie Mar Kwerewa",
   "path": "data/WN/318.json",
-  "sung": true,
-  "sv": "3822a91531ad7c393fe3578c35274a9e6dd52b9b4e121571f1c30d3f64bda1ee",
   "english": "Faith of Our Fathers",
   "v": "d18adc753f8c77c28715dbdc33c9a047abfb94e83a4d7b8af3dababaeb8dbc5a"
  },
