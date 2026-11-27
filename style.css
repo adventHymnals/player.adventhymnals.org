@@ -768,7 +768,7 @@ body.app .workspace[data-view="words"] .alt-view { overflow-x: hidden; }
 @media (max-width: 420px) { #swmDialog .sing-choices { grid-template-columns: 1fr; } }
 body.app #swmBar { display: none; } /* the app shows Sing with me's status in its own strip */
 
-/* Singers (Brian, 19 Nov): three sections, Warble and Weaver (live) then Recorded; each a heading with "Live" and an
+/* Singers (Brian, 19 Nov): sections, Warble (live) then Recorded; each a heading with "Live" and an
    (i), one gilt rule, then ONE row of version chips ("v3"), newest first, scrolling sideways: the sheet is the same
    height with 6 versions or 20 and no heading scrolls away (44 px chips, 8 px gaps, as the app) */
 .ver-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 2px 0 0; }

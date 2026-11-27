@@ -564,7 +564,7 @@ export class Engine {
     this.playing = true;
     clearInterval(this.timer);
     clearTimeout(this.holdTimer);
-    // Brian, 19 Nov: a heavier singer (Weaver) that is not ready yet: the app says it waits, gets the singing ready
+    // Brian, 19 Nov: an app singer that is not ready yet (an older app with Weaver): the app says it waits, gets the singing ready
     // first (its own "getting ready" strip), and only then starts; the introduction waits with it, so the singing
     // follows the introduction with no pause. Its {"type": "started"} event (nativeStarted) starts the instruments.
     if (this.nativeOn && this.nativeWaits) {

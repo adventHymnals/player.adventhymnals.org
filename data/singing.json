@@ -82,46 +82,6 @@
    "version": "warble-m-src colab run-m-src step 15000",
    "credits": "Live singing: Warble, trained on GTSinger (Zhang et al., NeurIPS 2024), CC BY-NC-SA 4.0.",
    "enabled": true
-  },
-  {
-   "id": "leap",
-   "engine": "leap",
-   "label": "New voice",
-   "version": "LeapSinger hymn 10k + NHVSing (native C), 18 Nov 2026",
-   "credits": "Live singing (new voice): LeapSinger and NHVSing, trained on GTSinger (Zhang et al., NeurIPS 2024) and M4Singer (Zhang et al., NeurIPS 2022), CC BY-NC-SA 4.0.",
-   "files": [
-    {
-     "url": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/voices/leap/2026-11-18/nhv_convs.onnx",
-     "sha256": "40a42336f803898e513f1460a27b4a63e65e81a9b679083c6131c36c9170c5ff",
-     "size": 1916539
-    },
-    {
-     "url": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/voices/leap/2026-11-18/leap_aux.bin",
-     "sha256": "477ebeacf956081e45b31b397b582bb0c390300fefad592b0d1cc82982b16c7d",
-     "size": 545296
-    }
-   ],
-   "tiers": [
-    {
-     "tier": "mixed2",
-     "url": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/voices/leap/2026-11-18/ac_mixed2.onnx",
-     "sha256": "2dded5bafeb5db2b1ba03753d3c2a9eccd1287d35cbe3a508e8c3bcc42c7ce4f",
-     "size": 34970130
-    },
-    {
-     "tier": "int8",
-     "url": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/voices/leap/2026-11-18/ac_int8.onnx",
-     "sha256": "ca6daeda6e09f93dfd72d661927d36f7e8b18efd30f0795e53e81382543bf61e",
-     "size": 28820742
-    },
-    {
-     "tier": "full",
-     "url": "https://pub-843ae84f0c864d21b1ee26ef78dea9a0.r2.dev/voices/leap/2026-11-18/ac_full.onnx",
-     "sha256": "a1ed57bc8d26132114b9a07e830189bc2d1e0b788337b6289f5bc84f0a7548ee",
-     "size": 60174660
-    }
-   ],
-   "enabled": false
   }
  ]
 }

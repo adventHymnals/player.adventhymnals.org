@@ -5,7 +5,7 @@ import {
 } from "./core.js";
 import { Engine, singers } from "./audio.js";
 import { loadSinging, Warble } from "./warble/warble.js";
-import { COPY, SECTIONS, SHOW_VOICE_CREDITS, singerCopy } from "./singers-copy.js";
+import { COPY, REMOVED, SECTIONS, SHOW_VOICE_CREDITS, singerCopy } from "./singers-copy.js";
 import { ScoreView } from "./scoreview.js";
 import { engraveKey, getEngraved, putEngraved } from "./engravecache.js";
 import { SolfaView, WordsView } from "./solfa.js";
@@ -227,7 +227,7 @@ let stemInfo = new Map(); // "S:1:0" (voice:verse:transpose) -> { offsetSec, dur
 // data/singing.json says which is the default, the listener may choose per device
 let singingCfg = { default: "stems", warble: null, voices: [] };
 // live voices: engine "warble" (the first in singing.json) or "warble-<id>" (the others)
-const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-") || v === "leap");
+const isLive = (v) => typeof v === "string" && (v === "warble" || v.startsWith("warble-")) && !REMOVED.engines.has(v);
 const liveVoice = (v) => singingCfg.voices.find((w) => w.engine === v) || null;
 const otherLive = (v) => { for (const w of singingCfg.voices) if (w.engine !== v) w.cancelAll(); }; // only the chosen voice works
 // which singers there are (data/singing.json): the app's saved copy (kept up to date by its occasional
@@ -242,7 +242,15 @@ const singingReady = (async () => {
     } catch { /* nothing saved */ }
   }
   return loadSinging([...new Set([...urls, `${DATA}data/singing.json`, "data/singing.json"])], location.href);
-})().then((c) => { singingCfg = c; moveToV5(); offerLiveVoices(); if (DATA) refreshSinging(); });
+})().then((c) => { singingCfg = c; moveFromRemoved(); moveToV5(); offerLiveVoices(); if (DATA) refreshSinging(); });
+/** What a saved choice of a removed voice becomes: Warble v5 where it is offered (not in the app), else the first. */
+const removedTo = () => (liveVoice("warble-v5") ? "warble-v5" : "warble");
+/** Weaver v1/v1f and Warble v4 are gone (27 Nov 2026, not ours): a saved choice of one becomes Warble v5 (or the
+ *  first live voice where v5 is not offered), here and in the app. */
+function moveFromRemoved() {
+  if (!REMOVED.engines.has(state.singEngine)) return;
+  state.singEngine = removedTo(); save("singEngine");
+}
 /** Warble v5 is the main live voice (23 Nov 2026): once per browser, a listener who never chose a singer, or whose choice
  *  was the earlier usual live voice (Warble v3, "warble"), gets it; every other choice is kept. Not in the app: it keeps
  *  its own choice and makes this move itself. */
@@ -287,19 +295,15 @@ const awaitingApp = () => !appAnswered && (APP ? nativeEngineRaw() === "ask" : a
 const whoSings = () => (state.instrumental ? "instrumental" : singEngine());
 const singEngine = () => {
   let e = state.singEngine || nativeEngine() || singingCfg.default;
+  if (REMOVED.engines.has(e)) e = removedTo(); // a saved choice of a removed voice (Weaver, Warble v4)
   if (isRecorded(e) && singingCfg.warble && hymnList.length && !anyRecorded()) e = "warble"; // a saved "recorded" with none left
   if (!singingCfg.warble && !isRecorded(e)) return "stems";
   if (e === "stems-v2" && !manifests["stems-v2"]) return "stems"; // this hymn has no converted singers
   return isLive(e) && !liveVoice(e) ? "warble" : e; // a live voice no longer offered: the first
 };
 const useWarble = () => isLive(singEngine()) && !!singingCfg.warble;
-// the voice that sings now: the chosen one, or Warble v3 (old v5) standing in while the app's engine for it is getting
-// ready on this phone (its first-use setup takes minutes) or unavailable; the choice itself stays
-let standIn = null; // the app engine stood in for ("leap"), or null
-const liveW = () => {
-  const v = liveVoice(singEngine());
-  return v && standIn && v.nativeEngine === standIn ? singingCfg.warble : v || singingCfg.warble;
-};
+// the voice that sings now: the chosen one, else the first live voice
+const liveW = () => liveVoice(singEngine()) || singingCfg.warble;
 
 const tracksOfHymn = () => {
   const ts = state.tracks.map((t) => t.filter((k) => hymn?.voices[k])).filter((t) => t.length);
@@ -1359,12 +1363,7 @@ function singerChoices() {
     return { engine: r.engine, short: c.short, chip: c.chip, label: c.label, line: c.line, group: "recorded", n: c.n,
       ok: r.engine === "stems" ? !!manifests.stems?.stems?.length : !!manifests[r.engine] };
   });
-  const live = singingCfg.voices.map((w) => {
-    // the app's engine for a version: getting ready (choosable: v5 sings meanwhile), or one this phone can't run
-    const e = w.nativeEngine ? Warble.nativeEngines()?.[w.nativeEngine] : null;
-    const state = !e || e.ready ? "" : e.preparing ? COPY.gettingReady(Math.round((e.progress || 0) * 100)) : COPY.needsStronger;
-    return { engine: w.engine, short: w.short, chip: w.chip, label: w.label, line: w.line, group: w.group, n: w.n, ok: !e || e.ready || !!e.preparing, state, w };
-  });
+  const live = singingCfg.voices.map((w) => ({ engine: w.engine, short: w.short, chip: w.chip, label: w.label, line: w.line, group: w.group, n: w.n, ok: true, state: "", w }));
   return [...rec, ...live].sort((a, b) => a.n - b.n);
 }
 /** Settings → Who sings: "Ask me", the versions ("v1" …), "Instruments"; a recording this hymn lacks is dimmed. */
@@ -1404,7 +1403,7 @@ function chooseSingers(from, always = false) {
   // what a chip is, in words: its line, or why it can't be chosen here
   const what = (c) => (c.group === "recorded" && !c.ok ? COPY.noRecordingChip : c.state || c.line);
   const chip = (c) => `<button type="button" class="ver-chip" role="radio" data-engine="${esc(c.engine)}" aria-label="${esc(COPY.chipAria(c.short, what(c)))}" title="${esc(what(c))}"${c.ok ? "" : ' aria-disabled="true"'}>${esc(c.chip || c.short)}</button>`;
-  // the three sections (Warble, Weaver, Recorded): a heading with "Live" and an (i) that opens a note, then one row
+  // the sections (Warble, Recorded): a heading with "Live" and an (i) that opens a note, then one row
   const group = ({ group: g, name, live, info: appInfo, webInfo }) => {
     const info = (!APP && webInfo) || appInfo;
     const cs = choices.filter((c) => c.group === g).reverse(); // newest first
@@ -1427,7 +1426,7 @@ function chooseSingers(from, always = false) {
     // the selection in words too: "v1: Recorded singers; …"
     el.textContent = pick === "instrumental" ? `${COPY.instruments}: ${COPY.instrumentsLine}` : pick === "ask" ? `${COPY.ask}: ${COPY.askLine}` : c ? `${c.short}: ${c.state || c.line}` : "";
     if (c?.w && !(await c.w.saved())) {
-      const mb = c.w.nativeEngine ? Math.round((Warble.nativeEngines()?.[c.w.nativeEngine]?.size || 0) / 1e6) : c.w.partModels ? 16 * Object.keys(c.w.partModels).length : 17; // the app says how big its tier is; a voice sung from one 16 MB file per part
+      const mb = c.w.partModels ? 16 * Object.keys(c.w.partModels).length : 17; // a voice sung from one 16 MB file per part
       if (pick === c.engine && COPY.firstUse(mb)) el.textContent += `${el.textContent ? " · " : ""}${COPY.firstUse(mb)}`;
     }
   };
@@ -1671,36 +1670,22 @@ async function prepareWarble(keep = false) {
 /** Inside the Android app: its native engine sings (faster than WASM). The page makes the features
  * and hands each pass over (AHNative.warble.load); the engine plays them on the player's timeline. */
 let nativeModel = null;
-let nativeUsing = null; // the app's engine in use ("warble", "leap"), when it has several
+let nativeUsing = null; // the app's engine in use ("warble"), when it announces several (an older app with Weaver)
 /** The passes the app's singer holds now: key -> { keys, T } (forgotten when they are unloaded). */
 const nativeLoaded = new Map();
 async function prepareNativeWarble(native, w, gen, keep = false) {
   engine.setNative(native);
   window.AHWarble = { onEvent: onNativeWarble };
-  // the engine that sings (NATIVE-ENGINES.md): an app with several engines is told which, while stopped;
+  // an older app that has several engines (Weaver, removed 27 Nov 2026) is told to sing with Warble, while stopped;
   // switching unloads the other engine's passes and model there, so they are forgotten here too
-  const want = w.nativeEngine || "warble";
-  if (Warble.nativeEngines() && nativeUsing !== want) {
+  if (Warble.nativeEngines() && nativeUsing !== "warble") {
     if (engine.playing) { engine.nativeStop(); }
     let r = {};
-    try { r = JSON.parse(native.use(want) || "{}"); } catch { r = {}; }
-    if (r.ok === false) {
-      console.warn(`live singer: use(${want}) refused: ${r.error || "not ready"}${r.preparing ? ` (preparing, ${Math.round((r.progress || 0) * 100)}%)` : ""}`);
-      if (want === "warble") { toast(COPY.noStart, 6000); return; }
-      // the chosen voice stays chosen; Warble v3 sings until the app says it is ready ({"type": "engines"})
-      standIn = want;
-      toast(r.preparing ? COPY.notReadyYet(w.label, singingCfg.warble.label) : leapReason() || COPY.notReadyNow(w.label, singingCfg.warble.label), 6000);
-      $("credit").textContent = singingCfg.warble.credits();
-      return prepareNativeWarble(native, singingCfg.warble, gen, keep);
-    }
-    nativeUsing = want; nativeLoaded.clear(); nativeModel = null;
+    try { r = JSON.parse(native.use("warble") || "{}"); } catch { r = {}; }
+    if (r.ok === false) { console.warn(`live singer: use(warble) refused: ${r.error || "not ready"}`); toast(COPY.noStart, 6000); return; }
+    nativeUsing = "warble"; nativeLoaded.clear(); nativeModel = null;
   }
-  if (w.nativeEngine) {
-    // its model files, one per tier: the app fetches the tier it picks
-    const all = [...w.files, ...w.tiers]; // (none for a test build's own entry: its files are on the phone already)
-    const k = JSON.stringify(all.map((t) => t.url));
-    if (nativeModel !== k) { for (const t of all) native.model(t.url, t.sha256 || ""); nativeModel = k; }
-  } else if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
+  if (nativeModel !== w.modelUrl) { native.model(w.modelUrl, w.cfg.sha256 || ""); nativeModel = w.modelUrl; }
   const failed = [];
   let first = true;
   const h = hymn; // the hymn these passes are for: another one opened meanwhile ends this loop
@@ -1754,51 +1739,11 @@ function onNativeWarble(json) {
   else if (m.type === "model" && m.state === "ready") toast(COPY.ready, 3000);
   else if (m.type === "model" && m.state === "error") oops(COPY.noModel, m.msg, 8000);
   else if (m.type === "error") oops(COPY.stopped, m.msg, 8000);
-  else if (m.type === "engines") enginesChanged();
   else if (m.type === "started") engine.nativeStarted(); // (it held its start until the singing was ready)
-  else if (m.type === "leap") leapEvent(m);
   else if (m.type === "underrun") { // it catches up by itself; say so now and then, never stop
     console.warn("warble: the app's singer fell behind");
     if (Date.now() - (onNativeWarble.said || 0) > 20000) { onNativeWarble.said = Date.now(); toast("The singers fell behind briefly. They will catch up on their own.", 4000); }
   }
-}
-
-/** The app's engines changed (its {"type": "engines"} event): if the new voice is chosen but no longer ready on
- *  this phone (its files gone, a failed benchmark), Warble sings from the next play: the passes are made again
- *  for it, at once when stopped, else when play is next pressed; said quietly, once. */
-let engineSwitchPending = false;
-/** Weaver v1's (old v6) own events (app 0.9.43): its first-use setup (Warble v3 sings meanwhile), ready, the head start
- *  before the first sound with Full quality, and catching up (Full holds the audio: never a fall back to v5, he
- *  chose Full). "ready" and "unavailable" are acted on by the {"type": "engines"} event that follows. */
-function leapEvent(m) {
-  const pct = Math.round((m.progress || 0) * 100);
-  console.info(`singers v6: ${m.state}${m.progress != null ? ` ${pct}%` : ""}`);
-  const v6 = liveVoice(singEngine());
-  if (v6?.nativeEngine !== "leap") return; // not chosen: nothing on screen
-  const v5 = singingCfg.warble?.label || COPY.singers;
-  if (m.state === "preparing") toast(COPY.v6Preparing(v6.label, v5, pct), 0);
-  else if (m.state === "ready") toast(COPY.v6Ready(v6.label), 3000);
-  else if (m.state === "headstart" && !Warble.nativeEngines()?.leap?.prepUi) toast(COPY.v6Headstart(v6.label, pct), pct >= 100 ? 1500 : 0); // (the app shows its own)
-  else if (m.state === "catchup" && Date.now() - (leapEvent.said || 0) > 5000) { leapEvent.said = Date.now(); toast(COPY.v6Catchup(v6.label), 4000); }
-}
-/** The app's plain-words reason why its engine cannot sing on this phone (Round 3 wording, the app's). */
-const leapReason = () => Warble.nativeEngines()?.leap?.reason || "";
-function enginesChanged() {
-  const chosen = liveVoice(singEngine());
-  if (!chosen?.nativeEngine) { standIn = null; return; }
-  const e = Warble.nativeEngines()?.[chosen.nativeEngine];
-  const switchNow = () => { if (engine.playing) engineSwitchPending = true; else prepareStems(); };
-  if (e?.ready) { // ready (again): the chosen voice sings from the next play
-    if (standIn) { standIn = null; console.info(`singers: ${chosen.label} ready`); switchNow(); }
-    return;
-  }
-  if (standIn === chosen.nativeEngine) { // already standing in: say why only when it can no longer get ready
-    if (!e?.preparing) { const why = leapReason(); if (why && why !== enginesChanged.said) { enginesChanged.said = why; toast(why, 6000); } }
-    return;
-  }
-  standIn = chosen.nativeEngine;
-  toast(e?.preparing ? COPY.notReadyYet(chosen.label, singingCfg.warble.label) : leapReason() || COPY.notReadyNow(chosen.label, singingCfg.warble.label), 6000);
-  switchNow();
 }
 
 /** What the recorded singers of this hymn cost at the current tempo, key and verses, for the app's
@@ -2367,7 +2312,6 @@ async function togglePlay() {
   engine.ensure(); // inside the click, so the browser lets the sound start
   let from = engine.pausedAt ?? 0;
   if (from >= perf.total - 0.05) from = 0;
-  if (engineSwitchPending) { engineSwitchPending = false; await prepareStems(); } // the other engine's passes, first
   if (!(await chooseSingers(from))) return;
   applyMix();
   if (state.accomp !== "off" || anyPiano() || state.intro !== "none" || state.interlude !== "none") engine.loadPiano();

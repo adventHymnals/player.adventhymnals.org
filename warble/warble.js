@@ -2,7 +2,7 @@
 // features here (frontend.js, cheap); the singing is made by a pool of Web Workers, one voice of
 // one pass per job, each worker with its own onnxruntime-web (WASM) session. The result is one
 // AudioBuffer per voice and pass, used exactly like a recorded stem (offsetSec -0.3).
-import { COPY, CREDITS, SHOW_VOICE_CREDITS, singerCopy } from "../singers-copy.js";
+import { COPY, CREDITS, REMOVED, SHOW_VOICE_CREDITS, singerCopy } from "../singers-copy.js";
 import { passFrames, SR, LEAD, unsung } from "./frontend.js";
 import { partsOf, partLetters } from "../core.js";
 import { writeBin } from "./bin.js";
@@ -20,9 +20,8 @@ const shasOf = (c, parts) => (parts && c?.models ? Object.values(c.models).map((
 
 /** Can the engine that sings here (the app's native one if any, else synth.js) sing voice config c? */
 export function canSing(c) {
-  // a voice the app's own engine sings (the new voice, "engine": "leap"): only in an app that has that engine
-  // (web/warble/NATIVE-ENGINES.md); the browser keeps Warble
-  if (c?.engine === "leap") return !!Warble.nativeEngines()?.leap;
+  // a removed voice (Weaver, Warble v4: not ours, 27 Nov 2026) is never sung, whatever an older singing.json or app says
+  if (c?.engine === "leap" || REMOVED.ids.has(c?.id)) return false;
   const need = [].concat(c?.requires || []);
   if (!need.length) return true;
   let caps = WEB_CAN;
@@ -85,25 +84,19 @@ export class Warble {
     this.engine = this.id ? `warble-${this.id}` : "warble"; // the first live voice is plain "warble"
     // the name on screen: the page's table by id ("Singers vN"), never an internal name; an unknown voice
     // keeps singing.json's label (an old singing.json's one "warble" is the first model, Singers v2)
-    this.copyId = cfg.copyId || this.id || (cfg.engine === "leap" ? "leap" : String(cfg.sha256 || "").startsWith("11cedb94") ? "v1" : "");
+    this.copyId = cfg.copyId || this.id || (String(cfg.sha256 || "").startsWith("11cedb94") ? "v1" : "");
     const known = singerCopy(this.copyId);
     this.line = known?.line || "";
     this.n = known?.n || cfg.n || 99; // its place in the pickers
     this.short = known?.short || cfg.short || (cfg.n ? `v${cfg.n}` : this.label); // the name in buttons and lists ("Warble v3")
     this.chip = known?.chip || cfg.chip || this.short; // the name inside its section ("v3")
-    this.group = known?.group || (cfg.engine === "leap" ? "weaver" : "warble"); // the picker's section
+    this.group = known?.group || "warble"; // the picker's section
     if (!known && cfg.line) this.line = cfg.line;
     this.label = known?.label || cfg.label || COPY.singers;
     this.speakers = cfg.speakers || undefined; // { S, A, T, B } singer numbers; the frontend's default when absent
-    // a voice sung by the app's own engine (the new voice): its model files are the app's to fetch (by tier);
-    // the page only passes their addresses (NATIVE-ENGINES.md)
-    this.nativeEngine = cfg.engine === "leap" ? "leap" : null;
-    if (this.nativeEngine) { this.id = cfg.id || "leap"; this.engine = "leap"; this.label = singerCopy("leap").label; this.line = singerCopy("leap").line; this.n = singerCopy("leap").n; this.short = singerCopy("leap").short; this.chip = singerCopy("leap").chip; this.group = "weaver"; }
     this.modelUrl = cfg.model ? new URL(cfg.model, base).href : null;
     // in a browser, one model per part when the voice has them: { S: { url, sha256 }, … }; a part without its own (a Soprano II) sings with its base part's
     this.partModels = cfg.models && !Warble.native() ? Object.fromEntries(Object.entries(cfg.models).map(([k, m]) => [k, { url: new URL(m.model, base).href, sha256: (m.sha256 || "").toLowerCase() }])) : null;
-    this.tiers = (cfg.tiers || []).map((t) => ({ ...t, url: new URL(t.url, base).href }));
-    this.files = (cfg.files || []).map((t) => ({ ...t, url: new URL(t.url, base).href })); // needed by every tier
     this.workers = [];
     this.ready = null;
     this.lex = null;
@@ -332,16 +325,15 @@ export class Warble {
 
   /** Is the singing model saved on this device (no download needed)? */
   async saved() {
-    if (this.nativeEngine) return !!Warble.nativeEngines()?.[this.nativeEngine]?.ready;
     const shas = shasOf(this.cfg, !!this.partModels);
     if (!shas.length || (this.partModels && shas.length < Object.keys(this.partModels).length)) return false;
     for (const sha of shas) if (!(await idbHas(sha))) return false;
     return true;
   }
-  /** The app's engines (available().engines), or null for an app with Warble only / no app. */
+  /** The app's engines (available().engines: an older app with Weaver announces them), or null. */
   static nativeEngines() { try { return JSON.parse(Warble.native()?.available() || "null")?.engines || null; } catch { return null; } }
 
-  credits() { if (!SHOW_VOICE_CREDITS) return this.label; const id = this.nativeEngine ? "leap" : this.copyId; return !CREDITS[id] && this.cfg.credits ? this.cfg.credits : COPY.credit(id, this.label); } // the dataset's attribution, under the choice's own name
+  credits() { if (!SHOW_VOICE_CREDITS) return this.label; const id = this.copyId; return !CREDITS[id] && this.cfg.credits ? this.cfg.credits : COPY.credit(id, this.label); } // the dataset's attribution, under the choice's own name
 }
 
 /** data/singing.json -> { default, warble, voices }: voices are the live singers offered (singing.json's
@@ -355,18 +347,13 @@ export async function loadSinging(urls, page = location.href) {
       if (!r.ok) continue;
       const cfg = await r.json();
       const base = new URL(url.startsWith("blob:") ? page : url, location.href);
-      // an app's test build may bring its own voice entries (AHNative.warble.voices(): the new voice with its
-      // files put on the phone by hand, nothing hosted; NATIVE-ENGINES.md "Test path"): added to the list here
+      // an app's test build may bring its own Warble voice entries (AHNative.warble.voices(): "engine": "warble" with a
+      // "model" the app resolves, e.g. "app:<id>"): added to the list here (a removed voice never: canSing)
       let own = [];
-      // (also a Warble voice the app carries itself, "engine": "warble" with a "model" the app resolves, e.g. "app:v7")
-      try { own = JSON.parse(Warble.native()?.voices?.() || "[]").filter((c) => c?.id && (c.engine === "leap" || (c.engine === "warble" && c.model)))
-        .map((c) => (c.engine === "warble" ? { ...c, fromApp: true } : c)); } catch { own = []; }
-      // or it announces the engine as local (its files carried in the APK): the voice from that alone
-      const le = Warble.nativeEngines()?.leap;
-      if (!own.length && le?.local) own = [{ id: "leap", engine: "leap", label: singerCopy("leap").label, files: [], tiers: [] }];
+      try { own = JSON.parse(Warble.native()?.voices?.() || "[]").filter((c) => c?.id && c.engine === "warble" && c.model)
+        .map((c) => ({ ...c, fromApp: true })); } catch { own = []; }
       const listed = [...(Array.isArray(cfg.voices) && cfg.voices.length ? cfg.voices : [cfg.warble])].filter((c) => !own.some((o) => o.id === c?.id));
-      const all = [...listed, ...own].filter((c) => (c?.model || c?.engine === "leap") && canSing(c))
-        .sort((a, b) => (a.engine === "leap") - (b.engine === "leap")); // Warble's voices first: the first is plain "warble"
+      const all = [...listed, ...own].filter((c) => c?.model && canSing(c));
       // "enabled": false keeps a voice listed but not offered; a player or app that can sing none of the enabled
       // voices (an older engine) still gets the first voice it can sing, so it never loses live singing
       let list = all.filter((c) => c.enabled !== false);
@@ -374,8 +361,8 @@ export async function loadSinging(urls, page = location.href) {
       Warble.keep = new Set(list.flatMap((c) => shasOf(c, !Warble.native())));
       const voices = [];
       for (const [i, c] of list.entries()) {
-        const w = new Warble(i === 0 && c.engine !== "leap" ? { ...c, id: "", copyId: c.id } : c, base); // (its name by its real id)
-        if (w.nativeEngine || c.fromApp) { voices.push(w); continue; } // the app fetches (or carries) its files itself
+        const w = new Warble(i === 0 ? { ...c, id: "", copyId: c.id } : c, base); // (its name by its real id)
+        if (c.fromApp) { voices.push(w); continue; } // the app carries its files itself
         // offered only where it can sing: the model saved on this device, or reachable
         const sha = (c.sha256 || "").toLowerCase();
         const appHas = () => { try { return !!sha && !!window.AHNative?.warble?.cached?.(sha); } catch { return false; } };
@@ -385,7 +372,7 @@ export async function loadSinging(urls, page = location.href) {
         }
         voices.push(w);
       }
-      if (voices[0] && voices[0].id && !voices[0].nativeEngine) { voices[0].id = ""; voices[0].engine = "warble"; } // the first that can sing is "warble"
+      if (voices[0] && voices[0].id) { voices[0].id = ""; voices[0].engine = "warble"; } // the first that can sing is "warble"
       const dflt = cfg.default && voices.some((w) => w.engine === cfg.default) ? cfg.default : "stems";
       return { default: dflt, warble: voices[0] || null, voices };
     } catch { /* offline or absent: try the next */ }
